@@ -645,15 +645,7 @@ body .art-section-top .art_ur_numbers .art_stylish {
   -webkit-filter: drop-shadow(0 -6px 4px #e8f2fb);
 }
 
-body .art-section-top .art_build_your_store {
-  width: 100%;
-  min-height: 65vh;
-  margin: auto;
-  position: relative;
-  padding: 50px 7%;
-}
-
-body .art-section-top .art_build_your_store .art_md_half_container {
+body .art-section-top .art_md_half_container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -661,24 +653,24 @@ body .art-section-top .art_build_your_store .art_md_half_container {
   height: 100%;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half {
+body .art-section-top .art_md_half_container .art_md_half {
   width: 50%;
   height: 538px;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_img {
+body .art-section-top .art_md_half_container .art_md_half.art_half_img {
   background: url(../img/home/rec-1.png);
   background-size: auto;
   background-repeat: no-repeat;
   background-position-y: center;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_content {
+body .art-section-top .art_md_half_container .art_md_half.art_half_content {
   height: auto;
   margin: auto;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_content .art_title {
+body .art-section-top .art_md_half_container .art_md_half.art_half_content .art_title {
   color: #24C347;
   font-weight: 600;
   width: -webkit-fit-content;
@@ -689,16 +681,31 @@ body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.
   margin-left: -1.5rem;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_content .art_desc {
+body .art-section-top .art_md_half_container .art_md_half.art_half_content .art_desc {
   width: 80%;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_content .art_desc p {
+body .art-section-top .art_md_half_container .art_md_half.art_half_content .art_desc p {
   margin: 0;
 }
 
-body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_content .art_action {
+body .art-section-top .art_md_half_container .art_md_half.art_half_content .art_action {
   margin: 20px 0;
+}
+
+body .art-section-top .art_build_your_store {
+  width: 100%;
+  min-height: 65vh;
+  margin: auto;
+  position: relative;
+  padding: 50px 7%;
+}
+
+body .art-section-top .art_build_your_store .art_md_half_container .art_md_half.art_half_img {
+  background: url(../img/home/rec-1.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
 body .art-section-top .art_build_your_store .art_stylish {
@@ -1103,6 +1110,59 @@ body .art-section-top .art_our_products .art_stylish {
   filter: drop-shadow(0 -6px 4px #e8f2fb);
   -webkit-filter: drop-shadow(0 -6px 4px #e8f2fb);
   height: 18%;
+}
+
+body .art-section-top .art_our_community {
+  width: 100%;
+  min-height: 65vh;
+  margin: auto;
+  position: relative;
+  padding: 0px 7%;
+}
+
+body .art-section-top .art_our_community .art_md_half_container .art_md_half.art_half_img {
+  background: url(../img/black-tablet.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position-y: center;
+}
+
+body .art-section-top .art_our_community .art_md_half_container .art_community_cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+body .art-section-top .art_our_community .art_md_half_container .art_community_cards .art_community_card {
+  width: 25%;
+  -webkit-box-shadow: 0 2px 2px 1px #e8f2fb;
+  box-shadow: 0 2px 2px 1px #e8f2fb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 5px 20px 20px;
+  margin-right: 25px;
+  border-radius: 1em;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 body .art_card_footer_link {
