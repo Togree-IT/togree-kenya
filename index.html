@@ -634,9 +634,11 @@
                 time: 1500
             });
             $('.art_our_news_cards').slick({
-                centerMode: false,
+                centerMode: true,
                 centerPadding: '60px',
+                initialSlide: 2,
                 slidesToShow: 3,
+                slidesPerRow: 3,
                 prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
                 nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',
                 // infinite: false,
@@ -644,7 +646,7 @@
                     breakpoint: 768,
                     settings: {
                         arrows: false,
-                        centerMode: false,
+                        centerMode: true,
                         centerPadding: '40px',
                         slidesToShow: 3
                     }
@@ -652,7 +654,7 @@
                     breakpoint: 480,
                     settings: {
                         arrows: false,
-                        centerMode: false,
+                        centerMode: true,
                         centerPadding: '40px',
                         slidesToShow: 1
                     }
