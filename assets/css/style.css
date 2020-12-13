@@ -1167,7 +1167,7 @@ body .art-section-top .art_our_community .art_md_half_container .art_community_c
 
 body .art-section-top .art_our_news {
   width: 100%;
-  min-height: 65vh;
+  min-height: calc(65vh + 10vh);
   margin: auto;
   position: relative;
   padding: 0px 7%;
@@ -1200,6 +1200,32 @@ body .art-section-top .art_our_news .art_our_news_cards {
   align-items: center;
   width: 65%;
   margin: auto;
+}
+
+body .art-section-top .art_our_news .art_our_news_cards .slick-list {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+body .art-section-top .art_our_news .art_our_news_cards .slick-list:focus, body .art-section-top .art_our_news .art_our_news_cards .slick-list:active, body .art-section-top .art_our_news .art_our_news_cards .slick-list:focus-within {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+body .art-section-top .art_our_news .art_our_news_cards .slick-list .slick-slide {
+  transition: .3s linear;
+  -webkit-transition: .3s linear;
+  -moz-transition: .3s linear;
+  -ms-transition: .3s linear;
+  -o-transition: .3s linear;
+}
+
+body .art-section-top .art_our_news .art_our_news_cards .slick-list .slick-slide.slick-active.slick-center {
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
 }
 
 body .art-section-top .art_our_news .art_our_news_cards .art_news_card_co {
@@ -1239,6 +1265,7 @@ body .art-section-top .art_our_news .art_our_news_cards .art_news_card .art_news
 
 body .art-section-top .art_our_news .art_our_news_cards .art_news_card .art_news_card_header .art_news_thumb {
   width: 100%;
+  min-height: 70%;
   position: absolute;
   top: 0;
 }
