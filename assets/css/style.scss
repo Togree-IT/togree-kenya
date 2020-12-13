@@ -1134,7 +1134,7 @@
             }
             .art_our_news {
                 width: 100%;
-                min-height: calc(65vh + 10vh);
+                min-height: calc(65vh + (10vh + 13vh));
                 margin: auto;
                 position: relative;
                 padding: 0px 7%;
@@ -1149,6 +1149,18 @@
                     -webkit-box-align: center;
                     -ms-flex-align: center;
                     align-items: center;
+                    .art_our_news_desc_title {
+                        width: 50%;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                    }
                     .art_our_news_desc_text {
                         text-align: center;
                         width: 25%;
@@ -1175,16 +1187,18 @@
                             cursor: grabbing;
                         }
                         .slick-slide {
-                            transition: .3s linear;
-                            -webkit-transition: .3s linear;
-                            -moz-transition: .3s linear;
-                            -ms-transition: .3s linear;
-                            -o-transition: .3s linear;
-                            &.slick-active {
-                                &.slick-center {
-                                    -webkit-transform: scale(1.15);
-                                    -ms-transform: scale(1.15);
-                                    transform: scale(1.15);
+                            &.slick-current {
+                                transition: .3s linear;
+                                -webkit-transition: .3s linear;
+                                -moz-transition: .3s linear;
+                                -ms-transition: .3s linear;
+                                -o-transition: .3s linear;
+                                &.slick-active {
+                                    &.slick-center {
+                                        -webkit-transform: scale(1.15);
+                                        -ms-transform: scale(1.15);
+                                        transform: scale(1.15);
+                                    }
                                 }
                             }
                         }
@@ -1277,6 +1291,95 @@
                     -ms-flex-pack: center;
                     justify-content: center;
                 }
+                .art_updates {
+                    min-height: 85vh;
+                    .art_updates_tabs {
+                        width: 100%;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        margin-top: 20px;
+                        .tabs {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-pack: justify;
+                            -ms-flex-pack: justify;
+                            justify-content: space-between;
+                            -webkit-box-shadow: 0 1px 1px #d8e1ea;
+                            box-shadow: 0 1px 1px #d8e1ea;
+                            .indicator {
+                                background-color: #1bc140;
+                            }
+                            .tab {
+                                // position: relative;
+                                a {
+                                    color: #23c447;
+                                    position: relative;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    // -webkit-box-align: center;
+                                    // -ms-flex-align: center;
+                                    // align-items: center;
+                                    // -webkit-box-pack: center;
+                                    // -ms-flex-pack: center;
+                                    // justify-content: center;
+                                    // padding: 0 35px;
+                                    &:focus,
+                                    &:focus.active,
+                                    &.active {
+                                        background-color: rgba(168, 230, 182, 0.141);
+                                        outline: none;
+                                    }
+                                    .art_tabs_counter {
+                                        // position: absolute;
+                                        // left: 0;
+                                        font-style: normal;
+                                        margin: auto;
+                                        margin-right: 10px;
+                                        margin-left: 0;
+                                        width: 15px;
+                                        height: 15px;
+                                        background: rgba(68, 68, 68, 0.039);
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        padding: 10px;
+                                        border: 1px solid #24c347;
+                                        color: #24c347;
+                                        border-radius: 5em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .row {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                    }
+                    .art_tabs_content {
+                        padding: 15px .75rem;
+                        min-height: 45vh;
+                        background: aliceblue;
+                    }
+                }
             }
         }
         .art_card_footer_link {
@@ -1364,6 +1467,12 @@
                 font-size: inherit;
                 vertical-align: middle;
             }
+        }
+        .art_divider {
+            width: 100%;
+            height: 1px;
+            background: #e8f2fb;
+            margin: 2pc 0;
         }
     }
     

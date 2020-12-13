@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
     var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
     if (top_nav_menu_trigger.length) {
         M.Dropdown.init(top_nav_menu_trigger, {
@@ -58,7 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
+    var update_tabs = document.querySelectorAll('.tabs');
+    if (update_tabs.length) {
+        M.Tabs.init(update_tabs);
+    }
     // var carousels = document.querySelectorAll('.carousel');
     // var carouselInstance = M.Carousel.init(carousels, {
     //     duration: 100,
