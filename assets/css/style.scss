@@ -29,8 +29,8 @@ body {
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         height: 43px;
         width: -webkit-max-content;
         width: -moz-max-content;
@@ -59,7 +59,7 @@ body {
     .art_matrix {
         // box-shadow: 0 0 12px #d8e1ea;
         -webkit-box-shadow: 0 -9px 12px rgba(216, 225, 234, 0.349), -3px -1px 3px rgba(216, 225, 234, 0), -3px 0px 0px rgba(216, 225, 234, 0.169), 3px 0px 0px rgba(216, 225, 234, 0.188), 3px -1px 3px rgba(216, 225, 234, 0.322);
-                box-shadow: 0 -9px 12px rgba(216, 225, 234, 0.349), -3px -1px 3px rgba(216, 225, 234, 0), -3px 0px 0px rgba(216, 225, 234, 0.169), 3px 0px 0px rgba(216, 225, 234, 0.188), 3px -1px 3px rgba(216, 225, 234, 0.322);
+        box-shadow: 0 -9px 12px rgba(216, 225, 234, 0.349), -3px -1px 3px rgba(216, 225, 234, 0), -3px 0px 0px rgba(216, 225, 234, 0.169), 3px 0px 0px rgba(216, 225, 234, 0.188), 3px -1px 3px rgba(216, 225, 234, 0.322);
         overflow: hidden;
         position: absolute;
         z-index: -1;
@@ -80,7 +80,7 @@ body {
         -o-transition: .3s linear;
         &:hover {
             -webkit-box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
-                    box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
+            box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
             transform: matrix(1, 0, -0.25, 1, 0, 0);
             -webkit-transform: matrix(1, 0, -0.25, 1, 0, 0);
             -moz-transform: matrix(1, 0, -0.25, 1, 0, 0);
@@ -93,7 +93,7 @@ body {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
         height: auto;
         min-height: 75vh;
         background: #c5e8c510 url('../img/home/Startistic-Illustrations-on.png');
@@ -109,8 +109,8 @@ body {
             display: -ms-flexbox;
             display: flex;
             -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                    justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
             padding: 10px;
             background: rgba(255, 255, 255, 0.23);
             position: fixed;
@@ -119,7 +119,7 @@ body {
             backdrop-filter: blur(10px);
             z-index: 10;
             -webkit-box-shadow: 0px 1px 2px #c1d2da;
-                    box-shadow: 0px 1px 2px #c1d2da;
+            box-shadow: 0px 1px 2px #c1d2da;
             .art_nav-right {
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -127,8 +127,8 @@ body {
                 width: auto;
                 min-width: 45%;
                 -webkit-box-pack: justify;
-                    -ms-flex-pack: justify;
-                        justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
                 .art-brand {
                     display: -webkit-box;
                     display: -ms-flexbox;
@@ -148,8 +148,8 @@ body {
                     display: -ms-flexbox;
                     display: flex;
                     -webkit-box-pack: justify;
-                        -ms-flex-pack: justify;
-                            justify-content: space-between;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
                     li {
                         display: inherit;
                         width: auto;
@@ -158,8 +158,8 @@ body {
                             display: -ms-flexbox;
                             display: flex;
                             -webkit-box-align: center;
-                                -ms-flex-align: center;
-                                    align-items: center;
+                            -ms-flex-align: center;
+                            align-items: center;
                             color: #656565;
                         }
                     }
@@ -167,17 +167,17 @@ body {
             }
             .art_nav-left {
                 -webkit-box-flex: 1;
-                    -ms-flex: 1;
-                        flex: 1;
+                -ms-flex: 1;
+                flex: 1;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-pack: end;
-                    -ms-flex-pack: end;
-                        justify-content: flex-end;
+                -ms-flex-pack: end;
+                justify-content: flex-end;
                 -webkit-box-align: stretch;
-                    -ms-flex-align: stretch;
-                        align-items: stretch;
+                -ms-flex-align: stretch;
+                align-items: stretch;
                 margin-right: 60px;
                 #head_search_form {
                     display: -webkit-box;
@@ -194,8 +194,8 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         -webkit-box-align: center;
-                            -ms-flex-align: center;
-                                align-items: center;
+                        -ms-flex-align: center;
+                        align-items: center;
                         background-color: rgba(255, 255, 255, 0.859);
                         margin: auto;
                         border-radius: 4em 4em;
@@ -211,7 +211,7 @@ body {
                         .art_input {
                             border: 0;
                             -webkit-box-shadow: none;
-                                    box-shadow: none;
+                            box-shadow: none;
                             margin: auto;
                             border-bottom: 0;
                         }
@@ -240,8 +240,8 @@ body {
                     display: -ms-flexbox;
                     display: flex;
                     -webkit-box-align: center;
-                        -ms-flex-align: center;
-                            align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
                     i {
                         line-height: inherit;
                         font-size: 21pt;
@@ -255,7 +255,7 @@ body {
                 width: auto !important;
                 height: auto !important;
                 -webkit-box-shadow: 0 2px 10px #607d8b6b;
-                        box-shadow: 0 2px 10px #607d8b6b;
+                box-shadow: 0 2px 10px #607d8b6b;
                 border-radius: 0 0 10px 10px;
                 border: 0;
                 a {
@@ -297,12 +297,12 @@ body {
             display: flex;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
             height: 72%;
             -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                    justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
             margin: -104px 0 auto;
             .art-social-icon {
                 margin: auto auto 30px;
@@ -334,13 +334,13 @@ body {
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
         -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+        flex-wrap: wrap;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         padding: 15px 0;
         .art_head_bottom_card {
             width: 24%;
@@ -348,19 +348,19 @@ body {
             margin: auto;
             background-color: #ffffff;
             -webkit-box-shadow: 0 -2px 2px rgba(96, 125, 139, 0.071), 0 2px 2px rgba(96, 125, 139, 0.31);
-                    box-shadow: 0 -2px 2px rgba(96, 125, 139, 0.071), 0 2px 2px rgba(96, 125, 139, 0.31);
+            box-shadow: 0 -2px 2px rgba(96, 125, 139, 0.071), 0 2px 2px rgba(96, 125, 139, 0.31);
             border-radius: 10px;
             padding: 12px;
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
             -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+            flex-wrap: wrap;
             -webkit-box-align: start;
-                -ms-flex-align: start;
-                    align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
             -webkit-box-shadow: 0 0 12px #d8e1ea;
-                    box-shadow: 0 0 12px #d8e1ea;
+            box-shadow: 0 0 12px #d8e1ea;
             transition: .3s linear;
             -webkit-transition: .3s linear;
             -moz-transition: .3s linear;
@@ -368,7 +368,7 @@ body {
             -o-transition: .3s linear;
             &:hover {
                 -webkit-box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
-                        box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
+                box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
                 transform: matrix(1, -0.031, 0, 1, 3, 9);
                 -webkit-transform: matrix(1, -0.031, 0, 1, 3, 9);
                 -moz-transform: matrix(1, -0.031, 0, 1, 3, 9);
@@ -381,8 +381,8 @@ body {
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-align: center;
-                    -ms-flex-align: center;
-                        align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
                 position: relative;
                 .art_card_header_icon {
                     width: 5%;
@@ -435,8 +435,8 @@ body {
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-pack: justify;
-                    -ms-flex-pack: justify;
-                        justify-content: space-between;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
                 .art_card_footer_dash {
                     width: 50%;
                     background: #ebeeef;
@@ -460,7 +460,7 @@ body {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-pack: distribute;
-                justify-content: space-around;
+            justify-content: space-around;
             /* border-bottom: 1px solid #dde7ef; */
             padding: 50px 7% 17%;
             overflow: hidden;
@@ -470,18 +470,18 @@ body {
                 display: -ms-flexbox;
                 display: flex;
                 -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
+                flex-wrap: wrap;
                 -webkit-box-orient: vertical;
                 -webkit-box-direction: normal;
-                    -ms-flex-direction: column;
-                        flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
                 -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                        justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
                 width: 100%;
                 -webkit-box-align: center;
-                    -ms-flex-align: center;
-                        align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
                 z-index: 1;
                 h6.art_title {
                     color: #838383;
@@ -500,10 +500,10 @@ body {
                     display: -ms-flexbox;
                     display: flex;
                     -ms-flex-pack: distribute;
-                        justify-content: space-around;
+                    justify-content: space-around;
                     -webkit-box-align: center;
-                        -ms-flex-align: center;
-                            align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
                     margin: 3em 0;
                     padding-bottom: 3em;
                     .art_our_number_circle {
@@ -513,7 +513,7 @@ body {
                         height: 228px;
                         border-radius: 50%;
                         -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
-                                box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
+                        box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
                     }
                     .art_our_number_circle_conter {
                         width: 100%;
@@ -523,12 +523,12 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         -webkit-box-align: center;
-                            -ms-flex-align: center;
-                                align-items: center;
+                        -ms-flex-align: center;
+                        align-items: center;
                         background-color: white;
                         border-radius: 50%;
                         -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-                                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+                        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
                         text-align: center;
                         .art_circle_wrap {
                             text-align: center;
@@ -538,7 +538,7 @@ body {
                 }
                 &:hover+.art_matrix {
                     -webkit-box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
-                            box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
+                    box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
                     transform: matrix(1, 0, -0.25, 1, 0, 0);
                     -webkit-transform: matrix(1, 0, -0.25, 1, 0, 0);
                     -moz-transform: matrix(1, 0, -0.25, 1, 0, 0);
@@ -558,7 +558,7 @@ body {
                 -o-transition: .3s linear;
                 &:hover {
                     -webkit-box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
-                            box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
+                    box-shadow: -1px 9px 64px 0px rgba(94, 103, 119, 0.302), 0px 0px 0px #e8f2fb;
                     transform: matrix(1, 0, -0.25, 1, 0, 0);
                     -webkit-transform: matrix(1, 0, -0.25, 1, 0, 0);
                     -moz-transform: matrix(1, 0, -0.25, 1, 0, 0);
@@ -568,8 +568,8 @@ body {
             }
             .art_stylish {
                 -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
-                    -ms-transform: matrix(1, 0, 0, -1, 0, 0);
-                        transform: matrix(1, 0, 0, -1, 0, 0);
+                -ms-transform: matrix(1, 0, 0, -1, 0, 0);
+                transform: matrix(1, 0, 0, -1, 0, 0);
                 filter: drop-shadow(0 -6px 4px #e8f2fb);
                 -webkit-filter: drop-shadow(0 -6px 4px #e8f2fb);
             }
@@ -634,7 +634,7 @@ body {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+            flex-wrap: wrap;
             // background: rgba(241, 241, 241, 0.322);
             padding: 50px 7% 12%;
             margin: auto;
@@ -668,7 +668,7 @@ body {
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.149);
-                        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.149);
+                box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.149);
                 .art_we_operate_content_video {
                     width: 100%;
                 }
@@ -693,7 +693,7 @@ body {
             display: -ms-flexbox;
             display: flex;
             -ms-flex-wrap: wrap;
-                flex-wrap: wrap;
+            flex-wrap: wrap;
             padding: 0px 7% 7%;
             margin: auto;
             position: relative;
@@ -717,7 +717,7 @@ body {
                 display: -ms-flexbox;
                 display: flex;
                 -ms-flex-pack: distribute;
-                    justify-content: space-around;
+                justify-content: space-around;
                 margin: 1pc auto 5pc;
                 .art_our_services_card {
                     width: 28%;
@@ -725,19 +725,19 @@ body {
                     display: -ms-flexbox;
                     display: flex;
                     -ms-flex-wrap: wrap;
-                        flex-wrap: wrap;
+                    flex-wrap: wrap;
                     -ms-flex-pack: distribute;
-                        justify-content: space-around;
+                    justify-content: space-around;
                     -webkit-box-align: center;
-                        -ms-flex-align: center;
-                            align-items: center;
+                    -ms-flex-align: center;
+                    align-items: center;
                     border-radius: 1em;
                     overflow: hidden;
                     -webkit-box-shadow: 0px 2px 4px #d8e1ea;
-                            box-shadow: 0px 2px 4px #d8e1ea;
+                    box-shadow: 0px 2px 4px #d8e1ea;
                     &:hover {
                         -webkit-box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
-                                box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
+                        box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
                         transform: matrix(1, 0.1, 0, 1, 3, 9);
                         -webkit-transform: matrix(1, 0.1, 0, 1, 3, 9);
                         -moz-transform: matrix(1, 0.1, 0, 1, 3, 9);
@@ -750,13 +750,13 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         -webkit-box-align: center;
-                            -ms-flex-align: center;
-                                align-items: center;
+                        -ms-flex-align: center;
+                        align-items: center;
                         -ms-flex-wrap: wrap;
-                            flex-wrap: wrap;
+                        flex-wrap: wrap;
                         -webkit-box-pack: center;
-                            -ms-flex-pack: center;
-                                justify-content: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
                         .art_our_services_card_header_title {
                             font-size: 1.28rem;
                             width: 100%;
@@ -775,8 +775,8 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         -webkit-box-pack: center;
-                            -ms-flex-pack: center;
-                                justify-content: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
                         padding: 0;
                         .art_icon_btn {
                             border: 0;
@@ -808,10 +808,10 @@ body {
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         -ms-flex-pack: distribute;
-            justify-content: space-around;
+        justify-content: space-around;
         min-width: 35%;
         overflow: hidden;
         -webkit-user-select: none;
@@ -828,15 +828,15 @@ body {
     }
     .art_icon_arrow_right {
         -webkit-transform: rotate(-180deg);
-            -ms-transform: rotate(-180deg);
-                transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        transform: rotate(-180deg);
     }
     .carousel {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: distribute;
-            justify-content: space-around;
+        justify-content: space-around;
         min-height: 88vh;
         .carousel-item {
             width: 40%;
@@ -849,7 +849,7 @@ body {
                 width: auto;
                 height: 100%;
                 -webkit-box-shadow: -1px 2px 5px #211a1c6e;
-                        box-shadow: -1px 2px 5px #211a1c6e;
+                box-shadow: -1px 2px 5px #211a1c6e;
                 border-radius: 1em;
             }
         }
