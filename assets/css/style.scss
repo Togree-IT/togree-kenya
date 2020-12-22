@@ -138,7 +138,10 @@ html {
     max-height: 100vh;
     overflow: hidden;
     @include mobile {
-        font-size: 8px;
+        font-size: 8pt;
+    }
+    @include laptop {
+        font-size: initial;
     }
 }
 
@@ -167,7 +170,7 @@ body {
     }
     .art_stylish_ {
         position: absolute;
-        bottom: -6px;
+        bottom: -7px;
         left: 0;
         right: 0;
         z-index: 0;
@@ -243,6 +246,7 @@ body {
             height: auto;
             padding: 5px;
             margin: 0 0 10px;
+            min-height: 35px;
         }
         @include laptop {
             width: -webkit-max-content;
@@ -481,12 +485,28 @@ body {
         padding: 0;
         margin-top: 4pc;
         @include mobile {
-            min-height: 34.9vh;
+            min-height: 30.9pc;
             margin-top: 3.59pc;
+            .art_stylish {
+                filter: none;
+                -webkit-filter: none;
+            }
+        }
+        @include tablet {
+            min-height: 30.9pc;
+            margin-top: 3.99pc;
+            .art_stylish {
+                filter: none;
+                -webkit-filter: none;
+            }
         }
         @include laptop {
             min-height: 75vh;
             margin-top: 4pc;
+            .art_stylish {
+                -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+                filter: drop-shadow(0 -2px 1px #e8f2fb);
+            }
         }
         .art-slides_co {
             @include flex();
@@ -512,12 +532,43 @@ body {
                     -webkit-backdrop-filter: blur(5px);
                     backdrop-filter: blur(5px);
                     padding: 17px 15px;
+                    padding-left: 15px;
                     color: aliceblue;
                     top: 0;
                     bottom: 0;
                     -webkit-box-pack: center;
                     -ms-flex-pack: center;
                     justify-content: center;
+                }
+                @include tablet {
+                    position: initial;
+                    width: 100%;
+                    background: rgba(31, 64, 41, 0);
+                    -webkit-backdrop-filter: none;
+                    backdrop-filter: none;
+                    padding: 17px 15px;
+                    padding-left: 35px;
+                    color: inherit;
+                    top: initial;
+                    bottom: initial;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                    justify-content: flex-start;
+                }
+                @include laptop {
+                    position: initial;
+                    width: 60%;
+                    background: rgba(31, 64, 41, 0);
+                    -webkit-backdrop-filter: none;
+                    backdrop-filter: none;
+                    padding: 17px 15px;
+                    padding-left: 15px;
+                    color: inherit;
+                    top: initial;
+                    bottom: initial;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                    justify-content: flex-start;
                 }
                 .art_head_title {
                     width: 100%;
@@ -538,6 +589,10 @@ body {
                         width: 100%;
                         padding: 0 20px;
                     }
+                    @include tablet {
+                        width: 100%;
+                        padding: 5px 0 0 22px;
+                    }
                     @include laptop {
                         width: 45%;
                         padding: 5px 0 0 75px;
@@ -553,16 +608,22 @@ body {
                 }
             }
             .art_slider_img {
-                width: 30%;
                 @include flex();
+                width: 30%;
                 height: 77%;
                 @include mobile {
                     width: 100%;
                     height: 95%;
                 }
+                @include tablet {
+                    width: 100%;
+                    height: 80%;
+                }
                 @include laptop {
-                    max-width: 0;
-                    max-height: 0;
+                    // max-width: 0;
+                    // max-height: 0;
+                    width: 30%;
+                    height: 77%;
                 }
                 img {
                     width: 100%;
@@ -657,12 +718,28 @@ body {
                 min-height: auto;
                 @include box_shad(0 0px 0px 1px #d8e1ea);
             }
+            @include tablet {
+                width: 61%;
+                margin: 0 10px 10px 0;
+                min-height: 22vh;
+                @include flex_bs(1);
+                @include box_shad(0px 0px 0px 1px #d8e1ea);
+                &:last-of-type {
+                    -ms-flex-preferred-size: 100%;
+                    flex-basis: 100%;
+                }
+            }
             @include laptop {
                 width: 20%;
                 margin: 0 30px 0 0;
                 min-height: 29vh;
+                @include flex_bs(initial);
                 @include box_shad((-6px -10px 0px 1px #d8e1ea,
                 9px 9px 0px 1px #d8e1ea));
+                &:last-of-type {
+                    -ms-flex-preferred-size: initial;
+                    flex-basis: initial;
+                }
             }
             .art_card_header {
                 width: 100%;
@@ -751,7 +828,7 @@ body {
             #335d3d -12%,
             #2e353b 70%);
             @include mobile {
-                min-height: (64vh - 14vh);
+                min-height: 36pc;
             }
             @include laptop {
                 min-height: (50vh + 14vh);
@@ -777,6 +854,7 @@ body {
                     color: #d8e1ea;
                     font-size: 0.8rem;
                     font-weight: 600;
+                    text-align: center;
                 }
                 h4.art_title {
                     color: #24C347;
@@ -806,8 +884,8 @@ body {
                         box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.2);
                         margin: 15px 8px;
                         @include mobile {
-                            width: 120px;
-                            height: 120px;
+                            width: (120px + 30px);
+                            height: (120px + 30px);
                             padding: (10px - 7px);
                         }
                         @include laptop {
@@ -891,6 +969,10 @@ body {
                     width: 100%;
                     height: 215px;
                 }
+                @include tablet {
+                    width: 50%;
+                    height: 387px;
+                }
                 @include laptop {
                     width: 50%;
                     height: 538px;
@@ -958,7 +1040,10 @@ body {
             @include section_container();
             background: transparent;
             @include mobile {
-                min-height: 55vh;
+                min-height: (40pc + 5pc);
+            }
+            @include tablet {
+                min-height: (40pc - 8pc);
             }
             @include laptop {
                 min-height: 65vh;
@@ -988,7 +1073,7 @@ body {
             color: #ffffff;
             overflow: visible;
             @include mobile {
-                min-height: 26vh;
+                min-height: 15pc;
             }
             @include laptop {
                 min-height: 45vh;
@@ -998,7 +1083,11 @@ body {
                 margin: 0 3%;
                 margin-left: 0;
                 @include mobile {
-                    @include flex_bs(none);
+                    @include flex_bs(initial);
+                    width: 100%;
+                }
+                @include tablet {
+                    @include flex_bs(initial);
                     width: 100%;
                 }
                 @include laptop {
@@ -1021,6 +1110,10 @@ body {
                     @include mobile {
                         width: 100%;
                         margin: 0;
+                    }
+                    @include tablet {
+                        width: 100%;
+                        margin: 0 0 10px 0;
                     }
                     @include laptop {
                         width: calc(80% - 5%);
@@ -1050,11 +1143,23 @@ body {
                     0,
                     0.031));
                 }
+                @include tablet {
+                    width: 100%;
+                    height: auto;
+                    max-width: initial;
+                    max-height: initial;
+                    background: rgba(60, 80, 69, 0);
+                    @include flex_bs(none);
+                    @include box_shad(-1px 1px 20px rgba(0,
+                    0,
+                    0,
+                    0.031));
+                }
                 @include laptop {
                     height: auto;
                     max-width: initial;
                     max-height: initial;
-                    background: #3c5045;
+                    background: rgba(60, 80, 69, 0);
                     @include flex_bs(none);
                     @include box_shad(-1px 1px 20px rgba(0,
                     0,
@@ -1109,7 +1214,7 @@ body {
             }
             @include mobile {
                 margin: 27% auto 0;
-                min-height: 45vh;
+                min-height: 31pc;
                 padding: 0 7% 30%;
                 &::after {
                     width: 100%;
@@ -1119,11 +1224,28 @@ body {
                     background-size: contain;
                 }
                 &::before {
+                    width: 28%;
+                    height: 25%;
+                    top: -30px;
+                    // background-size: contain;
+                }
+            }
+            @include tablet {
+                margin: 15% auto 0;
+                min-height: 35pc;
+                padding: 0 7% 13%;
+                &::after {
                     width: 100%;
                     width: 40%;
-                    height: 20%;
-                    top: -45px;
+                    height: 27%;
+                    bottom: 66px;
                     background-size: contain;
+                }
+                &::before {
+                    width: 28%;
+                    height: 30%;
+                    top: -30px;
+                    // background-size: contain;
                 }
             }
             @include laptop {
@@ -1182,9 +1304,15 @@ body {
                     @include box_shad((-5px -10px 0px 0px #d8e1ea,
                     5px 10px 0px 0px #d8e1ea));
                     @include mobile {
-                        width: 119px;
-                        height: 119px;
-                        margin: 13px auto;
+                        width: (119px + 11px);
+                        height: (119px - 18px);
+                        margin: 3% auto;
+                        @include box_shad(0px 0px 0px 1px #d8e1ea);
+                    }
+                    @include tablet {
+                        width: 35%;
+                        height: 139px;
+                        margin: 10px 10px;
                         @include box_shad(0px 0px 0px 1px #d8e1ea);
                     }
                     @include laptop {
@@ -1195,8 +1323,6 @@ body {
                         5px 10px 0px 0px #d8e1ea));
                     }
                     &:hover {
-                        // -webkit-box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
-                        // box-shadow: 0px 1px 2px rgba(216, 225, 234, 0.404), -10px -5px 16px rgba(216, 225, 234, 0.24);
                         @include box_shad((-4px -4px 0px 0px #d8e1ea,
                         5px 10px 0px 0px #d8e1ea));
                         transform: matrix(1, 0.1, 0, 1, 3, 9);
@@ -1204,6 +1330,21 @@ body {
                         -moz-transform: matrix(1, 0.1, 0, 1, 3, 9);
                         -ms-transform: matrix(1, 0.1, 0, 1, 3, 9);
                         -o-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                        @include mobile {
+                            @include box_shad(none);
+                            -webkit-transform: none;
+                            -ms-transform: none;
+                            transform: none;
+                        }
+                        @include laptop {
+                            @include box_shad((-4px -4px 0px 0px #d8e1ea,
+                            5px 10px 0px 0px #d8e1ea));
+                            transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -webkit-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -moz-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -ms-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -o-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                        }
                     }
                     .art_our_services_card_header {
                         width: 100%;
@@ -1252,6 +1393,18 @@ body {
                         padding: 0;
                         -ms-flex-item-align: end;
                         align-self: flex-end;
+                        @include mobile {
+                            max-width: 0;
+                            max-height: 0;
+                            position: relative;
+                            overflow: hidden;
+                        }
+                        @include laptop {
+                            max-width: initial;
+                            max-height: initial;
+                            position: initial;
+                            overflow: initial;
+                        }
                         .art_icon_btn {
                             border: 0;
                             background: none;
@@ -1277,8 +1430,15 @@ body {
                     padding: 4pc 0 0;
                     @include mobile {
                         padding: 0 0;
+                        min-height: 45px;
+                    }
+                    @include tablet {
+                        width: 65%;
+                        min-height: 55px;
                     }
                     @include laptop {
+                        width: 100%;
+                        min-height: 45px;
                         padding: 4pc 0 0;
                     }
                     .art_gree_btn {
@@ -1295,6 +1455,14 @@ body {
             .art_stylish {
                 @include stylish_box_shad();
             }
+            .art_stylish_ {
+                svg {
+                    @include mobile {
+                        -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+                        filter: drop-shadow(0 -2px 1px #e8f2fb);
+                    }
+                }
+            }
         }
         .art_our_products {
             width: 100%;
@@ -1305,6 +1473,15 @@ body {
             margin: auto;
             position: relative;
             @include flex_dir(column);
+            @include mobile {
+                padding: 0px 7% 3pc;
+            }
+            @include tablet {
+                padding: 0px 7% 7pc;
+            }
+            @include laptop {
+                padding: 0px 7% 20pc;
+            }
             .art_our_products_desc {
                 width: 100%;
                 @include flex();
@@ -1327,15 +1504,24 @@ body {
                     color: inherit;
                     cursor: pointer;
                     margin: 0 10px 10px;
-                    // -webkit-box-shadow: 0 0 6px rgba(130, 152, 173, 0.42);
-                    // box-shadow: 0 0 6px rgba(130, 152, 173, 0.42);
-                    // border-radius: 1em;
+                    @include mobile {
+                        width: 42%;
+                        padding: 5px;
+                        border: 1px solid #f4f9fd;
+                        @include bod_radius(5px);
+                    }
+                    @include laptop {
+                        width: 22%;
+                        padding: 10px;
+                        border: none;
+                        @include bod_radius(0);
+                    }
                     .art_product_card {
                         @include flex();
                         width: 100%;
                         max-height: 398px;
                         border: solid 1px #d8e1ea;
-                        border-radius: 15px;
+                        @include bod_radius(15px);
                         position: relative;
                         overflow: hidden;
                         -webkit-transition: 0.3s linear;
@@ -1343,6 +1529,14 @@ body {
                         transition: 0.3s linear;
                         -moz-transition: 0.3s linear;
                         -ms-transition: 0.3s linear;
+                        @include mobile {
+                            border: none;
+                            @include bod_radius(0);
+                        }
+                        @include laptop {
+                            border: solid 1px #d8e1ea;
+                            @include bod_radius(15px);
+                        }
                         .art_product_img {
                             width: 100%;
                             -webkit-transition: 0.3s linear;
@@ -1396,6 +1590,13 @@ body {
                             border-color: transparent;
                             @include box_shad((0px 1px 2px rgba(216, 225, 234, 0.4),
                             -10px -5px 16px rgba(216, 225, 234, 0.239)));
+                            @include mobile {
+                                @include box_shad(none);
+                            }
+                            @include laptop {
+                                @include box_shad((0px 1px 2px rgba(216, 225, 234, 0.4),
+                                -10px -5px 16px rgba(216, 225, 234, 0.239)));
+                            }
                             .art_product_img {
                                 transform: scale(1.1);
                                 -webkit-transform: scale(1.1);
@@ -1414,8 +1615,27 @@ body {
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
                 justify-content: center;
+                @include mobile {
+                    padding: 0;
+                    min-height: 45px;
+                }
+                @include tablet {
+                    width: 65%;
+                    min-height: 55px;
+                }
+                @include laptop {
+                    width: 100%;
+                    min-height: 45px;
+                    padding: 35px 0px 4pc;
+                }
                 .art_gree_btn {
                     padding: 0 100px;
+                    @include mobile {
+                        padding: 5px;
+                    }
+                    @include laptop {
+                        padding: 0 100px;
+                    }
                 }
             }
             .art_stylish {
@@ -1424,6 +1644,18 @@ body {
                 transform: matrix(1, 0, 0, -1, 0, 0);
                 @include stylish_box_shad();
                 height: 18%;
+                @include mobile {
+                    height: 50px;
+                    bottom: 0;
+                }
+                @include tablet {
+                    height: 70px;
+                    bottom: 0;
+                }
+                @include laptop {
+                    height: 18%;
+                    bottom: -2px;
+                }
             }
         }
         .art_our_community {
@@ -1432,6 +1664,15 @@ body {
             margin: auto;
             position: relative;
             padding: 0px 7%;
+            @include mobile {
+                min-height: (49pc + 9pc);
+            }
+            @include tablet {
+                min-height: (49pc - 6pc);
+            }
+            @include laptop {
+                min-height: 65vh;
+            }
             .art_md_half_container {
                 .art_md_half {
                     &.art_half_img {
@@ -1448,6 +1689,24 @@ body {
                     padding: 20px 0;
                     .art_community_card {
                         @include art_community_card();
+                        @include mobile {
+                            width: 40%;
+                            margin: 0 15px;
+                            margin-top: 15px;
+                        }
+                        @include laptop {
+                            width: 25%;
+                            margin: initial;
+                            margin-right: 25px
+                        }
+                    }
+                }
+            }
+            .art_stylish_ {
+                svg {
+                    @include mobile {
+                        -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+                        filter: drop-shadow(0 -2px 1px #e8f2fb);
                     }
                 }
             }
@@ -1476,10 +1735,22 @@ body {
                     -webkit-box-pack: center;
                     -ms-flex-pack: center;
                     justify-content: center;
+                    @include mobile {
+                        width: 100%;
+                    }
+                    @include laptop {
+                        width: 50%;
+                    }
                 }
                 .art_our_news_desc_text {
                     text-align: center;
                     width: 25%;
+                    @include mobile {
+                        width: 100%;
+                    }
+                    @include laptop {
+                        width: 25%;
+                    }
                 }
             }
             .art_our_news_cards {
@@ -1489,6 +1760,12 @@ body {
                 align-items: center;
                 width: 65%;
                 margin: auto;
+                @include mobile {
+                    width: 100%;
+                }
+                @include laptop {
+                    width: 65%;
+                }
                 .slick-list {
                     padding-top: 50px !important;
                     padding-bottom: 50px !important;
@@ -1596,9 +1873,19 @@ body {
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
                 justify-content: center;
+                @include mobile {
+                    padding: 0;
+                    min-height: 45px;
+                }
+                @include laptop {
+                    padding: 35px 0px 4pc;
+                }
             }
             .art_updates {
                 min-height: 64vh;
+                @include mobile {
+                    min-height: 30vh;
+                }
                 .art_updates_tabs {
                     width: 100%;
                     @include flex();
@@ -1609,7 +1896,7 @@ body {
                     align-items: center;
                     margin-top: 20px;
                     .tabs {
-                        width: 60%;
+                        width: 66%;
                         background: rgba(247, 249, 249, 0.478);
                         @include flex();
                         -webkit-box-pack: justify;
@@ -1617,11 +1904,22 @@ body {
                         justify-content: space-between;
                         -webkit-box-shadow: 0 1px 1px #d8e1ea;
                         box-shadow: 0 1px 1px #d8e1ea;
+                        @include mobile {
+                            width: 100%;
+                        }
+                        @include laptop {
+                            width: 66%;
+                        }
                         .indicator {
                             background-color: #1bc140;
                         }
                         .tab {
                             // position: relative;
+                            &.col {
+                                &.s3 {
+                                    width: auto;
+                                }
+                            }
                             a {
                                 color: #23c447;
                                 position: relative;
@@ -1679,10 +1977,13 @@ body {
                     background: aliceblue;
                     position: relative;
                     overflow: hidden;
+                    @include mobile {
+                        min-height: (22vh + 8vh);
+                    }
+                    @include laptop {
+                        min-height: 45vh;
+                    }
                     .art_cover_img {
-                        // display: -webkit-box;
-                        // display: -ms-flexbox;
-                        // display: flex;
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -1699,6 +2000,10 @@ body {
                         .art_updates_cover {
                             min-width: 100%;
                             min-height: 560px;
+                            @include mobile {
+                                width: 100%;
+                                min-height: 100%;
+                            }
                         }
                     }
                     .art_updates_cards_co {
@@ -1711,6 +2016,12 @@ body {
                         justify-content: flex-end;
                         padding: 45px 150px;
                         margin-top: 3pc;
+                        @include mobile {
+                            padding: 0 20px;
+                        }
+                        @include laptop {
+                            padding: 45px 150px;
+                        }
                         &.art_right {
                             -webkit-box-pack: end;
                             -ms-flex-pack: end;
@@ -1728,6 +2039,19 @@ body {
                             border-radius: 1em;
                             -webkit-box-shadow: 0 0 20px 9px rgba(121, 125, 130, 0.451);
                             box-shadow: 0 0 20px 9px rgba(121, 125, 130, 0.451);
+                            @include mobile {
+                                width: 100%;
+                                padding: 10px;
+                            }
+                            @include tablet {
+                                width: 75%;
+                                padding: 18px;
+                                margin: auto;
+                            }
+                            @include laptop {
+                                width: (45% - 12%);
+                                padding: 5px calc(20px + 10px);
+                            }
                             .art_update_card_body {
                                 max-height: 350px;
                                 position: relative;
@@ -1769,12 +2093,22 @@ body {
                     width: 100%;
                     margin: 2pc auto;
                     @include flex();
+                    @include flex_wrp(wrap);
                     @include flex_jus_content(space-around);
                     padding: 0px 0;
                     position: relative;
                     overflow: hidden;
                     @include bod_radius(0);
                     max-height: 560px;
+                    @include mobile {
+                        max-height: 560px;
+                    }
+                    @include tablet {
+                        max-height: 675px;
+                    }
+                    @include laptop {
+                        max-height: 560px;
+                    }
                     @mixin left_right_card($order,
                     $flex: 1) {
                         @include flex_bs($flex);
@@ -1801,11 +2135,33 @@ body {
                             @else {
                                 padding-right: 0px;
                             }
+                            @include mobile {
+                                padding: 10px;
+                                width: 100%;
+                            }
+                            @include laptop {
+                                width: (90% - 15%);
+                                padding: 20px;
+                            }
                             .art_left_right_content_title {
                                 width: 80%;
+                                @include mobile {
+                                    width: 100%;
+                                    text-align: center;
+                                }
+                                @include laptop {
+                                    width: 80%;
+                                    text-align: left;
+                                }
                             }
                             .art_left_right_content_desc {
                                 width: 85%;
+                                @include mobile {
+                                    width: 100%;
+                                }
+                                @include laptop {
+                                    width: 85%;
+                                }
                             }
                             .art_left_right_content_foot {
                                 @include flex();
@@ -1815,14 +2171,36 @@ body {
                                     @include flex();
                                     @include flex_jus_content(space-around);
                                     width: (100% - 15%);
+                                    @include mobile {
+                                        width: 100%;
+                                    }
+                                    @include laptop {
+                                        width: (100% - 15%);
+                                    }
                                     .art_left_right_content_foot_card {
                                         @include art_community_card();
+                                        @include mobile {
+                                            width: 50%;
+                                            -webkit-box-flex: 0;
+                                            -ms-flex: none;
+                                            flex: none;
+                                            margin: 0 5px;
+                                        }
+                                        @include laptop {
+                                            @include art_community_card();
+                                        }
                                     }
                                 }
                                 .art_left_right_content_foot_search_co {
                                     width: (100% - 15%);
                                     @include flex();
                                     @include flex_al_itmes(center);
+                                    @include mobile {
+                                        width: 100%;
+                                    }
+                                    @include laptop {
+                                        width: (100% - 15%);
+                                    }
                                 }
                             }
                         }
@@ -1835,16 +2213,44 @@ body {
                                 width: 100%;
                                 height: 100%;
                             }
+                            @include mobile {
+                                width: 100%;
+                                @include left_right_card(1,
+                                initial);
+                            }
+                            @include laptop {
+                                width: initial;
+                                @include left_right_card(2,
+                                1);
+                            }
                         }
                         .art_left_right_content_card {
                             @include left_right_card(1,
                             1);
+                            @include mobile {
+                                width: 100%;
+                                @include left_right_card(2,
+                                initial);
+                            }
+                            @include laptop {
+                                width: initial;
+                                @include left_right_card(1,
+                                1);
+                            }
                         }
                     }
                     &.art_left {
                         .art_left_right_img_card {
                             @include left_right_card(1,
                             1);
+                            @include mobile {
+                                width: 100%;
+                                @include flex_bs(initial);
+                            }
+                            @include laptop {
+                                @include left_right_card(1,
+                                1);
+                            }
                             .left_right_img {
                                 width: 100%;
                                 height: 100%;
@@ -1853,6 +2259,14 @@ body {
                         .art_left_right_content_card {
                             @include left_right_card(2,
                             1);
+                            @include mobile {
+                                width: 100%;
+                                @include flex_bs(initial);
+                            }
+                            @include laptop {
+                                @include left_right_card(2,
+                                1);
+                            }
                         }
                     }
                 }
@@ -1866,6 +2280,14 @@ body {
                 margin: 0 auto;
                 z-index: 1;
                 position: relative;
+                @include mobile {
+                    width: 100%;
+                    min-height: 24vh;
+                }
+                @include laptop {
+                    width: 60%;
+                    min-height: 8vh;
+                }
                 .art_subscribe_co {
                     width: 100%;
                     .art_subscribe_header {
@@ -1875,6 +2297,12 @@ body {
                         .art_subscribe_desc {
                             width: 50%;
                             text-align: center;
+                            @include mobile {
+                                width: 100%;
+                            }
+                            @include laptop {
+                                width: 50%;
+                            }
                         }
                     }
                 }
@@ -1895,7 +2323,7 @@ body {
             @include flex();
             @include flex_wrp(wrap);
             width: 100%;
-            padding: 0 7%;
+            padding: 0 7% 15px;
             .art_footer_impo_links_cards {
                 @include flex();
                 @include flex_wrp(wrap);
@@ -1906,6 +2334,21 @@ body {
                     @include flex_bs(1);
                     padding: 0 10px;
                     margin: 0 0;
+                    @include mobile {
+                        @include flex_bs(initial);
+                        width: 100%;
+                    }
+                    @include tablet {
+                        @include flex_bs(initial);
+                        width: 50%;
+                        &:last-child {
+                            width: 100%;
+                        }
+                    }
+                    @include laptop {
+                        @include flex_bs(1);
+                        width: auto;
+                    }
                 }
                 .art_footer_connect {
                     @include flex();
@@ -1913,11 +2356,44 @@ body {
                     @include flex_jus_content(space-around);
                     width: 100%;
                     min-height: 60%;
+                    @include mobile {
+                        width: 100%;
+                        margin: initial;
+                    }
+                    @include tablet {
+                        width: 75%;
+                        margin: auto;
+                    }
+                    @include laptop {
+                        width: 100%;
+                        margin: initial;
+                    }
                     .art-foot-social {
                         @include flex();
                         width: 100%;
+                        @include mobile {
+                            @include flex_al_itmes(initial);
+                            @include flex_jus_content(initial);
+                        }
+                        @include tablet {
+                            @include flex_al_itmes(center);
+                            @include flex_jus_content(center);
+                        }
+                        @include laptop {
+                            @include flex_al_itmes(initial);
+                            @include flex_jus_content(initial);
+                        }
                         .art-social-icon {
                             width: 15%;
+                            @include mobile {
+                                width: 25%;
+                            }
+                            @include tablet {
+                                width: 15%;
+                            }
+                            @include laptop {
+                                width: 15%;
+                            }
                             img {
                                 width: 100%;
                             }
@@ -1942,9 +2418,34 @@ body {
         }
         .art_footer_co_2 {
             @include flex();
+            @include flex_wrp(wrap);
             @include flex_jus_content(space-between);
             padding: 0 7%;
             background: #0f1113;
+            @include mobile {
+                .art_copyright {
+                    -webkit-box-ordinal-group: 3;
+                    -ms-flex-order: 2;
+                    order: 2;
+                }
+                .art_return_msg {
+                    -webkit-box-ordinal-group: 2;
+                    -ms-flex-order: 1;
+                    order: 1;
+                }
+            }
+            @include laptop {
+                .art_copyright {
+                    -webkit-box-ordinal-group: 2;
+                    -ms-flex-order: 1;
+                    order: 1;
+                }
+                .art_return_msg {
+                    -webkit-box-ordinal-group: 3;
+                    -ms-flex-order: 2;
+                    order: 2;
+                }
+            }
         }
     }
     .art_card_footer_link {
@@ -1999,6 +2500,9 @@ body {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
         padding: 5px 10px;
         color: #24C347;
         text-decoration: none;
@@ -2039,12 +2543,26 @@ body {
         height: 3.5rem;
         border: 1px solid #d8e1ea;
         @include bod_radius(1em);
+        // @include mobile {
+        //     height: 5.5rem;
+        // }
+        // @include laptop {
+        //     height: 3.5rem;
+        // }
         .art_input {
             padding: 0 15px;
             outline: none;
             margin: 0;
             border: 0;
             height: 100%;
+            @include mobile {
+                font-size: 8pt;
+                padding: 0 7px;
+            }
+            @include laptop {
+                font-size: 16px;
+                padding: 0 15px;
+            }
             &:focus,
             &:active {
                 border: 0 !important;
@@ -2059,6 +2577,19 @@ body {
         [type="submit"] {
             margin: 0;
             height: 100%;
+            @include mobile {
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+                min-width: 65px;
+                @include bod_radius(inherit);
+                padding: 0 20px;
+            }
+            @include laptop {
+                width: 100%;
+                min-width: 65px;
+                @include bod_radius(inherit);
+            }
         }
     }
     a {
