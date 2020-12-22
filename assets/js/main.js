@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (top_nav_menu_trigger.length) {
         M.Dropdown.init(top_nav_menu_trigger, {
             hover: true,
+            closeOnClick: !true,
             // outDuration: 4000,
             container: document.querySelector('.art-nav'),
             coverTrigger: false,
