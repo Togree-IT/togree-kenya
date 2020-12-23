@@ -95,14 +95,14 @@ $reverse: false) {
 
 @mixin section_container($w:100%,
 $h:65vh,
-$pd:0 7%,
+$pd:30px 7%,
 $mrg:0 auto,
 $justify:space-around,
 $pos:relative,
 $over:hidden) {
     width: $w;
     min-height: $h;
-    padding: 0 7%;
+    padding: $pd;
     margin: $mrg;
     @include flex();
     @include flex_jus_content($justify);
@@ -141,6 +141,12 @@ html {
         font-size: 8pt;
     }
     @include laptop {
+        font-size: 10pt;
+    }
+    @include laptop_L {
+        font-size: initial;
+    }
+    @include laptop_W {
         font-size: initial;
     }
 }
@@ -189,6 +195,12 @@ body {
             @include laptop {
                 width: 100vw;
             }
+            @include laptop_L {
+                width: 100vw;
+            }
+            @include laptop_W {
+                width: 100vw;
+            }
         }
         &.art_x {
             bottom: -165px;
@@ -218,6 +230,16 @@ body {
             width: -moz-fit-content;
             width: fit-content;
         }
+        @include laptop_L {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
+        @include laptop_W {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
     }
     .art_gree_btn {
         @include flex();
@@ -227,7 +249,7 @@ body {
         width: -webkit-max-content;
         width: -moz-max-content;
         width: max-content;
-        padding: 0 30px;
+        padding: 10px 30px;
         margin: auto 5% 10px 0;
         font-weight: 500;
         background: transparent;
@@ -244,11 +266,27 @@ body {
         @include mobile {
             width: 100%;
             height: auto;
-            padding: 5px;
+            padding: 10px 5px;
             margin: 0 0 10px;
             min-height: 35px;
         }
         @include laptop {
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
+            height: 50px;
+            padding: 0 30px;
+            margin: auto 5% 10px 0;
+        }
+        @include laptop_L {
+            width: -webkit-max-content;
+            width: -moz-max-content;
+            width: max-content;
+            height: 50px;
+            padding: 0 30px;
+            margin: auto 5% 10px 0;
+        }
+        @include laptop_W {
             width: -webkit-max-content;
             width: -moz-max-content;
             width: max-content;
@@ -508,6 +546,22 @@ body {
                 filter: drop-shadow(0 -2px 1px #e8f2fb);
             }
         }
+        @include laptop_L {
+            min-height: 75vh;
+            margin-top: 4pc;
+            .art_stylish {
+                -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+                filter: drop-shadow(0 -2px 1px #e8f2fb);
+            }
+        }
+        @include laptop_W {
+            min-height: 75vh;
+            margin-top: 4pc;
+            .art_stylish {
+                -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+                filter: drop-shadow(0 -2px 1px #e8f2fb);
+            }
+        }
         .art-slides_co {
             @include flex();
             width: 100%;
@@ -570,6 +624,36 @@ body {
                     -ms-flex-pack: start;
                     justify-content: flex-start;
                 }
+                @include laptop_L {
+                    position: initial;
+                    width: 60%;
+                    background: rgba(31, 64, 41, 0);
+                    -webkit-backdrop-filter: none;
+                    backdrop-filter: none;
+                    padding: 17px 15px;
+                    padding-left: 15px;
+                    color: inherit;
+                    top: initial;
+                    bottom: initial;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                    justify-content: flex-start;
+                }
+                @include laptop_W {
+                    position: initial;
+                    width: 60%;
+                    background: rgba(31, 64, 41, 0);
+                    -webkit-backdrop-filter: none;
+                    backdrop-filter: none;
+                    padding: 17px 15px;
+                    padding-left: 15px;
+                    color: inherit;
+                    top: initial;
+                    bottom: initial;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                    justify-content: flex-start;
+                }
                 .art_head_title {
                     width: 100%;
                     margin: 10px auto 0 60px;
@@ -578,6 +662,14 @@ body {
                         text-align: center;
                     }
                     @include laptop {
+                        margin: 10px auto 0 60px;
+                        text-align: left;
+                    }
+                    @include laptop_L {
+                        margin: 10px auto 0 60px;
+                        text-align: left;
+                    }
+                    @include laptop_W {
                         margin: 10px auto 0 60px;
                         text-align: left;
                     }
@@ -594,6 +686,14 @@ body {
                         padding: 5px 0 0 22px;
                     }
                     @include laptop {
+                        width: 45%;
+                        padding: 5px 0 0 75px;
+                    }
+                    @include laptop_L {
+                        width: 45%;
+                        padding: 5px 0 0 75px;
+                    }
+                    @include laptop_W {
                         width: 45%;
                         padding: 5px 0 0 75px;
                     }
@@ -620,8 +720,14 @@ body {
                     height: 80%;
                 }
                 @include laptop {
-                    // max-width: 0;
-                    // max-height: 0;
+                    width: 30%;
+                    height: 77%;
+                }
+                @include laptop_L {
+                    width: 30%;
+                    height: 77%;
+                }
+                @include laptop_W {
                     width: 30%;
                     height: 77%;
                 }
@@ -678,15 +784,37 @@ body {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        padding: 7pc 7%;
+        padding: 7pc 0%;
         @include mobile {
-            padding: 27px 7%;
+            padding: 27px 0%;
         }
         @include laptop {
-            padding: 7pc 7%;
+            padding: 7pc 0%;
+        }
+        @include laptop_L {
+            padding: 7pc 0%;
+        }
+        @include laptop_W {
+            padding: 7pc 0%;
+        }
+        .art_head_bottom_card_co {
+            height: auto;
+            margin: 0 auto;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
         }
         .art_head_bottom_card {
-            width: 20%;
+            width: 30%;
             min-height: 29vh;
             margin: 0 30px 0 0;
             background-color: #ffffff;
@@ -730,8 +858,32 @@ body {
                 }
             }
             @include laptop {
-                width: 20%;
-                margin: 0 30px 0 0;
+                width: 31%;
+                margin: 0 0 30px 0;
+                min-height: 29vh;
+                @include flex_bs(initial);
+                @include box_shad((-6px -10px 0px 1px #d8e1ea,
+                9px 9px 0px 1px #d8e1ea));
+                &:last-of-type {
+                    -ms-flex-preferred-size: initial;
+                    flex-basis: initial;
+                }
+            }
+            @include laptop_L {
+                width: 31%;
+                margin: 0 0 30px 0;
+                min-height: 29vh;
+                @include flex_bs(initial);
+                @include box_shad((-6px -10px 0px 1px #d8e1ea,
+                9px 9px 0px 1px #d8e1ea));
+                &:last-of-type {
+                    -ms-flex-preferred-size: initial;
+                    flex-basis: initial;
+                }
+            }
+            @include laptop_W {
+                width: 31%;
+                margin: 0 0 30px 0;
                 min-height: 29vh;
                 @include flex_bs(initial);
                 @include box_shad((-6px -10px 0px 1px #d8e1ea,
@@ -833,6 +985,12 @@ body {
             @include laptop {
                 min-height: (50vh + 14vh);
             }
+            @include laptop_L {
+                min-height: (50vh + 14vh);
+            }
+            @include laptop_W {
+                min-height: (50vh + 14vh);
+            }
             .art_middle {
                 @include flex();
                 -ms-flex-wrap: wrap;
@@ -889,6 +1047,16 @@ body {
                             padding: (10px - 7px);
                         }
                         @include laptop {
+                            width: 228px;
+                            height: 228px;
+                            padding: ((10px - 7px) + 7px);
+                        }
+                        @include laptop_L {
+                            width: 228px;
+                            height: 228px;
+                            padding: ((10px - 7px) + 7px);
+                        }
+                        @include laptop_W {
                             width: 228px;
                             height: 228px;
                             padding: ((10px - 7px) + 7px);
@@ -977,6 +1145,14 @@ body {
                     width: 50%;
                     height: 538px;
                 }
+                @include laptop_L {
+                    width: 50%;
+                    height: 538px;
+                }
+                @include laptop_W {
+                    width: 50%;
+                    height: 538px;
+                }
                 &.art_half_img {
                     background: url(../img/home/rec-1.png);
                     background-size: auto;
@@ -986,6 +1162,12 @@ body {
                         background-size: contain;
                     }
                     @include laptop {
+                        background-size: auto;
+                    }
+                    @include laptop_L {
+                        background-size: auto;
+                    }
+                    @include laptop_W {
                         background-size: auto;
                     }
                 }
@@ -1009,6 +1191,14 @@ body {
                             padding: 10px 82px 10px 22px;
                             text-align: left;
                         }
+                        @include laptop_L {
+                            padding: 10px 82px 10px 22px;
+                            text-align: left;
+                        }
+                        @include laptop_W {
+                            padding: 10px 82px 10px 22px;
+                            text-align: left;
+                        }
                     }
                     .art_desc {
                         width: 80%;
@@ -1016,6 +1206,12 @@ body {
                             width: 100%;
                         }
                         @include laptop {
+                            width: 80%;
+                        }
+                        @include laptop_L {
+                            width: 80%;
+                        }
+                        @include laptop_W {
                             width: 80%;
                         }
                         p {
@@ -1028,6 +1224,16 @@ body {
                             width: 100%;
                         }
                         @include laptop {
+                            width: -webkit-fit-content;
+                            width: -moz-fit-content;
+                            width: fit-content;
+                        }
+                        @include laptop_L {
+                            width: -webkit-fit-content;
+                            width: -moz-fit-content;
+                            width: fit-content;
+                        }
+                        @include laptop_W {
                             width: -webkit-fit-content;
                             width: -moz-fit-content;
                             width: fit-content;
@@ -1046,7 +1252,13 @@ body {
                 min-height: (40pc - 8pc);
             }
             @include laptop {
-                min-height: 65vh;
+                min-height: 45vh;
+            }
+            @include laptop_L {
+                min-height: 45vh;
+            }
+            @include laptop_W {
+                min-height: 45vh;
             }
             .art_md_half_container {
                 .art_md_half {
@@ -1078,6 +1290,12 @@ body {
             @include laptop {
                 min-height: 45vh;
             }
+            @include laptop_L {
+                min-height: 45vh;
+            }
+            @include laptop_W {
+                min-height: 45vh;
+            }
             .art_we_operate_desc {
                 @include flex_bs(1);
                 margin: 0 3%;
@@ -1091,6 +1309,14 @@ body {
                     width: 100%;
                 }
                 @include laptop {
+                    @include flex_bs(1);
+                    width: auto;
+                }
+                @include laptop_L {
+                    @include flex_bs(1);
+                    width: auto;
+                }
+                @include laptop_W {
                     @include flex_bs(1);
                     width: auto;
                 }
@@ -1116,6 +1342,14 @@ body {
                         margin: 0 0 10px 0;
                     }
                     @include laptop {
+                        width: calc(80% - 5%);
+                        margin: 0 0 0 10px;
+                    }
+                    @include laptop_L {
+                        width: calc(80% - 5%);
+                        margin: 0 0 0 10px;
+                    }
+                    @include laptop_W {
                         width: calc(80% - 5%);
                         margin: 0 0 0 10px;
                     }
@@ -1160,7 +1394,29 @@ body {
                     max-width: initial;
                     max-height: initial;
                     background: rgba(60, 80, 69, 0);
-                    @include flex_bs(none);
+                    @include flex_bs(1);
+                    @include box_shad(-1px 1px 20px rgba(0,
+                    0,
+                    0,
+                    0.031));
+                }
+                @include laptop_L {
+                    height: auto;
+                    max-width: initial;
+                    max-height: initial;
+                    background: rgba(60, 80, 69, 0);
+                    @include flex_bs(1);
+                    @include box_shad(-1px 1px 20px rgba(0,
+                    0,
+                    0,
+                    0.031));
+                }
+                @include laptop_W {
+                    height: auto;
+                    max-width: initial;
+                    max-height: initial;
+                    background: rgba(60, 80, 69, 0);
+                    @include flex_bs(1);
                     @include box_shad(-1px 1px 20px rgba(0,
                     0,
                     0,
@@ -1254,9 +1510,43 @@ body {
                 padding: 0 7% 7%;
                 &::after {
                     width: 20%;
+                    height: 65%;
+                    bottom: calc(70px - 30px);
                 }
                 &::before {
                     width: 20%;
+                    height: 45%;
+                    top: -72px;
+                }
+            }
+            @include laptop_L {
+                margin: 7% auto 0;
+                min-height: 65vh;
+                padding: 0 7% 7%;
+                &::after {
+                    width: 20%;
+                    height: 65%;
+                    bottom: calc(70px - 30px);
+                }
+                &::before {
+                    width: 20%;
+                    height: 45%;
+                    top: -72px;
+                }
+            }
+            @include laptop_W {
+                margin: 7% auto 0;
+                min-height: 65vh;
+                padding: 0 7% 7%;
+                &::after {
+                    width: 20%;
+                    height: 65%;
+                    bottom: calc(70px - 30px);
+                }
+                &::before {
+                    width: 20%;
+                    height: 45%;
+                    top: -72px;
                 }
             }
             .art_our_services_desc {
@@ -1274,6 +1564,12 @@ body {
                     @include laptop {
                         padding: 10px 82px 10px 22px;
                     }
+                    @include laptop_L {
+                        padding: 10px 82px 10px 22px;
+                    }
+                    @include laptop_W {
+                        padding: 10px 82px 10px 22px;
+                    }
                 }
             }
             .art_our_services_cards_container {
@@ -1289,6 +1585,12 @@ body {
                     margin: 0;
                 }
                 @include laptop {
+                    margin: 1pc auto 5pc;
+                }
+                @include laptop_L {
+                    margin: 1pc auto 5pc;
+                }
+                @include laptop_W {
                     margin: 1pc auto 5pc;
                 }
                 .art_our_services_card {
@@ -1322,6 +1624,20 @@ body {
                         @include box_shad((-5px -10px 0px 0px #d8e1ea,
                         5px 10px 0px 0px #d8e1ea));
                     }
+                    @include laptop_L {
+                        width: 15%;
+                        height: 220px;
+                        margin: 0 20px 0 0;
+                        @include box_shad((-5px -10px 0px 0px #d8e1ea,
+                        5px 10px 0px 0px #d8e1ea));
+                    }
+                    @include laptop_W {
+                        width: 15%;
+                        height: 220px;
+                        margin: 0 20px 0 0;
+                        @include box_shad((-5px -10px 0px 0px #d8e1ea,
+                        5px 10px 0px 0px #d8e1ea));
+                    }
                     &:hover {
                         @include box_shad((-4px -4px 0px 0px #d8e1ea,
                         5px 10px 0px 0px #d8e1ea));
@@ -1337,6 +1653,24 @@ body {
                             transform: none;
                         }
                         @include laptop {
+                            @include box_shad((-4px -4px 0px 0px #d8e1ea,
+                            5px 10px 0px 0px #d8e1ea));
+                            transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -webkit-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -moz-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -ms-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -o-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                        }
+                        @include laptop_L {
+                            @include box_shad((-4px -4px 0px 0px #d8e1ea,
+                            5px 10px 0px 0px #d8e1ea));
+                            transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -webkit-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -moz-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -ms-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                            -o-transform: matrix(1, 0.1, 0, 1, 3, 9);
+                        }
+                        @include laptop_W {
                             @include box_shad((-4px -4px 0px 0px #d8e1ea,
                             5px 10px 0px 0px #d8e1ea));
                             transform: matrix(1, 0.1, 0, 1, 3, 9);
@@ -1366,6 +1700,12 @@ body {
                         @include laptop {
                             height: 75%;
                         }
+                        @include laptop_L {
+                            height: 75%;
+                        }
+                        @include laptop_W {
+                            height: 75%;
+                        }
                         .art_our_services_card_header_title {
                             font-size: 1.28rem;
                             width: 100%;
@@ -1380,6 +1720,12 @@ body {
                                 width: 37%;
                             }
                             @include laptop {
+                                width: 27%;
+                            }
+                            @include laptop_L {
+                                width: 27%;
+                            }
+                            @include laptop_W {
                                 width: 27%;
                             }
                         }
@@ -1400,6 +1746,18 @@ body {
                             overflow: hidden;
                         }
                         @include laptop {
+                            max-width: initial;
+                            max-height: initial;
+                            position: initial;
+                            overflow: initial;
+                        }
+                        @include laptop_L {
+                            max-width: initial;
+                            max-height: initial;
+                            position: initial;
+                            overflow: initial;
+                        }
+                        @include laptop_W {
                             max-width: initial;
                             max-height: initial;
                             position: initial;
@@ -1441,12 +1799,28 @@ body {
                         min-height: 45px;
                         padding: 4pc 0 0;
                     }
+                    @include laptop_L {
+                        width: 100%;
+                        min-height: 45px;
+                        padding: 4pc 0 0;
+                    }
+                    @include laptop_W {
+                        width: 100%;
+                        min-height: 45px;
+                        padding: 4pc 0 0;
+                    }
                     .art_gree_btn {
                         padding: 0 100px;
                         @include mobile {
-                            padding: 5px;
+                            padding: 10px 5px;
                         }
                         @include laptop {
+                            padding: 0 100px;
+                        }
+                        @include laptop_L {
+                            padding: 0 100px;
+                        }
+                        @include laptop_W {
                             padding: 0 100px;
                         }
                     }
@@ -1474,12 +1848,18 @@ body {
             position: relative;
             @include flex_dir(column);
             @include mobile {
-                padding: 0px 7% 3pc;
+                padding: 0px 0% 5pc;
             }
             @include tablet {
                 padding: 0px 7% 7pc;
             }
             @include laptop {
+                padding: 0px 7% 20pc;
+            }
+            @include laptop_L {
+                padding: 0px 7% 20pc;
+            }
+            @include laptop_W {
                 padding: 0px 7% 20pc;
             }
             .art_our_products_desc {
@@ -1516,6 +1896,18 @@ body {
                         border: none;
                         @include bod_radius(0);
                     }
+                    @include laptop_L {
+                        width: 22%;
+                        padding: 10px;
+                        border: none;
+                        @include bod_radius(0);
+                    }
+                    @include laptop_W {
+                        width: 22%;
+                        padding: 10px;
+                        border: none;
+                        @include bod_radius(0);
+                    }
                     .art_product_card {
                         @include flex();
                         width: 100%;
@@ -1534,6 +1926,14 @@ body {
                             @include bod_radius(0);
                         }
                         @include laptop {
+                            border: solid 1px #d8e1ea;
+                            @include bod_radius(15px);
+                        }
+                        @include laptop_L {
+                            border: solid 1px #d8e1ea;
+                            @include bod_radius(15px);
+                        }
+                        @include laptop_W {
                             border: solid 1px #d8e1ea;
                             @include bod_radius(15px);
                         }
@@ -1587,15 +1987,20 @@ body {
                     }
                     &:hover {
                         .art_product_card {
-                            border-color: transparent;
-                            @include box_shad((0px 1px 2px rgba(216, 225, 234, 0.4),
-                            -10px -5px 16px rgba(216, 225, 234, 0.239)));
+                            border-color: rgba(216, 225, 234, 0.185);
+                            // @include box_shad((0px 1px 2px rgba(216, 225, 234, 0.4),
+                            // -10px -5px 16px rgba(216, 225, 234, 0.239)));
                             @include mobile {
                                 @include box_shad(none);
                             }
                             @include laptop {
-                                @include box_shad((0px 1px 2px rgba(216, 225, 234, 0.4),
-                                -10px -5px 16px rgba(216, 225, 234, 0.239)));
+                                @include box_shad(none);
+                            }
+                            @include laptop_L {
+                                @include box_shad(none);
+                            }
+                            @include laptop_W {
+                                @include box_shad(none);
                             }
                             .art_product_img {
                                 transform: scale(1.1);
@@ -1628,12 +2033,28 @@ body {
                     min-height: 45px;
                     padding: 35px 0px 4pc;
                 }
+                @include laptop_L {
+                    width: 100%;
+                    min-height: 45px;
+                    padding: 35px 0px 4pc;
+                }
+                @include laptop_W {
+                    width: 100%;
+                    min-height: 45px;
+                    padding: 35px 0px 4pc;
+                }
                 .art_gree_btn {
                     padding: 0 100px;
                     @include mobile {
-                        padding: 5px;
+                        padding: 10px 5px;
                     }
                     @include laptop {
+                        padding: 0 100px;
+                    }
+                    @include laptop_L {
+                        padding: 0 100px;
+                    }
+                    @include laptop_W {
                         padding: 0 100px;
                     }
                 }
@@ -1656,6 +2077,14 @@ body {
                     height: 18%;
                     bottom: -2px;
                 }
+                @include laptop_L {
+                    height: 18%;
+                    bottom: -2px;
+                }
+                @include laptop_W {
+                    height: 18%;
+                    bottom: -2px;
+                }
             }
         }
         .art_our_community {
@@ -1671,6 +2100,12 @@ body {
                 min-height: (49pc - 6pc);
             }
             @include laptop {
+                min-height: 65vh;
+            }
+            @include laptop_L {
+                min-height: 65vh;
+            }
+            @include laptop_W {
                 min-height: 65vh;
             }
             .art_md_half_container {
@@ -1699,10 +2134,21 @@ body {
                             margin: initial;
                             margin-right: 25px
                         }
+                        @include laptop_L {
+                            width: 25%;
+                            margin: initial;
+                            margin-right: 25px
+                        }
+                        @include laptop_W {
+                            width: 25%;
+                            margin: initial;
+                            margin-right: 25px
+                        }
                     }
                 }
             }
             .art_stylish_ {
+                fill: #fcfeff;
                 svg {
                     @include mobile {
                         -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -1716,7 +2162,8 @@ body {
             min-height: calc(65vh + (10vh + 13vh));
             margin: auto;
             position: relative;
-            padding: 0px 7% 10%;
+            padding: 0px 0% 10%;
+            background: #fcfeff;
             .art_our_news_desc {
                 @include flex();
                 -webkit-box-orient: vertical;
@@ -1726,8 +2173,9 @@ body {
                 -webkit-box-align: center;
                 -ms-flex-align: center;
                 align-items: center;
+                text-align: center;
                 .art_our_news_desc_title {
-                    width: 50%;
+                    width: 55%;
                     @include flex();
                     -webkit-box-align: center;
                     -ms-flex-align: center;
@@ -1739,17 +2187,29 @@ body {
                         width: 100%;
                     }
                     @include laptop {
-                        width: 50%;
+                        width: 55%;
+                    }
+                    @include laptop_L {
+                        width: 55%;
+                    }
+                    @include laptop_W {
+                        width: 55%;
                     }
                 }
                 .art_our_news_desc_text {
                     text-align: center;
-                    width: 25%;
+                    width: 50%;
                     @include mobile {
                         width: 100%;
                     }
                     @include laptop {
-                        width: 25%;
+                        width: 50%;
+                    }
+                    @include laptop_L {
+                        width: 50%;
+                    }
+                    @include laptop_W {
+                        width: 50%;
                     }
                 }
             }
@@ -1764,7 +2224,13 @@ body {
                     width: 100%;
                 }
                 @include laptop {
-                    width: 65%;
+                    width: 100%;
+                }
+                @include laptop_L {
+                    width: 100%;
+                }
+                @include laptop_W {
+                    width: 100%;
                 }
                 .slick-list {
                     padding-top: 50px !important;
@@ -1868,7 +2334,7 @@ body {
             }
             .art_news_view_more_co {
                 width: 100%;
-                padding: 35px 0px 4pc;
+                padding: 35px 0px;
                 @include flex();
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
@@ -1878,7 +2344,13 @@ body {
                     min-height: 45px;
                 }
                 @include laptop {
-                    padding: 35px 0px 4pc;
+                    padding: 35px 0px;
+                }
+                @include laptop_L {
+                    padding: 35px 0px;
+                }
+                @include laptop_W {
+                    padding: 35px 0px;
                 }
             }
             .art_updates {
@@ -1896,7 +2368,7 @@ body {
                     align-items: center;
                     margin-top: 20px;
                     .tabs {
-                        width: 66%;
+                        width: 80%;
                         background: rgba(247, 249, 249, 0.478);
                         @include flex();
                         -webkit-box-pack: justify;
@@ -1908,7 +2380,13 @@ body {
                             width: 100%;
                         }
                         @include laptop {
-                            width: 66%;
+                            width: 80%;
+                        }
+                        @include laptop_L {
+                            width: 80%;
+                        }
+                        @include laptop_W {
+                            width: 80%;
                         }
                         .indicator {
                             background-color: #1bc140;
@@ -1983,6 +2461,12 @@ body {
                     @include laptop {
                         min-height: 45vh;
                     }
+                    @include laptop_L {
+                        min-height: 45vh;
+                    }
+                    @include laptop_W {
+                        min-height: 45vh;
+                    }
                     .art_cover_img {
                         position: absolute;
                         top: 0;
@@ -2022,6 +2506,12 @@ body {
                         @include laptop {
                             padding: 45px 150px;
                         }
+                        @include laptop_L {
+                            padding: 45px 150px;
+                        }
+                        @include laptop_W {
+                            padding: 45px 150px;
+                        }
                         &.art_right {
                             -webkit-box-pack: end;
                             -ms-flex-pack: end;
@@ -2049,8 +2539,19 @@ body {
                                 margin: auto;
                             }
                             @include laptop {
-                                width: (45% - 12%);
+                                width: (45% + 6%);
                                 padding: 5px calc(20px + 10px);
+                                margin: auto 0;
+                            }
+                            @include laptop_L {
+                                width: (45% + 6%);
+                                padding: 5px calc(20px + 10px);
+                                margin: auto 0;
+                            }
+                            @include laptop_W {
+                                width: (45% + 6%);
+                                padding: 5px calc(20px + 10px);
+                                margin: auto 0;
                             }
                             .art_update_card_body {
                                 max-height: 350px;
@@ -2109,6 +2610,12 @@ body {
                     @include laptop {
                         max-height: 560px;
                     }
+                    @include laptop_L {
+                        max-height: 560px;
+                    }
+                    @include laptop_W {
+                        max-height: 560px;
+                    }
                     @mixin left_right_card($order,
                     $flex: 1) {
                         @include flex_bs($flex);
@@ -2127,7 +2634,7 @@ body {
                         @include bod_radius(24px);
                         overflow: hidden;
                         .art_left_right_content {
-                            width: (90% - 15%);
+                            width: (90% + 5%);
                             padding: 20px;
                             @if $order==1 {
                                 padding-left: 0px;
@@ -2140,27 +2647,49 @@ body {
                                 width: 100%;
                             }
                             @include laptop {
-                                width: (90% - 15%);
+                                width: (90% + 5%);
+                                padding: 20px;
+                            }
+                            @include laptop_L {
+                                width: (90% + 5%);
+                                padding: 20px;
+                            }
+                            @include laptop_W {
+                                width: (90% + 5%);
                                 padding: 20px;
                             }
                             .art_left_right_content_title {
-                                width: 80%;
+                                width: 100%;
                                 @include mobile {
                                     width: 100%;
                                     text-align: center;
                                 }
                                 @include laptop {
-                                    width: 80%;
+                                    width: 100%;
+                                    text-align: left;
+                                }
+                                @include laptop_L {
+                                    width: 100%;
+                                    text-align: left;
+                                }
+                                @include laptop_W {
+                                    width: 100%;
                                     text-align: left;
                                 }
                             }
                             .art_left_right_content_desc {
-                                width: 85%;
+                                width: 100%;
                                 @include mobile {
                                     width: 100%;
                                 }
                                 @include laptop {
-                                    width: 85%;
+                                    width: 100%;
+                                }
+                                @include laptop_L {
+                                    width: 100%;
+                                }
+                                @include laptop_W {
+                                    width: 100%;
                                 }
                             }
                             .art_left_right_content_foot {
@@ -2175,7 +2704,13 @@ body {
                                         width: 100%;
                                     }
                                     @include laptop {
-                                        width: (100% - 15%);
+                                        width: 100%;
+                                    }
+                                    @include laptop_L {
+                                        width: 100%;
+                                    }
+                                    @include laptop_W {
+                                        width: 100%;
                                     }
                                     .art_left_right_content_foot_card {
                                         @include art_community_card();
@@ -2188,6 +2723,18 @@ body {
                                         }
                                         @include laptop {
                                             @include art_community_card();
+                                            -webkit-box-shadow: 0 1px 1px 0px #e8f2fb;
+                                            box-shadow: 0 1px 1px 0px #e8f2fb;
+                                        }
+                                        @include laptop_L {
+                                            @include art_community_card();
+                                            -webkit-box-shadow: 0 1px 1px 0px #e8f2fb;
+                                            box-shadow: 0 1px 1px 0px #e8f2fb;
+                                        }
+                                        @include laptop_W {
+                                            @include art_community_card();
+                                            -webkit-box-shadow: 0 1px 1px 0px #e8f2fb;
+                                            box-shadow: 0 1px 1px 0px #e8f2fb;
                                         }
                                     }
                                 }
@@ -2199,7 +2746,13 @@ body {
                                         width: 100%;
                                     }
                                     @include laptop {
-                                        width: (100% - 15%);
+                                        width: 100%;
+                                    }
+                                    @include laptop_L {
+                                        width: 100%;
+                                    }
+                                    @include laptop_W {
+                                        width: 100%;
                                     }
                                 }
                             }
@@ -2211,7 +2764,8 @@ body {
                             1);
                             .left_right_img {
                                 width: 100%;
-                                height: 100%;
+                                height: auto;
+                                @include bod_radius(inherit);
                             }
                             @include mobile {
                                 width: 100%;
@@ -2219,6 +2773,16 @@ body {
                                 initial);
                             }
                             @include laptop {
+                                width: initial;
+                                @include left_right_card(2,
+                                1);
+                            }
+                            @include laptop_L {
+                                width: initial;
+                                @include left_right_card(2,
+                                1);
+                            }
+                            @include laptop_W {
                                 width: initial;
                                 @include left_right_card(2,
                                 1);
@@ -2233,6 +2797,16 @@ body {
                                 initial);
                             }
                             @include laptop {
+                                width: initial;
+                                @include left_right_card(1,
+                                1);
+                            }
+                            @include laptop_L {
+                                width: initial;
+                                @include left_right_card(1,
+                                1);
+                            }
+                            @include laptop_W {
                                 width: initial;
                                 @include left_right_card(1,
                                 1);
@@ -2251,9 +2825,18 @@ body {
                                 @include left_right_card(1,
                                 1);
                             }
+                            @include laptop_L {
+                                @include left_right_card(1,
+                                1);
+                            }
+                            @include laptop_W {
+                                @include left_right_card(1,
+                                1);
+                            }
                             .left_right_img {
                                 width: 100%;
-                                height: 100%;
+                                height: auto;
+                                @include bod_radius(inherit);
                             }
                         }
                         .art_left_right_content_card {
@@ -2264,6 +2847,14 @@ body {
                                 @include flex_bs(initial);
                             }
                             @include laptop {
+                                @include left_right_card(2,
+                                1);
+                            }
+                            @include laptop_L {
+                                @include left_right_card(2,
+                                1);
+                            }
+                            @include laptop_W {
                                 @include left_right_card(2,
                                 1);
                             }
@@ -2288,6 +2879,14 @@ body {
                     width: 60%;
                     min-height: 8vh;
                 }
+                @include laptop_L {
+                    width: 60%;
+                    min-height: 8vh;
+                }
+                @include laptop_W {
+                    width: 60%;
+                    min-height: 8vh;
+                }
                 .art_subscribe_co {
                     width: 100%;
                     .art_subscribe_header {
@@ -2301,6 +2900,12 @@ body {
                                 width: 100%;
                             }
                             @include laptop {
+                                width: 50%;
+                            }
+                            @include laptop_L {
+                                width: 50%;
+                            }
+                            @include laptop_W {
                                 width: 50%;
                             }
                         }
@@ -2349,6 +2954,14 @@ body {
                         @include flex_bs(1);
                         width: auto;
                     }
+                    @include laptop_L {
+                        @include flex_bs(1);
+                        width: auto;
+                    }
+                    @include laptop_W {
+                        @include flex_bs(1);
+                        width: auto;
+                    }
                 }
                 .art_footer_connect {
                     @include flex();
@@ -2368,6 +2981,14 @@ body {
                         width: 100%;
                         margin: initial;
                     }
+                    @include laptop_L {
+                        width: 100%;
+                        margin: initial;
+                    }
+                    @include laptop_W {
+                        width: 100%;
+                        margin: initial;
+                    }
                     .art-foot-social {
                         @include flex();
                         width: 100%;
@@ -2383,6 +3004,14 @@ body {
                             @include flex_al_itmes(initial);
                             @include flex_jus_content(initial);
                         }
+                        @include laptop_L {
+                            @include flex_al_itmes(initial);
+                            @include flex_jus_content(initial);
+                        }
+                        @include laptop_W {
+                            @include flex_al_itmes(initial);
+                            @include flex_jus_content(initial);
+                        }
                         .art-social-icon {
                             width: 15%;
                             @include mobile {
@@ -2392,6 +3021,12 @@ body {
                                 width: 15%;
                             }
                             @include laptop {
+                                width: 15%;
+                            }
+                            @include laptop_L {
+                                width: 15%;
+                            }
+                            @include laptop_W {
                                 width: 15%;
                             }
                             img {
@@ -2435,6 +3070,30 @@ body {
                 }
             }
             @include laptop {
+                .art_copyright {
+                    -webkit-box-ordinal-group: 2;
+                    -ms-flex-order: 1;
+                    order: 1;
+                }
+                .art_return_msg {
+                    -webkit-box-ordinal-group: 3;
+                    -ms-flex-order: 2;
+                    order: 2;
+                }
+            }
+            @include laptop_L {
+                .art_copyright {
+                    -webkit-box-ordinal-group: 2;
+                    -ms-flex-order: 1;
+                    order: 1;
+                }
+                .art_return_msg {
+                    -webkit-box-ordinal-group: 3;
+                    -ms-flex-order: 2;
+                    order: 2;
+                }
+            }
+            @include laptop_W {
                 .art_copyright {
                     -webkit-box-ordinal-group: 2;
                     -ms-flex-order: 1;
@@ -2509,20 +3168,32 @@ body {
         outline: none;
     }
     .art_slick_btn {
-        padding: 0;
+        padding: 2px 5px;
         border: 0;
-        line-height: 0em;
+        line-height: 1em;
         border-radius: 5em;
-        font-size: 65pt;
+        font-size: 37pt;
         color: #23c447;
-        background: #ffffff;
-        /* box-shadow: -2px 1px 1px #e8f2fb; */
+        background: #f8fbff;
+        -webkit-box-shadow: -2px 1px 1px #e8f2fb;
+        box-shadow: -2px 1px 1px #e8f2fb;
         margin: auto 5px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         width: auto;
         height: auto;
         cursor: pointer;
+        z-index: 1;
+        &.next {
+            -webkit-box-shadow: -2px 1px 1px #e8f2fb;
+            box-shadow: -2px 1px 1px #e8f2fb;
+            margin-left: -18px;
+        }
+        &.prev {
+            -webkit-box-shadow: 2px 1px 1px #e8f2fb;
+            box-shadow: 2px 1px 1px #e8f2fb;
+            margin-right: -16px;
+        }
         em,
         i {
             font-size: inherit;
@@ -2563,6 +3234,14 @@ body {
                 font-size: 16px;
                 padding: 0 15px;
             }
+            @include laptop_L {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+            @include laptop_W {
+                font-size: 16px;
+                padding: 0 15px;
+            }
             &:focus,
             &:active {
                 border: 0 !important;
@@ -2581,13 +3260,23 @@ body {
                 width: -webkit-fit-content;
                 width: -moz-fit-content;
                 width: fit-content;
-                min-width: 65px;
+                min-width: 25%;
                 @include bod_radius(inherit);
                 padding: 0 20px;
             }
             @include laptop {
-                width: 100%;
-                min-width: 65px;
+                width: auto;
+                min-width: 25%;
+                @include bod_radius(inherit);
+            }
+            @include laptop_L {
+                width: auto;
+                min-width: 25%;
+                @include bod_radius(inherit);
+            }
+            @include laptop_L {
+                width: auto;
+                min-width: 25%;
                 @include bod_radius(inherit);
             }
         }
@@ -2596,5 +3285,8 @@ body {
         outline: none;
         cursor: pointer;
         color: #009b4e;
+    }
+    .container {
+        position: relative;
     }
 }
