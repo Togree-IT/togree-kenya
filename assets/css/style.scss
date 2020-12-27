@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1000&display=swap');
 @import "./_media_queries";
-@mixin linearGradient($deg:45deg,
+@mixin linearGradient($deg,
 $color1:#066FFD,
 $color2:#24c447) {
-    --deg: $deg;
-    background: -o-linear-gradient( var(--deg), $color1, $color2);
-    background: -webkit-gradient( linear, left top, left bottom, from(var(--deg)), color-stop($color1), to($color2));
-    background: linear-gradient( var(--deg), $color1, $color2);
+    // --deg: $deg || 45deg;
+    background: -o-linear-gradient( $deg, $color1, $color2);
+    background: -webkit-gradient( linear, left top, left bottom, from($deg), color-stop($color1), to($color2));
+    background: linear-gradient( $deg, $color1, $color2);
 }
 
 @mixin flex {
@@ -172,6 +172,7 @@ body {
         @include mobile {
             font-size: 8px;
             -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+            filter: drop-shadow(0 -2px 1px #e8f2fb);
         }
     }
     .art_stylish_ {
@@ -975,7 +976,6 @@ body {
     .art-section-top {
         .art_ur_numbers {
             @include section_container();
-            // background: rgb(44, 52, 60);
             @include linearGradient(179deg,
             #335d3d -12%,
             #2e353b 70%);
@@ -986,7 +986,7 @@ body {
                 min-height: (50vh + 14vh);
             }
             @include laptop_L {
-                min-height: (50vh + 14vh);
+                min-height: (50vh + 35vh);
             }
             @include laptop_W {
                 min-height: (50vh + 14vh);
@@ -1525,12 +1525,12 @@ body {
                 padding: 0 7% 7%;
                 &::after {
                     width: 20%;
-                    height: 65%;
+                    height: 55%;
                     bottom: calc(70px - 30px);
                 }
                 &::before {
                     width: 20%;
-                    height: 45%;
+                    height: 50%;
                     top: -72px;
                 }
             }
@@ -2103,7 +2103,7 @@ body {
                 min-height: 65vh;
             }
             @include laptop_L {
-                min-height: 65vh;
+                min-height: 85vh;
             }
             @include laptop_W {
                 min-height: 65vh;
@@ -2159,10 +2159,10 @@ body {
         }
         .art_our_news {
             width: 100%;
-            min-height: calc(65vh + (10vh + 13vh));
+            // min-height: calc(65vh + (10vh + 13vh));
             margin: auto;
             position: relative;
-            padding: 0px 0% 10%;
+            padding: 0px 0% 12%;
             background: #fcfeff;
             .art_our_news_desc {
                 @include flex();
@@ -2383,7 +2383,7 @@ body {
                             width: 80%;
                         }
                         @include laptop_L {
-                            width: 80%;
+                            width: 86%;
                         }
                         @include laptop_W {
                             width: 80%;
@@ -2569,7 +2569,7 @@ body {
                                     -webkit-box-pack: center;
                                     -ms-flex-pack: center;
                                     justify-content: center;
-                                    @include linearGradient();
+                                    @include linearGradient(45deg);
                                     border: 0;
                                     -webkit-box-shadow: none;
                                     box-shadow: none;
@@ -3285,6 +3285,12 @@ body {
         outline: none;
         cursor: pointer;
         color: #009b4e;
+        -webkit-transition: .3s linear;
+        -o-transition: .3s linear;
+        transition: .3s linear;
+        &:hover {
+            color: #046836;
+        }
     }
     .container {
         position: relative;
