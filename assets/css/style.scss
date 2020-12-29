@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1000&display=swap');
 @import "./_media_queries";
-@mixin linearGradient($deg,
+@mixin linearGradient($deg:45deg,
 $color1:#066FFD,
 $color2:#24c447) {
     // --deg: $deg || 45deg;
-    background: -o-linear-gradient( $deg, $color1, $color2);
-    background: -webkit-gradient( linear, left top, left bottom, from($deg), color-stop($color1), to($color2));
-    background: linear-gradient( $deg, $color1, $color2);
+    background: -o-linear-gradient( ($deg), $color1, $color2);
+    background: -webkit-gradient( linear, left top, left bottom, from(($deg)), color-stop($color1), to($color2));
+    background: linear-gradient( ($deg), $color1, $color2);
 }
 
 @mixin flex {
@@ -515,7 +515,7 @@ body {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         height: auto;
-        min-height: 75vh;
+        min-height: 88vh;
         background: rgba(197, 232, 197, 0.098);
         background-repeat: no-repeat;
         background-position-y: top;
@@ -548,7 +548,7 @@ body {
             }
         }
         @include laptop_L {
-            min-height: 75vh;
+            min-height: 88vh;
             margin-top: 4pc;
             .art_stylish {
                 -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -569,6 +569,83 @@ body {
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
+            .art_our_slide {
+                @include flex();
+                width: 100%;
+                height: 100%;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                outline: none;
+                position: relative;
+                overflow: hidden;
+            }
+            ._slick-dots {
+                display: -webkit-box !important;
+                display: -ms-flexbox !important;
+                display: flex !important;
+                position: absolute;
+                bottom: 100px;
+                li {
+                    button {
+                        background: transparent;
+                        border: 0;
+                    }
+                }
+            }
+            .slick-dots {
+                display: flex !important;
+                justify-content: center;
+                position: absolute;
+                right: 0;
+                bottom: 210px;
+                width: 100%;
+                li {
+                    margin: 0 10px;
+                    &.slick-active {
+                        button {
+                            &:before {
+                                opacity: .75;
+                                color: black;
+                            }
+                        }
+                    }
+                    button {
+                        font-size: 0;
+                        line-height: 0;
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        padding: 5px;
+                        cursor: pointer;
+                        color: transparent;
+                        border: 0;
+                        outline: none;
+                        background: transparent;
+                        border: 0;
+                        background: transparent;
+                        position: relative;
+                        &:before {
+                            font-family: 'slick';
+                            font-size: 6px;
+                            line-height: 20px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 20px;
+                            height: 20px;
+                            content: '';
+                            text-align: center;
+                            opacity: .25;
+                            color: transparent;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            background: #09b62f;
+                            border-radius: 5em;
+                        }
+                    }
+                }
+            }
             .art-head-sec {
                 width: 60%;
                 @include flex();
@@ -595,7 +672,7 @@ body {
                     -ms-flex-pack: center;
                     justify-content: center;
                 }
-                @include tablet {
+                /* @include tablet {
                     position: initial;
                     width: 100%;
                     background: rgba(31, 64, 41, 0);
@@ -609,7 +686,7 @@ body {
                     -webkit-box-pack: start;
                     -ms-flex-pack: start;
                     justify-content: flex-start;
-                }
+                } */
                 @include laptop {
                     position: initial;
                     width: 60%;
@@ -710,8 +787,11 @@ body {
             }
             .art_slider_img {
                 @include flex();
+                @include flex_al_itmes(center);
+                @include flex_jus_content(center);
                 width: 30%;
-                height: 77%;
+                height: auto;
+                min-height: 70vh;
                 @include mobile {
                     width: 100%;
                     height: 95%;
@@ -722,18 +802,19 @@ body {
                 }
                 @include laptop {
                     width: 30%;
-                    height: 77%;
+                    height: auto;
                 }
                 @include laptop_L {
                     width: 30%;
-                    height: 77%;
+                    height: auto;
                 }
                 @include laptop_W {
                     width: 30%;
-                    height: 77%;
+                    height: auto;
                 }
                 img {
-                    width: 100%;
+                    width: auto;
+                    height: auto;
                 }
             }
         }
@@ -747,12 +828,16 @@ body {
             height: auto;
             position: absolute;
             top: 40px;
-            right: 4%;
+            right: 2%;
             padding: 10px 2px;
             border-radius: 18px;
             @include mobile {
                 max-width: 0;
                 max-height: 0;
+            }
+            @include laptop {
+                max-width: initial;
+                max-height: initial;
             }
             .art-social-icon {
                 margin: auto auto 10px;
@@ -1158,6 +1243,7 @@ body {
                     background-size: auto;
                     background-repeat: no-repeat;
                     background-position-y: center;
+                    background-position-x: center;
                     @include mobile {
                         background-size: contain;
                     }
@@ -1266,6 +1352,7 @@ body {
                         background-image: url(../img/home/rec-1.png);
                         background-repeat: no-repeat;
                         background-position-y: center;
+                        background-position-x: center;
                     }
                 }
             }
@@ -1875,6 +1962,12 @@ body {
                 @include flex_wrp(wrap);
                 @include flex_jus_content(space-around);
                 margin: 0 auto;
+                .art_products_container {
+                    width: calc(60% + 40%);
+                    @include flex();
+                    @include flex_jus_content(space-around);
+                    margin: 0 auto;
+                }
                 .art_product_card_co {
                     @include flex();
                     @include flex_al_itmes(center);
@@ -1939,6 +2032,7 @@ body {
                         }
                         .art_product_img {
                             width: 100%;
+                            height: 100%;
                             -webkit-transition: 0.3s linear;
                             -o-transition: 0.3s linear;
                             transition: 0.3s linear;
@@ -2114,6 +2208,7 @@ body {
                         background-image: url(../img/black-tablet.png);
                         background-repeat: no-repeat;
                         background-position-y: center;
+                        background-position-x: center;
                     }
                 }
                 .art_community_cards {
@@ -2164,7 +2259,12 @@ body {
             position: relative;
             padding: 0px 0% 12%;
             background: #fcfeff;
+            .container {
+                width: 100%;
+            }
             .art_our_news_desc {
+                width: 90%;
+                margin: 0 auto;
                 @include flex();
                 -webkit-box-orient: vertical;
                 -webkit-box-direction: normal;
@@ -2190,7 +2290,7 @@ body {
                         width: 55%;
                     }
                     @include laptop_L {
-                        width: 55%;
+                        width: 90%;
                     }
                     @include laptop_W {
                         width: 55%;
@@ -2333,7 +2433,8 @@ body {
                 }
             }
             .art_news_view_more_co {
-                width: 100%;
+                width: (100% - 10);
+                margin: 0 auto;
                 padding: 35px 0px;
                 @include flex();
                 -webkit-box-pack: center;
@@ -2456,13 +2557,13 @@ body {
                     position: relative;
                     overflow: hidden;
                     @include mobile {
-                        min-height: (22vh + 8vh);
+                        min-height: (22vh + 23vh);
                     }
                     @include laptop {
                         min-height: 45vh;
                     }
                     @include laptop_L {
-                        min-height: 45vh;
+                        min-height: 55vh;
                     }
                     @include laptop_W {
                         min-height: 45vh;
@@ -2582,7 +2683,7 @@ body {
                 }
             }
             .art_left_right_sec {
-                width: calc(60% + 40%);
+                width: calc(60% + 30%);
                 min-height: 80vh;
                 @include flex();
                 @include flex_al_itmes(center);
@@ -2872,8 +2973,8 @@ body {
                 z-index: 1;
                 position: relative;
                 @include mobile {
-                    width: 100%;
-                    min-height: 24vh;
+                    width: (100% - 10);
+                    min-height: 30vh;
                 }
                 @include laptop {
                     width: 60%;
@@ -2903,7 +3004,7 @@ body {
                                 width: 50%;
                             }
                             @include laptop_L {
-                                width: 50%;
+                                width: 90%;
                             }
                             @include laptop_W {
                                 width: 50%;
@@ -3198,6 +3299,13 @@ body {
         i {
             font-size: inherit;
             vertical-align: middle;
+        }
+        &.slick-disabled {
+            background: #eeeeee;
+            color: #cbcbcb;
+            opacity: 0.5;
+            box-shadow: none;
+            cursor: default;
         }
     }
     .art_divider {
