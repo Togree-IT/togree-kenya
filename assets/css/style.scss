@@ -569,6 +569,12 @@ body {
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
+            .slick-list {
+                @include flex();
+                .slick-track {
+                    @include flex();
+                }
+            }
             .art_our_slide {
                 @include flex();
                 width: 100%;
@@ -790,15 +796,15 @@ body {
                 @include flex_al_itmes(center);
                 @include flex_jus_content(center);
                 width: 30%;
-                height: auto;
-                min-height: 75vh;
+                height: 100%;
+                // min-height: 75vh;
                 @include mobile {
                     width: 100%;
-                    height: 95%;
+                    height: 100%;
                 }
                 @include tablet {
                     width: 100%;
-                    height: 80%;
+                    height: 100%;
                 }
                 @include laptop {
                     width: 30%;
@@ -806,11 +812,11 @@ body {
                 }
                 @include laptop_L {
                     width: 30%;
-                    height: auto;
+                    height: 100%;
                 }
                 @include laptop_W {
                     width: 30%;
-                    height: auto;
+                    height: 100%;
                 }
                 img {
                     width: auto;
