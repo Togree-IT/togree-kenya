@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1000&display=swap');
 @import "./_media_queries";
+@import "./animations";
 @mixin linearGradient($deg:45deg,
 $color1:#066FFD,
 $color2:#24c447) {
@@ -194,7 +195,7 @@ body {
                 -webkit-filter: none;
             }
             @include laptop {
-                width: 100vw;
+                width: 135vw;
             }
             @include laptop_L {
                 width: 100vw;
@@ -541,7 +542,7 @@ body {
             }
         }
         @include laptop {
-            min-height: 75vh;
+            min-height: 55vh;
             margin-top: 4pc;
             .art_stylish {
                 -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -609,8 +610,9 @@ body {
                 justify-content: center;
                 position: absolute;
                 right: 0;
-                bottom: 210px;
+                bottom: 19%;
                 width: 100%;
+                z-index: 1;
                 li {
                     margin: 0 10px;
                     &.slick-active {
@@ -699,13 +701,13 @@ body {
                     justify-content: flex-start;
                 } */
                 @include laptop {
-                    position: initial;
-                    width: 60%;
+                    position: relative;
+                    width: (100% /2);
                     background: rgba(31, 64, 41, 0);
                     -webkit-backdrop-filter: none;
                     backdrop-filter: none;
-                    padding: 17px 15px;
-                    padding-left: 15px;
+                    padding: 47px 15px 37px;
+                    padding-left: 58px;
                     color: inherit;
                     top: initial;
                     bottom: initial;
@@ -730,12 +732,12 @@ body {
                 }
                 @include laptop_W {
                     position: initial;
-                    width: 60%;
+                    width: (100% / 2);
                     background: rgba(31, 64, 41, 0);
                     -webkit-backdrop-filter: none;
                     backdrop-filter: none;
-                    padding: 17px 15px;
-                    padding-left: 15px;
+                    padding: 4% 15px 37px;
+                    padding-left: 58px;
                     color: inherit;
                     top: initial;
                     bottom: initial;
@@ -744,28 +746,33 @@ body {
                     justify-content: flex-start;
                 }
                 .art_head_title {
-                    width: 100%;
-                    margin: 10px auto 0 60px;
+                    width: (100% /2);
+                    margin: 0 auto;
+                    text-align: left;
                     @include mobile {
                         margin: 0 auto;
                         text-align: center;
                     }
                     @include laptop {
-                        margin: 10px auto 0 60px;
+                        width: (100% /1);
+                        margin: 0;
                         text-align: left;
                     }
                     @include laptop_L {
-                        margin: 10px auto 0 60px;
+                        width: (100% /2);
+                        margin: 0 auto;
                         text-align: left;
                     }
                     @include laptop_W {
-                        margin: 10px auto 0 60px;
+                        width: (100% /2);
+                        margin: 0 auto;
                         text-align: left;
                     }
                 }
                 .art_head_desc {
                     width: 50%;
                     padding: 5px 0 0 75px;
+                    margin: 0 auto;
                     @include mobile {
                         width: 100%;
                         padding: 0 20px;
@@ -775,16 +782,16 @@ body {
                         padding: 5px 0 0 22px;
                     }
                     @include laptop {
-                        width: 50%;
-                        padding: 5px 0 0 75px;
+                        width: 100%;
+                        padding: 5px 0 0 15px;
                     }
                     @include laptop_L {
-                        width: 50%;
-                        padding: 5px 0 0 75px;
+                        width: (100% /2);
+                        padding: 0 25px;
                     }
                     @include laptop_W {
-                        width: 50%;
-                        padding: 5px 0 0 75px;
+                        width: (100% /2);
+                        padding: 0 25px;
                     }
                 }
                 .art_head_act {
@@ -812,20 +819,21 @@ body {
                     height: 100%;
                 }
                 @include laptop {
-                    width: 30%;
+                    width: (100% / 2);
                     height: 100%;
                 }
                 @include laptop_L {
-                    width: 30%;
+                    width: (100% / 2);
                     height: 85%;
                 }
                 @include laptop_W {
-                    width: 30%;
+                    width: (100% / 2);
                     height: 85%;
                 }
                 img {
                     width: auto;
                     height: auto;
+                    max-width: 100%;
                 }
             }
         }
@@ -886,7 +894,7 @@ body {
             padding: 27px 0%;
         }
         @include laptop {
-            padding: 7pc 0%;
+            padding: 40px 0% 5pc;
         }
         @include laptop_L {
             padding: 7pc 0%;
@@ -909,6 +917,14 @@ body {
             -ms-flex-align: center;
             align-items: center;
             width: 100%;
+            .art_head_bottom_card_header {
+                width: 100%;
+                text-align: center;
+                margin: 0 0 40px;
+                .art_title {
+                    text-transform: uppercase;
+                }
+            }
             .art_head_bottom_card_body {
                 @include flex();
                 -webkit-box-pack: justify;
@@ -951,15 +967,15 @@ body {
                 -o-transform: matrix(1, -0.031, 0, 1, 3, 9);
             }
             @include mobile {
-                width: 100%;
-                margin: 0 0 40px;
-                min-height: auto;
-                @include box_shad(0 0px 0px 1px #d8e1ea);
+                width: 95%;
+                margin: 0 auto 15px;
+                min-height: 17vh;
+                @include box_shad(0px 0px 22px -9px #d8e1ea);
             }
             @include tablet {
                 width: 61%;
                 margin: 0 10px 10px 0;
-                // min-height: 22vh;
+                min-height: auto;
                 @include flex_bs(1);
                 @include box_shad(0px 0px 0px 1px #d8e1ea);
                 &:last-of-type {
@@ -968,9 +984,9 @@ body {
                 }
             }
             @include laptop {
-                width: 31%;
-                margin: 0 0 30px 0;
-                // min-height: 29vh;
+                width: ((100% / 3) - 3%);
+                margin: 0;
+                min-height: 19vh;
                 @include flex_bs(initial);
                 @include box_shad((-6px -10px 0px 1px #d8e1ea,
                 9px 9px 0px 1px #d8e1ea));
@@ -1068,16 +1084,37 @@ body {
                 -webkit-box-pack: justify;
                 -ms-flex-pack: justify;
                 justify-content: space-between;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
                 .art_card_footer_dash {
                     width: 50%;
                     background: #ebeeef;
                     height: 1px;
-                    margin: auto auto 0 0;
+                    margin: auto 20px auto auto;
                     border-radius: 5em;
                     overflow: hidden;
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
                 }
                 .art_card_footer_link {
                     font-weight: 600;
+                    .art_icon_arrow_right {
+                        transition: cubic-bezier(0.14, -1.49, 0.54, 1.04);
+                        -webkit-transition: cubic-bezier(0.14, -1.49, 0.54, 1.04);
+                        -moz-transition: cubic-bezier(0.14, -1.49, 0.54, 1.04);
+                        -ms-transition: cubic-bezier(0.14, -1.49, 0.54, 1.04);
+                        -o-transition: cubic-bezier(0.14, -1.49, 0.54, 1.04);
+                    }
+                }
+            }
+            &:hover {
+                .art_card_footer_link {
+                    .art_icon_arrow_right {
+                        animation: revForw_R 1s cubic-bezier(0.14, -1.49, 0.54, 1.04) infinite;
+                        -webkit-animation: revForw_R 1s cubic-bezier(0.14, -1.49, 0.54, 1.04) infinite;
+                    }
                 }
             }
         }
@@ -1089,12 +1126,12 @@ body {
             // #335d3d -12%,
             // #2e353b 70%);
             color: #6e757b;
-            background: #d8e1ea;
+            background: #fbfcfd;
             @include mobile {
                 min-height: 36pc;
             }
             @include laptop {
-                min-height: (50vh + 14vh);
+                min-height: (50vh + 5vh);
             }
             @include laptop_L {
                 min-height: (50vh + 35vh);
@@ -1120,7 +1157,7 @@ body {
                 z-index: 1;
                 h6.art_title {
                     // color: #838383;
-                    color: #d8e1ea;
+                    // color: #d8e1ea;
                     font-size: 0.8rem;
                     font-weight: 600;
                     text-align: center;
@@ -1158,8 +1195,8 @@ body {
                             padding: (10px - 7px);
                         }
                         @include laptop {
-                            width: 228px;
-                            height: 228px;
+                            width: calc(1000px / 5);
+                            height: calc(1000px / 5);
                             padding: ((10px - 7px) + 7px);
                         }
                         @include laptop_L {
@@ -1181,8 +1218,8 @@ body {
                         -webkit-box-align: center;
                         -ms-flex-align: center;
                         align-items: center;
-                        background-color: #2d353b;
-                        color: rgba(255, 255, 255, 0.729);
+                        background-color: #ffffff;
+                        // color: rgba(255, 255, 255, 0.729);
                         border-radius: 50%;
                         -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
                         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -1274,7 +1311,7 @@ body {
                         background-size: contain;
                     }
                     @include laptop {
-                        background-size: auto;
+                        background-size: 85%;
                     }
                     @include laptop_L {
                         background-size: auto;
@@ -1300,7 +1337,7 @@ body {
                             text-align: center;
                         }
                         @include laptop {
-                            padding: 10px 82px 10px 22px;
+                            padding: 10px 0 10px 22px;
                             text-align: left;
                         }
                         @include laptop_L {
@@ -1318,7 +1355,7 @@ body {
                             width: 100%;
                         }
                         @include laptop {
-                            width: 80%;
+                            width: 100%;
                         }
                         @include laptop_L {
                             width: 80%;
@@ -1389,13 +1426,13 @@ body {
                 fill: var(--operate_color);
             }
         }
-        --operate_color: #31473c;
+        --operate_color: #f4f6f9;
         .art_how_we_operate {
             @include section_container(100%,
             45vh);
             @include flex_wrp(wrap);
             background: var(--operate_color);
-            color: #ffffff;
+            // color: #ffffff;
             overflow: visible;
             @include mobile {
                 min-height: 15pc;
@@ -1455,7 +1492,7 @@ body {
                         margin: 0 0 10px 0;
                     }
                     @include laptop {
-                        width: calc(80% - 5%);
+                        width: calc(80% + 20%);
                         margin: 0 0 0 10px;
                     }
                     @include laptop_L {
@@ -1471,7 +1508,7 @@ body {
             .art_we_operate_content {
                 @include flex_bs(1);
                 @include flex();
-                margin: auto 3%;
+                margin: auto 0 auto 3%;
                 overflow: hidden;
                 z-index: 2;
                 @include bod_radius(2em);
@@ -1619,17 +1656,17 @@ body {
             }
             @include laptop {
                 margin: 7% auto 0;
-                min-height: 65vh;
-                padding: 0 7% 7%;
-                &::after {
-                    width: 20%;
-                    height: 65%;
-                    bottom: calc(70px - 30px);
-                }
+                min-height: 60vh;
+                padding: 0 2% 7%;
                 &::before {
                     width: 20%;
                     height: 45%;
-                    top: -72px;
+                    top: 111px;
+                }
+                &::after {
+                    width: 30%;
+                    height: 45%;
+                    bottom: 40px;
                 }
             }
             @include laptop_L {
@@ -1652,14 +1689,16 @@ body {
                 min-height: 65vh;
                 padding: 0 7% 7%;
                 &::after {
-                    width: 20%;
-                    height: 65%;
-                    bottom: calc(70px - 30px);
+                    width: 10%;
+                    height: 35%;
+                    bottom: 97px;
+                    background-size: cover;
                 }
                 &::before {
-                    width: 20%;
-                    height: 45%;
-                    top: -72px;
+                    width: 10%;
+                    height: 25%;
+                    top: -71px;
+                    background-size: cover;
                 }
             }
             .art_our_services_desc {
@@ -1718,11 +1757,12 @@ body {
                     overflow: hidden;
                     @include box_shad((-5px -10px 0px 0px #d8e1ea,
                     5px 10px 0px 0px #d8e1ea));
+                    background: #fff;
                     @include mobile {
-                        width: (119px + 11px);
-                        height: (119px - 18px);
-                        margin: 3% auto;
-                        @include box_shad(0px 0px 0px 1px #d8e1ea);
+                        width: 40%;
+                        height: 140px;
+                        margin: 10px;
+                        @include box_shad(0px 0px 22px -9px #d8e1ea);
                     }
                     @include tablet {
                         width: 35%;
@@ -1731,8 +1771,8 @@ body {
                         @include box_shad(0px 0px 0px 1px #d8e1ea);
                     }
                     @include laptop {
-                        width: 15%;
-                        height: 220px;
+                        width: 20%;
+                        height: 170px;
                         margin: 0 20px 0 0;
                         @include box_shad((-5px -10px 0px 0px #d8e1ea,
                         5px 10px 0px 0px #d8e1ea));
@@ -1747,7 +1787,7 @@ body {
                     @include laptop_W {
                         width: 15%;
                         height: 220px;
-                        margin: 0 20px 0 0;
+                        margin: 0 70px 0 0;
                         @include box_shad((-5px -10px 0px 0px #d8e1ea,
                         5px 10px 0px 0px #d8e1ea));
                     }
@@ -1953,27 +1993,27 @@ body {
         }
         .art_our_products {
             width: 100%;
-            min-height: 65vh;
+            min-height: 50vh;
             @include flex();
             @include flex_wrp(wrap);
-            padding: 0px 7% 20pc;
+            padding: 0px 7% 2pc;
             margin: auto;
             position: relative;
             @include flex_dir(column);
             @include mobile {
-                padding: 0px 0% 5pc;
+                padding: 0px 0% 2pc;
             }
             @include tablet {
-                padding: 0px 7% 7pc;
+                padding: 0px 7% 2pc;
             }
             @include laptop {
-                padding: 0px 7% 20pc;
+                padding: 0px 7% 2pc;
             }
             @include laptop_L {
-                padding: 0px 7% 20pc;
+                padding: 0px 7% 2pc;
             }
             @include laptop_W {
-                padding: 0px 7% 20pc;
+                padding: 0px 7% 2pc;
             }
             .art_our_products_desc {
                 width: 100%;
@@ -2135,7 +2175,7 @@ body {
             }
             .art_product_view_more_co {
                 width: 100%;
-                padding: 35px 0px 4pc;
+                padding: 35px 0px;
                 @include flex();
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
@@ -2151,17 +2191,17 @@ body {
                 @include laptop {
                     width: 100%;
                     min-height: 45px;
-                    padding: 35px 0px 4pc;
+                    padding: 35px 0px;
                 }
                 @include laptop_L {
                     width: 100%;
                     min-height: 45px;
-                    padding: 35px 0px 4pc;
+                    padding: 35px 0px;
                 }
                 @include laptop_W {
                     width: 100%;
                     min-height: 45px;
-                    padding: 35px 0px 4pc;
+                    padding: 35px 0px;
                 }
                 .art_gree_btn {
                     padding: 0 100px;
@@ -2184,26 +2224,25 @@ body {
                 -ms-transform: matrix(1, 0, 0, -1, 0, 0);
                 transform: matrix(1, 0, 0, -1, 0, 0);
                 @include stylish_box_shad();
-                height: 18%;
                 @include mobile {
-                    height: 50px;
                     bottom: 0;
                 }
                 @include tablet {
-                    height: 70px;
                     bottom: 0;
                 }
                 @include laptop {
-                    height: 18%;
                     bottom: -2px;
                 }
                 @include laptop_L {
-                    height: 18%;
                     bottom: -2px;
                 }
                 @include laptop_W {
-                    height: 18%;
                     bottom: -2px;
+                }
+            }
+            .art_stylish_ {
+                svg {
+                    @include stylish_box_shad();
                 }
             }
         }
@@ -2212,7 +2251,7 @@ body {
             min-height: 65vh;
             margin: auto;
             position: relative;
-            padding: 0px 7%;
+            padding: 15% 7%;
             @include mobile {
                 min-height: (49pc + 9pc);
             }
@@ -2220,7 +2259,7 @@ body {
                 min-height: (49pc - 6pc);
             }
             @include laptop {
-                min-height: 65vh;
+                min-height: 80vh;
             }
             @include laptop_L {
                 min-height: 85vh;
@@ -2251,9 +2290,12 @@ body {
                             margin-top: 15px;
                         }
                         @include laptop {
-                            width: 25%;
+                            width: ((100% / 2) - 2%);
                             margin: initial;
-                            margin-right: 25px
+                            margin-right: 0;
+                            -webkit-box-flex: initial;
+                            -ms-flex: initial;
+                            flex: initial;
                         }
                         @include laptop_L {
                             width: 25%;
@@ -2313,7 +2355,7 @@ body {
                         width: 100%;
                     }
                     @include laptop {
-                        width: 55%;
+                        width: 80%;
                     }
                     @include laptop_L {
                         width: 90%;
@@ -2387,7 +2429,7 @@ body {
                     }
                 }
                 .art_news_card_co {
-                    padding: 20px;
+                    padding: 25px;
                     outline: none;
                 }
                 .art_news_card {
@@ -2513,7 +2555,7 @@ body {
                             width: 86%;
                         }
                         @include laptop_W {
-                            width: 80%;
+                            width: 85%;
                         }
                         .indicator {
                             background-color: #1bc140;
@@ -2717,6 +2759,15 @@ body {
                 margin: 0 auto;
                 z-index: 1;
                 position: relative;
+                @include mobile {
+                    width: calc(60% + 30%);
+                }
+                @include tablet {
+                    width: calc(60% + 10%);
+                }
+                @include laptop {
+                    width: calc(60% + 30%);
+                }
                 .art_left_right_co {
                     width: 100%;
                     margin: 2pc auto;
@@ -3078,8 +3129,15 @@ body {
                         }
                     }
                     @include laptop {
-                        @include flex_bs(1);
-                        width: auto;
+                        @include flex_bs(none);
+                        width: (100% / 3);
+                        &.art_tweets {
+                            width: 100%;
+                        }
+                        &:last-child {
+                            width: 60%;
+                            margin: auto;
+                        }
                     }
                     @include laptop_L {
                         @include flex_bs(1);
@@ -3243,7 +3301,7 @@ body {
         align-items: center;
         -ms-flex-pack: distribute;
         justify-content: space-around;
-        min-width: 35%;
+        min-width: 8rem;
         overflow: hidden;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -3252,7 +3310,7 @@ body {
         -webkit-tap-highlight-color: transparent;
         vertical-align: middle;
         z-index: 1;
-        color: #066FFD;
+        // color: #066FFD;
         -webkit-transition: .3s ease-out;
         -o-transition: .3s ease-out;
         transition: .3s ease-out;

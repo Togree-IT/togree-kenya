@@ -64,16 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (update_tabs.length) {
         M.Tabs.init(update_tabs);
     }
-    // var carousels = document.querySelectorAll('.carousel');
-    // var carouselInstance = M.Carousel.init(carousels, {
-    //     duration: 100,
-    //     dist: -100,
-    //     noWrap: !0,
-    //     // numVisible: 1,
-    //     padding: 10,
-    //     // fullWidth: !0,
-    //     // indicators: !0,
-    // });
 
 
 });

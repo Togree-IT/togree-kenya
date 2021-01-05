@@ -1,0 +1,1960 @@
+                                    @import "./media-queries";
+                                    %aling-center {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                    }
+                                    
+                                    * {
+                                        margin: 0;
+                                        padding: 0;
+                                        -webkit-box-sizing: border-box;
+                                        box-sizing: border-box;
+                                        //    overflow-x: hidden;
+                                    }
+                                    
+                                    .art_gree_btn {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        height: 50px;
+                                        width: -webkit-max-content;
+                                        width: -moz-max-content;
+                                        width: max-content;
+                                        padding: 10px 30px;
+                                        margin: auto 5% 10px 0;
+                                        font-weight: 500;
+                                        background: transparent;
+                                        cursor: pointer;
+                                        border: 0;
+                                        text-transform: uppercase;
+                                        color: #24c447;
+                                        -webkit-box-shadow: box_shad(0 0 0 1px #24c347);
+                                        box-shadow: box_shad(0 0 0 1px #24c347);
+                                        border-radius: 10px;
+                                        -webkit-border-radius: 10px;
+                                        -moz-border-radius: 10px;
+                                        -ms-border-radius: 10px;
+                                        -o-border-radius: 10px;
+                                        &.filled {
+                                            background-color: #24C447;
+                                            color: white;
+                                        }
+                                        @include mobile {
+                                            width: 100%;
+                                            height: auto;
+                                            padding: 10px 5px;
+                                            margin: 0 0 10px;
+                                            min-height: 35px;
+                                        }
+                                        @include laptop {
+                                            width: -webkit-max-content;
+                                            width: -moz-max-content;
+                                            width: max-content;
+                                            height: 50px;
+                                            padding: 0 30px;
+                                            margin: auto 5% 10px 0;
+                                        }
+                                        @include laptop_L {
+                                            width: -webkit-max-content;
+                                            width: -moz-max-content;
+                                            width: max-content;
+                                            height: 50px;
+                                            padding: 0 30px;
+                                            margin: auto 5% 10px 0;
+                                        }
+                                        @include laptop_W {
+                                            width: -webkit-max-content;
+                                            width: -moz-max-content;
+                                            width: max-content;
+                                            height: 50px;
+                                            padding: 0 30px;
+                                            margin: auto 5% 10px 0;
+                                        }
+                                    }
+                                    
+                                    .about-header {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        height: auto;
+                                        min-height: 75vh;
+                                        background: rgba(64, 102, 64, 0.5);
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center;
+                                        position: relative;
+                                        padding: 12% 0;
+                                        margin-top: 4px;
+                                        .about-nav {
+                                            width: 100%;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: justify;
+                                            -ms-flex-pack: justify;
+                                            justify-content: space-between;
+                                            padding: 10px;
+                                            background-color: rgba(255, 255, 255, 0.9);
+                                            position: fixed;
+                                            top: 0;
+                                            z-index: 10;
+                                            //    -webkit-filter: blur(10);
+                                            //    filter: blur(10);
+                                            @include mobile {
+                                                display: none;
+                                            }
+                                            @include tablet {
+                                                display: none;
+                                            }
+                                            @include laptop {
+                                                display: none;
+                                            }
+                                            @include laptop_L {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                            }
+                                            @include laptop_W {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                            }
+                                            .art_nav-right {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                width: auto;
+                                                min-width: 45%;
+                                                -webkit-box-pack: justify;
+                                                -ms-flex-pack: justify;
+                                                justify-content: space-between;
+                                                .art-brand {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    width: auto;
+                                                    height: auto;
+                                                    img {
+                                                        width: auto;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        min-width: auto;
+                                                    }
+                                                }
+                                                .art-top-links {
+                                                    width: 100%;
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-pack: justify;
+                                                    -ms-flex-pack: justify;
+                                                    justify-content: space-between;
+                                                    li {
+                                                        display: inherit;
+                                                        width: auto;
+                                                        a {
+                                                            display: -webkit-box;
+                                                            display: -ms-flexbox;
+                                                            display: flex;
+                                                            -webkit-box-align: center;
+                                                            -ms-flex-align: center;
+                                                            align-items: center;
+                                                            color: #656565;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .art_nav-left {
+                                                -webkit-box-flex: 1;
+                                                -ms-flex: 1;
+                                                flex: 1;
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-pack: end;
+                                                -ms-flex-pack: end;
+                                                justify-content: flex-end;
+                                                -webkit-box-align: stretch;
+                                                -ms-flex-align: stretch;
+                                                align-items: stretch;
+                                                margin-right: 60px;
+                                                #head_search_form {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    max-width: 0;
+                                                    overflow: hidden;
+                                                    // background: rgba(240, 248, 255, 0.49);
+                                                    .art_input_co {
+                                                        height: auto;
+                                                        max-height: 40px;
+                                                        overflow: hidden;
+                                                        display: -webkit-box;
+                                                        display: -ms-flexbox;
+                                                        display: flex;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        background-color: rgba(255, 255, 255, 0.859);
+                                                        margin: auto;
+                                                        border-radius: 4em 4em;
+                                                        .art_under_search {
+                                                            background: transparent;
+                                                            border: 0;
+                                                            color: #d2d2d2;
+                                                            padding: 1px 6px;
+                                                            font-size: 100%;
+                                                            line-height: 1.15;
+                                                            margin: 0;
+                                                        }
+                                                        .art_input {
+                                                            border: 0;
+                                                            -webkit-box-shadow: none;
+                                                            box-shadow: none;
+                                                            margin: auto;
+                                                            border-bottom: 0;
+                                                        }
+                                                        .art_submit_search {
+                                                            background: transparent;
+                                                            border: 0;
+                                                            opacity: 0;
+                                                            visibility: hidden;
+                                                        }
+                                                    }
+                                                }
+                                                .art_btn {
+                                                    border: 0;
+                                                    background: rgba(0, 245, 0, 0);
+                                                    color: #707070;
+                                                    text-align: center;
+                                                    margin: 0 15px;
+                                                    cursor: pointer;
+                                                    i {
+                                                        line-height: 47px;
+                                                        font-size: 30pt;
+                                                    }
+                                                }
+                                                .dropdown-trigger {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    i {
+                                                        line-height: inherit;
+                                                        font-size: 21pt;
+                                                        margin: auto;
+                                                        height: auto;
+                                                    }
+                                                }
+                                            }
+                                            .dropdown-content {
+                                                top: 101% !important;
+                                                width: auto !important;
+                                                height: auto !important;
+                                                -webkit-box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
+                                                box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
+                                                border-radius: 0 0 10px 10px;
+                                                border: 0;
+                                                a {
+                                                    color: #607D8B;
+                                                    transition: .3s linear;
+                                                    -webkit-transition: .3s linear;
+                                                    -moz-transition: .3s linear;
+                                                    -ms-transition: .3s linear;
+                                                    -o-transition: .3s linear;
+                                                    &:hover {
+                                                        background-color: rgb(0, 155, 78);
+                                                        color: aliceblue;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        //     .art-head-sec {
+                                        //         width: 90%;
+                                        //         .art_head_title {
+                                        //             width: 18%;
+                                        //             margin: auto auto auto 60px;
+                                        //         }
+                                        //         .art_head_desc {
+                                        //             width: 28%;
+                                        //             margin: auto auto auto 60px;
+                                        //         }
+                                        //     }
+                                        //     .art_head_act {
+                                        //         width: 28%;
+                                        //         margin: auto auto auto 60px;
+                                        //         display: -webkit-box;
+                                        //         display: -ms-flexbox;
+                                        //         display: flex;
+                                        //     }
+                                        //     .art-head-social {
+                                        //         width: 5%;
+                                        //         display: -webkit-box;
+                                        //         display: -ms-flexbox;
+                                        //         display: flex;
+                                        //         -webkit-box-orient: vertical;
+                                        //         -webkit-box-direction: normal;
+                                        //         -ms-flex-direction: column;
+                                        //         flex-direction: column;
+                                        //         height: 72%;
+                                        //         -webkit-box-pack: justify;
+                                        //         -ms-flex-pack: justify;
+                                        //         justify-content: space-between;
+                                        //         margin: -104px 0 auto;
+                                        //         .art-social-icon {
+                                        //             margin: auto auto 30px;
+                                        //             cursor: pointer;
+                                        //             width: auto;
+                                        //             background-color: #ffffff45;
+                                        //             padding: 12px;
+                                        //             border-radius: 5em;
+                                        //             max-width: 50px;
+                                        //             max-height: 50px;
+                                        //             overflow: hidden;
+                                        //             /* box-shadow: 0 0 10px #607d8b36;*/
+                                        //             &:hover img {
+                                        //                 -webkit-filter: grayscale(0);
+                                        //                 filter: grayscale(0);
+                                        //             }
+                                        //             img {
+                                        //                 -webkit-filter: grayscale(137);
+                                        //                 filter: grayscale(137);
+                                        //             }
+                                        //         }
+                                        //     }
+                                        .abouthero__img {
+                                            width: 100%;
+                                            position: fixed;
+                                            z-index: -1;
+                                            top: 0;
+                                            bottom: 0;
+                                            overflow: hidden;
+                                            img {
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                    
+                                    .abouthero {
+                                        max-width: 40%;
+                                        position: absolute;
+                                        margin-right: 200px;
+                                        margin-bottom: 100px;
+                                        right: 0;
+                                        text-align: right;
+                                        color: #FFFFFF;
+                                        @include mobile {
+                                            position: relative;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            max-width: 100%;
+                                            text-align: center;
+                                            margin: 0;
+                                            margin-top: 100px;
+                                            padding: 10% 5%;
+                                        }
+                                        @include tablet {
+                                            margin-top: 20px;
+                                            position: relative;
+                                            max-width: 80%;
+                                            -ms-flex-item-align: center;
+                                            align-self: center;
+                                        }
+                                        @include laptop {
+                                            position: relative;
+                                            max-width: 80%;
+                                            -ms-flex-item-align: center;
+                                            align-self: center;
+                                        }
+                                        @include laptop_L {
+                                            display: initial;
+                                            max-width: 40%;
+                                            position: absolute;
+                                            margin-right: 100px;
+                                            margin-bottom: 100px;
+                                            margin-top: 0;
+                                            padding: 0;
+                                            text-align: right;
+                                        }
+                                        @include laptop_W {
+                                            margin-bottom: 100px;
+                                            margin-right: 200px;
+                                        }
+                                        &__title {
+                                            margin: 0;
+                                            margin-bottom: 20px;
+                                            // font-size: 4rem;
+                                            font-weight: 700;
+                                            @include mobile {
+                                                // font-size: 2rem;
+                                                margin-bottom: 8px;
+                                            }
+                                            // @include tablet {
+                                            //     font-size: 3rem;
+                                            // }
+                                            // @include laptop {
+                                            //     font-size: 3rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 3rem;
+                                            // }
+                                            @include laptop_W {
+                                                // font-size: 6rem;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        &__text {
+                                            // font-size: 1.1rem;
+                                            margin-bottom: 20px;
+                                            @include mobile {
+                                                // font-size: 0.8rem;
+                                                margin-bottom: 10px;
+                                            }
+                                            @include tablet {
+                                                // font-size: 1.1rem;
+                                                margin-bottom: 20px;
+                                            }
+                                            // @include laptop {
+                                            //     font-size: 1.2rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 1.2rem;
+                                            // }
+                                            @include laptop_W {
+                                                // font-size: 2rem;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        // &__btn {
+                                        //     padding: 20px 32px;
+                                        //     -webkit-box-sizing: border-box;
+                                        //     box-sizing: border-box;
+                                        //     border: none;
+                                        //     background: #24C347;
+                                        //     color: #fffffF;
+                                        //     font-size: 1.4rem;
+                                        //     border-radius: 10px;
+                                        //     @include mobile {
+                                        //         padding: 12px 20px;
+                                        //         font-size: 1rem;
+                                        //     }
+                                        //     @include tablet {
+                                        //         padding: 18px 24px;
+                                        //         font-size: 1.2rem;
+                                        //     }
+                                        //     @include laptop {
+                                        //         padding: 18px 24px;
+                                        //         font-size: 1.2rem;
+                                        //     }
+                                        //     @include laptop_L {
+                                        //         padding: 18px 24px;
+                                        //         font-size: 1.2rem;
+                                        //     }
+                                        //     @include laptop_W {
+                                        //         padding: 30px 42px;
+                                        //         font-size: 1.8rem;
+                                        //     }
+                                        // }
+                                        .art_gree_btn {
+                                            margin: auto 0 10px auto;
+                                        }
+                                        &__arrow {
+                                            font-size: 1.4rem;
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                    
+                                    .aboutstory {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        padding: 100px 200px;
+                                        color: #656565;
+                                        background: #d2d2d2;
+                                        @include mobile {
+                                            padding: 80px 0;
+                                        }
+                                        // @include tablet {
+                                        //     padding: 4% 8%;
+                                        // }
+                                        // @include laptop {
+                                        //     padding: 8%;
+                                        // }
+                                        // @include laptop_L {
+                                        //     padding: 8%;
+                                        // }
+                                        // @include laptop_W {
+                                        //     padding: 80px 7%;
+                                        // }
+                                        &__contentbox {
+                                            margin-bottom: 20px;
+                                            @include mobile {
+                                                margin-bottom: 0px;
+                                            }
+                                            @include tablet {
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop {
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop_L {
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop_W {
+                                                margin-bottom: 60px;
+                                            }
+                                        }
+                                        &__title,
+                                        &__datetitle {
+                                            margin-top: 0;
+                                            margin-bottom: 20px;
+                                            // font-size: 1.8rem;
+                                            font-weight: 600;
+                                            // @include mobile {
+                                            //     font-size: 1.8rem;
+                                            // }
+                                            // @include tablet {
+                                            //     font-size: 1.8rem;
+                                            // }
+                                            // @include laptop {
+                                            //     font-size: 1.8rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 1.8rem;
+                                            // }
+                                            @include laptop_W {
+                                                // font-size: 3rem;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        &__text {
+                                            // font-size: 1rem;
+                                            margin-bottom: 40px;
+                                            // @include mobile {
+                                            //     font-size: 1rem;
+                                            // }
+                                            // @include tablet {
+                                            //     font-size: 1rem;
+                                            // }
+                                            // @include laptop {
+                                            //     font-size: 1rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 1rem;
+                                            // }
+                                            // @include laptop_W {
+                                            //     font-size: 2rem;
+                                            // }
+                                        }
+                                        &__datebox {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                        }
+                                        &__circlewrapper {
+                                            margin-top: 30px;
+                                            margin-bottom: 100px;
+                                            width: 100%;
+                                            -ms-flex-pack: distribute;
+                                            justify-content: space-around;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            @include mobile {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: column;
+                                                flex-direction: column;
+                                            }
+                                            @include tablet {
+                                                width: 100%;
+                                                -ms-flex-pack: distribute;
+                                                justify-content: space-around;
+                                                -webkit-box-orient: horizontal;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: row;
+                                                flex-direction: row;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                margin: 30px 0;
+                                            }
+                                        }
+                                        &__circlecontainer {
+                                            margin-top: 30px;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            background: transparent;
+                                            @include mobile {
+                                                -webkit-box-orient: horizontal;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: row;
+                                                flex-direction: row;
+                                                position: relative;
+                                            }
+                                            @include tablet {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: column;
+                                                flex-direction: column;
+                                                margin-top: 0;
+                                            }
+                                        }
+                                        --clicle_height: 20px;
+                                        &__circle {
+                                            --clicle_height: 20px;
+                                            height: var(--clicle_height);
+                                            width: var(--clicle_height);
+                                            border-radius: 100%;
+                                            background: #24C347;
+                                            margin-bottom: 30px;
+                                            @include mobile {
+                                                height: 15px;
+                                                width: 15px;
+                                                margin: 0;
+                                            }
+                                            @include tablet {
+                                                height: var(--clicle_height);
+                                                width: var(--clicle_height);
+                                                border-radius: 100%;
+                                                background: #24C347;
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop {
+                                                height: var(--clicle_height);
+                                                width: var(--clicle_height);
+                                                border-radius: 100%;
+                                                background: #24C347;
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop_L {
+                                                height: var(--clicle_height);
+                                                width: var(--clicle_height);
+                                                border-radius: 100%;
+                                                background: #24C347;
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop_W {
+                                                --clicle_height: 25px;
+                                                height: var(--clicle_height);
+                                                width: var(--clicle_height);
+                                                border-radius: 100%;
+                                                background: #24C347;
+                                                margin-bottom: 30px;
+                                            }
+                                            &::before {
+                                                content: "";
+                                                position: absolute;
+                                                height: 1px;
+                                                -ms-flex-item-align: center;
+                                                align-self: center;
+                                                // width: 210px;
+                                                left: 0;
+                                                top: calc(var(--clicle_height) / 2);
+                                                right: 0;
+                                                background: #24C347;
+                                                z-index: -1;
+                                                @include mobile {
+                                                    top: calc(var(--clicle_height) / 1);
+                                                }
+                                                @include tablet {
+                                                    top: calc(var(--clicle_height) / 2);
+                                                }
+                                                // 
+                                                //     margin: 0;
+                                                //     left: -48px;
+                                                //     top: 4.5pc;
+                                                //     transform: rotate(90deg);
+                                                //     -webkit-transform: rotate(90deg);
+                                                //     -moz-transform: rotate(90deg);
+                                                //     -ms-transform: rotate(90deg);
+                                                //     -o-transform: rotate(90deg);
+                                                //     z-index: 1;
+                                                //     // width: 111.5px;
+                                                // }
+                                                // @include tablet {
+                                                //     content: "";
+                                                //     position: absolute;
+                                                //     height: 1px;
+                                                //     width: 200px;
+                                                //     z-index: -1;
+                                                //     transform: rotate(180deg);
+                                                //     -webkit-transform: rotate(180deg);
+                                                //     -moz-transform: rotate(180deg);
+                                                //     -ms-transform: rotate(180deg);
+                                                //     -o-transform: rotate(180deg);
+                                                //     top: 8px;
+                                                //     left: 31px;
+                                                // }
+                                                // @include laptop {
+                                                //     width: 246px;
+                                                //     left: 54px;
+                                                // }
+                                                // @include laptop_L {
+                                                //     width: 362px;
+                                                //     left: 74px;
+                                                // }
+                                                // @include laptop_W {
+                                                //     width: 632px;
+                                                //     left: 8pc;
+                                                //     top: 1pc;
+                                                // }
+                                            }
+                                        }
+                                        // &__circle.last__circle:before {
+                                        //     background: transparent;
+                                        //     @include mobile {
+                                        //         background: transparent;
+                                        //     }
+                                        // }
+                                        // &__circle.sixth__circle:before {
+                                        //     width: 200px;
+                                        //     @include mobile {
+                                        //         background: transparent;
+                                        //     }
+                                        // }
+                                        &__content {
+                                            text-align: center;
+                                            margin: 0;
+                                            padding: 0;
+                                            @include mobile {
+                                                margin-left: 30px;
+                                            }
+                                            @include tablet {
+                                                margin-left: 0;
+                                            }
+                                        }
+                                        &__circletitle {
+                                            // font-size: 1.2rem;
+                                            font-weight: 600;
+                                            @include mobile {
+                                                // font-size: 0.8rem;
+                                                margin: 0;
+                                            }
+                                            @include tablet {
+                                                // font-size: 0.8rem;
+                                                margin-bottom: 20px;
+                                            }
+                                            // @include laptop {
+                                            //     font-size: 1rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 1rem;
+                                            // }
+                                            // @include laptop_W {
+                                            //     font-size: 2rem;
+                                            // }
+                                        }
+                                        &__circlesubtitle {
+                                            // font-size: 1rem;
+                                            padding: 0 20px;
+                                            text-align: center;
+                                            @include mobile {
+                                                // font-size: 0.6rem;
+                                            }
+                                            @include tablet {
+                                                // font-size: 0.6rem;
+                                                padding: 0;
+                                                text-align: center;
+                                            }
+                                            @include laptop {
+                                                // font-size: 1rem;
+                                                padding: 0 20px;
+                                            }
+                                            @include laptop_L {
+                                                // font-size: 1rem;
+                                                padding: 0 20px;
+                                            }
+                                            @include laptop_W {
+                                                // font-size: 2rem;
+                                                padding: 0 20px;
+                                            }
+                                        }
+                                    }
+                                    
+                                    // team section styling starts here
+                                    .team {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        padding: 20px 90px;
+                                        background: #F8F8F8;
+                                        @include mobile {
+                                            padding: 0 24px;
+                                        }
+                                        @include tablet {
+                                            padding: 4%;
+                                        }
+                                        @include laptop {
+                                            padding: 4%;
+                                        }
+                                        @include laptop_L {
+                                            padding: 4%;
+                                        }
+                                        @include laptop_W {
+                                            padding: 80px 7%;
+                                        }
+                                        &__title {
+                                            font-size: 1.8rem;
+                                            font-weight: 600;
+                                            color: #656565;
+                                            @include mobile {
+                                                margin-bottom: 40px;
+                                                font-size: 1.5rem;
+                                                font-weight: 500;
+                                            }
+                                            @include tablet {
+                                                margin-bottom: 40px;
+                                                font-size: 1.5rem;
+                                                font-weight: 500;
+                                            }
+                                            @include laptop {
+                                                margin-bottom: 40px;
+                                                font-size: 1.5rem;
+                                                font-weight: 500;
+                                            }
+                                            @include laptop_L {
+                                                margin-bottom: 40px;
+                                                font-size: 1.5rem;
+                                                font-weight: 500;
+                                            }
+                                            @include laptop_W {
+                                                margin-bottom: 40px;
+                                                font-size: 3rem;
+                                                font-weight: 700;
+                                                margin-bottom: 60px;
+                                            }
+                                        }
+                                        &__profilewrapper {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: horizontal;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-flow: row wrap;
+                                            flex-flow: row wrap;
+                                            -webkit-box-pack: justify;
+                                            -ms-flex-pack: justify;
+                                            justify-content: space-between;
+                                            margin-top: 30px;
+                                            @include mobile {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: column;
+                                                flex-direction: column;
+                                                margin-top: 0px;
+                                                -webkit-box-pack: justify;
+                                                -ms-flex-pack: justify;
+                                                justify-content: space-between;
+                                                padding: 0 4%;
+                                            }
+                                            @include tablet {
+                                                margin-top: 0px;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                -webkit-box-orient: horizontal;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: row wrap;
+                                                flex-flow: row wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                                padding: 0;
+                                            }
+                                        }
+                                        &__profilecontainer {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            margin-left: 15px;
+                                            margin-bottom: 30px;
+                                            border-radius: 15px;
+                                            max-height: 400px;
+                                            max-width: 400px;
+                                            background: #FFF;
+                                            -webkit-box-shadow: 0 1px 0px 1px rgba(0, 0, 0, 0.25);
+                                            box-shadow: 0 1px 0px 1px rgba(0, 0, 0, 0.25);
+                                            border: none;
+                                            -webkit-border-radius: 15px;
+                                            -moz-border-radius: 15px;
+                                            -ms-border-radius: 15px;
+                                            -o-border-radius: 15px;
+                                            -webkit-transition: -webkit-transform .5s;
+                                            transition: -webkit-transform .5s;
+                                            transition: transform .5s;
+                                            transition: transform .5s, -webkit-transform .5s;
+                                            -webkit-transition: transform .5s;
+                                            -moz-transition: transform .5s;
+                                            -ms-transition: transform .5s;
+                                            -o-transition: transform .5s;
+                                            @include mobile {
+                                                position: relative;
+                                                margin-left: 0;
+                                                margin: 53px 0;
+                                                padding-top: 50px;
+                                            }
+                                            @include tablet {
+                                                margin-left: 20px;
+                                                max-width: 300px;
+                                                max-height: 300px;
+                                                padding-top: 0;
+                                                margin: 0;
+                                                margin-right: 30px;
+                                                margin-bottom: 30px;
+                                            }
+                                            @include laptop {
+                                                max-width: 280px;
+                                            }
+                                            @include laptop_L {
+                                                max-width: 400px;
+                                            }
+                                            @include laptop_W {
+                                                max-width: 600px;
+                                                margin-right: 60px;
+                                                margin-bottom: 60px;
+                                            }
+                                            &:hover {
+                                                transform: scale3d(1.006, 1.006, 1);
+                                                -webkit-transform: scale3d(1.006, 1.006, 1);
+                                                -moz-transform: scale3d(1.006, 1.006, 1);
+                                                -ms-transform: scale3d(1.006, 1.006, 1);
+                                                -o-transform: scale3d(1.006, 1.006, 1);
+                                            }
+                                        }
+                                        &__profileimage {
+                                            border-radius: 15px 0 0 15px;
+                                            width: 35%;
+                                            background-image: url(../img/Aboutus/CEO.png);
+                                            background-position: center;
+                                            background-size: cover;
+                                            -webkit-border-radius: 15px 0 0 15px;
+                                            -moz-border-radius: 15px 0 0 15px;
+                                            -ms-border-radius: 15px 0 0 15px;
+                                            -o-border-radius: 15px 0 0 15px;
+                                            @include mobile {
+                                                position: absolute;
+                                                width: 100px;
+                                                height: 100px;
+                                                top: -51px;
+                                                left: 100px;
+                                                border-radius: 100%;
+                                                -webkit-border-radius: 100%;
+                                                -moz-border-radius: 100%;
+                                                -ms-border-radius: 100%;
+                                                -o-border-radius: 100%;
+                                            }
+                                            @include tablet {
+                                                position: initial;
+                                                border-radius: 15px 0 0 15px;
+                                                width: 40%;
+                                                background-image: url(../img/Aboutus/CEO.png);
+                                                background-position: center;
+                                                background-size: cover;
+                                                -webkit-border-radius: 15px 0 0 15px;
+                                                -moz-border-radius: 15px 0 0 15px;
+                                                -ms-border-radius: 15px 0 0 15px;
+                                                -o-border-radius: 15px 0 0 15px;
+                                                top: 0;
+                                                right: 0;
+                                                height: 300px;
+                                            }
+                                            &.cfo {
+                                                background-image: url(../img/Aboutus/cfo.png);
+                                                background-repeat: no-repeat;
+                                            }
+                                            &.cco {
+                                                background-image: url(../img/Aboutus/cco.png);
+                                            }
+                                            &.internal {
+                                                background-image: url(../img/Aboutus/internal.png);
+                                            }
+                                            &.designer {
+                                                background-image: url(../img/Aboutus/Designer.png);
+                                            }
+                                            &.ict {
+                                                background-image: url(../img/Aboutus/ICT.png);
+                                            }
+                                        }
+                                        &__profilecontent {
+                                            width: 65%;
+                                            padding: 0 16px;
+                                            color: #646464;
+                                            @include mobile {
+                                                width: 100%;
+                                                margin-top: 0;
+                                                text-align: center;
+                                            }
+                                            @include tablet {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: column;
+                                                flex-direction: column;
+                                                -webkit-box-pack: space-evenly;
+                                                -ms-flex-pack: space-evenly;
+                                                justify-content: space-evenly;
+                                                text-align: left;
+                                                width: 60%;
+                                                padding: 8px 16px;
+                                                color: #646464;
+                                            }
+                                        }
+                                        &__profiletitle {
+                                            font-size: 1.2rem;
+                                            font-weight: bold;
+                                        }
+                                        &__profileposition {
+                                            margin-top: 10px;
+                                            font-size: 0.9rem;
+                                            font-weight: bold;
+                                        }
+                                        &__profiletext {
+                                            padding-right: 30px;
+                                            font-size: 0.8rem;
+                                            @include mobile {
+                                                padding-right: 0;
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                        &__profilesocialbtns {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: space-evenly;
+                                            -ms-flex-pack: space-evenly;
+                                            justify-content: space-evenly;
+                                            width: 100%;
+                                            margin-bottom: 20px;
+                                        }
+                                        &__profilesocialbtn {
+                                            height: 20px;
+                                            width: 24px;
+                                        }
+                                        // &__btn {
+                                        //     -ms-flex-item-align: center;
+                                        //     align-self: center;
+                                        //     border: none;
+                                        //     margin: 30px 0;
+                                        //     padding: 20px 40px;
+                                        //     color: #fff;
+                                        //     background-color: #24C347;
+                                        //     font-size: 1.2rem;
+                                        //     border-radius: 10px;
+                                        //     -webkit-border-radius: 10px;
+                                        //     -moz-border-radius: 10px;
+                                        //     -ms-border-radius: 10px;
+                                        //     -o-border-radius: 10px;
+                                        //     @include mobile {
+                                        //         padding: 20px 40px;
+                                        //     }
+                                        //     @include tablet {
+                                        //         padding: 20px 40px;
+                                        //     }
+                                        //     @include laptop {
+                                        //         padding: 20px 40px;
+                                        //     }
+                                        //     @include laptop_L {
+                                        //         padding: 20px 40px;
+                                        //     }
+                                        //     @include laptop_W {
+                                        //         padding: 40px 40px;
+                                        //         font-size: 2rem;
+                                        //     }
+                                        // }
+                                    }
+                                    
+                                    // corevalue styling starts here
+                                    .corevalue {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        padding: 60px 160px;
+                                        color: #656565;
+                                        @include mobile {
+                                            padding: 20px 24px;
+                                        }
+                                        @include tablet {
+                                            padding: 4%;
+                                        }
+                                        @include laptop {
+                                            padding: 4%;
+                                        }
+                                        @include laptop_L {
+                                            padding: 4%;
+                                        }
+                                        @include laptop_W {
+                                            padding: 80px 15%;
+                                        }
+                                        &__container {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            &__title {
+                                                font-size: 2rem;
+                                                font-weight: 600;
+                                                color: #656565;
+                                            }
+                                            &__contentwrapper {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-pack: space-evenly;
+                                                -ms-flex-pack: space-evenly;
+                                                justify-content: space-evenly;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                margin: 30px 0;
+                                                @include mobile {
+                                                    -webkit-box-orient: vertical;
+                                                    -webkit-box-direction: normal;
+                                                    -ms-flex-direction: column;
+                                                    flex-direction: column;
+                                                    -webkit-box-pack: center;
+                                                    -ms-flex-pack: center;
+                                                    justify-content: center;
+                                                }
+                                                @include tablet {
+                                                    width: 100%;
+                                                    -webkit-box-orient: horizontal;
+                                                    -webkit-box-direction: normal;
+                                                    -ms-flex-direction: row;
+                                                    flex-direction: row;
+                                                    -webkit-box-pack: space-evenly;
+                                                    -ms-flex-pack: space-evenly;
+                                                    justify-content: space-evenly;
+                                                }
+                                                @include laptop {
+                                                    width: 100%;
+                                                    -webkit-box-orient: horizontal;
+                                                    -webkit-box-direction: normal;
+                                                    -ms-flex-direction: row;
+                                                    flex-direction: row;
+                                                    -webkit-box-pack: space-evenly;
+                                                    -ms-flex-pack: space-evenly;
+                                                    justify-content: space-evenly;
+                                                }
+                                                @include laptop_L {
+                                                    width: 100%;
+                                                    -webkit-box-orient: horizontal;
+                                                    -webkit-box-direction: normal;
+                                                    -ms-flex-direction: row;
+                                                    flex-direction: row;
+                                                    -webkit-box-pack: space-evenly;
+                                                    -ms-flex-pack: space-evenly;
+                                                    justify-content: space-evenly;
+                                                }
+                                                @include laptop_W {
+                                                    width: 100%;
+                                                    -webkit-box-orient: horizontal;
+                                                    -webkit-box-direction: normal;
+                                                    -ms-flex-direction: row;
+                                                    flex-direction: row;
+                                                    -webkit-box-pack: space-evenly;
+                                                    -ms-flex-pack: space-evenly;
+                                                    justify-content: space-evenly;
+                                                }
+                                            }
+                                            &__contentcontainer {
+                                                margin-top: 20px;
+                                                padding: 20px;
+                                                max-width: 400px;
+                                                max-height: 500px;
+                                                text-align: center;
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: column;
+                                                flex-direction: column;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                @include mobile {
+                                                    max-width: 300px;
+                                                    padding: 0px;
+                                                }
+                                                @include tablet {
+                                                    max-width: 300px;
+                                                    padding: 0 10px;
+                                                }
+                                                @include laptop {
+                                                    max-width: 300px;
+                                                    padding: 0 16px;
+                                                }
+                                                @include laptop_L {
+                                                    max-width: 400px;
+                                                }
+                                                @include laptop_W {
+                                                    max-width: 600px;
+                                                }
+                                            }
+                                            &__contenttitle {
+                                                // font-size: 2rem;
+                                                font-weight: 600;
+                                                // @include mobile {
+                                                //     // font-size: 1.5rem;
+                                                // }
+                                                // @include tablet {
+                                                //     // font-size: 1.5rem;
+                                                // }
+                                                // @include laptop {
+                                                //     // font-size: 2rem;
+                                                // }
+                                                // @include laptop_L {
+                                                //     // font-size: 2rem;
+                                                // }
+                                                // @include laptop_W {
+                                                //     // font-size: 3rem;
+                                                // }
+                                            }
+                                            /*  &__contentsubtitle {
+                                                font-size: 1rem;
+                                                @include mobile {
+                                                    font-size: 0.8rem;
+                                                }
+                                                @include tablet {
+                                                    font-size: 0.8rem;
+                                                }
+                                                @include laptop {
+                                                    font-size: 1rem;
+                                                }
+                                                @include laptop_L {
+                                                    font-size: 1rem;
+                                                }
+                                                @include laptop_W {
+                                                    font-size: 1.6rem;
+                                                }
+                                            } */
+                                            &__image {
+                                                max-height: 218px;
+                                                max-width: 360px;
+                                                @include mobile {
+                                                    max-width: 200px;
+                                                }
+                                                @include tablet {
+                                                    max-width: 200px;
+                                                }
+                                                @include laptop {
+                                                    max-width: 200px;
+                                                }
+                                                @include laptop_L {
+                                                    max-width: 360px;
+                                                }
+                                            }
+                                            &__divider {
+                                                height: 450px;
+                                                width: 1px;
+                                                background-color: #b5b5b5;
+                                                @include mobile {
+                                                    display: none;
+                                                }
+                                                @include tablet {
+                                                    display: block;
+                                                    height: 450px;
+                                                    width: 1px;
+                                                    background-color: #b5b5b5;
+                                                }
+                                                @include laptop {
+                                                    display: block;
+                                                }
+                                                @include laptop_L {
+                                                    display: block;
+                                                }
+                                                @include laptop_W {
+                                                    display: block;
+                                                }
+                                            }
+                                            &__mobiledivider {
+                                                margin: 20px 0;
+                                                display: none;
+                                                height: 1px;
+                                                width: 320px;
+                                                background-color: #b5b5b5;
+                                                @include mobile {
+                                                    display: block;
+                                                }
+                                                @include tablet {
+                                                    display: none;
+                                                }
+                                            }
+                                            // &__visioncontainer {
+                                            //     display: flex;
+                                            //     justify-content: space-evenly;
+                                            //     align-items: center;
+                                            //     padding: 20px 120px;
+                                            //     @include mobile {
+                                            //         padding: 20px 24px;
+                                            //         justify-content: center;
+                                            //         flex-flow: column wrap;
+                                            //     }
+                                            //     &__mission {
+                                            //         width: 40%;
+                                            //     }
+                                            //     &__missiontitle,
+                                            //     &__visiontitle {
+                                            //         font-size: 1.8rem;
+                                            //         font-weight: 600;
+                                            //         text-align: center;
+                                            //         margin-bottom: 30px;
+                                            //     }
+                                            //     &__missionsubtitle,
+                                            //     &__visionsubtitle {
+                                            //         font-size: 1.6rem;
+                                            //     }
+                                            //     &__divider {
+                                            //         margin-left: 30px;
+                                            //         margin-right: 30px;
+                                            //         height: 450px;
+                                            //         width: 1px;
+                                            //         background-color: #b5b5b5;
+                                            //     }
+                                            //     &__vision {
+                                            //         width: 40%;
+                                            //     }
+                                            // }
+                                        }
+                                    }
+                                    
+                                    // join us styling starts here
+                                    .joinus {
+                                        position: relative;
+                                        background: -o-linear-gradient( top left, rgba(195, 160, 36, 1), rgba(36, 195, 71, 1));
+                                        background: -webkit-gradient( linear, left top, right bottom, from(rgba(195, 160, 36, 1)), to(rgba(36, 195, 71, 1)));
+                                        background: linear-gradient( to bottom right, rgba(195, 160, 36, 1), rgba(36, 195, 71, 1));
+                                        max-height: 250px;
+                                        width: 100vw;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        padding: 0 120px;
+                                        color: #FFF;
+                                        @include mobile {
+                                            max-height: none;
+                                            padding: 20px;
+                                        }
+                                        @include tablet {
+                                            max-height: none;
+                                        }
+                                        @include laptop {
+                                            max-height: none;
+                                        }
+                                        @include laptop_L {
+                                            max-height: 250px;
+                                        }
+                                        @include laptop_W {
+                                            max-height: 300px;
+                                        }
+                                        &:before {
+                                            content: "";
+                                            position: absolute;
+                                            left: 0;
+                                            background-image: url(../img/Aboutus/joinusbackground.png);
+                                            background-position: center;
+                                            background-size: cover;
+                                            width: 100vw;
+                                            height: 100%;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            z-index: 0;
+                                        }
+                                        &__pic {
+                                            position: relative;
+                                            width: 50%;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: horizontal;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            margin-bottom: 80px;
+                                            z-index: 1;
+                                            @include mobile {
+                                                display: none;
+                                                margin-bottom: 80px;
+                                            }
+                                            @include tablet {
+                                                display: none;
+                                                margin-bottom: 80px;
+                                            }
+                                            @include laptop {
+                                                display: none;
+                                                margin-bottom: 80px;
+                                            }
+                                            @include laptop_L {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                z-index: 1;
+                                                margin-bottom: 80px;
+                                                width: 36%;
+                                            }
+                                            @include laptop_W {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                margin-bottom: 0;
+                                                width: 26%;
+                                                max-height: 302px;
+                                                -webkit-box-align: end;
+                                                -ms-flex-align: end;
+                                                align-items: flex-end;
+                                            }
+                                            &__img {
+                                                min-width: 100%;
+                                            }
+                                        }
+                                        &__content {
+                                            width: 50%;
+                                            -webkit-box-align: left;
+                                            -ms-flex-align: left;
+                                            align-items: left;
+                                            text-align: left;
+                                            z-index: 1;
+                                            @include mobile {
+                                                width: 100%;
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column;
+                                                flex-flow: column;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                text-align: center;
+                                            }
+                                            @include tablet {
+                                                width: 100%;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                            }
+                                            @include laptop {
+                                                width: 100%;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                            }
+                                            @include laptop_L {
+                                                width: 50%;
+                                                -webkit-box-align: self-start;
+                                                -ms-flex-align: self-start;
+                                                align-items: self-start;
+                                                text-align: left;
+                                                padding-right: 20px;
+                                            }
+                                            @include laptop_W {
+                                                width: 50%;
+                                                -webkit-box-align: self-start;
+                                                -ms-flex-align: self-start;
+                                                align-items: self-start;
+                                                text-align: left;
+                                                padding-right: 21%;
+                                            }
+                                        }
+                                        &__pretitle {
+                                            margin: 5px 0;
+                                            font-size: 1.1rem;
+                                            font-weight: 600;
+                                            @include mobile {
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                        &__title {
+                                            margin: 0;
+                                            // font-size: 2rem;
+                                            font-weight: 700;
+                                            @include mobile {
+                                                // font-size: 1.7rem;
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                        &__subtitle {
+                                            // font-size: 1rem;
+                                            z-index: 999;
+                                            @include mobile {
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                        &__btn {
+                                            border: none;
+                                            padding: 16px 40px;
+                                            color: #24C347;
+                                            background-color: #fff;
+                                            font-size: 1.2rem;
+                                            font-weight: 700;
+                                            margin: 15px 0;
+                                            border-radius: 25px;
+                                        }
+                                    }
+                                    
+                                    // social media styling starts here
+                                    .socialmedia {
+                                        padding: 20px 120px;
+                                        @include mobile {
+                                            padding: 20px 24px;
+                                        }
+                                        @include tablet {
+                                            padding: 20px 80px;
+                                        }
+                                        @include laptop {
+                                            padding: 20px 80px;
+                                        }
+                                        @include laptop_L {
+                                            padding: 20px 80px;
+                                        }
+                                        @include laptop_W {
+                                            padding: 80px 15%;
+                                        }
+                                        &__container {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: space-evenly;
+                                            -ms-flex-pack: space-evenly;
+                                            justify-content: space-evenly;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            @include mobile {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column wrap;
+                                                flex-flow: column wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                            }
+                                            @include tablet {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column wrap;
+                                                flex-flow: column wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                            }
+                                            @include laptop {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column wrap;
+                                                flex-flow: column wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                            }
+                                            @include laptop_L {
+                                                -webkit-box-orient: horizontal;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: row;
+                                                flex-flow: row;
+                                            }
+                                        }
+                                        &__btns {
+                                            padding: 80px 80px;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            width: 40%;
+                                            @include mobile {
+                                                margin-top: 30px;
+                                                padding: 0;
+                                                width: 100%;
+                                            }
+                                            &__pic {
+                                                max-height: 100px;
+                                                max-width: 100px;
+                                                @include mobile {
+                                                    max-width: 50px;
+                                                    max-height: 50px;
+                                                }
+                                                @include tablet {
+                                                    max-width: 75px;
+                                                    max-height: 75px;
+                                                }
+                                                @include laptop {
+                                                    max-height: 75px;
+                                                    max-width: 75px;
+                                                }
+                                                @include laptop_L {
+                                                    max-height: 100px;
+                                                    max-width: 100px;
+                                                }
+                                                @include laptop_W {
+                                                    max-height: 150px;
+                                                    max-width: 150px;
+                                                }
+                                            }
+                                        }
+                                        &__content {
+                                            width: 40%;
+                                            color: #656565;
+                                            @include mobile {
+                                                width: 100%;
+                                                text-align: center;
+                                            }
+                                            @include tablet {
+                                                width: 100%;
+                                                text-align: center;
+                                            }
+                                            @include laptop {
+                                                width: 100%;
+                                                text-align: center;
+                                            }
+                                            @include laptop_L {
+                                                width: 60%;
+                                                text-align: left;
+                                            }
+                                            &__title {
+                                                // font-size: 2rem;
+                                                font-weight: 700;
+                                                // @include mobile {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include tablet {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include laptop {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include laptop_L {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include laptop_W {
+                                                //     font-size: 2.5rem;
+                                                // }
+                                            }
+                                            &__subtitle {
+                                                // font-size: 1rem;
+                                                font-weight: 500;
+                                                // @include mobile {
+                                                //     font-size: 0.8rem;
+                                                // }
+                                                // @include tablet {
+                                                //     font-size: 1rem;
+                                                // }
+                                                // @include laptop {
+                                                //     font-size: 1rem;
+                                                // }
+                                                // @include laptop_L {
+                                                //     font-size: 1rem;
+                                                // }
+                                                // @include laptop_W {
+                                                //     font-size: 1.5rem;
+                                                // }
+                                            }
+                                        }
+                                    }
+                                    
+                                    // wave styling starts here
+                                    .black_wave {
+                                        position: relative;
+                                        &>svg {
+                                            z-index: 1;
+                                            display: block;
+                                            margin-top: -200px;
+                                            @include mobile {
+                                                margin-top: 0;
+                                            }
+                                            @include tablet {
+                                                margin-top: -100px;
+                                            }
+                                            @include laptop {
+                                                margin-top: -100px;
+                                            }
+                                            @include laptop_L {
+                                                margin-top: -200px;
+                                            }
+                                            @include laptop_W {
+                                                margin-top: -200px;
+                                            }
+                                        }
+                                    }
+                                    
+                                    .footer__container {
+                                        background: #000;
+                                        color: #FFF;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                        @include mobile {
+                                            display: none;
+                                        }
+                                    }
+                                    
+                                    .footer {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: space-evenly;
+                                        -ms-flex-pack: space-evenly;
+                                        justify-content: space-evenly;
+                                        padding: 40px 120px;
+                                        // footer first section stylings starts here 
+                                        &__firstsection {
+                                            margin-right: 50px;
+                                            &__title {
+                                                margin-bottom: 20px;
+                                                font-size: 1.3rem;
+                                                font-weight: 700;
+                                            }
+                                            &__subtitle {
+                                                margin: 0;
+                                                font-size: 1rem;
+                                                max-width: 200px;
+                                                max-height: 320px;
+                                            }
+                                        }
+                                        // footer first section stylings ends here
+                                        // footer second section stylings starts here 
+                                        &__secondsection {
+                                            margin-right: 50px;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            &__contentcontainer {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-direction: column;
+                                                flex-direction: column;
+                                                margin-bottom: 30px;
+                                                &__title {
+                                                    font-size: 1.3rem;
+                                                    font-weight: 600;
+                                                    margin: 0;
+                                                    margin-bottom: 0;
+                                                }
+                                                &__subtitle {
+                                                    font-size: 1rem;
+                                                    margin: 0px;
+                                                }
+                                                &__icons {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-pack: left;
+                                                    -ms-flex-pack: left;
+                                                    justify-content: left;
+                                                    gap: 30px;
+                                                    margin: 0;
+                                                }
+                                                &__icon {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    gap: 10px;
+                                                    font-size: 1.2rem;
+                                                }
+                                            }
+                                        }
+                                        // footer second section stylings ends here 
+                                        &__divider {
+                                            height: 1px;
+                                            width: 280px;
+                                            background: #FFF;
+                                            margin-bottom: 20px;
+                                        }
+                                        &__link {
+                                            text-decoration: none;
+                                            color: #24C347;
+                                            font-size: 1.2rem;
+                                        }
+                                        &__thirdsection {
+                                            margin-right: 50px;
+                                            &__subtitle {
+                                                max-width: 200px;
+                                                max-height: 40px;
+                                                font-size: 1rem;
+                                            }
+                                        }
+                                        &__fourthsection {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            &__socialmedia {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                -webkit-box-pack: space-evenly;
+                                                -ms-flex-pack: space-evenly;
+                                                justify-content: space-evenly;
+                                                margin-bottom: 50px;
+                                                &__btn {
+                                                    height: 46px;
+                                                    width: 64px;
+                                                }
+                                            }
+                                            &__subscribe__title {
+                                                font-size: 1.2rem;
+                                                font-weight: 600;
+                                                margin-bottom: 27px;
+                                            }
+                                            &__subscribe__input .input-field input[type=email] {
+                                                width: 100%;
+                                                padding: 12px 20px;
+                                                margin: 8px 0;
+                                            }
+                                            &__subscribe__btn {
+                                                margin-top: 30px;
+                                                padding: 10px 120px;
+                                                background: #24C347;
+                                                color: #FFF;
+                                                border: none;
+                                                border-radius: 15px;
+                                                -webkit-border-radius: 15px;
+                                                -moz-border-radius: 15px;
+                                                -ms-border-radius: 15px;
+                                                -o-border-radius: 15px;
+                                            }
+                                        }
+                                        .second__footer {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: justify;
+                                            -ms-flex-pack: justify;
+                                            justify-content: space-between;
+                                            background: #0f1011;
+                                            padding: 20px 120px;
+                                            &__left a {
+                                                color: #24C347;
+                                            }
+                                        }
+                                    }
