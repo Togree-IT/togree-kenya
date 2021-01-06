@@ -552,7 +552,7 @@ body {
             }
         }
         @include laptop_L {
-            min-height: 88vh;
+            min-height: 60vh;
             margin-top: 4pc;
             .art_stylish {
                 -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -719,7 +719,7 @@ body {
                 }
                 @include laptop_L {
                     position: initial;
-                    width: 60%;
+                    width: 50%;
                     background: rgba(31, 64, 41, 0);
                     -webkit-backdrop-filter: none;
                     backdrop-filter: none;
@@ -756,13 +756,18 @@ body {
                         text-align: center;
                         width: (100% - 20);
                     }
+                    @include tablet {
+                        margin: 0 auto;
+                        text-align: center;
+                        width: (100% - 30);
+                    }
                     @include laptop {
                         width: (100% /1);
                         margin: 0;
                         text-align: left;
                     }
                     @include laptop_L {
-                        width: (100% /2);
+                        width: (100% - 20);
                         margin: 0 auto;
                         text-align: left;
                     }
@@ -781,7 +786,7 @@ body {
                         padding: 0 20px;
                     }
                     @include tablet {
-                        width: 100%;
+                        width: (100% - 30);
                         padding: 5px 0 0 22px;
                     }
                     @include laptop {
@@ -789,7 +794,7 @@ body {
                         padding: 5px 0 0 15px;
                     }
                     @include laptop_L {
-                        width: (100% /2);
+                        width: (100% - 20);
                         padding: 0 25px;
                     }
                     @include laptop_W {
