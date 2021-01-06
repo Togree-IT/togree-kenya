@@ -14,7 +14,7 @@
         "@babel/core": "^7.9.6",
         "@babel/preset-env": "^7.9.6",
         "@babel/register": "^7.9.0",
-        "browser-sync": "^2.26.7",
+        "browser-sync": "^2.26.13",
         "connect-flash": "^0.1.1",
         "connect-mongodb-session": "^2.3.2",
         "ejs": "^3.1.3",
