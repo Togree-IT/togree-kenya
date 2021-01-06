@@ -340,13 +340,16 @@ body {
         justify-content: space-between;
         padding: 10px;
         background: rgba(255, 255, 255, 0.23);
-        position: fixed;
+        position: relative;
         top: 0;
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
         z-index: 10;
         -webkit-box-shadow: 0px 1px 2px #c1d2da;
         box-shadow: 0px 1px 2px #c1d2da;
+        &.art_fixed {
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            position: fixed;
+        }
         .art_nav-right {
             @include flex();
             width: auto;
@@ -526,10 +529,10 @@ body {
         background-position-x: 80%;
         position: relative;
         padding: 0;
-        margin-top: 4pc;
+        // margin-top: 4pc;
         @include mobile {
             min-height: 30.9pc;
-            margin-top: 3.59pc;
+            // margin-top: 3.59pc;
             .art_stylish {
                 filter: none;
                 -webkit-filter: none;
@@ -537,7 +540,7 @@ body {
         }
         @include tablet {
             min-height: 30.9pc;
-            margin-top: 3.99pc;
+            // margin-top: 3.99pc;
             .art_stylish {
                 filter: none;
                 -webkit-filter: none;
@@ -545,7 +548,7 @@ body {
         }
         @include laptop {
             min-height: 55vh;
-            margin-top: 4pc;
+            // margin-top: 4pc;
             .art_stylish {
                 -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
                 filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -553,7 +556,7 @@ body {
         }
         @include laptop_L {
             min-height: 60vh;
-            margin-top: 4pc;
+            // margin-top: 4pc;
             .art_stylish {
                 -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
                 filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -561,7 +564,7 @@ body {
         }
         @include laptop_W {
             min-height: 75vh;
-            margin-top: 4pc;
+            // margin-top: 4pc;
             .art_stylish {
                 -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
                 filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -686,6 +689,21 @@ body {
                     -webkit-box-pack: start;
                     -ms-flex-pack: start;
                     justify-content: flex-start;
+                }
+                @include mobile {
+                    position: absolute;
+                    width: 100%;
+                    background: rgba(31, 64, 41, 0.71);
+                    -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
+                    padding: 38px 15px;
+                    padding-left: 15px;
+                    color: aliceblue;
+                    top: 0;
+                    bottom: 0;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
                 }
                 /* @include tablet {
                     position: initial;
@@ -983,6 +1001,13 @@ body {
                 margin: 0 auto 15px;
                 min-height: 17vh;
                 @include box_shad(0px 0px 22px -9px #d8e1ea);
+                &:hover {
+                    transform: none;
+                    -webkit-transform: none;
+                    -moz-transform: none;
+                    -ms-transform: none;
+                    -o-transform: none;
+                }
             }
             @include tablet {
                 width: 61%;
@@ -1002,15 +1027,22 @@ body {
                 @include flex_bs(initial);
                 @include box_shad((-6px -10px 0px 1px #d8e1ea,
                 9px 9px 0px 1px #d8e1ea));
+                &:hover {
+                    transform: matrix(1, -0.031, 0, 1, 3, 9);
+                    -webkit-transform: matrix(1, -0.031, 0, 1, 3, 9);
+                    -moz-transform: matrix(1, -0.031, 0, 1, 3, 9);
+                    -ms-transform: matrix(1, -0.031, 0, 1, 3, 9);
+                    -o-transform: matrix(1, -0.031, 0, 1, 3, 9);
+                }
                 &:last-of-type {
                     -ms-flex-preferred-size: initial;
                     flex-basis: initial;
                 }
             }
             @include laptop_L {
-                width: 28%;
+                width: 30%;
                 margin: 0 0 30px 0;
-                // min-height: 29vh;
+                min-height: 20vh;
                 @include flex_bs(initial);
                 @include box_shad((-6px -10px 0px 1px #d8e1ea,
                 9px 9px 0px 1px #d8e1ea));
@@ -1022,7 +1054,7 @@ body {
             @include laptop_W {
                 width: 31%;
                 margin: 0 0 30px 0;
-                // min-height: 29vh;
+                min-height: 19vh;
                 @include flex_bs(initial);
                 @include box_shad((-6px -10px 0px 1px #d8e1ea,
                 9px 9px 0px 1px #d8e1ea));
@@ -1206,21 +1238,66 @@ body {
                             width: (120px + 40px);
                             height: (120px + 40px);
                             padding: (10px - 0);
+                            &:last-of-type {
+                                width: (120px + 40px);
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                            }
+                        }
+                        @include tablet {
+                            width: (120px + 40px);
+                            height: (120px + 40px);
+                            padding: (10px - 0);
+                            &:last-of-type {
+                                width: 90%;
+                                border-radius: 5px;
+                                -webkit-border-radius: 5px;
+                                -moz-border-radius: 5px;
+                                -ms-border-radius: 5px;
+                                -o-border-radius: 5px;
+                            }
                         }
                         @include laptop {
-                            width: calc(1000px / 5);
-                            height: calc(1000px / 5);
+                            width: (1000px / 5);
+                            height: (1000px / 5);
                             padding: ((10px - 7px) + 7px);
+                            &:last-of-type {
+                                width: (1000px / 5);
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                            }
                         }
                         @include laptop_L {
                             width: 228px;
                             height: 228px;
                             padding: ((10px - 7px) + 7px);
+                            &:last-of-type {
+                                width: 228px;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                            }
                         }
                         @include laptop_W {
                             width: 228px;
                             height: 228px;
                             padding: ((10px - 7px) + 7px);
+                            &:last-of-type {
+                                width: 228px;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                            }
                         }
                     }
                     .art_our_number_circle_conter {
@@ -1232,11 +1309,10 @@ body {
                         -ms-flex-align: center;
                         align-items: center;
                         background-color: #ffffff;
-                        // color: rgba(255, 255, 255, 0.729);
-                        border-radius: 50%;
                         -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
                         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
                         text-align: center;
+                        border-radius: inherit;
                         .art_circle_wrap {
                             text-align: center;
                             width: 100%;
@@ -1372,7 +1448,7 @@ body {
                             width: 100%;
                         }
                         @include laptop_L {
-                            width: 80%;
+                            width: 100%;
                         }
                         @include laptop_W {
                             width: 80%;
@@ -1440,7 +1516,6 @@ body {
                 fill: var(--operate_color);
             }
         }
-        --operate_color: #f4f6f9;
         .art_how_we_operate {
             @include section_container(100%,
             45vh,
@@ -1448,7 +1523,7 @@ body {
             @include flex_wrp(wrap);
             // background: var(--operate_color);
             @include linearGradient(to top,
-            var(--operate_color) 80%,
+            var(--operate_color),
             transparent);
             // color: #ffffff;
             overflow: visible;
@@ -1511,11 +1586,11 @@ body {
                         margin: 0 0 10px 0;
                     }
                     @include laptop {
-                        width: calc(80% + 20%);
+                        width: (80% + 20);
                         margin: 0 0 0 10px;
                     }
                     @include laptop_L {
-                        width: calc(80% - 5%);
+                        width: (80% + 20);
                         margin: 0 0 0 10px;
                     }
                     @include laptop_W {
@@ -1689,12 +1764,12 @@ body {
                 }
             }
             @include laptop_L {
-                margin: 7% auto 0;
-                min-height: 65vh;
+                margin: 12% auto 0;
+                min-height: 55vh;
                 padding: 0 7% 7%;
                 &::after {
                     width: 20%;
-                    height: 55%;
+                    height: 45%;
                     bottom: calc(70px - 30px);
                 }
                 &::before {
@@ -1802,9 +1877,9 @@ body {
                         5px 10px 0px 0px #d8e1ea));
                     }
                     @include laptop_L {
-                        width: 15%;
-                        height: 220px;
-                        margin: 0 20px 0 0;
+                        width: ((100% / 4) - 3%);
+                        height: ((1000px / 4) - 30);
+                        margin: 0 30px 0 0;
                         @include box_shad((-5px -10px 0px 0px #d8e1ea,
                         5px 10px 0px 0px #d8e1ea));
                     }
@@ -2031,15 +2106,27 @@ body {
             }
             @include tablet {
                 padding: 0px 7% 2pc;
+                .container {
+                    width: 100%;
+                }
             }
             @include laptop {
                 padding: 0px 7% 2pc;
+                .container {
+                    width: 80%;
+                }
             }
             @include laptop_L {
-                padding: 0px 7% 2pc;
+                padding: 0px 0 2pc;
+                .container {
+                    width: 80%;
+                }
             }
             @include laptop_W {
                 padding: 0px 7% 2pc;
+                .container {
+                    width: 70%;
+                }
             }
             .art_our_products_desc {
                 width: 100%;
@@ -2473,6 +2560,15 @@ body {
                 .art_news_card_co {
                     padding: 25px;
                     outline: none;
+                    @include mobile {
+                        padding: 25px
+                    }
+                    @include tablet {
+                        padding: 15px
+                    }
+                    @include laptop {
+                        padding: 25px
+                    }
                 }
                 .art_news_card {
                     @include flex();
@@ -2496,6 +2592,22 @@ body {
                         position: relative;
                         overflow: hidden;
                         outline: none;
+                        @include mobile {
+                            max-height: 120px;
+                            min-height: 120px;
+                        }
+                        @include tablet {
+                            max-height: 70px;
+                            min-height: 70px;
+                        }
+                        @include laptop {
+                            max-height: 90px;
+                            min-height: 90px;
+                        }
+                        @include laptop_L {
+                            max-height: 120px;
+                            min-height: 120px;
+                        }
                         .art_news_thumb {
                             width: 100%;
                             min-height: 70%;
@@ -2508,6 +2620,18 @@ body {
                         max-height: 167px;
                         overflow: hidden;
                         margin: 0 0 auto;
+                        @include mobile {
+                            max-height: 167px;
+                        }
+                        @include tablet {
+                            max-height: 90px;
+                        }
+                        @include laptop {
+                            max-height: 95px;
+                        }
+                        @include laptop_L {
+                            max-height: 167px;
+                        }
                         a {
                             outline: none;
                             color: inherit;
@@ -2600,7 +2724,7 @@ body {
                             width: 86%;
                         }
                         @include laptop_W {
-                            width: 85%;
+                            width: 80%;
                         }
                         .indicator {
                             background-color: #1bc140;
@@ -2722,7 +2846,7 @@ body {
                             padding: 0 20px;
                         }
                         @include laptop {
-                            padding: 45px 150px;
+                            padding: 45px 50px;
                         }
                         @include laptop_L {
                             padding: 45px 150px;
@@ -2752,14 +2876,14 @@ body {
                                 padding: 10px;
                             }
                             @include tablet {
-                                width: 75%;
-                                padding: 18px;
-                                margin: auto;
+                                width: 60%;
+                                padding: 20px;
+                                margin: auto 0 0 auto;
                             }
                             @include laptop {
-                                width: (45% + 6%);
+                                width: (45% + 15%);
                                 padding: 5px calc(20px + 10px);
-                                margin: auto 0;
+                                margin: auto 0 0 auto;
                             }
                             @include laptop_L {
                                 width: (45% + 6%);
@@ -3149,6 +3273,48 @@ body {
                             padding: 0;
                             text-align: center;
                         }
+                    }
+                }
+            }
+            @include mobile {
+                .art_stylish_ {
+                    svg {
+                        width: 151vw;
+                        height: 128px;
+                        margin-left: -77px;
+                    }
+                }
+            }
+            @include tablet {
+                .art_stylish_ {
+                    svg {
+                        width: 100vw;
+                        height: 90px;
+                        margin-left: 0;
+                    }
+                }
+            }
+            @include laptop {
+                .art_stylish_ {
+                    svg {
+                        width: 100vw;
+                        height: 90px;
+                    }
+                }
+            }
+            @include laptop_L {
+                .art_stylish_ {
+                    svg {
+                        width: 100vw;
+                        height: 90px;
+                    }
+                }
+            }
+            @include laptop_W {
+                .art_stylish_ {
+                    svg {
+                        width: 100vw;
+                        height: 90px;
                     }
                 }
             }
