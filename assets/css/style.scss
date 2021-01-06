@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1000&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sen&display=swap');
+@import "./globals";
 @import "./_media_queries";
 @import "./animations";
 @mixin linearGradient($deg:45deg,
@@ -259,7 +261,7 @@ body {
         border: 0;
         text-transform: uppercase;
         color: #24c447;
-        @include box_shad(0 0 0 1px #24c347);
+        @include box_shad(0 0 0 1px #24C447);
         @include bod_radius(10px);
         &.filled {
             background-color: #24C447;
@@ -922,7 +924,11 @@ body {
                 text-align: center;
                 margin: 0 0 40px;
                 .art_title {
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
+                    color: var(--titleColor);
+                    font-weight: 600;
+                    padding: 0;
+                    text-align: center;
                 }
             }
             .art_head_bottom_card_body {
@@ -1163,9 +1169,10 @@ body {
                     text-align: center;
                 }
                 h4.art_title {
-                    color: #24C347;
+                    color: var(--titleColor);
                     font-weight: 600;
                     margin-top: 0;
+                    text-align: center;
                 }
                 .art_our_number_circle_main {
                     width: 100%;
@@ -1324,7 +1331,7 @@ body {
                     height: auto;
                     margin: auto;
                     .art_title {
-                        color: #24C347;
+                        color: var(--titleColor);
                         font-weight: 600;
                         width: -webkit-fit-content;
                         width: -moz-fit-content;
@@ -1332,20 +1339,21 @@ body {
                         padding: 10px 82px 10px 22px;
                         border-radius: 0.51rem;
                         margin-left: -1.5rem;
+                        text-align: center;
                         @include mobile {
                             padding: 0 20px;
                             text-align: center;
                         }
                         @include laptop {
-                            padding: 10px 0 10px 22px;
+                            padding: 10px 20px;
                             text-align: left;
                         }
                         @include laptop_L {
-                            padding: 10px 82px 10px 22px;
+                            padding: 10px 20px;
                             text-align: left;
                         }
                         @include laptop_W {
-                            padding: 10px 82px 10px 22px;
+                            padding: 10px 20px;
                             text-align: left;
                         }
                     }
@@ -1395,7 +1403,7 @@ body {
             @include section_container();
             background: transparent;
             @include mobile {
-                min-height: (40pc + 5pc);
+                min-height: (40pc - 10pc);
             }
             @include tablet {
                 min-height: (40pc - 8pc);
@@ -1429,9 +1437,13 @@ body {
         --operate_color: #f4f6f9;
         .art_how_we_operate {
             @include section_container(100%,
-            45vh);
+            45vh,
+            30px 7%);
             @include flex_wrp(wrap);
-            background: var(--operate_color);
+            // background: var(--operate_color);
+            @include linearGradient(to top,
+            var(--operate_color) 80%,
+            transparent);
             // color: #ffffff;
             overflow: visible;
             @include mobile {
@@ -1471,14 +1483,15 @@ body {
                     width: auto;
                 }
                 .art_we_operate_desc_title {
-                    color: #24C347;
+                    color: var(--titleColor);
                     font-weight: 600;
                     width: -webkit-fit-content;
                     width: -moz-fit-content;
                     width: fit-content;
-                    padding: 10px 82px 10px 22px;
+                    padding: 10px 20px;
                     border-radius: 0.51rem;
                     margin-left: -1.5rem;
+                    text-align: center;
                 }
                 .art_we_operate_desc_text {
                     width: calc(80% - 5%);
@@ -1517,11 +1530,11 @@ body {
                 0,
                 0.149));
                 @include mobile {
-                    height: 190px;
-                    max-width: 0;
-                    max-height: 0;
-                    background: #3c5045;
-                    @include flex_bs(-1);
+                    height: auto;
+                    max-width: initial;
+                    max-height: initial;
+                    background: inherit;
+                    @include flex_bs(1);
                     @include box_shad(-1px 1px 20px rgba(0,
                     0,
                     0,
@@ -1622,18 +1635,18 @@ body {
                 margin: 27% auto 0;
                 min-height: 31pc;
                 padding: 0 7% 30%;
-                &::after {
-                    width: 100%;
-                    width: 40%;
-                    height: 27%;
-                    bottom: 66px;
-                    background-size: contain;
-                }
                 &::before {
                     width: 28%;
                     height: 25%;
                     top: -30px;
                     // background-size: contain;
+                }
+                &::after {
+                    width: 100%;
+                    width: 40%;
+                    height: 27%;
+                    bottom: 9%;
+                    background-size: contain;
                 }
             }
             @include tablet {
@@ -1705,10 +1718,11 @@ body {
                 width: 100%;
                 text-align: center;
                 .art_our_services_desc_title {
-                    color: #24C347;
+                    color: var(--titleColor);
                     font-weight: 600;
                     width: -moz-fit-content;
                     padding: 10px 82px 10px 22px;
+                    text-align: center;
                     @include bod_radius(0.52rem);
                     @include mobile {
                         padding: 0;
@@ -1726,6 +1740,7 @@ body {
             }
             .art_our_services_cards_container {
                 width: 100%;
+                padding: 5px;
                 @include flex();
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
@@ -1747,7 +1762,9 @@ body {
                 }
                 .art_our_services_card {
                     width: 15%;
-                    height: 220px;
+                    min-height: 220px;
+                    height: auto;
+                    padding: 5px;
                     margin: 0 20px 0 0;
                     @include flex();
                     @include flex_wrp(wrap);
@@ -1760,7 +1777,8 @@ body {
                     background: #fff;
                     @include mobile {
                         width: 40%;
-                        height: 140px;
+                        min-height: 111px;
+                        height: auto;
                         margin: 10px;
                         @include box_shad(0px 0px 22px -9px #d8e1ea);
                     }
@@ -1964,6 +1982,7 @@ body {
                     }
                     .art_gree_btn {
                         padding: 0 100px;
+                        margin: 0;
                         @include mobile {
                             padding: 10px 5px;
                         }
@@ -2001,7 +2020,8 @@ body {
             position: relative;
             @include flex_dir(column);
             @include mobile {
-                padding: 0px 0% 2pc;
+                padding: 7% 0;
+                min-height: auto;
             }
             @include tablet {
                 padding: 0px 7% 2pc;
@@ -2021,6 +2041,12 @@ body {
                 @include flex_jus_content(center);
                 @include flex_al_itmes(center);
                 @include flex_dir(column);
+                .art_our_products_desc_title {
+                    color: var(--titleColor);
+                    font-weight: 600;
+                    padding: 0;
+                    text-align: center;
+                }
             }
             .art_our_products_container {
                 width: calc(60% + 40%);
@@ -2205,6 +2231,7 @@ body {
                 }
                 .art_gree_btn {
                     padding: 0 100px;
+                    margin: 0;
                     @include mobile {
                         padding: 10px 5px;
                     }
@@ -2253,19 +2280,24 @@ body {
             position: relative;
             padding: 15% 7%;
             @include mobile {
-                min-height: (49pc + 9pc);
+                min-height: 49pc;
+                padding: (15% * 2) 7%;
             }
             @include tablet {
                 min-height: (49pc - 6pc);
+                padding: 15% 7%;
             }
             @include laptop {
                 min-height: 80vh;
+                padding: 15% 7%;
             }
             @include laptop_L {
                 min-height: 85vh;
+                padding: 15% 7%;
             }
             @include laptop_W {
                 min-height: 65vh;
+                padding: 8% 7%;
             }
             .art_md_half_container {
                 .art_md_half {
@@ -2351,6 +2383,10 @@ body {
                     -webkit-box-pack: center;
                     -ms-flex-pack: center;
                     justify-content: center;
+                    color: var(--titleColor);
+                    font-weight: 600;
+                    padding: 0;
+                    text-align: center;
                     @include mobile {
                         width: 100%;
                     }
@@ -2361,7 +2397,7 @@ body {
                         width: 90%;
                     }
                     @include laptop_W {
-                        width: 55%;
+                        width: 80%;
                     }
                 }
                 .art_our_news_desc_text {
@@ -2521,6 +2557,9 @@ body {
                 @include laptop_W {
                     padding: 35px 0px;
                 }
+                button {
+                    margin: 0;
+                }
             }
             .art_updates {
                 min-height: 64vh;
@@ -2549,7 +2588,7 @@ body {
                             width: 100%;
                         }
                         @include laptop {
-                            width: 80%;
+                            width: 100%;
                         }
                         @include laptop_L {
                             width: 86%;
@@ -2602,8 +2641,8 @@ body {
                                     -ms-flex-pack: center;
                                     justify-content: center;
                                     padding: 10px;
-                                    border: 1px solid #24c347;
-                                    color: #24c347;
+                                    border: 1px solid var(--linkColor);
+                                    color: var(--linkColor);
                                     border-radius: 5em;
                                 }
                             }
@@ -2620,21 +2659,25 @@ body {
                 }
                 .art_tabs_content {
                     padding: 0;
-                    min-height: 45vh;
+                    min-height: auto;
                     background: aliceblue;
                     position: relative;
                     overflow: hidden;
-                    @include mobile {
-                        min-height: (22vh + 23vh);
-                    }
+                    padding: 3pc 0;
+                    // @include mobile {
+                    //     min-height: (22vh + 23vh);
+                    // }
+                    // @include tablet {
+                    //     min-height: (22vh + 6vh);
+                    // }
                     @include laptop {
-                        min-height: 45vh;
+                        min-height: auto;
                     }
                     @include laptop_L {
-                        min-height: 55vh;
+                        min-height: auto;
                     }
                     @include laptop_W {
-                        min-height: 45vh;
+                        min-height: auto;
                     }
                     .art_cover_img {
                         position: absolute;
@@ -2668,7 +2711,7 @@ body {
                         -ms-flex-pack: end;
                         justify-content: flex-end;
                         padding: 45px 150px;
-                        margin-top: 3pc;
+                        margin-top: 0;
                         @include mobile {
                             padding: 0 20px;
                         }
@@ -3047,23 +3090,30 @@ body {
                 @include flex_al_itmes(center);
                 @include flex_dir(column);
                 margin: 0 auto;
-                z-index: 1;
+                padding: 0 0 25%;
                 position: relative;
+                z-index: 1;
                 @include mobile {
-                    width: (100% - 10);
-                    min-height: 30vh;
+                    width: 90%;
+                    min-height: auto;
+                    padding: 0 0 25%;
+                }
+                @include tablet {
+                    width: 70%;
+                    min-height: auto;
+                    padding: 0 0 40px;
                 }
                 @include laptop {
                     width: 60%;
-                    min-height: 8vh;
+                    min-height: auto;
                 }
                 @include laptop_L {
                     width: 60%;
-                    min-height: 8vh;
+                    min-height: auto;
                 }
                 @include laptop_W {
                     width: 60%;
-                    min-height: 8vh;
+                    min-height: auto;
                 }
                 .art_subscribe_co {
                     width: 100%;
@@ -3086,6 +3136,12 @@ body {
                             @include laptop_W {
                                 width: 50%;
                             }
+                        }
+                        .art_title {
+                            color: var(--titleColor);
+                            font-weight: 600;
+                            padding: 0;
+                            text-align: center;
                         }
                     }
                 }
@@ -3348,18 +3404,18 @@ body {
         -ms-flex-align: center;
         align-items: center;
         padding: 5px 10px;
-        color: #24C347;
+        color: var(--linkColor);
         text-decoration: none;
         outline: none;
     }
     .art_slick_btn {
         padding: 2px 5px;
-        border: 0;
+        border: 2px solid;
         line-height: 1em;
         border-radius: 5em;
         font-size: 37pt;
-        color: #23c447;
-        background: #f8fbff;
+        color: var(--linkColor);
+        background: #fff;
         -webkit-box-shadow: -2px 1px 1px #e8f2fb;
         box-shadow: -2px 1px 1px #e8f2fb;
         margin: auto 5px;
@@ -3391,6 +3447,7 @@ body {
             -webkit-box-shadow: none;
             box-shadow: none;
             cursor: default;
+            border: 0;
         }
     }
     .art_divider {
