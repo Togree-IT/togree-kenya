@@ -998,9 +998,9 @@ body {
             }
             @include mobile {
                 width: 95%;
-                margin: 0 auto 15px;
+                margin: 0 auto 10%;
                 min-height: 17vh;
-                @include box_shad(0px 0px 22px -9px #d8e1ea);
+                @include box_shad(0px 0px 22px 2px #d8e1ea);
                 &:hover {
                     transform: none;
                     -webkit-transform: none;
@@ -1861,7 +1861,7 @@ body {
                         min-height: 111px;
                         height: auto;
                         margin: 10px;
-                        @include box_shad(0px 0px 22px -9px #d8e1ea);
+                        @include box_shad(0px 0px 22px -1px #d8e1ea);
                     }
                     @include tablet {
                         width: 35%;

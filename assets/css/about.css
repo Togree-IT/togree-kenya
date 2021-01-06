@@ -96,13 +96,43 @@
   flex-wrap: wrap;
   height: auto;
   min-height: 75vh;
-  background: rgba(64, 102, 64, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 12% 0;
-  margin-top: 4px;
+  padding: 0;
+  margin-top: 0;
+  background: rgba(3, 14, 21, 0.929);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 320px) {
+  .about-header {
+    min-height: 45vh;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .about-header {
+    min-height: 45vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about-header {
+    min-height: 55vh;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .about-header {
+    min-height: 75vh;
+  }
 }
 
 .about-header .about-nav {
@@ -333,7 +363,8 @@
 }
 
 .about-header .abouthero__img img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
 .abouthero {
@@ -365,8 +396,8 @@
     max-width: 100%;
     text-align: center;
     margin: 0;
-    margin-top: 100px;
-    padding: 10% 5%;
+    margin-top: 0;
+    padding: 10% 7%;
   }
 }
 
@@ -471,7 +502,9 @@
   justify-content: center;
   padding: 100px 200px;
   color: #656565;
-  background: #d2d2d2;
+  background: rgba(255, 255, 255, 0.922);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   --clicle_height: 20px;
 }
 
@@ -783,7 +816,7 @@
   -ms-flex-pack: center;
   justify-content: center;
   padding: 20px 90px;
-  background: #F8F8F8;
+  background: #eff1f2;
 }
 
 @media screen and (min-width: 320px) {
@@ -958,7 +991,7 @@
 
 @media screen and (min-width: 1024px) {
   .team__profilecontainer {
-    max-width: 280px;
+    max-width: 440px;
   }
 }
 
@@ -1118,8 +1151,8 @@
 }
 
 .team__profilesocialbtn {
-  height: 20px;
-  width: 24px;
+  height: 35px;
+  width: 35px;
 }
 
 .corevalue {
@@ -1135,6 +1168,9 @@
   justify-content: center;
   padding: 60px 160px;
   color: #656565;
+  background: rgba(246, 255, 244, 0.851);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 @media screen and (min-width: 320px) {
@@ -1681,6 +1717,9 @@
 
 .socialmedia {
   padding: 20px 120px;
+  background: rgba(255, 255, 255, 0.922);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 @media screen and (min-width: 320px) {

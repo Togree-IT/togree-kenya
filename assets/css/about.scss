@@ -94,13 +94,31 @@
                                         flex-wrap: wrap;
                                         height: auto;
                                         min-height: 75vh;
-                                        background: rgba(64, 102, 64, 0.5);
                                         background-repeat: no-repeat;
                                         background-size: cover;
                                         background-position: center;
                                         position: relative;
-                                        padding: 12% 0;
-                                        margin-top: 4px;
+                                        padding: 0;
+                                        margin-top: 0;
+                                        background: rgba(3, 14, 21, 0.929);
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        @include mobile {
+                                            min-height: 45vh;
+                                        }
+                                        @include tablet {
+                                            min-height: 45vh;
+                                        }
+                                        @include laptop {
+                                            min-height: 55vh;
+                                        }
+                                        @include laptop_L {
+                                            min-height: 75vh;
+                                        }
                                         .about-nav {
                                             width: 100%;
                                             display: -webkit-box;
@@ -348,7 +366,8 @@
                                             bottom: 0;
                                             overflow: hidden;
                                             img {
-                                                width: 100%;
+                                                width: auto;
+                                                max-width: 100%;
                                             }
                                         }
                                     }
@@ -379,8 +398,8 @@
                                             max-width: 100%;
                                             text-align: center;
                                             margin: 0;
-                                            margin-top: 100px;
-                                            padding: 10% 5%;
+                                            margin-top: 0;
+                                            padding: 10% 7%;
                                         }
                                         @include tablet {
                                             margin-top: 20px;
@@ -506,7 +525,9 @@
                                         justify-content: center;
                                         padding: 100px 200px;
                                         color: #656565;
-                                        background: #d2d2d2;
+                                        background: rgba(255, 255, 255, 0.922);
+                                        -webkit-backdrop-filter: blur(10px);
+                                        backdrop-filter: blur(10px);
                                         @include mobile {
                                             padding: 80px 0;
                                         }
@@ -845,7 +866,7 @@
                                         -ms-flex-pack: center;
                                         justify-content: center;
                                         padding: 20px 90px;
-                                        background: #F8F8F8;
+                                        background: #eff1f2;
                                         @include mobile {
                                             padding: 0 24px;
                                         }
@@ -971,7 +992,7 @@
                                                 margin-bottom: 30px;
                                             }
                                             @include laptop {
-                                                max-width: 280px;
+                                                max-width: ((1000px / 2) - 60px);
                                             }
                                             @include laptop_L {
                                                 max-width: 400px;
@@ -1097,8 +1118,10 @@
                                             margin-bottom: 20px;
                                         }
                                         &__profilesocialbtn {
-                                            height: 20px;
-                                            width: 24px;
+                                            // height: 20px;
+                                            // width: 24px;
+                                            height: 35px;
+                                            width: 35px;
                                         }
                                         // &__btn {
                                         //     -ms-flex-item-align: center;
@@ -1147,6 +1170,9 @@
                                         justify-content: center;
                                         padding: 60px 160px;
                                         color: #656565;
+                                        background: rgba(246, 255, 244, 0.851);
+                                        -webkit-backdrop-filter: blur(10px);
+                                        backdrop-filter: blur(10px);
                                         @include mobile {
                                             padding: 20px 24px;
                                         }
@@ -1601,6 +1627,9 @@
                                     // social media styling starts here
                                     .socialmedia {
                                         padding: 20px 120px;
+                                        background: rgba(255, 255, 255, 0.922);
+                                        -webkit-backdrop-filter: blur(10px);
+                                        backdrop-filter: blur(10px);
                                         @include mobile {
                                             padding: 20px 24px;
                                         }
