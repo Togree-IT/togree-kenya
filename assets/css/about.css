@@ -363,7 +363,7 @@
 }
 
 .about-header .abouthero__img img {
-  width: auto;
+  width: 100%;
   max-width: 100%;
 }
 
