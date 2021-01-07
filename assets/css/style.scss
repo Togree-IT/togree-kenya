@@ -3581,11 +3581,11 @@ body {
         outline: none;
     }
     .art_slick_btn {
-        padding: 2px 5px;
-        border: 2px solid;
+        padding: (10px - 2) 10px;
+        border: 1.99px solid;
         line-height: 1em;
         border-radius: 5em;
-        font-size: 37pt;
+        font-size: 22pt;
         color: var(--linkColor);
         background: #fff;
         -webkit-box-shadow: -2px 1px 1px #e8f2fb;
