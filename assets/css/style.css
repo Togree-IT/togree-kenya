@@ -290,7 +290,7 @@ body .art-nav {
   background: rgba(255, 255, 255, 0.23);
   position: relative;
   top: 0;
-  z-index: 10;
+  z-index: 1111;
   -webkit-box-shadow: 0px 1px 2px #c1d2da;
   box-shadow: 0px 1px 2px #c1d2da;
 }
@@ -312,6 +312,24 @@ body .art-nav .art_nav-right {
   justify-content: space-between;
 }
 
+@media screen and (min-width: 320px) {
+  body .art-nav .art_nav-right {
+    min-width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .art-nav .art_nav-right {
+    min-width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav-right {
+    min-width: 70%;
+  }
+}
+
 body .art-nav .art_nav-right .art-brand {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -319,6 +337,24 @@ body .art-nav .art_nav-right .art-brand {
   width: auto;
   height: auto;
   min-width: 25%;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav .art_nav-right .art-brand {
+    min-width: 68%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .art-nav .art_nav-right .art-brand {
+    min-width: 68%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav-right .art-brand {
+    min-width: 25%;
+  }
 }
 
 body .art-nav .art_nav-right .art-brand img {
@@ -360,6 +396,20 @@ body .art-nav .art_nav-right .art-top-links li a {
   color: #656565;
 }
 
+@media screen and (min-width: 320px) {
+  body .art-nav .art_nav-right .art-top-links {
+    max-width: 0;
+    max-height: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav-right .art-top-links {
+    max-width: initial;
+    max-height: initial;
+  }
+}
+
 body .art-nav .art_nav-left {
   -webkit-box-flex: 1;
   -ms-flex: 1;
@@ -374,6 +424,119 @@ body .art-nav .art_nav-left {
   -ms-flex-align: stretch;
   align-items: stretch;
   margin-right: 60px;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav .art_nav-left {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 60px;
+    margin: 0;
+    width: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav-left {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+    margin-right: 60px;
+    width: auto;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav .art_nav-left .art_btn {
+    background: aliceblue;
+    border-radius: 54em;
+    width: 41px;
+    height: 41px;
+  }
+  body .art-nav .art_nav-left .art_btn i,
+  body .art-nav .art_nav-left .art_btn em {
+    line-height: 1.5em;
+  }
+  body .art-nav .art_nav-left .art_btn:last-of-type i,
+  body .art-nav .art_nav-left .art_btn:last-of-type em {
+    position: absolute;
+    right: 0;
+    width: auto;
+    background: aliceblue;
+    height: 24px;
+    line-height: 1em;
+    border-radius: 5em;
+    -webkit-box-shadow: -1px 1px 1px 0px #607d8b;
+    box-shadow: -1px 1px 1px 0px #607d8b;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .art-nav .art_nav-left .art_btn {
+    background: aliceblue;
+    border-radius: 54em;
+    width: 41px;
+    height: 41px;
+  }
+  body .art-nav .art_nav-left .art_btn i,
+  body .art-nav .art_nav-left .art_btn em {
+    line-height: 1.5em;
+  }
+  body .art-nav .art_nav-left .art_btn:last-of-type i,
+  body .art-nav .art_nav-left .art_btn:last-of-type em {
+    position: absolute;
+    right: 0;
+    width: auto;
+    background: aliceblue;
+    height: 24px;
+    line-height: 1em;
+    border-radius: 5em;
+    -webkit-box-shadow: -1px 1px 1px 0px #607d8b;
+    box-shadow: -1px 1px 1px 0px #607d8b;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav-left .art_btn {
+    background: rgba(0, 245, 0, 0);
+    border-radius: 0;
+    width: auto;
+    height: 100%;
+  }
+  body .art-nav .art_nav-left .art_btn i,
+  body .art-nav .art_nav-left .art_btn em {
+    line-height: 47px;
+    font-size: 30pt;
+  }
+  body .art-nav .art_nav-left .art_btn:last-of-type i,
+  body .art-nav .art_nav-left .art_btn:last-of-type em {
+    position: relative;
+    right: 0;
+    width: auto;
+    background: none;
+    height: auto;
+    line-height: 47px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+body .art-nav .art_nav-left .art_btn.art_shop_cart {
+  overflow: visible;
 }
 
 body .art-nav .art_nav-left #head_search_form {
@@ -431,12 +594,33 @@ body .art-nav .art_btn {
   text-align: center;
   margin: 0 15px;
   cursor: pointer;
+  position: relative;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav .art_btn {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_btn {
+    margin: 0 15px;
+  }
 }
 
 body .art-nav .art_btn i,
 body .art-nav .art_btn em {
   line-height: 47px;
   font-size: 30pt;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav .art_btn i,
+  body .art-nav .art_btn em {
+    font-size: 18pt;
+    width: 100%;
+  }
 }
 
 body .art-nav .dropdown-trigger {
@@ -508,6 +692,38 @@ body .art-nav #top_nav_products .art_menu_droper {
 
 body .art-nav #top_nav_products .art_menu_droper a {
   color: #333;
+}
+
+body .art-nav #menu-btn {
+  margin: auto 5px auto 0;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav #menu-btn {
+    max-width: initial;
+    max-height: initial;
+    margin: auto 5px auto 0;
+    padding: 1px 6px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav #menu-btn {
+    max-width: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0px;
+  }
+}
+
+body .art-nav #menu-btn svg {
+  width: inherit;
+  height: inherit;
 }
 
 body .art-nav .art_cart_badge {
@@ -10533,6 +10749,22 @@ body a {
 
 body a:hover {
   color: #046836;
+}
+
+@media screen and (min-width: 320px) {
+  body .sidenav-overlay,
+  body #menu-nav {
+    max-width: initial;
+    max-height: initial;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .sidenav-overlay,
+  body #menu-nav {
+    max-width: 0;
+    max-height: 0;
+  }
 }
 
 body .container {

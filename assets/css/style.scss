@@ -342,7 +342,7 @@ body {
         background: rgba(255, 255, 255, 0.23);
         position: relative;
         top: 0;
-        z-index: 10;
+        z-index: 1111;
         -webkit-box-shadow: 0px 1px 2px #c1d2da;
         box-shadow: 0px 1px 2px #c1d2da;
         &.art_fixed {
@@ -357,11 +357,29 @@ body {
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
+            @include mobile {
+                min-width: (100% / 2);
+            }
+            @include tablet {
+                min-width: (100% / 2);
+            }
+            @include laptop {
+                min-width: 70%;
+            }
             .art-brand {
                 @include flex();
                 width: auto;
                 height: auto;
                 min-width: 25%;
+                @include mobile {
+                    min-width: (100% - 32%);
+                }
+                @include tablet {
+                    min-width: (100% - 32%);
+                }
+                @include laptop {
+                    min-width: (100% - 75%);
+                }
                 img {
                     width: auto;
                     padding: 0;
@@ -394,6 +412,38 @@ body {
                         color: #656565;
                     }
                 }
+                @mixin no_separete_menu {
+                    background: #fff;
+                    position: fixed;
+                    top: 0%;
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    z-index: 10;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                    justify-content: flex-start;
+                    -webkit-box-shadow: 0 0 9px 4px rgba(123, 140, 156, 0.451);
+                    box-shadow: 0 0 9px 4px rgba(123, 140, 156, 0.451);
+                    li {
+                        width: 100%;
+                        a {
+                            width: inherit;
+                        }
+                    }
+                }
+                @include mobile {
+                    max-width: 0;
+                    max-height: 0;
+                }
+                @include laptop {
+                    max-width: initial;
+                    max-height: initial;
+                }
             }
         }
         .art_nav-left {
@@ -408,6 +458,111 @@ body {
             -ms-flex-align: stretch;
             align-items: stretch;
             margin-right: 60px;
+            @include mobile {
+                -ms-flex-pack: distribute;
+                justify-content: space-around;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                margin-right: 60px;
+                margin: 0;
+                width: 50%;
+                -webkit-box-flex: 0;
+                -ms-flex: none;
+                flex: none;
+            }
+            @include laptop {
+                -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                justify-content: flex-end;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                margin: 0;
+                margin-right: 60px;
+                width: auto;
+                -webkit-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+            .art_btn {
+                @include mobile {
+                    background: aliceblue;
+                    border-radius: 54em;
+                    width: 41px;
+                    height: 41px;
+                    i,
+                    em {
+                        line-height: 1.5em;
+                    }
+                    &:last-of-type {
+                        i,
+                        em {
+                            position: absolute;
+                            right: 0;
+                            width: auto;
+                            background: aliceblue;
+                            height: 24px;
+                            line-height: 1em;
+                            border-radius: 5em;
+                            -webkit-box-shadow: -1px 1px 1px 0px #607d8b;
+                            box-shadow: -1px 1px 1px 0px #607d8b;
+                        }
+                    }
+                }
+                @include tablet {
+                    background: aliceblue;
+                    border-radius: 54em;
+                    width: 41px;
+                    height: 41px;
+                    i,
+                    em {
+                        line-height: 1.5em;
+                    }
+                    &:last-of-type {
+                        i,
+                        em {
+                            position: absolute;
+                            right: 0;
+                            width: auto;
+                            background: aliceblue;
+                            height: 24px;
+                            line-height: 1em;
+                            border-radius: 5em;
+                            -webkit-box-shadow: -1px 1px 1px 0px #607d8b;
+                            box-shadow: -1px 1px 1px 0px #607d8b;
+                        }
+                    }
+                }
+                @include laptop {
+                    background: rgba(0, 245, 0, 0);
+                    border-radius: 0;
+                    width: auto;
+                    height: 100%;
+                    i,
+                    em {
+                        line-height: 47px;
+                        font-size: 30pt;
+                    }
+                    &:last-of-type {
+                        i,
+                        em {
+                            position: relative;
+                            right: 0;
+                            width: auto;
+                            background: none;
+                            height: auto;
+                            line-height: 47px;
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            border-radius: 0;
+                        }
+                    }
+                }
+                &.art_shop_cart {
+                    overflow: visible;
+                }
+            }
             #head_search_form {
                 @include flex();
                 max-width: 0;
@@ -456,10 +611,21 @@ body {
             text-align: center;
             margin: 0 15px;
             cursor: pointer;
+            position: relative;
+            @include mobile {
+                margin: 0;
+            }
+            @include laptop {
+                margin: 0 15px;
+            }
             i,
             em {
                 line-height: 47px;
                 font-size: 30pt;
+                @include mobile {
+                    font-size: 18pt;
+                    width: 100%;
+                }
             }
         }
         .dropdown-trigger {
@@ -521,6 +687,30 @@ body {
                 a {
                     color: #333;
                 }
+            }
+        }
+        #menu-btn {
+            margin: auto 5px auto 0;
+            width: 100px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            height: 30px;
+            @include mobile {
+                max-width: initial;
+                max-height: initial;
+                margin: auto 5px auto 0;
+                padding: 1px 6px;
+            }
+            @include laptop {
+                max-width: 0;
+                max-height: 0;
+                margin: 0;
+                padding: 0px;
+            }
+            svg {
+                width: inherit;
+                height: inherit;
             }
         }
         .art_cart_badge {
@@ -3752,6 +3942,17 @@ body {
         transition: .3s linear;
         &:hover {
             color: #046836;
+        }
+    }
+    .sidenav-overlay,
+    #menu-nav {
+        @include mobile {
+            max-width: initial;
+            max-height: initial;
+        }
+        @include laptop {
+            max-width: 0;
+            max-height: 0;
         }
     }
     .container {

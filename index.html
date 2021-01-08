@@ -16,13 +16,15 @@
 <body>
     <nav class="art-nav ">
         <div class="art_nav-right">
-            <button class="art_btn waves-effect">
-            <svg width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 1L45.5 1" stroke="#707070" stroke-width="2"/>
-            <path d="M5 14L45 14" stroke="#707070" stroke-width="2"/>
-            <path d="M0 27L45.5 27" stroke="#707070" stroke-width="2"/>
-            </svg>
-        </button>
+            <!-- Menu button -->
+            <button class="art_btn waves-effect sidenav-trigger" id="menu-btn" data-target="menu-nav">
+                <svg width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1L45.5 1" stroke="#707070" stroke-width="2"/>
+                <path d="M5 14L45 14" stroke="#707070" stroke-width="2"/>
+                <path d="M0 27L45.5 27" stroke="#707070" stroke-width="2"/>
+                </svg>
+            </button>
+            <!-- Logo link -->
             <a class="art-brand" href="">
                 <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
                     <path d="M133.68,459.68H74.28a55.17,55.17,0,0,0,5.54,18.7A55.27,55.27,0,0,0,116,374.17a59.36,59.36,0,0,1,.48,64.42h17.21Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
@@ -39,9 +41,13 @@
                     <path d="M232.17,423.92a36.57,36.57,0,0,1,2.32-6c3.52-7.28,8.89-13.27,17.31-14.24,5.05-.57,10.28.81,13.44,4.83,5.37,6.84,3.77,15.59.34,22.85-2.69,5.71-6.64,11-11.92,13.46a17.6,17.6,0,0,1-15.79-.88c-7.36-4.32-7.84-12.52-5.7-20Zm35.29-26.64H239.65a36.89,36.89,0,0,0-16.42,10.12c-10,10.92-12.25,32.3,1.09,41.73a25.25,25.25,0,0,0,7.59,3.56h25.23c7.69-1.63,14.79-4.84,19.94-11.28,9-11.19,11.94-29.72-.5-39.43A29.55,29.55,0,0,0,267.46,397.28Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                     </svg>
             </a>
+            <!-- Menu -->
             <ul class="art-top-links">
                 <li>
                     <a href="services">SERVICES</a>
+                </li>
+                <li class="">
+                    <a href="#!" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_products'>PRODUCTS<em class="material-icons">expand_more</em></a>
                 </li>
                 <li>
                     <a href="#!" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_products'>PRODUCTS<em class="material-icons">expand_more</em></a>
@@ -63,6 +69,47 @@
                     </div>
                 </div>
             </ul>
+            <ul id="menu-nav" class="sidenav">
+                <li>
+                    <div class="user-view">
+                        <a href="#!"><img class="logo" src="./assets/img/logo.png"></a>
+                    </div>
+                </li>
+
+                <li><a class="subheader">Quick Links</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <a href="services">SERVICES</a>
+                </li>
+                <li class="">
+                    <a href="#!">PRODUCTS</a>
+                </li>
+
+                <li>
+                    <a href="glob">BLOG</a>
+                </li>
+                <li>
+                    <a href="about-us">ABOUT US</a>
+                </li>
+                <li>
+                    <a href="contact-us">CONTACT US</a>
+                </li>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Products Categories</a></li>
+                <li><a class="waves-effect" href="#!">Live Tracking Units</a></li>
+                <li><a class="waves-effect" href="about_us">Live Tracking Units</a></li>
+                <li><a class="waves-effect" href="about_us/our_story">Tk08 GPS Asset Tracker</a></li>
+                <li><a class="waves-effect" href="about_us/our_story">Tk08 Plus GPS Asset Tracker</a></li>
+                <li><a class="waves-effect" href="about_us/our_story">3S GPS Asset Tracker</a></li>
+                <li><a class="waves-effect" href="about_us/our_story">AT4 GPS Asset Tracker</a></li>
+                <li><a class="waves-effect" href="about_us/our_story">TY5 Sollar Tracker</a></li>
+                <li><a class="waves-effect" href="about_us/our_story">SG20 GPS Asset Tracker</a></li>
+            </ul>
         </div>
         <div class="art_nav-left">
             <form action="#" class="art_head_search_form" id="head_search_form" method="GET">
@@ -74,11 +121,11 @@
             </form>
             <button class="art_btn waves-effect"><em class="material-icons">search</em></button>
 
-            <button class="art_btn waves-effect">
+            <button class="art_btn art_shop_cart">
                 <span class="art_cart_badge">5</span>
                     <em class="material-icons">shopping_basket</em>
                 </button>
-            <button class="art_btn waves-effect dropdown-trigger" data-target='top_nav_languages'>
+            <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
                     <img src="./assets/img/france-hi 1.svg" alt="french flag" srcset="">
                     <em class="material-icons">expand_more</em>
                 </button>

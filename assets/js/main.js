@@ -60,10 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    var update_tabs = document.querySelectorAll('.tabs');
-    if (update_tabs.length) {
-        M.Tabs.init(update_tabs);
+    function initializeNavMenu() {
+        var navMenu = document.querySelector('#menu-nav');
+        M.Sidenav.init(navMenu);
     }
+    initializeNavMenu();
+
+    function initializeTabs() {
+        var update_tabs = document.querySelectorAll('.tabs');
+        if (update_tabs.length) {
+            M.Tabs.init(update_tabs);
+        }
+    }
+    initializeTabs();
+
 
 
 });
