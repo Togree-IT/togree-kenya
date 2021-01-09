@@ -691,10 +691,61 @@ body {
                 height: auto;
                 padding: 20px;
                 min-width: (44vw - 14vw);
-                min-height: 20vh;
+                max-width: (44vw - 4vw);
+                min-height: (20vh - 3);
+                max-height: (20vh + 3);
                 outline: none;
+                overflow: auto;
                 a {
                     color: #333;
+                }
+            }
+            .art_nav_services_co {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -ms-flex-pack: distribute;
+                justify-content: space-around;
+                width: 100%;
+                a {
+                    color: #333;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    width: 48%;
+                    margin: 0 0 15px 0;
+                    .art_navice_service_card {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        width: 100%;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        -webkit-box-shadow: 0 1px 1px #d8e1ea;
+                        box-shadow: 0 1px 1px #d8e1ea;
+                        padding: 0px 15px;
+                        .art_service_icon {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            width: 20%;
+                            padding: 0 10px;
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+                        .art_service_title {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }

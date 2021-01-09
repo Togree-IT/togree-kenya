@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
     if (top_nav_menu_trigger.length) {
         M.Dropdown.init(top_nav_menu_trigger, {
-            hover: true,
+            // hover: true,
             closeOnClick: !true,
             // outDuration: 4000,
             container: document.querySelector('.art-nav'),

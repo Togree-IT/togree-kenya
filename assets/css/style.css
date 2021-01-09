@@ -701,12 +701,69 @@ body .art-nav .art_nav_dropdown .art_menu_droper {
   height: auto;
   padding: 20px;
   min-width: 30vw;
-  min-height: 20vh;
+  max-width: 40vw;
+  min-height: 17vh;
+  max-height: 23vh;
   outline: none;
+  overflow: auto;
 }
 
 body .art-nav .art_nav_dropdown .art_menu_droper a {
   color: #333;
+}
+
+body .art-nav .art_nav_dropdown .art_nav_services_co {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  width: 100%;
+}
+
+body .art-nav .art_nav_dropdown .art_nav_services_co a {
+  color: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 48%;
+  margin: 0 0 15px 0;
+}
+
+body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 1px #d8e1ea;
+  box-shadow: 0 1px 1px #d8e1ea;
+  padding: 0px 15px;
+}
+
+body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20%;
+  padding: 0 10px;
+}
+
+body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon img {
+  max-width: 100%;
+}
+
+body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 body .art-nav #menu-btn {
