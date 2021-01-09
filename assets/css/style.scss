@@ -793,11 +793,11 @@ body {
             display: -ms-flexbox;
             display: flex;
             -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
             -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
             min-width: 18px;
             min-height: 18px;
         }
@@ -1831,9 +1831,13 @@ body {
             overflow: visible;
             @include mobile {
                 min-height: 15pc;
+                background: var(--operate_color);
             }
             @include laptop {
                 min-height: 45vh;
+                @include linearGradient(to top,
+                var(--operate_color),
+                transparent);
             }
             @include laptop_L {
                 min-height: 45vh;

@@ -2173,12 +2173,16 @@ body .art-section-top .art_how_we_operate {
 @media screen and (min-width: 320px) {
   body .art-section-top .art_how_we_operate {
     min-height: 15pc;
+    background: var(--operate_color);
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art-section-top .art_how_we_operate {
     min-height: 45vh;
+    background: -o-linear-gradient(to top, var(--operate_color), transparent);
+    background: -webkit-gradient(linear, left top, left bottom, from(to top), color-stop(var(--operate_color)), to(transparent));
+    background: linear-gradient(to top, var(--operate_color), transparent);
   }
 }
 
