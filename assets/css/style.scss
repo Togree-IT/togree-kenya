@@ -366,6 +366,12 @@ body {
             @include laptop {
                 min-width: 70%;
             }
+            @include laptop_L {
+                min-width: (70% - 15%);
+            }
+            @include laptop_W {
+                min-width: (70% - 25%);
+            }
             .art-brand {
                 @include flex();
                 width: auto;
@@ -500,9 +506,10 @@ body {
                         em {
                             position: absolute;
                             right: 0;
-                            width: auto;
                             background: aliceblue;
-                            height: 24px;
+                            width: 18px;
+                            height: 18px;
+                            font-size: 18px;
                             line-height: 1em;
                             border-radius: 5em;
                             -webkit-box-shadow: -1px 1px 1px 0px #607d8b;
@@ -523,10 +530,11 @@ body {
                         i,
                         em {
                             position: absolute;
-                            right: 0;
-                            width: auto;
                             background: aliceblue;
-                            height: 24px;
+                            right: 0;
+                            width: 18px;
+                            height: 18px;
+                            font-size: 18px;
                             line-height: 1em;
                             border-radius: 5em;
                             -webkit-box-shadow: -1px 1px 1px 0px #607d8b;
@@ -553,6 +561,7 @@ body {
                             background: none;
                             height: auto;
                             line-height: 47px;
+                            font-size: 30pt;
                             -webkit-box-shadow: none;
                             box-shadow: none;
                             border-radius: 0;
@@ -640,7 +649,7 @@ body {
                 height: auto;
             }
         }
-        .dropdown-content:not(#top_nav_products) {
+        .dropdown-content:not(.art_nav_dropdown) {
             top: 101% !important;
             width: auto !important;
             height: auto !important;
@@ -661,7 +670,7 @@ body {
                 }
             }
         }
-        #top_nav_products {
+        .art_nav_dropdown {
             top: 49px !important;
             width: auto !important;
             height: auto !important;
@@ -695,12 +704,12 @@ body {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            height: 30px;
+            height: 33px;
             @include mobile {
                 max-width: initial;
                 max-height: initial;
                 margin: auto 5px auto 0;
-                padding: 1px 6px;
+                padding: 0px 6px;
             }
             @include laptop {
                 max-width: 0;
@@ -715,13 +724,13 @@ body {
         }
         .art_cart_badge {
             position: absolute;
-            padding: 2px 5px;
+            padding: (12% / 2) (12% / 1);
             background: #54d218;
             border-radius: 5em;
             right: 0;
             top: 0px;
             color: white;
-            font-size: 9pt;
+            font-size: 8pt;
             width: -webkit-fit-content;
             width: -moz-fit-content;
             width: fit-content;
@@ -1953,10 +1962,10 @@ body {
                     // background-size: contain;
                 }
                 &::after {
-                    width: 100%;
-                    width: 40%;
-                    height: 27%;
-                    bottom: 9%;
+                    width: 0%;
+                    width: 0;
+                    height: 0;
+                    bottom: 0;
                     background-size: contain;
                 }
             }
@@ -1964,18 +1973,18 @@ body {
                 margin: 15% auto 0;
                 min-height: 35pc;
                 padding: 0 7% 13%;
+                &::before {
+                    width: 28%;
+                    height: 30%;
+                    top: -30px;
+                    // background-size: contain;
+                }
                 &::after {
                     width: 100%;
                     width: 40%;
                     height: 27%;
                     bottom: 66px;
                     background-size: contain;
-                }
-                &::before {
-                    width: 28%;
-                    height: 30%;
-                    top: -30px;
-                    // background-size: contain;
                 }
             }
             @include laptop {
@@ -1994,18 +2003,18 @@ body {
                 }
             }
             @include laptop_L {
-                margin: 12% auto 0;
+                margin: 8pc auto 0;
                 min-height: 55vh;
                 padding: 0 7% 7%;
+                &::before {
+                    width: 20%;
+                    height: 55%;
+                    top: -72px;
+                }
                 &::after {
                     width: 20%;
                     height: 45%;
                     bottom: calc(70px - 30px);
-                }
-                &::before {
-                    width: 20%;
-                    height: 50%;
-                    top: -72px;
                 }
             }
             @include laptop_W {
@@ -3560,6 +3569,7 @@ body {
         width: 100%;
         padding: 0 0%;
         color: aliceblue;
+        position: relative;
         .art_footer_co {
             @include flex();
             @include flex_wrp(wrap);
@@ -3748,6 +3758,10 @@ body {
                     order: 2;
                 }
             }
+        }
+        .art_stylish_ {
+            top: -12pc;
+            bottom: auto;
         }
     }
     .art_card_footer_link {
