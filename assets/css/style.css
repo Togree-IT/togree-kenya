@@ -700,7 +700,7 @@ body .art-nav .art_nav_dropdown .art_menu_droper {
   width: auto;
   height: auto;
   padding: 20px;
-  min-width: 44vw;
+  min-width: 30vw;
   min-height: 20vh;
   outline: none;
 }
