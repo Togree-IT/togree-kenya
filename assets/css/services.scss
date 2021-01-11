@@ -1,0 +1,719 @@
+                                    @import "./media-queries";
+                                    %aling-center {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                    }
+                                    
+                                    * {
+                                        -webkit-box-sizing: border-box;
+                                        box-sizing: border-box;
+                                    }
+                                    
+                                    .about-header {
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-orient: vertical;
+                                        -webkit-box-direction: normal;
+                                        -ms-flex-direction: column;
+                                        flex-direction: column;
+                                        -ms-flex-wrap: wrap;
+                                        flex-wrap: wrap;
+                                        height: auto;
+                                        min-height: 75vh;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        background-position: center;
+                                        position: relative;
+                                        padding: 0;
+                                        margin-top: 0;
+                                        background: rgba(3, 14, 21, 0.929);
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        @include mobile {
+                                            min-height: 45vh;
+                                        }
+                                        @include tablet {
+                                            min-height: 45vh;
+                                        }
+                                        @include laptop {
+                                            min-height: 55vh;
+                                        }
+                                        @include laptop_L {
+                                            min-height: 75vh;
+                                        }
+                                        .about-nav {
+                                            width: 100%;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: justify;
+                                            -ms-flex-pack: justify;
+                                            justify-content: space-between;
+                                            padding: 10px;
+                                            background-color: rgba(255, 255, 255, 0.9);
+                                            position: fixed;
+                                            top: 0;
+                                            z-index: 10;
+                                            //    -webkit-filter: blur(10);
+                                            //    filter: blur(10);
+                                            @include mobile {
+                                                display: none;
+                                            }
+                                            @include tablet {
+                                                display: none;
+                                            }
+                                            @include laptop {
+                                                display: none;
+                                            }
+                                            @include laptop_L {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                            }
+                                            @include laptop_W {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                            }
+                                            .art_nav-right {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                width: auto;
+                                                min-width: 45%;
+                                                -webkit-box-pack: justify;
+                                                -ms-flex-pack: justify;
+                                                justify-content: space-between;
+                                                .art-brand {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    width: auto;
+                                                    height: auto;
+                                                    img {
+                                                        width: auto;
+                                                        padding: 0;
+                                                        margin: 0;
+                                                        min-width: auto;
+                                                    }
+                                                }
+                                                .art-top-links {
+                                                    width: 100%;
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-pack: justify;
+                                                    -ms-flex-pack: justify;
+                                                    justify-content: space-between;
+                                                    li {
+                                                        display: inherit;
+                                                        width: auto;
+                                                        a {
+                                                            display: -webkit-box;
+                                                            display: -ms-flexbox;
+                                                            display: flex;
+                                                            -webkit-box-align: center;
+                                                            -ms-flex-align: center;
+                                                            align-items: center;
+                                                            color: #656565;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .art_nav-left {
+                                                -webkit-box-flex: 1;
+                                                -ms-flex: 1;
+                                                flex: 1;
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-pack: end;
+                                                -ms-flex-pack: end;
+                                                justify-content: flex-end;
+                                                -webkit-box-align: stretch;
+                                                -ms-flex-align: stretch;
+                                                align-items: stretch;
+                                                margin-right: 60px;
+                                                #head_search_form {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    max-width: 0;
+                                                    overflow: hidden;
+                                                    // background: rgba(240, 248, 255, 0.49);
+                                                    .art_input_co {
+                                                        height: auto;
+                                                        max-height: 40px;
+                                                        overflow: hidden;
+                                                        display: -webkit-box;
+                                                        display: -ms-flexbox;
+                                                        display: flex;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        background-color: rgba(255, 255, 255, 0.859);
+                                                        margin: auto;
+                                                        border-radius: 4em 4em;
+                                                        .art_under_search {
+                                                            background: transparent;
+                                                            border: 0;
+                                                            color: #d2d2d2;
+                                                            padding: 1px 6px;
+                                                            font-size: 100%;
+                                                            line-height: 1.15;
+                                                            margin: 0;
+                                                        }
+                                                        .art_input {
+                                                            border: 0;
+                                                            -webkit-box-shadow: none;
+                                                            box-shadow: none;
+                                                            margin: auto;
+                                                            border-bottom: 0;
+                                                        }
+                                                        .art_submit_search {
+                                                            background: transparent;
+                                                            border: 0;
+                                                            opacity: 0;
+                                                            visibility: hidden;
+                                                        }
+                                                    }
+                                                }
+                                                .art_btn {
+                                                    border: 0;
+                                                    background: rgba(0, 245, 0, 0);
+                                                    color: #707070;
+                                                    text-align: center;
+                                                    margin: 0 15px;
+                                                    cursor: pointer;
+                                                    i {
+                                                        line-height: 47px;
+                                                        font-size: 30pt;
+                                                    }
+                                                }
+                                                .dropdown-trigger {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    i {
+                                                        line-height: inherit;
+                                                        font-size: 21pt;
+                                                        margin: auto;
+                                                        height: auto;
+                                                    }
+                                                }
+                                            }
+                                            .dropdown-content {
+                                                top: 101% !important;
+                                                width: auto !important;
+                                                height: auto !important;
+                                                -webkit-box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
+                                                box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
+                                                border-radius: 0 0 10px 10px;
+                                                border: 0;
+                                                a {
+                                                    color: #607D8B;
+                                                    transition: .3s linear;
+                                                    -webkit-transition: .3s linear;
+                                                    -moz-transition: .3s linear;
+                                                    -ms-transition: .3s linear;
+                                                    -o-transition: .3s linear;
+                                                    &:hover {
+                                                        background-color: rgb(0, 155, 78);
+                                                        color: aliceblue;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .abouthero__img {
+                                            width: 100%;
+                                            position: fixed;
+                                            z-index: -1;
+                                            top: 0;
+                                            bottom: 0;
+                                            overflow: hidden;
+                                            img {
+                                                width: 100%;
+                                                max-width: 100%;
+                                            }
+                                        }
+                                    }
+                                    
+                                    .abouthero {
+                                        max-width: 40%;
+                                        position: absolute;
+                                        margin-right: 200px;
+                                        margin-bottom: 100px;
+                                        right: 0;
+                                        text-align: right;
+                                        color: #FFFFFF;
+                                        @include mobile {
+                                            position: relative;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            max-width: 100%;
+                                            text-align: center;
+                                            margin: 0;
+                                            margin-top: 0;
+                                            padding: 10% 7%;
+                                        }
+                                        @include tablet {
+                                            margin-top: 20px;
+                                            position: relative;
+                                            max-width: 80%;
+                                            -ms-flex-item-align: center;
+                                            align-self: center;
+                                        }
+                                        @include laptop {
+                                            position: relative;
+                                            max-width: 80%;
+                                            -ms-flex-item-align: center;
+                                            align-self: center;
+                                        }
+                                        @include laptop_L {
+                                            display: initial;
+                                            max-width: 40%;
+                                            position: absolute;
+                                            margin-right: 100px;
+                                            margin-bottom: 100px;
+                                            margin-top: 0;
+                                            padding: 0;
+                                            text-align: right;
+                                        }
+                                        @include laptop_W {
+                                            margin-bottom: 100px;
+                                            margin-right: 200px;
+                                        }
+                                        &__title {
+                                            margin: 0;
+                                            margin-bottom: 20px;
+                                            // font-size: 4rem;
+                                            font-weight: 700;
+                                            @include mobile {
+                                                // font-size: 2rem;
+                                                margin-bottom: 8px;
+                                            }
+                                            // @include tablet {
+                                            //     font-size: 3rem;
+                                            // }
+                                            // @include laptop {
+                                            //     font-size: 3rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 3rem;
+                                            // }
+                                            @include laptop_W {
+                                                // font-size: 6rem;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        &__text {
+                                            // font-size: 1.1rem;
+                                            margin-bottom: 20px;
+                                            @include mobile {
+                                                // font-size: 0.8rem;
+                                                margin-bottom: 10px;
+                                            }
+                                            @include tablet {
+                                                // font-size: 1.1rem;
+                                                margin-bottom: 20px;
+                                            }
+                                            // @include laptop {
+                                            //     font-size: 1.2rem;
+                                            // }
+                                            // @include laptop_L {
+                                            //     font-size: 1.2rem;
+                                            // }
+                                            @include laptop_W {
+                                                // font-size: 2rem;
+                                                margin-bottom: 30px;
+                                            }
+                                        }
+                                        .art_gree_btn {
+                                            margin: auto 0 10px auto;
+                                        }
+                                        &__arrow {
+                                            font-size: 1.4rem;
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                    
+                                    // join us styling starts here
+                                    .joinus {
+                                        position: relative;
+                                        background: -o-linear-gradient( top left, rgba(195, 160, 36, 1), rgba(36, 195, 71, 1));
+                                        background: -webkit-gradient( linear, left top, right bottom, from(rgba(195, 160, 36, 1)), to(rgba(36, 195, 71, 1)));
+                                        background: linear-gradient( to bottom right, rgba(195, 160, 36, 1), rgba(36, 195, 71, 1));
+                                        max-height: 250px;
+                                        width: 100vw;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                        justify-content: center;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        padding: 0 120px;
+                                        color: #FFF;
+                                        @include mobile {
+                                            max-height: none;
+                                            padding: 20px;
+                                        }
+                                        @include tablet {
+                                            max-height: none;
+                                        }
+                                        @include laptop {
+                                            max-height: none;
+                                        }
+                                        @include laptop_L {
+                                            max-height: 250px;
+                                        }
+                                        @include laptop_W {
+                                            max-height: 300px;
+                                        }
+                                        &:before {
+                                            content: "";
+                                            position: absolute;
+                                            left: 0;
+                                            background-image: url(../img/Aboutus/joinusbackground.png);
+                                            background-position: center;
+                                            background-size: cover;
+                                            width: 100vw;
+                                            height: 100%;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            z-index: 0;
+                                        }
+                                        &__pic {
+                                            position: relative;
+                                            width: 50%;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-orient: horizontal;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: row;
+                                            flex-direction: row;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            margin-bottom: 80px;
+                                            z-index: 1;
+                                            @include mobile {
+                                                display: none;
+                                                margin-bottom: 80px;
+                                            }
+                                            @include tablet {
+                                                display: none;
+                                                margin-bottom: 80px;
+                                            }
+                                            @include laptop {
+                                                display: none;
+                                                margin-bottom: 80px;
+                                            }
+                                            @include laptop_L {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                z-index: 1;
+                                                margin-bottom: 80px;
+                                                width: 36%;
+                                            }
+                                            @include laptop_W {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                margin-bottom: 0;
+                                                width: 26%;
+                                                max-height: 302px;
+                                                -webkit-box-align: end;
+                                                -ms-flex-align: end;
+                                                align-items: flex-end;
+                                            }
+                                            &__img {
+                                                min-width: 100%;
+                                            }
+                                        }
+                                        &__content {
+                                            width: 50%;
+                                            -webkit-box-align: left;
+                                            -ms-flex-align: left;
+                                            align-items: left;
+                                            text-align: left;
+                                            z-index: 1;
+                                            @include mobile {
+                                                width: 100%;
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column;
+                                                flex-flow: column;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                text-align: center;
+                                            }
+                                            @include tablet {
+                                                width: 100%;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                            }
+                                            @include laptop {
+                                                width: 100%;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                            }
+                                            @include laptop_L {
+                                                width: 50%;
+                                                -webkit-box-align: self-start;
+                                                -ms-flex-align: self-start;
+                                                align-items: self-start;
+                                                text-align: left;
+                                                padding-right: 20px;
+                                            }
+                                            @include laptop_W {
+                                                width: 50%;
+                                                -webkit-box-align: self-start;
+                                                -ms-flex-align: self-start;
+                                                align-items: self-start;
+                                                text-align: left;
+                                                padding-right: 21%;
+                                            }
+                                        }
+                                        &__pretitle {
+                                            margin: 5px 0;
+                                            font-size: 1.1rem;
+                                            font-weight: 600;
+                                            @include mobile {
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                        &__title {
+                                            margin: 0;
+                                            // font-size: 2rem;
+                                            font-weight: 700;
+                                            @include mobile {
+                                                // font-size: 1.7rem;
+                                                margin-bottom: 20px;
+                                            }
+                                        }
+                                        &__subtitle {
+                                            // font-size: 1rem;
+                                            z-index: 999;
+                                            @include mobile {
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                        &__btn {
+                                            border: none;
+                                            padding: 16px 40px;
+                                            color: #24C347;
+                                            background-color: #fff;
+                                            font-size: 1.2rem;
+                                            font-weight: 700;
+                                            margin: 15px 0;
+                                            border-radius: 25px;
+                                        }
+                                    }
+                                    
+                                    // social media styling starts here
+                                    .socialmedia {
+                                        padding: 20px 120px 195px;
+                                        background: rgba(255, 255, 255, 0.922);
+                                        -webkit-backdrop-filter: blur(10px);
+                                        backdrop-filter: blur(10px);
+                                        @include mobile {
+                                            padding: 20px 24px 195px;
+                                        }
+                                        @include tablet {
+                                            padding: 20px 80px 195px;
+                                        }
+                                        @include laptop {
+                                            padding: 20px 80px 195px;
+                                        }
+                                        @include laptop_L {
+                                            padding: 20px 80px 195px;
+                                        }
+                                        @include laptop_W {
+                                            padding: 80px 15% 195px;
+                                        }
+                                        &__container {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: space-evenly;
+                                            -ms-flex-pack: space-evenly;
+                                            justify-content: space-evenly;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            @include mobile {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column wrap;
+                                                flex-flow: column wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                            }
+                                            @include tablet {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column wrap;
+                                                flex-flow: column wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                            }
+                                            @include laptop {
+                                                -webkit-box-orient: vertical;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: column wrap;
+                                                flex-flow: column wrap;
+                                                -webkit-box-pack: center;
+                                                -ms-flex-pack: center;
+                                                justify-content: center;
+                                            }
+                                            @include laptop_L {
+                                                -webkit-box-orient: horizontal;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: row;
+                                                flex-flow: row;
+                                            }
+                                        }
+                                        &__btns {
+                                            padding: 80px 80px;
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -webkit-box-pack: center;
+                                            -ms-flex-pack: center;
+                                            justify-content: center;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            width: 40%;
+                                            @include mobile {
+                                                margin-top: 30px;
+                                                padding: 0;
+                                                width: 100%;
+                                            }
+                                            &__pic {
+                                                max-height: 100px;
+                                                max-width: 100px;
+                                                @include mobile {
+                                                    max-width: 50px;
+                                                    max-height: 50px;
+                                                }
+                                                @include tablet {
+                                                    max-width: 75px;
+                                                    max-height: 75px;
+                                                }
+                                                @include laptop {
+                                                    max-height: 75px;
+                                                    max-width: 75px;
+                                                }
+                                                @include laptop_L {
+                                                    max-height: 100px;
+                                                    max-width: 100px;
+                                                }
+                                                @include laptop_W {
+                                                    max-height: 150px;
+                                                    max-width: 150px;
+                                                }
+                                            }
+                                        }
+                                        &__content {
+                                            width: 40%;
+                                            color: #656565;
+                                            @include mobile {
+                                                width: 100%;
+                                                text-align: center;
+                                            }
+                                            @include tablet {
+                                                width: 100%;
+                                                text-align: center;
+                                            }
+                                            @include laptop {
+                                                width: 100%;
+                                                text-align: center;
+                                            }
+                                            @include laptop_L {
+                                                width: 60%;
+                                                text-align: left;
+                                            }
+                                            &__title {
+                                                // font-size: 2rem;
+                                                font-weight: 700;
+                                                // @include mobile {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include tablet {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include laptop {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include laptop_L {
+                                                //     font-size: 1.4rem;
+                                                // }
+                                                // @include laptop_W {
+                                                //     font-size: 2.5rem;
+                                                // }
+                                            }
+                                            &__subtitle {
+                                                // font-size: 1rem;
+                                                font-weight: 500;
+                                                // @include mobile {
+                                                //     font-size: 0.8rem;
+                                                // }
+                                                // @include tablet {
+                                                //     font-size: 1rem;
+                                                // }
+                                                // @include laptop {
+                                                //     font-size: 1rem;
+                                                // }
+                                                // @include laptop_L {
+                                                //     font-size: 1rem;
+                                                // }
+                                                // @include laptop_W {
+                                                //     font-size: 1.5rem;
+                                                // }
+                                            }
+                                        }
+                                    }

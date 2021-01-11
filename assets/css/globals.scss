@@ -1,5 +1,24 @@
 @import "./mixins";
 @import "./media_queries";
+html {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    max-width: 100vw;
+    // max-height: 100vh;
+    overflow-x: hidden;
+    @include mobile {
+        font-size: 8pt;
+    }
+    @include laptop {
+        font-size: 10pt;
+    }
+    @include laptop_L {
+        font-size: initial;
+    }
+    @include laptop_W {
+        font-size: initial;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
