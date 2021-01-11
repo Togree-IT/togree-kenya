@@ -1,0 +1,150 @@
+@mixin linearGradient($deg:45deg, $color1:#066FFD, $color2:#24c447) {
+    // --deg: $deg || 45deg;
+    background: -o-linear-gradient( ($deg), $color1, $color2);
+    background: -webkit-gradient( linear, left top, left bottom, from(($deg)), color-stop($color1), to($color2));
+    background: linear-gradient( ($deg), $color1, $color2);
+}
+
+@mixin flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex_jus_content($jus) {
+    -webkit-box-pack: $jus;
+    -ms-flex-pack: $jus;
+    justify-content: $jus;
+}
+
+@mixin flex_al_itmes($jus) {
+    -webkit-box-align: $jus;
+    -ms-flex-align: $jus;
+    align-items: $jus;
+}
+
+@mixin column($reverse) {
+    @if $reverse {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+    @else {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+@mixin row($reverse) {
+    @if $reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+    }
+    @else {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+@mixin flex_dir ($jus, $reverse: false) {
+    @if $jus==column {
+        @include column($reverse);
+    }
+    @else if $jus==row {
+        @include row($reverse);
+    }
+    @else {
+        -webkit-box-orient: $jus;
+        -webkit-box-direction: $jus;
+        -ms-flex-direction: $jus;
+        flex-direction: $jus;
+    }
+}
+
+@mixin flex_wrp($jus) {
+    -ms-flex-wrap: $jus;
+    flex-wrap: $jus;
+}
+
+@mixin flex_bs($jus) {
+    -webkit-box-flex: $jus;
+    -ms-flex: $jus;
+    flex: $jus;
+}
+
+@mixin box_shad($jus) {
+    -webkit-box-shadow: $jus;
+    box-shadow: $jus;
+}
+
+@mixin bod_radius($jus) {
+    border-radius: $jus;
+}
+
+@mixin section_container($w:100%, $h:65vh, $pd:30px 7%, $mrg:0 auto, $justify:space-around, $pos:relative, $over:hidden) {
+    width: $w;
+    min-height: $h;
+    padding: $pd;
+    margin: $mrg;
+    @include flex();
+    @include flex_jus_content($justify);
+    position: $pos;
+    overflow: $over;
+}
+
+@mixin art_community_card($w:25%, $pd:5px 20px 20px, $mrg:25px, $rd:1em) {
+    width: $w;
+    @include flex();
+    @include flex_jus_content(space-between);
+    @include flex_dir(column);
+    @include flex_al_itmes(center);
+    @include flex_bs(1);
+    padding: $pd;
+    margin-right: $mrg;
+    @include box_shad( 0 2px 2px 1px #e8f2fb);
+    @include bod_radius(1em);
+}
+
+// Dropshadow -- filter
+@mixin stylish_box_shad {
+    // @include stylish_box_shad();
+    -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
+    filter: drop-shadow(0 -2px 1px #e8f2fb);
+}
+
+// Animate slick sliders -- up-faded
+@mixin fadeInUpSD($s:1s, $eas: ease-in) {
+    -webkit-animation-name: fadeInUpSD;
+    animation-name: fadeInUpSD;
+    -webkit-animation-duration: $s;
+    animation-duration: $s;
+    -webkit-animation-timing-function: $eas;
+    animation-timing-function: $eas;
+}
+
+// Animate slick sliders -- up
+@mixin art_ani_up($s:1s, $eas: ease-in) {
+    -webkit-animation-name: art_ani_up;
+    animation-name: art_ani_up;
+    -webkit-animation-duration: $s;
+    animation-duration: $s;
+    -webkit-animation-timing-function: $eas;
+    animation-timing-function: $eas;
+}
+
+// Animate slick sliders -- left
+@mixin art_ani_left($s:1s, $eas: ease-in) {
+    -webkit-animation-name: art_ani_left;
+    animation-name: art_ani_left;
+    -webkit-animation-duration: $s;
+    animation-duration: $s;
+    -webkit-animation-timing-function: $eas;
+    animation-timing-function: $eas;
+}

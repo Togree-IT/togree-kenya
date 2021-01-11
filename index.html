@@ -7,7 +7,9 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/lib/materialize/css/icons.css">
     <link rel="stylesheet" href="./assets/lib/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/globals.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Home | Togree</title>
@@ -256,7 +258,7 @@
         <span class="art_stylish"></span>
     </header>
     <main class="art-section-top">
-        <section class="art_head_bottom_cards">
+        <section class="art_head_bottom_cards" data-aos="zoom-out-right">
             <div class="container">
                 <div class="art_head_bottom_card_co">
                     <div class="art_head_bottom_card_header">
@@ -373,7 +375,7 @@
         </section>
         <section class="art_build_your_store" style="background:#ffffff">
             <div class="art_md_half_container">
-                <span class="art_md_half art_half_img"></span>
+                <span class="art_md_half art_half_img" data-aos="zoom-in-right"></span>
                 <div class="art_md_half art_half_content">
                     <h4 class="art_title">We help you build your store</h4>
                     <div class="art_desc">
@@ -1257,7 +1259,7 @@
                     }
                 }]
             });
-            AOS.init();
+            initializeAOSAnimations();
         });
     </script>
 

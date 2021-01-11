@@ -60,20 +60,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function initializeNavMenu() {
-        var navMenu = document.querySelector('#menu-nav');
-        M.Sidenav.init(navMenu);
-    }
     initializeNavMenu();
+    initializeTabs();
 
-    function initializeTabs() {
-        var update_tabs = document.querySelectorAll('.tabs');
+});
+
+function initializeNavMenu() {
+    if (typeof M !== "undefined") {
+        const navMenu = document.querySelector('#menu-nav');
+        if (navMenu)
+            M.Sidenav.init(navMenu);
+    }
+}
+
+function initializeTabs() {
+    if (typeof M !== "undefined") {
+        const update_tabs = document.querySelectorAll('.tabs');
+
         if (update_tabs.length) {
             M.Tabs.init(update_tabs);
         }
     }
-    initializeTabs();
+}
 
-
-
-});
+function initializeAOSAnimations() {
+    if (typeof AOS !== "undefined")
+        AOS.init();
+}
