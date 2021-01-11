@@ -13,7 +13,7 @@
                                         box-sizing: border-box;
                                     }
                                     
-                                    .about-header {
+                                    .services-header {
                                         display: -webkit-box;
                                         display: -ms-flexbox;
                                         display: flex;
@@ -50,7 +50,7 @@
                                         @include laptop_L {
                                             min-height: 75vh;
                                         }
-                                        .about-nav {
+                                        .services-nav {
                                             width: 100%;
                                             display: -webkit-box;
                                             display: -ms-flexbox;
@@ -236,7 +236,7 @@
                                                 }
                                             }
                                         }
-                                        .abouthero__img {
+                                        .serviceshero__img {
                                             width: 100%;
                                             position: fixed;
                                             z-index: -1;
@@ -250,13 +250,13 @@
                                         }
                                     }
                                     
-                                    .abouthero {
+                                    .serviceshero {
                                         max-width: 40%;
                                         position: absolute;
-                                        margin-right: 200px;
+                                        margin-left: 200px;
                                         margin-bottom: 100px;
-                                        right: 0;
-                                        text-align: right;
+                                        left: 0;
+                                        text-align: left;
                                         color: #FFFFFF;
                                         @include mobile {
                                             position: relative;
@@ -296,15 +296,15 @@
                                             display: initial;
                                             max-width: 40%;
                                             position: absolute;
-                                            margin-right: 100px;
+                                            margin-left: 100px;
                                             margin-bottom: 100px;
                                             margin-top: 0;
                                             padding: 0;
-                                            text-align: right;
+                                            text-align: left;
                                         }
                                         @include laptop_W {
                                             margin-bottom: 100px;
-                                            margin-right: 200px;
+                                            margin-left: 200px;
                                         }
                                         &__title {
                                             margin: 0;
@@ -315,15 +315,6 @@
                                                 // font-size: 2rem;
                                                 margin-bottom: 8px;
                                             }
-                                            // @include tablet {
-                                            //     font-size: 3rem;
-                                            // }
-                                            // @include laptop {
-                                            //     font-size: 3rem;
-                                            // }
-                                            // @include laptop_L {
-                                            //     font-size: 3rem;
-                                            // }
                                             @include laptop_W {
                                                 // font-size: 6rem;
                                                 margin-bottom: 30px;
@@ -352,12 +343,24 @@
                                             }
                                         }
                                         .art_gree_btn {
-                                            margin: auto 0 10px auto;
+                                            margin: auto auto 10px 0;
                                         }
                                         &__arrow {
                                             font-size: 1.4rem;
                                             margin-left: 10px;
                                         }
+                                    }
+                                    
+                                    // description section
+                                    .art_services_description {
+                                        min-height: 20vh;
+                                        background: #F8F8F8;
+                                    }
+                                    
+                                    // How it works section
+                                    section.art_how_it_works {
+                                        background: white;
+                                        min-height: 20vh;
                                     }
                                     
                                     // join us styling starts here
@@ -399,7 +402,7 @@
                                             content: "";
                                             position: absolute;
                                             left: 0;
-                                            background-image: url(../img/Aboutus/joinusbackground.png);
+                                            background-image: url(../img/services/joinusbackground.png);
                                             background-position: center;
                                             background-size: cover;
                                             width: 100vw;

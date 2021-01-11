@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.about-header {
+.services-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,30 +31,30 @@
 }
 
 @media screen and (min-width: 320px) {
-  .about-header {
+  .services-header {
     min-height: 45vh;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .about-header {
+  .services-header {
     min-height: 45vh;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .about-header {
+  .services-header {
     min-height: 55vh;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .about-header {
+  .services-header {
     min-height: 75vh;
   }
 }
 
-.about-header .about-nav {
+.services-header .services-nav {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,25 +70,25 @@
 }
 
 @media screen and (min-width: 320px) {
-  .about-header .about-nav {
+  .services-header .services-nav {
     display: none;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .about-header .about-nav {
+  .services-header .services-nav {
     display: none;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .about-header .about-nav {
+  .services-header .services-nav {
     display: none;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .about-header .about-nav {
+  .services-header .services-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -96,14 +96,14 @@
 }
 
 @media screen and (min-width: 2560px) {
-  .about-header .about-nav {
+  .services-header .services-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
 
-.about-header .about-nav .art_nav-right {
+.services-header .services-nav .art_nav-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,7 +114,7 @@
   justify-content: space-between;
 }
 
-.about-header .about-nav .art_nav-right .art-brand {
+.services-header .services-nav .art_nav-right .art-brand {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,14 +122,14 @@
   height: auto;
 }
 
-.about-header .about-nav .art_nav-right .art-brand img {
+.services-header .services-nav .art_nav-right .art-brand img {
   width: auto;
   padding: 0;
   margin: 0;
   min-width: auto;
 }
 
-.about-header .about-nav .art_nav-right .art-top-links {
+.services-header .services-nav .art_nav-right .art-top-links {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,12 +139,12 @@
   justify-content: space-between;
 }
 
-.about-header .about-nav .art_nav-right .art-top-links li {
+.services-header .services-nav .art_nav-right .art-top-links li {
   display: inherit;
   width: auto;
 }
 
-.about-header .about-nav .art_nav-right .art-top-links li a {
+.services-header .services-nav .art_nav-right .art-top-links li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +154,7 @@
   color: #656565;
 }
 
-.about-header .about-nav .art_nav-left {
+.services-header .services-nav .art_nav-left {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -170,7 +170,7 @@
   margin-right: 60px;
 }
 
-.about-header .about-nav .art_nav-left #head_search_form {
+.services-header .services-nav .art_nav-left #head_search_form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,7 +178,7 @@
   overflow: hidden;
 }
 
-.about-header .about-nav .art_nav-left #head_search_form .art_input_co {
+.services-header .services-nav .art_nav-left #head_search_form .art_input_co {
   height: auto;
   max-height: 40px;
   overflow: hidden;
@@ -193,7 +193,7 @@
   border-radius: 4em 4em;
 }
 
-.about-header .about-nav .art_nav-left #head_search_form .art_input_co .art_under_search {
+.services-header .services-nav .art_nav-left #head_search_form .art_input_co .art_under_search {
   background: transparent;
   border: 0;
   color: #d2d2d2;
@@ -203,7 +203,7 @@
   margin: 0;
 }
 
-.about-header .about-nav .art_nav-left #head_search_form .art_input_co .art_input {
+.services-header .services-nav .art_nav-left #head_search_form .art_input_co .art_input {
   border: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -211,14 +211,14 @@
   border-bottom: 0;
 }
 
-.about-header .about-nav .art_nav-left #head_search_form .art_input_co .art_submit_search {
+.services-header .services-nav .art_nav-left #head_search_form .art_input_co .art_submit_search {
   background: transparent;
   border: 0;
   opacity: 0;
   visibility: hidden;
 }
 
-.about-header .about-nav .art_nav-left .art_btn {
+.services-header .services-nav .art_nav-left .art_btn {
   border: 0;
   background: rgba(0, 245, 0, 0);
   color: #707070;
@@ -227,12 +227,12 @@
   cursor: pointer;
 }
 
-.about-header .about-nav .art_nav-left .art_btn i {
+.services-header .services-nav .art_nav-left .art_btn i {
   line-height: 47px;
   font-size: 30pt;
 }
 
-.about-header .about-nav .art_nav-left .dropdown-trigger {
+.services-header .services-nav .art_nav-left .dropdown-trigger {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,14 +241,14 @@
   align-items: center;
 }
 
-.about-header .about-nav .art_nav-left .dropdown-trigger i {
+.services-header .services-nav .art_nav-left .dropdown-trigger i {
   line-height: inherit;
   font-size: 21pt;
   margin: auto;
   height: auto;
 }
 
-.about-header .about-nav .dropdown-content {
+.services-header .services-nav .dropdown-content {
   top: 101% !important;
   width: auto !important;
   height: auto !important;
@@ -258,7 +258,7 @@
   border: 0;
 }
 
-.about-header .about-nav .dropdown-content a {
+.services-header .services-nav .dropdown-content a {
   color: #607D8B;
   transition: .3s linear;
   -webkit-transition: .3s linear;
@@ -267,12 +267,12 @@
   -o-transition: .3s linear;
 }
 
-.about-header .about-nav .dropdown-content a:hover {
+.services-header .services-nav .dropdown-content a:hover {
   background-color: #009b4e;
   color: aliceblue;
 }
 
-.about-header .abouthero__img {
+.services-header .serviceshero__img {
   width: 100%;
   position: fixed;
   z-index: -1;
@@ -281,23 +281,23 @@
   overflow: hidden;
 }
 
-.about-header .abouthero__img img {
+.services-header .serviceshero__img img {
   width: 100%;
   max-width: 100%;
 }
 
-.abouthero {
+.serviceshero {
   max-width: 40%;
   position: absolute;
-  margin-right: 200px;
+  margin-left: 200px;
   margin-bottom: 100px;
-  right: 0;
-  text-align: right;
+  left: 0;
+  text-align: left;
   color: #FFFFFF;
 }
 
 @media screen and (min-width: 320px) {
-  .abouthero {
+  .serviceshero {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -321,7 +321,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  .abouthero {
+  .serviceshero {
     margin-top: 20px;
     position: relative;
     max-width: 80%;
@@ -331,7 +331,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .abouthero {
+  .serviceshero {
     position: relative;
     max-width: 80%;
     -ms-flex-item-align: center;
@@ -340,72 +340,82 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .abouthero {
+  .serviceshero {
     display: initial;
     max-width: 40%;
     position: absolute;
-    margin-right: 100px;
+    margin-left: 100px;
     margin-bottom: 100px;
     margin-top: 0;
     padding: 0;
-    text-align: right;
+    text-align: left;
   }
 }
 
 @media screen and (min-width: 2560px) {
-  .abouthero {
+  .serviceshero {
     margin-bottom: 100px;
-    margin-right: 200px;
+    margin-left: 200px;
   }
 }
 
-.abouthero__title {
+.serviceshero__title {
   margin: 0;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 @media screen and (min-width: 320px) {
-  .abouthero__title {
+  .serviceshero__title {
     margin-bottom: 8px;
   }
 }
 
 @media screen and (min-width: 2560px) {
-  .abouthero__title {
+  .serviceshero__title {
     margin-bottom: 30px;
   }
 }
 
-.abouthero__text {
+.serviceshero__text {
   margin-bottom: 20px;
 }
 
 @media screen and (min-width: 320px) {
-  .abouthero__text {
+  .serviceshero__text {
     margin-bottom: 10px;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .abouthero__text {
+  .serviceshero__text {
     margin-bottom: 20px;
   }
 }
 
 @media screen and (min-width: 2560px) {
-  .abouthero__text {
+  .serviceshero__text {
     margin-bottom: 30px;
   }
 }
 
-.abouthero .art_gree_btn {
-  margin: auto 0 10px auto;
+.serviceshero .art_gree_btn {
+  margin: auto auto 10px 0;
 }
 
-.abouthero__arrow {
+.serviceshero__arrow {
   font-size: 1.4rem;
   margin-left: 10px;
+}
+
+.art_services_description {
+  min-height: 20vh;
+  background: #F8F8F8;
+}
+
+section.art_how_it_works {
+  background: white;
+  min-height: 20vh;
 }
 
 .joinus {
@@ -463,7 +473,7 @@
   content: "";
   position: absolute;
   left: 0;
-  background-image: url(../img/Aboutus/joinusbackground.png);
+  background-image: url(../img/services/joinusbackground.png);
   background-position: center;
   background-size: cover;
   width: 100vw;
