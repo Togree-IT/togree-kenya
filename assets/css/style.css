@@ -1,4 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Sen&display=swap");
+:root {
+  --titleColorV1: #24C347;
+  --linkColor: #24C347;
+  --titleColor: #6e757b;
+  --operate_color: #f4f6f9;
+}
+
+html {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 8pt;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 10pt;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: initial;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  html {
+    font-size: initial;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
