@@ -1819,21 +1819,6 @@ body .art-header .art-slides_co .art-head-sec {
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding: 8pc 0;
-  /* @include tablet {
-                    position: initial;
-                    width: 100%;
-                    background: rgba(31, 64, 41, 0);
-                    -webkit-backdrop-filter: none;
-                    backdrop-filter: none;
-                    padding: 17px 15px;
-                    padding-left: 35px;
-                    color: inherit;
-                    top: initial;
-                    bottom: initial;
-                    -webkit-box-pack: start;
-                    -ms-flex-pack: start;
-                    justify-content: flex-start;
-                } */
 }
 
 @media screen and (min-width: 320px) {
