@@ -337,11 +337,28 @@ body {
     .art_services_description {
         min-height: 20vh;
         background: #F8F8F8;
+        padding: 40px 0;
+        .art_cards_co {
+            @include flex();
+            -ms-flex-pack: distribute;
+            justify-content: space-around;
+            &.x3 {
+                .art_card {
+                    width: ((100% / 3));
+                    padding: 40px 20px;
+                    margin: 0 3%;
+                    -webkit-box-shadow: 0 1px 1px #d8e1ea;
+                    box-shadow: 0 1px 1px #d8e1ea;
+                    border-radius: 5px;
+                }
+            }
+        }
     }
     // How it works section
     section.art_how_it_works {
         background: white;
         min-height: 20vh;
+        padding: 40px 0;
     }
     // join us styling starts here
     .joinus {

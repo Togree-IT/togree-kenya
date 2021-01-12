@@ -1840,11 +1840,30 @@ body .serviceshero__arrow {
 body .art_services_description {
   min-height: 20vh;
   background: #F8F8F8;
+  padding: 40px 0;
+}
+
+body .art_services_description .art_cards_co {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+body .art_services_description .art_cards_co.x3 .art_card {
+  width: 33.33333%;
+  padding: 40px 20px;
+  margin: 0 3%;
+  -webkit-box-shadow: 0 1px 1px #d8e1ea;
+  box-shadow: 0 1px 1px #d8e1ea;
+  border-radius: 5px;
 }
 
 body section.art_how_it_works {
   background: white;
   min-height: 20vh;
+  padding: 40px 0;
 }
 
 body .joinus {
