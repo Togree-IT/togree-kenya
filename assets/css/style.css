@@ -2022,6 +2022,11 @@ body .art-header .art-slides_co .art_slider_img {
   height: 100%;
 }
 
+body .art-header .art-slides_co .art_slider_img :first-child {
+  max-width: 673px;
+  max-height: 578px;
+}
+
 @media screen and (min-width: 320px) {
   body .art-header .art-slides_co .art_slider_img {
     width: 100%;

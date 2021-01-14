@@ -335,7 +335,7 @@ body {
     }
     // description section
     .art_services_description {
-        min-height: 20vh;
+        min-height: (20vh * 2);
         background: #F8F8F8;
         padding: 40px 0;
         .art_cards_co {
@@ -355,9 +355,9 @@ body {
         }
     }
     // How it works section
-    section.art_how_it_works {
+    .art_how_it_works {
         background: white;
-        min-height: 20vh;
+        min-height: (20vh * 2);
         padding: 40px 0;
     }
     // join us styling starts here
@@ -390,10 +390,10 @@ body {
             max-height: none;
         }
         @include laptop_L {
-            max-height: 250px;
+            max-height: 20vh + 15;
         }
         @include laptop_W {
-            max-height: 300px;
+            max-height: 20 * 2;
         }
         &:before {
             content: "";

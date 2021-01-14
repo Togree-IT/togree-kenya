@@ -337,6 +337,10 @@ body {
                 width: 30%;
                 height: 100%;
                 // min-height: 75vh;
+                 :first-child {
+                    max-width: 673px;
+                    max-height: 578px;
+                }
                 @include mobile {
                     width: 100%;
                     height: 100%;

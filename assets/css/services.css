@@ -1838,7 +1838,7 @@ body .serviceshero__arrow {
 }
 
 body .art_services_description {
-  min-height: 20vh;
+  min-height: 40vh;
   background: #F8F8F8;
   padding: 40px 0;
 }
@@ -1860,9 +1860,9 @@ body .art_services_description .art_cards_co.x3 .art_card {
   border-radius: 5px;
 }
 
-body section.art_how_it_works {
+body .art_how_it_works {
   background: white;
-  min-height: 20vh;
+  min-height: 40vh;
   padding: 40px 0;
 }
 
@@ -1907,13 +1907,13 @@ body .joinus {
 
 @media screen and (min-width: 1440px) {
   body .joinus {
-    max-height: 250px;
+    max-height: 35vh;
   }
 }
 
 @media screen and (min-width: 2560px) {
   body .joinus {
-    max-height: 300px;
+    max-height: 40;
   }
 }
 
