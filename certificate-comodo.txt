@@ -1,0 +1,35 @@
+ 
+Thank You
+Your Product: PositiveSSL Multi-Domain (DV)
+
+TransactionID: COR83107322M7145524
+
+Purchase Date: 15-Jan-2021
+
+Thank You!
+You've successfully submitted your order and completed initial SSL generation process. Now, Comodo will require you to complete the validation process before issuing the SSL certificate.
+
+Here is Your Order Number #:
+438818303
+Since you selected DNS CNAME-Based Authentication, Here are general instructions on how to complete this step:
+
+Login to your domain's DNS provider (typically the registrar of your domain)
+Go to the DNS Zone Manager to amend the records.
+Enter the Alias / Host Name as _07911944BBBF584398560509C3AEC555.trackgree.com
+For the Point to, Please Enter
+8841518DA8ECBFD2AABBD24329C25F43.15F6FFC63A57D0F0DDD962305FF0A8FF.aJ52zXX6U5rY5W0K557V.comodoca.com
+Set the TTL to 3600 or the lowest possible option.
+Click Save and wait for the record to propagate (i.e. 15 minutes).
+Note: For Single Domain and Wildcard certificates, place the hash values at the root domain (yourdomain.com). For Multi-Domain or UCC certificates, place the hash values at the explicit FQDN (subdomain.yourdomain.com).
+
+IMPORTANT REMINDER:
+
+This is a 5 year certificate bundle designed to give you the lowest possible annual price. However, your certificate must be updated after 1 year to meet the latest security requirements mandated by the CA/B Forum. Your certificate will initially be issued with a 1 year validity period. After 11 months, you will be able to login and generate your next certificate (for free) which will be valid for the rest of the term you purchased. We'll send you an email reminder when it's time to update your certificate.
+
+If you selected Email Validation. Comodo/Sectigo will be sending you an email to validate your domain ownership. Visit the order page if you need to change your verification email address.
+
+If you selected DNS or File validation, please visit the order page for more information on completing domain validation.
+
+Check the status of your order in 3 easy steps by clicking on Orders, then locating your Order ID/Domain, and click the View icon.
+
+Thank You Order Step

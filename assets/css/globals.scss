@@ -878,6 +878,23 @@ body {
                 @include bod_radius(inherit);
             }
         }
+        &.art_textera {
+            max-height: 150px;
+            height: 6rem;
+            @include mobile {
+                height: 10rem;
+            }
+            @include laptop {
+                height: 7rem;
+            }
+            @include laptop_L {
+                height: 7rem;
+            }
+            textarea {
+                resize: none;
+                padding: 15px;
+            }
+        }
     }
     a {
         outline: none;
