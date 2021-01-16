@@ -1,5 +1,21 @@
 @import "./media-queries";
-@import "./globals";
+// @import "./globals";
+@import "./mixins.scss";
+html {
+    @include mobile {
+        font-size: 0.95rem;
+    }
+    @include laptop {
+        font-size: 10pt;
+    }
+    @include laptop_L {
+        font-size: initial;
+    }
+    @include laptop_W {
+        font-size: initial;
+    }
+}
+
 body {
     %aling-center {
         display: -webkit-box;
@@ -421,6 +437,12 @@ body {
                 svg {
                     width: 55%;
                     height: 100%;
+                    @include mobile {
+                        width: 100%;
+                    }
+                    @include laptop {
+                        width: 55%;
+                    }
                 }
             }
             .art_service_form_co {
@@ -442,6 +464,26 @@ body {
                     -webkit-box-pack: center;
                     -ms-flex-pack: center;
                     justify-content: center;
+                    position: relative;
+                    @include mobile {
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                    }
+                    @include tablet {
+                        width: 100%;
+                        position: absolute;
+                    }
+                    @include laptop {
+                        width: (100% / 2);
+                        position: relative;
+                    }
+                    @include laptop_L {}
+                    @include laptop_W {}
+                    img {
+                        max-width: 100%;
+                    }
                     .art_service_perosn {
                         display: -webkit-box;
                         display: -ms-flexbox;
@@ -454,6 +496,19 @@ body {
                         justify-content: center;
                         width: 60%;
                         position: relative;
+                        @include mobile {
+                            width: 40%;
+                        }
+                        @include tablet {
+                            width: 100%;
+                        }
+                        @include laptop {
+                            width: 90%;
+                        }
+                        @include laptop_L {
+                            width: 70%;
+                        }
+                        @include laptop_W {}
                         img {
                             max-width: 100%;
                         }
@@ -495,14 +550,33 @@ body {
                 .art_service_body {
                     width: 20%;
                     min-height: 40vh;
-                    background: rgba(255, 255, 255, 0.478);
+                    // background: rgba(255, 255, 255, 0.478);
                     padding: 30px 20px;
                     margin: 19px 0;
                     -webkit-box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
                     box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
                     -webkit-backdrop-filter: blur(36px);
                     backdrop-filter: blur(36px);
+                    @include linearGradient(280deg, rgba(11, 76, 44, 0.18), transparent);
                     border-radius: 20px;
+                    @include mobile {
+                        width: ((20% * 4) + 20);
+                        margin: 105px auto 175px;
+                    }
+                    @include tablet {
+                        width: ((20% * 3) + 10);
+                        margin: 129px auto 185px;
+                    }
+                    @include laptop {
+                        width: ((20% * 2) + 10);
+                        margin: 19px 0;
+                    }
+                    @include laptop_L {
+                        width: (20% * 2);
+                    }
+                    @include laptop_W {
+                        width: (20% * 1);
+                    }
                     .art_input_co {
                         margin: 10px 0 40px;
                         height: 4rem;
