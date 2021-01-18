@@ -56,7 +56,7 @@ body {
                 min-width: (100% / 2);
             }
             @include laptop {
-                min-width: 70%;
+                min-width: 73%;
             }
             @include laptop_L {
                 min-width: (70% - 15%);
