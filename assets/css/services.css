@@ -458,6 +458,31 @@ body .art_services_description .art_cards_co .art_card {
   background: white;
 }
 
+body .art_services_description .art_cards_co .art_card .header_icon {
+  --defaultCardPinColor: #121c23;
+  padding: 10% 0 0px;
+  background: var(--defaultCardPinColor);
+  width: 10%;
+  height: auto;
+  display: block;
+  border-radius: 5em;
+  margin-left: -10px;
+  margin-top: -30px;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+body .art_services_description .art_cards_co .art_card .header_icon::before {
+  content: "";
+  position: absolute;
+  height: 98px;
+  width: 10%;
+  background: var(--defaultCardPinColor);
+  left: 0px;
+  top: 45%;
+  border-radius: 8em;
+}
+
 body .art_services_description .art_cards_co.x3 .art_card {
   width: 33.33333%;
 }
@@ -653,15 +678,17 @@ body .art_request_service .art_service_container .art_service_form_co .art_servi
 
 body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title {
   position: absolute;
-  background: #efdaff5e;
-  padding: 10px 30px;
+  background: rgba(239, 218, 255, 0.369);
+  padding: 10px 20px;
   border-radius: 10px;
-  color: #51a764;
+  color: #25688a;
   z-index: 1;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
-  -webkit-box-shadow: 1px -1px 1px 0px #e8f2fba1;
-  box-shadow: 1px -1px 1px 0px #e8f2fba1;
+  -webkit-box-shadow: 1px -1px 1px 0px rgba(232, 242, 251, 0.631);
+  box-shadow: 1px -1px 1px 0px rgba(232, 242, 251, 0.631);
+  max-width: 290px;
+  left: 0;
 }
 
 body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title.art_top {
@@ -675,7 +702,7 @@ body .art_request_service .art_service_container .art_service_form_co .art_servi
 body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title::before {
   content: "";
   position: absolute;
-  background: #ffffff9e;
+  background: rgba(255, 255, 255, 0.62);
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
   padding: 20px 67px;
@@ -686,6 +713,44 @@ body .art_request_service .art_service_container .art_service_form_co .art_servi
   left: -10px;
   -webkit-box-shadow: -1px 1px 1px 0px #dfcbed;
   box-shadow: -1px 1px 1px 0px #dfcbed;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title {
+    left: 0;
+    background: rgba(255, 255, 255, 0.859);
+    width: 100%;
+    max-width: 91%;
+  }
+  body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title::before {
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+  }
+  body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title::after {
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title {
+    left: initial;
+    background: rgba(255, 255, 255, 0.62);
+    width: initial;
+    max-width: initial;
+  }
+  body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title::before {
+    max-width: initial;
+    max-height: initial;
+    padding: 20px 67px;
+  }
+  body .art_request_service .art_service_container .art_service_form_co .art_service_desc .art_desc_title::after {
+    max-width: initial;
+    max-height: initial;
+    padding: 20px 67px;
+  }
 }
 
 body .art_request_service .art_service_container .art_service_form_co .art_service_body {
@@ -726,7 +791,7 @@ body .art_request_service .art_service_container .art_service_form_co .art_servi
 
 @media screen and (min-width: 1440px) {
   body .art_request_service .art_service_container .art_service_form_co .art_service_body {
-    width: 40%;
+    width: 30%;
   }
 }
 
@@ -900,8 +965,8 @@ body .joinus__pic {
     display: -ms-flexbox;
     display: flex;
     z-index: 1;
-    margin-bottom: 80px;
-    width: 36%;
+    margin-bottom: 87px;
+    width: 50%;
   }
 }
 
