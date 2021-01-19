@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="tab__wrapper__container__galleryvideo">
 
                                     <div class="tab__wrapper__container__videowrapper">
-                                        <video id="my-video" class="vjs-teaching video-js" controls preload="auto" poster="${data.firstVideoPoster}" data-setup="{}">
+                                        <video id="my-video" class="vjs-teaching video-js" src="${data.firstPath}" controls preload="auto" poster="${data.firstVideoPoster}" data-setup="{}">
                                                                 <source src="${data.firstPath}"/>
                                                                 <p class="vjs-no-js">
                                                                 To view this video please enable JavaScript, and consider upgrading to a
