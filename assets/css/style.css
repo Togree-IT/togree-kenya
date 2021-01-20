@@ -641,55 +641,6 @@ body .art-header .art-slides_co .art_slider_img img {
   max-width: 100%;
 }
 
-body .art-header .art-head-social {
-  width: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  height: auto;
-  position: absolute;
-  top: 40px;
-  right: 2%;
-  padding: 10px 2px;
-  border-radius: 18px;
-}
-
-@media screen and (min-width: 320px) {
-  body .art-header .art-head-social {
-    max-width: 0;
-    max-height: 0;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  body .art-header .art-head-social {
-    max-width: initial;
-    max-height: initial;
-  }
-}
-
-body .art-header .art-head-social .art-social-icon {
-  margin: auto auto 10px;
-  cursor: pointer;
-  width: auto;
-  background-color: transparent;
-  padding: 0px;
-  border-radius: 5em;
-  max-width: 65px;
-  max-height: 65px;
-  overflow: hidden;
-  -webkit-box-shadow: 0 2px 0px rgba(96, 125, 139, 0.212);
-  box-shadow: 0 2px 0px rgba(96, 125, 139, 0.212);
-}
-
-body .art-header .art-head-social .art-social-icon img {
-  width: 100%;
-}
-
 body .art_head_bottom_cards {
   width: 100%;
   height: auto;
