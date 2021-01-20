@@ -766,7 +766,7 @@ body .art_footer .art_footer_co .art_footer_impo_links_cards .art_footer_impo_li
   }
   body .art_footer .art_footer_co .art_footer_impo_links_cards .art_footer_impo_links_card:last-child {
     width: 60%;
-    margin: auto;
+    margin: 0 auto;
   }
 }
 
