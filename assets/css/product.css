@@ -1,3 +1,10 @@
+:root {
+  --titleColorV1: #24C347;
+  --linkColor: #24C347;
+  --titleColor: #6e757b;
+  --operate_color: #f4f6f9;
+}
+
 @media screen and (min-width: 320px) {
   html {
     font-size: 0.95rem;
@@ -124,8 +131,28 @@ body .art_desc_product .art_desc_product_co {
   margin: 0 auto;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co {
   width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 0 auto;
+  padding: 0;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,38 +170,38 @@ body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co {
   overflow: hidden;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .art_slick_btn {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_slick_btn {
   display: none !important;
   position: absolute;
   top: 45%;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .art_slick_btn.next {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_slick_btn.next {
   right: 8px;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .art_slick_btn.prev {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_slick_btn.prev {
   left: 8px;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co:hover .art_slick_btn {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co:hover .art_slick_btn {
   display: block !important;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .slick-list {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .slick-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .slick-list .slick-track {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .slick-list .slick-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .art_desc_product_img {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_desc_product_img {
   width: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,7 +209,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .art_desc_
   outline: none;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_imgs_co .art_desc_product_img img {
+body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_desc_product_img img {
   max-width: 100%;
 }
 
@@ -327,7 +354,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_details_co .art_de
   font-size: 15pt;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_details_co .art_product_action {
+body .art_product_action {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -339,9 +366,11 @@ body .art_desc_product .art_desc_product_co .art_desc_product_details_co .art_pr
   flex-wrap: wrap;
   padding: 30px;
   background: #f5f9fb;
+  margin: 10px 0;
+  border-radius: 12px;
 }
 
-body .art_desc_product .art_desc_product_co .art_desc_product_details_co .art_product_action .art_btn {
+body .art_product_action .art_btn {
   margin: 0;
 }
 
@@ -351,7 +380,126 @@ body .art_request_service {
 
 body .art_reviewers {
   min-height: 45vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 20px 0 1pc;
   background: #f5f9fb;
+}
+
+body .art_reviewers .art_reviews_co {
+  width: 70%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_title {
+  width: 100%;
+  text-align: center;
+  color: #948f9c;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .slick-list {
+  width: 60%;
+  overflow: hidden;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card {
+  width: 30% !important;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f7fdfa;
+  border-radius: 5px;
+  outline: none;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5em;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_icon img {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding: 0 15px;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_rates .rate {
+  padding: 0;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_rates .rate label {
+  font-size: 15px;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 30px;
+  font-size: 8pt;
+  padding: 0 15px;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header .art_review_action .art_btn {
+  margin: 0;
+  min-height: inherit;
+  font-size: inherit;
+  padding: inherit;
 }
 
 body .art_related {

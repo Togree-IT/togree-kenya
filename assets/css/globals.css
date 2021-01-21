@@ -668,7 +668,7 @@ body .rate:not(:checked) > label:before {
   content: '★ ';
 }
 
-body .rate > input:checked ~ label {
+body .rate input:checked ~ label {
   color: #24c447;
 }
 
@@ -1405,6 +1405,10 @@ body .art_stylish_x.art_x svg {
 
 body .art_stylish_x {
   bottom: -75px;
+}
+
+body .art_stylish_x svg {
+  width: 100vw;
 }
 
 body .art_action {

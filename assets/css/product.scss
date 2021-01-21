@@ -1,5 +1,6 @@
 @import "./media-queries";
 // @import "./globals";
+@import "./globals-vars";
 @import "./mixins.scss";
 html {
     @include mobile {
@@ -99,7 +100,7 @@ body {
             justify-content: center;
             padding: 5pc 10px 0;
             margin: 0 auto;
-            .art_desc_product_imgs_co {
+            .art_desc_product_d2_co {
                 width: 40%;
                 // width: 600px;
                 display: -webkit-box;
@@ -111,47 +112,68 @@ body {
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
                 justify-content: center;
-                background: #e0efef;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                // background: #e0efef;
                 margin: 0 0 auto;
                 padding: 0;
                 position: relative;
                 border-radius: 8px;
                 overflow: hidden;
-                .art_slick_btn {
-                    display: none !important;
-                    position: absolute;
-                    top: 45%;
-                    &.next {
-                        right: 8px;
-                    }
-                    &.prev {
-                        left: 8px;
-                    }
-                }
-                &:hover {
-                    .art_slick_btn {
-                        display: block !important;
-                    }
-                }
-                .slick-list {
+                .art_desc_product_imgs_co {
+                    width: 100%;
+                    // width: 600px;
                     display: -webkit-box;
                     display: -ms-flexbox;
                     display: flex;
-                    width: 100%;
-                    .slick-track {
+                    -webkit-box-align: start;
+                    -ms-flex-align: start;
+                    align-items: flex-start;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    background: #e0efef;
+                    margin: 0 0 auto;
+                    padding: 0;
+                    position: relative;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    .art_slick_btn {
+                        display: none !important;
+                        position: absolute;
+                        top: 45%;
+                        &.next {
+                            right: 8px;
+                        }
+                        &.prev {
+                            left: 8px;
+                        }
+                    }
+                    &:hover {
+                        .art_slick_btn {
+                            display: block !important;
+                        }
+                    }
+                    .slick-list {
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: flex;
+                        width: 100%;
+                        .slick-track {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                        }
                     }
-                }
-                .art_desc_product_img {
-                    width: 0;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    outline: none;
-                    img {
-                        max-width: 100%;
+                    .art_desc_product_img {
+                        width: 0;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        outline: none;
+                        img {
+                            max-width: 100%;
+                        }
                     }
                 }
             }
@@ -285,23 +307,25 @@ body {
                         }
                     }
                 }
-                .art_product_action {
-                    width: 100%;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-pack: justify;
-                    -ms-flex-pack: justify;
-                    justify-content: space-between;
-                    -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
-                    padding: 30px;
-                    background: #f5f9fb;
-                    .art_btn {
-                        margin: 0;
-                    }
-                }
             }
+        }
+    }
+    .art_product_action {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 30px;
+        background: #f5f9fb;
+        margin: 10px 0;
+        border-radius: 12px;
+        .art_btn {
+            margin: 0;
         }
     }
     .art_request_service {
@@ -309,7 +333,116 @@ body {
     }
     .art_reviewers {
         min-height: 45vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 20px 0 1pc;
         background: #f5f9fb;
+        .art_reviews_co {
+            width: 70%;
+            margin: 0 auto;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            .art_reviews_title {
+                width: 100%;
+                text-align: center;
+                color: #948f9c;
+            }
+            .art_reviews_cards {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                width: 100%;
+                .slick-list {
+                    width: 60%;
+                    overflow: hidden;
+                }
+                .slick-track {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                }
+            }
+            .art_reviews_cards {
+                .art_reviews_card {
+                    width: 30% !important;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background: #f7fdfa;
+                    border-radius: 5px;
+                    outline: none;
+                    .art_review_header {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        width: 100%;
+                        .art_review_icon {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            border-radius: 5em;
+                            overflow: hidden;
+                            width: 70px;
+                            height: 70px;
+                            img {
+                                min-width: 100%;
+                                max-width: 100%;
+                            }
+                        }
+                        .art_review_titles {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                            -ms-flex-pack: distribute;
+                            justify-content: space-around;
+                            padding: 0 15px;
+                        }
+                        .art_review_rates {
+                            .rate {
+                                padding: 0;
+                                label {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                        .art_review_action {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            min-height: 30px;
+                            font-size: 8pt;
+                            padding: 0 15px;
+                            .art_btn {
+                                margin: 0;
+                                min-height: inherit;
+                                font-size: inherit;
+                                padding: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .art_related {
         min-height: 45vh;
