@@ -179,7 +179,7 @@ body .art-header {
 
 @media screen and (min-width: 320px) {
   body .art-header {
-    min-height: 30.9pc;
+    min-height: 36pc;
   }
   body .art-header .art_stylish {
     filter: none;
@@ -189,7 +189,7 @@ body .art-header {
 
 @media screen and (min-width: 768px) {
   body .art-header {
-    min-height: 30.9pc;
+    min-height: 36pc;
   }
   body .art-header .art_stylish {
     filter: none;

@@ -18,14 +18,14 @@ body {
         position: relative;
         padding: 0;
         @include mobile {
-            min-height: 30.9pc;
+            min-height: 36pc;
             .art_stylish {
                 filter: none;
                 -webkit-filter: none;
             }
         }
         @include tablet {
-            min-height: 30.9pc;
+            min-height: 36pc;
             // margin-top: 3.99pc;
             .art_stylish {
                 filter: none;
