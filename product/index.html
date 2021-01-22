@@ -548,16 +548,61 @@
                 </div>
                 <div class="art_related_products_cards">
                     <div class="art_related_product_card">
-                        <div class="art_related_product_card_header"></div>
-                        <div class="art_related_product_card_body"></div>
+                        <div class="art_related_product_card_header">
+                            <div class="art_related_product_img_co">
+                                <img src="../assets/img/products/2.png" alt="">
+                                <a href="#!" class="art_btn art_link_btn art_splited filled waves-effect">Read more <span class="art_spliter"><em class="material-icons">chevron_right</em></span></a>
+                            </div>
+                        </div>
+                        <div class="art_related_product_card_body">
+                            <div class="art_related_product_details_co">
+                                <div class="art_related_product_details_title">
+                                    <h5>TY5 Solar Powered GPS Tracker</h5>
+                                </div>
+                                <div class="art_related_product_details_desc">
+                                    <p>TY5 is a solar tracker that provides complete wireless GPS tracking solutions for cargo and ships.It can be used in employee owned vehicles,fleet management,leased cars. GPS+LBS positioning Allow the location to be
+                                        pinpointed in real time or periodically Solar powered Work independently without any outer powering</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="art_related_product_card">
-                        <div class="art_related_product_card_header"></div>
-                        <div class="art_related_product_card_body"></div>
+                        <div class="art_related_product_card_header">
+                            <div class="art_related_product_img_co">
+                                <img src="../assets/img/products/10.png" alt="">
+                                <a href="#!" class="art_btn art_link_btn art_splited filled waves-effect">Read more <span class="art_spliter"><em class="material-icons">chevron_right</em></span></a>
+                            </div>
+                        </div>
+                        <div class="art_related_product_card_body">
+                            <div class="art_related_product_details_co">
+                                <div class="art_related_product_details_title">
+                                    <h5>TY5 Solar Powered GPS Tracker</h5>
+                                </div>
+                                <div class="art_related_product_details_desc">
+                                    <p>TY5 is a solar tracker that provides complete wireless GPS tracking solutions for cargo and ships.It can be used in employee owned vehicles,fleet management,leased cars. GPS+LBS positioning Allow the location to be
+                                        pinpointed in real time or periodically Solar powered Work independently without any outer powering</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="art_related_product_card">
-                        <div class="art_related_product_card_header"></div>
-                        <div class="art_related_product_card_body"></div>
+                        <div class="art_related_product_card_header">
+                            <div class="art_related_product_img_co">
+                                <img src="../assets/img/products/1.png" alt="">
+                                <a href="#!" class="art_btn art_link_btn art_splited filled waves-effect">Read more <span class="art_spliter"><em class="material-icons">chevron_right</em></span></a>
+                            </div>
+                        </div>
+                        <div class="art_related_product_card_body">
+                            <div class="art_related_product_details_co">
+                                <div class="art_related_product_details_title">
+                                    <h5>TY5 Solar Powered GPS Tracker</h5>
+                                </div>
+                                <div class="art_related_product_details_desc">
+                                    <p>TY5 is a solar tracker that provides complete wireless GPS tracking solutions for cargo and ships.It can be used in employee owned vehicles,fleet management,leased cars. GPS+LBS positioning Allow the location to be
+                                        pinpointed in real time or periodically Solar powered Work independently without any outer powering</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -741,8 +786,8 @@
                 initialSlide: 1,
                 slidesToShow: 1,
 
-                autoplay: !true,
-                // autoplaySpeed: 2000,
+                autoplay: true,
+                autoplaySpeed: 2000,
 
                 prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
                 nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',
@@ -763,6 +808,27 @@
                 prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
                 nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',
                 infinite: false,
+                responsive: [{
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 1,
+                        // autoplay: !true,
+                    }
+                }, {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        // autoplay: !true,
+                    }
+                }, {
+                    breakpoint: 1204,
+                    settings: {
+                        arrows: true,
+                        // autoplay: !true,
+
+                    }
+                }]
 
             });
         });

@@ -614,6 +614,7 @@ body .art-head-social {
   body .art-head-social {
     max-width: 0;
     max-height: 0;
+    overflow: hidden;
   }
 }
 
@@ -621,6 +622,7 @@ body .art-head-social {
   body .art-head-social {
     max-width: initial;
     max-height: initial;
+    overflow: initial;
   }
 }
 
@@ -647,6 +649,12 @@ body .rate {
   height: 46px;
   padding: 0 10px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 body .rate:not(:checked) > input {
@@ -1849,4 +1857,65 @@ body .art_request_service .art_service_form_co .art_service_body .art_input_co.a
 
 body .art_request_service .art_service_form_co .art_service_body .art_btn {
   margin: auto;
+}
+
+body .art_splited {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 40px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 0 0px 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: aliceblue;
+  text-transform: uppercase;
+  transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+}
+
+body .art_splited:hover {
+  color: #fafafa;
+  opacity: 1;
+}
+
+body .art_splited.filled {
+  background: #1b2936;
+}
+
+body .art_splited.filled .art_spliter {
+  background: #2f3840;
+}
+
+body .art_splited .art_spliter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  justify-self: flex-end;
+  width: 40px;
+  margin-left: 15px;
+  transition: inherit;
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  -ms-transition: inherit;
+  -o-transition: inherit;
 }

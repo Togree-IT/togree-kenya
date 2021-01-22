@@ -40,7 +40,7 @@ body {
         background-image: url("../img/product/bg.png");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: bottom;
+        background-position: top;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -48,10 +48,18 @@ body {
         -ms-flex-pack: center;
         justify-content: center;
         @include mobile {
-            min-height: 45vh;
+            min-height: auto;
+            -webkit-box-align: start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            padding-bottom: 14pc;
         }
         @include tablet {
             min-height: 45vh;
+            -webkit-box-align: initial;
+            -ms-flex-align: initial;
+            align-items: initial;
+            padding-bottom: 0;
         }
         @include laptop {
             min-height: 55vh;
@@ -62,6 +70,11 @@ body {
         .art_product_cat_desc {
             width: 35%;
             color: aliceblue;
+            padding: 0;
+            @include mobile {
+                width: 100%;
+                padding: 20px;
+            }
         }
         .art_product_cat_img {
             width: 45%;
@@ -74,6 +87,27 @@ body {
             -webkit-box-pack: center;
             -ms-flex-pack: center;
             justify-content: center;
+            @include mobile {
+                &.art_v2 {
+                    width: 90%;
+                    position: absolute;
+                    bottom: -18px;
+                    z-index: 1;
+                    background: rgba(255, 255, 255, 0.871);
+                    margin: auto;
+                    border-radius: 10px;
+                    -webkit-box-shadow: 0px 2px 2px 0 #e8f2fb;
+                    box-shadow: 0px 2px 2px 0 #e8f2fb;
+                }
+                width: 0;
+                max-width: 0;
+                max-height: 0;
+            }
+            @include laptop {
+                width: 45%;
+                max-width: initial;
+                max-height: initial;
+            }
             img {
                 width: 100%;
                 max-width: 100%;
@@ -100,6 +134,16 @@ body {
             justify-content: center;
             padding: 5pc 10px 0;
             margin: 0 auto;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            @include mobile {
+                width: 100%;
+                margin-top: -20pc;
+            }
+            @include laptop {
+                width: 60%;
+                margin-top: 0;
+            }
             .art_desc_product_d2_co {
                 width: 40%;
                 // width: 600px;
@@ -120,6 +164,9 @@ body {
                 position: relative;
                 border-radius: 8px;
                 overflow: hidden;
+                @include mobile {
+                    width: 100%;
+                }
                 .art_desc_product_imgs_co {
                     width: 100%;
                     // width: 600px;
@@ -138,6 +185,12 @@ body {
                     position: relative;
                     border-radius: 8px;
                     overflow: hidden;
+                    @include mobile {
+                        background: #fff;
+                    }
+                    @include laptop {
+                        background: #e0efef;
+                    }
                     .art_slick_btn {
                         display: none !important;
                         position: absolute;
@@ -182,6 +235,11 @@ body {
                 // margin: 0 0 auto;
                 padding: 0 20px 20px;
                 margin: 0 20px;
+                @include mobile {
+                    width: 50% * 2;
+                    margin: 0;
+                    padding: 0 10px 10px;
+                }
                 .art_desc_product_title {
                     * {
                         margin-top: 0;
@@ -199,6 +257,15 @@ body {
                     -webkit-box-align: center;
                     -ms-flex-align: center;
                     align-items: center;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    // @include mobile {
+                    //     .rate {
+                    //         label {
+                    //             font-size: 8pt;
+                    //         }
+                    //     }
+                    // }
                     .reviews {
                         display: -webkit-box;
                         display: -ms-flexbox;
@@ -211,8 +278,23 @@ body {
                         -webkit-box-flex: 1;
                         -ms-flex: 1;
                         flex: 1;
+                        @include mobile {
+                            -webkit-box-flex: 0;
+                            -ms-flex: none;
+                            flex: none;
+                            -webkit-box-pack: justify;
+                            -ms-flex-pack: justify;
+                            justify-content: space-between;
+                            width: 100%;
+                        }
                         span {
                             color: #949494;
+                        }
+                        .art_review_actions {
+                            width: 50%;
+                            .art_btn {
+                                margin: 0;
+                            }
                         }
                     }
                 }
@@ -226,6 +308,16 @@ body {
                     display: flex;
                     -ms-flex-pack: distribute;
                     justify-content: space-around;
+                    -ms-flex-wrap: nowrap;
+                    flex-wrap: nowrap;
+                    @include mobile {
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    }
+                    @include laptop {
+                        -ms-flex-wrap: nowrap;
+                        flex-wrap: nowrap;
+                    }
                     .art_desc_product_features_card {
                         width: 100%;
                         display: -webkit-box;
@@ -324,8 +416,14 @@ body {
         background: #f5f9fb;
         margin: 10px 0;
         border-radius: 12px;
+        @include mobile {
+            padding: 7px 15px;
+        }
         .art_btn {
             margin: 0;
+            @include mobile {
+                margin: 5px 0;
+            }
         }
     }
     .art_request_service {
@@ -353,6 +451,10 @@ body {
             justify-content: center;
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            @include mobile {
+                width: 100%;
+                padding: 0 20px;
+            }
             .art_reviews_title {
                 width: 100%;
                 text-align: center;
@@ -369,6 +471,9 @@ body {
                 .slick-list {
                     width: 60%;
                     overflow: hidden;
+                    @include mobile {
+                        width: 100%;
+                    }
                 }
                 .slick-track {
                     display: -webkit-box;
@@ -378,12 +483,15 @@ body {
             }
             .art_reviews_cards {
                 .art_reviews_card {
-                    width: 30% !important;
+                    // width: 30% !important;
                     margin: 0 auto;
                     padding: 20px;
                     background: #f7fdfa;
                     border-radius: 5px;
                     outline: none;
+                    @include mobile {
+                        // width: 100% !important;
+                    }
                     .art_review_header {
                         display: -webkit-box;
                         display: -ms-flexbox;
@@ -391,6 +499,8 @@ body {
                         -webkit-box-align: center;
                         -ms-flex-align: center;
                         align-items: center;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
                         width: 100%;
                         .art_review_icon {
                             display: -webkit-box;
@@ -432,6 +542,13 @@ body {
                             min-height: 30px;
                             font-size: 8pt;
                             padding: 0 15px;
+                            width: auto;
+                            @include mobile {
+                                width: 100%;
+                            }
+                            @include tablet {
+                                width: auto;
+                            }
                             .art_btn {
                                 margin: 0;
                                 min-height: inherit;
@@ -455,27 +572,148 @@ body {
         -ms-flex-pack: center;
         justify-content: center;
         padding: 20px 0 15pc;
+        @include mobile {
+            padding: 20px 20px 10pc;
+        }
+        @include laptop {
+            padding: 20px 0 15pc;
+        }
         .art_related_products_co {
-            width: 70%;
+            width: 60%;
+            @include mobile {
+                width: 100%;
+            }
+            @include laptop {
+                width: 60%;
+            }
             .art_related_products_title {
                 width: 100%;
+                // color: #948f9c;
             }
             .art_related_products_cards {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                -webkit-box-pack: justify;
-                -ms-flex-pack: justify;
-                justify-content: space-between;
+                // -webkit-box-pack: justify;
+                // -ms-flex-pack: justify;
+                // justify-content: space-between;
                 -webkit-box-align: start;
                 -ms-flex-align: start;
                 align-items: flex-start;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
                 .art_related_product_card {
-                    width: (100% / 3);
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    width: ((100% / 3) - 1%);
                     min-height: 333px;
                     background-color: #ffffff;
-                    margin: 0 5px;
+                    margin: 0 15px;
+                    padding: 0 10px;
                     border-radius: 4px;
+                    @include mobile {
+                        width: ((100% / 1) - 0%);
+                        margin: 0 0 20px;
+                    }
+                    @include laptop {
+                        width: ((100% / 3) - 1%);
+                        margin: 0 15px;
+                    }
+                    &:hover {
+                        .art_related_product_img_co {
+                            img {
+                                transform: scale(1.5) translateY(10%);
+                                -webkit-transform: scale(1.5) translateY(10%);
+                                -moz-transform: scale(1.5) translateY(10%);
+                                -ms-transform: scale(1.5) translateY(10%);
+                                -o-transform: scale(1.5) translateY(10%);
+                            }
+                        }
+                        .art_splited {
+                            color: aliceblue;
+                            &.filled {
+                                background: #00bd6e;
+                            }
+                            .art_spliter {
+                                background: #29a972;
+                            }
+                        }
+                    }
+                    .art_related_product_card_header {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        width: 100%;
+                        position: relative;
+                        overflow: hidden;
+                        -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                        flex: 1;
+                        max-height: 20vh;
+                        .art_related_product_img_co {
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            height: auto;
+                            width: 100%;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                            overflow: hidden;
+                            min-height: 20vh;
+                            position: relative;
+                            transition: all .3s linear;
+                            -webkit-transition: all .3s linear;
+                            -moz-transition: all .3s linear;
+                            -ms-transition: all .3s linear;
+                            -o-transition: all .3s linear;
+                            img {
+                                max-width: 100%;
+                                max-height: 100%;
+                                margin: auto;
+                                transition: inherit;
+                                -webkit-transition: inherit;
+                                -moz-transition: inherit;
+                                -ms-transition: inherit;
+                                -o-transition: inherit;
+                            }
+                            .art_splited {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                            }
+                        }
+                    }
+                    .art_related_product_card_body {
+                        padding: 20px;
+                        .art_related_product_details_co {
+                            .art_related_product_details_title {
+                                position: relative;
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    padding: 2px;
+                                    width: 100px;
+                                    background: #b1e8b9;
+                                    top: -15px;
+                                    left: -10px;
+                                    border-radius: 5em;
+                                }
+                            }
+                            .art_related_product_details_desc {
+                                color: #7b7e80;
+                            }
+                        }
+                    }
                 }
             }
         }
