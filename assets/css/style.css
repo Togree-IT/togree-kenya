@@ -1190,7 +1190,6 @@ body .art-section-top .art_ur_numbers .art_matrix {
 
 body .art-section-top .art_ur_numbers .art_stylish {
   -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, -1, 0, 0);
   transform: matrix(1, 0, 0, -1, 0, 0);
   -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
   filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -1466,8 +1465,7 @@ body .art-section-top .art_how_we_operate {
   overflow: hidden;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  background: -o-linear-gradient(to top, var(--operate_color), transparent);
-  background: -webkit-gradient(linear, left top, left bottom, from(to top), color-stop(var(--operate_color)), to(transparent));
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--operate_color)), to(transparent));
   background: linear-gradient(to top, var(--operate_color), transparent);
   overflow: visible;
 }
@@ -1482,8 +1480,7 @@ body .art-section-top .art_how_we_operate {
 @media screen and (min-width: 1024px) {
   body .art-section-top .art_how_we_operate {
     min-height: 45vh;
-    background: -o-linear-gradient(to top, var(--operate_color), transparent);
-    background: -webkit-gradient(linear, left top, left bottom, from(to top), color-stop(var(--operate_color)), to(transparent));
+    background: -webkit-gradient(linear, left bottom, left top, from(var(--operate_color)), to(transparent));
     background: linear-gradient(to top, var(--operate_color), transparent);
   }
 }
@@ -2007,7 +2004,6 @@ body .art-section-top .art_our_services .art_our_services_cards_container .art_o
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-transform: none;
-    -ms-transform: none;
     transform: none;
   }
 }
@@ -2455,7 +2451,6 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
   position: relative;
   overflow: hidden;
   -webkit-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
   transition: 0.3s linear;
   -moz-transition: 0.3s linear;
   -ms-transition: 0.3s linear;
@@ -2493,7 +2488,6 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
   width: 100%;
   height: 100%;
   -webkit-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
   transition: 0.3s linear;
   transform: scale(1);
   -moz-transform: scale(1);
@@ -2657,7 +2651,6 @@ body .art-section-top .art_our_products .art_product_view_more_co .art_gree_btn 
 
 body .art-section-top .art_our_products .art_stylish {
   -webkit-transform: matrix(1, 0, 0, -1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, -1, 0, 0);
   transform: matrix(1, 0, 0, -1, 0, 0);
   -webkit-filter: drop-shadow(0 -2px 1px #e8f2fb);
   filter: drop-shadow(0 -2px 1px #e8f2fb);
@@ -2987,7 +2980,6 @@ body .art-section-top .art_our_news .art_our_news_cards .slick-list .slick-slide
 
 body .art-section-top .art_our_news .art_our_news_cards .slick-list .slick-slide.slick-current.slick-active.slick-center {
   -webkit-transform: scale(1.15);
-  -ms-transform: scale(1.15);
   transform: scale(1.15);
 }
 
@@ -3479,8 +3471,6 @@ body .art-section-top .art_our_news .art_updates .art_tabs_content .art_updates_
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: -o-linear-gradient(45deg, #066FFD, #24c447);
-  background: -webkit-gradient(linear, left top, left bottom, from(45deg), color-stop(#066FFD), to(#24c447));
   background: linear-gradient(45deg, #066FFD, #24c447);
   border: 0;
   -webkit-box-shadow: none;
@@ -9516,3 +9506,4 @@ body .art-section-top .art_our_news .art_subscribe_sec .art_subscribe_co .art_su
     height: 90px;
   }
 }
+/*# sourceMappingURL=style.css.map */

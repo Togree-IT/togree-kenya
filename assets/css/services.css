@@ -355,7 +355,8 @@ body .serviceshero {
     position: relative;
     max-width: 80%;
     -ms-flex-item-align: center;
-    align-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -364,7 +365,8 @@ body .serviceshero {
     position: relative;
     max-width: 80%;
     -ms-flex-item-align: center;
-    align-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -542,7 +544,6 @@ body .art_how_it_works {
 
 body .joinus {
   position: relative;
-  background: -o-linear-gradient(top left, #c3a024, #24c347);
   background: -webkit-gradient(linear, left top, right bottom, from(#c3a024), to(#24c347));
   background: linear-gradient(to bottom right, #c3a024, #24c347);
   max-height: 250px;
@@ -1020,3 +1021,4 @@ body .art_left_right_co .art_card {
   flex: 1;
   padding: 0 10px;
 }
+/*# sourceMappingURL=services.css.map */

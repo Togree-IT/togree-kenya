@@ -326,7 +326,8 @@
     position: relative;
     max-width: 80%;
     -ms-flex-item-align: center;
-    align-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -335,7 +336,8 @@
     position: relative;
     max-width: 80%;
     -ms-flex-item-align: center;
-    align-self: center;
+    -ms-grid-row-align: center;
+        align-self: center;
   }
 }
 
@@ -636,7 +638,8 @@
   position: absolute;
   height: 1px;
   -ms-flex-item-align: center;
-  align-self: center;
+  -ms-grid-row-align: center;
+      align-self: center;
   left: 0;
   top: calc(var(--clicle_height) / 2);
   right: 0;
@@ -1387,7 +1390,6 @@
 
 .joinus {
   position: relative;
-  background: -o-linear-gradient(top left, #c3a024, #24c347);
   background: -webkit-gradient(linear, left top, right bottom, from(#c3a024), to(#24c347));
   background: linear-gradient(to bottom right, #c3a024, #24c347);
   max-height: 250px;
@@ -2062,3 +2064,4 @@
 .footer .second__footer__left a {
   color: #24C347;
 }
+/*# sourceMappingURL=about.css.map */
