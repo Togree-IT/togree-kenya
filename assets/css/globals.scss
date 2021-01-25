@@ -912,6 +912,12 @@ body {
         background: #f5f8f9;
         height: 3.5rem;
         border: 1px solid #d8e1ea;
+        @include mobile {
+            height: 4.5rem;
+        }
+        @include laptop {
+            height: 3.5rem;
+        }
         @include bod_radius(1em);
         // @include mobile {
         //     height: 5.5rem;

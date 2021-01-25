@@ -1172,6 +1172,18 @@ body .art_input_co {
   border-radius: 1em;
 }
 
+@media screen and (min-width: 320px) {
+  body .art_input_co {
+    height: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_input_co {
+    height: 3.5rem;
+  }
+}
+
 body .art_input_co .art_input {
   padding: 0 15px;
   outline: none;
