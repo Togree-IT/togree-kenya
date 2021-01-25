@@ -18,11 +18,10 @@
     <nav class="art-nav ">
         <div class="art_nav-right">
             <!-- Menu button -->
-            <button class="art_btn waves-effect sidenav-trigger" id="menu-btn" data-target="menu-nav">
-                <svg width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 1L45.5 1" stroke="#707070" stroke-width="2"/>
-                <path d="M0 14L35 14" stroke="#707070" stroke-width="2"/>
-                <path d="M0 27L45.5 27" stroke="#707070" stroke-width="2"/>
+
+            <button class="art_menu_btn art_btn waves-effect sidenav-trigger" name="menu_button" id="menu-btn" role="button" aria-label="Menu button" data-target="menu-nav">
+                <svg width="44" height="28" viewBox="0 0 44 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1C0 1 26.8169 1 44 1M0 14.5H30M0 27H44" stroke="black"></path>
                 </svg>
             </button>
             <!-- Logo link -->
@@ -240,10 +239,10 @@
                             <img src="../assets/img/products/8.png" alt="">
                         </div>
                     </div>
-                    <div class="art_product_action">
+                    <!-- <div class="art_product_action">
                         <button class="art_btn art_gree_btn  waves-effect">Rate this product</button>
                         <button class="art_btn art_gree_btn filled waves-effect waves-light">Write a review</button>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="art_desc_product_details_co">
                     <div class="art_desc_product_title">
@@ -275,104 +274,115 @@
                         <p> This real-time car tracking device gives you up-to-the-minute speed, location updates and detailed reports. It is an invaluable tool for monitoring either a single car or an entire fleet of vehicles
                         </p>
                     </div>
-                    <div class="art_desc_product_features_co">
-                        <div class="art_desc_product_features_card">
-                            <div class="art_desc_product_features_card_header">
-                                <h6>Features</h6>
-                            </div>
-                            <div class="art_desc_product_features_card_body">
-                                <ul class="art_desc_product_feature">
-                                    <li class="art_product_feature">
-                                        Vehicle battery protection
-                                        <p class="art_f_deatils">
-                                            Never drain out of the battery of motorcycle for optimal protection
-                                        </p>
 
-                                    </li>
-                                    <li class="art_product_feature">Remote cut-off (petrol/power)
-                                        <p class="art_f_deatils">
-                                            Compel the vehicle to stop by breaking off the fuel connection
-                                        </p>
-                                    </li>
-                                    <li class="art_product_feature">SOS button
-                                        <p class="art_f_deatils">
-                                            Thumb sized button allowing urgent call during an emergency case
-                                        </p>
-                                    </li>
-                                    <li class="art_product_feature">Multiple alarms
-                                        <p class="art_f_deatils">
-                                            Instant alert for vibration, overspeed, power off, geo-fence
-                                        </p>
-                                    </li>
-                                    <li class="art_product_feature">DIP65 dust and waterproof
-                                        <p class="art_f_deatils">
-                                            Water-resistant to ensure stable operation in tough environment
-                                        </p>
-                                    </li>
-                                    <li class="art_product_feature">9-90V voltage range
-                                        <p class="art_f_deatils">
-                                            Wide operating voltage applicable to all types of vehicles
-                                        </p>
-                                    </li>
-                                    <li class="art_product_feature">Tracked by: SMS, APP, Web
-                                        <p class="art_f_deatils">
-                                            Report location in real time through different interfaces
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="art_desc_product_features_card">
-                            <div class="art_desc_product_features_card_header">
-                                <h6>Specs</h6>
-                            </div>
-                            <div class="art_desc_product_features_card_body">
-                                <ul class="art_desc_product_feature art_specs">
-                                    <li class="art_product_feature">GSM Specification
-                                        <ul class="art_f_deatils">
-                                            <li class="art_product_feature">GSM frequency: 850/900/1800/1900 MHz</li>
-                                            <li class="art_product_feature">GPRS: Class 12, TCP/IP</li>
-                                            <li class="art_product_feature">Memory: 32+32Mb</li>
-                                            <li class="art_product_feature">Phase error: RMSPE &lt;5,PPE&lt;20</li>
-                                            <li class="art_product_feature">Max output: GSM850/GSM900:33±3dBm GSM1800/GSM1900:30±3Bm</li>
-                                            <li class="art_product_feature">Max frequency error: ±0.1ppm</li>
-                                        </ul>
-                                    </li>
-                                    <li class="art_product_feature">GPS Specification
-                                        <ul class="art_f_deatils">
-                                            <li class="art_product_feature">GPS chipset: MTK high sensitivity chip</li>
-                                            <li class="art_product_feature">Frequency: L1,1575.42MHz C/A code</li>
-                                            <li class="art_product_feature">GPS channel: 66</li>
-                                            <li class="art_product_feature">Location accuracy: &lt;10 meters</li>
-                                            <li class="art_product_feature">Tracking sensitivity: -165dBm</li>
-                                            <li class="art_product_feature">Acquisition sensitivity: -148dBm</li>
-                                            <li class="art_product_feature">TTFF (open sky): Avg. hot start≤1sec Avg. cold start≤35sec</li>
-                                        </ul>
-                                    </li>
-                                    <li class="art_product_feature">Functional & Package
-                                        <ul class="art_f_deatils">
-                                            <li class="art_product_feature">Dust water proof level: IP65</li>
-                                            <li class="art_product_feature">Battery: 450mAh/3.7V Li-Polymer battery</li>
-                                            <li class="art_product_feature">Working voltage/current: 9-90VDC/7mA(6VDC)</li>
-                                            <li class="art_product_feature">Operating temperature: -20℃～ 70℃</li>
-                                            <li class="art_product_feature">Standby time: 70 hours</li>
-                                            <li class="art_product_feature">Working time: 5 hours</li>
-                                            <li class="art_product_feature">Weight: 31g</li>
-                                            <li class="art_product_feature">Working time: 5 hours</li>
-                                        </ul>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <!-- <div class="art_product_action" hidden>
                         <button class="art_btn art_gree_btn filled waves-effect waves-light">Write a review</button>
                         <button class="art_btn art_gree_btn  waves-effect">Rate this product</button>
-                    </div> -->
-                </div>
+                    </div> 
+                    mysqladmin --user=root password "made22"
+                
+                -->
 
+                    <div class="art_more specs art_md">
+                        <button class="art_btn art_gree_btn filled waves-effect waves-light" id="art_view_specs">View Specs</button>
+                    </div>
+                </div>
+                <div class="art_product_action">
+                    <button class="art_btn art_gree_btn  waves-effect">Rate this product</button>
+                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Write a review</button>
+                </div>
+                <div class="art_desc_product_features_co">
+                    <div class="art_desc_product_features_card">
+                        <div class="art_desc_product_features_card_header">
+                            <h6>Features</h6>
+                        </div>
+                        <div class="art_desc_product_features_card_body">
+                            <ul class="art_desc_product_feature">
+                                <li class="art_product_feature">
+                                    Vehicle battery protection
+                                    <p class="art_f_deatils">
+                                        Never drain out of the battery of motorcycle for optimal protection
+                                    </p>
+
+                                </li>
+                                <li class="art_product_feature">Remote cut-off (petrol/power)
+                                    <p class="art_f_deatils">
+                                        Compel the vehicle to stop by breaking off the fuel connection
+                                    </p>
+                                </li>
+                                <li class="art_product_feature">SOS button
+                                    <p class="art_f_deatils">
+                                        Thumb sized button allowing urgent call during an emergency case
+                                    </p>
+                                </li>
+                                <li class="art_product_feature">Multiple alarms
+                                    <p class="art_f_deatils">
+                                        Instant alert for vibration, overspeed, power off, geo-fence
+                                    </p>
+                                </li>
+                                <li class="art_product_feature">DIP65 dust and waterproof
+                                    <p class="art_f_deatils">
+                                        Water-resistant to ensure stable operation in tough environment
+                                    </p>
+                                </li>
+                                <li class="art_product_feature">9-90V voltage range
+                                    <p class="art_f_deatils">
+                                        Wide operating voltage applicable to all types of vehicles
+                                    </p>
+                                </li>
+                                <li class="art_product_feature">Tracked by: SMS, APP, Web
+                                    <p class="art_f_deatils">
+                                        Report location in real time through different interfaces
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="art_desc_product_features_card">
+                        <div class="art_desc_product_features_card_header">
+                            <h6>Specs</h6>
+                        </div>
+                        <div class="art_desc_product_features_card_body">
+                            <ul class="art_desc_product_feature art_specs">
+                                <li class="art_product_feature">GSM Specification
+                                    <ul class="art_f_deatils">
+                                        <li class="art_product_feature">GSM frequency: 850/900/1800/1900 MHz</li>
+                                        <li class="art_product_feature">GPRS: Class 12, TCP/IP</li>
+                                        <li class="art_product_feature">Memory: 32+32Mb</li>
+                                        <li class="art_product_feature">Phase error: RMSPE &lt;5,PPE&lt;20</li>
+                                        <li class="art_product_feature">Max output: GSM850/GSM900:33±3dBm GSM1800/GSM1900:30±3Bm</li>
+                                        <li class="art_product_feature">Max frequency error: ±0.1ppm</li>
+                                    </ul>
+                                </li>
+                                <li class="art_product_feature">GPS Specification
+                                    <ul class="art_f_deatils">
+                                        <li class="art_product_feature">GPS chipset: MTK high sensitivity chip</li>
+                                        <li class="art_product_feature">Frequency: L1,1575.42MHz C/A code</li>
+                                        <li class="art_product_feature">GPS channel: 66</li>
+                                        <li class="art_product_feature">Location accuracy: &lt;10 meters</li>
+                                        <li class="art_product_feature">Tracking sensitivity: -165dBm</li>
+                                        <li class="art_product_feature">Acquisition sensitivity: -148dBm</li>
+                                        <li class="art_product_feature">TTFF (open sky): Avg. hot start≤1sec Avg. cold start≤35sec</li>
+                                    </ul>
+                                </li>
+                                <li class="art_product_feature">Functional & Package
+                                    <ul class="art_f_deatils">
+                                        <li class="art_product_feature">Dust water proof level: IP65</li>
+                                        <li class="art_product_feature">Battery: 450mAh/3.7V Li-Polymer battery</li>
+                                        <li class="art_product_feature">Working voltage/current: 9-90VDC/7mA(6VDC)</li>
+                                        <li class="art_product_feature">Operating temperature: -20℃～ 70℃</li>
+                                        <li class="art_product_feature">Standby time: 70 hours</li>
+                                        <li class="art_product_feature">Working time: 5 hours</li>
+                                        <li class="art_product_feature">Weight: 31g</li>
+                                        <li class="art_product_feature">Working time: 5 hours</li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </section>
