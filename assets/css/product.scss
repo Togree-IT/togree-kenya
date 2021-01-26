@@ -226,11 +226,7 @@ body {
                 margin: 0 0 auto;
                 padding: 0;
                 position: relative;
-                border-radius: 80px;
-                -webkit-border-radius: 80px;
-                -moz-border-radius: 80px;
-                -ms-border-radius: 80px;
-                -o-border-radius: 80px;
+                border-radius: 8px;
                 overflow: hidden;
                 @include mobile {
                     width: 100%;
@@ -260,11 +256,7 @@ body {
                     margin: 0 0 auto;
                     padding: 0;
                     position: relative;
-                    border-radius: 80px;
-                    -webkit-border-radius: 80px;
-                    -moz-border-radius: 80px;
-                    -ms-border-radius: 80px;
-                    -o-border-radius: 80px;
+                    border-radius: 8px;
                     overflow: hidden;
                     @include mobile {
                         background: #fff;
@@ -292,7 +284,7 @@ body {
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: flex;
-                        width: 70%;
+                        width: 100%;
                         overflow: hidden;
                         .slick-track {
                             display: -webkit-box;
@@ -306,6 +298,8 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         outline: none;
+                        width: 128pc !important;
+                        min-height: 24vh;
                         // max-height: 51vh;
                         img {
                             max-width: 100%;
