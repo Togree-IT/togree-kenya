@@ -230,24 +230,15 @@ body .art-header {
 body .art-header .slick-active .art_slider_img {
   -webkit-animation-name: fadeInUpSD;
   animation-name: fadeInUpSD;
-  -webkit-animation-duration: 0.83s;
-  animation-duration: 0.83s;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-}
-
-body .art-header .slick-active .art-head-sec .art_head_title {
-  -webkit-animation-name: art_ani_up;
-  animation-name: art_ani_up;
-  -webkit-animation-duration: 0.83s;
-  animation-duration: 0.83s;
+  -webkit-animation-duration: 1.193s;
+  animation-duration: 1.193s;
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
 }
 
 body .art-header .slick-active .art-head-sec .art_head_desc {
-  -webkit-animation-name: art_ani_left;
-  animation-name: art_ani_left;
+  -webkit-animation-name: fadeInUpSD;
+  animation-name: fadeInUpSD;
   -webkit-animation-duration: 0.83s;
   animation-duration: 0.83s;
   -webkit-animation-timing-function: ease-in-out;
@@ -396,9 +387,6 @@ body .art-header .art-slides_co .art-head-sec {
   body .art-header .art-slides_co .art-head-sec {
     position: absolute;
     width: 100%;
-    background: rgba(31, 64, 41, 0.71);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
     padding: 38px 15px;
     padding-left: 15px;
     color: aliceblue;
@@ -407,6 +395,9 @@ body .art-header .art-slides_co .art-head-sec {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    background: rgba(31, 64, 41, 0.71);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
 }
 
@@ -414,17 +405,23 @@ body .art-header .art-slides_co .art-head-sec {
   body .art-header .art-slides_co .art-head-sec {
     position: absolute;
     width: 100%;
-    background: rgba(31, 64, 41, 0.71);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
     padding: 38px 15px;
     padding-left: 15px;
-    color: aliceblue;
     top: 0;
     bottom: 0;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    background: rgba(241, 244, 247, 0.878);
+    color: #093052;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+  body .art-header .art-slides_co .art-head-sec.revert {
+    background: rgba(31, 64, 41, 0.71);
+    color: aliceblue;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
 }
 

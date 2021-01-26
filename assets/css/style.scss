@@ -58,16 +58,18 @@ body {
         }
         .slick-active {
             .art_slider_img {
-                @include fadeInUpSD(0.83s,
+                @include fadeInUpSD(1.193s,
                 ease-in-out);
             }
             .art-head-sec {
                 .art_head_title {
-                    @include art_ani_up(0.83s,
-                    ease-in-out);
+                    // @include art_ani_up(0.83s,
+                    // ease-in-out); 
+                    // @include art_ani_left(0.83s,
+                    // ease-in-out);
                 }
                 .art_head_desc {
-                    @include art_ani_left(0.83s,
+                    @include fadeInUpSD(0.83s,
                     ease-in-out);
                 }
             }
@@ -194,9 +196,6 @@ body {
                 @include mobile {
                     position: absolute;
                     width: 100%;
-                    background: rgba(31, 64, 41, 0.71);
-                    -webkit-backdrop-filter: blur(5px);
-                    backdrop-filter: blur(5px);
                     padding: 38px 15px;
                     padding-left: 15px;
                     color: aliceblue;
@@ -205,21 +204,33 @@ body {
                     -webkit-box-pack: start;
                     -ms-flex-pack: start;
                     justify-content: flex-start;
+                    background: rgba(31, 64, 41, 0.71);
+                    -webkit-backdrop-filter: blur(5px);
+                    backdrop-filter: blur(5px);
                 }
                 @include mobile {
                     position: absolute;
                     width: 100%;
-                    background: rgba(31, 64, 41, 0.71);
-                    -webkit-backdrop-filter: blur(5px);
-                    backdrop-filter: blur(5px);
                     padding: 38px 15px;
                     padding-left: 15px;
-                    color: aliceblue;
                     top: 0;
                     bottom: 0;
                     -webkit-box-pack: center;
                     -ms-flex-pack: center;
                     justify-content: center;
+                    &.revert {
+                        background: rgba(31, 64, 41, 0.71);
+                        color: aliceblue;
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                    }
+                    background:rgba(241,
+                    244,
+                    247,
+                    0.878);
+                    color: #093052;
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
                 }
                 @include laptop {
                     position: relative;
