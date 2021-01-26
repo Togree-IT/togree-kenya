@@ -260,7 +260,11 @@ body {
                     margin: 0 0 auto;
                     padding: 0;
                     position: relative;
-                    border-radius: 8px;
+                    border-radius: 80px;
+                    -webkit-border-radius: 80px;
+                    -moz-border-radius: 80px;
+                    -ms-border-radius: 80px;
+                    -o-border-radius: 80px;
                     overflow: hidden;
                     @include mobile {
                         background: #fff;
