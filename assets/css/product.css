@@ -383,7 +383,8 @@ body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_pr
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 70%;
+  overflow: hidden;
 }
 
 body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .slick-list .slick-track {
@@ -1088,8 +1089,15 @@ body .art_related .art_related_products_co .art_related_products_cards .art_rela
 
 @media screen and (min-width: 1440px) {
   body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card {
-    width: 31.53333%;
-    margin: 10px;
+    width: 31%;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card {
+    width: 25%;
+    margin: 10px 0;
   }
 }
 
@@ -1123,7 +1131,7 @@ body .art_related .art_related_products_co .art_related_products_cards .art_rela
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  max-height: 23vh;
+  max-height: 450px;
 }
 
 body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card .art_related_product_card_header .art_related_product_img_co {

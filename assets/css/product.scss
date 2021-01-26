@@ -284,7 +284,8 @@ body {
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: flex;
-                        width: 100%;
+                        width: 70%;
+                        overflow: hidden;
                         .slick-track {
                             display: -webkit-box;
                             display: -ms-flexbox;
@@ -849,8 +850,12 @@ body {
                         margin: 2% 2%;
                     }
                     @include laptop_L {
-                        width: ((100% / 3) - 1.8%);
-                        margin: 10px;
+                        width: 31%;
+                        margin: 10px 0;
+                    }
+                    @include laptop_W {
+                        width: 25%;
+                        margin: 10px 0;
                     }
                     &:hover {
                         .art_related_product_img_co {
@@ -882,7 +887,7 @@ body {
                         -webkit-box-flex: 1;
                         -ms-flex: 1;
                         flex: 1;
-                        max-height: 23vh;
+                        max-height: 450px;
                         .art_related_product_img_co {
                             display: -webkit-box;
                             display: -ms-flexbox;
