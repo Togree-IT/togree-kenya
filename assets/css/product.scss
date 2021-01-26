@@ -297,8 +297,10 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         outline: none;
+                        max-height: 51vh;
                         img {
                             max-width: 100%;
+                            max-height: 100%;
                         }
                     }
                 }
@@ -398,7 +400,7 @@ body {
                             -ms-flex: 1;
                             flex: 1;
                             -ms-flex-pack: distribute;
-                                justify-content: space-around;
+                            justify-content: space-around;
                             width: auto;
                         }
                         span {
