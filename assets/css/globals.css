@@ -115,6 +115,7 @@ body .art-nav .art_nav-right .art-brand {
   width: auto;
   height: auto;
   min-width: 25%;
+  color: #009c4e;
 }
 
 @media screen and (min-width: 320px) {
