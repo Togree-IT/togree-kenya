@@ -300,8 +300,12 @@ body {
                         display: -ms-flexbox;
                         display: flex;
                         outline: none;
+                        max-height: 0;
+                        overflow: hidden;
                         &.slick-active {
                             width: 100% !important;
+                            max-height: initial;
+                            overflow: auto;
                         }
                         img {
                             max-width: 100%;

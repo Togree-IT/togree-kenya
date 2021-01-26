@@ -398,10 +398,14 @@ body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_pr
   display: -ms-flexbox;
   display: flex;
   outline: none;
+  max-height: 0;
+  overflow: hidden;
 }
 
 body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_desc_product_img.slick-active {
   width: 100% !important;
+  max-height: initial;
+  overflow: auto;
 }
 
 body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_desc_product_img img {
