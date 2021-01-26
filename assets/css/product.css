@@ -400,7 +400,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_pr
   display: flex;
   outline: none;
   min-height: 24vh;
-  max-height: 51vh;
+  max-height: 40vh;
 }
 
 body .art_desc_product .art_desc_product_co .art_desc_product_d2_co .art_desc_product_imgs_co .art_desc_product_img img {
