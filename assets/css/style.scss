@@ -2284,8 +2284,13 @@ body {
                     // @include tablet {
                     //     min-height: (22vh + 6vh);
                     // }
+                    @include mobile {
+                        min-height: auto;
+                        padding: 1pc 0;
+                    }
                     @include laptop {
                         min-height: auto;
+                        padding: 3pc 0;
                     }
                     @include laptop_L {
                         min-height: auto;
@@ -2356,26 +2361,27 @@ body {
                             -webkit-box-shadow: 0 0 20px 9px rgba(121, 125, 130, 0.451);
                             box-shadow: 0 0 20px 9px rgba(121, 125, 130, 0.451);
                             @include mobile {
-                                width: 100%;
-                                padding: 10px;
+                                width: 98%;
+                                padding: 20px;
+                                margin: auto;
                             }
                             @include tablet {
-                                width: 60%;
+                                width: 53%;
                                 padding: 20px;
                                 margin: auto 0 0 auto;
                             }
                             @include laptop {
-                                width: (45% + 15%);
+                                width: (45% + 5%);
                                 padding: 5px calc(20px + 10px);
                                 margin: auto 0 0 auto;
                             }
                             @include laptop_L {
-                                width: (45% + 6%);
+                                width: (45% + 10%);
                                 padding: 5px calc(20px + 10px);
                                 margin: auto 0;
                             }
                             @include laptop_W {
-                                width: (45% + 6%);
+                                width: (45% + 10%);
                                 padding: 5px calc(20px + 10px);
                                 margin: auto 0;
                             }

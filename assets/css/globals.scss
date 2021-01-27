@@ -564,36 +564,49 @@ body {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        &:not(:checked)>input {
-            position: absolute;
-            top: 0;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        input {
+            ~label {
+                float: right;
+                width: 1em;
+                overflow: hidden;
+                white-space: nowrap;
+                cursor: pointer;
+                font-size: 30px;
+                color: #ccc;
+                &::before {
+                    content: '★ ';
+                }
+            }
+            &:checked {
+                ~label {
+                    color: #24c447;
+                }
+            }
+            &:not(:checked) {
+                position: absolute;
+                top: 0;
+            }
+            &:not(input:checked),
+            &:not(input.checked) {
+                ~label {
+                    &:hover {
+                        color: #4bd66e;
+                        ~label {
+                            color: #24c447;
+                        }
+                    }
+                }
+            }
         }
-        &:not(:checked)>label {
-            float: right;
-            width: 1em;
-            overflow: hidden;
-            white-space: nowrap;
-            cursor: pointer;
-            font-size: 30px;
-            color: #ccc;
-        }
-        &:not(:checked)>label:before {
-            content: '★ ';
-        }
-        input:checked~label {
-            color: #24c447;
-        }
-        &:not(:checked)>label:hover,
-        &:not(:checked)>label:hover~label {
-            color: #32ce54;
-        }
-        >input:checked+label:hover,
-        >input:checked+label:hover~label,
-        >input:checked~label:hover,
-        >input:checked~label:hover~label,
-        >label:hover~input:checked~label {
-            color: #2aa544;
-        }
+        // label {
+        //     ~label {
+        //         color: #9dc3a5;
+        //     }
+        // }
     }
     .art_footer {
         @include flex();
@@ -1446,9 +1459,7 @@ body {
         -ms-flex-align: center;
         align-items: center;
         height: 40px;
-        width: -webkit-fit-content;
-        width: -moz-fit-content;
-        width: fit-content;
+        width: 175px;
         padding: 0px 0 0px 20px;
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -1644,9 +1655,19 @@ body {
             margin-left: auto;
             z-index: 1;
             padding: 0 20px;
-            // @include mobile {
-            //     width: 100%;
-            // }
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            @include mobile {
+                width: 100%;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+            }
             // @include tablet {
             //     width: 100%;
             // }
@@ -1656,9 +1677,12 @@ body {
             // @include laptop_L {
             //     width: 60%;
             // }
-            // @include laptop_W {
-            //     width: 60%;
-            // }
+            @include laptop {
+                width: 60%;
+                -webkit-box-align: end;
+                    -ms-flex-align: end;
+                        align-items: flex-end;
+            }
         }
         &__pretitle {
             margin: 5px 0;
@@ -1680,6 +1704,10 @@ body {
             width: 80%;
             @include mobile {
                 margin-bottom: 10px;
+                width: auto;
+            }
+            @include laptop {
+                width: 80%;
             }
         }
         &__btn {

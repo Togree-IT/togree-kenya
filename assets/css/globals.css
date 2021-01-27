@@ -656,14 +656,13 @@ body .rate {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
-body .rate:not(:checked) > input {
-  position: absolute;
-  top: 0;
-}
-
-body .rate:not(:checked) > label {
+body .rate input ~ label {
   float: right;
   width: 1em;
   overflow: hidden;
@@ -673,7 +672,7 @@ body .rate:not(:checked) > label {
   color: #ccc;
 }
 
-body .rate:not(:checked) > label:before {
+body .rate input ~ label::before {
   content: '★ ';
 }
 
@@ -681,17 +680,17 @@ body .rate input:checked ~ label {
   color: #24c447;
 }
 
-body .rate:not(:checked) > label:hover,
-body .rate:not(:checked) > label:hover ~ label {
-  color: #32ce54;
+body .rate input:not(:checked) {
+  position: absolute;
+  top: 0;
 }
 
-body .rate > input:checked + label:hover,
-body .rate > input:checked + label:hover ~ label,
-body .rate > input:checked ~ label:hover,
-body .rate > input:checked ~ label:hover ~ label,
-body .rate > label:hover ~ input:checked ~ label {
-  color: #2aa544;
+body .rate input:not(input:checked) ~ label:hover, body .rate input:not(input.checked) ~ label:hover {
+  color: #4bd66e;
+}
+
+body .rate input:not(input:checked) ~ label:hover ~ label, body .rate input:not(input.checked) ~ label:hover ~ label {
+  color: #24c447;
 }
 
 body .art_footer {
@@ -1883,9 +1882,7 @@ body .art_splited {
   -ms-flex-align: center;
   align-items: center;
   height: 40px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 175px;
   padding: 0px 0 0px 20px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
@@ -2128,6 +2125,31 @@ body .joinus__content {
   margin-left: auto;
   z-index: 1;
   padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 320px) {
+  body .joinus__content {
+    width: 100%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .joinus__content {
+    width: 60%;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
 }
 
 body .joinus__pretitle {
@@ -2161,6 +2183,13 @@ body .joinus__subtitle {
 @media screen and (min-width: 320px) {
   body .joinus__subtitle {
     margin-bottom: 10px;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .joinus__subtitle {
+    width: 80%;
   }
 }
 

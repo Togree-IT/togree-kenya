@@ -1,4 +1,5 @@
                                     @import "./media-queries";
+                                    @import "./globals-vars";
                                     %aling-center {
                                         display: -webkit-box;
                                         display: -ms-flexbox;
@@ -610,39 +611,42 @@
                                                 margin-top: 0;
                                             }
                                         }
-                                        --clicle_height: 20px;
                                         &__circle {
                                             --clicle_height: 20px;
                                             height: var(--clicle_height);
                                             width: var(--clicle_height);
                                             border-radius: 100%;
                                             background: #24C347;
-                                            margin-bottom: 30px;
+                                            // margin-bottom: 30px;
+                                            -ms-flex-item-align: end;
+                                            align-self: end;
+                                            margin: calc(15px / 2) auto auto;
                                             @include mobile {
+                                                --clicle_height: 15px;
                                                 height: 15px;
                                                 width: 15px;
-                                                margin: 0;
+                                                // margin: 0;
                                             }
                                             @include tablet {
                                                 height: var(--clicle_height);
                                                 width: var(--clicle_height);
                                                 border-radius: 100%;
                                                 background: #24C347;
-                                                margin-bottom: 30px;
+                                                // margin-bottom: 30px;
                                             }
                                             @include laptop {
                                                 height: var(--clicle_height);
                                                 width: var(--clicle_height);
                                                 border-radius: 100%;
                                                 background: #24C347;
-                                                margin-bottom: 30px;
+                                                // margin-bottom: 30px;
                                             }
                                             @include laptop_L {
                                                 height: var(--clicle_height);
                                                 width: var(--clicle_height);
                                                 border-radius: 100%;
                                                 background: #24C347;
-                                                margin-bottom: 30px;
+                                                // margin-bottom: 30px;
                                             }
                                             @include laptop_W {
                                                 --clicle_height: 25px;
@@ -650,7 +654,7 @@
                                                 width: var(--clicle_height);
                                                 border-radius: 100%;
                                                 background: #24C347;
-                                                margin-bottom: 30px;
+                                                // margin-bottom: 30px;
                                             }
                                             &::before {
                                                 content: "";
@@ -658,7 +662,6 @@
                                                 height: 1px;
                                                 -ms-flex-item-align: center;
                                                 align-self: center;
-                                                // width: 210px;
                                                 left: 0;
                                                 top: calc(var(--clicle_height) / 2);
                                                 right: 0;
@@ -670,59 +673,8 @@
                                                 @include tablet {
                                                     top: calc(var(--clicle_height) / 2);
                                                 }
-                                                // 
-                                                //     margin: 0;
-                                                //     left: -48px;
-                                                //     top: 4.5pc;
-                                                //     transform: rotate(90deg);
-                                                //     -webkit-transform: rotate(90deg);
-                                                //     -moz-transform: rotate(90deg);
-                                                //     -ms-transform: rotate(90deg);
-                                                //     -o-transform: rotate(90deg);
-                                                //     z-index: 1;
-                                                //     // width: 111.5px;
-                                                // }
-                                                // @include tablet {
-                                                //     content: "";
-                                                //     position: absolute;
-                                                //     height: 1px;
-                                                //     width: 200px;
-                                                //     z-index: -1;
-                                                //     transform: rotate(180deg);
-                                                //     -webkit-transform: rotate(180deg);
-                                                //     -moz-transform: rotate(180deg);
-                                                //     -ms-transform: rotate(180deg);
-                                                //     -o-transform: rotate(180deg);
-                                                //     top: 8px;
-                                                //     left: 31px;
-                                                // }
-                                                // @include laptop {
-                                                //     width: 246px;
-                                                //     left: 54px;
-                                                // }
-                                                // @include laptop_L {
-                                                //     width: 362px;
-                                                //     left: 74px;
-                                                // }
-                                                // @include laptop_W {
-                                                //     width: 632px;
-                                                //     left: 8pc;
-                                                //     top: 1pc;
-                                                // }
                                             }
                                         }
-                                        // &__circle.last__circle:before {
-                                        //     background: transparent;
-                                        //     @include mobile {
-                                        //         background: transparent;
-                                        //     }
-                                        // }
-                                        // &__circle.sixth__circle:before {
-                                        //     width: 200px;
-                                        //     @include mobile {
-                                        //         background: transparent;
-                                        //     }
-                                        // }
                                         &__content {
                                             text-align: center;
                                             margin: 0;
