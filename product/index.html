@@ -259,6 +259,9 @@
                 <div class="art_desc_product_details_co">
                     <div class="art_desc_product_title">
                         <h4>TK08 Plus Asset Tracker</h4>
+                        <span class="art_single_price">
+                            <h5><span class="art_currency">Ksh</span> 5,500</h5>
+                        </span>
                     </div>
                     <div class="art_desc_product_rates_co">
                         <div class="rate">
@@ -294,9 +297,24 @@
                         <div class="art_product_price_cards">
                             <div class="art_price_card ">
                                 <span class="art_late_price_off_tag"> Popular</span>
-                                <div class="art_price_card_header"></div>
+                                <div class="art_price_card_header">
+                                    <div class="art_price_card_product">
+                                        <img src="../assets/img/products/8.jpg" alt="">
+                                    </div>
+                                    <div class="art_price_card_product_offer">
+                                        <span class="art_percentage_msg">
+                                            <h5>Get 40%</h5>
+                                        </span>
+                                        <span class="art_percentage">
+                                            <h6>Hot 40%</h6>
+                                        </span>
+                                        <span class="art_pcs">
+                                            <p>+2 to 4 Pcs </p>
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="art_price_card_body">
-                                    <p>You get a percentage off on the products you purchase from 5-30</p>
+                                    <p>Get 40 percent off on the products you purchase from 2 - 4 pecies</p>
                                 </div>
                                 <div class="art_price_card_footer">
                                     <button class="art_btn art_gree_btn filled waves-effect">Choose</button>
@@ -304,19 +322,51 @@
                             </div>
                             <div class="art_price_card active">
                                 <span class="art_late_price_off_tag">Recommended</span>
-                                <div class="art_price_card_header"></div>
+                                <div class="art_price_card_header">
+                                    <div class="art_price_card_product">
+                                        <img src="../assets/img/products/8.jpg" alt="">
+                                    </div>
+                                    <div class="art_price_card_product_offer">
+                                        <span class="art_percentage_msg">
+                                        <h5>Get 60%</h5>
+                                    </span>
+                                        <span class="art_percentage">
+                                            <h6>Hot 60%</h6>
+                                            
+                                        </span>
+                                        <span class="art_pcs">
+                                            <p>+5 to 10 Pcs </p>
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="art_price_card_body">
-                                    <p>You get a percentage off on the products you purchase from 5-30</p>
+                                    <p>Get 60 percent off on the products you purchase from 5 - 10 pecies</p>
+                                    <!-- <p><em class="art_check_icon art_gree_icon">checked</em>Crazy discount</p> -->
                                 </div>
                                 <div class="art_price_card_footer">
                                     <button class="art_btn art_gree_btn filled waves-effect">Choose</button>
                                 </div>
                             </div>
                             <div class="art_price_card">
-                                <span class="art_late_price_off_tag">-20%</span>
-                                <div class="art_price_card_header"></div>
+                                <span class="art_late_price_off_tag">Hot deal 🔥</span>
+                                <div class="art_price_card_header">
+                                    <div class="art_price_card_product">
+                                        <img src="../assets/img/products/8.jpg" alt="">
+                                    </div>
+                                    <div class="art_price_card_product_offer">
+                                        <span class="art_percentage_msg">
+                                            <h5>Get 80%</h5>
+                                        </span>
+                                        <span class="art_percentage">
+                                            <h6>Hot 80%</h6>
+                                        </span>
+                                        <span class="art_pcs">
+                                            <p>+11 to 50 Pcs </p>
+                                        </span>
+                                    </div>
+                                </div>
                                 <div class="art_price_card_body">
-                                    <p>You get a percentage off on the products you purchase from 5-30</p>
+                                    <p>Get crazy 80 percent off on the products you purchase from 11 - 50 pecies</p>
 
                                 </div>
                                 <div class="art_price_card_footer">
@@ -324,12 +374,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="art_price_title">
+                        <!-- <div class="art_price_title">
                             <h5><span class="art_price_currency">Ksh</span><span class="art_price_amount">5000</span></h5>
                         </div>
                         <div class="art_late_price_title">
                             <h6><span class="art_price_currency">Ksh</span><span class="art_price_amount">5000</span></h6> <span class="art_late_price_off_tag">-20%</span>
-                        </div>
+                        </div> -->
                     </div>
 
 
@@ -458,7 +508,7 @@
                             <img src="../assets/img/services/person.png" alt="">
                         </div>
                         <div class="art_desc_title art_glass art_bottom art_b30">
-                            <h6>Your order secured</h6>
+                            <h6>Your order is secured</h6>
                         </div>
                     </div>
                     <div class="art_service_body">
@@ -893,6 +943,16 @@
                 }]
 
             });
+            document.addEventListener("mousemove", (e) => {
+
+                if (e.pageY < 4 && e.pageY < 1080 && e.pageX < (window.innerWidth - window.innerWidth) + 500) {
+                    console.log("corner left");
+                }
+                if (e.pageY < 4 && e.pageX > 500) {
+                    console.log("corner right");
+                }
+
+            })
         });
     </script>
 </body>

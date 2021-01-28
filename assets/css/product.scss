@@ -344,8 +344,23 @@ body {
                     padding: 0 20px 20px;
                 }
                 .art_desc_product_title {
+                    padding: 0 10px;
+                    position: relative;
                     * {
                         margin-top: 0;
+                    }
+                    .art_single_price {
+                        padding: 15px 30px;
+                        display: block;
+                        color: #4caf50;
+                        width: auto;
+                        border: solid 1px hsla(0, 0%, 20%, 0.2);
+                        border-left: 0;
+                        border-right: 0;
+                        margin: 10px 0;
+                        * {
+                            margin: 0;
+                        }
                     }
                 }
                 .art_desc_product_rates_co {
@@ -997,7 +1012,7 @@ body {
                     }
                     .art_related_product_card_body {
                         padding: 20px;
-                        .art_related_product_details_co {
+                        .art_related_ {
                             .art_related_product_details_title {
                                 position: relative;
                                 &::before {
@@ -1047,7 +1062,14 @@ body {
         justify-content: center;
         padding: 3% 0;
         .art_price_card {
-            width: 20%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            width: 30%;
             padding: 20px;
             background: #ffffff;
             margin: 0 1%;
@@ -1056,27 +1078,106 @@ body {
             border-radius: 10px;
             position: relative;
             &.active {
-                -webkit-transform: scale(1.29);
-                    -ms-transform: scale(1.29);
-                        transform: scale(1.29);
+                -webkit-transform: scale(1.15);
+                -ms-transform: scale(1.15);
+                transform: scale(1.15);
                 z-index: 1;
                 margin: 0 4%;
                 border: 2px solid #23c447;
+                padding: 10px;
+                -moz-transform: scale(1.15);
+                -o-transform: scale(1.15);
+                // @include linearGradient(116deg,
+                // #ee6e73,
+                // (#eefaed, #ffc426));
             }
             .art_late_price_off_tag {
                 position: absolute;
                 right: 5px;
                 top: 5px;
-                padding: 4px 5px;
+                padding: 4px 10px;
                 background: #eefaed;
                 color: #4caf50;
                 border-radius: 5em;
+            }
+            .art_price_card_header {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: start;
+                -ms-flex-align: start;
+                align-items: flex-start;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                padding: 30px 0 10px;
+                .art_price_card_product {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    width: 40%;
+                    overflow: hidden;
+                    margin: auto;
+                    border-radius: 12px;
+                    @include mobile {
+                        width: 80%;
+                    }
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                .art_price_card_product_offer {
+                    width: 60%;
+                    padding: 0 5px;
+                    // color: #29296d;
+                    @include mobile {
+                        width: 100%;
+                    }
+                    .art_percentage_msg {
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        font-size: 1.64rem;
+                        @include mobile {
+                            font-size: 0.6rem;
+                        }
+                        * {
+                            font-weight: inherit;
+                            font-size: inherit;
+                        }
+                    }
+                    .art_percentage {
+                        color: #f50f57;
+                        font-size: 1.15rem;
+                        @include mobile {
+                            font-size: 0.6rem;
+                        }
+                        * {
+                            font-size: inherit;
+                        }
+                    }
+                    .art_pcs {
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .art_price_card_body {
+                width: 100%;
+                margin: auto auto 0;
+                // color: #19194c;
+                p {
+                    margin: 0;
+                }
             }
             .art_price_card_footer {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
                 width: 100%;
+                margin: auto auto 0;
                 .art_btn {
                     margin: 0;
                     width: 100%;
