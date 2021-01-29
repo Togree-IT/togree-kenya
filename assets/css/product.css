@@ -1289,8 +1289,8 @@ body .art_related .art_related_products_co .art_related_products_cards .art_rela
 
 @media screen and (min-width: 320px) {
   body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card {
-    width: 31.33333%;
-    margin: 0 auto 20px 1%;
+    width: 48%;
+    margin: 0 auto 10px 1%;
   }
 }
 
@@ -1357,7 +1357,7 @@ body .art_related .art_related_products_co .art_related_products_cards .art_rela
 
 @media screen and (min-width: 320px) {
   body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card .art_related_product_card_header {
-    max-height: 150px;
+    max-height: 100px;
   }
 }
 
@@ -1448,6 +1448,18 @@ body .art_related .art_related_products_co .art_related_products_cards .art_rela
 
 body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card .art_related_product_card_body {
   padding: 10px 15px;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card .art_related_product_card_body {
+    padding: 10px 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card .art_related_product_card_body {
+    padding: 10px 15px;
+  }
 }
 
 body .art_related .art_related_products_co .art_related_products_cards .art_related_product_card .art_related_product_card_body .art_related_ .art_related_product_details_title {

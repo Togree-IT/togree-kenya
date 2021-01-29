@@ -997,8 +997,8 @@ body {
                     box-shadow: 0 4px 8px 0 hsla(200, 18%, 46%, 0.122);
                     border-radius: 4px;
                     @include mobile {
-                        width: ((100% / 3) - 2%);
-                        margin: 0 auto 20px 1%;
+                        width: ((100% / 2) - 2%);
+                        margin: 0 auto 10px 1%;
                     }
                     @include tablet {
                         width: ((100% / 2) - 2%);
@@ -1048,7 +1048,7 @@ body {
                         flex: 1;
                         max-height: 450px;
                         @include mobile {
-                            max-height: 150px;
+                            max-height: 100px;
                         }
                         @include tablet {
                             max-height: 290px;
@@ -1120,6 +1120,12 @@ body {
                     }
                     .art_related_product_card_body {
                         padding: 10px 15px;
+                        @include mobile {
+                            padding: 10px 0;
+                        }
+                        @include laptop {
+                            padding: 10px 15px;
+                        }
                         .art_related_ {
                             .art_related_product_details_title {
                                 position: relative;
