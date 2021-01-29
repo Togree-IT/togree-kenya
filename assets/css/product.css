@@ -1715,6 +1715,7 @@ body .art_product_price_cards .art_price_card .art_price_card_header .art_price_
 
 body .art_product_price_cards .art_price_card .art_price_card_header .art_price_card_product img {
   max-width: 100%;
+  max-height: inherit;
 }
 
 body .art_product_price_cards .art_price_card .art_price_card_header .art_price_card_product_offer {
