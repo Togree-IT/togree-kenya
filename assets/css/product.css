@@ -1695,6 +1695,7 @@ body .art_product_price_cards .art_price_card .art_price_card_header .art_price_
   display: -ms-flexbox;
   display: flex;
   width: 40%;
+  max-height: 65px;
   overflow: hidden;
   margin: auto;
   border-radius: 12px;
