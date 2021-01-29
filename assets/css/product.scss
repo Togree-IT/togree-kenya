@@ -22,6 +22,20 @@ body {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
+    .art_gree_btn {
+        &.filled {
+            -webkit-box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+            box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+            &:hover {
+                -webkit-box-shadow: 0 3px 5px 0 hsla(0, 0%, 0%, 0.2);
+                box-shadow: 0 3px 5px 0 hsla(0, 0%, 0%, 0.2);
+            }
+            &:active {
+                -webkit-box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+                box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+            }
+        }
+    }
     .product-header {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -93,6 +107,13 @@ body {
                 background: hsla(0, 0%, 100%, 0);
                 color: #fff;
             }
+            @include laptop_L {
+                width: 30%;
+                padding: 20px;
+                background: hsla(122, 81%, 6%, 0.569);
+                background: hsla(0, 0%, 100%, 0);
+                color: #fff;
+            }
         }
         .art_product_cat_img {
             width: 45%;
@@ -130,6 +151,13 @@ body {
             }
             @include laptop_L {
                 width: 45%;
+                max-width: initial;
+                max-height: initial;
+                background: hsla(122, 39%, 49%, 0.322);
+                background: hsla(150, 100%, 30%, 0);
+            }
+            @include laptop_W {
+                width: 30%;
                 max-width: initial;
                 max-height: initial;
                 background: hsla(122, 39%, 49%, 0.322);
@@ -271,7 +299,10 @@ body {
                         background: #fff;
                     }
                     @include laptop {
-                        background: #e0efef;
+                        background: #ffffff;
+                    }
+                    .art_desc_product_img {
+                        outline: none;
                     }
                     .art_slick_btn {
                         display: none !important;
@@ -282,6 +313,15 @@ body {
                         }
                         &.prev {
                             left: 8px;
+                        }
+                        @include mobile {
+                            display: none !important;
+                        }
+                        @include tablet {
+                            display: block !important;
+                        }
+                        @include laptop {
+                            display: none !important;
                         }
                     }
                     &:hover {
@@ -334,7 +374,7 @@ body {
                     padding: 0 10px 10px;
                 }
                 @include laptop {
-                    width: (100% / 2);
+                    width: ((100% / 2) + 20);
                     margin: 0;
                     padding: 0 10px 10px;
                 }
@@ -358,6 +398,12 @@ body {
                         border-left: 0;
                         border-right: 0;
                         margin: 10px 0;
+                        @include mobile {
+                            padding: 15px 10px;
+                        }
+                        @include laptop_L {
+                            padding: 15px 30px;
+                        }
                         * {
                             margin: 0;
                         }
@@ -365,7 +411,7 @@ body {
                 }
                 .art_desc_product_rates_co {
                     width: 100%;
-                    min-height: 45px;
+                    min-height: 55px;
                     display: -webkit-box;
                     display: -ms-flexbox;
                     display: flex;
@@ -396,6 +442,12 @@ body {
                     border-radius: 5px;
                     -webkit-box-shadow: 0px 0px 3px -3px rgba(96, 125, 139, 0.212);
                     box-shadow: 0px 0px 3px -3px rgba(96, 125, 139, 0.212);
+                    @include mobile {
+                        padding: 10px;
+                    }
+                    @include laptop_L {
+                        padding: 10px 0;
+                    }
                     .art_price_title {
                         color: #000;
                         .art_price_currency {
@@ -418,13 +470,13 @@ body {
                             padding: 7px 5px;
                             margin-left: 5px;
                             background: hsla(117, 58%, 58%, 0.11);
+                            color: #5dd157;
                             display: -webkit-box;
                             display: -ms-flexbox;
                             display: flex;
                             -webkit-box-align: center;
                             -ms-flex-align: center;
                             align-items: center;
-                            color: #5dd157;
                             border-radius: 5px;
                         }
                     }
@@ -459,7 +511,7 @@ body {
                     max-width: initial;
                     max-height: initial;
                     overflow: auto;
-                    width: 100%;
+                    width: ((100% / 2) + 20);
                     margin-left: 0;
                 }
                 @include laptop_L {
@@ -598,7 +650,7 @@ body {
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            width: 100%;
+            width: 70%;
         }
         @include laptop {
             -webkit-box-flex: 0;
@@ -645,19 +697,29 @@ body {
         @include mobile {
             padding: 7px 3px;
             width: 100%;
+            margin: 10px 0;
         }
         @include tablet {
             padding: 10px 10px;
             width: (100% - 10);
             -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
+            margin: 10px 0;
         }
         @include laptop {
             padding: 10px 10px;
-            width: 100%;
+            width: ( (100% / 2) + 20);
             -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
             margin: 10px 0;
+            &.v1 {
+                padding: 10px 0px;
+                width: 50%;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                // margin: -38pc auto auto 0;
+                margin: 10px auto auto 0;
+            }
         }
         @include laptop_L {
             padding: 10px 10px;
@@ -665,6 +727,15 @@ body {
             -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
             margin: 10px auto auto 0;
+            // margin: -2pc auto auto 0;
+        }
+        @include laptop_W {
+            padding: 10px 10px;
+            width: 40%;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            margin: 10px auto auto 0;
+            // margin: -8pc auto auto 0;
         }
         .art_btn {
             margin: 0;
@@ -678,7 +749,7 @@ body {
             }
             @include laptop {
                 margin: 0 auto;
-                width: ((100% / 2) - 10);
+                width: ((100% / 2) - 5);
             }
             @include laptop_L {
                 margin: 0 0 5px;
@@ -720,7 +791,7 @@ body {
                 padding: 0 20px;
             }
             @include laptop {
-                width: 100%;
+                width: 70%;
                 padding: 0 20px;
             }
             @include laptop_L {
@@ -739,6 +810,15 @@ body {
                 -ms-flex-pack: distribute;
                 justify-content: space-around;
                 width: 100%;
+                @include mobile {
+                    width: 100%;
+                }
+                @include laptop {
+                    width: 100%;
+                }
+                @include laptop_L {
+                    width: 70%;
+                }
                 .slick-list {
                     width: 60%;
                     overflow: hidden;
@@ -863,6 +943,9 @@ body {
             @include laptop {
                 width: 90%;
             }
+            @include laptop_W {
+                width: 70%;
+            }
             .art_related_products_title {
                 width: 100%;
                 // color: #948f9c;
@@ -888,6 +971,11 @@ body {
                     justify-content: flex-start;
                 }
                 @include laptop_L {
+                    -webkit-box-pack: left;
+                    -ms-flex-pack: left;
+                    justify-content: left;
+                }
+                @include laptop_W {
                     -ms-flex-pack: distribute;
                     justify-content: space-around;
                 }
@@ -900,26 +988,29 @@ body {
                     -ms-flex-direction: column;
                     flex-direction: column;
                     width: ((100% / 3) - 1%);
-                    min-height: 333px;
-                    background-color: #ffffff;
+                    min-height: auto;
                     margin: 0 15px;
                     padding: 0 10px;
+                    background-color: #ffffff;
+                    color: rgba(0, 0, 0, 0.87);
+                    -webkit-box-shadow: 0 4px 8px 0 hsla(200, 18%, 46%, 0.122);
+                    box-shadow: 0 4px 8px 0 hsla(200, 18%, 46%, 0.122);
                     border-radius: 4px;
                     @include mobile {
-                        width: ((100% / 1) - 0%);
-                        margin: 0 0 20px;
+                        width: ((100% / 3) - 2%);
+                        margin: 0 auto 20px 1%;
                     }
                     @include tablet {
                         width: ((100% / 2) - 2%);
                         margin: 0 1% 20px;
                     }
                     @include laptop {
-                        width: ((100% / 2) - 5%);
-                        margin: 2% 2%;
+                        width: ((100% / 2) - 20);
+                        margin: 2% 1%;
                     }
                     @include laptop_L {
-                        width: 31%;
-                        margin: 10px 0;
+                        width: 20%;
+                        margin: 10px;
                     }
                     @include laptop_W {
                         width: 25%;
@@ -928,11 +1019,11 @@ body {
                     &:hover {
                         .art_related_product_img_co {
                             img {
-                                transform: scale(1.5) translateY(10%);
-                                -webkit-transform: scale(1.5) translateY(10%);
-                                -moz-transform: scale(1.5) translateY(10%);
-                                -ms-transform: scale(1.5) translateY(10%);
-                                -o-transform: scale(1.5) translateY(10%);
+                                transform: scale(1.05);
+                                -webkit-transform: scale(1.05);
+                                -moz-transform: scale(1.05);
+                                -ms-transform: scale(1.05);
+                                -o-transform: scale(1.05);
                             }
                         }
                         .art_splited {
@@ -957,16 +1048,16 @@ body {
                         flex: 1;
                         max-height: 450px;
                         @include mobile {
-                            max-height: 450px;
+                            max-height: 150px;
                         }
                         @include tablet {
                             max-height: 290px;
                         }
                         @include laptop {
-                            max-height: 250px;
+                            max-height: 245px;
                         }
                         @include laptop_L {
-                            max-height: 250px;
+                            max-height: 145px;
                         }
                         @include laptop_W {
                             max-height: 350px;
@@ -985,14 +1076,18 @@ body {
                             -ms-flex-direction: column;
                             flex-direction: column;
                             overflow: hidden;
-                            min-height: 23vh;
-                            padding-bottom: 40px;
                             position: relative;
                             transition: all .3s linear;
                             -webkit-transition: all .3s linear;
                             -moz-transition: all .3s linear;
                             -ms-transition: all .3s linear;
                             -o-transition: all .3s linear;
+                            &.v1 {
+                                padding-bottom: 40px;
+                                min-height: 23vh;
+                            }
+                            min-height: auto;
+                            padding-top: 30px;
                             img {
                                 max-width: 100%;
                                 max-height: 100%;
@@ -1005,13 +1100,26 @@ body {
                             }
                             .art_splited {
                                 position: absolute;
-                                bottom: 0;
-                                right: 0;
+                                &.v1 {
+                                    right: 0;
+                                    bottom: 0;
+                                }
+                                right: 5px;
+                                top: 5px;
+                                width: auto;
+                                background: #23c447;
+                                padding: 0 5px;
+                                .art_spliter {
+                                    background: #23c447;
+                                    color: #ffffff;
+                                    padding: 0 5px;
+                                    width: auto;
+                                }
                             }
                         }
                     }
                     .art_related_product_card_body {
-                        padding: 20px;
+                        padding: 10px 15px;
                         .art_related_ {
                             .art_related_product_details_title {
                                 position: relative;
@@ -1061,6 +1169,28 @@ body {
         -ms-flex-pack: center;
         justify-content: center;
         padding: 3% 0;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        @include mobile {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        @include tablet {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        @include laptop {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+        @include laptop_L {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
         .art_price_card {
             display: -webkit-box;
             display: -ms-flexbox;
@@ -1073,10 +1203,17 @@ body {
             padding: 20px;
             background: #ffffff;
             margin: 0 1%;
-            -webkit-box-shadow: 0 0 6px 0px hsla(200, 18%, 46%, 0.149);
-            box-shadow: 0 0 6px 0px hsla(200, 18%, 46%, 0.149);
             border-radius: 10px;
             position: relative;
+            -webkit-box-shadow: 0 0 6px 0px hsla(200, 18%, 46%, 0.149);
+            box-shadow: 0 0 6px 0px hsla(200, 18%, 46%, 0.149);
+            /* -webkit-box-shadow: 0 0 6px 0px rgb(96 124 138 / 15%); */
+            /* box-shadow: 0 0 20px 0px #509fc51c; */
+            // -webkit-box-shadow: 0 5px 10px hsla(228, 18%, 66%, 0.051), 0 15px 40px hsla(228, 24%, 72%, 0.2);
+            // box-shadow: 0 5px 10px hsla(228, 18%, 66%, 0.051), 0 15px 40px hsla(228, 24%, 72%, 0.2);
+            -webkit-box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+            box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+            ;
             &.active {
                 -webkit-transform: scale(1.15);
                 -ms-transform: scale(1.15);
@@ -1091,14 +1228,99 @@ body {
                 // #ee6e73,
                 // (#eefaed, #ffc426));
             }
+            @include mobile {
+                width: 100%;
+                margin: 40px 0;
+            }
+            @include tablet {
+                width: 31%;
+                margin: 0;
+                &:last-of-type {
+                    -webkit-box-flex: 0;
+                    -ms-flex: none;
+                    flex: none;
+                    margin: 0;
+                }
+                &.active {
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    margin: 0;
+                }
+            }
+            @include laptop {
+                width: 31%;
+                margin: 0;
+                &:last-of-type {
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                    flex: none;
+                    margin-top: 0;
+                    margin: 0;
+                }
+                &.active {
+                    transform: scale(1.1);
+                    -webkit-transform: scale(1.1);
+                    -moz-transform: scale(1.1);
+                    -ms-transform: scale(1.1);
+                    -o-transform: scale(1.1);
+                    margin: 0;
+                }
+            }
+            @include laptop_L {
+                width: ((100% / 3) - 2%);
+                margin: 0 1%;
+                padding: 10px;
+                &:last-of-type {
+                    -webkit-box-flex: 0;
+                    -ms-flex: none;
+                    flex: none;
+                    margin: 0 1%;
+                }
+                &.active {
+                    transform: initial;
+                    -webkit-transform: initial;
+                    -moz-transform: initial;
+                    -ms-transform: initial;
+                    -o-transform: initial;
+                    margin: 0 1%;
+                }
+            }
+            @include laptop_L {
+                width: 28%;
+                margin: 0 1%;
+                padding: 20px;
+                &:last-of-type {
+                    -webkit-box-flex: 0;
+                    -ms-flex: none;
+                    flex: none;
+                    margin: 0 1%;
+                }
+                &.active {
+                    transform: scale(1.15);
+                    -webkit-transform: scale(1.15);
+                    -moz-transform: scale(1.15);
+                    -ms-transform: scale(1.15);
+                    -o-transform: scale(1.15);
+                    margin: 0 4%;
+                }
+            }
             .art_late_price_off_tag {
                 position: absolute;
-                right: 5px;
-                top: 5px;
+                right: 10px;
+                top: 10px;
                 padding: 4px 10px;
-                background: #eefaed;
-                color: #4caf50;
                 border-radius: 5em;
+                &.v1 {
+                    background: #eefaed;
+                    color: #4caf50;
+                }
+                background: #23c447;
+                color: rgb(245,
+                245,
+                245);
             }
             .art_price_card_header {
                 display: -webkit-box;
@@ -1111,7 +1333,7 @@ body {
                 -ms-flex-pack: justify;
                 justify-content: space-between;
                 -ms-flex-wrap: wrap;
-                    flex-wrap: wrap;
+                flex-wrap: wrap;
                 padding: 30px 0 10px;
                 .art_price_card_product {
                     display: -webkit-box;
@@ -1122,7 +1344,10 @@ body {
                     margin: auto;
                     border-radius: 12px;
                     @include mobile {
-                        width: 80%;
+                        width: 30%;
+                    }
+                    @include laptop {
+                        width: 30%;
                     }
                     img {
                         max-width: 100%;
@@ -1133,29 +1358,33 @@ body {
                     padding: 0 5px;
                     // color: #29296d;
                     @include mobile {
-                        width: 100%;
+                        width: 70%;
+                    }
+                    @include laptop {
+                        width: 70%;
                     }
                     .art_percentage_msg {
                         text-transform: uppercase;
-                        font-weight: 700;
+                        font-weight: 550;
                         font-size: 1.64rem;
                         @include mobile {
-                            font-size: 0.6rem;
+                            // font-size: 0.6rem;
                         }
                         * {
                             font-weight: inherit;
-                            font-size: inherit;
+                            // font-size: inherit;
                         }
                     }
                     .art_percentage {
-                        color: #f50f57;
+                        // color: #f50f57;
+                        color: #24c447;
                         font-size: 1.15rem;
                         @include mobile {
-                            font-size: 0.6rem;
+                            // font-size: 0.6rem;
                         }
-                        * {
-                            font-size: inherit;
-                        }
+                        // * {
+                        // font-size: inherit;
+                        // }
                     }
                     .art_pcs {
                         p {
@@ -1166,7 +1395,7 @@ body {
             }
             .art_price_card_body {
                 width: 100%;
-                margin: auto auto 0;
+                margin: auto auto 5px;
                 // color: #19194c;
                 p {
                     margin: 0;
