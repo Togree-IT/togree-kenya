@@ -61,6 +61,7 @@ body {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+        color: aliceblue;
         @include mobile {
             min-height: auto;
             -webkit-box-align: start;
@@ -77,13 +78,15 @@ body {
         }
         @include laptop {
             min-height: 45vh;
+            color: #0b222d;
         }
         @include laptop_L {
             min-height: 45vh;
+            color: #fff;
         }
         .art_product_cat_desc {
             width: 35%;
-            color: aliceblue;
+            // color: aliceblue;
             padding: 0;
             @include mobile {
                 width: 100%;
@@ -96,16 +99,16 @@ body {
             @include laptop {
                 width: 50%;
                 padding: 20px;
-                background: hsla(122, 81%, 6%, 0.569);
+                // background: hsla(122, 81%, 6%, 0.569);
                 background: hsla(0, 0%, 100%, 0.949);
-                color: #0b222d;
+                // color: #0b222d;
             }
             @include laptop_L {
                 width: 45%;
                 padding: 20px;
                 background: hsla(122, 81%, 6%, 0.569);
                 background: hsla(0, 0%, 100%, 0);
-                color: #fff;
+                // color: #fff;
             }
             @include laptop_L {
                 width: 30%;
@@ -1235,12 +1238,29 @@ body {
                 // (#eefaed, #ffc426));
             }
             @include mobile {
-                width: 100%;
-                margin: 40px 0;
+                width: 90%;
+                margin: 0 auto 40px;
+                // box-shadow: 0px 0px 13px hsla(205, 29%, 44%, 0.302);
+                -webkit-box-shadow: 0 1px 1px #d8e1ea;
+                box-shadow: 0 0px 14px hsla(210, 30%, 88%, 0.459);
+                padding: 10px;
+                min-height: 25vh;
+                &.active {
+                    transform: scale(1);
+                    -webkit-transform: scale(1);
+                    -moz-transform: scale(1);
+                    -ms-transform: scale(1);
+                    -o-transform: scale(1);
+                    margin: 0 auto 40px;
+                    border-width: 0;
+                }
             }
             @include tablet {
                 width: 31%;
                 margin: 0;
+                min-height: auto;
+                -webkit-box-shadow: 0 1px 1px #d8e1ea;
+                box-shadow: 0 1px 1px #d8e1ea;
                 &:last-of-type {
                     -webkit-box-flex: 0;
                     -ms-flex: none;
@@ -1259,6 +1279,10 @@ body {
             @include laptop {
                 width: 31%;
                 margin: 0;
+                -webkit-box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+                box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+                padding: (10px * 2);
+                min-height: auto;
                 &:last-of-type {
                     -webkit-box-flex: 1;
                     -ms-flex: 1;
@@ -1273,6 +1297,7 @@ body {
                     -ms-transform: scale(1.1);
                     -o-transform: scale(1.1);
                     margin: 0;
+                    border-width: 2px;
                 }
             }
             @include laptop_L {
@@ -1327,6 +1352,14 @@ body {
                 color: rgb(245,
                 245,
                 245);
+                @include mobile {
+                    background: #eefaed;
+                    color: #4caf50;
+                }
+                @include laptop {
+                    background: #23c447;
+                    color: rgb(245, 245, 245);
+                }
             }
             .art_price_card_header {
                 display: -webkit-box;
