@@ -62,12 +62,12 @@ body {
                 ease-in-out);
             }
             .art-head-sec {
-                .art_head_title {
-                    // @include art_ani_up(0.83s,
-                    // ease-in-out); 
-                    // @include art_ani_left(0.83s,
-                    // ease-in-out);
-                }
+                // .art_head_title {
+                // @include art_ani_up(0.83s,
+                // ease-in-out); 
+                // @include art_ani_left(0.83s,
+                // ease-in-out);
+                // }
                 .art_head_desc {
                     @include fadeInUpSD(0.83s,
                     ease-in-out);
