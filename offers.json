@@ -1,0 +1,29 @@
+[
+
+    {
+        "packageID": "1",
+        "packageTitlee": "Popular",
+        "packageOffer": "40",
+        "packageOfferOff": "0.4",
+        "from": "2",
+        "to": "4"
+    },
+    {
+        "packageID": "2",
+        "packageTitlee": "Recommended",
+        "packageOffer": "40",
+        "packageOfferOff": "0.4",
+        "from": "2",
+        "to": "4"
+    },
+    {
+        "packageID": "3",
+        "packageTitlee": "Hot deal",
+        "packageOffer": "40",
+        "packageOfferOff": "0.4",
+        "from": "2",
+        "to": "4"
+    }
+
+
+]

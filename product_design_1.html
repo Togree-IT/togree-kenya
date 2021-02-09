@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/lib/materialize/css/icons.css">
     <link rel="stylesheet" href="./assets/lib/materialize/css/materialize.min.css">
     <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../assets/css/globals.css"> -->
     <link rel="stylesheet" href="./assets/css/product_1.css">
     <script src="https://kit.fontawesome.com/5eaa28fea9.js" crossorigin="anonymous"></script>
 </head>
@@ -43,6 +44,7 @@
                     </div>
                 </form>
                 <button class="art_btn waves-effect"><i class="material-icons">search</i></button>
+
                 <button class="art_btn waves-effect">
                     <svg width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 1L45.5 1" stroke="#707070" stroke-width="2"/>
@@ -50,6 +52,14 @@
                     <path d="M0 27L45.5 27" stroke="#707070" stroke-width="2"/>
                     </svg>
                 </button>
+
+                <button class="cart">
+                    <a href="http://127.0.0.1:5501/Checkout/index.html">
+                        <span class="cart__shopping">0</span>
+                        <em class="material-icons cart__shopping__logo">shopping_basket</em>
+                    </a>
+                </button>
+
                 <button class="art_btn waves-effect dropdown-trigger" data-target='dropdown1'>
                     <img src="./assets/img/france-hi 1.svg" alt="french flag" srcset="">
                     <i class="material-icons">expand_more</i>
@@ -60,6 +70,10 @@
                 </ul>
             </div>
         </nav>
+
+
+
+
 
         <!-- hero section starts here  -->
         <div class="producthero">
@@ -73,7 +87,7 @@
 
 
                 <div class="producthero__content__CTA">
-                    <button class="producthero__content__CTA__btn">BUY THIS PRODUCT
+                    <button class="art_btn art_gree_btn filled producthero__content__CTA__btn">BUY THIS PRODUCT
                         <span class="producthero__content__CTA__btn__right">
                             <i class="fas fa-angle-right"></i>
                         </span>
@@ -93,6 +107,16 @@
 
     </header>
     <!-- nav bar and hero ends  here -->
+
+    <section class="popup active" id="popup">
+        <div class="popup__wrapper">
+            <div class="popup__text"> <span>  TK808 Ultra Tracker added to Cart</span></div>
+            <a href="http://127.0.0.1:5501/Checkout/index.html" class="popup__btn art_btn art_gree_btn filled here"> CHECKOUT NOW </a>
+
+            <i class="fas fa-times-circle popup__exit" id="popup_close"></i>
+
+        </div>
+    </section>
 
     <!-- items section starts here -->
     <section class="items">
