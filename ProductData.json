@@ -13,7 +13,7 @@
         "productID": "1",
         "path": "../assets/img/products/2.png",
         "productTitle": "TK303",
-        "productPrice": "1800",
+        "productPrice": "1500",
         "currency": "KSH",
         "productOldPrice": "25000"
     },
@@ -22,7 +22,7 @@
         "productID": "2",
         "path": "../assets/img/products/3.png",
         "productTitle": "TK303",
-        "productPrice": "1800",
+        "productPrice": "2800",
         "currency": "KSH",
         "productOldPrice": "25000"
     },
@@ -30,7 +30,7 @@
         "productID": "3",
         "path": "../assets/img/products/4.png",
         "productTitle": "TK303",
-        "productPrice": "1800",
+        "productPrice": "9000",
         "currency": "KSH",
         "productOldPrice": "25000"
     },

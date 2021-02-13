@@ -30,7 +30,84 @@ function getPackegeByID(package, ID) {
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // shop products fectch Logic
+    const fetchShopProducts = new Promise((resolve, reject) => {
 
+        resolve((_ => {
+
+            const shopProdtemp = (data) => {
+
+                return `<div class="shop__products__productcontainer">
+                        <div class="shop__products__productcontainer__img">
+                            <img src="${data.path}" alt="Togree Products" class="shop__products__productcontainer__pic">
+                        </div>
+                        <h6 class="shop__products__productcontainer__producttitle">${data.productTitle}</h6>
+                        <div class="shop__products__productcontainer__productdetails">
+                            <h6 class="shop__products__productcontainer__productdetails__productprice">${data.productPrice}</h6>
+                            <a href="./products/checkout/${data.productID}" class="shop__products__productcontainer__productdetails__CTA">BUY NOW</a>
+                        </div>
+                        </div>`;
+
+            };
+
+            fetch(window.location.origin + '/productData.json')
+                .then(data => data.json())
+                .then(data => {
+
+                    // getting products 
+                    const shopProductsWrapper = document.querySelector("#shop_product_wrapper");
+                    if (data.length) {
+                        shopProductsWrapper.innerHTML = '';
+
+
+                        for (let shopproduct of data) {
+                            shopProductsWrapper.insertAdjacentHTML("afterbegin", shopProdtemp(shopproduct))
+                        }
+                    }
+
+                })
+                .catch(err => console.log(err))
+
+        })());
+
+    })
+
+    fetchShopProducts.then(() => {
+        console.log("shopcontent loaded");
+    }).catch(err => console.log(err))
+
+
+    // Shop Page noUislider functionalities
+    var slider = document.getElementById("test-slider");
+    var input1 = document.getElementById("mininput");
+    var input2 = document.getElementById("maxinput");
+    var sliderInputs = [input1, input2];
+
+    noUiSlider.create(slider, {
+        start: [2500, 15000],
+        connect: true,
+        orientation: 'horizontal', // 'horizontal' or 'vertical'
+        range: { 'min': 1500, 'max': 20000 },
+        tooltips: [true, wNumb({ decimals: 1 })]
+    });
+
+
+    function updateSliderUI(_) {
+
+        index = 0;
+        sliderInputs.map(input => {
+
+            input.value = this.noUiSlider.get()[index++];
+
+        });
+    }
+
+    slider.onmousemove = updateSliderUI;
+    slider.ondragexit = updateSliderUI;
+
+
+
+    // navBar collapsible
     var collapsibles = document.querySelectorAll('.collapsible');
     if (collapsibles.length) {
         M.Collapsible.init(collapsibles);
@@ -95,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const loader = document.querySelector('#loader');
         if
 
-
         (loader) {
             loader.classList.add("display");
             setTimeout(() => {
@@ -104,6 +180,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
+
+    // product page 1 fecth product Logic
     const fetchProducts = new Promise((resolve, reject) => {
 
         resolve((_ => {
@@ -143,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const productsContainer = document.querySelector('#products_container_wrp');
                     if (data.length) {
                         productsContainer.innerHTML = '';
+
                         for (let product of data) {
                             productsContainer.insertAdjacentHTML("afterbegin", prodTemp(product))
                         }
@@ -161,6 +241,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }).catch(err => console.log(err))
 
 
+
+
+    // reseller content fecthing 
     const fetchContent = new Promise((resolve, rejct) => {
         resolve((_ => {
 
@@ -307,6 +390,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
+    // checkout Page logic
+
     if (typeof productsContainer !== 'undefined') {
         productsContainer.addEventListener("click", purchaseProduct)
     }
@@ -329,7 +414,39 @@ document.addEventListener('DOMContentLoaded', function() {
         // Do othe tings
     }).catch(err => console.log(err))
 
+
+
+
+    const gridView = document.querySelector("#griditem");
+    const listView = document.querySelector("#listitem");
+
+
+    gridView.addEventListener("click", changeView);
+    listView.addEventListener("click", changeView);
+    changeView()
+
+    const categoryView = document.querySelector('#category');
+    const closeBtn = document.querySelector("#exiticon");
+
+
+    categoryView.addEventListener("click", viewCategory);
+    closeBtn.addEventListener("click", viewCategory);
+    viewCategory()
 });
+
+function viewCategory(event) {
+    const sideWrapper = document.querySelector("#sidewrapper");
+
+    if (typeof event !== "undefined" && typeof event.currentTarget !== "undefined") {
+        if (event.currentTarget.id === "category") {
+            sideWrapper.style.visibility = 'visible';
+        }
+        if (event.currentTarget.id === "exiticon") {
+            sideWrapper.style.visibility = 'hidden';
+        }
+    }
+}
+
 
 function initializeNavMenu() {
     if (typeof M !== "undefined") {
@@ -394,6 +511,48 @@ function checkbilling() {
     }
 }
 
+// changing view in shop page with localstorage to make view persist
+
+function changeView(event) {
+
+
+    const shop = document.querySelector("#shopproduct");
+
+
+    if (localStorage.getItem('viewType') == null) {
+        localStorage.setItem('viewType', 'shop__products');
+    }
+
+    function applyListView(className) {
+
+        if (className === 'productlist') {
+            shop.classList.remove('shop__products');
+            shop.classList.add('productlist');
+        }
+        if (className === 'shop__products') {
+            shop.classList.remove('productlist');
+            shop.classList.add('shop__products');
+
+        }
+
+        localStorage.setItem('viewType', className)
+            // }
+    }
+
+
+
+    if (typeof event !== "undefined" && typeof event.currentTarget !== "undefined") {
+        if (event.currentTarget.id === "listitem") {
+            applyListView('productlist')
+        }
+        if (event.currentTarget.id === "griditem") {
+            applyListView('shop__products');
+        }
+    } else {
+        applyListView(localStorage.getItem('viewType'))
+    }
+
+}
 
 // CVV Card hover effect 
 
@@ -436,9 +595,7 @@ function openPayment(evt, PaymentLogo, PaymentTab) {
     evt.currentTarget.classList.add("active");
 }
 
-
-
-
+// cart item variables
 
 let cartItems = [
 
@@ -695,13 +852,3 @@ fetch(window.location.origin + '/productData.json').then(e => e.json())
             });
         console.log(summeryData)
     })
-
-// cartItems.forEach(cartProduct => {
-
-//     if (cartProduct.Package === '') {
-//         console.log(cartProduct.cartId);
-//     } else {
-//         console.log(cartProduct.productPrice);
-//     }
-
-// });
