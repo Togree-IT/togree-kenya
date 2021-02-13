@@ -30,7 +30,22 @@ function getPackegeByID(package, ID) {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    // shop products fectch Logic
+
+    // active btn script 
+    const iconHeader = document.querySelector("#iconheader");
+    const Icons = iconHeader.querySelectorAll(".shop__products__header__iconwrapper");
+
+    for (let i = 0; i < Icons.length; i++) {
+        Icons[i].addEventListener("click", ActiveIcon)
+
+        function ActiveIcon() {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace("active", "");
+            this.className += " active";
+        }
+    }
+    ActiveIcon()
+        // shop products fectch Logic
     const fetchShopProducts = new Promise((resolve, reject) => {
 
         resolve((_ => {
@@ -434,6 +449,11 @@ document.addEventListener('DOMContentLoaded', function() {
     viewCategory()
 });
 
+
+
+
+
+// mobile category view
 function viewCategory(event) {
     const sideWrapper = document.querySelector("#sidewrapper");
 
@@ -446,6 +466,9 @@ function viewCategory(event) {
         }
     }
 }
+
+// active Icon function 
+
 
 
 function initializeNavMenu() {
