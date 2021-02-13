@@ -336,6 +336,10 @@ button {
             }
             &__iconwrapper {
                 cursor: pointer;
+                &:hover,
+                &:active {
+                    color: #24C347;
+                }
             }
             &__icons {
                 font-size: 24px;
@@ -389,18 +393,18 @@ button {
                 flex: 1;
             }
             @include tablet {
-                padding: 2%;
-                margin: 1rem;
+                padding: 3.4%;
+                margin: .4rem .6rem;
                 flex: none;
             }
             @include laptop {
                 padding: 2% 4%;
+                margin: .8rem;
                 flex: 1;
             }
             @include laptop_L {
                 flex: none;
             }
-            @include laptop_W {}
             &__img {
                 width: 72px;
             }
@@ -420,19 +424,33 @@ button {
                     flex-direction: column;
                 }
                 @include tablet {
-                    flex-direction: row;
+                    flex-direction: column;
                     align-items: center;
                 }
+                @include laptop {
+                    flex-direction: column;
+                }
+                @include laptop_L {
+                    flex-direction: row;
+                }
                 &__productprice {
-                    font-size: .8rem;
+                    font-size: 1rem;
                     margin-right: 1rem;
                     @include mobile {
                         margin-right: 0;
                         margin-bottom: 1rem;
                     }
                     @include tablet {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                    @include laptop {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                    }
+                    @include laptop_L {
                         margin: 0;
-                        margin-right: 1rem;
+                        margin-right: 1.2rem;
                     }
                 }
                 &__CTA {
@@ -454,14 +472,20 @@ button {
                         padding: 1rem 2rem;
                     }
                     @include tablet {
+                        padding: .8rem;
+                    }
+                    @include laptop {
                         visibility: hidden;
                         opacity: 0;
+                        padding: .6rem;
+                    }
+                    @include laptop_L {
                         padding: .4rem;
                     }
                 }
             }
             &__producttitle {
-                font-size: .8rem;
+                font-size: 1rem;
                 font-weight: 600;
                 margin: 1rem 0;
             }
@@ -488,6 +512,13 @@ button {
                         -o-transform: scale(1);
                     }
                     @include tablet {
+                        transform: scale(1);
+                        -webkit-transform: scale(1);
+                        -moz-transform: scale(1);
+                        -ms-transform: scale(1);
+                        -o-transform: scale(1);
+                    }
+                    @include laptop {
                         transform: scale(1.4);
                         -webkit-transform: scale(1.4);
                         -moz-transform: scale(1.4);
@@ -496,7 +527,7 @@ button {
                     }
                 }
                 .shop__products__productcontainer__productdetails__productprice {
-                    font-size: .8rem;
+                    font-size: 1rem;
                     font-weight: 550;
                     color: #24C347;
                 }
