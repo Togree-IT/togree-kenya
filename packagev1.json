@@ -4,8 +4,10 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "_start": "nodemon app",
-        "start": "node app.js"
+        "_": "nodemon app",
+        "dev": "gulp --require @babel/register --gulpfile tasks",
+        "heroku": "node app.js",
+        "build": "gulp build --require @babel/register --gulpfile tasks"
     },
     "keywords": [],
     "author": "",
