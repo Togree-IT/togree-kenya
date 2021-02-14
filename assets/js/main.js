@@ -5,69 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
         M.Collapsible.init(collapsibles);
     }
 
-    var dropdowns = document.querySelectorAll('.dropdown-trigger');
-    if (dropdowns.length) {
-        M.Dropdown.init(dropdowns, {
-            onOpenStart: e => {
-                var target = e;
-                // Find the caret
-                var caret = target.querySelector('i.material-icons');
-                // change caret of the target
-                if (caret) {
-                    if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
-                }
-            },
-            onCloseStart: e => {
-                var target = e;
-                // Find the caret
-                var caret = target.querySelector('i.material-icons');
-                // change caret of the target
-                if (caret) {
-                    if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
-                }
 
-            }
-        });
-    }
 
-    var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
-    if (top_nav_menu_trigger.length) {
-        M.Dropdown.init(top_nav_menu_trigger, {
-            // hover: true,
-            closeOnClick: !true,
-            // outDuration: 4000,
-            container: document.querySelector('.art-nav'),
-            coverTrigger: false,
-            onOpenStart: e => {
-                var target = e;
-                // Find the caret
-                var caret = target.querySelector('i.material-icons');
-                // change caret of the target
-                if (caret) {
-                    if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
-                }
-            },
-            onCloseStart: e => {
-                var target = e;
-                // Find the caret
-                var caret = target.querySelector('i.material-icons');
-                // change caret of the target
-                if (caret) {
-                    if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
-                }
 
-            }
-        });
-    }
 
 
 
     function showLoading() {
         const loader = document.querySelector('#loader');
-        if
-
-
-        (loader) {
+        if (loader) {
             loader.classList.add("display");
             setTimeout(() => {
                 loader.classList.remove("display");
@@ -130,9 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     fetchProducts.then(() => {
-        console.log('Data loaded');
+
         // Do othe tings
-    }).catch(err => console.log(err))
+    }).catch(err => console.error(err))
 
 
 
@@ -249,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const asiideTabContainer = document.querySelector('#asideTabs');
                     const tabContainer = document.querySelector('#tabcontainer');
 
-                    if (data.length) {
+                    if (data.length && asiideTabContainer) {
 
                         if (tabContainer) tabContainer.innerHTML = '';
                         for (let tabcontent of data) {
@@ -284,22 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    initializeNavMenu();
     initializeTabs();
 
     fetchContent.then(() => {
-        console.log('Data loaded');
+
         // Do othe tings
-    }).catch(err => console.log(err))
+    }).catch(err => console.error(err))
 });
 
-function initializeNavMenu() {
-    if (typeof M !== "undefined") {
-        const navMenu = document.querySelector('#menu-nav');
-        if (navMenu)
-            M.Sidenav.init(navMenu);
-    }
-}
 
 function initializeTabs() {
     if (typeof M !== "undefined") {
@@ -335,5 +273,5 @@ function openTab(evt, tabName) {
 
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
-
+    // localStorage.
 }

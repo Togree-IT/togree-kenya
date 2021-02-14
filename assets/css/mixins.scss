@@ -110,6 +110,7 @@
     margin-right: $mrg;
     @include box_shad( 0 2px 2px 1px #e8f2fb);
     @include bod_radius(1em);
+    background-color: #fff;
 }
 
 // Dropshadow -- filter

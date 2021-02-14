@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="1.091" x2="0.27" y2="-0.182" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dda037"/>
+      <stop offset="0.326" stop-color="#f1cf47"/>
+      <stop offset="0.734" stop-color="#f1cf47"/>
+      <stop offset="1" stop-color="#dda037"/>
+    </linearGradient>
+    <filter id="Intersection_95" x="-18" y="-15" width="68" height="68" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#f6fafe"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-SEO">
+      <rect width="32" height="32"/>
+    </clipPath>
+  </defs>
+  <g id="SEO" clip-path="url(#clip-SEO)">
+    <g id="Group_10411" data-name="Group 10411" transform="translate(-171 -2455)">
+      <g transform="matrix(1, 0, 0, 1, 171, 2455)" filter="url(#Intersection_95)">
+        <path id="Intersection_95-2" data-name="Intersection 95" d="M27.809,31.269l-6.6-6.577a13.167,13.167,0,0,1-7.674,2.384,13.281,13.281,0,0,1-5.259-1.067A13.254,13.254,0,0,1,1.067,18.8a13.5,13.5,0,0,1,0-10.522,13.251,13.251,0,0,1,7.212-7.21,13.491,13.491,0,0,1,10.519,0,13.266,13.266,0,0,1,7.212,7.21,13.32,13.32,0,0,1,1.067,5.261,13.173,13.173,0,0,1-2.386,7.674l6.6,6.6A2.472,2.472,0,0,1,29.539,32,2.283,2.283,0,0,1,27.809,31.269ZM7.452,7.451a8.3,8.3,0,0,0-2.53,6.087,8.293,8.293,0,0,0,2.53,6.086,8.3,8.3,0,0,0,6.086,2.53,8.3,8.3,0,0,0,6.088-2.53,8.294,8.294,0,0,0,2.53-6.086,8.3,8.3,0,0,0-2.53-6.087,8.3,8.3,0,0,0-6.088-2.528A8.294,8.294,0,0,0,7.452,7.451Z" fill="url(#linear-gradient)"/>
+      </g>
+    </g>
+  </g>
+</svg>

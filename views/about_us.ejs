@@ -1,0 +1,351 @@
+<%- include ('_nav') %>
+
+    <header class="about-header">
+        <div class="abouthero__img">
+            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/Aboutus/parking.jpg" alt="About us hero message" class="art_hero">
+        </div>
+        <div class="abouthero">
+            <h1 class="abouthero__title">
+                <%- lang_('About') %>
+                    <%- lang_('@company_title') %>
+            </h1>
+            <p class="abouthero__text">
+                <%- renderImplimental( lang_('our_main_activity_about_us')) %>
+            </p>
+            <a href="<%= typeof path !=='undefined'?path:'' %>contact-us " class="abouthero__btn art_gree_btn filled">
+                <%- lang_('contact_us') %> <em class=" abouthero__arrow  fas fa-angle-right"></em> </a>
+        </div>
+        <span class="art_stylish_x">
+        <svg width="1433" height="103" viewBox="0 0 1433 103" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M708.5 34.5C426.083 34.5 0 0.5 0 0.5V34.5C0 34.5 426 108.26 708.5 102.5C1101.5 94.4867 1433 34.5 1433 34.5V0.5C1433 0.5 990.917 34.5 708.5 34.5Z" fill="currentColor"/>
+        </svg>
+    </span>
+    </header>
+    <!-- nav bar and hero section starts here -->
+
+
+    <!-- about story sections starts here  -->
+    <section class="aboutstory">
+        <div class="container">
+
+            <div class="aboutstory__contentbox">
+                <h4 class="aboutstory__title">
+                    <%- lang_("Our")+' '+ lang_('Short_Story') %>
+                </h4>
+                <p class="aboutstory__text">
+                    <%- lang_('our_short_story_togree') %>
+                </p>
+            </div>
+
+            <div class="aboutstory__contentbox">
+                <h4 class="aboutstory__title">
+                    <%-  lang_('Mission') %>
+                </h4>
+                <p class="aboutstory__text">
+                    <%-  lang_('our_mission_togree') %>
+
+                </p>
+            </div>
+
+            <div class="aboutstory__contentbox">
+                <h4 class="aboutstory__title">
+                    <%-  lang_('Vision') %>
+                </h4>
+                <p class="aboutstory__text">
+                    <%- lang_('our_vision_togree') %>
+                </p>
+            </div>
+
+            <div class="aboutstory__datebox">
+
+                <h3 class="aboutstory__datetitle">
+                    <%- lang_('Important_Dates') %>
+                </h3>
+
+                <div class="aboutstory__circlewrapper">
+
+                    <div class="aboutstory__circlecontainer first__circle">
+                        <div class="aboutstory__circle"></div>
+                        <div class="aboutstory__content">
+                            <h6 class="aboutstory__circletitle">18/11/2019</h6>
+                            <p class="aboutstory__circlesubtitle">
+                                Launched in Kenya
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="aboutstory__circlecontainer second__circle ">
+                        <div class="aboutstory__circle"></div>
+                        <div class="aboutstory__content">
+                            <h6 class="aboutstory__circletitle">18/11/2020</h6>
+                            <p class="aboutstory__circlesubtitle">
+                                Celebrated 1 year of serving Kenya
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="aboutstory__circlecontainer third__circle">
+                        <div class="aboutstory__circle"></div>
+                        <div class="aboutstory__content">
+                            <h6 class="aboutstory__circletitle">12-December</h6>
+                            <p class="aboutstory__circlesubtitle">
+                                Jamhuri Day - Kenya Independence day
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="aboutstory__circlecontainer forth__circle">
+                        <div class="aboutstory__circle"></div>
+                        <div class="aboutstory__content">
+                            <h6 class="aboutstory__circletitle">25-December</h6>
+                            <p class="aboutstory__circlesubtitle">
+                                Christmas Day
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- about story session ends here -->
+
+    <!-- our team section starts here  -->
+    <section class="team">
+
+        <h3 class="team__title">
+            <%- lang_('Few_members_of_our_team') %>
+        </h3>
+
+        <div class="team__profilewrapper">
+
+
+            <!-- first card starts here -->
+            <div class="team__profilecontainer">
+                <div class="team__profileimage"></div>
+
+                <div class="team__profilecontent">
+                    <h4 class="team__profiletitle">Meredite Kalunda</h4>
+                    <h6 class="team__profileposition">
+                        <%- lang_('CEO') %>
+                    </h6>
+                    <P class="team__profiletext">Effect if in up no depend seemed. Ecstatic elegance gay but disposed. We me rent been part what. An conclu ded sportsman offending so provision mr education. Bed uncommonly his.</P>
+
+                    <div class="team__profilesocialbtns">
+                        <a href="#"><img src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/chat.png" alt="chat" class="team__profilesocialbtn chat"></a>
+                        <a href="#"><img class="team__profilesocialbtn facebook" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/facebook2.png" alt="facebook link"></a>
+                        <a href="#"><img class="team__profilesocialbtn twitter" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/twitter2.png" alt="twitter link"></a>
+                        <a href="#"><img class="team__profilesocialbtn instagram" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/instagram2.png" alt="instagram link"></a>
+                        <a href=""><img class="team__profilesocialbtn linkedln" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/linkedin2.png" alt="linkedln link"></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- first card ends here  -->
+
+            <!-- second card starts here  -->
+            <div class="team__profilecontainer">
+
+                <div class="team__profileimage cfo"></div>
+                <div class="team__profilecontent">
+                    <h4 class="team__profiletitle">Benjamin Limbo</h4>
+                    <h6 class="team__profileposition">CFO</h6>
+                    <P class="team__profiletext">Effect if in up no depend seemed. Ecstatic elegance gay but disposed. We me rent been part what. An conclu ded sportsman offending so provision mr education. Bed uncommonly his.</P>
+
+                    <div class="team__profilesocialbtns">
+                        <a href="#"><img src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/chat.png" alt="chat" class="team__profilesocialbtn chat"></a>
+                        <a href="#"><img class="team__profilesocialbtn facebook" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/facebook2.png" alt="facebook link"></a>
+                        <a href="#"><img class="team__profilesocialbtn twitter" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/twitter2.png" alt="twitter link"></a>
+                        <a href="#"><img class="team__profilesocialbtn instagram" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/instagram2.png" alt="instagram link"></a>
+                        <a href=""><img class="team__profilesocialbtn linkedln" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/linkedin2.png" alt="linkedln link"></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- second card ends here -->
+
+
+            <!-- third card starts here -->
+            <div class="team__profilecontainer">
+
+                <div class="team__profileimage cco"></div>
+                <div class="team__profilecontent">
+                    <h4 class="team__profiletitle">Melissa Mukosa TL</h4>
+                    <h6 class="team__profileposition">Chief Comm. Officer</h6>
+                    <P class="team__profiletext">Effect if in up no depend seemed. Ecstatic elegance gay but disposed. We me rent been part what. An conclu ded sportsman offending so provision mr education. Bed uncommonly his.</P>
+
+                    <div class="team__profilesocialbtns">
+                        <a href="#"><img src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/chat.png" alt="chat" class="team__profilesocialbtn chat"></a>
+                        <a href="#"><img class="team__profilesocialbtn facebook" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/facebook2.png" alt="facebook link"></a>
+                        <a href="#"><img class="team__profilesocialbtn twitter" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/twitter2.png" alt="twitter link"></a>
+                        <a href="#"><img class="team__profilesocialbtn instagram" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/instagram2.png" alt="instagram link"></a>
+                        <a href=""><img class="team__profilesocialbtn linkedln" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/linkedin2.png" alt="linkedln link"></a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- third card ends here -->
+
+
+
+            <!-- fourth card starts here -->
+            <div class="team__profilecontainer">
+                <div class="team__profileimage internal"></div>
+
+                <div class="team__profilecontent">
+                    <h4 class="team__profiletitle">Henry Mfuwenji Jr.</h4>
+                    <h6 class="team__profileposition">Internal & External Affairs</h6>
+                    <P class="team__profiletext">Effect if in up no depend seemed. Ecstatic elegance gay but disposed. We me rent been part what. An conclu ded sportsman offending so provision mr education. Bed uncommonly his.</P>
+
+                    <div class="team__profilesocialbtns">
+                        <a href="#"><img src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/chat.png" alt="chat" class="team__profilesocialbtn chat"></a>
+                        <a href="#"><img class="team__profilesocialbtn facebook" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/facebook2.png" alt="facebook link"></a>
+                        <a href="#"><img class="team__profilesocialbtn twitter" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/twitter2.png" alt="twitter link"></a>
+                        <a href="#"><img class="team__profilesocialbtn instagram" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/instagram2.png" alt="instagram link"></a>
+                        <a href=""><img class="team__profilesocialbtn linkedln" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/linkedin2.png" alt="linkedln link"></a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- fourth card ends here -->
+
+
+            <!-- fifth card starts here  -->
+            <div class="team__profilecontainer">
+
+                <div class="team__profileimage designer"></div>
+                <div class="team__profilecontent">
+                    <h4 class="team__profiletitle">Anita Salome Migo</h4>
+                    <h6 class="team__profileposition">Chief Designer</h6>
+                    <P class="team__profiletext">Effect if in up no depend seemed. Ecstatic elegance gay but disposed. We me rent been part what. An conclu ded sportsman offending so provision mr education. Bed uncommonly his.</P>
+
+                    <div class="team__profilesocialbtns">
+                        <a href="#"><img src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/chat.png" alt="chat" class="team__profilesocialbtn chat"></a>
+                        <a href="#"><img class="team__profilesocialbtn facebook" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/facebook2.png" alt="facebook link"></a>
+                        <a href="#"><img class="team__profilesocialbtn twitter" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/twitter2.png" alt="twitter link"></a>
+                        <a href="#"><img class="team__profilesocialbtn instagram" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/instagram2.png" alt="instagram link"></a>
+                        <a href=""><img class="team__profilesocialbtn linkedln" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/linkedin2.png" alt="linkedln link"></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- fifth card ends here -->
+
+            <!-- six card starts here -->
+            <div class="team__profilecontainer">
+
+                <div class="team__profileimage ict"></div>
+                <div class="team__profilecontent">
+                    <h4 class="team__profiletitle">Sentongo Arnold</h4>
+                    <h6 class="team__profileposition">
+                        <%- lang_('CTO') %>
+                    </h6>
+                    <P class="team__profiletext">Effect if in up no depend seemed. Ecstatic elegance gay but disposed. We me rent been part what. An conclu ded sportsman offending so provision mr education. Bed uncommonly his.</P>
+
+                    <div class="team__profilesocialbtns">
+                        <a href="#"><img src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/chat.png" alt="chat" class="team__profilesocialbtn chat"></a>
+                        <a href="#"><img class="team__profilesocialbtn facebook" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/facebook2.png" alt="facebook link"></a>
+                        <a href="#"><img class="team__profilesocialbtn twitter" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/twitter2.png" alt="twitter link"></a>
+                        <a href="#"><img class="team__profilesocialbtn instagram" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/instagram2.png" alt="instagram link"></a>
+                        <a href=""><img class="team__profilesocialbtn linkedln" src="<%= typeof path !== 'undefined'?path:'' %>assets/img/Aboutus/linkedin2.png" alt="linkedln link"></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- sixth card ends here -->
+
+        </div>
+
+        <button class="team__btn art_gree_btn filled waves-effect waves-light"><%- lang_('View_The_Entire_Team') %> </button>
+
+    </section>
+    <!-- our team section ends here  -->
+
+    <!-- our core value sections starts here  -->
+
+    <section class="corevalue">
+
+        <div class="corevalue__container">
+
+            <h3 class="corevalue__container__title">
+                <%- lang_('Our_Core_Values') %>
+            </h3>
+
+            <div class="corevalue__container__contentwrapper">
+
+                <div class="corevalue__container__contentcontainer">
+                    <img class="corevalue__container__image" src="<%= typeof path !== " undefined "?path:'' %>assets/img/Aboutus/collaboration.png" alt="collaboration">
+                    <h5 class="corevalue__container__contenttitle">
+                        <%- lang_('Collaboration') %>
+                    </h5>
+                    <p class="corevalue__container__contentsubtitle">Warmth object matter course active law spring six. Pursuit showing tedious unknown winding see had man add. And park eyes too more him. Simple excuse active had son wholly coming number add. Though all excuse ladies rather regard assure
+                        yet. If feelings so prospect no as raptures quitting. </p>
+                </div>
+
+                <div class="corevalue__container__divider"></div>
+                <div class="corevalue__container__mobiledivider"></div>
+
+
+                <div class="corevalue__container__contentcontainer">
+                    <img class="corevalue__container__image" src="<%= typeof path !== " undefined "?path:'' %>assets/img/Aboutus/trust.png" alt="trust">
+                    <h5 class="corevalue__container__contenttitle">
+                        <%- lang_('Total') +' '+lang_('Trust') %>
+                    </h5>
+                    <p class="corevalue__container__contentsubtitle">Warmth object matter course active law spring six. Pursuit showing tedious unknown winding see had man add. And park eyes too more him. Simple excuse active had son wholly coming number add. Though all excuse ladies rather regard assure
+                        yet. If feelings so prospect no as raptures quitting. </p>
+                </div>
+
+                <div class="corevalue__container__divider"></div>
+                <div class="corevalue__container__mobiledivider"></div>
+
+                <div class="corevalue__container__contentcontainer">
+                    <img class="corevalue__container__image" src="<%= typeof path !== " undefined "?path:'' %>assets/img/Aboutus/H.png" alt="customer satisfaction">
+                    <h5 class="corevalue__container__contenttitle">
+                        <%- lang_('Customer')+' '+lang_('Satisfaction') %>
+                    </h5>
+                    <p class="corevalue__container__contentsubtitle">Warmth object matter course active law spring six. Pursuit showing tedious unknown winding see had man add. And park eyes too more him. Simple excuse active had son wholly coming number add. Though all excuse ladies rather regard assure
+                        yet. If feelings so prospect no as raptures quitting. </p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="joinus">
+        <div class="joinus__pic">
+            <img class="joinus__pic__img" src="<%= typeof path !== 'undefined' ?path:'' %>assets/img/Aboutus/joinuslady.png" alt="joinus">
+        </div>
+        <div class="joinus__content">
+            <h6 class="joinus__pretitle">
+                <%= lang_('TODAY_IS_YOUR_LUCKY_DAY') %>
+            </h6>
+            <h3 class="joinus__title">
+                <%- lang_('We\'re_hiring_right_now!') %>
+            </h3>
+            <p class="joinus__subtitle">
+                <%- lang_('join_us_message') %>
+            </p>
+            <a href="<%= typeof path !== 'undefined'?path:'' %>jobs/?flag=join_us_action" class="art_btn art_gree_btn waves-effect joinus__btn ">
+                <%- lang_('join_us_action_message') %>
+            </a>
+        </div>
+
+    </section>
+    <!-- joinus sections ends here -->
+
+    <!-- social media section starts here  -->
+
+    <%- include ("./socialMedia.ejs") %>
+
+
+        <%- include ('_footer') %>

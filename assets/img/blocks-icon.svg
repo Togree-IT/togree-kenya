@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.399" y1="-0.546" x2="1.568" y2="1.766" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dda037"/>
+      <stop offset="0.326" stop-color="#f1cf47"/>
+      <stop offset="0.734" stop-color="#f1cf47"/>
+      <stop offset="1" stop-color="#dda037"/>
+    </linearGradient>
+    <clipPath id="clip-blocks">
+      <rect width="30" height="30"/>
+    </clipPath>
+  </defs>
+  <g id="blocks" clip-path="url(#clip-blocks)">
+    <path id="Subtraction_30" data-name="Subtraction 30" d="M15,30A15,15,0,0,1,4.393,4.393,15,15,0,0,1,25.607,25.607,14.9,14.9,0,0,1,15,30ZM8.056,13.541a1.459,1.459,0,1,0,0,2.918h5.485v5.486A1.461,1.461,0,0,0,15,23.4c.023,0,.048,0,.07,0a1.457,1.457,0,0,0,1.389-1.457V16.459h5.485a1.459,1.459,0,1,0,0-2.918H16.459V8.057A1.457,1.457,0,0,0,15.071,6.6c-.023,0-.048,0-.07,0a1.461,1.461,0,0,0-1.459,1.46v5.485Z" transform="translate(0 0)" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

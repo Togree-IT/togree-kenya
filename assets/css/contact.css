@@ -4,46 +4,42 @@ button:active, button:focus {
   background: none;
 }
 
-.contact-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  height: auto;
-  min-height: 10vh;
-  background-color: transparent;
-  position: relative;
-  padding: 0;
-  margin-top: 4px;
-}
-
-.art_contact {
-  padding: 0 0 15pc;
-}
-
-.art_contact .contacthero {
+.contacthero {
   padding: 2% 4%;
 }
 
-.art_contact .contacthero__wrapper {
+.contacthero__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 2rem;
+  margin: 2rem 0;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
-.art_contact .contacthero__information {
-  max-width: 50%;
+@media screen and (min-width: 320px) {
+  .contacthero__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contacthero__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.contacthero__information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,85 +54,139 @@ button:active, button:focus {
   -ms-flex-align: left;
   align-items: left;
   background: #C9F4D2;
-  padding: 1% 4%;
+  padding: 2% 4%;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-box-shadow: 0px 3px 8px rgba(96, 124, 138, 0.161);
+  box-shadow: 0px 3px 8px rgba(96, 124, 138, 0.161);
 }
 
-.art_contact .contacthero__information__title {
+@media screen and (min-width: 320px) {
+  .contacthero__information {
+    padding: 4%;
+    margin: 4rem 0;
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+    order: 2;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .contacthero__information {
+    padding: 2% 4%;
+    margin: 0;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contacthero__information {
+    width: 45%;
+  }
+}
+
+.contacthero__information__title {
   font-size: 2rem;
   font-weight: 600;
   color: #565656;
 }
 
-.art_contact .contacthero__information__address {
+.contacthero__information__address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 1rem 0;
 }
 
-.art_contact .contacthero__information__address__icon {
-  font-size: 4rem;
+.contacthero__information__address__icon {
+  font-size: 2.4rem;
   margin: 0;
-  margin-right: 2rem;
+  margin-right: 1rem;
   color: #24C347;
 }
 
-.art_contact .contacthero__information__address__content {
+.contacthero__information__address__content {
   color: #565656;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  line-height: 2rem;
 }
 
-.art_contact .contacthero__information__socialicon {
+.contacthero__information__address .art_get_dir.filled {
+  min-width: 50%;
+  border: 0;
+}
+
+.contacthero__information__socialicon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   margin-top: 2rem;
 }
 
-.art_contact .contacthero__information__socialicon__btn {
+.contacthero__information__socialicon__btn {
   max-width: 50px;
   max-height: 50px;
   margin-right: 1rem;
 }
 
-.art_contact .contacthero__information__socialicon__pic {
+.contacthero__information__socialicon__pic {
   max-width: 100%;
 }
 
-.art_contact .contacthero__content {
-  max-width: 50%;
+.contacthero__content {
   padding: 0 5%;
   color: #565656;
+  margin: 0 0 auto;
+  width: 55%;
 }
 
-.art_contact .contacthero__content__title {
+@media screen and (min-width: 320px) {
+  .contacthero__content {
+    max-width: 100%;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
+    order: 1;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contacthero__content {
+    width: 55%;
+  }
+}
+
+.contacthero__content__title {
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
   margin-bottom: 1rem;
 }
 
-.art_contact .contacthero__content__text {
+.contacthero__content__text {
   margin-bottom: 1rem;
   font-size: 0.8rem;
   line-height: 1.5rem;
 }
 
-.art_contact .contacthero__content__form {
+.contacthero__content__form {
   width: 100%;
 }
 
-.art_contact .contacthero__content__btn {
+.contacthero__content__btn {
   width: 100%;
   padding: 16px;
   background: #24C347;
@@ -148,8 +198,201 @@ button:active, button:focus {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.art_contact .contacthero .art_input_co {
+.contacthero__content__btnwrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.contacthero__content__btnwrapper .art_btn {
+  min-width: 55%;
+}
+
+.contacthero .art_input_co {
   margin: 0 0 20px;
+}
+
+.contacthero .art_input_co .art_input {
+  background: transparent;
+  min-width: 100%;
+}
+
+.subscribe {
+  padding: 4% 2%;
+  background: #F9F9F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 320px) {
+  .subscribe {
+    padding: 4% 0 20%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .subscribe {
+    padding: 4% 2%;
+  }
+}
+
+.subscribe__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #24C347;
+  margin: 0;
+}
+
+@media screen and (min-width: 320px) {
+  .subscribe__title {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .subscribe__title {
+    margin: 0;
+  }
+}
+
+.subscribe__text {
+  font-size: 1rem;
+  color: #838383;
+  text-align: center;
+}
+
+.subscribe__form {
+  margin: 2rem 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 320px) {
+  .subscribe__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .subscribe__form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.subscribe__form__inputwrapper {
+  width: 28%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #f5f8f9;
+  height: 3.5rem;
+  border: 1.4px solid #24C347;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  margin-right: 2rem;
+}
+
+@media screen and (min-width: 320px) {
+  .subscribe__form__inputwrapper {
+    width: 80%;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .subscribe__form__inputwrapper {
+    width: 28%;
+    margin: 0;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .subscribe__form__inputwrapper {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .subscribe__form__inputwrapper {
+    width: 35%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .subscribe__form__inputwrapper {
+    width: 28%;
+  }
+}
+
+.subscribe__form__input {
+  width: 100%;
+  padding: 0 15px;
+  outline: none;
+  margin: 0;
+  border: 0;
+  height: 100%;
+  background: transparent;
+}
+
+.subscribe .art_gree_btn.filled {
+  width: 15%;
+}
+
+@media screen and (min-width: 320px) {
+  .subscribe .art_gree_btn.filled {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .subscribe .art_gree_btn.filled {
+    width: 15%;
+  }
+}
+
+.art_gree_btn.filled {
+  margin: 0;
+}
+
+.art_gree_btn {
+  margin: 0;
 }

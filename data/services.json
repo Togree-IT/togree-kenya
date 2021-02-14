@@ -1,0 +1,176 @@
+[{
+        "name": "Vehicle Trackers",
+        "slogan": "vehicle_trackers",
+        "icon": "assets/img/home/icons8-gps-100.png",
+        "preview_image": "assets/img/home/fleets1.jpg",
+        "short_description": "Vehicle Trackers (GPS) can help you locate and track your vehicles including cars, trucks, van, motorcycle, etc. Togree not only offers GPS fleet tracking devices with basic features, such as real-time tracking, SOS alarm, and geofence, ACC detection, but also supplies vehicle tracker with high-end functions, such as temperature monitoring, fuel monitoring, RS232, RS485. Equipped with GPS tracker for vehicle, you can enhance fleet security, improve stolen vehicle recovery(SVR) rate and maximize each vehicle runtime.",
+        "key_features": [{
+                "name": "Control",
+                "description": ""
+            },
+            {
+                "name": "Live tracking",
+                "description": ""
+            },
+            {
+                "name": "Calculate the time",
+                "description": ""
+            }
+        ],
+        "applicable_to": [{
+                "name": "Car Rental",
+                "description": ""
+            },
+            {
+                "name": "Fleet Management",
+                "description": ""
+            },
+            {
+                "name": "Corparate Cars",
+                "description": ""
+            }
+        ],
+        "how_it_works": {
+            "name": "How `_our_` `_Vehicle_Trackers_` work",
+            "description": "",
+            "video_path": "",
+            "video_poster_path": "assets/img/services/video-poster.png"
+        },
+        "discount": {
+            "title": "Huge 30% discount, just for you",
+            "percentage": 30,
+            "start_date": "02-09-2021 10:13:38",
+            "end_date": "02-19-2021 00:20:40",
+            "offer_message": "Offer ends soon",
+            "path": ""
+
+        }
+    },
+    {
+        "name": "Asset Trackers",
+        "slogan": "asset_trackers",
+        "icon": "assets/img/home/icons8-gps.png",
+        "preview_image": "assets/img/home/assets.jpg",
+        "short_description": "",
+        "key_features": [{
+                "name": "Control",
+                "description": ""
+            },
+            {
+                "name": "Live tracking",
+                "description": "With our GPS tracking system, you will be able to closely monitor all your vehicles from anywhere at any time. A well-equipped self-defense equipment and GPS tracking solution will help you protect yourself and your belongings."
+            },
+            {
+                "name": "Calculate the time",
+                "description": ""
+            }
+        ],
+        "applicable_to": [{
+                "name": "Car Rental",
+                "description": ""
+            },
+            {
+                "name": "Fleet Management",
+                "description": ""
+            },
+            {
+                "name": "Corparate Cars",
+                "description": ""
+            }
+        ],
+        "how_it_works": {
+            "name": "How `_our_` `_Asset_Trackers_` work",
+            "description": "",
+            "video_path": "",
+            "video_poster_path": "assets/img/services/video-poster.png"
+        },
+        "discount": {
+            "title": "Huge 10% discount, just for you",
+            "percentage": 10,
+            "start_date": "01-09-2021 10:13:38",
+            "end_date": "02-08-2021 00:20:40",
+            "offer_message": "Offer ends soon",
+            "path": ""
+
+        }
+    },
+    {
+        "name": "Personal Trackers",
+        "slogan": "personal_trackers",
+        "icon": "assets/img/home/icons8-gps.png",
+        "preview_image": "assets/img/home/personal.jpg",
+        "short_description": "",
+        "key_features": [{
+                "name": "Control",
+                "description": ""
+            },
+            {
+                "name": "Live tracking",
+                "description": ""
+            },
+            {
+                "name": "Calculate the time",
+                "description": ""
+            }
+        ],
+        "applicable_to": [{
+                "name": "Car Rental",
+                "description": ""
+            },
+            {
+                "name": "Fleet Management",
+                "description": ""
+            },
+            {
+                "name": "Corparate Cars",
+                "description": ""
+            }
+        ],
+        "how_it_works": {
+            "name": "How `_our_` `_Personal_Trackers_` work",
+            "description": "",
+            "video_path": "",
+            "video_poster_path": "assets/img/services/video-poster.png"
+        }
+    },
+    {
+        "name": "Smart Cameras",
+        "slogan": "cameras",
+        "icon": "assets/img/home/icons8-camera.png",
+        "preview_image": "assets/img/home/area_corporate.jpg",
+        "short_description": "Most of our Smart Cameras comes with a 1080P front camera that records everything on the road and in the cabin. Our smart cameras enables you to get a more complete view of the situation in case of an accident or emergency, day or night.",
+        "key_features": [{
+                "name": "Driving Behavior Monitoring",
+                "description": "Leveraging data on your driving behavior, including harsh acceleration, harsh braking, and extreme cornering will help reduce your fleet’s accident rate and improve fuel economy."
+            },
+            {
+                "name": "Highly Integrated Design",
+                "description": "Featuring the classic dual-camera design with simultaneous recording, the JC400P keeps an eye on the road ahead and the driver’s cabin using high-definition cameras that produce a crystal-clear image. The tamer-proof lock allows you to ensure that the SIM and TF cards cannot be removed, ensuring that your device and vehicle remain safety and consistently in operation. Finally, the easy installation means you will not have to fork out a lot of cash for expensive professional installations."
+            },
+            {
+                "name": "Event Video to Cloud",
+                "description": "In the event of a serious accident, collision or improper driving behavior, the video will be automatically transmitted to the cloud. With a 4G connection, you can get faster data speeds and larger network coverage, allowing you to respond or take action immediately."
+            }
+        ],
+        "applicable_to": [{
+                "name": "Car Rental",
+                "description": "Maximize profitability by optimizing your operations, streamlining processes, and maintaining a sustainable advantage over competitors."
+            },
+            {
+                "name": "Fleet Management",
+                "description": "Reduce fuel and maintenance costs by more intelligently monitoring and managing driver and vehicle performance. Optimize the efficiency of your fleet performance with real-time alerts and notifications, as well as automated reporting."
+            },
+            {
+                "name": "Corparate Cars",
+                "description": "Achieve comprehensive visibility with real-time monitoring of location, vehicle, and driver data."
+            }
+        ],
+        "how_it_works": {
+            "name": "How `_our_` `_Smart_Cameras_` work",
+            "description": "",
+            "video_path": "",
+            "video_poster_path": "assets/img/services/video-poster.png"
+        }
+
+    }
+]

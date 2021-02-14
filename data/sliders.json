@@ -1,0 +1,30 @@
+[{
+        "name": "We will help you build your own store",
+        "description": "Our reseller program enables you to be a business owner with very few steps. Get these questions answered and your shop is set up in minutes, not days. What's more, we supply you with all the latest products in GPS, car tracking, wireless communication upfront with very competitive market prices. Start earning by engaging in the most in-demand GPS business today. Our mission is to keep our clients and their properties safe.",
+        "preview_image": "assets/img/home/Reseller-minV2.png",
+        "action": [{
+            "path": "programs/reseller/join",
+            "message": "Enroll now"
+        }]
+    },
+    {
+        "name": "Continuous software updates",
+        "description": "Our Engineering team is always up to date with latest technology and trends on our tracking system",
+        "preview_image": "assets/img/home/Reseller-minV2.png",
+        "action": [{
+            "path": "url/external/https://trackgree.com",
+            "message": "Monitor"
+        }]
+    }, {
+        "name": "Enjoy our Excellent Delivery Service",
+        "description": "With our delivery service, we assure delivery of your order, you keep track of each order you make with us, get notified when the order has reached your home/office",
+        "preview_image": "assets/img/home/Startistic-Illustrations-on.png",
+        "action": [{
+            "path": "users/orders",
+            "message": "My orders"
+        }, {
+            "path": "users/orders2",
+            "message": "My orders2"
+        }]
+    }
+]

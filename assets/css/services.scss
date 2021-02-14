@@ -47,15 +47,27 @@ body {
         position: relative;
         padding: 0;
         margin-top: 0;
-        background: rgba(3, 14, 21, 0.929);
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+        // background: rgba(3, 14, 21, 0.929);
+        // background-color: hsla(88, 84%, 10%, 0.631);
+        // background-color: hsla(88, 76%, 18%, 0.85);
+        // background-color: hsla(203, 30%, 11%, 0.78);
+        background-color: hsla(133, 68%, 27%, 0.749);
+        // background-blend-mode: multiply;
+        // background-image: url(./../img/home/area_corporate.jpg);
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: bottom;
+        // background-position-y: 340%;
+        // background-attachment: fixed;
         @include mobile {
-            min-height: 45vh;
+            min-height: auto;
+            padding: 2pc 0;
         }
         @include tablet {
             min-height: 45vh;
@@ -260,6 +272,12 @@ body {
                 width: 100%;
                 max-width: 100%;
             }
+            @include mobile {
+                top: 0;
+            }
+            @include laptop {
+                top: -25%;
+            }
         }
         .art_stylish_x {
             bottom: -76px;
@@ -267,61 +285,82 @@ body {
         }
     }
     .serviceshero {
-        max-width: 40%;
-        position: absolute;
-        margin-left: 200px;
-        margin-bottom: 100px;
-        left: 0;
+        // max-width: 40%;
+        // position: absolute;
+        // margin-left: 200px;
+        // margin-bottom: 100px;
+        // left: 0;
+        // text-align: left;
+        max-width: 50%;
+        position: relative;
+        margin: auto;
+        padding: 0;
         text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
         color: #FFFFFF;
+        text-align: center;
         @include mobile {
-            position: relative;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            max-width: 100%;
-            text-align: center;
-            margin: 0;
-            margin-top: 0;
-            padding: 10% 7%;
-        }
-        @include tablet {
-            margin-top: 20px;
-            position: relative;
-            max-width: 80%;
-            -ms-flex-item-align: center;
-            align-self: center;
+            max-width: 90%;
         }
         @include laptop {
-            position: relative;
-            max-width: 80%;
-            -ms-flex-item-align: center;
-            align-self: center;
+            max-width: 50%;
         }
-        @include laptop_L {
-            display: initial;
-            max-width: 40%;
-            position: absolute;
-            margin-left: 100px;
-            margin-bottom: 100px;
-            margin-top: 0;
-            padding: 0;
-            text-align: left;
-        }
-        @include laptop_W {
-            margin-bottom: 100px;
-            margin-left: 200px;
-        }
+        // @include mobile {
+        //     position: relative;
+        //     display: -webkit-box;
+        //     display: -ms-flexbox;
+        //     display: flex;
+        //     -webkit-box-orient: vertical;
+        //     -webkit-box-direction: normal;
+        //     -ms-flex-direction: column;
+        //     flex-direction: column;
+        //     -webkit-box-pack: center;
+        //     -ms-flex-pack: center;
+        //     justify-content: center;
+        //     -webkit-box-align: center;
+        //     -ms-flex-align: center;
+        //     align-items: center;
+        //     max-width: 100%;
+        //     text-align: center;
+        //     margin: 0;
+        //     margin-top: 0;
+        //     padding: 10% 7%;
+        // }
+        // @include tablet {
+        //     margin-top: 20px;
+        //     position: relative;
+        //     max-width: 80%;
+        //     -ms-flex-item-align: center;
+        //     align-self: center;
+        // }
+        // @include laptop {
+        //     position: relative;
+        //     max-width: 80%;
+        //     -ms-flex-item-align: center;
+        //     align-self: center;
+        // }
+        // @include laptop_L {
+        //     display: initial;
+        //     max-width: 40%;
+        //     position: absolute;
+        //     margin-left: 100px;
+        //     margin-bottom: 100px;
+        //     margin-top: 0;
+        //     padding: 0;
+        //     text-align: left;
+        // }
+        // @include laptop_W {
+        //     margin-bottom: 100px;
+        //     margin-left: 200px;
+        // }
         &__title {
             margin: 0;
             margin-bottom: 20px;
@@ -346,7 +385,7 @@ body {
             }
         }
         .art_gree_btn {
-            margin: auto auto 10px 0;
+            margin: auto;
         }
         &__arrow {
             font-size: 1.4rem;
@@ -364,6 +403,19 @@ body {
             justify-content: space-around;
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            margin: 0 auto;
+            @include mobile {
+                width: 100%;
+            }
+            @include laptop {
+                width: 98%;
+            }
+            @include laptop_L {
+                width: 98%;
+            }
+            @include laptop_W {
+                width: 70%;
+            }
             .art_card {
                 width: ((100% / 1));
                 padding: 40px 20px;
@@ -414,7 +466,7 @@ body {
                     }
                     @include laptop_L {
                         width: ((100% / 3)- (3% + 1%));
-                        margin: 0 1%;
+                        margin: 0 0%;
                         &:last-of-type {
                             width: ((100% / 3)- (3% + 1%));
                         }
@@ -437,140 +489,6 @@ body {
         padding: 40px 0;
     }
     // social media styling starts here
-    .socialmedia {
-        padding: 20px 120px 195px;
-        background: rgba(255, 255, 255, 0.922);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        @include mobile {
-            padding: 20px 24px 195px;
-        }
-        @include tablet {
-            padding: 20px 80px 195px;
-        }
-        @include laptop {
-            padding: 20px 80px 195px;
-        }
-        @include laptop_L {
-            padding: 20px 80px 195px;
-        }
-        @include laptop_W {
-            padding: 80px 15% 195px;
-        }
-        &__container {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            @include mobile {
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -ms-flex-flow: column wrap;
-                flex-flow: column wrap;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-            }
-            @include tablet {
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -ms-flex-flow: column wrap;
-                flex-flow: column wrap;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-            }
-            @include laptop {
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -ms-flex-flow: column wrap;
-                flex-flow: column wrap;
-                -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                justify-content: center;
-            }
-            @include laptop_L {
-                -webkit-box-orient: horizontal;
-                -webkit-box-direction: normal;
-                -ms-flex-flow: row;
-                flex-flow: row;
-            }
-        }
-        &__btns {
-            padding: 80px 80px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            width: 40%;
-            @include mobile {
-                margin-top: 30px;
-                padding: 0;
-                width: 100%;
-            }
-            &__pic {
-                max-height: 100px;
-                max-width: 100px;
-                @include mobile {
-                    max-width: 50px;
-                    max-height: 50px;
-                }
-                @include tablet {
-                    max-width: 75px;
-                    max-height: 75px;
-                }
-                @include laptop {
-                    max-height: 75px;
-                    max-width: 75px;
-                }
-                @include laptop_L {
-                    max-height: 100px;
-                    max-width: 100px;
-                }
-                @include laptop_W {
-                    max-height: 150px;
-                    max-width: 150px;
-                }
-            }
-        }
-        &__content {
-            width: 40%;
-            color: #656565;
-            @include mobile {
-                width: 100%;
-                text-align: center;
-            }
-            @include tablet {
-                width: 100%;
-                text-align: center;
-            }
-            @include laptop {
-                width: 100%;
-                text-align: center;
-            }
-            @include laptop_L {
-                width: 60%;
-                text-align: left;
-            }
-            &__title {
-                font-weight: 700;
-                font-size: 2.5rem;
-            }
-            &__subtitle {
-                font-weight: 500;
-            }
-        }
-    }
     .art_left_right_co {
         @include flex();
         -webkit-box-pack: justify;
@@ -585,6 +503,76 @@ body {
             -ms-flex: 1;
             flex: 1;
             padding: 0 10px;
+        }
+    }
+    main {
+        background: rgba(255, 255, 255, 1.922);
+    }
+    .joinus__content {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+        text-align: center;
+        width: 100%;
+        *:not(.art_gree_btn) {
+            width: 100% !important;
+        }
+        .art_gree_btn {
+            margin-left: auto;
+            margin-right: auto;
+            // width: auto;
+        }
+    }
+    .art_service_call_to_action {
+        margin: 2pc 0 0;
+        padding: 4pc 20px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        @include linearGradient((to bottom), #10441c, #131d23);
+        color: aliceblue;
+        .art_content {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            .art_title {
+                text-align: center;
+            }
+            .art_specify_act {
+                min-width: 80%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                min-height: 65px;
+                .art_btn {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .art_input_co {
+        height: 3.5rem;
+        @include mobile {
+            height: 3.5rem;
+        }
+        @include laptop {
+            height: 3.5rem;
         }
     }
 }
