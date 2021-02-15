@@ -2404,7 +2404,7 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
 
 body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card .art_product_img {
   max-width: 100%;
-  height: 100%;
+  height: auto;
   -webkit-transition: 0.3s linear;
   -o-transition: 0.3s linear;
   transition: 0.3s linear;
