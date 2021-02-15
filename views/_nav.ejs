@@ -25,8 +25,6 @@
         </a>
         <!-- Menu -->
         <ul class="art-top-links" id="top_pages">
-
-
         </ul>
 
 
@@ -107,7 +105,7 @@
 
 
     <!-- Service Dropdown Structure -->
-    <div id='top_nav_servihces' class='dropdown-content art_nav_dropdown'>
+    <div id='top_nav_services' class='dropdown-content art_nav_dropdown'>
         <div class='dropdown-content_ art_menu_droper'>
             <div class="art_nav_services_co" id="top_art_nav_services_co">
                 <div class="preloader-wrapper big active" style="margin: auto;">
@@ -141,41 +139,13 @@
                 onOpenStart: e => {
                     var target = e;
                     // Find the caret
-                    var caret = target.querySelector('i.material-icons');
-                    // change caret of the target
-                    if (caret) {
-                        if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
-                    }
-                },
-                onCloseStart: e => {
-                    var target = e;
-                    // Find the caret
-                    var caret = target.querySelector('i.material-icons');
-                    // change caret of the target
-                    if (caret) {
-                        if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
-                    }
-
-                }
-            });
-        }
-        var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
-        if (top_nav_menu_trigger.length) {
-            M.Dropdown.init(top_nav_menu_trigger, {
-                hover: true,
-                closeOnClick: !true,
-                // outDuration: 4000,
-                container: document.querySelector('.art-nav'),
-                coverTrigger: false,
-                onOpenStart: e => {
-                    var target = e;
-                    // Find the caret
                     var caret = target.querySelector('.material-icons');
+
+
                     // change caret of the target
                     if (caret) {
                         if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
                     }
-                    // fetch_nav_services();
                 },
                 onCloseStart: e => {
                     var target = e;
@@ -189,6 +159,8 @@
                 }
             });
         }
+
+
         getLanguages();
 
 
@@ -259,44 +231,116 @@
 
     function loadListPages() {
         let topPagesTemp1 = (page) => {
-            return `
-            <li>
-                <a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}">
-                    ${page.title}
-                </a>
-            </li>`
+            return ` <li> <a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a> </li>`
         };
-        let topPagesTemp2 = (data) => {
-            return `<li>
-                <a href="#!" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_services'>
-                    <%- lang_('Services').toUpperCase()%> <em class="material-icons">expand_more</em>
-                </a>
-            </li>`
+        let topPagesTemp2 = (page) => {
+            return `<li> <a href="javascript:void(0)" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_services'> ${page.title} <em class="material-icons">expand_more</em> </a></li>`;
         };
         axios.get("<%= path %>api/list_pages").then(res => {
             let data = res.data;
             if (data.length) {
+                let children = [];
                 let top_pages = document.querySelector("#top_pages");
                 if (top_pages) {
                     top_pages.innerHTML = '';
                     data.map(page => {
                         if (page.fields.hasChildren) {
                             page = page.fields;
-                            top_pages.innerHTML += topPagesTemp2(page)
+                            children.push(page.children);
+                            lang_(page.title).then(title => {
+                                page.title = title;
+                                top_pages.innerHTML += topPagesTemp2(page);
+
+                            })
+
                         } else {
                             page = page.fields;
                             lang_(page.title).then(title => {
                                 page.title = title;
                                 top_pages.innerHTML += topPagesTemp1(page);
                             })
-
-
                         }
-                        console.log(page);
+                        // console.log(page);
+                    })
+                }
+                if (children.length) {
+                    let serviceTemp = (data, index) => {
+                        return `<a href="<%= typeof path !== "undefined"?path:'' %>services/main/${data.slug}" title="${data.name.split(' ').join('&nbsp;')}">
+                                    <div class="art_navice_service_card">
+                                        <span class="art_service_icon">
+                                            <img src="${data.icon.fields.file.url}" alt="${data.icon.fields.title}">
+                                        </span>
+                                        <span class="art_service_title">${data.name.split(' ').join('&nbsp;')}</span>
+                                    </div>
+                                </a>`;
+                    };
+
+                    children.map(child => {
+                        if (child.length) {
+                            let top_art_nav_services_co = document.querySelector("#top_art_nav_services_co");
+
+                            if (top_art_nav_services_co) {
+                                if (top_art_nav_services_co.querySelector(".preloader-wrapper")) {
+                                    let index = 0;
+                                    top_art_nav_services_co.innerHTML = '';
+                                    child.map(under_page => {
+                                        under_page = under_page.fields;
+                                        console.log(under_page);
+                                        top_art_nav_services_co.innerHTML += serviceTemp(under_page, index++);
+
+                                        if (top_art_nav_services_co.querySelectorAll('a').length >= child.length) {
+
+                                            setTimeout(() => {
+                                                under_pageDropdowns();
+                                            }, 665)
+
+                                        }
+                                    })
+                                }
+                            }
+                        }
                     })
                 }
             }
 
+        }).catch(err => {
+            console.error(err);
         })
+    }
+
+    function under_pageDropdowns() {
+
+        var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
+
+        if (top_nav_menu_trigger.length) {
+            M.Dropdown.init(top_nav_menu_trigger, {
+                // hover: true,
+                closeOnClick: !true,
+                // outDuration: 4000,
+                container: document.querySelector('.art-nav'),
+                coverTrigger: false,
+                onOpenStart: e => {
+                    var target = e;
+                    // Find the caret
+                    var caret = target.querySelector('.material-icons');
+                    // change caret of the target
+                    if (caret) {
+                        if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
+                    }
+                    console.log(e);
+                    // fetch_nav_services();
+                },
+                onCloseStart: e => {
+                    var target = e;
+                    // Find the caret
+                    var caret = target.querySelector('.material-icons');
+                    // change caret of the target
+                    if (caret) {
+                        if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
+                    }
+
+                }
+            });
+        }
     }
 </script>

@@ -1,0 +1,50 @@
+<div class="art_togree_vd_layer off"></div>
+<script>
+    let primaryVideoCo = document.querySelector('.art_togree_vd_layer'),
+        player;
+
+    function playVideo(event, src, type) {
+
+        if (primaryVideoCo) {
+            primaryVideoCo.classList.remove('off');
+            primaryVideoCo.classList.add('on');
+            let videoTemp = () => {
+                return `<video id="art_gree_main_video" class="video-js vjs-theme-fantasy art_gree_video" controls preload="auto" width="940" height="564" data-setup="{}">
+                <source src="${src}" type="${type}" />
+                <p class="vjs-no-js">
+                    <%- lang_('To_view_this_video_please_enable_JavaScript,_and_consider_upgrading_to_a_web_browser_that_supports_HTML5_video') %> 
+                </p>
+            </video>`;
+            };
+            primaryVideoCo.innerHTML = videoTemp();
+            let options = {};
+            player = videojs('art_gree_main_video', options, function onPlayerReady() {
+                // In this context, `this` is the player that was created by Video.js.
+                this.play();
+            });
+            if (player) player.isDisposed_ = !true;
+            player.play();
+        }
+        primaryVideoCo.addEventListener('click', closeVideo);
+
+        function closeVideo(e) {
+            if (e.target.classList.contains('art_togree_vd_layer')) {
+                primaryVideoCo.classList.add('off');
+                primaryVideoCo.classList.remove('on');
+
+                function destroyVideo() {
+                    // var oldPlayer = document.getElementById('art_gree_main_video');
+                    // videojs(oldPlayer).dispose();
+                    console.log(videojs.players.art_gree_main_video);
+                    player = player || videojs("art_gree_main_video");
+                    if (player) {
+                        player.isDisposed_ = !true;
+                        player.dispose();
+                    }
+                    primaryVideoCo.innerHTML = '';
+                }
+                destroyVideo();
+            }
+        }
+    }
+</script>

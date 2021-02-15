@@ -68,7 +68,7 @@
     "monitor": "Monitor",
     "about_us": "About us",
     "about": "About",
-    "our_main_activity_about_us": "`_@company_title_` is an information technology company that markets all elements necessary to get the full functionality of GPS fleet management in a desired environment.",
+    "our_main_activity_about_us": "`_@company_title_` is an information technology company that markets all elements necessary to get the full functionality of GPS fleet management in a desired environment. Our products ensure the safety of vehicle and Assets that you cherish the most. It also controls and reduces costs for connected and monitored businesses. Since `_@company_title_` is backed by reliable services, including flexible money back guarantee and highly dedicated staffs that are motivated by a passion for excellence, we will ensure that GPS installations as well as tracking / surveillance systems on all types of vehicles for our customers are well established. Moreover, since we know how important the customers and their lives are, we will ensure the safety and management in all sectors related so as to achieve a common goal. Thus we will follow a model of excellence to get there.",
     "contact_us": "Contact us",
     "our": "Our",
     "short_story": "Short Story",
@@ -138,5 +138,7 @@
     "sending": "Sending",
     "this_must_a_valid_email_address": "This must a valid email address",
     "new_ticket_from": "New Ticket From",
-    "new_ticket": "New Ticket"
+    "new_ticket": "New Ticket",
+    "@how_do_we_Operate_content": "At `_@company_title_`, our focal point of attention has always focused on our clients and partners' needs for excellent services.<br/>We provide detailed insight into our client's needs, which includes providing sustainable technology and business infrastructure.<br/>In filling those needs, we've created a well experienced team which helps in identifying and creating solutions based on clients' needs.<br/><br/> Watch the Full video for more.",
+    "blog": "Blog"
 }

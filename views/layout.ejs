@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <!-- Fantasy -->
+    <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
     <% if (typeof meta !== "undefined" && meta.length) {
         meta.map(el=>{
             if((typeof el.content !== "undefined" && typeof el.content ===  "string" ) && el.content.trim() !== ''){
@@ -96,32 +99,38 @@
 
 <body>
     <%-body%>
-        <script src="<%= typeof path !== 'undefined' ?path:'' %>assets/lib/materialize/js/materialize.min.js"></script>
-        <% if (typeof elements !== undefined && elements.length) {
+        <%- include('./videoContainer.ejs')%>
+
+
+
+
+
+            <script src="<%= typeof path !== 'undefined' ?path:'' %>assets/lib/materialize/js/materialize.min.js"></script>
+            <% if (typeof elements !== undefined && elements.length) {
             elements.map(el=>{
                 if(el.endsWith('.js') ){
                     if(!el.match('//')  ){ 
         %>
-            <script src="<%= path+el %>"></script>
-            <% }
+                <script src="<%= path+el %>"></script>
+                <% }
         else { %>
-                <script src="<%= el %>"></script>
-                <% }  }}) } %>
+                    <script src="<%= el %>"></script>
+                    <% }  }}) } %>
 
-                    <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                            document.addEventListener("mousemove", (e) => {
-                                if (e.pageY < 4 && e.pageY < 1080 && e.pageX < 500) {
-                                    console.log("corner left");
-                                }
-                                if (e.pageY < 4 && e.pageX > 500) {
-                                    console.log("corner right");
-                                }
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                document.addEventListener("mousemove", (e) => {
+                                    if (e.pageY < 4 && e.pageY < 1080 && e.pageX < 500) {
+                                        console.log("corner left");
+                                    }
+                                    if (e.pageY < 4 && e.pageX > 500) {
+                                        console.log("corner right");
+                                    }
+                                })
                             })
-                        })
-                    </script>
+                        </script>
 
-
+                        <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
 
 
 </body>

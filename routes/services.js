@@ -5,36 +5,47 @@ const express = require("express"),
 const initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js", ]
 
 router.get("/main/:id", (req, res) => {
-    let services = require('../data/services.json');
-    services = services[req.params.id.replace('@', '')];
-    // console.log(services);
+    let serviceName = req.params.id.replace('@', '');
+
     const elements = [...initialElements,
         "assets/css/services.min.css",
     ]
 
-    let title = funs.language(services.name, funs.getAppCookies(req)['language']);
 
-    const meta = funs.meta({
-        title,
-        description: funs.language(services.short_description, funs.getAppCookies(req)['language']),
-        keywords: services.name,
-        preview_image: services.preview_image,
-        theme_color: "#fff"
-    }, req);
 
-    res.render("service", {
-        meta,
-        elements,
-        menu: true,
-        services,
-        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-        language: funs.getAppCookies(req)['language'],
-        languages: require("../language/languages.json"),
-        renderImplimental: (_) => funs.renderImplimental(_),
-        title,
-        path: funs.pathToTheRoot(req._parsedUrl.path),
+    let q = {};
+    q['fields.slug'] = serviceName;
 
+    funs.getFullCont.getService(q).then(data => {
+        let services = data.items[0].fields;
+        services['shortDescription'] = services.shortDescription.content[0].content[0].value;
+        services['previewImage'] = services.previewImage.fields.file;
+
+        let title = funs.language(services.name, funs.getAppCookies(req)['language']);
+
+        const meta = funs.meta({
+            title,
+            description: funs.language(services.shortDescription, funs.getAppCookies(req)['language']),
+            keywords: services.name,
+            preview_image: services.previewImage.url,
+            theme_color: "#fff"
+        }, req);
+        res.render("service", {
+            meta,
+            elements,
+            menu: true,
+            services,
+            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+            language: funs.getAppCookies(req)['language'],
+            languages: require("../language/languages.json"),
+            renderImplimental: (_) => funs.renderImplimental(_),
+            title,
+            path: funs.pathToTheRoot(req._parsedUrl.path),
+
+        })
     })
+
+
 });
 
 router.get("/@get-services", (req, res) => {

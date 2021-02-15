@@ -6,10 +6,12 @@
 
                 <div class="art_head_bottom_card_co">
                     <div class="art_head_bottom_card_header">
-                        <h4 class="art_title">Solutions by needs</h4>
+                        <h4 class="art_title">
+                            <%- lang_("Solutions_by_needs")  %>
+                        </h4>
                     </div>
                     <div class="art_head_bottom_card_body">
-                        <div class="art_our_services_card waves-effect" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/asset-tracking.jpg')">
+                        <div class="art_our_services_card" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/asset-tracking.jpg')">
                             <div class="art_our_services_card_content">
                                 <div class="art_our_services_card_header">
                                     <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-bar-chart-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
@@ -18,14 +20,10 @@
                                         Bring comprehensive visibility and security to your high-value assets
                                     </p>
                                 </div>
-                                <div class="art_our_services_card_footer">
-                                    <button class="art_icon_btn art_btn art_gree_btn filled waves-effect">
-                                            <em class="material-icons">chevron_right</em>
-                                        </button>
-                                </div>
+
                             </div>
                         </div>
-                        <div class="art_our_services_card waves-effect" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/fleet-safety.jpg');">
+                        <div class="art_our_services_card" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/fleet-safety.jpg');">
                             <div class="art_our_services_card_content">
                                 <div class="art_our_services_card_header">
                                     <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-bar-chart-3d-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
@@ -34,14 +32,14 @@
                                         Help reduce risk, coach drivers, and improve the safety of your fleet at all times
                                     </p>
                                 </div>
-                                <div class="art_our_services_card_footer">
+                                <!-- <div class="art_our_services_card_footer">
                                     <button class="art_icon_btn art_btn art_gree_btn filled waves-effect">
                                             <em class="material-icons">chevron_right</em>
                                         </button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="art_our_services_card waves-effect" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/fleet-sustainability.jpg');">
+                        <div class="art_our_services_card" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/fleet-sustainability.jpg');">
                             <div class="art_our_services_card_content">
                                 <div class="art_our_services_card_header">
                                     <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-rental-house-contract-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
@@ -50,11 +48,7 @@
                                         Reduce impact on the environment and promote sustainable development with IoT solutions.
                                     </p>
                                 </div>
-                                <div class="art_our_services_card_footer">
-                                    <button class="art_icon_btn art_btn art_gree_btn filled waves-effect">
-                                            <em class="material-icons">chevron_right</em>
-                                        </button>
-                                </div>
+
                             </div>
                         </div>
 
@@ -145,24 +139,38 @@
             <!-- How do we operate -->
             <section class="art_how_we_operate">
                 <div class="art_we_operate_desc">
-                    <h4 class="art_we_operate_desc_title">How do we Operate?</h4>
+                    <h4 class="art_we_operate_desc_title">
+                        <%- lang_('How_do_we_Operate?') %>
+                    </h4>
                     <div class="art_we_operate_desc_text">
-                        <p>Sir new the particular frequently indulgence excellence how. Wishing an if he sixteen visited tedious subject it. Mind mrs yet did quit high even you went. Sex against the two however not nothing prudent colonel greater. Up husband
-                            removed parties staying he .</p>
-                        <p>Respect forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence impossible to conviction. Suppose
-                            neither evident welcome it at do civilly uncivil. Sing tall much you get nor.</p>
-                        <p>Respect forming clothes do in he. Course so piqued no an by appear. Themselves reasonable pianoforte so motionless he as difficulty be. Abode way begin ham there power whole. Do unpleasing indulgence impossible to conviction. Suppose
-                            neither evident welcome it at do civilly uncivil. Sing tall much you get nor.</p>
-                        <div class="art_action">
-                            <a href="#!"><button class="art_gree_btn filled waves-effect waves-light">LEARN MORE <em class="material-icons">chevron_right</em></button></a>
-                        </div>
+                        <%- renderImplimental(lang_('@how_do_we_Operate_content')) %>
+                            <!-- <br/>
+                            <br/>
+                            <div class="art_action">
+                                <a href="#!" class="art_btn waves-effect "> Watch the Full video for more </a>
+                            </div>
+                            <br/> -->
                     </div>
                 </div>
                 <div class="art_we_operate_content">
-                    <video src="./download.mp4" class="art_we_operate_content_video responsive-video" poster="<%= typeof path !== " undefined "?path:'' %>assets/img/home/Video-thumnail.png" controls>
-                <source media="(min-width: 2565px)" srcset="./download.mp4">
-            </video>
-                </div>
+                    <togree_vd url="<%= typeof path !== " undefined "?path:'' %>download.mp4" class="art_togree_vd">
+                        <div class="art_video_poster">
+                            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/Video-thumnail.png"> </div>
+                        <button class="artbtn art_play_btn waves-effect" onclick="playVideo(event,'http://trackgree.com/none/how-we-work.mp4','video/mp4')">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
+                                <path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
+                                s-3.906,14.752-10.45,18.833l-98.417,61.365c-6.943,4.329-15.359,4.542-22.512,0.573c-7.154-3.97-11.425-11.225-11.425-19.406
+                                V34.262c0-8.181,4.271-15.436,11.425-19.406c7.153-3.969,15.569-3.756,22.512,0.573l57.292,35.723
+                                c2.813,1.752,6.513,0.895,8.267-1.917c1.753-2.812,0.895-6.513-1.917-8.266L64.512,5.247c-10.696-6.669-23.661-7-34.685-0.883
+                                C18.806,10.48,12.226,21.657,12.226,34.262v122.73c0,12.605,6.58,23.782,17.602,29.898c5.25,2.913,10.939,4.364,16.616,4.364
+                                c6.241,0,12.467-1.754,18.068-5.247l98.417-61.365c10.082-6.287,16.101-17.133,16.101-29.015S173.011,72.899,162.929,66.612z"/>
+                                <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                            </svg>
+                        </button>
+                    </togree_vd>
+
+                    </button>
 
 
             </section>

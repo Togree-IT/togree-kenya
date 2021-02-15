@@ -470,6 +470,11 @@ exports.getFullCont = {
         query = query || {}
         query['content_type'] = 'pages';
         return this.c_client().getEntries(query)
+    },
+    getService: (query) => {
+        query = query || {}
+        query['content_type'] = 'services';
+        return this.c_client().getEntries(query)
     }
 };
 

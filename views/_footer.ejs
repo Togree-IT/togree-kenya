@@ -76,6 +76,7 @@
                     </div>
                 </div>
             </div>
+            <%#
             <div class="art_footer_impo_links_card art_tweets">
                 <div class="art_header">
                     <div class="art_title">
@@ -111,39 +112,40 @@
                     </div>
                 </div>
             </div>
-            <div class="art_footer_impo_links_card art_connect">
-                <div class="art_header">
-                    <div class="art_title">
-                        <h5>Let's Connect</h5>
+            %>
+                <div class="art_footer_impo_links_card art_connect">
+                    <div class="art_header">
+                        <div class="art_title">
+                            <h5>Let's Keep connected</h5>
+                        </div>
                     </div>
-                </div>
-                <div class="art_footer_connect">
+                    <div class="art_footer_connect">
 
-                    <div class="art-foot-social">
-                        <a class="art-social-icon" href="#">
+                        <div class="art-foot-social">
+                            <a class="art-social-icon" href="#">
                             <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/facebook2.png" alt="Facebook icon" />
                         </a>
-                        <a class="art-social-icon" href="#">
+                            <a class="art-social-icon" href="#">
                             <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/linkedin2.png" alt="Linkedin icon" />
                         </a>
-                        <a class="art-social-icon" href="#">
+                            <a class="art-social-icon" href="#">
                             <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/instagram2.png" alt="Instagram icon" />
                         </a>
-                        <a class="art-social-icon" href="#">
+                            <a class="art-social-icon" href="#">
                             <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/twitter2.png" alt="Twitter icon" />
                         </a>
 
-                    </div>
-                    <div class="art_subscribe_co">
+                        </div>
+                        <div class="art_subscribe_co">
 
-                        <form action="../api/subscribe" method="post">
-                            <div class="art_input_co">
-                                <input type="email" class="art_input" name="subscribe_email" placeholder="Type your email address here"></div>
-                            <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light" name="subscribe">subscribe</button>
-                        </form>
+                            <form action="../api/subscribe" method="post">
+                                <div class="art_input_co">
+                                    <input type="email" class="art_input" name="subscribe_email" placeholder="Type your email address here"></div>
+                                <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light" name="subscribe">subscribe</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
     <div class="art_footer_co_2">

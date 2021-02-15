@@ -415,20 +415,56 @@
                 padding: 15px 0;
                 overflow: visible;
                 .art_menu_droper {
+                    &.v1 {
+                        background: #fff;
+                        -webkit-box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
+                        box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
+                        border-radius: 0 0 10px 10px;
+                        border: 0;
+                        width: auto;
+                        height: auto;
+                        padding: 20px;
+                        min-width: (44vw - 14vw);
+                        max-width: (44vw - 4vw);
+                        min-height: (20vh - 3);
+                        max-height: (20vh + 3);
+                        outline: none;
+                        overflow: auto;
+                    }
                     background: #fff;
-                    -webkit-box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
-                    box-shadow: 0 2px 10px rgba(96, 125, 139, 0.42);
                     border-radius: 0 0 10px 10px;
                     border: 0;
                     width: auto;
                     height: auto;
                     padding: 20px;
-                    min-width: (44vw - 14vw);
-                    max-width: (44vw - 4vw);
-                    min-height: (20vh - 3);
-                    max-height: (20vh + 3);
+                    min-width: 5vw;
+                    min-height: 17vh;
+                    max-width: 19vw;
+                    max-height: 23vh;
                     outline: none;
                     overflow: auto;
+                    -webkit-box-shadow: 0 2px 10px hsla(200, 18%, 46%, 0.42);
+                    box-shadow: 0 2px 10px hsla(200, 18%, 46%, 0.42);
+                    @include mobile {
+                        max-width: 0;
+                        max-height: 0;
+                        padding: 0;
+                        min-width: 0;
+                        min-height: 0;
+                    }
+                    @include laptop {
+                        max-width: 40vw;
+                        max-height: 23vh;
+                        padding: 20px;
+                        min-width: 5vw;
+                        min-height: 17vh;
+                    }
+                    @include laptop_L {
+                        max-width: 30vw;
+                    }
+                    @include laptop_W {
+                        max-width: 19vw;
+                    }
                     a {
                         color: #333;
                     }
@@ -443,40 +479,90 @@
                     justify-content: space-around;
                     width: 100%;
                     a {
+                        &v1 {
+                            color: #333;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            width: 48%;
+                            margin: 0 0 15px 0;
+                        }
                         color: #333;
                         display: -webkit-box;
                         display: -ms-flexbox;
                         display: flex;
-                        width: 48%;
+                        width: 45%;
                         margin: 0 0 15px 0;
+                        -webkit-box-shadow: 0 0 7px 0px hsla(199, 52%, 70%, 0.231);
+                        box-shadow: 0 0 7px 0px hsla(199, 52%, 70%, 0.231);
+                        border-radius: 17px;
+                        padding: 2px 6px 2px 10px;
+                        &:hover {
+                            -webkit-box-shadow: 0 0 19px 0px hsla(199, 52%, 70%, 0.397);
+                                    box-shadow: 0 0 19px 0px hsla(199, 52%, 70%, 0.397);
+                        }
                         .art_navice_service_card {
+                            &.v1 {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                align-items: center;
+                                overflow: hidden;
+                                border-radius: 5px;
+                                -webkit-box-shadow: 0 1px 1px #d8e1ea;
+                                box-shadow: 0 1px 1px #d8e1ea;
+                                padding: 0px 15px;
+                                width: 100%;
+                            }
                             display: -webkit-box;
                             display: -ms-flexbox;
                             display: flex;
                             -webkit-box-align: center;
                             -ms-flex-align: center;
                             align-items: center;
-                            width: 100%;
-                            overflow: hidden;
+                            width: auto;
+                            overflow: visible;
                             border-radius: 5px;
                             -webkit-box-shadow: 0 1px 1px #d8e1ea;
-                            box-shadow: 0 1px 1px #d8e1ea;
-                            padding: 0px 15px;
+                            box-shadow: 0 0px 0px #d8e1ea;
+                            padding: 0px;
                             .art_service_icon {
+                                &.v1 {
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    width: 20%;
+                                    padding: 0 10px;
+                                }
                                 display: -webkit-box;
                                 display: -ms-flexbox;
                                 display: flex;
-                                width: 20%;
-                                padding: 0 10px;
+                                width: 30%;
+                                margin: 0 10px 0 0;
+                                padding: 5px;
+                                border-radius: 5em;
+                                -webkit-box-shadow: 0 0 10px 0px hsla(199, 88%, 20%, 0.071);
+                                box-shadow: 0 0 10px 0px hsla(199, 88%, 20%, 0.071);
                                 img {
                                     max-width: 100%;
                                 }
                             }
                             .art_service_title {
-                                display: -webkit-box;
-                                display: -ms-flexbox;
-                                display: flex;
+                                &.v1 {
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    width: 100%;
+                                }
+                                display: block;
                                 width: 100%;
+                                max-width: 100px;
+                                -o-text-overflow: ellipsis;
+                                text-overflow: ellipsis;
+                                word-break: keep-all;
+                                overflow: hidden;
                             }
                         }
                     }
@@ -1968,6 +2054,135 @@
                     height: auto;
                     line-height: 56px;
                     padding: 0 32px;
+                }
+            }
+        }
+        .art_togree_vd {
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            min-height: 40vh;
+            border-radius: 8px;
+            z-index: 1;
+            &::before,
+            &::after {
+                z-index: -1;
+                position: absolute;
+                content: "";
+                bottom: 25px;
+                left: 10px;
+                width: 50%;
+                top: 80%;
+                max-width: 300px;
+                background: #777;
+                -webkit-box-shadow: 0 35px 20px #777;
+                box-shadow: 0 35px 20px #777;
+                -webkit-transform: rotate(-8deg);
+                -ms-transform: rotate(-8deg);
+                transform: rotate(-8deg);
+            }
+            &::after {
+                -webkit-transform: rotate(8deg);
+                -ms-transform: rotate(8deg);
+                transform: rotate(8deg);
+                right: 10px;
+                left: auto;
+            }
+            .art_video_poster {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                overflow: hidden;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                }
+                img {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    height: 100%;
+                }
+            }
+            .art_play_btn {
+                position: absolute;
+                padding: 25px;
+                min-width: 106px;
+                min-height: 106px;
+                max-width: 106px;
+                max-height: 106px;
+                border: 00;
+                border-radius: 5em;
+                background: #23c447;
+                color: white;
+                cursor: pointer;
+                &:hover {
+                    -webkit-box-shadow: 0 0 9px hsla(209, 65%, 22%, 0.534);
+                    box-shadow: 0 0 9px hsla(209, 65%, 22%, 0.534);
+                }
+                svg {
+                    fill: #23354a;
+                }
+            }
+        }
+        .video_container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            max-width: initial;
+            max-height: initial;
+        }
+        .art_togree_vd_layer {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: hsla(133, 79%, 39%, 0.878);
+            &.on {
+                z-index: 3;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+            }
+            &.off {
+                z-index: -0;
+                display: none;
+            }
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            .art_gree_video {
+                max-width: 70%;
+                margin: auto;
+                @include mobile {
+                    max-width: 90%;
+                }
+                @include laptop {
+                    max-width: 70%;
+                }
+                @include laptop_L {
+                    max-width: 60%;
+                }
+                @include laptop_W {
+                    max-width: 50%;
                 }
             }
         }

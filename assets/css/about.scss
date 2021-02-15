@@ -314,15 +314,20 @@
                                                     }
                                                 }
                                                 &__text {
+                                                    margin: 0 0 auto auto;
                                                     margin-bottom: 20px;
+                                                    text-align: left;
+                                                    width: 75%;
                                                     @include mobile {
                                                         margin-bottom: 10px;
+                                                        width: 100%;
                                                     }
                                                     @include tablet {
                                                         margin-bottom: 20px;
                                                     }
                                                     @include laptop_W {
                                                         margin-bottom: 30px;
+                                                        width: 75%;
                                                     }
                                                 }
                                                 .art_gree_btn {

@@ -354,7 +354,8 @@
                     height: 100%;
                     // min-height: 75vh;
                      :first-child {
-                        max-width: 673px;
+                        // max-width: 673px;
+                        max-width: 100%;
                         max-height: 578px;
                     }
                     @include mobile {
@@ -643,6 +644,78 @@
                             animation: revForw_R 1s cubic-bezier(0.14, -1.49, 0.54, 1.04) infinite;
                             -webkit-animation: revForw_R 1s cubic-bezier(0.14, -1.49, 0.54, 1.04) infinite;
                         }
+                    }
+                }
+            }
+            .art_our_services_card {
+                transition: .3s linear;
+                -webkit-transition: .3s linear;
+                -moz-transition: .3s linear;
+                -ms-transition: .3s linear;
+                -o-transition: .3s linear;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    // background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, .9));
+                    // background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, .9)));
+                    // background-image: -o-linear-gradient(transparent 60%, hsl(133, 95%, 16%));
+                    // background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), to(hsl(133, 95%, 16%)));
+                    // background-image: linear-gradient(transparent 60%, hsl(133, 95%, 16%));
+                    background-image: -o-linear-gradient(transparent 40%, #025013 65%);
+                    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, transparent), color-stop(65%, #025013));
+                    background-image: linear-gradient(transparent 40%, #025013 65%);
+                    z-index: 0;
+                }
+                // &:hover,
+                &:nth-of-type(2) {
+                    color: rgb(159, 251, 194);
+                    -webkit-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    transform: scale(1.2);
+                    z-index: 1;
+                    margin: 0 33px 0 11px;
+                    @include box_shad(0 2px 19px hsla(206, 20%, 16%, 0.541));
+                }
+                @include mobile {
+                    &:nth-of-type(2) {
+                        -webkit-transform: scale(1);
+                        -ms-transform: scale(1);
+                        transform: scale(1);
+                        -moz-transform: scale(1);
+                        -o-transform: scale(1);
+                        margin: 0 10px 0 11px;
+                        margin-bottom: 4%;
+                    }
+                }
+                @include laptop {
+                    &:nth-of-type(2) {
+                        -webkit-transform: scale(1.19);
+                        -ms-transform: scale(1.19);
+                        transform: scale(1.19);
+                        margin: 0 10px 0 11px;
+                        margin-bottom: 0;
+                    }
+                }
+                @include laptop_L {
+                    &:nth-of-type(2) {
+                        -webkit-transform: scale(1.29);
+                        -ms-transform: scale(1.29);
+                        transform: scale(1.29);
+                        margin: 0 33px 0 11px;
+                        margin-bottom: 0;
+                    }
+                }
+                @include laptop_W {
+                    &:nth-of-type(2) {
+                        -webkit-transform: scale(1.2);
+                        -ms-transform: scale(1.2);
+                        transform: scale(1.2);
+                        margin: 0 33px 0 11px;
+                        margin-bottom: 0;
                     }
                 }
             }
@@ -1128,7 +1201,7 @@
                     @include flex_bs(1);
                     @include flex();
                     margin: auto 0 auto 3%;
-                    overflow: hidden;
+                    // overflow: hidden;
                     z-index: 2;
                     @include bod_radius(2em);
                     @include box_shad(10px 10px 30px rgba(0, 0, 0, 0.149));
@@ -2759,7 +2832,7 @@
             padding: 20px;
             @include bod_radius(1em);
             overflow: hidden;
-            // @include box_shad((-5px -10px 0px 0px #d8e1ea, 5px 10px 0px 0px #d8e1ea));
+            //@includebox_shad((-5px-10px0px0px#d8e1ea,5px10px0px0px#d8e1ea)):;
             background: #fff;
             background: url(../img/home/fleets1.jpg);
             background-size: cover;
@@ -2768,6 +2841,7 @@
             margin: 0 20px 0 0;
             color: aliceblue;
             background-image: url(../img/43.png);
+            position: relative;
             @include box_shad(0 4px 4px #c3c7ca);
             &:hover {
                 color: rgb(159, 251, 194);
@@ -2785,7 +2859,10 @@
                 background-image: -o-linear-gradient(transparent 60%, hsl(133, 95%, 16%));
                 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), to(hsl(133, 95%, 16%)));
                 background-image: linear-gradient(transparent 60%, hsl(133, 95%, 16%));
-                z-index: -1;
+                // background-image: -o-linear-gradient(transparent 40%, #025013 65%);
+                // background-image: -webkit-gradient(linear, left top, left bottom, color-stop(40%, transparent), color-stop(65%, #025013));
+                // background-image: linear-gradient(transparent 40%, #025013 65%);
+                z-index: 0;
             }
             @include mobile {
                 width: ((100% /1) - 1%);
