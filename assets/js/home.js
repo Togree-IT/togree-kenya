@@ -58,21 +58,21 @@ $(document).ready(function($) {
             settings: {
                 arrows: false,
                 centerPadding: '40px',
-                // slidesToShow: 1
+                slidesToShow: 1
             }
         }, {
             breakpoint: 768,
             settings: {
                 arrows: false,
                 centerPadding: '100px',
-                // slidesToShow: 1
+                slidesToShow: 1
             }
         }, {
             breakpoint: 1204,
             settings: {
                 arrows: true,
                 centerPadding: '40px',
-                // slidesToShow: 3
+                slidesToShow: 3
             }
         }]
     });
