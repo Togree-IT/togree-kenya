@@ -65,6 +65,17 @@ router.get('/list_pages', (req, res) => {
     });
 
 });
+// Get running program
+router.get('/@running_program', (req, res) => {
+    let content = funs.getFullCont.getRunningProgram({});
+
+    content.then(data => {
+        res.status(200).json(data.items);
+    }).catch(err => {
+        console.log(err.details);
+    });
+
+});
 
 
 router.use("/contact", require("../routes/contact"));

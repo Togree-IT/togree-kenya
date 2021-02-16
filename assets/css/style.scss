@@ -124,6 +124,7 @@
                     .slick-track {
                         @include flex();
                     }
+                    height: 100%;
                 }
                 ._slick-dots {
                     display: -webkit-box !important;
@@ -1031,9 +1032,9 @@
                             @include laptop_W {
                                 width: 80%;
                             }
-                            p {
-                                margin: 0;
-                            }
+                            // p {
+                            //     margin: 0;
+                            // }
                         }
                         .art_action {
                             margin: 20px 0;
@@ -2132,6 +2133,9 @@
                     .art_news_card_co {
                         padding: 25px;
                         outline: none;
+                        -webkit-transition: .3s linear;
+                        -o-transition: .3s linear;
+                        transition: .3s linear;
                         @include mobile {
                             padding: 25px
                         }
@@ -2140,6 +2144,11 @@
                         }
                         @include laptop {
                             padding: 25px
+                        }
+                        &:hover:not(.slick-current) {
+                            -webkit-transform: scale(1.1);
+                            -ms-transform: scale(1.1);
+                            transform: scale(1.1);
                         }
                     }
                     .art_news_card {
@@ -3114,9 +3123,11 @@
                     width: 60%;
                 }
                 .art_input_co {
-                    background: transparent;
+                    background: #fff;
+                    color: #3c3c3c;
+                    border: 0;
                     input {
-                        color: aliceblue;
+                        color: inherit;
                     }
                 }
                 @include mobile {

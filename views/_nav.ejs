@@ -54,53 +54,42 @@
             <li>
                 <div class="divider"></div>
             </li>
-            <!-- <li>
-                <a class="subheader">
-                    <%= lang_("Quick_Links") %>
-                </a>
-            </li> -->
-
-            <li>
-                <div class="collapsible-header">Categories</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li class="">
-                <a href="<%= typeof path !== 'undefined'?path:'' %>products">PRODUCTS</a>
-            </li>
-
-            <li>
-                <a href="<%= typeof path !== 'undefined'?path:'' %>glob">BLOG</a>
-            </li>
-            <li>
-                <a href="<%= typeof path !== 'undefined'?path:'' %>about-us">ABOUT US</a>
-            </li>
-            <li>
-                <a href="<%= typeof path !== 'undefined'?path:'' %>contact-us">CONTACT US</a>
-            </li>
-            </li>
-
+            <% if(typeof user === "undefined"){%>
+                <li>
+                    <a href="<%= path %>users/login">
+                        <%- lang_('Login') %>
+                    </a>
+                </li>
+                <% } %>
         </ul>
     </div>
 
     <!-- Right options  -->
     <div class="art_nav-left">
-        <form action="#" class="art_head_search_form" id="head_search_form" method="GET">
-            <div class="art_input_co">
-                <label for="q" class="art_under_search"><em class="material-icons">search</em></label>
-                <input type="text" name="q" id="q" class="art_input" placeholder="Search here...">
-                <button disabled aria-disabled="true" type="submit" class="art_submit_search"><em class="material-icons">search</em></button>
-            </div>
-        </form>
-        <button class="art_btn waves-effect"><em class="material-icons">search</em></button>
+        <% if(typeof user === "undefined"){%>
+            <a href="<%= path %>/users/login" class="art_btn art_gree_btn filled login_btn">
+                <%- lang_('Login') %>
+            </a>
+            <% } %>
+                <form action="#" class="art_head_search_form" id="head_search_form" method="GET">
+                    <div class="art_input_co">
+                        <label for="q" class="art_under_search"><em class="material-icons">search</em></label>
+                        <input type="text" name="q" id="q" class="art_input" placeholder="Search here...">
+                        <button disabled aria-disabled="true" type="submit" class="art_submit_search"><em class="material-icons">search</em></button>
+                    </div>
+                </form>
+                <button class="art_btn waves-effect"><em class="material-icons">search</em></button>
 
-        <button class="art_btn art_shop_cart">
+                <button class="art_btn art_shop_cart">
             <span class="art_cart_badge">5</span>
                 <em class="material-icons">shopping_basket</em>
             </button>
-        <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
-                <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/language/<%= typeof language !== "undefined"? language:'' %>.svg" alt="<%= typeof language !== "undefined"? language:'' %> flag" srcset="">
-                <em class="material-icons">expand_more</em>
-            </button>
+                <% if(typeof user === "undefined"){%>
+                    <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
+                        <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/language/<%= typeof language !== "undefined"? language:'' %>.svg" alt="<%= typeof language !== "undefined"? language:'' %> flag" >
+                        <em class="material-icons">expand_more</em>
+                    </button>
+                    <% } %>
     </div>
 
 
@@ -236,6 +225,37 @@
         let topPagesTemp2 = (page) => {
             return `<li> <a href="javascript:void(0)" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_services'> ${page.title} <em class="material-icons">expand_more</em> </a></li>`;
         };
+        let hasChildrenID = '';
+
+        function renderPages_mobile(page, hasChildren) {
+
+            let temp1 = (id) => ` <li>
+                <div class="collapsible-header">${page.title}</div>
+                <div class="collapsible-body" id="${id}"> </div>
+            </li>`;
+            let temp2 = `<li>
+                <a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}">${page.title}</a>
+            </li>`;
+            let menu_nav = document.querySelector('#menu-nav');
+            if (menu_nav) {
+                if (hasChildren) {
+                    hasChildrenID = 'serve_children_' + page.title;
+                    menu_nav.innerHTML += temp1(hasChildrenID)
+                } else {
+                    menu_nav.innerHTML += temp2
+                }
+            }
+        }
+
+        function render_sevices_mobile(page) {
+            let temp = `<a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}">${page.name}</a>`;
+
+            let container = document.querySelector('#' + hasChildrenID);
+            if (container) {
+                container.innerHTML += temp;
+            }
+        }
+
         axios.get("<%= path %>api/list_pages").then(res => {
             let data = res.data;
             if (data.length) {
@@ -250,7 +270,7 @@
                             lang_(page.title).then(title => {
                                 page.title = title;
                                 top_pages.innerHTML += topPagesTemp2(page);
-
+                                renderPages_mobile(page, true)
                             })
 
                         } else {
@@ -258,9 +278,9 @@
                             lang_(page.title).then(title => {
                                 page.title = title;
                                 top_pages.innerHTML += topPagesTemp1(page);
+                                renderPages_mobile(page, !true)
                             })
                         }
-                        // console.log(page);
                     })
                 }
                 if (children.length) {
@@ -285,16 +305,20 @@
                                     top_art_nav_services_co.innerHTML = '';
                                     child.map(under_page => {
                                         under_page = under_page.fields;
-                                        console.log(under_page);
+
                                         top_art_nav_services_co.innerHTML += serviceTemp(under_page, index++);
 
                                         if (top_art_nav_services_co.querySelectorAll('a').length >= child.length) {
                                             setTimeout(() => {
                                                 under_pageDropdowns();
-                                            }, 665)
+
+                                            }, 665, under_page)
                                         }
 
                                         fetchServices(under_page);
+                                        setTimeout(() => {
+                                            render_sevices_mobile(under_page);
+                                        }, 455, under_page)
                                     })
                                 }
                             }

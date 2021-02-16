@@ -73,7 +73,7 @@ body {
             min-height: 45vh;
         }
         @include laptop {
-            min-height: 55vh;
+            min-height: auto;
         }
         @include laptop_L {
             min-height: 50vh;
@@ -271,6 +271,12 @@ body {
             img {
                 width: 100%;
                 max-width: 100%;
+                @include mobile {
+                    display: none;
+                }
+                @include laptop {
+                    display: block;
+                }
             }
             @include mobile {
                 top: 0;
@@ -487,6 +493,25 @@ body {
         background: white;
         min-height: (20vh * 2);
         padding: 40px 0;
+        .art_container {
+            max-width: 70%;
+            margin: auto;
+            @include mobile {
+                max-width: 100%;
+            }
+            @include tablet {
+                max-width: 100%;
+            }
+            @include laptop {
+                max-width: 100%;
+            }
+            @include laptop_L {
+                max-width: 90%;
+            }
+            @include laptop_W {
+                max-width: 70%;
+            }
+        }
     }
     // social media styling starts here
     .art_left_right_co {
@@ -499,10 +524,24 @@ body {
         width: 100%;
         padding: 35px 10px;
         .art_card {
-            -webkit-box-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            padding: 0 10px;
+            width: 60%;
+            padding: 0 20px;
+            &:nth-of-type(2) {
+                width: 40%;
+                padding: 0 10px;
+            }
+            @include mobile {
+                width: 100%;
+                &:nth-of-type(2) {
+                    width: 100%;
+                }
+            }
+            @include laptop {
+                width: 60%;
+                &:nth-of-type(2) {
+                    width: 40%;
+                }
+            }
         }
     }
     main {

@@ -116,29 +116,31 @@
                 <div class="art_footer_impo_links_card art_connect">
                     <div class="art_header">
                         <div class="art_title">
-                            <h5>Let's Keep connected</h5>
+                            <h5>
+                                <%- lang_("Let's_Keep_connected") %>
+                            </h5>
                         </div>
                     </div>
                     <div class="art_footer_connect">
 
                         <div class="art-foot-social">
-                            <a class="art-social-icon" href="#">
-                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/facebook2.png" alt="Facebook icon" />
+                            <a class="art-social-icon" href="<%= lang_('@company_facebook') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/facebook2.png" alt="<%= lang_('@company_title') %> Facebook" />
                         </a>
-                            <a class="art-social-icon" href="#">
-                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/linkedin2.png" alt="Linkedin icon" />
+                            <a class="art-social-icon" href="<%= lang_('@company_linkedin') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/linkedin2.png" alt="<%= lang_('@company_title') %>  Linkedin" />
                         </a>
-                            <a class="art-social-icon" href="#">
-                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/instagram2.png" alt="Instagram icon" />
+                            <a class="art-social-icon" href="<%= lang_('@company_instagram') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/instagram2.png" alt="<%= lang_('@company_title') %>  Instagram" />
                         </a>
-                            <a class="art-social-icon" href="#">
-                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/twitter2.png" alt="Twitter icon" />
+                            <a class="art-social-icon" href="<%= lang_('@company_twitter') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/twitter2.png" alt="<%= lang_('@company_title') %>  Twitter" />
                         </a>
 
                         </div>
                         <div class="art_subscribe_co">
 
-                            <form action="../api/subscribe" method="post">
+                            <form action="<%= typeof path !== " undefined "?path:'' %>api/subscribe" method="post">
                                 <div class="art_input_co">
                                     <input type="email" class="art_input" name="subscribe_email" placeholder="Type your email address here"></div>
                                 <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light" name="subscribe">subscribe</button>

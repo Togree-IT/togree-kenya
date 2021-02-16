@@ -2,7 +2,7 @@
     <%- include ("home-header.ejs") %>
 
         <main class="art-section-top">
-            <section class="art_head_bottom_cards" data-aos="zoom-out-right">
+            <section class="art_head_bottom_cards">
 
                 <div class="art_head_bottom_card_co">
                     <div class="art_head_bottom_card_header">
@@ -11,7 +11,7 @@
                         </h4>
                     </div>
                     <div class="art_head_bottom_card_body">
-                        <div class="art_our_services_card" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/asset-tracking.jpg')">
+                        <div class="art_our_services_card" style="background-image: url('<%= path%>assets/img/home/asset-tracking.jpg')">
                             <div class="art_our_services_card_content">
                                 <div class="art_our_services_card_header">
                                     <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-bar-chart-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
@@ -23,44 +23,46 @@
 
                             </div>
                         </div>
-                        <div class="art_our_services_card" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/fleet-safety.jpg');">
+                        <div class="art_our_services_card" style="background-image: url('<%= path %>assets/img/home/fleet-safety.jpg');">
                             <div class="art_our_services_card_content">
                                 <div class="art_our_services_card_header">
                                     <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-bar-chart-3d-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
-                                    <h4 class="art_our_services_card_header_title">Fleet Safety</h4>
+                                    <h4 class="art_our_services_card_header_title">
+                                        <%= lang_("Fleet_Safety")%>
+                                    </h4>
                                     <p class="art_our_services_card_title">
-                                        Help reduce risk, coach drivers, and improve the safety of your fleet at all times
+                                        <%= lang_(" Help_reduce_risk,_coach_drivers,_and_improve_the_safety_of_your_fleet_at_all_times")%>
                                     </p>
                                 </div>
-                                <!-- <div class="art_our_services_card_footer">
-                                    <button class="art_icon_btn art_btn art_gree_btn filled waves-effect">
-                                            <em class="material-icons">chevron_right</em>
-                                        </button>
-                                </div> -->
+
                             </div>
                         </div>
-                        <div class="art_our_services_card" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/fleet-sustainability.jpg');">
+                        <div class="art_our_services_card" style="background-image: url('<%= path %>assets/img/home/fleet-sustainability.jpg');">
                             <div class="art_our_services_card_content">
                                 <div class="art_our_services_card_header">
                                     <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-rental-house-contract-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
-                                    <h4 class="art_our_services_card_header_title">Fleet Sustainability</h4>
+                                    <h4 class="art_our_services_card_header_title">
+                                        <%= lang_("Fleet_Sustainability")%>
+                                    </h4>
                                     <p class="art_our_services_card_title">
-                                        Reduce impact on the environment and promote sustainable development with IoT solutions.
+                                        <%= lang_("Reduce_impact_on_the_environment_and_promote_sustainable_development_with_IoT_solutions.")%>
                                     </p>
                                 </div>
-
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
             </section>
-            <section class="art_ur_numbers">
+
+            <section class="art_ur_numbers" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                 <div class="art_middle">
-                    <h6 class="art_title">IF YOU STILL HAVE ANY DOUBT</h6>
-                    <h4 class="art_title">Let our numbers speack for us</h4>
+                    <h6 class="art_title">
+                        <%= lang_('IF_YOU_STILL_HAVE_ANY_DOUBT').toUpperCase() %>
+                    </h6>
+                    <h4 class="art_title">
+                        <%= lang_('Let_our_numbers_speack_for_us') %>
+                    </h4>
 
                     <div class="art_our_number_circle_main">
                         <div class="art_our_number_circle">
@@ -112,32 +114,13 @@
 
 
             </section>
-            <section class="art_build_your_store" style="background:#ffffff">
-                <div class="art_md_half_container">
-                    <span class="art_md_half art_half_img" style="background-image: url('<%= typeof path !== 'undefined' ?path:'' %>assets/img/home/delivery.png');" data-aos="zoom-in-right"></span>
-                    <div class="art_md_half art_half_content">
-                        <h4 class="art_title">We help you build your store</h4>
-                        <div class="art_desc">
-                            <p>Sir new the particular frequently indulgence excellence how.</p>
-                            <p>Wishing an if he sixteen visited tedious subject it. Mind mrs yet did quit high even you went. Sex against the two however not nothing prudent colonel greater. Up husband removed parties staying he.</p>
-                            </br>
-                            <p>Respect forming clothes do in he. Course so piqued no an by appear. </p>
-                            <p>uncivil. Sing tall much you get nor. </p>
-                            <p>Wishing an if he sixteen visited tedious subject ißt. Mind mrs yet did quit high even you went. Sex against the two however not nothing prudent colonel greater. Up husband removed parties staying he.</p>
-                            <p>uncivil. Sing tall much you get nor tedious subject ißt. Mind mrs yet did quit high even you went. Sex against the two however not nothing . </p>
-                            <p>Respect forming clothes do in he. Course so piqued no an by appear. </p>
-                            <p>uncivil. Sing tall much you get nor. </p>
-                        </div>
-                        <div class="art_action">
-                            <a href="#!"><button class="art_gree_btn filled waves-effect waves-light">LEARN MORE <em class="material-icons">chevron_right</em></button></a>
-                        </div>
-                    </div>
-                </div>
+
+            <section class="art_build_your_store" style="background:#ffffff" id="running_program" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
 
             </section>
 
             <!-- How do we operate -->
-            <section class="art_how_we_operate">
+            <section class="art_how_we_operate" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                 <div class="art_we_operate_desc">
                     <h4 class="art_we_operate_desc_title">
                         <%- lang_('How_do_we_Operate?') %>
@@ -176,9 +159,11 @@
             </section>
 
             <!-- Services -->
-            <section class="art_our_services">
+            <section class="art_our_services" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                 <div class="art_our_services_desc">
-                    <h4 class="art_our_services_desc_title">Our Main Services</h4>
+                    <h4 class="art_our_services_desc_title">
+                        <%- lang_('Our_Main_Services') %>
+                    </h4>
                     <div class="art_our_services_desc_text">
                         <p>
                             <%- lang_('We_provide_a_vasts_of_products_and_services_that_are_primarily_focused_on_automotive_tracking_solutions_and_Personal_monitoring.<br/>Our_products_include;_State-of-the-art,_maintenance_of_faulty,_the_provision_of_training_services_related_to_GPS_tracking_and_lastly_the_installation_of_vehicle_and_human_GPS_tracking_devices.') %></p>
@@ -207,7 +192,7 @@
             </section>
 
             <!-- Our products -->
-            <section class="art_our_products">
+            <section class="art_our_products" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                 <div class="container">
                     <div class="art_our_products_desc">
                         <h4 class="art_our_products_desc_title">
@@ -254,7 +239,7 @@
             </section>
 
             <!-- Our Community Globally -->
-            <section class="art_our_community">
+            <section class="art_our_community" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                 <div class="art_md_half_container">
                     <span class="art_md_half art_half_img"></span>
                     <div class="art_md_half art_half_content">
@@ -265,26 +250,11 @@
                             <div class="art_community_stories_co">
 
                                 <%- renderImplimental(lang_('@why_choose_us')) %>
-                                    <!-- <div class="art_community_cards">
-                                        <div class="art_community_card">
-                                            <h4>344343</h4>
-                                            <span class="art_community_card_sub">Success stories</span>
-                                        </div>
-                                        <div class="art_community_card">
-                                            <h4>248</h4>
-                                            <span class="art_community_card_sub">Stores globally</span>
-                                        </div>
-                                        <div class="art_community_card">
-                                            <h4>30782</h4>
-                                            <span class="art_community_card_sub">Shipments yearly</span>
-                                        </div>
-                                    </div> -->
+
                             </div>
 
                         </div>
-                        <!-- <div class="art_action">
-                            <a href="#!"><button class="art_gree_btn filled waves-effect waves-light">LEARN MORE <em class="material-icons">chevron_right</em></button></a>
-                        </div> -->
+
                     </div>
                 </div>
 
@@ -294,15 +264,13 @@
             <!-- Our latest news -->
 
             <section class="art_our_news">
-                <div class="art_news_container">
+                <div class="art_news_container" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
                     <div class="container">
                         <div class="art_our_news_desc">
                             <h5 class="art_our_news_desc_title">
                                 <%- lang_('Latest_News') %>
                             </h5>
-                            <!-- <div class="art_our_news_desc_text">
-                                <p>Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of.</p>
-                            </div> -->
+
                         </div>
                         <div class="art_our_news_cards">
                             <div class="art_news_card_co">
@@ -363,7 +331,9 @@
                     <div class="container">
                         <div class="art_updates">
                             <div class="art_our_news_desc">
-                                <h5 class="art_our_news_desc_title">Join the Togree telematics community and stay in touch with service providers, software developers, and hardware manufacturers</h5>
+                                <h5 class="art_our_news_desc_title">
+                                    <%- lang_("Join_the_Togree_telematics_community_and_stay_in_touch_with_service_providers,_software_developers,_and_hardware_manufacturers") %>
+                                </h5>
                             </div>
                             <div class="art_updates_co">
                                 <div class="art_updates_tabs">
@@ -371,10 +341,10 @@
                                         <div class="col s12">
                                             <ul class="tabs">
                                                 <li class="tab col s3"><a class="active" href="#art_tab_update"><em class="art_tabs_counter">1</em>Live updates</a></li>
-                                                <li class="tab col s3"><a href="#art_tab_busi_dev"><em class="art_tabs_counter">2</em>Business development</a></li>
-                                                <li class="tab col s3"><a href="#art_tab_tech_support"><em class="art_tabs_counter">3</em>Technical support</a></li>
-                                                <li class="tab col s3"><a href="#art_tab_training"><em class="art_tabs_counter">4</em>Training</a></li>
-                                                <li class="tab col s3"><a href="#art_tab_marketing_assistance"><em class="art_tabs_counter">5</em>Marketing assistance</a></li>
+                                                <li class="tab col s3"><a href="#art_tab_busi_dev"><em class="art_tabs_counter">2</em><%- lang_("Business_development") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_tech_support"><em class="art_tabs_counter">3</em><%- lang_("Technical_support") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_training"><em class="art_tabs_counter">4</em><%- lang_("Training") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_marketing_assistance"><em class="art_tabs_counter">5</em><%- lang_("Marketing_assistance") %></a></li>
                                             </ul>
                                         </div>
                                         <div id="art_tab_update" class="col s12 art_tabs_content">
@@ -388,14 +358,15 @@
                                                     </div>
                                                     <div class="art_update_card_body">
                                                         <span class="art_update_desc">
-                                            <p>Certain forbade picture now prevent carried she get see 
-                                            sitting. Up twenty limits as months.</p>
-                                            <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
-                                            <p>Nay add far few immediate sweetness earnestly ejection.</p>
-                                        </span>
+                                                            <p>Certain forbade picture now prevent carried she get see sitting. Up twenty limits as months.</p>
+                                                            <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
+                                                            <p>Nay add far few immediate sweetness earnestly ejection.</p>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_foot">
-                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">Get more info</a>
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">
+                                                            <%- lang_("Get_more_info") %>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -407,18 +378,19 @@
                                             <div class="art_updates_cards_co art_left">
                                                 <div class="art_update_card">
                                                     <div class="art_update_card_header">
-                                                        <span class="art_update_title"><h5>Do not just develop it, own it</h5></span>
+                                                        <span class="art_update_title">
+                                                            <h5><%- lang_("@company_business_development_title") %></h5>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_body">
                                                         <span class="art_update_desc">
-                                            <p>Certain forbade picture now prevent carried she get see 
-                                            sitting. Up twenty limits as months.</p>
-                                            <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
-                                            <p>Nay add far few immediate sweetness earnestly ejection.</p>
-                                        </span>
+                                                            <p><%- lang_("@company_business_development_description") %></p>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_foot">
-                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">Get started</a>
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="<%= path %>programs/reseller/join">
+                                                            <%- lang_("Get_started") %>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -430,18 +402,17 @@
                                             <div class="art_updates_cards_co art_right">
                                                 <div class="art_update_card">
                                                     <div class="art_update_card_header">
-                                                        <span class="art_update_title"><h5>Providing technical support to an exception level</h5></span>
+                                                        <span class="art_update_title"><h5><%- lang_("@company_technical_support_title") %></h5></span>
                                                     </div>
                                                     <div class="art_update_card_body">
                                                         <span class="art_update_desc">
-                                            <p>Certain forbade picture now prevent carried she get see 
-                                            sitting. Up twenty limits as months.</p>
-                                            <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
-                                            <p>Nay add far few immediate sweetness earnestly ejection.</p>
-                                        </span>
+                                                            <p><%- lang_("@company_technical_support_description") %></p>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_foot">
-                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">Get intouch</a>
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="<%= path %>contact-us">
+                                                            <%- lang_("Get_intouch") %>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -453,18 +424,21 @@
                                             <div class="art_updates_cards_co art_left">
                                                 <div class="art_update_card">
                                                     <div class="art_update_card_header">
-                                                        <span class="art_update_title"><h5>Making the product easy-to-understand</h5></span>
+                                                        <span class="art_update_title">
+                                                            <h5>
+                                                                <%- lang_("@company_training_title") %>
+                                                            </h5>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_body">
                                                         <span class="art_update_desc">
-                                        <p>Certain forbade picture now prevent carried she get see 
-                                        sitting. Up twenty limits as months.</p>
-                                        <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
-                                        <p>Nay add far few immediate sweetness earnestly ejection.</p>
-                                    </span>
+                                                            <p><%- lang_("@company_training_description") %></p>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_foot">
-                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">Get started</a>
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">
+                                                            <%- lang_("Get_started") %>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -476,18 +450,21 @@
                                             <div class="art_updates_cards_co art_left">
                                                 <div class="art_update_card">
                                                     <div class="art_update_card_header">
-                                                        <span class="art_update_title"><h5>Need support with your marketing?</h5></span>
+                                                        <span class="art_update_title">
+                                                            <h5>
+                                                                <%- lang_("@company_marketing_strategy_title") %>
+                                                            </h5>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_body">
                                                         <span class="art_update_desc">
-                                            <p>Certain forbade picture now prevent carried she get see 
-                                            sitting. Up twenty limits as months.</p>
-                                            <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
-                                            <p>Nay add far few immediate sweetness earnestly ejection.</p>
-                                        </span>
+                                                            <p><%- lang_("@company_marketing_strategy_description") %></p>
+                                                        </span>
                                                     </div>
                                                     <div class="art_update_card_foot">
-                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">Get more info</a>
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">
+                                                            <%- lang_("Get_more_info") %>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -510,22 +487,24 @@
                         <div class="art_left_right_content_card">
                             <div class="art_left_right_content">
                                 <div class="art_left_right_content_title">
-                                    <h5>Active mutual nor father motherexeter change six did all. </h5>
+                                    <h5>
+                                        <%- lang_('Shipping_and_Tracking') %>
+                                    </h5>
                                 </div>
                                 <div class="art_left_right_content_desc">
-                                    <p>Repulsive he he as deficient newspaper dashwoods we.</p>
-                                    <p>Discovered his pianoforte insipidity entreaties. Began he at terms meant as fancy. Breakfast arranging he if furniture we described on.</p>
-                                    <p>Astonished thoroughly unpleasant especially you dispatched bed favourable. Active mutual nor father mother exeter change six did all. </p>
+                                    <p>
+                                        <%- lang_('All_orders_received_are_shipped_not_less_than_24/hrs_after_order_has_been_confirmed,_we_also_provide_our_clients_and_partners_the_ability_to_track_their_orders_with_our_real-time_tracking_platform_and_that_of_our_shipping_partners_spread_across_Asia_and_Africa.') %>
+                                    </p>
                                 </div>
                                 <div class="art_left_right_content_foot">
                                     <div class="art_left_right_content_foot_cards">
                                         <div class="art_left_right_content_foot_card">
                                             <h4>344343</h4>
-                                            <span class="art_left_right_content_foot_card_sub">Success stories</span>
+                                            <span class="art_left_right_content_foot_card_sub"><%= lang_('Success_stories') %> </span>
                                         </div>
                                         <div class="art_left_right_content_foot_card">
                                             <h4>248</h4>
-                                            <span class="art_left_right_content_foot_card_sub">Stores globally</span>
+                                            <span class="art_left_right_content_foot_card_sub"><%= lang_('Stores_globally') %></span>
                                         </div>
                                     </div>
                                 </div>
@@ -539,12 +518,17 @@
                         <div class="art_left_right_content_card">
                             <div class="art_left_right_content">
                                 <div class="art_left_right_content_title">
-                                    <h5> Though all excuse ladies rather regard assure yet. If feelings so prospect</h5>
+                                    <h5>
+                                        <%- lang_("Why_should_you_track_your_Vehicles_and_Fleet?")%>
+                                    </h5>
                                 </div>
                                 <div class="art_left_right_content_desc">
-                                    <p>Repulsive he he as deficient newspaper dashwoods we. Discovered his pianoforte insipidity entreaties. Began he at terms meant as fancy. Breakfast arranging he if furniture we described on.</p>
-                                    <p>Astonished thoroughly unpleasant especially you dispatched bed favourable. </p>
-                                    <p>Active mutual nor father mother exeter change six did all. Repulsive he he as deficient newspaper dashwoods we.</p>
+                                    <p>
+                                        <%- lang_("Many_benefits_surround_the_need_to_track_your_vehicles_with_the_availability_of_IoT_vehicle_trackers_like_TK08__and_tracking_platforms_like_Trackgree.")%>
+                                    </p>
+                                    <p>
+                                        <%- lang_("Car_Trackers_will_help_you_manage_and_monitor_your_fuel_usage,_driver_safety_when_an_emergency_incident_happens,_and_also_increase_productivity_in_picking_out_the_shortest_way_to_a_destination.")%>
+                                    </p>
                                 </div>
                                 <div class="art_left_right_content_foot">
                                     <div class="art_left_right_content_foot_search_co">

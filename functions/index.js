@@ -475,6 +475,14 @@ exports.getFullCont = {
         query = query || {}
         query['content_type'] = 'services';
         return this.c_client().getEntries(query)
+    },
+    getRunningProgram: (query) => {
+        query = query || {}
+        query['content_type'] = 'programs';
+        query['fields.active'] = true;
+        query['limit'] = 1;
+        query['order'] = 'sys.createdAt';
+        return this.c_client().getEntries(query)
     }
 };
 
