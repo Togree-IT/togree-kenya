@@ -1,3 +1,5 @@
+// const { promiseImpl } = require("ejs");
+
 function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
@@ -28,24 +30,64 @@ function getPackegeByID(package, ID) {
     return data
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
 
-    // active btn script 
-    const iconHeader = document.querySelector("#iconheader");
-    const Icons = iconHeader.querySelectorAll(".shop__products__header__iconwrapper");
+    const fetchBlogContent = new Promise((resolve, reject) => {
 
-    for (let i = 0; i < Icons.length; i++) {
-        Icons[i].addEventListener("click", ActiveIcon)
+        resolve((_ => {
 
-        function ActiveIcon() {
-            let current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace("active", "");
-            this.className += " active";
-        }
-    }
-    ActiveIcon()
-        // shop products fectch Logic
+            const blogSidebartemp = (data) => {
+
+                return `<div class="blog__sidebar__cards">
+                            <div class="blog__sidebar__cards__img">
+                            <img class="blog__sidebar__cards__pic" src="${data.imagepath}" alt="relatedcontent">
+                                </div>
+                            <div class="blog__sidebar__cards__links">
+                                <a class="blog__sidebar__cards__link" href="#"><span>${data.blogTitle}</span></a>
+                            </div>
+                        </div> `;
+
+            };
+
+            fetch(window.location.origin + '/bloglist.json')
+                .then(data => data.json())
+                .then(data => {
+                    // data = data[0];
+                    console.log(data);
+                    const blogWrapper = document.querySelector("#blogwrapper");
+                    if (data.length) {
+                        blogWrapper.innerHTML = '';
+
+                        for (let label of data) {
+
+                            blogWrapper.insertAdjacentHTML("afterbegin", blogSidebartemp(label))
+                        }
+
+                    }
+
+                })
+                .catch(err => console.log(err))
+
+
+
+        })());
+
+
+
+    })
+
+    fetchBlogContent.then(() => {
+
+    }).catch(err => console.log(err))
+
+
+
+
+
+    // shop products fectch Logic
     const fetchShopProducts = new Promise((resolve, reject) => {
 
         resolve((_ => {
@@ -88,8 +130,28 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     fetchShopProducts.then(() => {
-        console.log("shopcontent loaded");
+
     }).catch(err => console.log(err))
+
+
+    // active btn script 
+    const iconHeader = document.querySelector("#iconheader");
+    const Icons = iconHeader.querySelectorAll(".iconwrapper");
+
+    for (let i = 0; i < Icons.length; i++) {
+        Icons[i].addEventListener("click", ActiveIcon)
+
+        function ActiveIcon() {
+            let current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace("active", " ");
+            this.className += " active";
+        }
+    }
+    ActiveIcon()
+
+
+
+
 
 
     // Shop Page noUislider functionalities
@@ -251,8 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     fetchProducts.then(() => {
-        console.log('Data loaded');
-        // Do othe tings
+
     }).catch(err => console.log(err))
 
 
@@ -425,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTabs();
 
     fetchContent.then(() => {
-        console.log('Data loaded');
+
         // Do othe tings
     }).catch(err => console.log(err))
 
@@ -653,7 +714,6 @@ function productTemp(product) {
     function renderMin(prod) {
         return typeof prod.min !== 'undefined' ? 'min="' + prod.min + '"' : ''
     }
-    // console.log(product);
 
     function renderMax(prod) {
         return typeof prod.max !== 'undefined' ? 'max="' + prod.max + '"' : ''
@@ -757,8 +817,7 @@ function removeCart(prodID) {
     summeryData = removed;
     removed = {}
     populateTotalPrice()
-    console.log(summeryData);
-    console.log(allCart_price);
+
 
 
 }
@@ -851,7 +910,8 @@ fetch(window.location.origin + '/productData.json').then(e => e.json())
                         if (typeof _package !== "undefined") {
                             let priceXQTY = (+_package.packageItem.productPrice * (+_package.package.from));
                             let percentageOff = getPacentageOff((priceXQTY), (+_package.package.packageOffer));
-                            console.log((+_package.package.packageOffer));
+
+
                             totalPrice.push(priceXQTY - (percentageOff));
 
                             _package.packageItem.qty = _package.package.from;
@@ -868,10 +928,10 @@ fetch(window.location.origin + '/productData.json').then(e => e.json())
                 })
 
                 // TODO: Get total and subtotal based on the product price
-                // console.log(totalPrice)
+
                 cartTotal(totalPrice)
 
 
             });
-        console.log(summeryData)
+
     })
