@@ -289,12 +289,12 @@
                                         top_art_nav_services_co.innerHTML += serviceTemp(under_page, index++);
 
                                         if (top_art_nav_services_co.querySelectorAll('a').length >= child.length) {
-
                                             setTimeout(() => {
                                                 under_pageDropdowns();
                                             }, 665)
-
                                         }
+
+                                        fetchServices(under_page);
                                     })
                                 }
                             }
@@ -309,7 +309,6 @@
     }
 
     function under_pageDropdowns() {
-
         var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
 
         if (top_nav_menu_trigger.length) {
@@ -327,7 +326,7 @@
                     if (caret) {
                         if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
                     }
-                    console.log(e);
+
                     // fetch_nav_services();
                 },
                 onCloseStart: e => {
@@ -342,5 +341,36 @@
                 }
             });
         }
+    }
+
+    function fetchServices(page) {
+        let servTemp = () => {
+
+            return ` <a href="<%= typeof path !== "undefined"?path:'' %>services/main/${page.slug}" class="art_our_services_card waves-effect" style="background-image: url('${page.previewImage.fields.file.url}');">
+            <div class="art_our_services_card_content">
+                <div class="art_our_services_card_header">
+                    <img src="${page.icon.fields.file.url}" alt="${page.icon.fields.title}" class="art_our_services_card_header_icon_image">
+                    <h4 class="art_our_services_card_header_title">${page.name.split(' ').join('&nbsp;')}</h4>
+                </div>
+                <div class="art_our_services_card_footer">
+                    <button class="art_icon_btn art_btn art_gree_btn filled waves-effect">
+                        <em class="material-icons">chevron_right</em>
+                    </button>
+                </div>
+            </div>
+        </a>`
+        };
+
+        let art_top_services = document.querySelector("#art_top_services");
+        if (art_top_services) {
+            art_top_services.innerHTML = '';
+            lang_(page.name).then(title => {
+                page.name = title;
+                art_top_services.innerHTML += servTemp();
+
+            })
+
+        }
+
     }
 </script>

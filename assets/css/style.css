@@ -1970,6 +1970,41 @@ body .art-section-top .art_our_services .art_our_services_desc .art_our_services
   }
 }
 
+body .art-section-top .art_our_services .art_our_services_desc .art_our_services_desc_text {
+  width: 50%;
+  margin: auto;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-section-top .art_our_services .art_our_services_desc .art_our_services_desc_text {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .art-section-top .art_our_services .art_our_services_desc .art_our_services_desc_text {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-section-top .art_our_services .art_our_services_desc .art_our_services_desc_text {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art-section-top .art_our_services .art_our_services_desc .art_our_services_desc_text {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art-section-top .art_our_services .art_our_services_desc .art_our_services_desc_text {
+    width: 50%;
+  }
+}
+
 body .art-section-top .art_our_services .art_our_services_cards_container {
   width: 100%;
   display: -webkit-box;
@@ -2381,24 +2416,35 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
 @media screen and (min-width: 320px) {
   body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card {
     padding-top: 15px;
+    max-height: 95px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card {
+    padding-top: 15px;
+    max-height: 144px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card {
     padding-top: 5px;
+    max-height: 110px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card {
     padding-top: 0;
+    max-height: 180px;
   }
 }
 
 @media screen and (min-width: 2560px) {
   body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card {
     padding-top: 0;
+    max-height: 210px;
   }
 }
 
@@ -9551,6 +9597,7 @@ body .art_our_services_card .art_our_services_card_content .art_our_services_car
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  z-index: 1;
 }
 
 body .art_our_services_card .art_our_services_card_content .art_our_services_card_header .art_our_services_card_header_title {

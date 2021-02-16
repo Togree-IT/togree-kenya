@@ -79,41 +79,7 @@ $(document).ready(function($) {
     initializeAOSAnimations();
 
     fetchTopProducts();
-    fetchServices();
 
-    function fetchServices() {
-        let servTemp = (data, index) => { /* /${data.slogan} */
-            return ` <a href="${path}services/main/${index}" class="art_our_services_card waves-effect" style="background-image: url('${path}${data.preview_image}');">
-            <div class="art_our_services_card_content">
-                <div class="art_our_services_card_header">
-                    <img src="${path}${data.icon}" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
-                    <h4 class="art_our_services_card_header_title">${data.name}</h4>
-                </div>
-                <div class="art_our_services_card_footer">
-                    <button class="art_icon_btn art_btn art_gree_btn filled waves-effect">
-                        <em class="material-icons">chevron_right</em>
-                    </button>
-                </div>
-            </div>
-        </a>`
-        };
-        axios.get(path + 'services/@get-services').then(res => {
-            let data = res.data;
-            let art_top_services = document.querySelector("#art_top_services");
-            if (art_top_services) {
-                art_top_services.innerHTML = '';
-                let index = 0;
-                data.map(service => {
-                    lang_(service.name).then(title => {
-                        service.name = title;
-                        art_top_services.innerHTML += servTemp(service, index++);
-
-                    })
-                })
-            }
-
-        })
-    }
 
     function fetchTopProducts() {
         let _i = 0;

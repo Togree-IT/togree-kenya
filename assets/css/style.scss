@@ -1424,6 +1424,25 @@
                             padding: 10px 82px 10px 22px;
                         }
                     }
+                    .art_our_services_desc_text {
+                        width: 50%;
+                        margin: auto;
+                        @include mobile {
+                            width: 100%;
+                        }
+                        @include tablet {
+                            width: 95%;
+                        }
+                        @include laptop {
+                            width: 90%;
+                        }
+                        @include laptop_L {
+                            width: 75%;
+                        }
+                        @include laptop_W {
+                            width: 50%;
+                        }
+                    }
                 }
                 .art_our_services_cards_container {
                     width: 100%;
@@ -1731,15 +1750,23 @@
                             -ms-transition: 0.3s linear;
                             @include mobile {
                                 padding-top: 15px;
+                                max-height: 95px;
+                            }
+                            @include tablet {
+                                padding-top: 15px;
+                                max-height: 144px;
                             }
                             @include laptop {
                                 padding-top: 5px;
+                                max-height: 110px;
                             }
                             @include laptop_L {
                                 padding-top: 0;
+                                max-height: 180px;
                             }
                             @include laptop_W {
                                 padding-top: 0;
+                                max-height: 210px;
                             }
                             .art_product_img {
                                 max-width: 100%;
@@ -2949,6 +2976,7 @@
                     -webkit-box-direction: normal;
                     -ms-flex-direction: column;
                     flex-direction: column;
+                    z-index: 1;
                     .art_our_services_card_header_title {
                         font-size: 1.8rem;
                         width: 100%;
