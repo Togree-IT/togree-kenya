@@ -454,6 +454,7 @@ button {
                     }
                 }
                 &__CTA {
+                    text-decoration: none;
                     background-color: #24C347;
                     border: none;
                     color: #FFF;
@@ -497,6 +498,7 @@ button {
                     opacity: 1;
                     font-size: .8rem;
                     background: #24C347;
+                    color: #FFF;
                 }
                 .shop__products__productcontainer__pic {
                     transform: scale(1.4);

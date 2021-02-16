@@ -708,6 +708,7 @@ button:active, button:focus {
 }
 
 .shop__products__productcontainer__productdetails__CTA {
+  text-decoration: none;
   background-color: #24C347;
   border: none;
   color: #FFF;
@@ -766,6 +767,7 @@ button:active, button:focus {
   opacity: 1;
   font-size: .8rem;
   background: #24C347;
+  color: #FFF;
 }
 
 .shop__products__productcontainer:hover .shop__products__productcontainer__pic, .shop__products__productcontainer:active .shop__products__productcontainer__pic {

@@ -5,18 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | Togree </title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5eaa28fea9.js" crossorigin="anonymous"></script>
-    <link href="../assets/lib/materialize/extras/noUiSlider/nouislider.css" rel="stylesheet">
-    <script src="../assets/lib/materialize/extras/noUiSlider/nouislider.js"></script>
+    <title> Blog | Togree </title>
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../assets/lib/materialize/css/icons.css">
     <link rel="stylesheet" href="../assets/lib/materialize/css/materialize.min.css">
     <link rel="stylesheet" href="../assets/css/globals.css">
-    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/shop.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
 
 </head>
 
@@ -185,76 +180,80 @@
         </ul>
     </nav>
 
-    <section class="shop">
+    <section class="blog">
+        <div class="blog__content">
+            <div class="blog__content__header">
+                <h2 class="blog__content__title">Why You need GPS trackers ?</h2>
+                <p class="blog__content__date"><span> Published Jan 18</span></p>
+            </div>
 
-        <div class="shop__sidebarwrapper" id="sidewrapper">
-            <div class="shop__sidebar">
+            <div class="blog__content__contentbody">
 
-                <i class="lni lni-cross-circle shop__sidebar__exiticon" id="exiticon"></i>
-
-                <div class="art_input_co">
-                    <i class="lni lni-search-alt  shop__sidebar__icon"></i>
-                    <input class="art_input" type="text" placeholder="Search Product" id="searchbtn">
+                <div class="blog__content__img">
+                    <img class="blog__content__pic" src="../assets/img/blogIMG.png" alt="blog preview">
                 </div>
 
-                <div class="shop__sidebar__category">
-                    <h5 class="shop__sidebar__category__header">CATEGORY</h5>
-                    <h6 class="shop__sidebar__category__subheader">Asset GPS Trackers</h6>
-                    <h6 class="shop__sidebar__category__subheader">Vechicle GPS Trackers</h6>
-                    <h6 class="shop__sidebar__category__subheader">Personal Trackers</h6>
-
-                    <h6 class="shop__sidebar__category__subheader">Camera</h6>
-                </div>
-
-                <div class="shop__sidebar__price">
-
-                    <div class="shop__sidebar__price__titlecontainer">
-                        <h5 class="shop__sidebar__price__titlecontainer__title">PRICE(KSH)</h3>
-                            <h5 class="shop__sidebar__price__titlecontainer__title" id="apply">APPLY</h3>
-                    </div>
-
-                    <div class="shop__sidebar__price__range">
-                        <div id="test-slider"></div>
-                    </div>
-
-                    <div class="shop__sidebar__price__slidernum">
-
-                        <div class="art_input_co">
-                            <input class="art_input" type="number" id="mininput">
-                        </div>
-                        <div class="shop__sidebar__price__slidernum__seperator"></div>
-
-                        <div class="art_input_co">
-                            <input class="art_input" type="number" id="maxinput">
-                        </div>
-
-                    </div>
-
-
-                </div>
+                <p class="blog__content__blogcontent">
+                    <span>
+                        It’s safe to say that cars are a part of life for most Kenyans. Not only do 90% of all households use a vehicle to move from point A to B but most of them use it more than once. With that in mind, protecting our cars is a must. <br>
+                        <br>
+                        This applies to individuals in different sectors and work life. From someone who works in an industry where employees rely on a fleet of vehicles to deliver goods, matatu in the transport sector, car hire and leasing services, tours and travels et cetera. <br>
+                        <br>
+                        You have probably heard about the benefits of GPS tracking. But for one reason or another, you are yet to implement the system in your own company. We understand that your employees may have a negative reaction to their vehicle being tracked, or that it’s a new system that requires some monetary investment to get started and some time to get used to, but the benefits are huge to both stakeholders <br>
+                        <br>
+                        Perhaps it’s now time to give GPS tracking solutions a real shot! And here’s why:<br>
+                        <br>
+                       <strong> 1. Track Your Fleet <br></strong>
+                        <br>
+Whether your business is located in Nairobi or Mombasa, or if it’s a national company that delivers goods from Mombasa to Kisumu or Eldoret, you should always be able to tell exactly where each of your vehicles is located at any given time. GPS tracking solutions from Togree use satellite signals in order to provide exact locations, it monitors where the vehicle is if it’s on the right route, and fuel consumption. With this information productivity and efficiency will be on the rise, allowing you to provide better service for your customers or clients.
+                    </span>
+                </p>
 
             </div>
+
+            <div class="blog__content__blogbtns">
+                <a href="#"><i class="lni lni-twitter-original"></i></a>
+                <a href="#"><i class="lni lni-facebook-original"></i></a>
+                <a href="#"><i class="lni lni-linkedin-original"></i></a>
+                <a href="#"><i class="lni lni-whatsapp"></i></a>
+            </div>
+
+
         </div>
+        <div class="blog__sidebar">
 
-        <div class="shop__products" id="shopproduct">
+            <h3 class="blog__sidebar__title">Related Contents</h3>
 
-            <div class="shop__products__header" id="iconheader">
-                <!-- list item icon -->
-                <div class="shop__products__header__iconwrapper" id="listitem">
-                    <i class="fas fa-list shop__products__header__icons"></i>
+
+
+            <div class="blog__sidebar__cards">
+                <div class="blog__sidebar__cards__img">
+                    <img class="blog__sidebar__cards__pic" src="../assets/img/Blogimg.jpg" alt="relatedcontent">
                 </div>
-
-                <!-- grid item icon -->
-                <div class="shop__products__header__iconwrapper  active" id="griditem">
-                    <i class="fas fa-th shop__products__header__icons"></i>
+                <div class="blog__sidebar__cards__links">
+                    <a class="blog__sidebar__cards__link" href="#"><span>Why you need Asset Trackers <br> 2021 GPS tracker reports</span></a>
                 </div>
-                <!-- category btn for mobile -->
-                <div class="shop__products__header__iconwrapper" id="category">
-                    <i class="fas fa-sort-amount-down-alt shop__products__header__icons"></i>
+            </div>
+            <div class="blog__sidebar__cards">
+                <div class="blog__sidebar__cards__img">
+                    <img class="blog__sidebar__cards__pic" src="../assets/img/Blogimg.jpg" alt="relatedcontent">
+                </div>
+                <div class="blog__sidebar__cards__links">
+                    <a class="blog__sidebar__cards__link" href="#"><span>Why you need Asset Trackers <br> 2021 GPS tracker reports</span></a>
+                </div>
+            </div>
+            <div class="blog__sidebar__cards">
+                <div class="blog__sidebar__cards__img">
+                    <img class="blog__sidebar__cards__pic" src="../assets/img/Blogimg.jpg" alt="relatedcontent">
+                </div>
+                <div class="blog__sidebar__cards__links">
+                    <a class="blog__sidebar__cards__link" href="#"><span>Why you need Asset Trackers <br> 2021 GPS tracker reports</span></a>
                 </div>
             </div>
 
-            <div class="shop__products__productwrapper" id="shop_product_wrapper"></div>
+
+
+
         </div>
 
     </section>
@@ -262,8 +261,6 @@
     <script src="../assets/js/main.js"></script>
     <script src="../assets/lib/jquery/jquery-2.1.4.min.js"></script>
     <script src="../assets/lib/materialize/js/materialize.js"></script>
-
-
 </body>
 
 </html>
