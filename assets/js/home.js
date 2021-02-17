@@ -61,11 +61,12 @@ function getRunningProgram() {
     let running_program_co = document.querySelector('#running_program');
     if (running_program_co) {
         axios.get(path + 'api/@running_program').then(program => {
+
             program = program.data[0].fields;
             if (program) {
                 if (program.active) {
                     program.previewImage = program.previewImage.fields;
-                    console.log(program);
+
                     lang_(program.title).then(title => {
                         program.title = title;
                         program.description = program.description.content.map(content => content.content[0].value).join('-newParagraph-');

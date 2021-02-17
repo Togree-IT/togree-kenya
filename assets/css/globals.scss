@@ -806,9 +806,9 @@
                         @include tablet {
                             @include flex_bs(initial);
                             width: 50%;
-                            &:last-child {
-                                width: 100%;
-                            }
+                            // &:last-child {
+                            //     width: 100%;
+                            // }
                         }
                         @include laptop {
                             @include flex_bs(none);
@@ -816,10 +816,10 @@
                             &.art_tweets {
                                 width: 100%;
                             }
-                            &:last-child {
-                                width: 60%;
-                                margin: 0 auto;
-                            }
+                            // &:last-child {
+                            //     width: 60%;
+                            //     margin: 0 auto;
+                            // }
                         }
                         @include laptop_L {
                             @include flex_bs(1);
@@ -833,7 +833,7 @@
                     .art_footer_connect {
                         @include flex();
                         @include flex_dir(column);
-                        @include flex_jus_content(space-around);
+                        // @include flex_jus_content(space-around);
                         width: 100%;
                         min-height: 60%;
                         @include mobile {
@@ -841,7 +841,7 @@
                             margin: initial;
                         }
                         @include tablet {
-                            width: 75%;
+                            width: ( 75% + 25);
                             margin: auto;
                         }
                         @include laptop {
@@ -887,24 +887,30 @@
                                 display: -webkit-box;
                                 display: -ms-flexbox;
                                 display: flex;
+                                margin-top: 5%;
                                 margin-right: 5%;
                                 margin-bottom: 5%;
                                 -webkit-box-shadow: inset 0 4px 5px #1b1f21;
                                 box-shadow: inset 0 4px 5px #1b1f21;
                                 @include mobile {
                                     width: 25%;
+                                    // max-height: 70px;
                                 }
                                 @include tablet {
                                     width: 15%;
+                                    // max-height: 72px;
                                 }
                                 @include laptop {
                                     width: 15%;
+                                    // max-height: 80px;
                                 }
                                 @include laptop_L {
-                                    width: 15%;
+                                    width: 20%;
+                                    // max-height: 85px;
                                 }
                                 @include laptop_W {
                                     width: 15%;
+                                    // max-height: 85px;
                                 }
                                 img {
                                     width: 100%;
@@ -930,7 +936,7 @@
                                 margin: 0 auto;
                                 background: hsla(150, 100%, 31%, 0.349);
                                 -webkit-box-shadow: none;
-                                        box-shadow: none;
+                                box-shadow: none;
                             }
                         }
                     }
