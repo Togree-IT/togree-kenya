@@ -3,15 +3,12 @@ const express = require("express"),
     router = express.Router(),
     funs = require('../functions');
 
-const initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
-    /* "assets/js/functions.js","assets/js/nav_.js ,,
-       'assets/js/functions.js'" */
-]
+const { initialElements } = funs;
 
 router.get("/", (req, res) => {
 
     const elements = [...initialElements, "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", "//unpkg.com/aos@2.3.1/dist/aos.css",
-        "assets/css/style.css",
+        "assets/css/style.min.css",
         'assets/lib/jquery/counter-up.js',
         'assets/js/main.js',
         'assets/js/home.js'

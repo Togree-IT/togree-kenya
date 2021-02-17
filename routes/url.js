@@ -3,10 +3,8 @@ const express = require("express"),
     router = express.Router(),
     funs = require('../functions');
 
-const initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
-    /* "assets/js/functions.js","assets/js/nav_.js ,,
-       'assets/js/functions.js'" */
-]
+
+const { initialElements } = funs;
 
 router.get("/external", (req, res) => {
     let link = req.query.url

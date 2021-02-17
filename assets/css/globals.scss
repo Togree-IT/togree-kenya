@@ -481,7 +481,7 @@
                     min-width: 5vw;
                     min-height: 17vh;
                     max-width: 19vw;
-                    max-height: 23vh;
+                    max-height: 30vh;
                     outline: none;
                     overflow: auto;
                     -webkit-box-shadow: 0 2px 10px hsla(200, 18%, 46%, 0.42);
@@ -495,8 +495,8 @@
                     }
                     @include laptop {
                         max-width: 40vw;
-                        max-height: 23vh;
-                        padding: 20px;
+                        max-height: 25vh;
+                        padding: 30px;
                         min-width: 5vw;
                         min-height: 17vh;
                     }
@@ -504,7 +504,7 @@
                         max-width: 30vw;
                     }
                     @include laptop_W {
-                        max-width: 19vw;
+                        max-width: 20vw;
                     }
                     a {
                         color: #333;

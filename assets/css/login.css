@@ -1,0 +1,70 @@
+body .art_login_form_co {
+  width: 50%;
+  margin: 5pc auto;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_login_form_co {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body .art_login_form_co {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_login_form_co {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art_login_form_co {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_login_form_co {
+    width: 50%;
+  }
+}
+
+body .art_login_form_co .art_input_co {
+  margin-bottom: 10px;
+  max-height: 80px;
+  height: 100%;
+  padding: 14px;
+  margin: 25px auto 0;
+  border: 0;
+  background: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+}
+
+body .art_login_form_co .art_forgot {
+  padding: 20px 0;
+}
+
+body .art_login_form_co .art_submit_btn_co {
+  width: 80%;
+  margin: 2pc auto;
+  height: 60px;
+}
+
+body .art_login_form_co .art_submit_btn_co .art_gree_btn {
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+body .art-nav {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(96, 124, 138, 0.212);
+  box-shadow: 0 2px 2px 0 rgba(96, 124, 138, 0.212);
+}

@@ -39,7 +39,7 @@ app.use(require('./functions')._language);
 app.use(require("./routes/404"));
 app.use("/", require("./routes/index"));
 app.use("/language", require("./routes/language"));
-app.use("/user", require("./routes/user"));
+app.use("/users", require("./routes/users"));
 app.use("/products", require("./routes/products"));
 app.use("/services", require("./routes/services"));
 app.use("/api", require("./routes/api"));

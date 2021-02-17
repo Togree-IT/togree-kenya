@@ -1,0 +1,19 @@
+<%- include("./_nav.ejs") %>
+    <main>
+        <div class="container">
+            <div class="art_login_form_co">
+
+                <form class="contacthero__content__form" id="contact_us_form" action="<%= path %>users/login" method="POST">
+                    <!-- <label for="user_name"><%- lang_(`Your_username`) %></label> -->
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Email`) %> " id="user_name" name="user_name" class="art_input ">
+                    </div>
+
+
+                    <div class="art_submit_btn_co ">
+                        <button type="sumit" name="art_sumit" class="art_btn art_gree_btn filled waves-effect "><%- lang_(`Submit`) %></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>

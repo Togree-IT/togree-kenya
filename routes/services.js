@@ -2,8 +2,8 @@ const express = require("express"),
     router = express.Router(),
     funs = require('../functions');
 
-const initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js", ]
 
+const { initialElements } = funs;
 router.get("/main/:id", (req, res) => {
     let serviceName = req.params.id.replace('@', '');
 

@@ -1,37 +1,27 @@
-const { render } = require("ejs");
-
-const app = require("express"),
-
-    router = app.Router(),
+const express = require("express"),
+    // passport = require("passport"),
+    router = express.Router(),
     funs = require('../functions');
 
 
 const { initialElements } = funs;
+router.get("/login", (req, res) => {
 
-router.get('/list/all', (req, res) => {
-    res.status(200).json({ name: "comming soon" })
-})
-router.get('/', (req, res) => {
     const elements = [...initialElements,
+        "assets/css/login.min.css",
 
-        "assets/css/product.min.css",
-
-        '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
-        '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
-        'assets/js/main.js',
-        'assets/js/products.js'
     ]
 
-
-    let title = funs.language('Products', funs.getAppCookies(req)['language']);
+    let title = funs.language('Login', funs.getAppCookies(req)['language']);
     const meta = funs.meta({
         title,
         description: "",
-        keywords: '',
+        keywords: 'Login, signup, Togree login, Togree signup, Register, Togree Register',
         preview_image: '',
         theme_color: "#fff"
     }, req);
-    res.render('product', {
+
+    res.render("login", {
         meta,
         elements,
         menu: true,
@@ -41,29 +31,27 @@ router.get('/', (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-    })
-})
 
-router.get('/checkout/:id', (req, res) => {
+    });
+});
 
-})
-router.get('/checkout', (req, res) => {
+router.get("/forgot", (req, res) => {
+
     const elements = [...initialElements,
-        "assets/css/checkout.min.css",
-        "assets/js/checkout.js",
+        "assets/css/login.min.css",
 
     ]
 
-    let title = funs.language('Checkout', funs.getAppCookies(req)['language']);
+    let title = funs.language('Forgot', funs.getAppCookies(req)['language']);
     const meta = funs.meta({
         title,
         description: "",
-        keywords: '',
+        keywords: 'forgot, signup, Togree login, Togree signup, Register, Togree Register',
         preview_image: '',
         theme_color: "#fff"
     }, req);
 
-    res.render('checkout', {
+    res.render("forgot", {
         meta,
         elements,
         menu: true,
@@ -73,7 +61,9 @@ router.get('/checkout', (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-    })
-})
+
+    });
+});
+
 
 module.exports = router;

@@ -4,10 +4,6 @@
  * @param lang the language to look into
  * This helps in translating the page
  */
-
-const { query } = require('express');
-
-
 exports.renderImplimental = (params, no_join) => {
     let p_explit = params.split('[>').join('<div class="art_render_implimental"><h6 class="art_bullet">').split('[_>>').join('</h6><div class="art_bullet_element">').split(']').join('</div></div>')
     let explitedWprds = []
@@ -29,6 +25,10 @@ exports.renderImplimental = (params, no_join) => {
     return explitedWprds.join(' ').split('`').join('')
 
 }
+exports.initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
+    /* "assets/js/functions.js","assets/js/nav_.js ,,
+       'assets/js/functions.js'" */
+];
 
 exports.meta = (data, req) => {
     let lang = this.getAppCookies(req)['language'];
