@@ -884,9 +884,9 @@
                                 background: hsla(0, 0%, 100%, 0);
                                 border-radius: 5em;
                                 height: auto;
-                                display: -webkit-box;
-                                display: -ms-flexbox;
-                                display: flex;
+                                // display: -webkit-box;
+                                // display: -ms-flexbox;
+                                // display: flex;
                                 margin-top: 5%;
                                 margin-right: 5%;
                                 margin-bottom: 5%;
@@ -1522,7 +1522,7 @@
                         width: 60%;
                         position: relative;
                         @include mobile {
-                            width: 40%;
+                            width: 0%;
                         }
                         @include tablet {
                             width: 100%;
@@ -1613,14 +1613,17 @@
                     // background: rgba(255, 255, 255, 0.478);
                     padding: 30px 20px;
                     margin: 19px 0;
-                    -webkit-box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
-                    box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
+                    // -webkit-box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
+                    // box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
                     // -webkit-backdrop-filter: blur(36px);
                     // backdrop-filter: blur(36px);
                     // @include linearGradient(280deg,
                     // rgba(11, 76, 44, 0.18),
                     // transparent);
-                    background-color: #2e363a;
+                    // background-color: #2e363a;
+                    -webkit-box-shadow: -1px 0px 20px #cddc391f;
+                    box-shadow: -1px 0px 20px #cddc391f;
+                    background-color: #ffffff;
                     border-radius: 20px;
                     @include mobile {
                         width: ((20% * 4) + 20);

@@ -115,10 +115,10 @@
             <h3 class="subscribe__title">
                 <%- lang_(`@subscribe_title`) %>
             </h3>
-            <p class="subscribe__text ">
+            <!-- <p class="subscribe__text ">
                 <span>Not thoughts all exercise blessing. Indulgence way everything <br>
                 joy alteration boisterous the attachment. Party we years to order</span>
-            </p>
+            </p> -->
 
             <form class="subscribe__form " action="<%- path %>api/subscribe" method="POST">
 
@@ -137,110 +137,111 @@
     <%- include (`./_footer`) %>
 
         <script>
-            const contact_us_form = document.querySelector("#contact_us_form");
-            contact_us_form.addEventListener("submit", e => {
-                e.preventDefault();
-                const contact_us_link = contact_us_form.getAttribute('action') || "<%= path %>api/contact?ref=dom";
+            document.addEventListener('DOMContentLoaded', e => {
 
-                let {
-                    name,
-                    email,
-                    message,
-                    art_sumit
-                } = contact_us_form;
+                const contact_us_form = document.querySelector("#contact_us_form");
+                if (contact_us_form)
+                    contact_us_form.addEventListener("submit", e => {
+                        e.preventDefault();
+                        const contact_us_link = contact_us_form.getAttribute('action') || "<%= path %>api/contact?ref=dom";
 
-                if (name.value.trim() !== '' && email.value.trim() !== '' && message.value.trim() !== '') {
-                    if (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value)) {
+                        let {
+                            name,
+                            email,
+                            message,
+                            art_sumit
+                        } = contact_us_form;
 
-                        art_sumit.disabled = true;
-                        art_sumit.classList.add('disabled');
-                        art_sumit.classList.add('submitting');
+                        if (name.value.trim() !== '' && email.value.trim() !== '' && message.value.trim() !== '') {
+                            if (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value)) {
 
-                        lang_('Sending').then(name => {
-                            art_sumit.innerText = name + '...'
-                        });
+                                art_sumit.disabled = true;
+                                art_sumit.classList.add('disabled');
+                                art_sumit.classList.add('submitting');
 
-                        let error_messages = contact_us_form.querySelectorAll('.error_message');
-                        if (error_messages.length) {
-                            error_messages.forEach(error_message => {
-                                error_message.remove()
-                            })
-                        }
-                        axios({
-                            method: "Post",
-                            url: contact_us_link,
-                            headers: {
-                                'Content-Type': 'application/json;charset=UTF-8',
-                            },
-                            data: {
-                                name: name.value,
-                                email: email.value,
-                                message: message.value
-                            }
-                        }).then(res => {
-                            let data = res.data;
-                            if (data.status === "success") {
-                                lang_('Submit').then(name => {
-                                    art_sumit.disabled = !true;
-                                    art_sumit.classList.remove('disabled');
-                                    art_sumit.classList.remove('submitting');
-                                    art_sumit.innerText = name
+                                lang_('Sending').then(name => {
+                                    art_sumit.innerText = name + '...'
                                 });
+
+                                let error_messages = contact_us_form.querySelectorAll('.error_message');
+                                if (error_messages.length) {
+                                    error_messages.forEach(error_message => {
+                                        error_message.remove()
+                                    })
+                                }
+                                axios({
+                                    method: "Post",
+                                    url: contact_us_link,
+                                    headers: {
+                                        'Content-Type': 'application/json;charset=UTF-8',
+                                    },
+                                    data: {
+                                        name: name.value,
+                                        email: email.value,
+                                        message: message.value
+                                    }
+                                }).then(res => {
+                                    let data = res.data;
+                                    if (data.status === "success") {
+                                        lang_('Submit').then(name => {
+                                            art_sumit.disabled = !true;
+                                            art_sumit.classList.remove('disabled');
+                                            art_sumit.classList.remove('submitting');
+                                            art_sumit.innerText = name
+                                        });
+                                    }
+                                    console.log(data);
+                                })
+                            } else {
+                                errTemp(email, "This must a valid email address")
+
                             }
-                            console.log(data);
-                        })
-                    } else {
-                        errTemp(email, "This must a valid email address")
+                        } else {
 
-                    }
-                } else {
-
-                    if (name.value.trim() === '') {
-                        errTemp(name);
-                        name.focus()
-                    } else {
-                        succTemp(name)
-                    }
-
-                    if (email.value.trim() === '') {
-                        errTemp(email)
-                    } else {
-                        succTemp(email)
-                    }
-
-                    if (message.value.trim() === '') {
-                        errTemp(message)
-                    } else {
-                        succTemp(message)
-                    }
-
-                }
-
-                function errTemp(name, mess) {
-                    mess = mess || "This field is required";
-                    let co = document.createElement("div");
-                    co.className = "error_message";
-                    lang_(mess).then(message => {
-                        co.innerHTML = `<p>${message} *</p>`;
-                        let parentElement = name.parentElement.parentElement;
-                        if (typeof name.parentElement.nextElementSibling !== "undefined") {
-                            if (!name.parentElement.nextElementSibling.classList.contains('error_message')) {
-                                parentElement.insertBefore(co, name.parentElement.nextElementSibling)
+                            if (name.value.trim() === '') {
+                                errTemp(name);
+                                name.focus()
+                            } else {
+                                succTemp(name)
                             }
+
+                            if (email.value.trim() === '') {
+                                errTemp(email)
+                            } else {
+                                succTemp(email)
+                            }
+
+                            if (message.value.trim() === '') {
+                                errTemp(message)
+                            } else {
+                                succTemp(message)
+                            }
+
                         }
-                    })
-                    return co
-                };
 
-                function succTemp(name) {
+                        function errTemp(name, mess) {
+                            mess = mess || "This field is required";
+                            let co = document.createElement("div");
+                            co.className = "error_message";
+                            lang_(mess).then(message => {
+                                co.innerHTML = `<p>${message} *</p>`;
+                                let parentElement = name.parentElement.parentElement;
+                                if (typeof name.parentElement.nextElementSibling !== "undefined") {
+                                    if (!name.parentElement.nextElementSibling.classList.contains('error_message')) {
+                                        parentElement.insertBefore(co, name.parentElement.nextElementSibling)
+                                    }
+                                }
+                            })
+                            return co;
+                        };
 
-                    let className = "error_message";
+                        function succTemp(name) {
+                            let className = "error_message";
+                            if (name.parentElement.nextElementSibling.classList.contains(className)) {
+                                name.parentElement.nextElementSibling.remove()
+                            }
+                        };
 
-                    if (name.parentElement.nextElementSibling.classList.contains(className)) {
-                        name.parentElement.nextElementSibling.remove()
-                    }
-
-                };
-
+                    });
             });
         </script>

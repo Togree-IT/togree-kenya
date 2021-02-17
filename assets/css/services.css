@@ -57,7 +57,7 @@ body .services-header {
 @media screen and (min-width: 320px) {
   body .services-header {
     min-height: auto;
-    padding: 2pc 0;
+    padding: 5pc 0;
   }
 }
 
@@ -518,7 +518,10 @@ body .art_services_description .art_cards_co.x3 .art_card {
 
 @media screen and (min-width: 1024px) {
   body .art_services_description .art_cards_co.x3 .art_card {
-    width: 45%;
+    width: 31.33333%;
+  }
+  body .art_services_description .art_cards_co.x3 .art_card:last-of-type {
+    width: 31.33333%;
   }
 }
 
@@ -649,7 +652,7 @@ body .joinus__content .art_gree_btn {
 }
 
 body .art_service_call_to_action {
-  margin: 2pc 0 0;
+  margin: 0 0;
   padding: 4pc 20px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;

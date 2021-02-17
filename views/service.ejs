@@ -1,5 +1,4 @@
 <%- include("./_nav.ejs") %>
-    <!-- style="background-image: url('<%= path + services.preview_image %>');" -->
     <header class="services-header">
         <div class="serviceshero__img">
             <img src="<%= services.previewImage.url %> " alt="services us hero message" class="art_hero">
@@ -112,17 +111,6 @@
                         </div>
                     </section>
 
-                    <!-- social media section starts here  -->
-                    <section class="art_service_call_to_action">
-                        <div class="art_content">
-                            <h2 class="art_title">
-                                <%- lang_("Want_to_Learn_more?") %>
-                            </h2>
-                            <div class="art_specify_act">
-                                <button class="art_btn art_gree_btn filled waves-effect waves-light"><%- lang_("Explore_our_Products") %></button>
-                            </div>
-                        </div>
-                    </section>
                     <% }%>
                         <% if(services.applicableTo.length){%>
                             <section class="art_services_description">
@@ -152,11 +140,39 @@
                                 </div>
                             </section>
                             <% }%>
+                                <% if(typeof services.discount  !== 'undefined'){ 
+                                    services.discount = services.discount.fields;
+                                %>
 
-                                <section class="art_request_service" id="request_service">
-                                    <div class="art_service_container">
-                                        <div class="art_service_bg">
-                                            <svg width="764" height="893" viewBox="0 0 764 893" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                    <section class="joinus">
+                                        <div class="joinus__pic">
+                                            <img class="joinus__pic__img" src="<%= typeof path !== " undefined "?path:'' %>assets/img/services/joinuslady.png" alt="joinus">
+                                        </div>
+                                        <div class="joinus__content">
+                                            <h6 class="joinus__subtitle">
+                                                <%= lang_("We're_Offering")+' '+ services.discount.percentage +'% '+ lang_("off")+' '+ lang_("on_all_our")+' '+lang_(services.name)+' '+ lang_("Products") %>
+                                            </h6>
+                                            <h5 class="joinus__pretitle_" style="font-weight: 900;">
+                                                <%= lang_(services.discount.title).toUpperCase() %>
+                                            </h5>
+                                            <h3 class="joinus__title" style="font-weight: 100;"><span class="art_counter"></span> </h3>
+                                            <p class="joinus__subtitle">
+                                                <%= lang_(services.discount.offer_message) %>
+                                            </p>
+                                            <a href="<%= typeof path !== " undefined "?path:'' %><%= services.discount.path %>" target="_blanck" class="joinus__btn art_gree_btn waves-effect ">
+                                                <%= lang_('Hook_me_up') %>
+                                            </a>
+                                        </div>
+
+                                    </section>
+                                    <script>
+                                        dateCountDown(document.querySelector('.art_counter'), "<%= services.discount.end_date %>")
+                                    </script>
+                                    <%}%>
+                                        <section class="art_request_service" id="request_service">
+                                            <div class="art_service_container">
+                                                <div class="art_service_bg">
+                                                    <svg width="764" height="893" viewBox="0 0 764 893" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                                                 <path fill="#23c447" d="M-2.96831e-05 0V2.44227e-05C10.2016 6.19453e-05 77.6258 0.000117838 443 0H666.5C843.234 -7.64738e-05 675 95.5 666.5 233.5C658 371.5 490.5 372.5 563.5 504C636.5 635.5 808.45 554.767 752.5 673.5C687 812.5 658 892 658 892L-2.96831e-05 899V2.44227e-05C-3.63754 1.10436e-05 -2.96831e-05 0 -2.96831e-05 0Z" fill="url(#paint0_linear)"/>
                                                 <defs>
                                                     <linearGradient id="paint0_linear" x1="-7.85975e-05" y1="0.000100919" x2="1283.72" y2="980.752" gradientUnits="userSpaceOnUse">
@@ -165,72 +181,61 @@
                                                     </linearGradient>
                                                 </defs>
                                             </svg>
-                                        </div>
-                                        <div class="art_service_form_co">
-                                            <div class="art_service_desc">
-                                                <div class="art_desc_title art_glass art_top">
-                                                    <h5>
-                                                        <%= lang_('Request_for_Service') %>
-                                                    </h5>
                                                 </div>
-                                                <div class="art_service_perosn">
-                                                    <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/services/person.png" alt="">
-                                                </div>
-                                                <div class="art_desc_title art_glass art_bottom art_b30">
-                                                    <h6>
-                                                        <%= lang_('You’re_one_step_away_to_our')+' '+lang_(services.name) %>
-                                                    </h6>
+                                                <div class="art_service_form_co">
+                                                    <div class="art_service_desc">
+                                                        <div class="art_desc_title art_glass art_top">
+                                                            <h5>
+                                                                <%= lang_('Request_for_Service') %>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="art_service_perosn">
+                                                            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/services/person.png" alt="">
+                                                        </div>
+                                                        <div class="art_desc_title art_glass art_bottom art_b30">
+                                                            <h6>
+                                                                <%= lang_('You’re_one_step_away_to_our')+' '+lang_(services.name) %>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="art_service_body">
+                                                        <form action="#!" method="POST" class="art_form" id="request_service_vehicle">
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('First_name') %> *">
+                                                            </div>
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('Last_name') %> *">
+                                                            </div>
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('Email_address') %> *">
+                                                            </div>
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('Mobile') %> *">
+                                                            </div>
+                                                            <div class="art_input_co art_textera">
+                                                                <textarea name="" id="" class="art_input" placeholder="<%= lang_('Message') %> *"></textarea>
+                                                            </div>
+
+                                                            <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Request_Service') %></button>
+
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="art_service_body">
-                                                <form action="#!" method="POST" class="art_form" id="request_service_vehicle">
-                                                    <div class="art_input_co">
-                                                        <input type="text" class="art_input" placeholder="<%= lang_('First_name') %> *">
-                                                    </div>
-                                                    <div class="art_input_co">
-                                                        <input type="text" class="art_input" placeholder="<%= lang_('Last_name') %> *">
-                                                    </div>
-                                                    <div class="art_input_co">
-                                                        <input type="text" class="art_input" placeholder="<%= lang_('Email_address') %> *">
-                                                    </div>
-                                                    <div class="art_input_co">
-                                                        <input type="text" class="art_input" placeholder="<%= lang_('Mobile') %> *">
-                                                    </div>
-                                                    <div class="art_input_co art_textera">
-                                                        <textarea name="" id="" class="art_input" placeholder="<%= lang_('Message') %> *"></textarea>
-                                                    </div>
+                                        </section>
 
-                                                    <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Request_Service') %></button>
 
-                                                </form>
+
+                                        <section class="art_service_call_to_action">
+                                            <div class="art_content">
+                                                <h2 class="art_title">
+                                                    <%- lang_("Want_to_Learn_more?") %>
+                                                </h2>
+                                                <div class="art_specify_act">
+                                                    <button class="art_btn art_gree_btn filled waves-effect waves-light"><%- lang_("Explore_our_Products") %></button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </section>
-                                <% if(typeof services.discount  !== 'undefined'){  %>
-
-                                    <section class="joinus">
-                                        <div class="joinus__pic">
-                                            <img class="joinus__pic__img" src="<%= typeof path !== " undefined "?path:'' %>assets/img/services/joinuslady.png" alt="joinus">
-                                        </div>
-                                        <div class="joinus__content">
-                                            <h6 class="joinus__pretitle">
-                                                <%= lang_(services.discount.title) %>
-                                            </h6>
-                                            <h3 class="joinus__title"><span class="art_counter"></span> </h3>
-                                            <p class="joinus__subtitle">
-                                                <%= lang_(services.discount.offer_message) %>
-                                            </p>
-                                            <button class="joinus__btn art_gree_btn waves-effect "><%= lang_('Hook me up') %></button>
-                                        </div>
-
-                                    </section>
-                                    <script>
-                                        dateCountDown(document.querySelector('.art_counter'), "<%= services.discount.end_date %>")
-                                    </script>
-                                    <%}%>
-
-                                        <!-- joinus sections ends here -->
+                                        </section>
 
                                         <%- include ("./socialMedia.ejs") %>
     </main>

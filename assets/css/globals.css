@@ -1114,9 +1114,6 @@ body .art_footer .art_footer_co .art_footer_impo_links_cards .art_footer_connect
   background: rgba(255, 255, 255, 0);
   border-radius: 5em;
   height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   margin-top: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
@@ -1935,7 +1932,7 @@ body .art_request_service .art_service_form_co .art_service_desc .art_service_pe
 
 @media screen and (min-width: 320px) {
   body .art_request_service .art_service_form_co .art_service_desc .art_service_perosn {
-    width: 40%;
+    width: 0%;
   }
 }
 
@@ -2043,9 +2040,9 @@ body .art_request_service .art_service_form_co .art_service_body {
   min-height: 40vh;
   padding: 30px 20px;
   margin: 19px 0;
-  -webkit-box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
-  box-shadow: -1px 0px 1px rgba(96, 125, 139, 0.341);
-  background-color: #2e363a;
+  -webkit-box-shadow: -1px 0px 20px #cddc391f;
+  box-shadow: -1px 0px 20px #cddc391f;
+  background-color: #ffffff;
   border-radius: 20px;
 }
 

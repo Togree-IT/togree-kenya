@@ -270,7 +270,7 @@
                             lang_(page.title).then(title => {
                                 page.title = title;
                                 top_pages.innerHTML += topPagesTemp2(page);
-                                renderPages_mobile(page, true)
+                                renderPages_mobile(page, true);
                             })
 
                         } else {
@@ -278,7 +278,8 @@
                             lang_(page.title).then(title => {
                                 page.title = title;
                                 top_pages.innerHTML += topPagesTemp1(page);
-                                renderPages_mobile(page, !true)
+                                renderPages_mobile(page, !true);
+                                renderFootQuickLinks(page);
                             })
                         }
                     })
@@ -308,17 +309,20 @@
 
                                         top_art_nav_services_co.innerHTML += serviceTemp(under_page, index++);
 
+
                                         if (top_art_nav_services_co.querySelectorAll('a').length >= child.length) {
                                             setTimeout(() => {
                                                 under_pageDropdowns();
-
-                                            }, 665, under_page)
+                                            }, 665, under_page);
                                         }
 
                                         fetchServices(under_page);
+
                                         setTimeout(() => {
                                             render_sevices_mobile(under_page);
-                                        }, 455, under_page)
+                                        }, 455, under_page);
+
+                                        renderFootServices(under_page);
                                     })
                                 }
                             }
@@ -396,5 +400,21 @@
 
         }
 
+    }
+
+    function renderFootQuickLinks(page) {
+        let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a></p>`;
+        let foot_quick_links = document.querySelector('#foot_quick_links');
+        if (foot_quick_links) {
+            foot_quick_links.insertAdjacentHTML('AfterBegin', temp);
+        }
+    }
+
+    function renderFootServices(page) {
+        let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}"> ${page.name}</a></p>`;
+        let foot_services = document.querySelector('#foot_services');
+        if (foot_services) {
+            foot_services.insertAdjacentHTML('AfterBegin', temp);
+        }
     }
 </script>

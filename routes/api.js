@@ -76,6 +76,18 @@ router.get('/@running_program', (req, res) => {
     });
 
 });
+// Get running program
+router.get('/@company_address', (req, res) => {
+    let content = funs.getFullCont.getAddress();
+
+    content.then(data => {
+
+        res.status(200).json(data.items[0].fields);
+    }).catch(err => {
+        console.log(err.details);
+    });
+
+});
 
 
 router.use("/contact", require("../routes/contact"));

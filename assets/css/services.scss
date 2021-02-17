@@ -67,7 +67,7 @@ body {
         // background-attachment: fixed;
         @include mobile {
             min-height: auto;
-            padding: 2pc 0;
+            padding: 5pc 0;
         }
         @include tablet {
             min-height: 45vh;
@@ -468,7 +468,10 @@ body {
                         }
                     }
                     @include laptop {
-                        width: ((100% / 2)- (3% + 2%));
+                        width: ((100% / 3)- ( 2%));
+                        &:last-of-type {
+                            width: ((100% / 3)- ( 2%));
+                        }
                     }
                     @include laptop_L {
                         width: ((100% / 3)- (3% + 1%));
@@ -566,7 +569,7 @@ body {
         }
     }
     .art_service_call_to_action {
-        margin: 2pc 0 0;
+        margin: 0 0;
         padding: 4pc 20px;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
