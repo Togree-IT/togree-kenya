@@ -1,6 +1,11 @@
 body .art_login_form_co {
   width: 50%;
-  margin: 5pc auto;
+  margin: 8pc auto;
+  padding: 2pc;
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 2px rgba(96, 124, 138, 0.149);
+  box-shadow: 0 2px 2px rgba(96, 124, 138, 0.149);
 }
 
 @media screen and (min-width: 320px) {
@@ -29,16 +34,26 @@ body .art_login_form_co {
 
 @media screen and (min-width: 2560px) {
   body .art_login_form_co {
-    width: 50%;
+    width: 45%;
   }
 }
 
+body .art_login_form_co .art_title {
+  width: auto;
+  padding: 4px 0;
+  border-bottom: 2px solid;
+  margin-bottom: 2rem;
+}
+
+body .art_login_form_co .art_title * {
+  margin: 0;
+}
+
 body .art_login_form_co .art_input_co {
-  margin-bottom: 10px;
   max-height: 80px;
   height: 100%;
   padding: 14px;
-  margin: 25px auto 0;
+  margin: 0 auto 25px;
   border: 0;
   background: #f1f1f1;
   display: -webkit-box;
@@ -49,6 +64,7 @@ body .art_login_form_co .art_input_co {
 
 body .art_login_form_co .art_forgot {
   padding: 20px 0;
+  text-align: right;
 }
 
 body .art_login_form_co .art_submit_btn_co {
@@ -67,4 +83,15 @@ body .art_login_form_co .art_submit_btn_co .art_gree_btn {
 body .art-nav {
   -webkit-box-shadow: 0 2px 2px 0 rgba(96, 124, 138, 0.212);
   box-shadow: 0 2px 2px 0 rgba(96, 124, 138, 0.212);
+}
+
+body .art_wave {
+  position: relative;
+  max-height: 60vh;
+}
+
+body .art_wave svg {
+  width: 100vw;
+  height: 82vh;
+  position: absolute;
 }
