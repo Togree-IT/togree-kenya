@@ -135,19 +135,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // active btn script 
-    const iconHeader = document.querySelector("#iconheader");
-    const Icons = iconHeader.querySelectorAll(".iconwrapper");
+    // const iconHeader = document.querySelector("#iconheader");
+    // const Icons = iconHeader.querySelectorAll(".iconwrapper");
 
-    for (let i = 0; i < Icons.length; i++) {
-        Icons[i].addEventListener("click", ActiveIcon)
+    // for (let i = 0; i < Icons.length; i++) {
+    //     Icons[i].addEventListener("click", ActiveIcon)
 
-        function ActiveIcon() {
-            let current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace("active", " ");
-            this.className += " active";
-        }
-    }
-    ActiveIcon()
+    //     function ActiveIcon() {
+    //         let current = document.getElementsByClassName("active");
+    //         current[0].className = current[0].className.replace("active", " ");
+    //         this.className += " active";
+    //     }
+    // }
+    // ActiveIcon()
 
 
 
@@ -628,6 +628,7 @@ function changeView(event) {
     if (typeof event !== "undefined" && typeof event.currentTarget !== "undefined") {
         if (event.currentTarget.id === "listitem") {
             applyListView('productlist')
+
         }
         if (event.currentTarget.id === "griditem") {
             applyListView('shop__products');
