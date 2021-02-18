@@ -18,7 +18,7 @@ exports.product = {
         PRIMARY_KEY: !true,
         DEFAULT: "../assets/img/products/1.png",
     },
-    model: {
+    product_model: {
         TYPE: "VARCHAR(30)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
@@ -65,7 +65,13 @@ exports.product = {
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
-    }
+    },
+    customer_rating: {
+        TYPE: "INT",
+        AUTO_INCREMENT: true,
+        PRIMARY_KEY: true,
+        DEFAULT: ''
+    },
 
 
 
