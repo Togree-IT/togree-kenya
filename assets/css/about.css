@@ -593,7 +593,7 @@ body .aboutstory__circle {
   background: #24C347;
   -ms-flex-item-align: end;
   align-self: end;
-  margin: calc(15px / 2) auto auto;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 320px) {
@@ -601,6 +601,7 @@ body .aboutstory__circle {
     --clicle_height: 15px;
     height: 15px;
     width: 15px;
+    margin: calc(15px / 2) auto auto;
   }
 }
 
@@ -610,6 +611,7 @@ body .aboutstory__circle {
     width: var(--clicle_height);
     border-radius: 100%;
     background: #24C347;
+    margin: 0 auto;
   }
 }
 

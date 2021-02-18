@@ -21,13 +21,13 @@ exports.users = {
         DEFAULT: "",
     },
     password: {
-        TYPE: "VARCHAR(55)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     email: {
-        TYPE: "VARCHAR(55)",
+        TYPE: "VARCHAR(25)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
@@ -56,12 +56,7 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "assets/imgs/user.svg",
     },
-    branch_id: {
-        TYPE: "INT",
-        AUTO_INCREMENT: !true,
-        PRIMARY_KEY: !true,
-        DEFAULT: "",
-    },
+
 
     dt: {
         TYPE: "TIMESTAMP",

@@ -470,17 +470,21 @@
                                                     background: #24C347;
                                                     -ms-flex-item-align: end;
                                                     align-self: end;
-                                                    margin: calc(15px / 2) auto auto;
+                                                    margin: 0/* calc(15px / 2) auto */
+                                                    auto;
                                                     @include mobile {
                                                         --clicle_height: 15px;
                                                         height: 15px;
                                                         width: 15px;
+                                                        margin: calc(15px / 2) auto auto;
                                                     }
                                                     @include tablet {
                                                         height: var(--clicle_height);
                                                         width: var(--clicle_height);
                                                         border-radius: 100%;
                                                         background: #24C347;
+                                                        margin: 0/* calc(15px / 2) auto */
+                                                        auto;
                                                     }
                                                     @include laptop {
                                                         height: var(--clicle_height);

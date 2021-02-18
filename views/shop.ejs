@@ -1,0 +1,80 @@
+<%- include('./_nav.ejs') %>
+    <main>
+
+        <div class="container">
+            <!-- <div class="shop__sidebarwrapper" id="sidewrapper"> -->
+            <div class="shop__sidebar">
+
+                <em class="lni lni-cross-circle shop__sidebar__exiticon" id="exiticon"></em>
+
+                <div class="art_input_co">
+                    <em class="lni lni-search-alt  shop__sidebar__icon"></em>
+                    <input class="art_input" type="text" placeholder="Search Product" id="searchbtn">
+                </div>
+
+                <div class="shop__sidebar__category">
+                    <h5 class="shop__sidebar__category__header">CATEGORY</h5>
+                    <h6 class="shop__sidebar__category__subheader">Asset GPS Trackers</h6>
+                    <h6 class="shop__sidebar__category__subheader">Vechicle GPS Trackers</h6>
+                    <h6 class="shop__sidebar__category__subheader">Personal Trackers</h6>
+
+                    <h6 class="shop__sidebar__category__subheader">Camera</h6>
+                </div>
+
+                <div class="shop__sidebar__price">
+
+                    <div class="shop__sidebar__price__titlecontainer">
+                        <h5 class="shop__sidebar__price__titlecontainer__title">PRICE(KSH)</h3>
+                            <h5 class="shop__sidebar__price__titlecontainer__title" id="apply">APPLY</h3>
+                    </div>
+
+                    <div class="shop__sidebar__price__range">
+                        <div id="test-slider"></div>
+                    </div>
+
+                    <div class="shop__sidebar__price__slidernum">
+
+                        <div class="art_input_co">
+                            <input class="art_input" type="number" id="mininput">
+                        </div>
+                        <div class="shop__sidebar__price__slidernum__seperator"></div>
+
+                        <div class="art_input_co">
+                            <input class="art_input" type="number" id="maxinput">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- </div> -->
+            <section class="shop">
+
+
+
+                <div class="shop__products" id="shopproduct">
+
+                    <div class="shop__products__header" id="iconheader">
+                        <!-- list item icon -->
+                        <div class="shop__products__header__iconwrapper" id="listitem">
+                            <em class="fas fa-list shop__products__header__icons"></em>
+                        </div>
+
+                        <!-- grid item icon -->
+                        <div class="shop__products__header__iconwrapper  active" id="griditem">
+                            <em class="fas fa-th shop__products__header__icons"></em>
+                        </div>
+                        <!-- category btn for mobile -->
+                        <div class="shop__products__header__iconwrapper" id="category">
+                            <em class="fas fa-sort-amount-down-alt shop__products__header__icons"></em>
+                        </div>
+                    </div>
+
+                    <div class="shop__products__productwrapper" id="shop_product_wrapper"></div>
+                </div>
+
+            </section>
+        </div>
+    </main>

@@ -133,12 +133,11 @@ exports.language = (_, lang) => {
 
         return data;
     } else {
-
         data = arryRes[Object.keys(styfy(_))[0]];
+
         if (typeof data !== "undefined" && (data !== null && data.trim() !== '')) {
             return arryRes[Object.keys(styfy(_))[0]]
         }
-
 
         appendLangTimer = setTimeout(() => {
             Object.assign(arryRes, styfy(_));
@@ -149,6 +148,8 @@ exports.language = (_, lang) => {
     }
     return _.split('_').join(' ');
 };
+
+
 exports.appendLang = (lang, arryRes) => {
     let prepend = require('../language/' + lang + '.json');
 

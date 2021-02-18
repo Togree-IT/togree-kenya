@@ -1,0 +1,70 @@
+[
+
+    {
+        "productID": "0",
+        "path": "../assets/img/products/1.png",
+        "productTitle": "TK303",
+        "productPrice": "1800",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+
+    {
+        "productID": "1",
+        "path": "../assets/img/products/2.png",
+        "productTitle": "TK303",
+        "productPrice": "1500",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+
+    {
+        "productID": "2",
+        "path": "../assets/img/products/3.png",
+        "productTitle": "TK303",
+        "productPrice": "2800",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+    {
+        "productID": "3",
+        "path": "../assets/img/products/4.png",
+        "productTitle": "TK303",
+        "productPrice": "9000",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+    {
+        "productID": "4",
+        "path": "../assets/img/products/5.png",
+        "productTitle": "TK303",
+        "productPrice": "1800",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+    {
+        "productID": "5",
+        "path": "../assets/img/products/6.png",
+        "productTitle": "TK303",
+        "productPrice": "1800",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+    {
+        "productID": "6",
+        "path": "../assets/img/products/7.png",
+        "productTitle": "TK303",
+        "productPrice": "1800",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    },
+    {
+        "productID": "7",
+        "path": "../assets/img/products/8.png",
+        "productTitle": "TK302",
+        "productPrice": "1800",
+        "currency": "KSH",
+        "productOldPrice": "25000"
+    }
+
+]

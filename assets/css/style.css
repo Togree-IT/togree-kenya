@@ -693,6 +693,12 @@ body .art_head_bottom_cards .art_head_bottom_card_co {
 
 @media screen and (min-width: 1440px) {
   body .art_head_bottom_cards .art_head_bottom_card_co {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_head_bottom_cards .art_head_bottom_card_co {
     width: 70%;
   }
 }
@@ -1025,7 +1031,7 @@ body .art_head_bottom_cards .art_our_services_card:nth-of-type(2) {
     -webkit-transform: scale(1.29);
     -ms-transform: scale(1.29);
     transform: scale(1.29);
-    margin: 0 33px 0 11px;
+    margin: 0 43px 0 11px;
     margin-bottom: 0;
   }
 }
@@ -2046,7 +2052,7 @@ body .art-section-top .art_our_services .art_our_services_cards_container {
 @media screen and (min-width: 1440px) {
   body .art-section-top .art_our_services .art_our_services_cards_container {
     margin: 1pc auto 5pc;
-    padding: 50px 40px;
+    padding: 20px 10px;
   }
 }
 
@@ -9514,8 +9520,8 @@ body .art_our_services_card::before {
     margin-bottom: 0%;
   }
   body .art_our_services_card::before {
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, transparent), to(rgba(28, 141, 33, 0.722)));
     background-image: -o-linear-gradient(transparent 10%, rgba(28, 141, 33, 0.722));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, transparent), to(rgba(28, 141, 33, 0.722)));
     background-image: linear-gradient(transparent 10%, rgba(28, 141, 33, 0.722));
   }
 }
@@ -9639,8 +9645,9 @@ body .art_our_services_card .art_our_services_card_content .art_our_services_car
   margin: 0;
   line-height: initial;
   font-size: 24pt;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  min-height: auto;
   padding: 8px 0;
   position: absolute;
   right: 0;
