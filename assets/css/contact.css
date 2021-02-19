@@ -1,14 +1,14 @@
-button:active, button:focus {
+body button:active, body button:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: none;
 }
 
-.contacthero {
+body .contacthero {
   padding: 2% 4%;
 }
 
-.contacthero__wrapper {
+body .contacthero__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,7 +22,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 320px) {
-  .contacthero__wrapper {
+  body .contacthero__wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -31,7 +31,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 750px) {
-  .contacthero__wrapper {
+  body .contacthero__wrapper {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -39,7 +39,7 @@ button:active, button:focus {
   }
 }
 
-.contacthero__information {
+body .contacthero__information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +65,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 320px) {
-  .contacthero__information {
+  body .contacthero__information {
     padding: 4%;
     margin: 4rem 0;
     -webkit-box-ordinal-group: 3;
@@ -76,7 +76,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 750px) {
-  .contacthero__information {
+  body .contacthero__information {
     padding: 2% 4%;
     margin: 0;
     -webkit-box-ordinal-group: 2;
@@ -86,18 +86,18 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 1024px) {
-  .contacthero__information {
+  body .contacthero__information {
     width: 45%;
   }
 }
 
-.contacthero__information__title {
+body .contacthero__information__title {
   font-size: 2rem;
   font-weight: 600;
   color: #565656;
 }
 
-.contacthero__information__address {
+body .contacthero__information__address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,25 +109,25 @@ button:active, button:focus {
   margin: 1rem 0;
 }
 
-.contacthero__information__address__icon {
+body .contacthero__information__address__icon {
   font-size: 2.4rem;
   margin: 0;
   margin-right: 1rem;
   color: #24C347;
 }
 
-.contacthero__information__address__content {
+body .contacthero__information__address__content {
   color: #565656;
   font-size: 1rem;
   line-height: 2rem;
 }
 
-.contacthero__information__address .art_get_dir.filled {
+body .contacthero__information__address .art_get_dir.filled {
   min-width: 50%;
   border: 0;
 }
 
-.contacthero__information__socialicon {
+body .contacthero__information__socialicon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,25 +136,29 @@ button:active, button:focus {
   margin-top: 2rem;
 }
 
-.contacthero__information__socialicon__btn {
+body .contacthero__information__socialicon__btn {
   max-width: 50px;
   max-height: 50px;
   margin-right: 1rem;
 }
 
-.contacthero__information__socialicon__pic {
+body .contacthero__information__socialicon__pic {
   max-width: 100%;
 }
 
-.contacthero__content {
+body .contacthero__content {
   padding: 0 5%;
   color: #565656;
   margin: 0 0 auto;
   width: 55%;
 }
 
+body .contacthero__content.apply {
+  color: #ffffff;
+}
+
 @media screen and (min-width: 320px) {
-  .contacthero__content {
+  body .contacthero__content {
     max-width: 100%;
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -164,29 +168,36 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 1024px) {
-  .contacthero__content {
+  body .contacthero__content {
     width: 55%;
   }
 }
 
-.contacthero__content__title {
+body .contacthero__content__title {
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
   margin-bottom: 1rem;
 }
 
-.contacthero__content__text {
+body .contacthero__content__text {
   margin-bottom: 1rem;
-  font-size: 0.8rem;
   line-height: 1.5rem;
 }
 
-.contacthero__content__form {
+body .contacthero__content__form {
   width: 100%;
 }
 
-.contacthero__content__btn {
+body .contacthero__content__form.apply {
+  padding: 30px 15px;
+  background: white;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 2px 2px rgba(96, 124, 138, 0.141);
+  box-shadow: 0 2px 2px rgba(96, 124, 138, 0.141);
+}
+
+body .contacthero__content__btn {
   width: 100%;
   padding: 16px;
   background: #24C347;
@@ -202,7 +213,7 @@ button:active, button:focus {
   margin-right: auto;
 }
 
-.contacthero__content__btnwrapper {
+body .contacthero__content__btnwrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,20 +222,20 @@ button:active, button:focus {
   justify-content: center;
 }
 
-.contacthero__content__btnwrapper .art_btn {
+body .contacthero__content__btnwrapper .art_btn {
   min-width: 55%;
 }
 
-.contacthero .art_input_co {
+body .contacthero .art_input_co {
   margin: 0 0 20px;
 }
 
-.contacthero .art_input_co .art_input {
+body .contacthero .art_input_co .art_input {
   background: transparent;
   min-width: 100%;
 }
 
-.subscribe {
+body .subscribe {
   padding: 4% 2%;
   background: #F9F9F9;
   display: -webkit-box;
@@ -242,18 +253,18 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 320px) {
-  .subscribe {
+  body .subscribe {
     padding: 4% 0 20%;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .subscribe {
+  body .subscribe {
     padding: 4% 2%;
   }
 }
 
-.subscribe__title {
+body .subscribe__title {
   font-size: 2rem;
   font-weight: 600;
   color: #24C347;
@@ -261,24 +272,24 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 320px) {
-  .subscribe__title {
+  body .subscribe__title {
     margin-top: 1rem;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .subscribe__title {
+  body .subscribe__title {
     margin: 0;
   }
 }
 
-.subscribe__text {
+body .subscribe__text {
   font-size: 1rem;
   color: #838383;
   text-align: center;
 }
 
-.subscribe__form {
+body .subscribe__form {
   margin: 2rem 0;
   width: 100%;
   display: -webkit-box;
@@ -293,7 +304,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 320px) {
-  .subscribe__form {
+  body .subscribe__form {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -302,7 +313,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 750px) {
-  .subscribe__form {
+  body .subscribe__form {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -310,7 +321,7 @@ button:active, button:focus {
   }
 }
 
-.subscribe__form__inputwrapper {
+body .subscribe__form__inputwrapper {
   width: 28%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -330,7 +341,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 320px) {
-  .subscribe__form__inputwrapper {
+  body .subscribe__form__inputwrapper {
     width: 80%;
     margin: 0;
     margin-bottom: 1rem;
@@ -338,7 +349,7 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 750px) {
-  .subscribe__form__inputwrapper {
+  body .subscribe__form__inputwrapper {
     width: 28%;
     margin: 0;
     margin-right: 2rem;
@@ -346,24 +357,24 @@ button:active, button:focus {
 }
 
 @media screen and (min-width: 1024px) {
-  .subscribe__form__inputwrapper {
+  body .subscribe__form__inputwrapper {
     width: 35%;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .subscribe__form__inputwrapper {
+  body .subscribe__form__inputwrapper {
     width: 35%;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .subscribe__form__inputwrapper {
+  body .subscribe__form__inputwrapper {
     width: 28%;
   }
 }
 
-.subscribe__form__input {
+body .subscribe__form__input {
   width: 100%;
   padding: 0 15px;
   outline: none;
@@ -373,26 +384,42 @@ button:active, button:focus {
   background: transparent;
 }
 
-.subscribe .art_gree_btn.filled {
+body .subscribe .art_gree_btn.filled {
   width: 15%;
 }
 
 @media screen and (min-width: 320px) {
-  .subscribe .art_gree_btn.filled {
+  body .subscribe .art_gree_btn.filled {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .subscribe .art_gree_btn.filled {
+  body .subscribe .art_gree_btn.filled {
     width: 15%;
   }
 }
 
-.art_gree_btn.filled {
+body .art_gree_btn.filled {
   margin: 0;
 }
 
-.art_gree_btn {
+body .art_gree_btn {
   margin: 0;
+}
+
+body .art-nav {
+  -webkit-box-shadow: 0 2px 2px 0 rgba(96, 124, 138, 0.212);
+  box-shadow: 0 2px 2px 0 rgba(96, 124, 138, 0.212);
+}
+
+body .art_wave {
+  position: relative;
+  max-height: 60vh;
+}
+
+body .art_wave svg {
+  width: 100vw;
+  height: 82vh;
+  position: absolute;
 }

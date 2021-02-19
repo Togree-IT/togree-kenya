@@ -2154,6 +2154,7 @@
             min-height: 40vh;
             border-radius: 8px;
             z-index: 1;
+            background-color: inherit;
             @include off_shado();
             .art_video_poster {
                 position: relative;

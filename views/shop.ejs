@@ -1,31 +1,36 @@
-<%- include('./_nav.ejs') %>
+<%- include('./_nav_v2.ejs') %>
     <main>
 
-        <div class="container">
-            <!-- <div class="shop__sidebarwrapper" id="sidewrapper"> -->
+        <div class="container art_container">
+
             <div class="shop__sidebar">
 
-                <em class="lni lni-cross-circle shop__sidebar__exiticon" id="exiticon"></em>
 
-                <div class="art_input_co">
-                    <em class="lni lni-search-alt  shop__sidebar__icon"></em>
-                    <input class="art_input" type="text" placeholder="Search Product" id="searchbtn">
-                </div>
+
 
                 <div class="shop__sidebar__category">
-                    <h5 class="shop__sidebar__category__header">CATEGORY</h5>
-                    <h6 class="shop__sidebar__category__subheader">Asset GPS Trackers</h6>
-                    <h6 class="shop__sidebar__category__subheader">Vechicle GPS Trackers</h6>
-                    <h6 class="shop__sidebar__category__subheader">Personal Trackers</h6>
+                    <div class="shop__sidebar__category__header">
+                        <h5>CATEGORY</h5>
+                    </div>
+                    <ul class="art_cart_options">
+                        <li class="art_cart_option shop__sidebar__category__subheader">
+                            <a href="#!" class="art_link waves-effect">Asset GPS Trackers</a>
+                        </li>
+                        <li class="art_cart_option shop__sidebar__category__subheader">
+                            <a href="#!" class="art_link waves-effect">Vechicle GPS Trackers</a></li>
+                        <li class="art_cart_option shop__sidebar__category__subheader">
+                            <a href="#!" class="art_link waves-effect">Personal Trackers</a></li>
+                        <li class="art_cart_option shop__sidebar__category__subheader">
+                            <a href="#!" class="art_link waves-effect">Camera</a></li>
+                    </ul>
 
-                    <h6 class="shop__sidebar__category__subheader">Camera</h6>
                 </div>
 
                 <div class="shop__sidebar__price">
 
                     <div class="shop__sidebar__price__titlecontainer">
-                        <h5 class="shop__sidebar__price__titlecontainer__title">PRICE(KSH)</h3>
-                            <h5 class="shop__sidebar__price__titlecontainer__title" id="apply">APPLY</h3>
+                        <h5 class="shop__sidebar__price__titlecontainer__title">PRICE(KSH)</h5>
+                        <h5 class="shop__sidebar__price__titlecontainer__title" id="apply">APPLY</h5>
                     </div>
 
                     <div class="shop__sidebar__price__range">
@@ -49,13 +54,10 @@
                 </div>
 
             </div>
-            <!-- </div> -->
+
             <section class="shop">
 
-
-
                 <div class="shop__products" id="shopproduct">
-
                     <div class="shop__products__header" id="iconheader">
                         <!-- list item icon -->
                         <div class="shop__products__header__iconwrapper" id="listitem">

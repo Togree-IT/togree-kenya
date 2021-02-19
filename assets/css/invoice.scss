@@ -1,0 +1,81 @@
+@import "./media-queries";
+@import "./mixins.scss";
+body {
+    .art_login_form_co {
+        width: 50%;
+        margin: 8pc auto;
+        padding: 2pc;
+        background: white;
+        border-radius: 10px;
+        -webkit-box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.149);
+        box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.149);
+        @include mobile {
+            width: 100%;
+        }
+        @include tablet {
+            width: 80%;
+        }
+        @include laptop {
+            width: 70%;
+        }
+        @include laptop_L {
+            width: 55%;
+        }
+        @include laptop_W {
+            width: 45%;
+        }
+        .art_title {
+            width: auto;
+            padding: 4px 0;
+            border-bottom: 2px solid;
+            margin-bottom: 2rem;
+            * {
+                margin: 0;
+            }
+        }
+        .art_input_co {
+            // margin-bottom: 10px;
+            // max-height: 45px;
+            // width: 73%;
+            max-height: 80px;
+            height: 100%;
+            padding: 14px;
+            margin: 0 auto 25px;
+            border: 0;
+            background: #f1f1f1;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            border-radius: 5px;
+        }
+        .art_forgot {
+            padding: 20px 0;
+            text-align: right;
+        }
+        .art_submit_btn_co {
+            width: 80%;
+            margin: 2pc auto;
+            height: 60px;
+            // @include flex;
+            .art_gree_btn {
+                width: 100%;
+                height: 100%;
+                -webkit-box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+                box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
+            }
+        }
+    }
+    .art-nav {
+        -webkit-box-shadow: 0 2px 2px 0 hsla(200, 18%, 46%, 0.212);
+        box-shadow: 0 2px 2px 0 hsla(200, 18%, 46%, 0.212);
+    }
+    .art_wave {
+        position: relative;
+        max-height: 60vh;
+        svg {
+            width: 100vw;
+            height: 82vh;
+            position: absolute;
+        }
+    }
+}
