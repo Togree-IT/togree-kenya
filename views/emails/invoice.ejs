@@ -42,20 +42,20 @@
             <tr>
                 <td align="center" style="padding:0;">
                     <!--[if mso]>
-                <table role="presentation" align="center" style="width:600px;">
+                <table role="presentation" align="center" style="width:100%;max-width:600px;border:none;border-spacing:0;background: white; margin: 50px 0; border-radius: 19px;">
                  <tr>
                  <td>
                  <![endif]-->
-                    <table role="presentation" style="width:100%;max-width:600px;border:none;border-spacing:0;">
+                    <table role="presentation" style="width:100%;max-width:600px;border:none;border-spacing:0;background: white; margin: 50px 0; border-radius: 19px;">
                         <tr>
                             <td style="padding:10px 30px;">
-                                <div style="width: 100%;display:inline-block;">
-                                    <span style="width:80%;display:inherit;">
-                                        <h2 style="font-size:20px; font-weight:450;width:70%;color:#009B4E;">INVOICE RECIEPT</h2>
+                                <div style="width: 100%;display:inline-block;    padding: 30px 0;">
+                                    <span style="width:50%;display:inherit;">
+                                        <h2 style="font-size:20px; font-weight:450;color:#009B4E;"><%-lang_("INVOICE_RECIEPT")%></h2>
                                     </span>
-                                    <span style="vertical-align: middle;">
-                                        <a style="text-decoration:none;"href="#">
-                                            <img width="36" style="width:100%;max-width:36px;min-height:36px;height:auto;border:none;" src="cid:logo" alt="togree">
+                                    <span style="margin: 0 auto;width: 40%;display: inline-block;text-align: right;">
+                                        <a style="text-decoration:none; display: block;"href="//www.togree.com">
+                                            <img width="36" style="width:100%;max-width:165px;min-height:35px;height:auto;border:none;vertical-align: middle;" src="cid:logo" alt="togree">
                                         </a>
                                     </span>
                                 </div>
@@ -72,20 +72,20 @@
                                 <div style="width:100%;background-color:#EBFFEF;padding: 30px 0;color: #505050;border-radius:10px;">
                                     <span style="display:inline-block;padding:0 7%;">
                                         <h3 style="font-size:12px;font-weight:450;font-weight:600;">BILL TO</h3>
-                                        <p style="font-size:10px;">MUYIWA KASEREKA <br> MOMBASA ROAD,<br> 00200 NAIROBI <br> KENYA. <br> +254711500434 <br></p>
+                                        <p style="font-size:10px;"><%= Billing_to.name%> <br><%= Billing_to.address%>, <br> <%= Billing_to.country%> <br> <%= Billing_to.phone%> <br></p>
                                     </span>
                                     <span style="display:inline-block;padding:0 7%;font-size:10px;">
                                         <h3 style="font-size:12px;font-weight:450;font-weight:600;">SHIP TO</h3>
-                                        <p style="font-size:10px;"><%= name %> <br> MOMBASA ROAD,<br> 00200 NAIROBI <br> KENYA. <br> +254711500434 <br></p>
+                                        <p style="font-size:10px;"><%= Shipping_to.name%> <br><%= Shipping_to.address%>, <br> <%= Shipping_to.country%> <br> <%= Shipping_to.phone%> <br></p>
                                     </span>
                                     <span style="display:inline-block;padding:0 7%;font-size:10px;">
                                         <span>
                                             <h3 style="font-size:12px;font-weight:450;font-weight:600;" >PAYMENT TERMS</h3>
-                                            <p  style="font-size:10px;">CREDIT CARD</p>
+                                            <p  style="font-size:10px;"><%= Payment_method.method%></p>
                                         </span>
                                     <span>
                                             <h3 style="font-size:12px;font-weight:450;font-weight:600;" >AMOUNT PAID</h3>
-                                            <p  style="font-size:10px;">KSH 2,500</p>
+                                            <p  style="font-size:10px;">USD <%= Order_details.total%></p>
                                         </span>
                                     </span>
                                 </div>
@@ -96,16 +96,16 @@
                                 <div style="width:100%;background-color:#EBFFEF;padding: 30px 0;color: #505050;border-radius:10px;">
                                     <span style="display:inline-block;padding:0 5%;">
                                         <h3 style="font-size:12px;font-weight:450;font-weight:600;">INVOICE NUMBER </h3>
-                                        <p style="font-size:10px;">ADS23563927</p>
+                                        <p style="font-size:10px;"><%= Invoice_details.invoice_number !== ''?Invoice_details.invoice_number:'ADS23563927' %> </p>
                                     </span>
                                     <span style="display:inline-block;padding:0 5%;font-size:10px;">
                                         <h3 style="font-size:12px;font-weight:450;font-weight:600;">INVOICE DATE</h3>
-                                        <p style="font-size:10px;">2021-02-20</p>
+                                        <p style="font-size:10px;"><%= Invoice_details.invoice_date !== ''?Invoice_details.invoice_date: new Date().toLocaleDateString().split('/').join('-') %></p>
                                     </span>
                                     <span style="display:inline-block;padding:0 5%;font-size:10px;">
                                        
                                             <h3 style="font-size:12px;font-weight:450;font-weight:600;">CUSTOMER NUMBER</h3>
-                                            <p  style="font-size:10px;">918273737271</p>
+                                            <p  style="font-size:10px;"><%= Invoice_details.customer_number !== ''?Invoice_details.customer_number:'' %> </p>
                                     </span>
 
                                 </div>
@@ -123,11 +123,21 @@
                                     </tr>
 
                                     <tr>
-                                        <td style="text-align: center;font-size:10px;">004</td>
-                                        <td style="text-align: center;font-size: 10px;">TK08 GPS TRACKER</td>
-                                        <td style="text-align: center;font-size: 10px;">2</td>
-                                        <td style="text-align: center;font-size: 10px;">1500</td>
-                                        <td style="text-align: center;font-size: 10px;">3000</td>
+                                        <td style="text-align: center;font-size:10px;">
+                                            <%= Order_details.order_ID%>
+                                        </td>
+                                        <td style="text-align: center;font-size: 10px;">
+                                            <%= Order_details.product_name%>
+                                        </td>
+                                        <td style="text-align: center;font-size: 10px;">
+                                            <%= Order_details.QTY%>
+                                        </td>
+                                        <td style="text-align: center;font-size: 10px;">
+                                            <%= Order_details.unit_price%>
+                                        </td>
+                                        <td style="text-align: center;font-size: 10px;">
+                                            <%= Order_details.total%>
+                                        </td>
                                     </tr>
 
                                     <tr>
@@ -135,7 +145,9 @@
                                         <td></td>
                                         <td></td>
                                         <td style="text-align: center;font-size:10px; border-top: 8px solid transparent;">SUBTOTAL</td>
-                                        <td style="text-align: center;font-size:10px; border-top: 8px solid transparent;">3000</td>
+                                        <td style="text-align: center;font-size:10px; border-top: 8px solid transparent;">
+                                            <%= Order_details.total%>
+                                        </td>
                                     </tr>
 
                                     <tr>
@@ -143,15 +155,17 @@
                                         <td></td>
                                         <td></td>
                                         <td style="text-align: center;font-size:10px;">SHIPPING</td>
-                                        <td style="text-align: center;font-size:10px;">400</td>
+                                        <td style="text-align: center;font-size:10px;">0</td>
                                     </tr>
 
                                     <tr>
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td style="text-align: center;font-size:12px;font-weight: 500;">TOTAL KSH</td>
-                                        <td style="text-align: center;font-size:12px;font-weight: 500;">3400</td>
+                                        <td style="text-align: center;font-size:12px;font-weight: 500;">TOTAL USD</td>
+                                        <td style="text-align: center;font-size:12px;font-weight: 500;">
+                                            <%= Order_details.total%>
+                                        </td>
                                     </tr>
 
                                 </table>

@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "_start": "nodemon app",
+        "_start": "yarn build && nodemon app",
+        "build": "gulp build --require @babel/register --gulpfile tasks",
         "start": "node app.js"
     },
     "keywords": [],

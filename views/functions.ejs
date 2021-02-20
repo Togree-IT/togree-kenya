@@ -77,6 +77,11 @@
         }
     }
 
+    function initializeAOSAnimations() {
+        if (typeof AOS !== "undefined")
+            AOS.init();
+    }
+
     function dateCountDown(elemnent, date) {
         if (elemnent) {
             // Set the date we're counting down to

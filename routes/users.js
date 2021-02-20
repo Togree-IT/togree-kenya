@@ -96,8 +96,21 @@ router.get("/generate/invoice", (req, res) => {
 });
 
 router.post("/invoice/send", (req, res) => {
-    console.log(req.body);
-    res.status(200).json({ status: 'successful' })
+
+    let email = req.body.Billing_to.email;
+    funs.sendEmail('', 'Your Invoice from Togree', email, null, null, "invoice", [], {
+        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+        ...req.body
+    }).then(done => {
+
+        console.log(done);
+        res.status(200).json({ status: 'successful' });
+    }).catch(err => {
+        res.status(500).json({ status: "failed" })
+        console.log(err);
+    })
+
+
 })
 
 module.exports = router;

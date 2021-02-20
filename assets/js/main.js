@@ -20,10 +20,6 @@ function initializeTabs() {
     }
 }
 
-function initializeAOSAnimations() {
-    if (typeof AOS !== "undefined")
-        AOS.init();
-}
 
 // product page tab function
 function openTab(evt, tabName) {

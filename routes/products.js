@@ -47,8 +47,8 @@
 
          '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
          '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
-         'assets/js/main.js',
-         'assets/js/products.js'
+         'assets/js/main.min.js',
+         'assets/js/products.min.js'
      ]
 
 

@@ -24,6 +24,10 @@
                     <div class="art_input_co ">
                         <input type="text" placeholder="<%- lang_(`Name`) %> " id="name" name="name" class="art_input ">
                     </div>
+                    <label for="email"><%- lang_(`Email_address`) %></label>
+                    <div class="art_input_co ">
+                        <input type="email" placeholder="<%- lang_(`Email`) %>* " id="email" name="email" class="art_input " required>
+                    </div>
                     <label for="address"><%- lang_(`Address`) %></label>
                     <div class="art_input_co ">
                         <input type="text" placeholder="<%- lang_(`Address`) %> " id="address" name="address" class="art_input ">
@@ -156,22 +160,40 @@
         inv_gen_form.addEventListener('submit', function(e) {
             e.preventDefault();
             var sbtm = inv_gen_form.art_sumit;
-            let names = Object.keys(inv_gen_form);
+
             let Billing_to = {};
-            Billing_to['name'] = inv_gen_form.name;
-            Billing_to['address'] = inv_gen_form.address;
-            Billing_to['country'] = inv_gen_form.country;
-            Billing_to['phpne'] = inv_gen_form.phone;
+            Billing_to['name'] = inv_gen_form.name.value;
+            Billing_to['email'] = inv_gen_form.email.value;
+            Billing_to['address'] = inv_gen_form.address.value;
+            Billing_to['country'] = inv_gen_form.country.value;
+            Billing_to['phone'] = inv_gen_form.phone.value;
             let Shipping_to = {};
-            Shipping_to['name'] = inv_gen_form.s_name;
-            Shipping_to['address'] = inv_gen_form.s_address;
-            Shipping_to['country'] = inv_gen_form.s_country;
-            Shipping_to['phpne'] = inv_gen_form.s_phone;
+            Shipping_to['name'] = inv_gen_form.s_name.value;
+            Shipping_to['address'] = inv_gen_form.s_address.value;
+            Shipping_to['country'] = inv_gen_form.s_country.value;
+            Shipping_to['phpne'] = inv_gen_form.s_phone.value;
             let Payment_method = {};
-            Payment_method['method'] = inv_gen_form.payment;
+            Payment_method['method'] = inv_gen_form.payment.value;
+            let Invoice_details = {};
+            Invoice_details['invoice_number'] = inv_gen_form.invoice_number.value;
+            Invoice_details['invoice_date'] = inv_gen_form.invoice_date.value;
+            Invoice_details['customer_number'] = inv_gen_form.customer_number.value;
+            let Order_details = {};
+            Order_details['order_ID'] = inv_gen_form.order_ID.value;
+            Order_details['product_name'] = inv_gen_form.product_name.value;
+            Order_details['QTY'] = inv_gen_form.qty.value;
+            Order_details['unit_price'] = inv_gen_form.unit_price.value;
+            Order_details['total'] = inv_gen_form.total.value;
 
+            let formData = {
+                Billing_to,
+                Shipping_to,
+                Payment_method,
+                Invoice_details,
+                Order_details
+            }
 
-            axios.post(inv_gen_form.getAttribute('action')).then(function(res) {
+            axios.post(inv_gen_form.getAttribute('action'), formData).then(function(res) {
                 var data = res.data;
                 sbtm.disabled = true;
                 sbtm.classList.add('disabled')

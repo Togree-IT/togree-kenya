@@ -490,11 +490,11 @@ exports.getFullCont = {
 exports.sendEmail = (messageTemp, Subject, to, from, name, template, attach, params, context) => {
     const mail = require('../mail/index'),
         keys = require('../config/keys').mail;
+
     // We can also send another email as a reminder
     const art_mail = new mail(require('nodemailer'), keys.user, keys.pass, template); //Authenticate SMTP
     // Send an email
     const message = messageTemp;
-
     return art_mail.send(Subject, message, to, from, name, attach, params, context)
 
 
