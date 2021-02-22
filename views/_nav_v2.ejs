@@ -36,6 +36,12 @@
                     </svg>
                 </label>
                 <input type="text" name="q" id="top_nav_recent_search_trigger" class="art_input dropdown-trigger art_lang_changer" placeholder="Search here..." data-target='top_nav_recent_search' autocomplete="off">
+                <button type="submit" id="s_submit" class="art_btn">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.6667 25.3333C20.5577 25.3333 25.3333 20.5577 25.3333 14.6667C25.3333 8.77563 20.5577 4 14.6667 4C8.77563 4 4 8.77563 4 14.6667C4 20.5577 8.77563 25.3333 14.6667 25.3333Z" stroke="#929292" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M28.0002 28L22.2002 22.2" stroke="#929292" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
         </form>
 
@@ -67,7 +73,92 @@
     <div id='top_nav_recent_search' class='dropdown-content art_nav_dropdown'>
         <div class='dropdown-content_ art_menu_droper'>
             <div class="art_nav_recent_search_co" id="top_art_nav_recent_search_co">
-                <div class="preloader-wrapper big active" style="margin: auto;">
+
+                <div class="art_recent_s">
+                    <div class="art_header">
+                        <div class="art_title">
+                            <span>Recent search</span>
+                        </div>
+                        <button class="art_clear">
+                            <em class="material-icons">clear</em>
+                        </button>
+                    </div>
+                    <div class="art_body">
+                        <a class="art_search_tag">
+                            <span>For Cars</span>
+                            <span>
+                                <em class="material-icons">search</em>
+                            </span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>For Bicycle</span>
+                            <span>
+                                <em class="material-icons">search</em>
+                            </span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>Motor</span>
+                            <span><em class="material-icons">search</em></span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>For Cars</span>
+                            <span>
+                                <em class="material-icons">search</em>
+                            </span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>For Bicycle</span>
+                            <span>
+                                <em class="material-icons">search</em>
+                            </span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>Motor</span>
+                            <span><em class="material-icons">search</em></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="art_recent_s">
+                    <div class="art_header">
+                        <div class="art_title">
+                            <span>Recommended </span>
+                        </div>
+                    </div>
+                    <div class="art_body">
+                        <a class="art_search_tag">
+                            <span>3S Multi Functional</span>
+                            <span>
+                                <em class="material-icons">search</em>
+                            </span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>TK08 Vehicle Tracker</span>
+                            <span>
+                                <em class="material-icons">search</em>
+                            </span>
+                        </a>
+                        <a class="art_search_tag">
+                            <span>TK26 Mini Vehicle Tracker</span>
+                            <span><em class="material-icons">search</em></span>
+                        </a>
+                    </div>
+                </div>
+                <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 18 18" version="1.1">
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Search->-Suggestions-(Empty-Query)" transform="translate(-558.000000, -114.000000)">
+                                <g id="Navbar">
+                                <g id="Popup" transform="translate(457.000000, 33.000000)">
+                                <g id="Recent-Searches" transform="translate(12.000000, 40.000000)">
+                                <g id="24px-(3)" transform="translate(84.000000, 38.000000)">
+                                <path d="M17.5,14 L16.71,14 L16.43,13.73 C17.41,12.59 18,11.11 18,9.5 C18,5.91 15.09,3 11.5,3 C7.91,3 5,5.91 5,9.5 C5,13.09 7.91,16 11.5,16 C13.11,16 14.59,15.41 15.73,14.43 L16,14.71 L16,15.5 L21,20.49 L22.49,19 L17.5,14 Z M11.5,14 C9.01,14 7,11.99 7,9.5 C7,7.01 9.01,5 11.5,5 C13.99,5 16,7.01 16,9.5 C16,11.99 13.99,14 11.5,14 Z" id="Shape" fill="#9E9E9E" fill-rule="nonzero"></path>
+                                <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </svg> <div class="preloader-wrapper big active" style="margin: auto;">
                     <div class="spinner-layer spinner-green-only">
                         <div class="circle-clipper left">
                             <div class="circle"></div>
@@ -79,7 +170,7 @@
                             <div class="circle"></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -96,11 +187,26 @@
 
 
         getLanguages();
+
         var top_nav_recent_search_trigger = document.querySelector('#top_nav_recent_search_trigger');
         top_nav_recent_search(top_nav_recent_search_trigger);
+        top_nav_recent_search_trigger.onblur = function(e) {
+            if (e.target.previousElementSibling) {
+                e.target.previousElementSibling.classList.remove('hider')
+            }
+        };
+        // 
         top_nav_recent_search_trigger.onfocus = function(e) {
-            e.stopPropagation();
-        }
+            var instance = M.Dropdown.getInstance(top_nav_recent_search_trigger);
+
+            if (e.target.previousElementSibling) {
+                e.target.previousElementSibling.classList.add('hider')
+            }
+            // if (instance.isOpen) {
+            //     e.stopPropagation();
+            //     instance.open()
+            // }
+        };
 
         function getLanguages() {
             axios.get("<%= path%>language/all")
@@ -135,24 +241,53 @@
 
 
         if (top_nav_recent_search_trigger) {
-            M.Dropdown.init(top_nav_recent_search_trigger, {
+            let anEvent = '';
+
+            function prevD(ev) {
+                anEvent = ev.target;
+            }
+            return M.Dropdown.init(top_nav_recent_search_trigger, {
                 // hover: true,
                 closeOnClick: !true,
-                // outDuration: 4000,
+                inDuration: 40,
+                outDuration: 40,
                 container: document.querySelector('.art-nav'),
                 coverTrigger: !false,
                 onOpenStart: e => {
-                    var target = e;
+                    document.addEventListener('click', prevD);
+
+                    loadRecentSearches(M.Dropdown.getInstance(e));
+                },
+                onOpenEnd: e => {
+                    e.focus();
 
                 },
-                onCloseStart: e => {
-                    // var target = e;
-                    // let open = new M.Dropdown(top_nav_recent_search_trigger).open
-                    console.log(window);
-                    // e.stopPropagation();
+                onCloseStart: e => {},
+                onCloseEnd: e => {
+                    var instance = M.Dropdown.getInstance(e);
+                    if (e === anEvent) {
+                        instance.open();
+                        // e.focus();
+
+                    } else {
+                        e.blur()
+                        document.removeEventListener('click', prevD)
+                        anEvent = ''
+                    }
 
                 }
             });
+        }
+    }
+
+    function loadRecentSearches(instance) {
+        if (instance && typeof instance.dropdownEl !== "undefined") {
+            let top_art_nav_recent_search_co = instance.dropdownEl.querySelector('#top_art_nav_recent_search_co');
+            if (top_art_nav_recent_search_co) {
+                //                 top_art_nav_recent_search_co.innerHTML = '';
+                // let recenTemp = `
+                // `;
+            }
         }
     }
 </script>
