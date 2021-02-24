@@ -838,7 +838,8 @@ body .art-head-social .art-social-icon {
 }
 
 body .art-head-social .art-social-icon img {
-  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 body .rate {
@@ -2464,9 +2465,10 @@ body .art_render_implimental .art_bullet_element {
   padding: 10px 0 10px 15px;
   /* background: #ffffff; */
   /* box-shadow: 0 3px 3px #e8f2fb; */
-  border-radius: 0;
-  border-left: 4px solid #23c447;
-  background: rgba(133, 255, 161, 0.039);
+  background: white;
+  -webkit-box-shadow: 0 2px 2px rgba(105, 167, 195, 0.322);
+  box-shadow: 0 2px 2px rgba(105, 167, 195, 0.322);
+  margin-left: 15px;
 }
 
 body img {

@@ -56,6 +56,8 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "assets/imgs/user.svg",
     },
+
+
     dt: {
         TYPE: "TIMESTAMP",
         AUTO_INCREMENT: !true,

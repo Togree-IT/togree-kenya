@@ -2359,18 +2359,6 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
     width: 32%;
     margin: 0 auto 4%;
   }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(3), body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(6) {
-    margin-right: 0;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(1), body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(4) {
-    margin-left: 0;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(7) {
-    margin: 0 5% 4% 0;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(8) {
-    margin: 0 0 4%;
-  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -2378,18 +2366,6 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
     -webkit-box-shadow: none;
     box-shadow: none;
     width: 22%;
-    margin: 0 auto 4%;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(3), body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(6) {
-    margin-right: auto;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(1), body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(4) {
-    margin-left: auto;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(7) {
-    margin: 0 auto 4% auto;
-  }
-  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co:nth-of-type(8) {
     margin: 0 auto 4%;
   }
 }
@@ -3209,6 +3185,10 @@ body .art-section-top .art_our_news .art_updates .art_updates_tabs .tabs .indica
 
 body .art-section-top .art_our_news .art_updates .art_updates_tabs .tabs .tab.col.s3 {
   width: auto;
+  margin: 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 body .art-section-top .art_our_news .art_updates .art_updates_tabs .tabs .tab a {

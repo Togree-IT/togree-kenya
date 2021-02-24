@@ -708,7 +708,8 @@
                 -webkit-box-shadow: 0 2px 0px rgba(96, 125, 139, 0.212);
                 box-shadow: 0 2px 0px rgba(96, 125, 139, 0.212);
                 img {
-                    width: 100%;
+                    max-width: 100%;
+                    vertical-align: middle;
                 }
             }
         }
@@ -1967,9 +1968,13 @@
                 /* background: #ffffff; */
                 // border-radius: 1em;
                 /* box-shadow: 0 3px 3px #e8f2fb; */
-                border-radius: 0;
-                border-left: 4px solid #23c447;
-                background: hsla(134, 100%, 76%, 0.039);
+                // border-radius: 0;
+                // border-left: 4px solid #23c447;
+                // background: hsla(134, 100%, 76%, 0.039);
+                background: rgb(255, 255, 255);
+                -webkit-box-shadow: 0 2px 2px hsla(199, 43%, 59%, 0.322);
+                box-shadow: 0 2px 2px hsla(199, 43%, 59%, 0.322);
+                margin-left: 15px;
             }
         }
         img {

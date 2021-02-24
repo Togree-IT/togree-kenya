@@ -1699,40 +1699,40 @@
                             box-shadow: 0 0 15px hsla(88, 50%, 53%, 0.102);
                             width: 32%;
                             margin: 0 auto 4%;
-                            &:nth-of-type(3),
-                            &:nth-of-type(6) {
-                                margin-right: 0;
-                            }
-                            &:nth-of-type(1),
-                            &:nth-of-type(4) {
-                                margin-left: 0;
-                            }
-                            &:nth-of-type(7) {
-                                margin: 0 5% 4% 0;
-                            }
-                            &:nth-of-type(8) {
-                                margin: 0 0 4%;
-                            }
+                            // &:nth-of-type(3),
+                            // &:nth-of-type(6) {
+                            //     margin-right: 0;
+                            // }
+                            // &:nth-of-type(1),
+                            // &:nth-of-type(4) {
+                            //     margin-left: 0;
+                            // }
+                            // &:nth-of-type(7) {
+                            //     margin: 0 5% 4% 0;
+                            // }
+                            // &:nth-of-type(8) {
+                            //     margin: 0 0 4%;
+                            // }
                         }
                         @include laptop {
                             -webkit-box-shadow: none;
                             box-shadow: none;
                             width: 22%;
                             margin: 0 auto 4%;
-                            &:nth-of-type(3),
-                            &:nth-of-type(6) {
-                                margin-right: auto;
-                            }
-                            &:nth-of-type(1),
-                            &:nth-of-type(4) {
-                                margin-left: auto;
-                            }
-                            &:nth-of-type(7) {
-                                margin: 0 auto 4% auto;
-                            }
-                            &:nth-of-type(8) {
-                                margin: 0 auto 4%;
-                            }
+                            // &:nth-of-type(3),
+                            // &:nth-of-type(6) {
+                            //     margin-right: auto;
+                            // }
+                            // &:nth-of-type(1),
+                            // &:nth-of-type(4) {
+                            //     margin-left: auto;
+                            // }
+                            // &:nth-of-type(7) {
+                            //     margin: 0 auto 4% auto;
+                            // }
+                            // &:nth-of-type(8) {
+                            //     margin: 0 auto 4%;
+                            // }
                         }
                         .art_product_desc_co {
                             .art_prod_title {
@@ -2320,6 +2320,10 @@
                                 &.col {
                                     &.s3 {
                                         width: auto;
+                                        margin: 0;
+                                        -webkit-box-flex: 1;
+                                        -ms-flex: 1;
+                                        flex: 1;
                                     }
                                 }
                                 a {
