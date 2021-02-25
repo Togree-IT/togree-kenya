@@ -63,52 +63,37 @@
                     <h4 class="art_title">
                         <%= lang_('Let_our_numbers_speack_for_us') %>
                     </h4>
+                    <% if(our_numbers.length) {%>
+                        <div class="art_our_number_circle_main">
+                            <%
+                            our_numbers.map(number=>{
+                            %>
+                                <div class="art_our_number_circle">
+                                    <div class="art_our_number_circle_conter">
+                                        <div class="art_circle_wrap">
+                                            <div class="art_counter_co">
 
-                    <div class="art_our_number_circle_main">
-                        <div class="art_our_number_circle">
-                            <div class="art_our_number_circle_conter">
-                                <div class="art_circle_wrap">
-                                    <div class="art_counter_co">
-                                        <span class="art_count_title">130</span>
-                                    </div>
-                                    <span class="art_count_desc">Countries</span>
+                                                <% if(number.numbers.includes('+')){
+                                                 number.numbers=number.numbers.split('+').join('')
+                                                
+                                                %>
+                                                    <span class="art_count_title"><%= number.numbers%></span><span class="art_count_additional">+</span>
+                                                    <%}else{%>
+                                                        <span class="art_count_title"><%= number.numbers %></span>
+                                                        <%}%>
+                                                            </span>
+                                            </div>
+                                            <span class="art_count_desc">  <%= lang_(number.title) %></span>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="art_our_number_circle">
-                            <div class="art_our_number_circle_conter">
-                                <div class="art_circle_wrap">
-                                    <div class="art_counter_co">
-                                        <span class="art_count_title">1,600</span><span class="art_count_additional">+</span>
+                                        </div>
                                     </div>
-                                    <span class="art_count_desc">Partners</span>
+                                </div>
+                                <% })
+                            %>
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="art_our_number_circle">
-                            <div class="art_our_number_circle_conter">
-                                <div class="art_circle_wrap">
-                                    <div class="art_counter_co">
-                                        <span class="art_count_title">2,400,000</span><span class="art_count_additional">+</span>
-                                    </div>
-                                    <span class="art_count_desc">Units connected</span>
 
-                                </div>
-                            </div>
                         </div>
-                        <div class="art_our_number_circle">
-                            <div class="art_our_number_circle_conter">
-                                <div class="art_circle_wrap">
-                                    <div class="art_counter_co">
-                                        <span class="art_count_title">300,000</span><span class="art_count_additional">+</span>
-                                    </div>
-                                    <span class="art_count_desc">Projects implimented</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <%}%>
 
                 </div>
 

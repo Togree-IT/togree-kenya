@@ -105,8 +105,8 @@ let appendLangMainTimer;
 let appendLangTimer;
 exports.language = (_, lang) => {
 
-    clearTimeout(appendLangMainTimer);
-    clearTimeout(appendLangTimer);
+    // clearTimeout(appendLangMainTimer);
+    // clearTimeout(appendLangTimer);
 
     lang = lang || 'en'
     const styfy = d => {
@@ -143,7 +143,7 @@ exports.language = (_, lang) => {
             Object.assign(arryRes, styfy(_));
             this.appendLang(lang, arryRes);
             return arryRes[Object.keys(styfy(_))[0]]
-        }, 7000, arryRes, styfy, lang);
+        }, 700, arryRes, styfy, lang);
 
     }
     return _.split('_').join(' ');
@@ -484,7 +484,17 @@ exports.getFullCont = {
         query['limit'] = 1;
         query['order'] = 'sys.createdAt';
         return this.c_client().getEntries(query)
-    }
+    },
+
+    getOurNumbers: (query) => {
+        query = query || {}
+        query['content_type'] = 'our_numbers';
+        // query['fields.active'] = true;
+        // query['limit'] = 1;
+        query['order'] = 'sys.createdAt';
+        return this.c_client().getEntries(query)
+    },
+
 };
 
 exports.sendEmail = (messageTemp, Subject, to, from, name, template, attach, params, context) => {

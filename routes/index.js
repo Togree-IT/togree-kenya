@@ -23,18 +23,25 @@ router.get("/", (req, res) => {
         theme_color: "#fff"
     }, req);
 
-    res.render("home", {
-        meta,
-        elements,
-        menu: true,
-        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-        language: funs.getAppCookies(req)['language'],
-        languages: require("../language/languages.json"),
-        renderImplimental: (_) => funs.renderImplimental(_),
-        title,
-        path: funs.pathToTheRoot(req._parsedUrl.path),
+    funs.getFullCont.getOurNumbers().then(data => {
 
+        let our_numbers = data.items.map(fields => fields.fields);
+        res.render("home", {
+            meta,
+            elements,
+            menu: true,
+            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+            language: funs.getAppCookies(req)['language'],
+            languages: require("../language/languages.json"),
+            renderImplimental: (_) => funs.renderImplimental(_),
+            title,
+            our_numbers,
+            path: funs.pathToTheRoot(req._parsedUrl.path),
+
+        })
     })
+
+
 });
 
 router.get("/about-us", (req, res) => {
