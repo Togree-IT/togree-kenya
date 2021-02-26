@@ -2551,7 +2551,7 @@
                     }
                     .art_left_right_co {
                         width: 100%;
-                        margin: 2pc auto;
+                        margin: 0 auto;
                         @include flex();
                         @include flex_wrp(wrap);
                         @include flex_jus_content(space-around);
