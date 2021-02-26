@@ -269,6 +269,7 @@
                             children.push(page.children);
                             lang_(page.title).then(title => {
                                 page.title = title;
+                                console.log(page);
                                 top_pages.innerHTML += topPagesTemp2(page);
                                 renderPages_mobile(page, true);
                             })

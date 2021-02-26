@@ -54,10 +54,11 @@ function getRunningProgram() {
              ${data.description}
         </div>
         <div class="art_action">
-            <a href="${path}${data.referenceLink}"><button class="art_gree_btn filled waves-effect waves-light">LEARN MORE <em class="material-icons">chevron_right</em></button></a>
+            <a href="${data.referenceLink.includes('http')?path+'url/external?url='+data.referenceLink.replace('https:',''):path+data.referenceLink}"><button class="art_gree_btn filled waves-effect waves-light">${data.actionTitle}<em class="material-icons">chevron_right</em></button></a>
         </div>
     </div>
 </div>`;
+
     let running_program_co = document.querySelector('#running_program');
     if (running_program_co) {
         axios.get(path + 'api/@running_program').then(program => {
@@ -72,9 +73,11 @@ function getRunningProgram() {
                         program.description = program.description.content.map(content => content.content[0].value).join('-newParagraph-');
                         lang_(program.description).then(content => {
                             content = '<p>' + content.split('-newParagraph-').join('</p><p>') + '</p>';
-
-                            program.description = content;
-                            running_program_co.innerHTML = temp(program)
+                            lang_(program.actionTitle).then(actionTitle => {
+                                program.actionTitle = actionTitle;
+                                program.description = content;
+                                running_program_co.innerHTML = temp(program)
+                            })
                         })
 
                     })

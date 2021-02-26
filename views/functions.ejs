@@ -1,164 +1,183 @@
-<script>
-    let path = "<%= path %>",
-        language = "<%= language %>";
+<% 
+_language =Object.keys(_language).map(key=>{
+    let d = {};
+if(_language[key].includes("'")){console.log(_language[key]);
+    _language[key] = _language[key].split("\'").join("'").split('\'').join("\\'")
+    console.log(_language[key]);
+}
+    d[key] = _language[key]/* .split("\\'").join("'").replace("'",'') */
 
-    function lang_(_) {
-        return axios.get(path + "language/translate/" + language, {
-                params: {
-                    name: _
-                }
+    return d;
+    // return JSON.parse(JSON.stringify( {`${key}`:_language[key].split("\'").join("'").split("'").join("\'")}))
+});
 
-            })
-            .then(language => {
-                language = language.data;
-                return language
+%>
+    <script>
+        let path = "<%= path %>",
+            language = "<%= language %>";
+        _language = '<%- _language  %>'
 
-            }).catch(err => console.error(err))
-    }
+        ;
+        // console.log(_language);
 
-    function ScollNavDetector() {
+        function lang_(_) {
+            // let _language =
+            return axios.get(path + "language/translate/" + language, {
+                    params: {
+                        name: _
+                    }
 
-        let didScroll,
-            lastScrollTop = 0,
-            delta = 5,
-            nav = document.querySelector('nav'),
-            navbarHeight = nav.offsetHeight;
+                })
+                .then(language => {
+                    language = language.data;
+                    return language
 
-        document.onscroll = () => {
-            didScroll = true;
-        };
-
-        setInterval(() => {
-            if (didScroll) {
-                hasScrolled();
-                didScroll = false;
-            }
-        }, 20);
-
-        function hasScrolled() {
-            let st = this.scrollY;
-
-            // Make sure they scroll more than delta
-            if (Math.abs(lastScrollTop - st) <= delta) {
-                return;
-            }
-            // If they scrolled down and are past the navbar, add class .nav-up.
-            // This is necessary so you never see what is "behind" the navbar.
-
-            if (((st + window.innerHeight)) === (window.innerHeight)) {
-                nav.classList.remove('fixed');
-                document.body.style.marginTop = 0 + 'px';
-                return
-            }
-            if (st > lastScrollTop /* && st > navbarHeight */ ) {
-                // Scroll Down
-                nav.classList.remove('fixed');
-                document.body.style.marginTop = 0 + 'px';
-
-            } else {
-                // Scroll Up
-                if ((st + window.innerHeight) < document.body.offsetHeight) {
-                    nav.classList.add('fixed');
-                    document.body.style.marginTop = navbarHeight + 'px';
-
-                }
-
-            }
-
-            lastScrollTop = st;
+                }).catch(err => console.error(err))
         }
-    }
 
-    function initializeNavMenu() {
-        if (typeof M !== "undefined") {
-            const navMenu = document.querySelector('#menu-nav');
-            if (navMenu)
-                M.Sidenav.init(navMenu);
-        }
-    }
+        function ScollNavDetector() {
 
-    function initializeAOSAnimations() {
-        if (typeof AOS !== "undefined")
-            AOS.init();
-    }
+            let didScroll,
+                lastScrollTop = 0,
+                delta = 5,
+                nav = document.querySelector('nav'),
+                navbarHeight = nav.offsetHeight;
 
-    function dateCountDown(elemnent, date) {
-        if (elemnent) {
-            // Set the date we're counting down to
-            var countDownDate = new Date(date || "05-01-2022 15:37:25").getTime();
+            document.onscroll = () => {
+                didScroll = true;
+            };
 
-            // Update the count down every 1 second
-            var x = setInterval(function() {
+            setInterval(() => {
+                if (didScroll) {
+                    hasScrolled();
+                    didScroll = false;
+                }
+            }, 20);
 
-                // Get today's date and time
-                var now = new Date().getTime();
+            function hasScrolled() {
+                let st = this.scrollY;
 
-                // Find the distance between now and the count down date
-                var distance = countDownDate - now;
+                // Make sure they scroll more than delta
+                if (Math.abs(lastScrollTop - st) <= delta) {
+                    return;
+                }
+                // If they scrolled down and are past the navbar, add class .nav-up.
+                // This is necessary so you never see what is "behind" the navbar.
 
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                if (((st + window.innerHeight)) === (window.innerHeight)) {
+                    nav.classList.remove('fixed');
+                    document.body.style.marginTop = 0 + 'px';
+                    return
+                }
+                if (st > lastScrollTop /* && st > navbarHeight */ ) {
+                    // Scroll Down
+                    nav.classList.remove('fixed');
+                    document.body.style.marginTop = 0 + 'px';
 
-
-                if (distance < 0) {
-                    lang_("Expired").then(exp => {
-                        // If the count down is finished, write some text
-                        clearInterval(x);
-                        elemnent.innerHTML = exp;
-
-                    })
                 } else {
-                    lang_("day").then(day => {
-                        lang_("hr").then(hour => {
-                            lang_("min").then(min => {
-                                lang_("sec").then(sec => {
-                                    day = days > 1 ? day + 's' : day;
-                                    hour = hours > 1 ? hour + 's' : hour;
-                                    min = minutes > 1 ? min + 's' : min;
-                                    sec = seconds > 1 ? sec + 's' : sec;
-                                    // Display the result in the element with id="demo"
-                                    elemnent.innerHTML = days + day + " " + hours + hour + " " +
-                                        minutes + min + " " + seconds + sec + "";
+                    // Scroll Up
+                    if ((st + window.innerHeight) < document.body.offsetHeight) {
+                        nav.classList.add('fixed');
+                        document.body.style.marginTop = navbarHeight + 'px';
+
+                    }
+
+                }
+
+                lastScrollTop = st;
+            }
+        }
+
+        function initializeNavMenu() {
+            if (typeof M !== "undefined") {
+                const navMenu = document.querySelector('#menu-nav');
+                if (navMenu)
+                    M.Sidenav.init(navMenu);
+            }
+        }
+
+        function initializeAOSAnimations() {
+            if (typeof AOS !== "undefined")
+                AOS.init();
+        }
+
+        function dateCountDown(elemnent, date) {
+            if (elemnent) {
+                // Set the date we're counting down to
+                var countDownDate = new Date(date || "05-01-2022 15:37:25").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                    if (distance < 0) {
+                        lang_("Expired").then(exp => {
+                            // If the count down is finished, write some text
+                            clearInterval(x);
+                            elemnent.innerHTML = exp;
+
+                        })
+                    } else {
+                        lang_("day").then(day => {
+                            lang_("hr").then(hour => {
+                                lang_("min").then(min => {
+                                    lang_("sec").then(sec => {
+                                        day = days > 1 ? day + 's' : day;
+                                        hour = hours > 1 ? hour + 's' : hour;
+                                        min = minutes > 1 ? min + 's' : min;
+                                        sec = seconds > 1 ? sec + 's' : sec;
+                                        // Display the result in the element with id="demo"
+                                        elemnent.innerHTML = days + day + " " + hours + hour + " " +
+                                            minutes + min + " " + seconds + sec + "";
+                                    })
                                 })
                             })
                         })
-                    })
-                }
+                    }
 
-            }, 1000);
+                }, 1000);
+            }
         }
-    }
 
-    function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        // return value.split(`; ${name}=`);
-    }
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            // return value.split(`; ${name}=`);
+        }
 
-    function getProductByID(products, ID) {
-        let data = '';
-        products.map(prod => {
-            if (prod.productID === ID) {
-                return data = prod
-            }
-            return false
-        })
-        return data
-    }
+        function getProductByID(products, ID) {
+            let data = '';
+            products.map(prod => {
+                if (prod.productID === ID) {
+                    return data = prod
+                }
+                return false
+            })
+            return data
+        }
 
-    function getPackegeByID(package, ID) {
-        let data = '';
-        package.map(pck => {
-            if (pck.packageID === ID) {
+        function getPackegeByID(package, ID) {
+            let data = '';
+            package.map(pck => {
+                if (pck.packageID === ID) {
 
-                return data = pck
-            }
-            return false
-        })
-        return data
-    }
-</script>
+                    return data = pck
+                }
+                return false
+            })
+            return data
+        }
+    </script>
