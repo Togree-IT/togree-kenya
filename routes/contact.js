@@ -12,7 +12,8 @@ router.post("/", (req, res) => {
         let subject = funs.language("New Ticket", funs.getAppCookies(req)['language']) + ' (' + ticketID + ') From ' + name;
 
         funs.sendEmail(message, subject, "togreeit@gmail.com", null, null, "ticket", [], {
-            lang_: _ => funs.language(_, funs.getAppCookies(req)['language'])
+            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+            _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
 
         }).then(done => {
             console.log(done);

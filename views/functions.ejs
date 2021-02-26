@@ -1,27 +1,44 @@
-<% 
-_language =Object.keys(_language).map(key=>{
-    let d = {};
-if(_language[key].includes("'")){console.log(_language[key]);
-    _language[key] = _language[key].split("\'").join("'").split('\'').join("\\'")
-    console.log(_language[key]);
-}
-    d[key] = _language[key]/* .split("\\'").join("'").replace("'",'') */
+<%   
 
-    return d;
-    // return JSON.parse(JSON.stringify( {`${key}`:_language[key].split("\'").join("'").split("'").join("\'")}))
-});
+    if(typeof _language !== 'undefined'){
+        _language = Object.keys(_language).map(key=>{
+            let d = {};
+            d[key] = _language[key]
+        
+            return JSON.stringify(d).split('\'').join("\\'");
+        
+        });
+    }else{
+        let _language = '';
 
+        console.log();
+    }
 %>
     <script>
         let path = "<%= path %>",
-            language = "<%= language %>";
-        _language = '<%- _language  %>'
+            language = "<%= language %>",
+            s_language = '<%- typeof _language !=="undefined"?_language:""  %>',
+            _language = {};
+        if (s_language.length > 1) {
+            s_language.split('},').map(keyV => {
+                let vaLK = keyV.replace('}', '').split(':')[1].slice(1, keyV.replace('}', '').split(':')[1].length).slice(0, keyV.replace('}', '').split(':')[1].length - 2);
+                let vaLK2 = keyV.replace('}', '').split(':')[0].slice(2, keyV.replace('}', '').split(':')[0].length).slice(0, keyV.replace('}', '').split(':')[0].length - 3);
+                if (vaLK.match('"')) {
+                    keyV = '{"' + vaLK2.split('\\"').join("").split('"').join('\\"') + '":"' + vaLK.split('\\"').join("").split('"').join('\\"') + '"';
+                }
+                Object.assign(_language, JSON.parse(keyV.replace('}', '') + '}'))
 
-        ;
-        // console.log(_language);
+                return JSON.parse(keyV.replace('}', '') + '}');
+            });
+        }
 
         function lang_(_) {
-            // let _language =
+
+            if (typeof _language[_.trim().split(' ').join('_').toLowerCase()] !== 'undefined') {
+                // console.log(_);
+                return Promise.resolve(_language[_.trim().split(' ').join('_').toLowerCase()])
+            }
+
             return axios.get(path + "language/translate/" + language, {
                     params: {
                         name: _
@@ -31,8 +48,10 @@ if(_language[key].includes("'")){console.log(_language[key]);
                 .then(language => {
                     language = language.data;
                     return language
-
-                }).catch(err => console.error(err))
+                }).catch(err => {
+                    lang_(_);
+                    console.error(err)
+                })
         }
 
         function ScollNavDetector() {

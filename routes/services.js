@@ -36,6 +36,7 @@ router.get("/main/:id", (req, res) => {
             menu: true,
             services,
             lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+            _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
             language: funs.getAppCookies(req)['language'],
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),

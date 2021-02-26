@@ -26,6 +26,7 @@ router.get("/login", (req, res) => {
         elements,
         menu: true,
         lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
         language: funs.getAppCookies(req)['language'],
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
@@ -56,6 +57,7 @@ router.get("/forgot", (req, res) => {
         elements,
         menu: true,
         lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
         language: funs.getAppCookies(req)['language'],
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
@@ -85,6 +87,7 @@ router.get("/generate/invoice", (req, res) => {
         elements,
         menu: true,
         lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
         language: funs.getAppCookies(req)['language'],
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
@@ -100,6 +103,7 @@ router.post("/invoice/send", (req, res) => {
     let email = req.body.Billing_to.email;
     funs.sendEmail('', 'Your Invoice from Togree', email, null, null, "invoice", [], {
         lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
         ...req.body
     }).then(done => {
 
