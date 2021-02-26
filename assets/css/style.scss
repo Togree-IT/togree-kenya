@@ -2561,6 +2561,7 @@
                         // max-height: 560px;
                         @include bod_radius(0);
                         max-width: 1280px;
+                        background: #b4e87c;
                         // @include mobile {
                         //     max-height: 560px;
                         // }
@@ -2591,7 +2592,7 @@
                             -ms-flex-order: $order;
                             order: $order;
                             padding: 0;
-                            @include bod_radius(24px);
+                            @include bod_radius(0);
                             overflow: hidden;
                             .art_left_right_content {
                                 width: (90% + 5%);

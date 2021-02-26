@@ -245,6 +245,7 @@ exports.setCookie = (res, data) => {
 
 exports.getAppCookies = (req) => {
     // We extract the raw cookies from the request headers
+    console.log(req.headers.cookie);
     const rawCookies = req.headers.cookie.split('; ');
     // rawCookies = ['myapp=secretcookie, 'analytics_cookie=beacon;']
 
