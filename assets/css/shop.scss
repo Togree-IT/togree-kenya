@@ -1,7 +1,7 @@
 @import "./media-queries";
 @import "./mixins.scss";
 body {
-    background: #fafafa;
+    background: #f5f5f5;
     .art-nav {
         .art_nav_dropdown {
             .art_menu_droper {
@@ -257,9 +257,11 @@ body {
             max-width: 25%;
             min-width: 25%;
             width: 25%;
-            padding: 8px;
+            padding: 0;
             border-radius: 8px;
             background-color: #fff;
+            -webkit-box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, 0.051);
+            box-shadow: 0 2px 5px 0 hsla(0, 0%, 0%, 0.051);
             .art_input_co {
                 height: 3rem;
                 margin: .8rem 0 0;
@@ -269,14 +271,59 @@ body {
                 box-shadow: none;
                 border: 0;
             }
-            .shop__sidebar__category {
+            .shop__sidebar__category,
+            .shop__sidebar__price {
                 padding: 0;
+                &__header {
+                    * {
+                        font-size: .875rem;
+                        font-weight: 500;
+                        padding: 15px 16px 5px;
+                        margin: 0;
+                    }
+                }
             }
-            .shop__sidebar__category__header {
-                * {
-                    font-size: .875rem;
-                    font-weight: 500;
-                    padding: 8px 16px;
+            .shop__sidebar__price {
+                .shop__sidebar__price__header {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    width: 100%;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                }
+                #apply {
+                    &.v1 {
+                        color: #ffffff;
+                        background: #25c348;
+                        padding: 5px 20px;
+                        font-weight: 500;
+                        border-radius: 0.5em;
+                        -webkit-box-shadow: 0 2px 2px hsla(199, 22%, 35%, 0.361);
+                        box-shadow: 0 2px 2px hsla(199, 22%, 35%, 0.361);
+                    }
+                    color: #25c348;
+                    background: transparent;
+                    padding: 5px 20px;
+                    font-weight: 520;
+                    border-radius: 0;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    text-transform: uppercase;
+                }
+                .shop__sidebar__price__range {
+                    padding: 0 20px;
+                    .thumb {
+                        background-color: #dedede;
+                    }
+                    i .thumb.active .value {
+                        color: red;
+                    }
                 }
             }
             .art_cart_options {
@@ -289,8 +336,9 @@ body {
                     margin: 0 0 2px;
                     padding: 0;
                     height: 40px;
+                    width: 100%;
                     &:hover {
-                        background-color: #ececec;
+                        background-color: #f5f5f5;
                     }
                     a {
                         @include flex;
@@ -301,7 +349,8 @@ body {
                         height: 100%;
                         width: 100%;
                         font-size: .875rem;
-                        color: #282828;
+                        color: #777777;
+                        font-weight: 100;
                     }
                 }
             }
@@ -317,15 +366,9 @@ body {
                     }
                 }
             }
-        }
-        #apply {
-            color: #ffffff;
-            background: #25c348;
-            padding: 5px 20px;
-            font-weight: 500;
-            border-radius: 0.5em;
-            -webkit-box-shadow: 0 2px 2px hsla(199, 22%, 35%, 0.361);
-            box-shadow: 0 2px 2px hsla(199, 22%, 35%, 0.361);
+            .art_divider {
+                margin: 0;
+            }
         }
         .noUi-connect,
         .noUi-horizontal .noUi-handle,
@@ -346,9 +389,9 @@ body {
             }
         }
         .noUi-horizontal {
-            height: 10px;
-            border-radius: 5px;
-            background: #e3e3e3;
+            height: (10px /2);
+            border-radius: 1px;
+            background: #ededed;
         }
         .noUi-horizontal .noUi-handle,
         .noUi-vertical .noUi-handle {
@@ -387,9 +430,16 @@ body {
                         -webkit-transition: .2s linear;
                         -o-transition: .2s linear;
                         transition: .2s linear;
+                        margin-bottom: auto;
                         &:hover {
                             -webkit-box-shadow: 0px 6px 7px 0 hsla(150, 31%, 50%, 0.129);
                             box-shadow: 0px 6px 7px 0 hsla(150, 31%, 50%, 0.129);
+                            z-index: 1;
+                            transform: scale(1.01);
+                            -webkit-transform: scale(1.01);
+                            -moz-transform: scale(1.01);
+                            -ms-transform: scale(1.01);
+                            -o-transform: scale(1.01);
                             z-index: 1;
                             .product_footer {
                                 opacity: 1;
@@ -419,6 +469,28 @@ body {
                         }
                         .product_details {
                             padding: 10px;
+                            .art_rate {
+                                width: 13px;
+                                &.filled {
+                                    fill: #f6b01f;
+                                    color: #f6b01f;
+                                }
+                                &.no-filled {
+                                    fill: #b7b7b7;
+                                    color: #b7b7b7;
+                                }
+                            }
+                            .title {
+                                display: block;
+                                font-size: 1.2rem;
+                            }
+                            .art_product_price {
+                                font-weight: 540;
+                                font-size: .75rem;
+                                color: black;
+                                margin: 5px 0 0;
+                                display: block;
+                            }
                         }
                         .product_footer {
                             width: 100%;
@@ -429,6 +501,11 @@ body {
                             -moz-user-select: none;
                             -ms-user-select: none;
                             user-select: none;
+                            transition: 0.1s linear;
+                            -webkit-transition: 0.1s linear;
+                            -moz-transition: 0.1s linear;
+                            -ms-transition: 0.1s linear;
+                            -o-transition: 0.1s linear;
                             .art_btn {
                                 width: 100%;
                                 margin: 0;

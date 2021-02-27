@@ -2,69 +2,86 @@
 
     {
         "productID": "0",
-        "path": "../assets/img/products/1.png",
-        "productTitle": "TK303",
-        "productPrice": "1800",
+        "path": "../assets/img/products/tk08.png",
+        "productTitle": "TK08",
+        "category": "Vehicle Tracker",
+        "productPrice": "4500",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "4"
     },
 
     {
         "productID": "1",
-        "path": "../assets/img/products/2.png",
-        "productTitle": "TK303",
-        "productPrice": "1500",
+        "path": "../assets/img/products/tk02.png",
+        "productTitle": "TK02",
+        "productPrice": "3000",
+        "category": "Vehicle Tracker",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "3"
     },
 
     {
         "productID": "2",
-        "path": "../assets/img/products/3.png",
-        "productTitle": "TK303",
-        "productPrice": "2800",
+        "path": "../assets/img/products/tk03.png",
+        "productTitle": "TK03",
+        "productPrice": "3000",
+        "category": "Vehicle Tracker",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "2"
     },
     {
         "productID": "3",
-        "path": "../assets/img/products/4.png",
-        "productTitle": "TK303",
-        "productPrice": "9000",
+        "path": "../assets/img/products/tk200-edgecam-pro.png",
+        "productTitle": "TK200-Edgecam-Pro",
+        "category": "Camera",
+        "productPrice": "14000",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "5"
     },
     {
         "productID": "4",
-        "path": "../assets/img/products/5.png",
-        "productTitle": "TK303",
-        "productPrice": "1800",
+        "path": "../assets/img/products/tk04.png",
+        "productTitle": "TK04",
+        "category": "Vehicle Tracker",
+        "productPrice": "4500",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "0"
     },
     {
         "productID": "5",
-        "path": "../assets/img/products/6.png",
-        "productTitle": "TK303",
-        "productPrice": "1800",
+        "path": "../assets/img/products/tracklite.png",
+        "productTitle": "TrackLite",
+        "category": "Vehicle Tracker",
+        "productPrice": "8000",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "3"
     },
     {
         "productID": "6",
-        "path": "../assets/img/products/7.png",
-        "productTitle": "TK303",
+        "path": "../assets/img/products/3s.png",
+        "productTitle": "3S",
+        "category": "Asset Tracker",
         "productPrice": "1800",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "5"
     },
     {
-        "productID": "7",
-        "path": "../assets/img/products/8.png",
-        "productTitle": "TK302",
-        "productPrice": "1800",
+        "productID": "0",
+        "path": "../assets/img/products/tk08-plus.png",
+        "productTitle": "TK08-Plus",
+        "category": "Vehicle Tracker",
+        "productPrice": "9000",
+
         "currency": "KSH",
-        "productOldPrice": "25000"
+        "productRate": "3"
     }
+
 
 ]
