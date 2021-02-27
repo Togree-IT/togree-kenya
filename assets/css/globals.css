@@ -2041,8 +2041,8 @@ body .art_request_service .art_service_form_co .art_service_body {
   min-height: 40vh;
   padding: 30px 20px;
   margin: 19px 0;
-  -webkit-box-shadow: -1px 0px 20px #cddc391f;
-  box-shadow: -1px 0px 20px #cddc391f;
+  -webkit-box-shadow: -1px 0px 20px rgba(96, 124, 138, 0.231);
+  box-shadow: -1px 0px 20px rgba(96, 124, 138, 0.231);
   background-color: #ffffff;
   border-radius: 20px;
 }
