@@ -1,21 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // active btn script 
-    const iconHeader = document.querySelector("#iconheader");
-    const Icons = iconHeader.querySelectorAll(".shop__products__header__iconwrapper");
-
-    for (let i = 0; i < Icons.length; i++) {
-        Icons[i].addEventListener("click", ActiveIcon)
-
-        function ActiveIcon() {
-            let current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace("active", "");
-            this.className += " active";
-        }
-    }
-
-    ActiveIcon();
-
     // shop products fectch Logic
     const fetchShopProducts = new Promise((resolve, reject) => {
 
@@ -49,19 +33,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 return `<div class="shop__products__productcontainer">
-                            <div class="shop__products__productcontainer__img">
-                                <img src="${data.path}" alt="Togree Products" class="shop__products__productcontainer__pic">
-                            </div>
-                            <div class="product_details">
-                                <span class="title" >${data.productTitle} ${data.category}</span>
-                                <span class="art_product_price">
-                                    ${data.currency} ${data.productPrice} per piece
-                                </span>
-                                <div class="product_more_details">
-                                    ${apllyProductRates()}
+                            <a  href="#!" class="waves-effect">
+                                <div class="shop__products__productcontainer__img">
+                                    <img src="${data.path}" alt="Togree Products" class="shop__products__productcontainer__pic">
                                 </div>
-                            </div>
-                            
+                                <div class="product_details">
+                                    <span class="title" >${data.productTitle} ${data.category}</span>
+                                    <span class="art_product_price">
+                                        ${data.currency} ${data.productPrice} per piece
+                                    </span>
+                                    <div class="product_more_details">
+                                        ${apllyProductRates()}
+                                    </div>
+                                </div>
+                            </a>
                             <div class="product_footer">
                                 <button class="art_btn art_gree_btn filled waves-effect waves-light">Add to cart</button>
                             </div>
@@ -88,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     fetchShopProducts.then(() => {
-        console.log("shopcontent loaded");
+        // console.log("shopcontent loaded");
     }).catch(err => console.log(err))
 
 
@@ -99,11 +84,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var sliderInputs = [input1, input2];
 
     noUiSlider.create(slider, {
-        start: [2500, 15000],
+        start: [1500, 20000],
         connect: true,
+        step: 100,
         orientation: 'horizontal', // 'horizontal' or 'vertical'
         range: { 'min': 1500, 'max': 20000 },
-        tooltips: [true, wNumb({ decimals: 1 })]
+        tooltips: [!true, wNumb({ decimals: 0 })]
     });
 
 
@@ -111,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let index = 0;
         sliderInputs.map(input => {
-            input.value = this.noUiSlider.get()[index++];
+            input.value = slider.noUiSlider.get()[index++];
 
         });
     }
@@ -120,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.ondragexit = updateSliderUI;
 
 
-
+    updateSliderUI();
 
 
     const gridView = document.querySelector("#griditem");
@@ -194,15 +180,13 @@ function changeView(event) {
 
     function applyListView(className) {
         if (className === 'productlist') {
-            shop.classList.remove('shop__products');
             shop.classList.add('productlist');
         }
         if (className === 'shop__products') {
             shop.classList.remove('productlist');
-            shop.classList.add('shop__products');
-
         }
 
+        ActiveIcon(className);
         localStorage.setItem('viewType', className);
     }
 
@@ -215,6 +199,22 @@ function changeView(event) {
         }
     } else {
         applyListView(localStorage.getItem('viewType'))
+    }
+
+    function ActiveIcon(className) {
+
+        const gridView = document.querySelector("#griditem");
+        const listView = document.querySelector("#listitem");
+        if (className === 'productlist') {
+            listView.classList.add('active');
+            gridView.classList.remove('active');
+        }
+        if (className === 'shop__products') {
+            gridView.classList.add('active');
+            listView.classList.remove('active');
+
+
+        }
     }
 
 }
