@@ -57,7 +57,7 @@ body {
         // background-color: hsla(88, 84%, 10%, 0.631);
         // background-color: hsla(88, 76%, 18%, 0.85);
         // background-color: hsla(203, 30%, 11%, 0.78);
-        background-color: hsla(133, 68%, 27%, 0.749);
+        // background-color: hsla(133, 68%, 27%, 0.749);
         // background-blend-mode: multiply;
         // background-image: url(./../img/home/area_corporate.jpg);
         // background-size: cover;
@@ -65,6 +65,7 @@ body {
         // background-position: bottom;
         // background-position-y: 340%;
         // background-attachment: fixed;
+        @include linearGradient(91deg, hsla(210, 55%, 30%, 0.812), #139777);
         @include mobile {
             min-height: auto;
             padding: 5pc 0;

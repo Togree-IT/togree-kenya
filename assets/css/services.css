@@ -51,7 +51,9 @@ body .services-header {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: rgba(22, 116, 42, 0.749);
+  background: -o-linear-gradient(91deg, rgba(34, 77, 119, 0.812), #139777);
+  background: -webkit-gradient(linear, left top, left bottom, from(91deg), color-stop(rgba(34, 77, 119, 0.812)), to(#139777));
+  background: linear-gradient(91deg, rgba(34, 77, 119, 0.812), #139777);
 }
 
 @media screen and (min-width: 320px) {

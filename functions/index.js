@@ -28,6 +28,8 @@ exports.renderImplimental = (params, no_join) => {
 exports.initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
     /* "assets/js/functions.js","assets/js/nav_.js ,,
        'assets/js/functions.js'" */
+    // "https://vjs.zencdn.net/7.10.2/video.min.js",
+    // "assets/lib/videojs/youtube.min.js",
 ];
 
 exports.meta = (data, req) => {

@@ -62,8 +62,8 @@
                                     <div class="art_card_body video_container">
                                         <togree_vd url="<%= typeof path !== " undefined "?path:'' %>download.mp4" class="art_togree_vd">
                                             <div class="art_video_poster">
-                                                <img src="<%= typeof path !== " undefined "?path:'' %><%= services.howItWorks.video_poster_path %>"> </div>
-                                            <button class="artbtn art_play_btn waves-effect" onclick="playVideo(event,'<%= services.howItWorks.video_path %>','video/mp4')">
+                                                <img src="<%= services.howItWorks.video_poster_path.match('http')?services.howItWorks.video_poster_path:typeof path !== " undefined "?path+services.howItWorks.video_poster_path  :''%>"> </div>
+                                            <button class="artbtn art_play_btn waves-effect" onclick="playVideo(event,'<%= services.howItWorks.video_path %>','<%= typeof services.howItWorks.video_type !==`undefined` &&services.howItWorks.video_type.trim() !==`` ?services.howItWorks.video_type:`video/mp4` %>')">
                                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                     viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
                                                     <path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
