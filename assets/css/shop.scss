@@ -2,7 +2,7 @@
 @import "./mixins.scss";
 body {
     background: #f5f5f5;
-    margin-top: 64px !important;
+    margin-top: 57px !important;
     .art-nav {
         background: #fff;
         -webkit-box-shadow: 0px 1px 2px #c1d2da;
@@ -13,6 +13,33 @@ body {
                 min-width: 35vw;
                 color: #272727;
                 padding: 15px;
+                @include mobile {
+                    max-width: 0;
+                    max-height: 0;
+                    padding: 0;
+                    min-width: 0;
+                    min-height: 0;
+                }
+                @include tablet {
+                    max-width: 0;
+                    max-height: 0;
+                    padding: 0;
+                    min-width: 0;
+                    min-height: 0;
+                }
+                @include laptop {
+                    max-width: 40vw;
+                    max-height: initial;
+                    padding: 30px;
+                    min-width: 5vw;
+                    min-height: 17vh;
+                }
+                @include laptop_L {
+                    max-width: 35vw;
+                }
+                @include laptop_W {
+                    max-width: 35vw;
+                }
                 .art_recent_s {
                     display: -webkit-box;
                     display: -ms-flexbox;
@@ -516,6 +543,9 @@ body {
                         margin-bottom: auto;
                         @include mobile {
                             width: (100% / 1);
+                        }
+                        @include tablet {
+                            width: (100% / 2);
                         }
                         @include laptop {
                             width: (100% / 3);

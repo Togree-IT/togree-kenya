@@ -1,6 +1,6 @@
 body {
   background: #f5f5f5;
-  margin-top: 64px !important;
+  margin-top: 57px !important;
 }
 
 body .art-nav {
@@ -14,6 +14,48 @@ body .art-nav .art_nav_dropdown .art_menu_droper {
   min-width: 35vw;
   color: #272727;
   padding: 15px;
+}
+
+@media screen and (min-width: 320px) {
+  body .art-nav .art_nav_dropdown .art_menu_droper {
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body .art-nav .art_nav_dropdown .art_menu_droper {
+    max-width: 0;
+    max-height: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav_dropdown .art_menu_droper {
+    max-width: 40vw;
+    max-height: initial;
+    padding: 30px;
+    min-width: 5vw;
+    min-height: 17vh;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art-nav .art_nav_dropdown .art_menu_droper {
+    max-width: 35vw;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art-nav .art_nav_dropdown .art_menu_droper {
+    max-width: 35vw;
+  }
 }
 
 body .art-nav .art_nav_dropdown .art_menu_droper .art_recent_s {
@@ -578,6 +620,12 @@ body .art_container .shop .shop__products .shop__products__productwrapper .shop_
 @media screen and (min-width: 320px) {
   body .art_container .shop .shop__products .shop__products__productwrapper .shop__products__productcontainer {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body .art_container .shop .shop__products .shop__products__productwrapper .shop__products__productcontainer {
+    width: 50%;
   }
 }
 

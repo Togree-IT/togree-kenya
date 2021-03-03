@@ -1,4 +1,4 @@
-exports.service = {
+exports.services = {
     id: {
         TYPE: "INT",
         AUTO_INCREMENT: true,

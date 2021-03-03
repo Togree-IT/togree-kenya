@@ -1,4 +1,4 @@
-exports.product = {
+exports.products = {
 
     id: {
         TYPE: "INT",
@@ -6,7 +6,7 @@ exports.product = {
         PRIMARY_KEY: true,
         DEFAULT: ''
     },
-    title: {
+    name: {
         TYPE: "VARCHAR(25)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
@@ -16,7 +16,13 @@ exports.product = {
         TYPE: "VARCHAR(252)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "../assets/img/products/1.png",
+        DEFAULT: "",
+    },
+    product_preview_imgs: {
+        TYPE: "VARCHAR(256)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "",
     },
     product_model: {
         TYPE: "VARCHAR(30)",
@@ -31,48 +37,35 @@ exports.product = {
         DEFAULT: "",
     },
     features: {
-        TYPE: "VARCHAR(6000)",
+        TYPE: "TEXT",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     specs: {
-        TYPE: "VARCHAR(6000)",
+        TYPE: "TEXT",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     price: {
         TYPE: "FLOAT",
-        AUTO_INCREMENT: true,
-        PRIMARY_KEY: true,
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
         DEFAULT: ''
     },
-    customer_avatar: {
-        TYPE: "VARCHAR(252)",
-        AUTO_INCREMENT: !true,
-        PRIMARY_KEY: !true,
-        DEFAULT: "../assets/img/product/reviews/Ellipse 29.png",
-    },
-    customer_name: {
-        TYPE: "VARCHAR(30)",
-        AUTO_INCREMENT: !true,
-        PRIMARY_KEY: !true,
-        DEFAULT: "",
-    },
+
     customer_review: {
-        TYPE: "VARCHAR(1000)",
+        TYPE: "VARCHAR(6000)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     customer_rating: {
         TYPE: "INT",
-        AUTO_INCREMENT: true,
-        PRIMARY_KEY: true,
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
         DEFAULT: ''
     },
-
-
 
 }

@@ -45,5 +45,12 @@ app.use("/services", require("./routes/services"));
 app.use("/api", require("./routes/api"));
 app.use("/url", require("./routes/url"));
 
+// DB
+let con = require('./config/db');
+con.query("SELECT * FROM products", (err, res) => {
+    console.log(err);
+    console.log(res);
+})
+
 // Listen
 app.listen(PORT, console.log(`Server listening at ${PORT}`));

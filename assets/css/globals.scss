@@ -493,6 +493,13 @@
                         min-width: 0;
                         min-height: 0;
                     }
+                    @include tablet {
+                        max-width: 0;
+                        max-height: 0;
+                        padding: 0;
+                        min-width: 0;
+                        min-height: 0;
+                    }
                     @include laptop {
                         max-width: 40vw;
                         max-height: 25vh;
@@ -2243,7 +2250,7 @@
             }
             .at_vd_closer {
                 border: 0;
-                background: rgba(240, 248, 255, 0.322);
+                background: #ccffd7;
                 padding: 2px 10px;
                 font-size: 3rem;
                 position: absolute;
@@ -2252,7 +2259,7 @@
                 max-width: 60px;
                 max-height: 60px;
                 border-radius: 5em;
-                color: rgba(255, 255, 255, 0.631);
+                color: #30bb4f;
                 cursor: pointer;
                 display: -webkit-box;
                 display: -ms-flexbox;
@@ -2263,6 +2270,7 @@
                 -webkit-box-align: center;
                 -ms-flex-align: center;
                 align-items: center;
+                z-index: 55;
                 &:hover {
                     background: hsl(210, 100%, 100%);
                     color: hsla(220, 10%, 48%, 0.966);

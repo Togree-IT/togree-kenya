@@ -8,6 +8,12 @@ exports.users = {
         PRIMARY_KEY: true,
         DEFAULT: ''
     },
+    customer_id: {
+        TYPE: "VARCHAR(55)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "TG-" + require('shortid').generate(),
+    },
     name: {
         TYPE: "VARCHAR(25)",
         AUTO_INCREMENT: !true,
@@ -32,19 +38,19 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
-    agent_id: {
+    phone: {
         TYPE: "VARCHAR(25)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
-    position: {
+    street: {
         TYPE: "VARCHAR(25)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
-    status: {
+    zipcode: {
         TYPE: "VARCHAR(12)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
@@ -54,7 +60,7 @@ exports.users = {
         TYPE: "VARCHAR(252)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "assets/imgs/user.svg",
+        DEFAULT: "assets/imgs/profile/user.svg",
     },
     dt: {
         TYPE: "TIMESTAMP",

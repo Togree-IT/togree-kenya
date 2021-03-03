@@ -1,4 +1,4 @@
-exports.blog = {
+exports.blogs = {
 
     id: {
         TYPE: "INT",
@@ -28,7 +28,7 @@ exports.blog = {
         TYPE: "VARCHAR(252)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "../assets/img/blog/Blogimg.jpg"
+        DEFAULT: ""
     }
 
 

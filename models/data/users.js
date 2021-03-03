@@ -1,25 +1,11 @@
 exports.users = [{
-    id: 1,
-    name: "Serge Muyisa",
-    username: "muyisa",
+    name: "Togree Co, LTD",
+    username: "togree",
     password: "888888",
-    email: "muyisa@togree.com",
-    agent_id: "TG01K",
-    position: "CEO",
-    status: "admin",
-    branch_id: 1,
+    email: "info@togree.com",
+    phone: "+25403003030303",
+    street: "Mombasa road",
+    zipcode: "00200",
     user_icon: "assets/imgs/user.svg",
 
-}, {
-    id: 2,
-    name: "Nehemie Zikama",
-    username: "zikama",
-    password: '888888',
-    email: "zikama@togree.com",
-    agent_id: "TG02K",
-    position: "CTO",
-    status: "manager",
-    branch_id: 2,
-    user_icon: "assets/imgs/user.svg",
-
-}, ]
+}]
