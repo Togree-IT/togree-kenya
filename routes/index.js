@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
         'assets/js/home.min.js'
     ];
 
-    let title = funs.language('Home', funs.getAppCookies(req)['language'])
+    let title = funs.language('Home', funs.getAppCookies(req)['language'] || 'en')
     const meta = funs.meta({
         title,
         description: "",
@@ -30,9 +30,9 @@ router.get("/", (req, res) => {
             meta,
             elements,
             menu: true,
-            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-            _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-            language: funs.getAppCookies(req)['language'],
+            lang_: _ => funs.language(_, funs.getAppCookies(req)['language'] || 'en'),
+            _language: require("../language/" + funs.getAppCookies(req)['language'] || 'en' + ".json"),
+            language: funs.getAppCookies(req)['language'] || 'en',
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
@@ -51,7 +51,7 @@ router.get("/about-us", (req, res) => {
         "assets/css/about.css",
     ]
 
-    let title = funs.language('about_us', funs.getAppCookies(req)['language']);
+    let title = funs.language('about_us', funs.getAppCookies(req)['language'] || 'en');
     const meta = funs.meta({
         title,
         description: "",
@@ -64,9 +64,9 @@ router.get("/about-us", (req, res) => {
         meta,
         elements,
         menu: true,
-        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-        language: funs.getAppCookies(req)['language'],
+        lang_: _ => funs.language(_, funs.getAppCookies(req)['language'] || 'en'),
+        _language: require("../language/" + funs.getAppCookies(req)['language'] || 'en' + ".json"),
+        language: funs.getAppCookies(req)['language'] || 'en',
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
@@ -81,7 +81,7 @@ router.get("/contact-us", (req, res) => {
 
     ]
 
-    let title = funs.language('Contact_us', funs.getAppCookies(req)['language']);
+    let title = funs.language('Contact_us', funs.getAppCookies(req)['language'] || 'en');
     const meta = funs.meta({
         title,
         description: "",
@@ -96,9 +96,9 @@ router.get("/contact-us", (req, res) => {
             address: data.items[0].fields,
             elements,
             menu: true,
-            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-            _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-            language: funs.getAppCookies(req)['language'],
+            lang_: _ => funs.language(_, funs.getAppCookies(req)['language'] || 'en'),
+            _language: require("../language/" + funs.getAppCookies(req)['language'] || 'en' + ".json"),
+            language: funs.getAppCookies(req)['language'] || 'en',
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
