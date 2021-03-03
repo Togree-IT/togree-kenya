@@ -31,7 +31,7 @@ router.get("/", (req, res) => {
             elements,
             menu: true,
             lang_: _ => funs.language(_, funs.getAppCookies(req)['language'] || 'en'),
-            _language: require("../language/" + 'en' + ".json"),
+            _language: require("../language/" + (funs.getAppCookies(req)['language'] || 'en') + ".json"),
             language: funs.getAppCookies(req)['language'] || 'en',
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),

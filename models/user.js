@@ -15,13 +15,13 @@ exports.users = {
         DEFAULT: "TG-" + require('shortid').generate(),
     },
     name: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     username: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
@@ -33,19 +33,19 @@ exports.users = {
         DEFAULT: "",
     },
     email: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     phone: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
     street: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
@@ -68,6 +68,7 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "USD",
     },
+
     reseler_id: {
         TYPE: "VARCHAR(55)",
         AUTO_INCREMENT: !true,

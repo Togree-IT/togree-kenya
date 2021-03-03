@@ -30,6 +30,12 @@ exports.products = {
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
+    category: {
+        TYPE: "VARCHAR(255)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "",
+    },
     description: {
         TYPE: "VARCHAR(500)",
         AUTO_INCREMENT: !true,
@@ -67,5 +73,12 @@ exports.products = {
         PRIMARY_KEY: !true,
         DEFAULT: ''
     },
+    dt: {
+        TYPE: "TIMESTAMP",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "CURRENT_TIMESTAMP"
+
+    }
 
 }

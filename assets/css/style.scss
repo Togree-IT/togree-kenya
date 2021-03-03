@@ -695,6 +695,17 @@
                         margin-bottom: 4%;
                     }
                 }
+                @include tablet {
+                    &:nth-of-type(2) {
+                        -webkit-transform: scale(1);
+                        -ms-transform: scale(1);
+                        transform: scale(1);
+                        -moz-transform: scale(1);
+                        -o-transform: scale(1);
+                        margin: 0;
+                        margin-bottom: 4%;
+                    }
+                }
                 @include laptop {
                     &:nth-of-type(2) {
                         -webkit-transform: scale(1.19);
@@ -1158,8 +1169,8 @@
                         order: 1;
                     }
                     @include laptop_L {
-                        @include flex_bs(1);
-                        width: auto;
+                        @include flex_bs(none);
+                        width: 40%;
                     }
                     @include laptop_W {
                         @include flex_bs(1);
@@ -1501,7 +1512,7 @@
                                 &:last-of-type {
                                     width: 99%;
                                     margin-right: auto;
-                                    margin-left: auto;
+                                    margin-left: 0;
                                     margin-bottom: 4%;
                                 }
                             }
@@ -1509,7 +1520,7 @@
                         @include tablet {
                             .art_our_services_card {
                                 &:last-of-type {
-                                    width: 46%;
+                                    width: 48%;
                                     margin-right: auto;
                                     margin-left: auto;
                                     margin-bottom: 4%;
@@ -1695,10 +1706,14 @@
                             box-shadow: 0 0 15px rgba(9, 48, 83, 0.116);
                         }
                         @include mobile {
-                            -webkit-box-shadow: 0 0 15px hsla(88, 50%, 53%, 0.102);
-                            box-shadow: 0 0 15px hsla(88, 50%, 53%, 0.102);
-                            width: 32%;
-                            margin: 0 auto 4%;
+                            // -webkit-box-shadow: 0 0 15px hsla(88, 50%, 53%, 0.102);
+                            // box-shadow: 0 0 15px hsla(88, 50%, 53%, 0.102);
+                            // width: 31%;
+                            // margin: 0 1.15% 4%;
+                            -webkit-box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
+                                    box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
+                            width: 47%;
+                            margin: 0 1.15% 4%;
                             // &:nth-of-type(3),
                             // &:nth-of-type(6) {
                             //     margin-right: 0;
@@ -1714,11 +1729,17 @@
                             //     margin: 0 0 4%;
                             // }
                         }
+                        @include tablet {
+                            -webkit-box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
+                                    box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
+                            width: 31%;
+                            margin: 0 1.15% 4%;
+                        }
                         @include laptop {
                             -webkit-box-shadow: none;
                             box-shadow: none;
-                            width: 22%;
-                            margin: 0 auto 4%;
+                            width: 31%;
+                            margin: 0 1.15% 4%;
                             // &:nth-of-type(3),
                             // &:nth-of-type(6) {
                             //     margin-right: auto;
@@ -1756,7 +1777,7 @@
                             -ms-transition: 0.3s linear;
                             @include mobile {
                                 padding-top: 15px;
-                                max-height: 95px;
+                                max-height: 125px;
                             }
                             @include tablet {
                                 padding-top: 15px;
@@ -1764,7 +1785,7 @@
                             }
                             @include laptop {
                                 padding-top: 5px;
-                                max-height: 110px;
+                                max-height: 155px;
                             }
                             @include laptop_L {
                                 padding-top: 0;
@@ -2927,11 +2948,11 @@
                 }
             }
             @include tablet {
-                width: ((100% /2) - 4%);
+                width: ((100% /2) - 2%);
                 &:last-of-type {
-                    margin-right: auto;
-                    margin-left: auto;
-                    width: 97%;
+                    margin-right: 0;
+                    margin-left: 0;
+                    width: 100%;
                 }
             }
             @include laptop {
@@ -3033,6 +3054,18 @@
                         -webkit-box-shadow: 0 0 0px 2px #eff8fe;
                         box-shadow: 0 0 0px 2px #eff8fe;
                         border-radius: 54em;
+                        @include mobile {
+                            bottom: 2%;
+                        }
+                        @include laptop {
+                            bottom: 52%;
+                        }
+                        @include laptop_L {
+                            bottom: 38%;
+                        }
+                        @include laptop_W {
+                            bottom: 2%;
+                        }
                         i,
                         em {
                             font-size: inherit;
