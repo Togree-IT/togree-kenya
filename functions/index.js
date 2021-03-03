@@ -265,9 +265,12 @@ exports.getAppCookies = (req) => {
             } else {
                 parsedCookie[1] = 'en'
             }
+        } else {
+            console.log(parsedCookie);
         }
         parsedCookies[parsedCookie[0]] = parsedCookie[1];
     });
+    console.log();
     return parsedCookies;
 };
 /**
