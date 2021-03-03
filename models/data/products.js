@@ -4,7 +4,7 @@ exports.products = [{
         "product_img": 'assets/img/products/tk08.png',
         "product_preview_imgs": '"assets/img/products/tk08.png"',
         "product_model": 'Vehicle Tracker',
-        "features": '["IP65 Dust & Water Proof","9-90V Rated Voltage","Remote Cut-off(Fuel/Power)","Emergency SOS Button","Vehicle Battery Protection","Multiple Alerts","Driving Behaviors Analysis"]',
+        "features": 'IP65 Dust & Water Proof, 9-90V Rated Voltage, Remote Cut-off(Fuel/Power), Emergency SOS Button, Vehicle Battery Protection, Multiple Alerts, Driving Behaviors Analysis',
         "specs": '[{"GSM_Specification":[{"GSM_frequency":"850/900/1800/1900 MHz","GPRS":"Class 12, TCP/IP","Memory":"32+32Mb","Phase_error":"RMSPE<5,PPE<20","Max_output":["GSM850/GSM900:33±3dBm","GSM1800/GSM1900:30±3dBm"],"Max_frequency_error":"±0.1ppm","Receive_sensitivity":"ClassⅡRBER2%(-102dBm)"}],"GPS_Specification":[{"Chipset":	"GPS+INS (Inertial navigation system)"},{"RF_Channel": "GLONASS + GPS"},{"Location_accuracy":"<10 meters"},{"Tracking_sensitivity": "-162dBm"},{"TTFF_(open sky)":["Avg. hot start≤1sec","Avg. cold start≤32sec"]}],others:[{"Antenna": "Built-in GPS ceramic antenna; GSM quad-band antenna"},{"LED indicator": "GPS(blue), GSM(green), Power(red"}, {"Battery":	"450mAh/3.7V Li-Polymer battery"},{"Working_voltage/current": "9-36VDC/38mA(12VDC)"}, {"Standby_time": "28 hours"},{"Working time": "1.5 hours"},{"Operating temperature": "-20℃～70℃"},{Weight: "63g"},{Dimension: "80.0*67.0*16.0mm"}]}]',
         "description": 'IP65 Dust & Water Proof, 9-90V Rated Voltage, Remote Cut-off(Fuel/Power), Emergency SOS Button, Vehicle Battery Protection, Multiple Alerts'
     },

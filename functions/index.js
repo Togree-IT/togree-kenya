@@ -247,14 +247,25 @@ exports.setCookie = (res, data) => {
 
 exports.getAppCookies = (req) => {
     // We extract the raw cookies from the request headers
-    console.log(req.headers.cookie);
+
     const rawCookies = req.headers.cookie.split('; ');
     // rawCookies = ['myapp=secretcookie, 'analytics_cookie=beacon;']
 
     const parsedCookies = {};
     rawCookies.forEach(rawCookie => {
         const parsedCookie = rawCookie.split('=');
+
         // parsedCookie = ['myapp', 'secretcookie'], ['analytics_cookie', 'beacon']
+
+        if (parsedCookie[0] === 'language') {
+            if (parsedCookie[1]) {
+                if (parsedCookie[1].trim() === '') {
+                    parsedCookie[1] = 'en'
+                }
+            } else {
+                parsedCookie[1] = 'en'
+            }
+        }
         parsedCookies[parsedCookie[0]] = parsedCookie[1];
     });
     return parsedCookies;
@@ -274,7 +285,7 @@ exports.pathToTheRoot = (path) => {
         rPath = ['./'];
 
     if (rootPath.match(/\/\w/ig)) {
-        // rPath = [];
+
         rootPath.match(/\/\w/ig).map(p => rPath.push(".." + p.match(/\//ig)[0]));
     }
 
@@ -346,14 +357,14 @@ exports.con = function(db, cb) {
     })
     connection.on('end', err => {
         if (err.code === "ECONNREFUSED") {
-            console.log(err.message)
+            console.error(err.message)
             console.error(require('../config').DBERROR)
             if (typeof cb === "function") {
                 cb()
             }
             return
         }
-        console.log(err)
+        console.error(err)
         if (typeof cb === "function") {
             cb()
         }

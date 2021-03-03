@@ -4,6 +4,7 @@ const express = require('express'),
 
     session = require("express-session");
 const ejs = require('express-ejs-layouts');
+const { connect } = require('./config/db');
 const app = express();
 const PORT = process.env.PORT || 5505;
 
@@ -46,11 +47,19 @@ app.use("/api", require("./routes/api"));
 app.use("/url", require("./routes/url"));
 
 // DB
-let con = require('./config/db');
-con.query("SELECT * FROM products", (err, res) => {
-    console.log(err);
-    console.log(res);
-})
+require('./config/db');
+require('./functions').con(require('./config/index').db.database, connect => {
+
+    // var sql = "DROP TABLE products";
+    // var sql = "SELECT * FROM products"
+    // connect.query(sql, (err, res) => {
+    //     if (err) console.log(err);
+
+    //     console.log(res[0].features.split('[').join('').split(']').join('').split(','));
+    // })
+});
+
+
 
 // Listen
 app.listen(PORT, console.log(`Server listening at ${PORT}`));

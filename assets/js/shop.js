@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resolve((_ => {
 
             const shopProdtemp = (data) => {
-                let apllyProductRates = function() {
+                /* let apllyProductRates = function() {
                     let stars = '';
 
                     for (let i = 1; i < 6; i++) {
@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     return stars
                 }
 
+                <div class="product_more_details">
+                ${apllyProductRates()}
+                </div> */
+
                 return `<div class="shop__products__productcontainer">
                             <a  href="#!" class="waves-effect">
                                 <div class="shop__products__productcontainer__img">
@@ -42,9 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <span class="art_product_price">
                                         ${data.currency} ${data.productPrice} per piece
                                     </span>
-                                    <div class="product_more_details">
-                                        ${apllyProductRates()}
-                                    </div>
+                                    
                                 </div>
                             </a>
                             <div class="product_footer">

@@ -56,6 +56,24 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
+    privillege: {
+        TYPE: "VARCHAR(12)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "client",
+    },
+    currency: {
+        TYPE: "VARCHAR(12)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "USD",
+    },
+    reseler_id: {
+        TYPE: "VARCHAR(55)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "",
+    },
     user_icon: {
         TYPE: "VARCHAR(252)",
         AUTO_INCREMENT: !true,
