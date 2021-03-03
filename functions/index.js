@@ -246,32 +246,34 @@ exports.setCookie = (res, data) => {
  */
 
 exports.getAppCookies = (req) => {
-    // We extract the raw cookies from the request headers
-
-    const rawCookies = req.headers.cookie.split('; ');
-    // rawCookies = ['myapp=secretcookie, 'analytics_cookie=beacon;']
-
     const parsedCookies = {};
-    rawCookies.forEach(rawCookie => {
-        const parsedCookie = rawCookie.split('=');
 
-        // parsedCookie = ['myapp', 'secretcookie'], ['analytics_cookie', 'beacon']
+    // We extract the raw cookies from the request headers
+    if (req.headers.cookie) {
+        const rawCookies = req.headers.cookie.split('; ');
+        rawCookies.forEach(rawCookie => {
+            const parsedCookie = rawCookie.split('=');
 
-        if (parsedCookie[0] === 'language') {
-            if (parsedCookie[1]) {
-                if (parsedCookie[1].trim() === '') {
+            if (parsedCookie[0] === 'language') {
+                if (parsedCookie[1]) {
+                    if (parsedCookie[1].trim() === '') {
+                        parsedCookie[1] = 'en'
+                    }
+                } else {
                     parsedCookie[1] = 'en'
                 }
             } else {
-                parsedCookie[1] = 'en'
-            }
-        } else {
-            parsedCookie.push(...['language', 'en']);
-            console.log(parsedCookie);
-        }
-        parsedCookies[parsedCookie[0]] = parsedCookie[1];
-    });
+                parsedCookie.push('language', 'en');
 
+            }
+            parsedCookies[parsedCookie[0]] = parsedCookie[1];
+        });
+    } else {
+        const parsedCookie = [];
+        parsedCookie.push('language', 'en');
+
+        parsedCookies[parsedCookie[0]] = parsedCookie[1];
+    }
     return parsedCookies;
 };
 /**
