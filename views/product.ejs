@@ -8,15 +8,15 @@ console.log(product);
         <header class="product-header">
             <div class="art_product_cat_desc">
                 <span class="art_product_cat_title">
-                <h2><%= product.product_model %> </h2>
+                <h2><%= lang_(product.product_model) %> </h2>
             </span>
                 <span class="art_product_cat__sub_title">
-                 <h5><%= product.name %> <%= product.product_model %> </h5>
+                 <h5><%= product.name %> <%= lang_(product.product_model) %> </h5>
             </span>
             </div>
             <div class="art_product_cat_img">
                 <span class="art_product_cat_img">
-            <img src="<%= path %><%= product.product_img %>" alt="<%= product.name %> <%= product.product_model %>">
+            <img src="<%= path %><%= product.product_img %>" alt="<%= product.name %> <%= lang_(product.product_model) %>">
         </span>
             </div>
             <div class="art-head-social">
@@ -68,7 +68,7 @@ console.log(product);
                         <div class="art_desc_product_title">
                             <h4>
                                 <%= product.name %>
-                                    <%= product.product_model %>
+                                    <%= lang_(product.product_model) %>
                             </h4>
                             <span class="art_single_price">
                         <h5><span class="art_currency"><%= currency.name %> </span>
@@ -122,7 +122,7 @@ console.log(product);
                                     <span class="art_late_price_off_tag"> Popular</span>
                                     <div class="art_price_card_header">
                                         <div class="art_price_card_product">
-                                            <img src="<%= path %>assets/img/products/8.jpg" alt="">
+                                            <img src=" <%= path %><%= product.product_img %>" alt="">
                                         </div>
                                         <div class="art_price_card_product_offer">
                                             <span class="art_percentage_msg">
@@ -145,7 +145,7 @@ console.log(product);
                                     <span class="art_late_price_off_tag">Recommended</span>
                                     <div class="art_price_card_header">
                                         <div class="art_price_card_product">
-                                            <img src="<%= path %>assets/img/products/8.jpg" alt="">
+                                            <img src="<%= path %><%= product.product_img %>" alt="">
                                         </div>
                                         <div class="art_price_card_product_offer">
                                             <span class="art_percentage_msg">
@@ -169,7 +169,7 @@ console.log(product);
                                     <span class="art_late_price_off_tag">Hot deal 🔥</span>
                                     <div class="art_price_card_header">
                                         <div class="art_price_card_product">
-                                            <img src="<%= path %>assets/img/products/8.jpg" alt="">
+                                            <img src="<%= path %><%= product.product_img %>" alt="">
                                         </div>
                                         <div class="art_price_card_product_offer">
                                             <span class="art_percentage_msg">
