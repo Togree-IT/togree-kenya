@@ -12,7 +12,7 @@ exports.users = {
         TYPE: "VARCHAR(55)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "TG-" + require('shortid').generate(),
+        DEFAULT: "",
     },
     name: {
         TYPE: "VARCHAR(255)",

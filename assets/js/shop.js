@@ -1,84 +1,87 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // shop products fectch Logic
-    const fetchShopProducts = new Promise((resolve, reject) => {
+    const fetchShopProducts = () => {
 
-        resolve((_ => {
+        const shopProdtemp = (data, others) => {
+            let apllyProductRates = function() {
+                let stars = '';
 
-            const shopProdtemp = (data) => {
-                /* let apllyProductRates = function() {
-                    let stars = '';
+                for (let i = 1; i < 6; i++) {
+                    if (i <= (+data.productRate)) {
+                        stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
+                        <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
+                        <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
+                        <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
+                        </g>
+                        </svg>`;
+                    } else {
+                        if ((+data.productRate) > 0)
+                            stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
+                        <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
+                        <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
+                        <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
+                        </g>
+                      </svg>`;
 
-                    for (let i = 1; i < 6; i++) {
-                        if (i <= (+data.productRate)) {
-                            stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
-                            <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
-                            <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
-                            <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
-                            </g>
-                            </svg>`;
-                        } else {
-                            if ((+data.productRate) > 0)
-                                stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
-                            <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
-                            <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
-                            <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
-                            </g>
-                          </svg>`;
-
-                        }
                     }
-
-                    return stars
                 }
 
-                <div class="product_more_details">
-                ${apllyProductRates()}
-                </div> */
+                return stars
+            }
 
-                return `<div class="shop__products__productcontainer">
-                            <a  href="#!" class="waves-effect">
+
+            return `<div class="shop__products__productcontainer">
+                            <a  href="${path+'products/main/'+data.product_id}" title="${data.name} ${data.product_model}" class="waves-effect">
                                 <div class="shop__products__productcontainer__img">
-                                    <img src="${data.path}" alt="Togree Products" class="shop__products__productcontainer__pic">
+                                    <img src="${data.product_img}" alt="${data.name} ${data.product_model}" class="shop__products__productcontainer__pic">
                                 </div>
                                 <div class="product_details">
-                                    <span class="title" >${data.productTitle} ${data.category}</span>
+                                    <span class="title" >${data.name} ${data.product_model}</span>
                                     <span class="art_product_price">
-                                        ${data.currency} ${data.productPrice} per piece
+                                        ${globalCurrency.name} ${data.price} ${others.per_piece}
                                     </span>
                                     
                                 </div>
                             </a>
                             <div class="product_footer">
-                                <button class="art_btn art_gree_btn filled waves-effect waves-light">Add to cart</button>
-                            </div>
+                                <button class="art_btn art_gree_btn filled waves-effect waves-light">${others.action_title}</button>
+                            </div><div class="product_more_details">
+            ${apllyProductRates()}
+            </div>
                         </div>`;
-            };
+        };
 
-            fetch(path + 'assets/data/productData.json')
-                .then(data => data.json())
-                .then(data => {
-                    // getting products 
-                    const shopProductsWrapper = document.querySelector("#shop_product_wrapper");
+        /* getting products */
+        axios.get(path + 'api/products/get_all', {
+                params: { selector: 'products.price,products.name,products.product_model,products.recommended,products.product_img,products.product_id' }
+            })
+            .then(data => {
+                data = data.data;
+                console.log(data);
+
+                const shopProductsWrapper = document.querySelector("#shop_product_wrapper");
+                if (shopProductsWrapper) {
                     if (data.length) {
                         shopProductsWrapper.innerHTML = '';
+                        lang_('Add_to_cart').then(action_title => {
+                            lang_('per_piece').then(per_piece => {
+                                for (let shopproduct of data) {
+                                    shopProductsWrapper.insertAdjacentHTML("afterbegin", shopProdtemp(shopproduct, { action_title, per_piece }))
+                                }
+                            })
+                        })
 
-                        for (let shopproduct of data) {
-                            shopProductsWrapper.insertAdjacentHTML("afterbegin", shopProdtemp(shopproduct))
-                        }
                     }
-                })
-                .catch(err => console.log(err))
-
-        })());
-
-    })
-
-    fetchShopProducts.then(() => {
-        // console.log("shopcontent loaded");
-    }).catch(err => console.log(err))
+                }
+            })
+            .catch(err => console.log(err));
 
 
+
+
+    };
+    fetchShopProducts();
     // Shop Page noUislider functionalities
     var slider = document.getElementById("test-slider");
     var input1 = document.getElementById("mininput");

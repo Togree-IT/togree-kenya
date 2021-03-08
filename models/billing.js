@@ -44,6 +44,12 @@ exports.billings = {
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
+    primary_bil: {
+        TYPE: "VARCHAR(10)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "false",
+    },
     dt: {
         TYPE: "TIMESTAMP",
         AUTO_INCREMENT: !true,

@@ -12,7 +12,7 @@ router.get("/external", (req, res) => {
         res.redirect(link)
     } else {
         // res.end()
-        console.log();
+
         // req.destroy("Failed");
         // res.status(404).send("Your path is dead, you'll be redirected back");
 

@@ -6,7 +6,7 @@ exports.services = {
         DEFAULT: ''
     },
     name: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",

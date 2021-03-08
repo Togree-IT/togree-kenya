@@ -1,7 +1,7 @@
 // const md5 = require("c:/nemie-made/morning-shop/assets/js/md5")
 
 
-exports.shipments = {
+exports.shippments = {
     id: {
         TYPE: "INT",
         AUTO_INCREMENT: true,

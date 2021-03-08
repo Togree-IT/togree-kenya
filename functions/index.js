@@ -25,6 +25,7 @@ exports.renderImplimental = (params, no_join) => {
     return explitedWprds.join(' ').split('`').join('')
 
 }
+
 exports.initialElements = ["assets/lib/materialize/css/icons.css", "assets/lib/materialize/css/materialize.min.css", "assets/css/globals.min.css", "//cdn.jsdelivr.net/npm/axios/dist/axios.min.js",
     /* "assets/js/functions.js","assets/js/nav_.js ,,
        'assets/js/functions.js'" */
@@ -178,7 +179,7 @@ exports.appendLang = (lang, arryRes) => {
 };
 
 exports.appendLangMain = (arryRes, lang) => {
-        let data = require('../language/' + 'main' + '.json');
+        let data = require('../language/' + 'main' + '.json') || {};
         data = data || {};
         data[lang] = arryRes;
         data = {...data };
@@ -358,28 +359,30 @@ exports.con = function(db, cb) {
 
         console.log("DB Connection starting✔️")
         if (typeof cb === "function") {
-            cb(connection)
+            return cb(connection)
         }
-    })
+    });
+
     connection.on('end', err => {
         if (err.code === "ECONNREFUSED") {
             console.error(err.message)
             console.error(require('../config').DBERROR)
-            if (typeof cb === "function") {
-                cb()
-            }
+                // if (typeof cb === "function") {
+                //     cb()
+                // }
             return
         }
         console.error(err)
-        if (typeof cb === "function") {
-            cb()
-        }
-    })
+            // if (typeof cb === "function") {
+            //    return cb()
+            // }
+    });
+
     connection.on('error', err => console.log(err))
 
-    if (typeof cb === "function") {
-        cb(connection)
-    }
+    // if (typeof cb === "function") {
+    //     cb(connection)
+    // }
     return connection;
 };
 
@@ -399,15 +402,22 @@ exports.extractModelColumns = function(model) {
         dt += `${model_column} `;
         const { AUTO_INCREMENT, TYPE, DEFAULT } = model[model_name][model_column];
         if (AUTO_INCREMENT === true) {
-            dt += `${TYPE} AUTO_INCREMENT`
-            if (DEFAULT !== '') {
-                dt += ` DEFAULT $DEFAULT}, `
-            } else {
-                dt += ', '
-            }
+            dt += `${TYPE} AUTO_INCREMENT, `
             dt += 'PRIMARY KEY (`' + model_column + '`), '
         } else {
-            dt += `${TYPE}, `
+
+            if (TYPE === 'TIMESTAMP') {
+                if (DEFAULT === 'CURRENT_TIMESTAMP') {
+                    dt += `${TYPE} DEFAULT CURRENT_TIMESTAMP, `;
+                }
+            } else {
+                if (DEFAULT !== '') {
+                    dt += `${TYPE} DEFAULT '` + DEFAULT + '\', ';
+                } else {
+                    dt += `${TYPE}, `;
+                }
+
+            }
         }
     }
 
@@ -428,7 +438,8 @@ exports.insertInitialDBData = function(conn, model) {
                 if (err) throw err;
 
                 if (!res.length) {
-                    for (const branche of require('../models/data/' + model.m_name)[model.m_name]) {
+
+                    for (const branche of require('../models/data/' + model.m_name)) {
                         let data = { columns: [], values: [] };
                         for (let keys of Object.keys(branche)) {
                             data.columns.push(`${keys}`);
@@ -597,3 +608,49 @@ exports.flutterWave = () => {
     }
 
 }
+
+function twoDigits(d) {
+    if (0 <= d && d < 10) return "0" + d.toString();
+    if (-10 < d && d < 0) return "-0" + (-1 * d).toString();
+    return d.toString();
+}
+
+exports.toMysqlFormat = _ => Date.prototype.toMysqlFormat = function() {
+    return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getUTCHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
+
+}
+exports.generateCID = function() {
+    return "TG-" + require('shortid').generate()
+}
+exports.generateOID = function() {
+    return 'TG' + new Date().getFullYear().toString().substring(2, 4) + '-' + require('shortid').generate()
+}
+exports.globalCurrency = function(cb) {
+
+    require('../functions').con(require('../config/index').db.database, connect => {
+        // var sql = "SELECT price,name, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id"
+        var sql = "SELECT * FROM currencys WHERE global=1";
+        connect.query(sql, (err, results) => {
+            if (err) console.log(err);
+            console.log(results[0]);
+            cb(results[0])
+            return results[0]
+        })
+
+    })
+}
+exports.formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",") => {
+    try {
+        decimalCount = Math.abs(decimalCount);
+        decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+        const negativeSign = amount < 0 ? "-" : "";
+
+        let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+        let j = (i.length > 3) ? i.length % 3 : 0;
+
+        return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+    } catch (e) {
+        console.log(e)
+    }
+};

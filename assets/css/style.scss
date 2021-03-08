@@ -1711,7 +1711,7 @@
                             // width: 31%;
                             // margin: 0 1.15% 4%;
                             -webkit-box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
-                                    box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
+                            box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
                             width: 47%;
                             margin: 0 1.15% 4%;
                             // &:nth-of-type(3),
@@ -1731,7 +1731,7 @@
                         }
                         @include tablet {
                             -webkit-box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
-                                    box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
+                            box-shadow: 0 2px 2px hsla(200, 18%, 46%, 0.29);
                             width: 31%;
                             margin: 0 1.15% 4%;
                         }
@@ -1740,6 +1740,26 @@
                             box-shadow: none;
                             width: 31%;
                             margin: 0 1.15% 4%;
+                            // &:nth-of-type(3),
+                            // &:nth-of-type(6) {
+                            //     margin-right: auto;
+                            // }
+                            // &:nth-of-type(1),
+                            // &:nth-of-type(4) {
+                            //     margin-left: auto;
+                            // }
+                            // &:nth-of-type(7) {
+                            //     margin: 0 auto 4% auto;
+                            // }
+                            // &:nth-of-type(8) {
+                            //     margin: 0 auto 4%;
+                            // }
+                        }
+                        @include laptop_W {
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            width: 22%;
+                            margin: 0 1.4% 4%;
                             // &:nth-of-type(3),
                             // &:nth-of-type(6) {
                             //     margin-right: auto;
@@ -1789,7 +1809,7 @@
                             }
                             @include laptop_L {
                                 padding-top: 0;
-                                max-height: 180px;
+                                max-height: 282px;
                             }
                             @include laptop_W {
                                 padding-top: 0;

@@ -2055,6 +2055,7 @@ body .art_request_service .art_service_form_co .art_service_body {
   box-shadow: -1px 0px 20px rgba(96, 124, 138, 0.231);
   background-color: #ffffff;
   border-radius: 20px;
+  z-index: 4;
 }
 
 @media screen and (min-width: 320px) {

@@ -1624,6 +1624,7 @@
                     box-shadow: -1px 0px 20px hsla(200, 18%, 46%, 0.231);
                     background-color: #ffffff;
                     border-radius: 20px;
+                    z-index: 4;
                     @include mobile {
                         width: ((20% * 4) + 20);
                         margin: 105px auto 175px;

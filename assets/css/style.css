@@ -2391,6 +2391,15 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
   }
 }
 
+@media screen and (min-width: 2560px) {
+  body .art-section-top .art_our_products .art_our_products_container .art_product_card_co {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 22%;
+    margin: 0 1.4% 4%;
+  }
+}
+
 body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_desc_co .art_prod_title {
   text-align: center;
 }
@@ -2439,7 +2448,7 @@ body .art-section-top .art_our_products .art_our_products_container .art_product
 @media screen and (min-width: 1440px) {
   body .art-section-top .art_our_products .art_our_products_container .art_product_card_co .art_product_card {
     padding-top: 0;
-    max-height: 180px;
+    max-height: 282px;
   }
 }
 

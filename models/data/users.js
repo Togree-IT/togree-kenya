@@ -1,4 +1,4 @@
-exports.users = [{
+module.exports = [{
     name: "Togree Co, LTD",
     username: "togree",
     password: "888888",

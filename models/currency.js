@@ -1,7 +1,7 @@
 // const md5 = require("c:/nemie-made/morning-shop/assets/js/md5")
 
 
-exports.users = {
+exports.currencys = {
     id: {
         TYPE: "INT",
         AUTO_INCREMENT: true,
@@ -25,6 +25,12 @@ exports.users = {
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: 0.0,
+    },
+    global: {
+        TYPE: "BOOLEAN",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: 0,
     },
 
     dt: {

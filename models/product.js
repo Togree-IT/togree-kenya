@@ -6,6 +6,12 @@ exports.products = {
         PRIMARY_KEY: true,
         DEFAULT: ''
     },
+    product_id: {
+        TYPE: "VARCHAR(255)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: ''
+    },
     name: {
         TYPE: "VARCHAR(25)",
         AUTO_INCREMENT: !true,
@@ -30,14 +36,20 @@ exports.products = {
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
-    category: {
+    category_id: {
         TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
-    description: {
+    short_description: {
         TYPE: "VARCHAR(500)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "",
+    },
+    description: {
+        TYPE: "TEXT",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
@@ -61,17 +73,23 @@ exports.products = {
         DEFAULT: ''
     },
 
-    customer_review: {
-        TYPE: "VARCHAR(6000)",
+    productRate: {
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
-    customer_rating: {
-        TYPE: "INT",
+    rate_id: {
+        TYPE: "VARCHAR(11)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: ''
+    },
+    recommended: {
+        TYPE: "VARCHAR(6)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "",
     },
     dt: {
         TYPE: "TIMESTAMP",

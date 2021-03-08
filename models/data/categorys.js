@@ -1,4 +1,4 @@
-exports.users = [{
+module.exports = [{
         name: "Vehicle GPS Trackers"
     }, {
         name: "Asset GPS Trackers"

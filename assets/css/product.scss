@@ -50,8 +50,8 @@ body {
         position: relative;
         padding: 0;
         margin-top: 0;
-        background: rgba(3, 14, 21, 0.929);
-        background-image: url("../img/product/bg.png");
+        background: hsla(202, 76%, 5%, 0.062);
+        // background-image: url("../img/product/bg.png");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
@@ -61,7 +61,8 @@ body {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        color: aliceblue;
+        // color: aliceblue;
+        color: #0b222d;
         @include mobile {
             min-height: auto;
             -webkit-box-align: start;
@@ -78,16 +79,28 @@ body {
         }
         @include laptop {
             min-height: 45vh;
-            color: #0b222d;
         }
         @include laptop_L {
             min-height: 45vh;
-            color: #fff;
+            // color: #fff;
         }
         .art_product_cat_desc {
             width: 35%;
             // color: aliceblue;
             padding: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
             @include mobile {
                 width: 100%;
                 padding: 20px;
@@ -100,22 +113,22 @@ body {
                 width: 50%;
                 padding: 20px;
                 // background: hsla(122, 81%, 6%, 0.569);
-                background: hsla(0, 0%, 100%, 0.949);
+                // background: hsla(0, 0%, 100%, 0.949);
                 // color: #0b222d;
             }
             @include laptop_L {
                 width: 45%;
                 padding: 20px;
-                background: hsla(122, 81%, 6%, 0.569);
-                background: hsla(0, 0%, 100%, 0);
+                // background: hsla(122, 81%, 6%, 0.569);
+                // background: hsla(0, 0%, 100%, 0);
                 // color: #fff;
             }
             @include laptop_L {
                 width: 30%;
                 padding: 20px;
-                background: hsla(122, 81%, 6%, 0.569);
-                background: hsla(0, 0%, 100%, 0);
-                color: #fff;
+                // background: hsla(122, 81%, 6%, 0.569);
+                // background: hsla(0, 0%, 100%, 0);
+                // color: #fff;
             }
         }
         .art_product_cat_img {
@@ -448,9 +461,15 @@ body {
                     box-shadow: 0px 0px 3px -3px rgba(96, 125, 139, 0.212);
                     @include mobile {
                         padding: 10px;
+                        margin: 0 0;
+                    }
+                    @include tablet {
+                        padding: 10px;
+                        margin: 4pc 0 0;
                     }
                     @include laptop_L {
                         padding: 10px 0;
+                        margin: 0 0;
                     }
                     .art_price_title {
                         color: #000;
@@ -491,23 +510,27 @@ body {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                -ms-flex-pack: distribute;
-                justify-content: space-around;
+                // -ms-flex-pack: distribute;
+                // justify-content: space-around;
                 -ms-flex-wrap: nowrap;
                 flex-wrap: nowrap;
+                margin-top: 1pc;
                 @include mobile {
                     -ms-flex-wrap: wrap;
                     flex-wrap: wrap;
                     max-width: initial;
                     max-height: initial;
                     overflow: auto;
+                    margin: 1pc 0 0;
                 }
                 @include tablet {
                     -ms-flex-wrap: wrap;
                     flex-wrap: wrap;
-                    max-width: 0;
-                    max-height: 0;
-                    overflow: hidden;
+                    // max-width: 0;
+                    // max-height: 0;
+                    // overflow: hidden;
+                    width: 90%;
+                    margin: 4pc 0 0;
                 }
                 @include laptop {
                     -ms-flex-wrap: nowrap;
@@ -515,7 +538,8 @@ body {
                     max-width: initial;
                     max-height: initial;
                     overflow: auto;
-                    width: ((100% / 2) + 20);
+                    width: 100%;
+                    // width: ((100% / 2) + 20);
                     margin-left: 0;
                 }
                 @include laptop_L {
@@ -524,8 +548,7 @@ body {
                     max-width: initial;
                     max-height: initial;
                     overflow: auto;
-                    width: 58%;
-                    margin-left: 20px;
+                    // margin-left: 20px;
                 }
                 .art_desc_product_features_card {
                     width: 100%;
@@ -537,6 +560,7 @@ body {
                     -ms-flex-direction: column;
                     flex-direction: column;
                     margin-right: 5px;
+                    width: 40%;
                     @include mobile {
                         width: 100%;
                     }
@@ -544,7 +568,20 @@ body {
                         width: 49%;
                     }
                     @include laptop {
-                        width: 100%;
+                        width: 40%;
+                    }
+                    &:nth-of-type(2) {
+                        width: (60% - 1);
+                        margin-right: 0;
+                        @include mobile {
+                            width: 100%;
+                        }
+                        @include tablet {
+                            width: 50%;
+                        }
+                        @include laptop {
+                            width: (60% - 1);
+                        }
                     }
                     .art_desc_product_features_card_header {
                         width: 100%;
@@ -654,7 +691,8 @@ body {
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            width: 70%;
+            // width: 70%;
+            width: 100%;
         }
         @include laptop {
             -webkit-box-flex: 0;
@@ -678,6 +716,7 @@ body {
         }
         .art_review_actions {
             width: 50%;
+            margin-left: auto;
             .art_btn {
                 margin: 0;
                 width: 100%;
@@ -1156,18 +1195,18 @@ body {
     .art-head-social {
         .art_share_title {
             padding: 7px 30px;
-            border-radius: 3px;
-            -webkit-box-shadow: 0px 1px 1px #e0e0e0ba;
-            box-shadow: 0px 1px 1px #e0e0e0ba;
-            color: #c0c0c0;
+            border-radius: 15px;
+            -webkit-box-shadow: 0px 1px 1px;
+            box-shadow: 0px 1px 1px;
+            color: #606060;
             margin-bottom: 10px;
         }
         .art-social-icon {
-            -webkit-box-shadow: 0 2px 0px rgba(192, 192, 192, 0.631);
-            box-shadow: 0 2px 0px rgba(192, 192, 192, 0.631);
+            -webkit-box-shadow: 0 2px 0px #606060;
+            box-shadow: 0 2px 0px #606060;
             img {
-                -webkit-filter: brightness(2) saturate(5.5);
-                filter: brightness(2) saturate(5.5);
+                -webkit-filter: brightness(1) saturate(34.5);
+                filter: brightness(1) saturate(34.5);
             }
         }
     }
@@ -1224,7 +1263,7 @@ body {
             -webkit-box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
             box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
             ;
-            &.active {
+            /* &.active {
                 -webkit-transform: scale(1.15);
                 -ms-transform: scale(1.15);
                 transform: scale(1.15);
@@ -1237,13 +1276,14 @@ body {
                 // @include linearGradient(116deg,
                 // #ee6e73,
                 // (#eefaed, #ffc426));
-            }
+            } */
             @include mobile {
                 width: 90%;
                 margin: 0 auto 40px;
                 // box-shadow: 0px 0px 13px hsla(205, 29%, 44%, 0.302);
                 -webkit-box-shadow: 0 1px 1px #d8e1ea;
-                box-shadow: 0 0px 14px hsla(210, 30%, 88%, 0.459);
+                box-shadow: 0 1px 1px #d8e1ea;
+                // box-shadow: 0 0px 14px hsla(210, 30%, 88%, 0.459);
                 padding: 10px;
                 min-height: 25vh;
                 &.active {
@@ -1280,8 +1320,9 @@ body {
             @include laptop {
                 width: 31%;
                 margin: 0;
-                -webkit-box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
-                box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+                // -webkit-box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+                // box-shadow: 0 5px 10px #eff8fe, 0 15px 40px hsla(133, 70%, 45%, 0.102);
+                @include box_shad(0px 1px 1px 0px hsla(200, 18%, 46%, 0.569));
                 padding: (10px * 2);
                 min-height: auto;
                 &:last-of-type {
@@ -1345,21 +1386,24 @@ body {
                 top: 10px;
                 padding: 4px 10px;
                 border-radius: 5em;
+                -webkit-transform: scale(0.89);
+                -ms-transform: scale(0.89);
+                transform: scale(0.89);
                 &.v1 {
                     background: #eefaed;
                     color: #4caf50;
                 }
                 background: #23c447;
-                color: rgb(245,
-                245,
-                245);
+                color: rgb(245, 245, 245);
                 @include mobile {
                     background: #eefaed;
                     color: #4caf50;
                 }
                 @include laptop {
-                    background: #23c447;
-                    color: rgb(245, 245, 245);
+                    // background: #23c447;
+                    // color: rgb(245, 245, 245);
+                    background: hsla(133, 70%, 45%, 0.039);
+                    color: #000000;
                 }
             }
             .art_price_card_header {
@@ -1452,6 +1496,51 @@ body {
                 .art_btn {
                     margin: 0;
                     width: 100%;
+                }
+            }
+        }
+    }
+    ul.slick-dots {
+        position: absolute;
+        bottom: 0;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        width: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        li {
+            button {
+                border: 0;
+                padding: 0;
+                border-radius: 5em;
+                background: hsla(133, 70%, 45%, 0);
+                color: hsla(128, 70%, 45%, 0);
+                margin: 0 20px;
+                max-width: 0;
+                max-height: 0;
+                // overflow: hidden;
+                position: relative;
+                &::before {
+                    content: "";
+                    padding: 5px 10px;
+                    margin: 0;
+                    border-radius: 5em;
+                    background: hsla(133, 70%, 45%, 0.418);
+                    color: #23c447;
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    // left: -30px;
+                }
+            }
+            &.slick-active {
+                button {
+                    &::before {
+                        background: #23c447;
+                        color: #23c447;
+                    }
                 }
             }
         }

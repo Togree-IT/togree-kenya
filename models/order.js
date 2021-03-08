@@ -10,7 +10,7 @@ exports.orders = {
         TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: 'TG-' + new Date().getFullYear() + '-' + require('shortid').generate()
+        DEFAULT: ""
     },
     products: {
         TYPE: "VARCHAR(255)",
@@ -67,7 +67,7 @@ exports.orders = {
         DEFAULT: "",
     },
     imei: {
-        TYPE: "VARCHAR(25)",
+        TYPE: "VARCHAR(255)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
         DEFAULT: "",

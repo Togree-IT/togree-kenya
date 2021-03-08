@@ -6,14 +6,14 @@ exports.insertData = (table, columns, data) => {
 }
 exports.selects = (table, cond, pass) => `SELECT * FROM ${table} WHERE username=${cond} AND password=${pass}`;
 exports.selectsAll = (table) => ` SELECT * FROM ${table} `;
-exports.selector = (table, sort) => `SELECT ${sort} FROM ${table}`;
+exports.selector = (table, kind) => `SELECT ${kind} FROM ${table}`;
 exports.alter = (database, username) => `ALTER 'TABLE' users CHANGE 'password' 'password' VARCHAR(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL`
 exports.update = (table) => `UPDATE ${table} SET ? WHERE ?`
 exports.createDB = (base) => `CREATE DATABASE IF NOT EXISTS ${base}`; //Create a DB
 exports.createTable = (model) => `CREATE TABLE IF NOT EXISTS ${Object.keys(model)[0]}(${require('../../functions').extractModelColumns(model)})`;
 exports.con = (db) => {
     return {
-        host: "localhost", //Change it with yourown host
+        host: require('../../config').db.host || "localhost", //Change it with yourown host
         user: require('../../config').db.user, //Change it with yourown username
         password: require('../../config').db.pass, //Change it with yourown pass
         database: db || require('../../config').db.database

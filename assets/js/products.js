@@ -1,21 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Slick settings
-    $('#art_desc_product_img_sildes').slick({
-        dots: false,
-        centerMode: false,
-        arrows: true,
-        centerPadding: '0px',
-        initialSlide: 1,
-        slidesToShow: 1,
+    if (document.querySelector('#art_desc_product_img_sildes') && document.querySelector('#art_desc_product_img_sildes').querySelectorAll('.art_desc_product_img').length > 1) {
+        $('#art_desc_product_img_sildes').slick({
+            dots: !false,
+            centerMode: false,
+            arrows: true,
+            centerPadding: '0px',
+            initialSlide: 1,
+            slidesToShow: 1,
 
-        autoplay: true,
-        autoplaySpeed: 2000,
+            autoplay: true,
+            autoplaySpeed: 2000,
 
-        prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
-        nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',
-        infinite: false,
+            prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
+            nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',
+            infinite: false,
 
-    });
+        });
+    }
     $('#art_p_reviews').slick({
         dots: false,
         centerMode: false,
@@ -65,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
         art_desc_product_d2_co.style.marginBottom = art_product_action.offsetHeight + 100 + 'px';
         console.log(paddingTop);
     }
-    rateProductSector()
-    window.addEventListener("resize", e => {
-        rateProductSector(e)
-    })
+    // rateProductSector();
+    // window.addEventListener("resize", e => {
+    //     rateProductSector(e)
+    // })
 });

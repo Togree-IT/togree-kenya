@@ -21,27 +21,6 @@ router.get('/category', (req, res) => {
     })
 
 });
-// Get Cats
-router.get('/products', (req, res) => {
-    let content = funs.getFullCont.getProducts({});
-
-    content.then(data => {
-        res.status(200).json(data.items);
-    }).catch(err => {
-        console.log(err.details);
-    })
-});
-// Get product by id
-router.get('/products/:id', (req, res) => {
-    let id = req.params.id;
-    let content = funs.getFullCont.getProduct(id, {});
-
-    content.then(data => {
-        res.status(200).json(data.items);
-    }).catch(err => {
-        console.log(err.details);
-    });
-});
 
 // Get status
 router.get('/status', (req, res) => {
@@ -63,8 +42,80 @@ router.get('/list_pages', (req, res) => {
     }).catch(err => {
         console.log(err.details);
     });
+});
+
+
+// Get Cats
+// router.get('/products', (req, res) => {
+//     let content = funs.getFullCont.getProducts({});
+
+//     content.then(data => {
+//         res.status(200).json(data.items);
+//     }).catch(err => {
+//         console.log(err.details);
+//     })
+// });
+
+// Get product by id
+// router.get('/products/:id', (req, res) => {
+//     let id = req.params.id;
+//     let content = funs.getFullCont.getProduct(id, {});
+
+//     content.then(data => {
+//         res.status(200).json(data.items);
+//     }).catch(err => {
+//         console.log(err.details);
+//     });
+// });
+
+// Get all poroducts
+router.get('/products/get_all', (req, res) => {
+
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+        // var sql = "SELECT price,name, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id"
+        var sql = "";
+        if (Object.keys(req.query).length) {
+            let { selector, sort, limit } = req.query;
+            if (selector) {
+                sql += 'SELECT ' + selector + ', categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id';
+            } else {
+                sql += 'SELECT * FROM products'
+            }
+            if (sort) {
+                sql += ' ORDER BY ' + sort;
+            }
+            if (limit) {
+                sql += ' LIMIT ' + limit;
+            }
+        } else {
+            sql += 'SELECT *, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id'
+        }
+        let products = [];
+        connect.query(sql, (err, results) => {
+            if (err) console.log(err);
+
+
+            if (results && results.length) {
+
+                for (let i = 0; i < results.length; i++) {
+                    let product = results[i];
+                    // product.features = product.features.split('[').join('').split(']').join('').split(',')
+                    // product.specs = JSON.parse(product.specs);
+                    // product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
+                    products.push(product)
+                }
+
+            }
+            res.status(200).json(products);
+            // res.status(200).json(products);
+        })
+
+
+    });
 
 });
+
 // Get running program
 router.get('/@running_program', (req, res) => {
     let content = funs.getFullCont.getRunningProgram({});

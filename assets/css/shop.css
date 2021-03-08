@@ -305,8 +305,8 @@ body .art_container .shop__sidebar {
   margin-right: 2%;
   -ms-flex-preferred-size: 25%;
   flex-basis: 25%;
-  max-width: 25%;
-  width: 25%;
+  max-width: 25vw;
+  width: 25vw;
   padding: 0;
   margin-bottom: auto;
   padding-bottom: 15px;
@@ -326,46 +326,46 @@ body .art_container .shop__sidebar {
 
 @media screen and (min-width: 1024px) {
   body .art_container .shop__sidebar {
-    max-width: 25%;
+    max-width: 25vw;
     overflow: visible;
     margin-top: 6%;
     margin-right: 2%;
   }
 }
 
-body .art_container .shop__sidebar.fixed {
-  max-width: 15%;
-  width: 100%;
+body .art_container .shop__sidebar.f_ixed {
+  max-width: 15vw;
+  width: 100vw;
   position: fixed;
 }
 
 @media screen and (min-width: 320px) {
-  body .art_container .shop__sidebar.fixed {
+  body .art_container .shop__sidebar.f_ixed {
     max-width: 0;
     overflow: hidden;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  body .art_container .shop__sidebar.fixed {
-    max-width: 25%;
+  body .art_container .shop__sidebar.f_ixed {
+    max-width: 25vw;
     left: 6%;
-    width: 25%;
+    width: 25vw;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  body .art_container .shop__sidebar.fixed {
-    max-width: 17%;
+  body .art_container .shop__sidebar.f_ixed {
+    max-width: 17vw;
     left: auto;
-    width: 17%;
+    width: 17vw;
   }
 }
 
 @media screen and (min-width: 2560px) {
-  body .art_container .shop__sidebar.fixed {
-    max-width: 15%;
-    width: 15%;
+  body .art_container .shop__sidebar.f_ixed {
+    max-width: 15vw;
+    width: 15vw;
   }
 }
 

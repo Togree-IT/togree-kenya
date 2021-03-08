@@ -287,9 +287,9 @@ body {
             margin-right: 2%;
             -ms-flex-preferred-size: 25%;
             flex-basis: 25%;
-            max-width: 25%;
+            max-width: 25vw;
             // min-width: 25%;
-            width: 25%;
+            width: 25vw;
             padding: 0;
             margin-bottom: auto;
             padding-bottom: 15px;
@@ -303,32 +303,32 @@ body {
                 margin: 0;
             }
             @include laptop {
-                max-width: 25%;
+                max-width: 25vw;
                 overflow: visible;
                 margin-top: 6%;
                 margin-right: 2%;
             }
-            &.fixed {
-                max-width: 15%;
-                width: 100%;
+            &.f_ixed {
+                max-width: 15vw;
+                width: 100vw;
                 position: fixed;
                 @include mobile {
                     max-width: 0;
                     overflow: hidden;
                 }
                 @include laptop {
-                    max-width: 25%;
+                    max-width: 25vw;
                     left: 6%;
-                    width: 25%;
+                    width: 25vw;
                 }
                 @include laptop_L {
-                    max-width: 17%;
+                    max-width: 17vw;
                     left: auto;
-                    width: 17%;
+                    width: 17vw;
                 }
                 @include laptop_W {
-                    max-width: 15%;
-                    width: 15%;
+                    max-width: 15vw;
+                    width: 15vw;
                 }
             }
             .art_input_co {

@@ -47,19 +47,19 @@ app.use("/api", require("./routes/api"));
 app.use("/url", require("./routes/url"));
 
 // DB
-require('./config/db');
-require('./functions').con(require('./config/index').db.database, connect => {
-
+require('./config/db')(conn => {
+    // require('./functions').con(require('./config/index').db.database, connect => {
+    // conn.destroy()
     // var sql = "DROP TABLE products";
     // var sql = "SELECT * FROM products"
-    // connect.query(sql, (err, res) => {
-    //     if (err) console.log(err);
-
-    //     console.log(res[0].features.split('[').join('').split(']').join('').split(','));
-    // })
+    // conn.query(sql, (err, res) => {
+    //         if (err) console.log(err);
+    //         // console.log(res);
+    //         if (res && res.length)
+    //             console.log(res[0].features.split('[').join('').split(']').join('').split(','));
+    //     })
+    // });
 });
-
-
 
 // Listen
 app.listen(PORT, console.log(`Server listening at ${PORT}`));
