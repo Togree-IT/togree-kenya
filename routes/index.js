@@ -38,7 +38,7 @@ router.get("/", (req, res) => {
             title,
             our_numbers,
             path: funs.pathToTheRoot(req._parsedUrl.path),
-            cartItems: funs.getAppCookies(req)['cartItems'] || '',
+            cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
         })
     })
@@ -72,7 +72,7 @@ router.get("/about-us", (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-        cartItems: funs.getAppCookies(req)['cartItems'] || '',
+        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
     })
 });
 router.get("/contact-us", (req, res) => {
@@ -104,7 +104,7 @@ router.get("/contact-us", (req, res) => {
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
             path: funs.pathToTheRoot(req._parsedUrl.path),
-            cartItems: funs.getAppCookies(req)['cartItems'] || '',
+            cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
         })
     });

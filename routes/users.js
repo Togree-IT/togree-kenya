@@ -32,7 +32,7 @@ router.get("/login", (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-        cartItems: funs.getAppCookies(req)['cartItems'] || '',
+        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
     });
 });
@@ -64,7 +64,7 @@ router.get("/forgot", (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-        cartItems: funs.getAppCookies(req)['cartItems'] || '',
+        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
     });
 });
@@ -95,7 +95,7 @@ router.get("/generate/invoice", (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-        cartItems: funs.getAppCookies(req)['cartItems'] || '',
+        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
     });
 

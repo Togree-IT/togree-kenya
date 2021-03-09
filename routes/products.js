@@ -41,7 +41,7 @@
              title,
              path: funs.pathToTheRoot(req._parsedUrl.path),
              currency,
-             cartItems: funs.getAppCookies(req)['cartItems'] || '',
+             cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
          })
      })
 
@@ -99,7 +99,7 @@
                              currency,
                              product,
                              formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
-                             cartItems: funs.getAppCookies(req)['cartItems'] || '',
+                             cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
                          })
                      })
                      //  }
@@ -144,7 +144,7 @@
          renderImplimental: (_) => funs.renderImplimental(_),
          title,
          path: funs.pathToTheRoot(req._parsedUrl.path),
-         cartItems: funs.getAppCookies(req)['cartItems'] || '',
+         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
      })
  })
 

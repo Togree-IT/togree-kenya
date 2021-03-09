@@ -57,9 +57,9 @@
 
                 <% if(typeof cartItems !== "undefined") {%>
                     <button class="art_btn art_shop_cart">
-                    <% if(cartItems.trim() !== '') {%> 
+                    <% if(cartItems) {%> 
                         <span class="art_cart_badge">
-                            <%= Object.keys(JSON.parse(cartItems)).length  %> 
+                            <%= Object.keys(cartItems).length  %> 
                         </span>
                     <%}%>
 
