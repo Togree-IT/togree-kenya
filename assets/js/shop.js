@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let cartItems = read_cookie('cartItems');
 
             function applyCartActions() {
-                if (cartItems[data.product_id]) {
+
+                if (typeof cartItems === "object" && cartItems[data.product_id]) {
                     return `<div class="art_cart_actions" id="art_qty_${data.product_id}">
                                 <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '${data.product_id}')"><em class="material-icons">remove</em></button>
                                 <input type="number" min="1" class="art_qty_display" id="art_qty_display_${data.product_id}" contenteditable="true" value="${cartItems[data.product_id].quantity}" onchange="updateProductToCart(event, '${data.product_id}')">
