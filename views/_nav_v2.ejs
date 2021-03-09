@@ -158,8 +158,34 @@
     document.addEventListener("DOMContentLoaded", e => {
 
 
-
         getLanguages();
+        var dropdowns = document.querySelectorAll('.dropdown-trigger');
+        if (dropdowns.length) {
+            M.Dropdown.init(dropdowns, {
+                onOpenStart: e => {
+                    var target = e;
+                    // Find the caret
+                    var caret = target.querySelector('.material-icons');
+
+
+                    // change caret of the target
+                    if (caret) {
+                        if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
+                    }
+                },
+                onCloseStart: e => {
+                    var target = e;
+                    // Find the caret
+                    var caret = target.querySelector('.material-icons');
+                    // change caret of the target
+                    if (caret) {
+                        if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
+                    }
+
+                }
+            });
+        }
+
 
         var top_nav_recent_search_trigger = document.querySelector('#top_nav_recent_search_trigger');
         top_nav_recent_search(top_nav_recent_search_trigger);
@@ -175,10 +201,7 @@
             if (e.target.previousElementSibling) {
                 e.target.previousElementSibling.classList.add('hider')
             }
-            // if (instance.isOpen) {
-            //     e.stopPropagation();
-            //     instance.open()
-            // }
+
         };
 
         function getLanguages() {
@@ -207,8 +230,71 @@
                 })
         }
 
-        ScollNavDetector();
+        loadListPages();
     });
+
+    function loadListPages() {
+
+        axios.get("<%= path %>api/list_pages").then(res => {
+            let data = res.data;
+            if (data.length) {
+                let children = [];
+
+                data.map(page => {
+                    if (!page.fields.hasChildren) {
+                        page = page.fields;
+                        lang_(page.title).then(title => {
+                            page.title = title;
+                            renderFootQuickLinks(page);
+                        })
+                    } else {
+                        children.push(page)
+                    }
+                })
+
+                if (children.length) {
+
+
+                    children.map(child => {
+                        child = child.fields.children
+                        if (child.length) {
+
+                            child.map(under_page => {
+                                under_page = under_page.fields;
+
+                                lang_(under_page.name).then(name => {
+                                    under_page.name = name;
+                                    renderFootServices(under_page);
+                                })
+
+                            })
+
+                        }
+                    })
+                }
+            }
+
+        }).catch(err => {
+            console.error(err);
+        })
+    }
+
+
+    function renderFootQuickLinks(page) {
+        let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a></p>`;
+        let foot_quick_links = document.querySelector('#foot_quick_links');
+        if (foot_quick_links) {
+            foot_quick_links.insertAdjacentHTML('AfterBegin', temp);
+        }
+    }
+
+    function renderFootServices(page) {
+        let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}"> ${page.name}</a></p>`;
+        let foot_services = document.querySelector('#foot_services');
+        if (foot_services) {
+            foot_services.insertAdjacentHTML('AfterBegin', temp);
+        }
+    }
 
     function top_nav_recent_search(top_nav_recent_search_trigger) {
 

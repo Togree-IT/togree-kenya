@@ -4,7 +4,33 @@ const express = require("express"),
     funs = require('../functions');
 
 router.get('/@top-products', (req, res) => {
-    res.status(200).json(require('../data/products.json'))
+
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+
+        var sql = 'SELECT name,short_description,product_img,price,product_id FROM products Where recommended="true" ORDER BY dt LIMIT 8';
+
+        let products = [];
+        connect.query(sql, (err, results) => {
+            if (err) console.log(err);
+
+            if (results && results.length) {
+
+                for (let i = 0; i < results.length; i++) {
+                    let product = results[i];
+                    // product.features = JSON.parse(product.features);
+                    // product.specs = JSON.parse(product.specs);
+                    // product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
+                    products.push(product)
+                }
+            }
+
+            res.status(200).json(products);
+
+        })
+
+
+    });
 });
 router.get('/@top-sliders', (req, res) => {
     res.status(200).json(require('../data/sliders.json'))
@@ -100,7 +126,7 @@ router.get('/products/get_all', (req, res) => {
 
                 for (let i = 0; i < results.length; i++) {
                     let product = results[i];
-                    // product.features = product.features.split('[').join('').split(']').join('').split(',')
+                    // product.features = JSON.parse(product.features);
                     // product.specs = JSON.parse(product.specs);
                     // product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
                     products.push(product)

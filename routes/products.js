@@ -60,7 +60,7 @@
 
                  //  for (let i = 0; i < results.length; i++) {
                  let product = results[0];
-                 product.features = product.features.split('[').join('').split(']').join('').split(',')
+                 product.features = JSON.parse(product.features); /*  product.features.split('[').join('').split(']').join('').split(',') */
                  product.specs = JSON.parse(product.specs);
                  product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
                  //  products.push(product)

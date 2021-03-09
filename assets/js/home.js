@@ -113,11 +113,11 @@ function fetchTopProducts() {
             return d
 
         }
-        return `<a class="art_product_card_co" href="${path+'products/'+data.category.split(' ').join('_').toLowerCase()+'/'+_id++}">
-        <span class="art_product_card_price_tag" hidden>${data.currency+ ' ' +data.price}</span>
+        return `<a class="art_product_card_co" href="${path+'products/main/'+data.product_id}">
+        <span class="art_product_card_price_tag" hidden>${globalCurrency.name+ ' ' +data.price}</span>
                     <!-- Product card -->
                     <div class="art_product_card">
-                        <img src="${path+data.path}" alt="${data.name}" class="art_product_img">
+                        <img src="${path+data.product_img}" alt="${data.name}" class="art_product_img">
                     </div>
                     <!-- Product description -->
                     <div class="art_product_desc_co">
@@ -127,7 +127,9 @@ function fetchTopProducts() {
                     </div>
                 </a>`;
     };
+
     axios.get(path + 'api/@top-products').then(res => {
+
         if (res.data.length) {
             let top_products = document.querySelector("#top_products");
             if (top_products) {
