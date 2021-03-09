@@ -38,6 +38,7 @@ router.get("/", (req, res) => {
             title,
             our_numbers,
             path: funs.pathToTheRoot(req._parsedUrl.path),
+            cartItems: funs.getAppCookies(req)['cartItems'] || '',
 
         })
     })
@@ -71,7 +72,7 @@ router.get("/about-us", (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
-
+        cartItems: funs.getAppCookies(req)['cartItems'] || '',
     })
 });
 router.get("/contact-us", (req, res) => {
@@ -103,13 +104,11 @@ router.get("/contact-us", (req, res) => {
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
             path: funs.pathToTheRoot(req._parsedUrl.path),
+            cartItems: funs.getAppCookies(req)['cartItems'] || '',
 
         })
     });
 
 });
 
-
-// lang_("Faanck Link")
-// console.log(lang_("home_title"));
 module.exports = router;

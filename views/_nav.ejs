@@ -80,16 +80,25 @@
                 </form>
                 <button class="art_btn waves-effect"><em class="material-icons">search</em></button>
 
-                <button class="art_btn art_shop_cart">
-            <span class="art_cart_badge">5</span>
-                <em class="material-icons">shopping_basket</em>
-            </button>
-                <% if(typeof user === "undefined"){%>
-                    <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
+                <% if(typeof cartItems !== "undefined") {%>
+                    <button class="art_btn art_shop_cart">
+                        <% if(cartItems.trim() !== '') {%> 
+                            <span class="art_cart_badge">
+                                <%= Object.keys(JSON.parse(cartItems)).length  %> 
+                            </span>
+                        <%}%>
+    
+                        <em class="material-icons">shopping_basket</em>
+                    </button>
+                    <%}%>
+
+
+                        <% if(typeof user === "undefined"){%>
+                            <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
                         <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/language/<%= typeof language !== "undefined"? language:'' %>.svg" alt="<%= typeof language !== "undefined"? language:'' %> flag" >
                         <em class="material-icons">expand_more</em>
                     </button>
-                    <% } %>
+                            <% } %>
     </div>
 
 

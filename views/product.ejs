@@ -1,269 +1,282 @@
 <%- include ('./_nav_v2.ejs') ;
 %>
-    <% 
 
-// console.log(product);
-%>
 
-        <header class="product-header">
-            <div class="art_product_cat_desc">
-                <span class="art_product_cat_title">
+    <header class="product-header">
+        <div class="art_product_cat_desc">
+            <span class="art_product_cat_title">
                 <h2><%= lang_(product.product_model) %> </h2>
             </span>
-                <span class="art_product_cat__sub_title">
+            <span class="art_product_cat__sub_title">
                  <h5><%= product.name %> <%= lang_(product.product_model) %> </h5>
             </span>
-            </div>
-            <div class="art_product_cat_img">
-                <span class="art_product_cat_img">
+        </div>
+        <div class="art_product_cat_img">
+            <span class="art_product_cat_img">
             <img src="<%= path %><%= product.product_img %>" alt="<%= product.name %> <%= lang_(product.product_model) %>">
         </span>
-            </div>
-            <div class="art-head-social">
+        </div>
+        <div class="art-head-social">
 
-                <div class="art_share_title">
-                    <h6>
-                        <%= lang_('SHARE') %>
-                    </h6>
-                </div>
-                <a class="art-social-icon" href="https://www.facebook.com/sharer/sharer.php?u=_url_&title=_title_" target="_blanck">
+            <div class="art_share_title">
+                <h6>
+                    <%= lang_('SHARE') %>
+                </h6>
+            </div>
+            <a class="art-social-icon" href="https://www.facebook.com/sharer/sharer.php?u=_url_&title=_title_" target="_blanck">
                 <img src="<%= path %>assets/img/social/facebook2.png" alt="<%= lang_('Share to') %> Facebook" />
             </a>
-                <a class="art-social-icon" href="http://www.linkedin.com/shareArticle?url=_url_&title=_title_" target="_blanck">
+            <a class="art-social-icon" href="http://www.linkedin.com/shareArticle?url=_url_&title=_title_" target="_blanck">
                 <img src="<%= path %>assets/img/social/linkedin2.png" alt="<%= lang_('Share to') %> Linkedin" />
             </a>
 
-                <a class="art-social-icon" href="https://twitter.com/intent/tweet?url=_url_&text=_title_" target="_blanck">
+            <a class="art-social-icon" href="https://twitter.com/intent/tweet?url=_url_&text=_title_" target="_blanck">
                 <img src="<%= path %>assets/img/social/twitter2.png" alt="<%= lang_('Share to') %> Twitter" />
             </a>
 
-            </div>
-            <span class="art_stylish_x">
+        </div>
+        <span class="art_stylish_x">
         <svg width="1433" height="103" viewBox="0 0 1433 103" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M708.5 34.5C426.083 34.5 0 0.5 0 0.5V34.5C0 34.5 426 108.26 708.5 102.5C1101.5 94.4867 1433 34.5 1433 34.5V0.5C1433 0.5 990.917 34.5 708.5 34.5Z" fill="currentColor"/>
         </svg>
     </span>
-        </header>
-        <main>
+    </header>
+    <main>
 
-            <section class="art_desc_product">
-                <div class="art_desc_product_co">
-                    <div class="art_desc_product_d2_co">
-                        <div class="art_desc_product_imgs_co" id="art_desc_product_img_sildes">
-                            <% 
+        <section class="art_desc_product">
+            <div class="art_desc_product_co">
+                <div class="art_desc_product_d2_co">
+                    <div class="art_desc_product_imgs_co" id="art_desc_product_img_sildes">
+                        <% 
                             if(product.product_preview_imgs && product.product_preview_imgs.length){
                                 for(let i=0; i < 2; i++){
                                 for(const previewIMG of product.product_preview_imgs){
                                     %>
-                                <div class="art_desc_product_img">
-                                    <img src="<%= path %><%= previewIMG %>" alt="<%= lang_('Preview_Image') %> <%= product.name %>">
-                                </div>
-                                <%  } } } %>
+                            <div class="art_desc_product_img">
+                                <img src="<%= path %><%= previewIMG %>" alt="<%= lang_('Preview_Image') %> <%= product.name %>">
+                            </div>
+                            <%  } } } %>
 
-
-                        </div>
 
                     </div>
-                    <div class="art_desc_product_details_co">
-                        <div class="art_desc_product_title">
-                            <h4>
-                                <%= product.name %>
-                                    <%= lang_(product.product_model) %>
-                            </h4>
-                            <span class="art_single_price">
+
+                </div>
+                <div class="art_desc_product_details_co">
+                    <div class="art_desc_product_title">
+                        <h4>
+                            <%= product.name %>
+                                <%= lang_(product.product_model) %>
+                        </h4>
+                        <span class="art_single_price">
                         <h5><span class="art_currency"><%= currency.name %> </span>
-                            <%=  formatMoney(product.price*currency.rate) %>
-                                </h5>
-                                </span>
-                        </div>
-                        <div class="art_desc_product_rates_co">
-                            <% for (let i = 1; i < 6; i++) {
+                        <%=  formatMoney(product.price*currency.rate) %>
+                            </h5>
+                            </span>
+                    </div>
+                    <div class="art_desc_product_rates_co">
+                        <% for (let i = 1; i < 6; i++) {
                     if (i <= (+product.productRate)) { %>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
                         <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
                         <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
                         <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
                         </g>
                         </svg>
-                                <%
+                            <%
                     } else {
                         if ((+product.productRate) < 0) {%>
 
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
                         <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
                         <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
                         <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
                         </g>
                       </svg>
-                                    <%}
+                                <%}
                     }
                             }%>
 
-                                        <div class="reviews">
-                                            <%#<span>125 reviews</span>%>
-                                                <div class="art_review_actions">
-                                                    <button class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Add_to_cart') %></button>
-                                                </div>
-                                        </div>
+                                    <div class="reviews">
+                                        <div class="art_review_actions">
+                                            <%#
+                                          
+                                        <span>125 reviews</span>
+                                        %>
+                                                <%
+                                        if (cartItems[product.product_id]) {%>
+                                                    <div class="art_cart_actions art_review_actions" id="art_qty_<%= product.product_id %>">
+                                                        <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">remove</em></button>
+                                                        <input type="number" min="1" class="art_qty_display" id="art_qty_display_<%= product.product_id %>" contenteditable="true" value="${cartItems[data.product_id].quantity}" onchange="updateProductToCart(event, '<%= product.product_id %>')">
+                                                        <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">add</em></button>
+                                                    </div>
+                                                    <button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_<%= product.product_id %>" style="display:none" onclick="addProductToCart(event, '<%= product.product_id %>')"><%= lang_('Add_to_cart') %></button>
+                                                    <%} else {%>
 
-                        </div>
-                        <div class="art_desc_product_details">
-                            <%-'<p>'+ lang_(product.description.split('.').join('').split('\n').join('`-n-`')).split('`-n-`').join('.</p><p>')+'.</p>' %>
-                        </div>
-                        <div class="art_product_price_tag">
-                            <div class="art_product_offer_desc">
-                                <h5>
-                                    <%= lang_('Offers') %>
-                                </h5>
-                            </div>
-                            <div class="art_product_price_cards">
-                                <div class="art_price_card ">
-                                    <span class="art_late_price_off_tag"> Popular</span>
-                                    <div class="art_price_card_header">
-                                        <div class="art_price_card_product">
-                                            <img src=" <%= path %><%= product.product_img %>" alt="">
+                                                        <button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_<%= product.product_id %>" onclick="addProductToCart(event, '<%= product.product_id %>')">
+                                            <%= lang_('Add_to_cart') %>
+                                                </button>
+
+                                                        <%}%>
                                         </div>
-                                        <div class="art_price_card_product_offer">
-                                            <span class="art_percentage_msg">
+                                    </div>
+                    </div>
+                    <div class="art_desc_product_details">
+                        <%-'<p>'+ lang_(product.description.split('.').join('').split('\n').join('`-n-`')).split('`-n-`').join('.</p><p>')+'.</p>' %>
+                    </div>
+                    <div class="art_product_price_tag">
+                        <div class="art_product_offer_desc">
+                            <h5>
+                                <%= lang_('Offers') %>
+                            </h5>
+                        </div>
+                        <div class="art_product_price_cards">
+                            <div class="art_price_card ">
+                                <span class="art_late_price_off_tag"> Popular</span>
+                                <div class="art_price_card_header">
+                                    <div class="art_price_card_product">
+                                        <img src=" <%= path %><%= product.product_img %>" alt="">
+                                    </div>
+                                    <div class="art_price_card_product_offer">
+                                        <span class="art_percentage_msg">
                                         <h6>Get 40%</h6>
                                     </span>
 
-                                            <span class="art_pcs">
+                                        <span class="art_pcs">
                                         <p>+2 to 4 Pcs </p>
                                     </span>
-                                        </div>
-                                    </div>
-                                    <div class="art_price_card_body">
-                                        <p>Get 40% off on the products you purchase from 2 - 4 pecies</p>
-                                    </div>
-                                    <div class="art_price_card_footer">
-                                        <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
                                     </div>
                                 </div>
-                                <div class="art_price_card active">
-                                    <span class="art_late_price_off_tag">Recommended</span>
-                                    <div class="art_price_card_header">
-                                        <div class="art_price_card_product">
-                                            <img src="<%= path %><%= product.product_img %>" alt="">
-                                        </div>
-                                        <div class="art_price_card_product_offer">
-                                            <span class="art_percentage_msg">
+                                <div class="art_price_card_body">
+                                    <p>Get 40% off on the products you purchase from 2 - 4 pecies</p>
+                                </div>
+                                <div class="art_price_card_footer">
+                                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
+                                </div>
+                            </div>
+                            <div class="art_price_card active">
+                                <span class="art_late_price_off_tag">Recommended</span>
+                                <div class="art_price_card_header">
+                                    <div class="art_price_card_product">
+                                        <img src="<%= path %><%= product.product_img %>" alt="">
+                                    </div>
+                                    <div class="art_price_card_product_offer">
+                                        <span class="art_percentage_msg">
                                     <h6>Get 60%</h6>
                                 </span>
 
-                                            <span class="art_pcs">
+                                        <span class="art_pcs">
                                         <p>+5 to 10 Pcs </p>
                                     </span>
-                                        </div>
-                                    </div>
-                                    <div class="art_price_card_body">
-                                        <p>Get 60% off on the products you purchase from 5 - 10 pecies</p>
-
-                                    </div>
-                                    <div class="art_price_card_footer">
-                                        <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
                                     </div>
                                 </div>
-                                <div class="art_price_card">
-                                    <span class="art_late_price_off_tag">Hot deal 🔥</span>
-                                    <div class="art_price_card_header">
-                                        <div class="art_price_card_product">
-                                            <img src="<%= path %><%= product.product_img %>" alt="">
-                                        </div>
-                                        <div class="art_price_card_product_offer">
-                                            <span class="art_percentage_msg">
+                                <div class="art_price_card_body">
+                                    <p>Get 60% off on the products you purchase from 5 - 10 pecies</p>
+
+                                </div>
+                                <div class="art_price_card_footer">
+                                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
+                                </div>
+                            </div>
+                            <div class="art_price_card">
+                                <span class="art_late_price_off_tag">Hot deal 🔥</span>
+                                <div class="art_price_card_header">
+                                    <div class="art_price_card_product">
+                                        <img src="<%= path %><%= product.product_img %>" alt="">
+                                    </div>
+                                    <div class="art_price_card_product_offer">
+                                        <span class="art_percentage_msg">
                                         <h6>Get 80%</h6>
                                     </span>
 
-                                            <span class="art_pcs">
+                                        <span class="art_pcs">
                                         <p>+11 to 50 Pcs </p>
                                     </span>
-                                        </div>
-                                    </div>
-                                    <div class="art_price_card_body">
-                                        <p>Get crazy 80% off on the products you purchase from 11 - 50 pecies</p>
-
-                                    </div>
-                                    <div class="art_price_card_footer">
-                                        <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="art_price_card_body">
+                                    <p>Get crazy 80% off on the products you purchase from 11 - 50 pecies</p>
 
+                                </div>
+                                <div class="art_price_card_footer">
+                                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
+                                </div>
+                            </div>
                         </div>
 
+                    </div>
 
 
-                        <!-- <div class="art_more specs art_md">
+
+                    <!-- <div class="art_more specs art_md">
                         <button class="art_btn art_gree_btn filled waves-effect waves-light" id="art_view_specs">View Specs</button>
                     </div> -->
-                    </div>
-                    <div class="art_product_action">
-                        <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %></button>
-                        <button class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Write_a_review') %></button>
-                    </div>
-                    <div class="art_desc_product_features_co">
-                        <div class="art_desc_product_features_card">
-                            <div class="art_desc_product_features_card_header">
-                                <h6>
-                                    <%= lang_('Features')%>
-                                </h6>
-                            </div>
-                            <div class="art_desc_product_features_card_body">
-                                <ul class="art_desc_product_feature">
-                                    <% 
+                </div>
+                <div class="art_product_action">
+                    <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %></button>
+                    <button class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Write_a_review') %></button>
+                </div>
+                <div class="art_desc_product_features_co">
+                    <div class="art_desc_product_features_card">
+                        <div class="art_desc_product_features_card_header">
+                            <h6>
+                                <%= lang_('Features')%>
+                            </h6>
+                        </div>
+                        <div class="art_desc_product_features_card_body">
+                            <ul class="art_desc_product_feature">
+                                <% 
                                     for(const feature of product.features){%>
-                                        <li class="art_product_feature">
-                                            <%= lang_(feature)%>
-                                                <%# <p class="art_f_deatils">
+                                    <li class="art_product_feature">
+                                        <%= lang_(feature)%>
+                                            <%# <p class="art_f_deatils">
                                             Never drain out of the battery of motorcycle for optimal protection
                                         </p>%>
 
-                                        </li>
-                                        <%}
+                                    </li>
+                                    <%}
                                     %>
 
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
-                        <div class="art_desc_product_features_card">
-                            <div class="art_desc_product_features_card_header">
-                                <h6>
-                                    <%= lang_('Specs')%>
-                                </h6>
-                            </div>
-                            <div class="art_desc_product_features_card_body">
+                    </div>
+                    <div class="art_desc_product_features_card">
+                        <div class="art_desc_product_features_card_header">
+                            <h6>
+                                <%= lang_('Specs')%>
+                            </h6>
+                        </div>
+                        <div class="art_desc_product_features_card_body">
 
-                                <ul class="art_desc_product_feature art_specs">
-                                    <% 
+                            <ul class="art_desc_product_feature art_specs">
+                                <% 
                                     let index = 0;
                                     for(const spec of product.specs){
                                         let keys = Object.keys(spec);
                                         if(keys.length){
                                             for(const ind of keys){%>
-                                        <li class="art_product_feature">
-                                            <%= ind.split('_').join('') %>
-                                                <ul class="art_f_deatils">
-                                                    <%
+                                    <li class="art_product_feature">
+                                        <%= ind.split('_').join('') %>
+                                            <ul class="art_f_deatils">
+                                                <%
                                                for(let underSpec of spec[ind]) {
                                                    
                                                    let underSpecKeys = Object.keys(underSpec);
                                                    if(underSpecKeys.length){
                                                        for(let underSpec_feature of underSpecKeys){%>
-                                                        <li class="art_product_feature">
+                                                    <li class="art_product_feature">
 
-                                                            <%= underSpec_feature+': '+underSpec[underSpec_feature] %>
+                                                        <%= underSpec_feature+': '+underSpec[underSpec_feature] %>
 
-                                                        </li>
+                                                    </li>
 
-                                                        <% }
+                                                    <% }
                                                    }
                                                }%>
-                                                </ul>
-                                        </li>
-                                        <% }
+                                            </ul>
+                                    </li>
+                                    <% }
                                         }
                                     }
                                         %>
@@ -271,17 +284,17 @@
 
 
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
 
-            </section>
-            <section class="art_request_service" style="display: none;" hidden aria-hidden="true">
-                <div class="art_service_container">
-                    <div class="art_service_bg">
-                        <svg width="764" height="893" viewBox="0 0 764 893" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        </section>
+        <section class="art_request_service" style="display: none;" hidden aria-hidden="true">
+            <div class="art_service_container">
+                <div class="art_service_bg">
+                    <svg width="764" height="893" viewBox="0 0 764 893" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <path d="M-2.96831e-05 0V2.44227e-05C10.2016 6.19453e-05 77.6258 0.000117838 443 0H666.5C843.234 -7.64738e-05 675 95.5 666.5 233.5C658 371.5 490.5 372.5 563.5 504C636.5 635.5 808.45 554.767 752.5 673.5C687 812.5 658 892 658 892L-2.96831e-05 899V2.44227e-05C-3.63754 1.10436e-05 -2.96831e-05 0 -2.96831e-05 0Z" fill="url(#paint0_linear)"/>
                     <defs>
                     <linearGradient id="paint0_linear" x1="-7.85975e-05" y1="0.000100919" x2="1283.72" y2="980.752" gradientUnits="userSpaceOnUse">
@@ -290,74 +303,74 @@
                     </linearGradient>
                     </defs>
                     </svg></div>
-                    <div class="art_service_form_co">
-                        <div class="art_service_desc">
-                            <div class="art_desc_title art_glass art_top">
-                                <h5>Make your order now</h5>
-                            </div>
-                            <div class="art_service_perosn">
-                                <img src="<%= path %>assets/img/services/person.png" alt="">
-                            </div>
-                            <div class="art_desc_title art_glass art_bottom art_b30">
-                                <h6>Your order is secured</h6>
-                            </div>
+                <div class="art_service_form_co">
+                    <div class="art_service_desc">
+                        <div class="art_desc_title art_glass art_top">
+                            <h5>Make your order now</h5>
                         </div>
-                        <div class="art_service_body">
-                            <form action="#!" method="POST" class="art_form" id="request_service_vehicle">
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="First name *" name="first_name">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="Last name *" name="last_name">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="email" class="art_input" placeholder="Email name *" name="email">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="Organization *" name="company">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="Country *" name="country">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="Street Address *" name="stree">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="Zip code *" name="zipcode">
-                                </div>
-                                <div class="art_input_co">
-                                    <input type="text" class="art_input" placeholder="Mobile *">
-                                </div>
-
-
-                                <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light">Order now</button>
-
-                            </form>
+                        <div class="art_service_perosn">
+                            <img src="<%= path %>assets/img/services/person.png" alt="">
                         </div>
+                        <div class="art_desc_title art_glass art_bottom art_b30">
+                            <h6>Your order is secured</h6>
+                        </div>
+                    </div>
+                    <div class="art_service_body">
+                        <form action="#!" method="POST" class="art_form" id="request_service_vehicle">
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="First name *" name="first_name">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="Last name *" name="last_name">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="email" class="art_input" placeholder="Email name *" name="email">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="Organization *" name="company">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="Country *" name="country">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="Street Address *" name="stree">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="Zip code *" name="zipcode">
+                            </div>
+                            <div class="art_input_co">
+                                <input type="text" class="art_input" placeholder="Mobile *">
+                            </div>
+
+
+                            <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light">Order now</button>
+
+                        </form>
                     </div>
                 </div>
-            </section>
-            <section class="art_reviewers">
-                <div class="art_reviews_co">
-                    <div class="art_reviews_title">
-                        <h5>
-                            <%= lang_('Product_Review') %>
-                        </h5>
-                        <h5>
-                            <%= lang_('Our_happy_customers') %>
-                        </h5>
-                    </div>
-                    <div class="art_reviews_cards" id="art_p_reviews">
-                        <div class="art_reviews_card">
-                            <div class="art_review_header">
-                                <span class="art_review_icon">
+            </div>
+        </section>
+        <section class="art_reviewers">
+            <div class="art_reviews_co">
+                <div class="art_reviews_title">
+                    <h5>
+                        <%= lang_('Product_Review') %>
+                    </h5>
+                    <h5>
+                        <%= lang_('Our_happy_customers') %>
+                    </h5>
+                </div>
+                <div class="art_reviews_cards" id="art_p_reviews">
+                    <div class="art_reviews_card">
+                        <div class="art_review_header">
+                            <span class="art_review_icon">
                             <img src="<%= path %>assets/img/product/reviews/Ellipse 29.png" alt="">
                         </span>
-                                <div class="art_review_titles">
-                                    <span class="art_review_title">
+                            <div class="art_review_titles">
+                                <span class="art_review_title">
                                 <h6>Karen Mujiga </h6>
                             </span>
-                                    <span class="art_review_rates">
+                                <span class="art_review_rates">
                                 <div class="rate" >
                                     <input type="radio" checked name="rate" class="art_rate" value="5"/>
                                     <label  title="Rate">5 stars</label>
@@ -371,25 +384,25 @@
                                     <label  title="Rate">1 star</label>
                                 </div>
                             </span>
-                                </div>
-                                <div class="art_review_action">
-                                    <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
-                                </div>
                             </div>
-                            <div class="art_review_body">
-                                <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
+                            <div class="art_review_action">
+                                <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
                             </div>
                         </div>
-                        <div class="art_reviews_card">
-                            <div class="art_review_header">
-                                <span class="art_review_icon">
+                        <div class="art_review_body">
+                            <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
+                        </div>
+                    </div>
+                    <div class="art_reviews_card">
+                        <div class="art_review_header">
+                            <span class="art_review_icon">
                             <img src="<%= path %>assets/img/product/reviews/Ellipse 29.png" alt="">
                         </span>
-                                <div class="art_review_titles">
-                                    <span class="art_review_title">
+                            <div class="art_review_titles">
+                                <span class="art_review_title">
                                 <h6>Karen Kajiad </h6>
                             </span>
-                                    <span class="art_review_rates">
+                                <span class="art_review_rates">
                                 <div class="rate" >
                                     <input type="radio" checked name="rate" class="art_rate" value="5"/>
                                     <label  title="Rate">5 stars</label>
@@ -403,25 +416,25 @@
                                     <label  title="Rate">1 star</label>
                                 </div>
                             </span>
-                                </div>
-                                <div class="art_review_action">
-                                    <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
-                                </div>
                             </div>
-                            <div class="art_review_body">
-                                <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
+                            <div class="art_review_action">
+                                <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
                             </div>
                         </div>
-                        <div class="art_reviews_card">
-                            <div class="art_review_header">
-                                <span class="art_review_icon">
+                        <div class="art_review_body">
+                            <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
+                        </div>
+                    </div>
+                    <div class="art_reviews_card">
+                        <div class="art_review_header">
+                            <span class="art_review_icon">
                             <img src="<%= path %>assets/img/product/reviews/Ellipse 29.png" alt="">
                         </span>
-                                <div class="art_review_titles">
-                                    <span class="art_review_title">
+                            <div class="art_review_titles">
+                                <span class="art_review_title">
                                 <h6>Karen Mujiga </h6>
                             </span>
-                                    <span class="art_review_rates">
+                                <span class="art_review_rates">
                                 <div class="rate" >
                                     <input type="radio" checked name="rate" class="art_rate" value="5"/>
                                     <label  title="Rate">5 stars</label>
@@ -435,81 +448,86 @@
                                     <label  title="Rate">1 star</label>
                                 </div>
                             </span>
-                                </div>
-                                <div class="art_review_action">
-                                    <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
-                                </div>
                             </div>
-                            <div class="art_review_body">
-                                <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
+                            <div class="art_review_action">
+                                <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
                             </div>
                         </div>
-
+                        <div class="art_review_body">
+                            <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
+                        </div>
                     </div>
+
                 </div>
-            </section>
-            <section class="art_related">
-                <div class="art_related_products_co">
-                    <div class="art_related_products_title">
-                        <h5>Related Products</h5>
-                    </div>
-                    <div class="art_related_products_cards">
-                        <a href="#!" class="art_related_product_card waves-effect">
-                            <div class="art_related_product_card_header">
-                                <div class="art_related_product_img_co">
-                                    <img src="<%= path %>assets/img/products/2.png" alt="">
-
-                                </div>
-                            </div>
-                            <div class="art_related_product_card_body">
-                                <div class="art_related_product_details_co">
-                                    <div class="art_related_product_details_title">
-                                        <h6>3S Multi Functional GPS Tracker</h6>
-                                    </div>
-                                    <div class="art_related_product_details_desc">
-                                        <p>Ksh 9,000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#!" class="art_related_product_card waves-effect">
-                            <div class="art_related_product_card_header">
-                                <div class="art_related_product_img_co">
-                                    <img src="<%= path %>assets/img/products/10.png" alt="">
-
-                                </div>
-                            </div>
-                            <div class="art_related_product_card_body">
-                                <div class="art_related_product_details_co">
-                                    <div class="art_related_product_details_title">
-                                        <h6>TY5 Solar Powered GPS Tracker</h6>
-                                    </div>
-                                    <div class="art_related_product_details_desc">
-                                        <p>Ksh 10,000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#!" class="art_related_product_card waves-effect">
-                            <div class="art_related_product_card_header">
-                                <div class="art_related_product_img_co">
-                                    <img src="<%= path %>assets/img/products/1.png" alt="">
-
-                                </div>
-                            </div>
-                            <div class="art_related_product_card_body">
-                                <div class="art_related_product_details_co">
-                                    <div class="art_related_product_details_title">
-                                        <h6>TK08 Vehicle GPS Tracker</h6>
-                                    </div>
-                                    <div class="art_related_product_details_desc">
-                                        <p>Ksh 4,000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+            </div>
+        </section>
+        <section class="art_related">
+            <div class="art_related_products_co">
+                <div class="art_related_products_title">
+                    <h5>Related Products</h5>
                 </div>
-            </section>
-        </main>
-        <%- include ('./_footer.ejs') %>
+                <div class="art_related_products_cards">
+                    <a href="#!" class="art_related_product_card waves-effect">
+                        <div class="art_related_product_card_header">
+                            <div class="art_related_product_img_co">
+                                <img src="<%= path %>assets/img/products/2.png" alt="">
+
+                            </div>
+                        </div>
+                        <div class="art_related_product_card_body">
+                            <div class="art_related_product_details_co">
+                                <div class="art_related_product_details_title">
+                                    <h6>3S Multi Functional GPS Tracker</h6>
+                                </div>
+                                <div class="art_related_product_details_desc">
+                                    <p>Ksh 9,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#!" class="art_related_product_card waves-effect">
+                        <div class="art_related_product_card_header">
+                            <div class="art_related_product_img_co">
+                                <img src="<%= path %>assets/img/products/10.png" alt="">
+
+                            </div>
+                        </div>
+                        <div class="art_related_product_card_body">
+                            <div class="art_related_product_details_co">
+                                <div class="art_related_product_details_title">
+                                    <h6>TY5 Solar Powered GPS Tracker</h6>
+                                </div>
+                                <div class="art_related_product_details_desc">
+                                    <p>Ksh 10,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#!" class="art_related_product_card waves-effect">
+                        <div class="art_related_product_card_header">
+                            <div class="art_related_product_img_co">
+                                <img src="<%= path %>assets/img/products/1.png" alt="">
+
+                            </div>
+                        </div>
+                        <div class="art_related_product_card_body">
+                            <div class="art_related_product_details_co">
+                                <div class="art_related_product_details_title">
+                                    <h6>TK08 Vehicle GPS Tracker</h6>
+                                </div>
+                                <div class="art_related_product_details_desc">
+                                    <p>Ksh 4,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include ('./_footer.ejs') %>
+
+        <script>
+            // this is used to add product on cart
+            window.products[<%- JSON.stringify(product.product_id)  %>] = <%- JSON.stringify(product)  %>
+        </script>

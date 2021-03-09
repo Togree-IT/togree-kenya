@@ -1,5 +1,5 @@
+// window.products = {};
 document.addEventListener('DOMContentLoaded', function() {
-
     // shop products fectch Logic
     const fetchShopProducts = () => {
 
@@ -30,6 +30,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 return stars
             }
 
+            let cartItems = read_cookie('cartItems');
+
+            function applyCartActions() {
+                if (cartItems[data.product_id]) {
+                    return `<div class="art_cart_actions" id="art_qty_${data.product_id}">
+                                <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '${data.product_id}')"><em class="material-icons">remove</em></button>
+                                <input type="number" min="1" class="art_qty_display" id="art_qty_display_${data.product_id}" contenteditable="true" value="${cartItems[data.product_id].quantity}" onchange="updateProductToCart(event, '${data.product_id}')">
+                                <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '${data.product_id}')"><em class="material-icons">add</em></button>
+                            </div> 
+                            <button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_${data.product_id}" style="display:none" onclick="addProductToCart(event, '${data.product_id}')">${others.action_title}</button>`
+                } else {
+                    return `<button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_${data.product_id}" onclick="addProductToCart(event, '${data.product_id}')">${others.action_title}</button>`
+                }
+            }
 
             return `<div class="shop__products__productcontainer">
                             <a  href="${path+'products/main/'+data.product_id}" title="${data.name} ${data.product_model}" class="waves-effect">
@@ -45,10 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                             </a>
                             <div class="product_footer">
-                                <button class="art_btn art_gree_btn filled waves-effect waves-light">${others.action_title}</button>
-                            </div><div class="product_more_details">
-            ${apllyProductRates()}
-            </div>
+                                ${ applyCartActions()}
+                            </div>
+                            <div class="product_more_details">
+                                ${apllyProductRates()}
+                            </div>
                         </div>`;
         };
 
@@ -58,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(data => {
                 data = data.data;
-                console.log(data);
 
                 const shopProductsWrapper = document.querySelector("#shop_product_wrapper");
                 if (shopProductsWrapper) {
@@ -67,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         lang_('Add_to_cart').then(action_title => {
                             lang_('per_piece').then(per_piece => {
                                 for (let shopproduct of data) {
+                                    products[shopproduct.product_id] = shopproduct;
                                     shopProductsWrapper.insertAdjacentHTML("afterbegin", shopProdtemp(shopproduct, { action_title, per_piece }))
                                 }
                             })
@@ -76,12 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             })
             .catch(err => console.log(err));
-
-
-
-
     };
+
     fetchShopProducts();
+
+
+
     // Shop Page noUislider functionalities
     var slider = document.getElementById("test-slider");
     var input1 = document.getElementById("mininput");

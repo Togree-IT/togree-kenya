@@ -20,6 +20,7 @@
             globalCurrency = JSON.parse('<%- typeof currency !=="undefined"? JSON.stringify(currency):"{\"name\":\"KSH\"}" %>') || 'KSH',
             s_language = '<%- typeof _language !=="undefined"?_language:""  %>',
             _language = {};
+        window.products = {};
 
 
         if (s_language.length > 1) {
@@ -201,5 +202,173 @@
                 return false
             })
             return data
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            // var expires = "expires=" + d.toUTCString();
+            cvalue = JSON.stringify(cvalue) || cvalue;
+            document.cookie = cname + "=" + cvalue + /* ";" + expires + */ ";path=/";
+        }
+
+        function bake_cookie(name, value) {
+            var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
+            document.cookie = cookie;
+        }
+
+        function read_cookie(name) {
+            var result = document.cookie.match(new RegExp(name + '=([^;]+)'));
+            result && (result = JSON.parse(result[1]));
+            return result;
+        }
+
+        function delete_cookie(name) {
+            document.cookie = [name, '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.', window.location.host.toString()].join('');
+        }
+
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function addProductToCart(e, product_id) {
+            let data = {};
+            data[product_id] = {
+                id: product_id,
+                price: products[product_id].price,
+                quantity: 1,
+                productName: products[product_id].name
+            };
+            setCookie('cartItems', data);
+
+            let cartActionsTemp = () => {
+                return `<div class="art_cart_actions" id="art_qty_${product_id}">
+    <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '${product_id}')"><em class="material-icons">remove</em></button>
+    <input type="number" min="1" class="art_qty_display" id="art_qty_display_${product_id}" contenteditable="true" value="1" onchange="updateProductToCart(event, '${product_id}')">
+    <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '${product_id}')"><em class="material-icons">add</em></button>
+</div>`;
+            };
+
+            let cartBtn = e.currentTarget;
+            let productFooter = cartBtn.parentElement;
+            if (productFooter) {
+                cartBtn.style.display = 'none';
+                productFooter.insertAdjacentHTML('AfterBegin', cartActionsTemp())
+            }
+
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+
+        }
+
+        function increaseProductToCart(e, product_id) {
+            let cartItems = read_cookie('cartItems');
+            if (cartItems[product_id]) {
+                cartItems[product_id]['quantity'] = cartItems[product_id].quantity + 1;
+
+                setCookie('cartItems', cartItems);
+                let outDisplay, productFooter = e.currentTarget.parentElement.parentElement;
+                if (productFooter) {
+
+                    outDisplay = productFooter.querySelector('#art_qty_display_' + product_id);
+
+                    if (outDisplay) {
+                        outDisplay.value = cartItems[product_id]['quantity'];
+                    }
+                }
+
+            }
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+
+        }
+
+        function decreaseProductToCart(e, product_id) {
+            let cartItems = read_cookie('cartItems');
+            if (cartItems[product_id]) {
+                if (cartItems[product_id]['quantity'] > 1) {
+                    cartItems[product_id]['quantity'] = cartItems[product_id].quantity - 1;
+
+                    setCookie('cartItems', cartItems);
+                    let outDisplay, productFooter = e.currentTarget.parentElement.parentElement;
+                    if (productFooter) {
+
+                        outDisplay = productFooter.querySelector('#art_qty_display_' + product_id);
+
+                        if (outDisplay) {
+                            outDisplay.value = cartItems[product_id]['quantity'];
+                        }
+                    }
+                } else {
+
+                    let productFooter = e.currentTarget.parentElement;
+
+                    if (productFooter) productFooter.remove();
+
+                    let cartBtn = document.querySelector('#add_to_cat_' + product_id);
+                    if (cartBtn) cartBtn.style = '';
+
+                    delete cartItems[product_id];
+                    setCookie('cartItems', cartItems);
+                }
+            }
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+
+        }
+
+        function updateProductToCart(e, product_id) {
+            let value = e.currentTarget;
+            let cartItems = read_cookie('cartItems');
+            if (cartItems[product_id]) {
+                if ((+value.value) > 1) {
+                    cartItems[product_id]['quantity'] = (+value.value);
+
+                    setCookie('cartItems', cartItems);
+                    let outDisplay, productFooter = e.currentTarget.parentElement.parentElement;
+                    if (productFooter) {
+
+                        outDisplay = productFooter.querySelector('#art_qty_display_' + product_id);
+
+                        if (outDisplay) {
+                            outDisplay.value = cartItems[product_id]['quantity'];
+                        }
+                    }
+                } else {
+                    value.value = 1;
+                }
+            }
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+
+        }
+
+        function updateCartDOM(qty) {
+            let cartDOM = document.querySelector('.art_shop_cart');
+
+            if (cartDOM) {
+                if (qty > 0) {
+                    let art_cart_badge = cartDOM.querySelector('.art_cart_badge');
+                    if (art_cart_badge) {
+                        art_cart_badge.innerText = qty.toString();
+                    } else {
+                        let art_cart_badgeTemp = `<span class="art_cart_badge">${qty.toString()}</span>`;
+                        cartDOM.insertAdjacentHTML('afterbegin', art_cart_badgeTemp);
+                    }
+                } else {
+                    let art_cart_badge = cartDOM.querySelector('.art_cart_badge');
+                    if (art_cart_badge) art_cart_badge.remove();
+                    delete_cookie('cartItems');
+                }
+            }
+
         }
     </script>

@@ -410,10 +410,32 @@ body {
                         -webkit-box-flex: 1;
                         -ms-flex: 1;
                         flex: 1;
-                        text-align: right;
-                        background: #f5f5f5;
+                        // text-align: right;
+                        // background: #f5f5f5;
+                        // margin: 0 5px 0 0;
+                        // border-radius: 8px;
                         margin: 0 5px 0 0;
                         border-radius: 8px;
+                        background: #eaf1ed;
+                        -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                        flex: 1;
+                        margin: 0 10px;
+                        border-radius: 4px;
+                        text-align: center;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        padding: 0 10px;
+                        font-size: 20pt;
+                        border: 0;
+                        -moz-appearance: textfield;
                         .art_input {
                             padding: 10px;
                             font-size: .875rem;
@@ -655,6 +677,50 @@ body {
                                 -moz-user-select: none;
                                 -ms-user-select: none;
                                 user-select: none;
+                            }
+                            .art_cart_actions {
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                -webkit-box-pack: justify;
+                                -ms-flex-pack: justify;
+                                justify-content: space-between;
+                                .art_btn {
+                                    width: auto;
+                                    margin: 0;
+                                    border-radius: 5em;
+                                    min-width: 45px;
+                                    min-height: 45px;
+                                    padding: 15px;
+                                }
+                                .art_qty_display {
+                                    /* padding: 25px; */
+                                    background: #eaf1ed;
+                                    -webkit-box-flex: 1;
+                                    -ms-flex: 1;
+                                    flex: 1;
+                                    margin: 0 10px;
+                                    border-radius: 4px;
+                                    text-align: center;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-align: center;
+                                    -ms-flex-align: center;
+                                    align-items: center;
+                                    -webkit-box-pack: center;
+                                    -ms-flex-pack: center;
+                                    justify-content: center;
+                                    padding: 0 10px;
+                                    font-size: 20pt;
+                                    border: 0;
+                                    -moz-appearance: textfield;
+                                    &::-webkit-outer-spin-button,
+                                    &::-webkit-inner-spin-button {
+                                        -webkit-appearance: none;
+                                        margin: 0;
+                                    }
+                                }
                             }
                         }
                     }

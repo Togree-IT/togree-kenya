@@ -42,6 +42,7 @@ router.get("/main/:id", (req, res) => {
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
             path: funs.pathToTheRoot(req._parsedUrl.path),
+            cartItems: funs.getAppCookies(req)['cartItems'] || '',
 
         })
     })

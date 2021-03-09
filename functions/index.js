@@ -108,7 +108,7 @@ let appendLangMainTimer;
 let appendLangTimer;
 exports.language = (_, lang) => {
 
-    // clearTimeout(appendLangMainTimer);
+    clearTimeout(appendLangMainTimer);
     // clearTimeout(appendLangTimer);
 
     lang = lang || 'en'
@@ -632,7 +632,7 @@ exports.globalCurrency = function(cb) {
         var sql = "SELECT * FROM currencys WHERE global=1";
         connect.query(sql, (err, results) => {
             if (err) console.log(err);
-            console.log(results[0]);
+
             cb(results[0])
             return results[0]
         })
