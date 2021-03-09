@@ -968,6 +968,8 @@ body .reviews .art_review_actions .art_cart_actions .art_qty_display {
   font-size: 20pt;
   border: 0;
   -moz-appearance: textfield;
+  min-height: 55px;
+  max-height: initial;
 }
 
 body .reviews .art_review_actions .art_cart_actions .art_qty_display::-webkit-outer-spin-button, body .reviews .art_review_actions .art_cart_actions .art_qty_display::-webkit-inner-spin-button {

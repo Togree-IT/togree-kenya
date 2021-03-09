@@ -715,6 +715,8 @@ body {
                                     font-size: 20pt;
                                     border: 0;
                                     -moz-appearance: textfield;
+                                    min-height: 55px;
+                                    max-height: initial;
                                     &::-webkit-outer-spin-button,
                                     &::-webkit-inner-spin-button {
                                         -webkit-appearance: none;

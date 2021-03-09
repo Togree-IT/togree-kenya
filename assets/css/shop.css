@@ -826,6 +826,8 @@ body .art_container .shop .shop__products .shop__products__productwrapper .shop_
   font-size: 20pt;
   border: 0;
   -moz-appearance: textfield;
+  min-height: 55px;
+  max-height: initial;
 }
 
 body .art_container .shop .shop__products .shop__products__productwrapper .shop__products__productcontainer .product_footer .art_cart_actions .art_qty_display::-webkit-outer-spin-button, body .art_container .shop .shop__products .shop__products__productwrapper .shop__products__productcontainer .product_footer .art_cart_actions .art_qty_display::-webkit-inner-spin-button {
