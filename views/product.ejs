@@ -106,7 +106,7 @@
                                                 <%
                                         if (cartItems[product.product_id]) {
                                             %>
-                                                    <div class="art_cart_actions art_review_actions" id="art_qty_<%= product.product_id %>">
+                                                    <div class="art_cart_actions " id="art_qty_<%= product.product_id %>">
                                                         <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">remove</em></button>
                                                         <input type="number" min="1" class="art_qty_display" id="art_qty_display_<%= product.product_id %>" contenteditable="true" value="<%= cartItems[product.product_id].quantity %>" onchange="updateProductToCart(event, '<%= product.product_id %>')">
                                                         <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">add</em></button>
