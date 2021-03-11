@@ -659,7 +659,8 @@ body .art_services_based {
 
 body .art_services_based .art_service_card {
   width: 25%;
-  height: 6vh;
+  min-height: 6vh;
+  height: auto;
   background: white;
   color: #251d33;
   margin: 6px 10px 6px 0;
@@ -715,7 +716,7 @@ body .art_services_based .art_service_card .art_serv_icon {
 @media screen and (min-width: 320px) {
   body .art_services_based .art_service_card .art_serv_icon {
     width: 30%;
-    max-height: 35px;
+    max-height: 50px;
   }
 }
 
