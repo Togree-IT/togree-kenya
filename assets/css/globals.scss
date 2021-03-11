@@ -216,6 +216,7 @@
                             width: 88%;
                             -o-object-fit: fill;
                             object-fit: fill;
+                            left: 0;
                         }
                         @include laptop {
                             position: relative;
@@ -258,6 +259,7 @@
                         width: 41px;
                         height: 41px;
                         margin-left: 10px;
+                        overflow: visible;
                         i,
                         em {
                             line-height: 1.5em;
@@ -283,6 +285,7 @@
                         border-radius: 54em;
                         width: 41px;
                         height: 41px;
+                        overflow: visible;
                         i,
                         em {
                             line-height: 1.5em;
@@ -308,6 +311,7 @@
                         border-radius: 0;
                         width: auto;
                         height: 100%;
+                        overflow: hidden;
                         i,
                         em {
                             line-height: 47px;
