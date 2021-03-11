@@ -341,12 +341,15 @@ body {
         justify-content: space-between;
         @include mobile {
             min-height: auto;
+            margin: 5px 0;
         }
         @include tablet {
             min-height: 28vh;
+            margin: 10px 0;
         }
         @include laptop {
             min-height: 28vh;
+            margin: 2pc 0;
         }
         @include laptop_L {
             min-height: 42vh;

@@ -383,18 +383,21 @@ body .art_shop_header {
 @media screen and (min-width: 320px) {
   body .art_shop_header {
     min-height: auto;
+    margin: 5px 0;
   }
 }
 
 @media screen and (min-width: 750px) {
   body .art_shop_header {
     min-height: 28vh;
+    margin: 10px 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art_shop_header {
     min-height: 28vh;
+    margin: 2pc 0;
   }
 }
 
