@@ -95,6 +95,10 @@ router.get('/list_pages', (req, res) => {
 // });
 
 // Get all poroducts
+router.get('/products/get_promos', (req, res) => {
+        res.status(200).json(require('../data/product_promo.json'))
+    })
+    // Get all poroducts
 router.get('/products/get_all', (req, res) => {
 
     require('../functions').destroy();

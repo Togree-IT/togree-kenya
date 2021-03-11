@@ -391,6 +391,27 @@ body {
             img {
                 max-width: 100%;
             }
+            .art_slides_co {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(15, 24, 36, 0.376);
+                    z-index: 1;
+                }
+                .content {
+                    position: absolute;
+                    z-index: 10;
+                    color: aliceblue;
+                    width: 55%;
+                    padding: 11% 70px;
+                    * {
+                        line-height: 1.5;
+                    }
+                }
+            }
         }
         .art_top_options_co {
             width: 24%;

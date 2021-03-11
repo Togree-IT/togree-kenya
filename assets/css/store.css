@@ -465,6 +465,31 @@ body .art_shop_header .art_promo_co img {
   max-width: 100%;
 }
 
+body .art_shop_header .art_promo_co .art_slides_co {
+  position: relative;
+}
+
+body .art_shop_header .art_promo_co .art_slides_co::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(15, 24, 36, 0.376);
+  z-index: 1;
+}
+
+body .art_shop_header .art_promo_co .art_slides_co .content {
+  position: absolute;
+  z-index: 10;
+  color: aliceblue;
+  width: 55%;
+  padding: 11% 70px;
+}
+
+body .art_shop_header .art_promo_co .art_slides_co .content * {
+  line-height: 1.5;
+}
+
 body .art_shop_header .art_top_options_co {
   width: 24%;
   background: rgba(255, 255, 255, 0);

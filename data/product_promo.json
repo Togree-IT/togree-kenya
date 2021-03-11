@@ -1,0 +1,15 @@
+[{
+    "imgage": "assets/img/store/slides/slide1-new.png",
+    "description": "Know your driver's Location in Real-Time",
+    "action": [{
+        "title": "Order now",
+        "path": "products/search?q=vehicle tracking"
+    }]
+}, {
+    "imgage": "assets/img/store/slides/slide2-new.png",
+    "description": "Keep your vehicle SAFER with our vehicle trackers",
+    "action": [{
+        "title": "Order now",
+        "path": "products/search?q=vehicle tracking"
+    }]
+}]
