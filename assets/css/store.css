@@ -666,9 +666,7 @@ body .art_services_based .art_service_card {
   border-radius: 5px;
   -webkit-box-shadow: 0 1px 2px #cad6dc61;
   box-shadow: 0 1px 2px #cad6dc61;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inherit;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -716,19 +714,36 @@ body .art_services_based .art_service_card .art_serv_icon {
 
 @media screen and (min-width: 320px) {
   body .art_services_based .art_service_card .art_serv_icon {
-    width: 25%;
+    width: 30%;
+    max-height: 35px;
   }
 }
 
 @media screen and (min-width: 750px) {
   body .art_services_based .art_service_card .art_serv_icon {
     width: 17%;
+    max-height: 49px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art_services_based .art_service_card .art_serv_icon {
     width: 25%;
+    max-height: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art_services_based .art_service_card .art_serv_icon {
+    width: 23%;
+    max-height: 50px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_services_based .art_service_card .art_serv_icon {
+    width: 20%;
+    max-height: 90px;
   }
 }
 
@@ -746,6 +761,8 @@ body .art_services_based .art_service_card .art_serv_title {
 @media screen and (min-width: 320px) {
   body .art_services_based .art_service_card .art_serv_title {
     padding: 0 7px;
+    width: 70%;
+    display: inline-block;
   }
 }
 

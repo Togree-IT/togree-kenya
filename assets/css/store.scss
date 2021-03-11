@@ -558,9 +558,10 @@ body {
             border-radius: 5px;
             -webkit-box-shadow: 0 1px 2px #cad6dc61;
             box-shadow: 0 1px 2px #cad6dc61;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
+            // display: -webkit-box;
+            // display: -ms-flexbox;
+            // display: flex;
+            display: inherit;
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center;
@@ -596,13 +597,24 @@ body {
                 display: flex;
                 width: 25%;
                 @include mobile {
-                    width: 25%;
+                    width: 30%;
+                    max-height: 35px;
                 }
                 @include tablet {
                     width: 17%;
+                    max-height: 49px;
                 }
                 @include laptop {
                     width: 25%;
+                    max-height: 40px;
+                }
+                @include laptop_L {
+                    width: 23%;
+                    max-height: 50px;
+                }
+                @include laptop_W {
+                    width: 20%;
+                    max-height: 90px;
                 }
                 img {
                     max-width: 100%;
@@ -615,6 +627,8 @@ body {
                 padding: 0 20px;
                 @include mobile {
                     padding: 0 7px;
+                    width: 70%;
+                    display: inline-block;
                 }
                 @include tablet {
                     padding: 0 20px;
