@@ -301,6 +301,9 @@
         "32+32mb": "32+32Mb",
         "phase_error": "Phase error",
         "rmspe<5,ppe<20": "RMSPE<5,PPE<20",
-        "max_output": "Max output"
+        "max_output": "Max output",
+        "what_our_customers_are_saying": "What our customers are saying",
+        "hello,_i'm_having_an_issue_making_order_on_your_website._kindly_assist_me.": "Hello, I'm having an issue making order on your website. Kindly assist me. ",
+        "hello,_i_'m_having_an_issue_making_order_on_your_website._kindly_assist_me.": " Hello, I 'm having an issue making order on your website. Kindly assist me. "
     }
 }

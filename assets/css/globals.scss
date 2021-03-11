@@ -212,6 +212,10 @@
                         @include mobile {
                             position: absolute;
                             max-width: initial;
+                            height: 65%;
+                            width: 88%;
+                            -o-object-fit: fill;
+                            object-fit: fill;
                         }
                         @include laptop {
                             position: relative;
@@ -220,8 +224,9 @@
                     }
                 }
                 @include mobile {
-                    -ms-flex-pack: distribute;
-                    justify-content: space-around;
+                    -webkit-box-pack: end;
+                    -ms-flex-pack: end;
+                    justify-content: flex-end;
                     -webkit-box-align: center;
                     -ms-flex-align: center;
                     align-items: center;
@@ -248,10 +253,11 @@
                 }
                 .art_btn {
                     @include mobile {
-                        background: aliceblue;
+                        // background: aliceblue;
                         border-radius: 54em;
                         width: 41px;
                         height: 41px;
+                        margin-left: 10px;
                         i,
                         em {
                             line-height: 1.5em;
@@ -628,15 +634,17 @@
                     max-width: initial;
                     max-height: initial;
                     margin-left: 0;
-                    margin-right: 0;
+                    margin-right: 12px;
                     // margin: auto 5px auto 0;
                     // padding: 0px 6px;
+                    padding: 0;
+                    min-width: 40px;
                 }
                 @include tablet {
                     max-width: initial;
                     max-height: initial;
-                    margin-left: 20px;
-                    margin-right: 20px;
+                    margin-left: 0;
+                    margin-right: 5px;
                 }
                 @include laptop {
                     max-width: 0;

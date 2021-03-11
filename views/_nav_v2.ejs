@@ -271,6 +271,7 @@
                                 lang_(under_page.name).then(name => {
                                     under_page.name = name;
                                     renderFootServices(under_page);
+                                    renderStoreServices(under_page);
                                 })
 
                             })
@@ -299,6 +300,30 @@
         let foot_services = document.querySelector('#foot_services');
         if (foot_services) {
             foot_services.insertAdjacentHTML('AfterBegin', temp);
+        }
+    }
+
+    function renderStoreServices(page) {
+
+        let temp = `<a class="art_service_card waves-effect" href="${path}products/search?q=${page.slug.split('_').join(' ')}">
+                    <div class="art_serv_icon">
+                        <img src="${page.icon.fields.file.url}" alt="${page.name}">
+                    </div>
+                    <span class="art_serv_title"><h6>${page.name}</h6></span>
+                </a>`;
+
+
+        let store_services = document.querySelector('#store_services');
+        if (store_services) {
+
+            store_services.insertAdjacentHTML('AfterBegin', temp);
+            store_services.querySelectorAll('.art_service_card').forEach((card, index) => {
+
+                if (card.innerHTML.trim() === '') {
+                    card.remove();
+                }
+
+            });
         }
     }
 

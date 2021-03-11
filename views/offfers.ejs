@@ -1,0 +1,96 @@
+<% 
+if(product.offers){
+
+    if(product.offers.offersArray.length){
+console.log(product); %>
+
+    <div class="art_product_price_tag">
+        <div class="art_product_offer_desc">
+            <h5>
+                <%= lang_('Offers') %>
+            </h5>
+        </div>
+        <div class="art_product_price_cards">
+
+            <%
+            product.offers.offersArray.map(offer=>{ 
+
+                if(typeof offer.qt[0] !== 'string'){ 
+                    // console.log(offer);
+                    %>
+
+                <div class="art_price_card ">
+                    <span class="art_late_price_off_tag"> -<%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>%</span>
+                    <div class="art_price_card_header">
+                        <div class="art_price_card_product">
+                            <img src=" <%= path %><%= product.product_img %>" alt="">
+                        </div>
+                        <div class="art_price_card_product_offer">
+
+                            <span class="art_pcs">
+                    <p><%= offer.qt[0] %> to <%= offer.qt[1] %> pecies </p>
+                </span>
+                            <span class="art_percentage_msg">
+                    <h6>At <%= currency.name %> <%= formatMoney(offer.price*currency.rate) %></h6>
+                </span>
+                        </div>
+                    </div>
+                    <div class="art_price_card_body">
+                        <p>Get
+                            <%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>% off on the products you purchase from
+                                <%= offer.qt[0] %> -
+                                    <%= offer.qt[1] %> pecies
+                                        <b hidden> and save <%= currency.name %>
+                                        <%= formatMoney(product.price-offer.price) %></b>
+                        </p>
+                        <div class="art_package_co">
+                            <%- include ('./offer-box.ejs') %>
+                        </div>
+                    </div>
+                    <div class="art_price_card_footer">
+                        <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
+                    </div>
+                </div>
+                <% 
+    } else { %>
+                    <div class="art_price_card">
+                        <span class="art_late_price_off_tag">-<%= ((product.price-offer.price)/offer.price)*100 %>% 🔥</span>
+                        <div class="art_price_card_header">
+                            <div class="art_price_card_product">
+                                <img src="<%= path %><%= product.product_img %>" alt="">
+                            </div>
+                            <div class="art_price_card_product_offer">
+                                <span class="art_pcs">
+                                        <p><%= +offer.qt[0].split('>').join('') %> Pieces and above</p>
+                                    </span>
+                                <span class="art_percentage_msg">
+                                   <h6>At <%= currency.name %> <%= formatMoney(offer.price*currency.rate) %></h6>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="art_price_card_body">
+                            <p>Get crazy
+                                <%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>% off on the products you purchase from
+                                    <%= offer.qt[0].split('>').join('') %> pieces and above <b hidden> and save <%= currency.name %>
+                                        <%= formatMoney(product.price-offer.price) %></b></p>
+                            <div class="art_package_co">
+                                <%- include ('./offer-box.ejs') %>
+                            </div>
+                        </div>
+                        <div class="art_price_card_footer">
+                            <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
+                        </div>
+                    </div>
+                    <% 
+           } %>
+
+
+                        <%
+        })
+    
+    %>
+        </div>
+
+    </div>
+    <%
+    } } %>

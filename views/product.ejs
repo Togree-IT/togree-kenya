@@ -104,6 +104,7 @@
                                         <span>125 reviews</span>
                                         %>
                                                 <%
+                                                
                                         if (cartItems[product.product_id]) {
                                             %>
                                                     <div class="art_cart_actions " id="art_qty_<%= product.product_id %>">
@@ -125,96 +126,17 @@
                     <div class="art_desc_product_details">
                         <%-'<p>'+ lang_(product.description.split('.').join('').split('\n').join('`-n-`')).split('`-n-`').join('.</p><p>')+'.</p>' %>
                     </div>
-                    <div class="art_product_price_tag">
-                        <div class="art_product_offer_desc">
-                            <h5>
-                                <%= lang_('Offers') %>
-                            </h5>
-                        </div>
-                        <div class="art_product_price_cards">
-                            <div class="art_price_card ">
-                                <span class="art_late_price_off_tag"> Popular</span>
-                                <div class="art_price_card_header">
-                                    <div class="art_price_card_product">
-                                        <img src=" <%= path %><%= product.product_img %>" alt="">
-                                    </div>
-                                    <div class="art_price_card_product_offer">
-                                        <span class="art_percentage_msg">
-                                        <h6>Get 40%</h6>
-                                    </span>
-
-                                        <span class="art_pcs">
-                                        <p>+2 to 4 Pcs </p>
-                                    </span>
-                                    </div>
-                                </div>
-                                <div class="art_price_card_body">
-                                    <p>Get 40% off on the products you purchase from 2 - 4 pecies</p>
-                                </div>
-                                <div class="art_price_card_footer">
-                                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
-                                </div>
-                            </div>
-                            <div class="art_price_card active">
-                                <span class="art_late_price_off_tag">Recommended</span>
-                                <div class="art_price_card_header">
-                                    <div class="art_price_card_product">
-                                        <img src="<%= path %><%= product.product_img %>" alt="">
-                                    </div>
-                                    <div class="art_price_card_product_offer">
-                                        <span class="art_percentage_msg">
-                                    <h6>Get 60%</h6>
-                                </span>
-
-                                        <span class="art_pcs">
-                                        <p>+5 to 10 Pcs </p>
-                                    </span>
-                                    </div>
-                                </div>
-                                <div class="art_price_card_body">
-                                    <p>Get 60% off on the products you purchase from 5 - 10 pecies</p>
-
-                                </div>
-                                <div class="art_price_card_footer">
-                                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
-                                </div>
-                            </div>
-                            <div class="art_price_card">
-                                <span class="art_late_price_off_tag">Hot deal 🔥</span>
-                                <div class="art_price_card_header">
-                                    <div class="art_price_card_product">
-                                        <img src="<%= path %><%= product.product_img %>" alt="">
-                                    </div>
-                                    <div class="art_price_card_product_offer">
-                                        <span class="art_percentage_msg">
-                                        <h6>Get 80%</h6>
-                                    </span>
-
-                                        <span class="art_pcs">
-                                        <p>+11 to 50 Pcs </p>
-                                    </span>
-                                    </div>
-                                </div>
-                                <div class="art_price_card_body">
-                                    <p>Get crazy 80% off on the products you purchase from 11 - 50 pecies</p>
-
-                                </div>
-                                <div class="art_price_card_footer">
-                                    <button class="art_btn art_gree_btn filled waves-effect waves-light">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                    <%- include ('./offfers.ejs', product) %>
 
 
 
-                    <!-- <div class="art_more specs art_md">
+                        <!-- <div class="art_more specs art_md">
                         <button class="art_btn art_gree_btn filled waves-effect waves-light" id="art_view_specs">View Specs</button>
                     </div> -->
                 </div>
                 <div class="art_product_action">
-                    <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %></button>
+                    <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %>
+                        </button>
                     <button class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Write_a_review') %></button>
                 </div>
                 <div class="art_desc_product_features_co">
@@ -354,12 +276,12 @@
         <section class="art_reviewers">
             <div class="art_reviews_co">
                 <div class="art_reviews_title">
-                    <h5>
+                    <h4>
                         <%= lang_('Product_Review') %>
-                    </h5>
-                    <h5>
-                        <%= lang_('Our_happy_customers') %>
-                    </h5>
+                    </h4>
+                    <h6>
+                        <%= lang_('What_our_customers_are_saying')+'...' %>
+                    </h6>
                 </div>
                 <div class="art_reviews_cards" id="art_p_reviews">
                     <div class="art_reviews_card">

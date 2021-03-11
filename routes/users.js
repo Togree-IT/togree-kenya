@@ -44,6 +44,7 @@ router.get("/forgot", (req, res) => {
 
     ]
 
+
     let title = funs.language('Forgot', funs.getAppCookies(req)['language']);
     const meta = funs.meta({
         title,

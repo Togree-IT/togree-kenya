@@ -316,6 +316,10 @@ body .art_desc_product .art_desc_product_co {
   body .art_desc_product .art_desc_product_co {
     width: 90%;
     margin-top: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
 
@@ -358,6 +362,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_d2_co {
 @media screen and (min-width: 320px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_d2_co {
     width: 100%;
+    position: relative;
   }
 }
 
@@ -510,7 +515,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_details_co {
 
 @media screen and (min-width: 1024px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_details_co {
-    width: 70%;
+    width: 50%;
     margin: 0;
     padding: 0 10px 10px;
   }
@@ -663,6 +668,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   margin-top: 1pc;
+  position: relative;
 }
 
 @media screen and (min-width: 320px) {
@@ -671,7 +677,6 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co {
     flex-wrap: wrap;
     max-width: initial;
     max-height: initial;
-    overflow: auto;
     margin: 1pc 0 0;
   }
 }
@@ -691,8 +696,8 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co {
     flex-wrap: nowrap;
     max-width: initial;
     max-height: initial;
-    overflow: auto;
-    width: 100%;
+    width: 53%;
+    margin: 0;
     margin-left: auto;
   }
 }
@@ -703,8 +708,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co {
     flex-wrap: nowrap;
     max-width: initial;
     max-height: initial;
-    overflow: auto;
-    width: 100%;
+    width: 60%;
     margin-left: auto;
   }
 }
@@ -715,8 +719,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co {
     flex-wrap: nowrap;
     max-width: initial;
     max-height: initial;
-    overflow: auto;
-    width: 70%;
+    width: 60%;
     margin-left: auto;
   }
 }
@@ -737,41 +740,111 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_d
 @media screen and (min-width: 320px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card {
     width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0;
   }
 }
 
 @media screen and (min-width: 750px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card {
-    width: 49%;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card {
-    width: 40%;
+    width: 87%;
+    position: absolute;
+    left: -89%;
+    top: 8pc;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card {
+    width: 67%;
+    position: absolute;
+    left: -67%;
+    top: 8pc;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card {
+    width: 66%;
+    position: absolute;
+    left: -66%;
+    top: 8pc;
   }
 }
 
 body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card:nth-of-type(2) {
-  width: 59%;
+  width: 97%;
+  position: relative;
+  left: 0;
+  margin: auto;
   margin-right: 0;
+  top: 0;
 }
 
 @media screen and (min-width: 320px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card:nth-of-type(2) {
     width: 100%;
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-right: 0;
+    top: 0;
   }
 }
 
 @media screen and (min-width: 750px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card:nth-of-type(2) {
-    width: 50%;
+    width: 100%;
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-right: 0;
+    top: 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card:nth-of-type(2) {
-    width: 59%;
+    width: 99%;
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-right: 0;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card:nth-of-type(2) {
+    width: 95%;
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-right: 0;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card:nth-of-type(2) {
+    width: 90%;
+    position: relative;
+    left: 0;
+    margin: auto;
+    margin-right: auto;
+    top: 0;
   }
 }
 
@@ -819,6 +892,7 @@ body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_d
   margin: 5px 0 5px;
   background: #f5f9fb;
   position: relative;
+  word-break: break-all;
 }
 
 body .art_desc_product .art_desc_product_co .art_desc_product_features_co .art_desc_product_features_card .art_desc_product_features_card_body .art_desc_product_feature .art_product_feature::before {
@@ -923,6 +997,27 @@ body .reviews .art_review_actions {
   margin-left: auto;
 }
 
+@media screen and (min-width: 320px) {
+  body .reviews .art_review_actions {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body .reviews .art_review_actions {
+    width: 50%;
+    padding: 1pc 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .reviews .art_review_actions {
+    width: 50%;
+    padding: 0;
+  }
+}
+
 body .reviews .art_review_actions .art_btn {
   margin: 0;
   width: 100%;
@@ -1014,10 +1109,13 @@ body .art_product_action {
 @media screen and (min-width: 1024px) {
   body .art_product_action {
     padding: 10px 10px;
-    width: 70%;
+    width: 46%;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     margin: 10px 0;
+    flex-wrap: nowrap;
+    margin: 10px 0 auto;
+    margin-right: auto;
   }
   body .art_product_action.v1 {
     padding: 10px 0px;
@@ -1094,7 +1192,7 @@ body .art_reviewers {
   -ms-flex-pack: center;
   justify-content: center;
   padding: 20px 0 1pc;
-  background: #f5f9fb;
+  background: #fff;
 }
 
 body .art_reviewers .art_reviews_co {
@@ -1126,7 +1224,7 @@ body .art_reviewers .art_reviews_co {
 
 @media screen and (min-width: 1024px) {
   body .art_reviewers .art_reviews_co {
-    width: 70%;
+    width: 95%;
     padding: 0 20px;
   }
 }
@@ -1167,6 +1265,12 @@ body .art_reviewers .art_reviews_co .art_reviews_cards {
 
 @media screen and (min-width: 1440px) {
   body .art_reviewers .art_reviews_co .art_reviews_cards {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards {
     width: 70%;
   }
 }
@@ -1191,6 +1295,12 @@ body .art_reviewers .art_reviews_co .art_reviews_cards .slick-list {
 @media screen and (min-width: 1440px) {
   body .art_reviewers .art_reviews_co .art_reviews_cards .slick-list {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards .slick-list {
+    width: 85%;
   }
 }
 
@@ -1727,8 +1837,8 @@ body .art_product_price_cards .art_price_card {
 
 @media screen and (min-width: 1024px) {
   body .art_product_price_cards .art_price_card {
-    width: 31%;
-    margin: 0;
+    width: 49%;
+    margin: 0 0 10px;
     padding: 20px;
     min-height: auto;
   }
@@ -1954,7 +2064,7 @@ body ul.slick-dots li button {
 body ul.slick-dots li button::before {
   content: "";
   padding: 5px 10px;
-  margin: 0;
+  margin: 0 auto 0 -12px;
   border-radius: 5em;
   background: rgba(34, 195, 69, 0.418);
   color: #23c447;
@@ -1966,4 +2076,26 @@ body ul.slick-dots li button::before {
 body ul.slick-dots li.slick-active button::before {
   background: #23c447;
   color: #23c447;
+}
+
+body main {
+  padding: 0 0;
+}
+
+@media screen and (min-width: 320px) {
+  body main {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body main {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body main {
+    padding: 0;
+  }
 }
