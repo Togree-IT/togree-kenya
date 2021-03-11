@@ -43,10 +43,17 @@ body {
             max-height: 0;
             overflow: hidden;
         }
+        @include laptop {
+            min-height: auto;
+            overflow: initial;
+            max-width: initial;
+            max-height: initial;
+        }
         @include laptop_L {
             min-height: 60px;
             overflow: initial;
-            ;
+            max-width: initial;
+            max-height: initial;
         }
         @include laptop_W {
             min-height: 77px;
@@ -367,6 +374,7 @@ body {
             @include laptop {
                 height: auto;
                 margin-bottom: auto;
+                margin-right: 30px;
             }
             @include laptop_L {
                 height: 42vh;
@@ -569,8 +577,9 @@ body {
                 -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
                 width: ((100% / 2)- 3);
+                margin: 0 3px 6px;
                 &:last-of-type {
-                    margin: 6px 10px 6px 0;
+                    margin: 0 3px 6px;
                 }
             }
             @include laptop {
@@ -604,6 +613,12 @@ body {
                 -ms-flex: 1;
                 flex: 1;
                 padding: 0 20px;
+                @include mobile {
+                    padding: 0 7px;
+                }
+                @include tablet {
+                    padding: 0 20px;
+                }
                 * {
                     margin: 0;
                 }
@@ -679,7 +694,7 @@ body {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        min-height: 7vh;
+        min-height: auto;
         background: white;
         border-radius: 5px;
         padding: 10px 10px;
@@ -696,16 +711,16 @@ body {
             justify-content: space-around;
             .art_post_card {
                 width: ((100%/2) - 1%);
-                background: whitesmoke;
+                background: rgba(245, 245, 245, 0);
                 margin: 0 0;
                 border-radius: 5px;
                 -webkit-transition: .2s cubic-bezier(0.4, 0, 1, 1);
                 -o-transition: .2s cubic-bezier(0.4, 0, 1, 1);
                 transition: .2s cubic-bezier(0.4, 0, 1, 1);
                 min-height: auto;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: flex;
+                // display: -webkit-box;
+                // display: -ms-flexbox;
+                // display: flex;
                 @include mobile {
                     width: (100%/1);
                 }
@@ -719,11 +734,11 @@ body {
                     -ms-transform: scale(1.025);
                     transform: scale(1.025);
                 }
-                a {
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                }
+                // a {
+                // display: -webkit-box;
+                // display: -ms-flexbox;
+                // display: flex;
+                // }
                 img {
                     max-width: 100%;
                 }
