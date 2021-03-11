@@ -6,6 +6,43 @@
   --clicle_height: 20px;
 }
 
+:root {
+  --card-padding: 24px;
+  --card-height: 340px;
+  --card-skeleton: linear-gradient(lightgrey var(--card-height), transparent 0);
+  --avatar-size: 32px;
+  --avatar-position: var(--card-padding) var(--card-padding);
+  --avatar-skeleton: radial-gradient(circle 16px at center, white 99%, transparent 0);
+  --title-height: 25vh;
+  --title-width: 24%;
+  --title-position: var(--card-padding) 180px;
+  --title-body: var(--card-padding) 180px;
+  --title-skeleton: linear-gradient(white var(--title-height), transparent 0);
+  --desc-line-height: 16px;
+  --desc-line-skeleton: linear-gradient(white var(--desc-line-height), transparent 0);
+  --desc-line-1-width: 230px;
+  --desc-line-1-position: var(--card-padding) 242px;
+  --desc-line-2-width: 180px;
+  --desc-line-2-position: var(--card-padding) 265px;
+  --footer-height: 40px;
+  --footer-position: 0 calc(var(--card-height) - var(--footer-height));
+  --footer-skeleton: linear-gradient(white var(--footer-height), transparent 0);
+  --blur-width: 200px;
+  --blur-size: var(--blur-width) calc(var(--card-height) - var(--footer-height));
+}
+
+@-webkit-keyframes loading {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loading {
+  to {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 320px) {
   html {
     font-size: 0.95rem;
@@ -737,14 +774,13 @@ body .art_services_based .art_service_card .art_serv_icon {
 @media screen and (min-width: 1440px) {
   body .art_services_based .art_service_card .art_serv_icon {
     width: 23%;
-    max-height: 50px;
+    max-height: initial;
   }
 }
 
 @media screen and (min-width: 2560px) {
   body .art_services_based .art_service_card .art_serv_icon {
     width: 20%;
-    max-height: 90px;
   }
 }
 
@@ -775,6 +811,24 @@ body .art_services_based .art_service_card .art_serv_title {
 
 body .art_services_based .art_service_card .art_serv_title * {
   margin: 0;
+}
+
+body .art_services_based .art_service_card:empty {
+  position: relative;
+  background: rgba(255, 255, 255, 0.271) !important;
+}
+
+body .art_services_based .art_service_card:empty::after {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-image: -o-linear-gradient(357deg, rgba(255, 255, 255, 0.271) 42%, white);
+  background-image: linear-gradient(93deg, rgba(255, 255, 255, 0.271) 42%, white);
+  animation: loading 1.5s infinite;
+  -webkit-animation: loading 1.5s infinite;
 }
 
 body .art_based_card {
@@ -846,6 +900,23 @@ body .art_based_card .art_body .art_prod_card:hover {
   -webkit-transform: scale(1.025);
   -ms-transform: scale(1.025);
   transform: scale(1.025);
+}
+
+body .art_based_card .art_body .art_prod_card:empty {
+  position: relative;
+}
+
+body .art_based_card .art_body .art_prod_card:empty::after {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-image: -o-linear-gradient(357deg, rgba(255, 255, 255, 0.271) 42%, white);
+  background-image: linear-gradient(93deg, rgba(255, 255, 255, 0.271) 42%, white);
+  animation: loading 1.5s infinite;
+  -webkit-animation: loading 1.5s infinite;
 }
 
 body .art_post_based {

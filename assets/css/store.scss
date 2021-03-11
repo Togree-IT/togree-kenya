@@ -2,6 +2,7 @@
 // @import "./globals";
 @import "./globals-vars";
 @import "./mixins.scss";
+@import "./_loaders";
 html {
     @include mobile {
         font-size: 0.95rem;
@@ -611,11 +612,11 @@ body {
                 }
                 @include laptop_L {
                     width: 23%;
-                    max-height: 50px;
+                    max-height: initial;
                 }
                 @include laptop_W {
                     width: 20%;
-                    max-height: 90px;
+                    // max-height: 90px;
                 }
                 img {
                     max-width: 100%;
@@ -638,6 +639,7 @@ body {
                     margin: 0;
                 }
             }
+            @include loader2;
         }
     }
     .art_based_card {
@@ -694,6 +696,7 @@ body {
                     -ms-transform: scale(1.025);
                     transform: scale(1.025);
                 }
+                @include loader;
             }
         }
     }

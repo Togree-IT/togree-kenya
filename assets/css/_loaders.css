@@ -1,0 +1,11 @@
+@-webkit-keyframes loading {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loading {
+  to {
+    width: 100%;
+  }
+}
