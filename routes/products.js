@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
         preview_image: '',
         theme_color: "#fff"
     }, req);
+    // console.log(funs.getAppCookies(req)['language']);
     funs.globalCurrency(currency => {
         res.render('shop_home', {
             meta,
@@ -41,7 +42,7 @@ router.get('/', (req, res) => {
             title,
             path: funs.pathToTheRoot(req._parsedUrl.path),
             currency,
-            cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
+            cartItems: JSON.parse(typeof funs.getAppCookies(req)['cartItems'] === "undefined" ? '{}' : funs.getAppCookies(req)['cartItems']) || '',
         })
     })
 

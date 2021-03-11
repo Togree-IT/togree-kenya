@@ -250,29 +250,38 @@ exports.getAppCookies = (req) => {
     const parsedCookies = {};
 
     // We extract the raw cookies from the request headers
-    if (req.headers.cookie) {
-        const rawCookies = req.headers.cookie.split('; ');
-        rawCookies.forEach(rawCookie => {
-            const parsedCookie = rawCookie.split('=');
 
-            if (parsedCookie[0] === 'language') {
-                if (parsedCookie[1]) {
-                    if (parsedCookie[1].trim() === '') {
+    if (req.headers.cookie) {
+        if (!req.headers.cookie.toString().includes('cartItems')) {
+            req.headers.cookie = req.headers.cookie.toString() + '; ' + 'cartItems={}';
+
+        }
+        if (req.headers.cookie.toString().includes('language')) {
+            const rawCookies = req.headers.cookie.split('; ');
+            rawCookies.forEach(rawCookie => {
+                const parsedCookie = rawCookie.split('=');
+
+                if (parsedCookie[0] === 'language') {
+                    if (parsedCookie[1]) {
+                        if (parsedCookie[1].trim() === '') {
+                            parsedCookie[1] = 'en'
+                        }
+                    } else {
                         parsedCookie[1] = 'en'
                     }
                 } else {
-                    parsedCookie[1] = 'en'
-                }
-            } else {
-                parsedCookie.push('language', 'en');
+                    parsedCookie.push('language', 'en');
 
-            }
-            parsedCookies[parsedCookie[0]] = parsedCookie[1];
-        });
+                }
+                parsedCookies[parsedCookie[0]] = parsedCookie[1];
+            });
+        } else {
+            req.headers.cookie = req.headers.cookie.toString() + '; ' + 'language=en';
+        }
     } else {
         const parsedCookie = [];
         parsedCookie.push('language', 'en');
-
+        parsedCookie.push('cartItems', '{}');
         parsedCookies[parsedCookie[0]] = parsedCookie[1];
     }
     return parsedCookies;

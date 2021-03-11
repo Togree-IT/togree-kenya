@@ -212,6 +212,14 @@
             document.cookie = cname + "=" + cvalue + /* ";" + expires + */ ";path=/";
         }
 
+        function setLangCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            // var expires = "expires=" + d.toUTCString();
+            // cvalue = JSON.stringify(cvalue) || cvalue;
+            document.cookie = cname + "=" + cvalue + /* ";" + expires + */ ";path=/";
+        }
+
         function bake_cookie(name, value) {
             var cookie = [name, '=', JSON.stringify(value), '; domain=.', window.location.host.toString(), '; path=/;'].join('');
             document.cookie = cookie;
@@ -370,5 +378,12 @@
                 }
             }
 
+        }
+
+        function changeLanguage(lan, ref) {
+            setLangCookie('language', lan);
+            const lang = read_cookie('language');
+            console.log(lang)
+            console.log(lan)
         }
     </script>
