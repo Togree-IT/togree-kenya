@@ -688,10 +688,10 @@ body .art_services_based .art_service_card:last-of-type {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 47%;
-    margin: 0 3px 6px;
+    margin: 0 3px 15px;
   }
   body .art_services_based .art_service_card:last-of-type {
-    margin: 0 3px 6px;
+    margin: 0 3px 15px;
   }
 }
 
