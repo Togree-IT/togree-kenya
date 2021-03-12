@@ -1619,11 +1619,11 @@ body {
                     margin: auto;
                     // border-radius: 12px;
                     border-radius: 29px;
-                    background: #eefff2;
+                    background: hsla(132, 100%, 97%, 0);
                     margin-right: 3px;
                     margin-left: 0;
                     @include mobile {
-                        width: 30%;
+                        width: 28%;
                     }
                     @include laptop {
                         width: 28%;
@@ -1631,6 +1631,7 @@ body {
                     img {
                         max-width: 100%;
                         max-height: inherit;
+                        margin-top: -20px;
                     }
                 }
                 .art_price_card_product_offer {

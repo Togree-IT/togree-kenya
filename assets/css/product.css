@@ -2014,14 +2014,14 @@ body .art_product_price_cards .art_price_card .art_price_card_header .art_price_
   max-height: 65px;
   margin: auto;
   border-radius: 29px;
-  background: #eefff2;
+  background: rgba(240, 255, 243, 0);
   margin-right: 3px;
   margin-left: 0;
 }
 
 @media screen and (min-width: 320px) {
   body .art_product_price_cards .art_price_card .art_price_card_header .art_price_card_product {
-    width: 30%;
+    width: 28%;
   }
 }
 
@@ -2034,6 +2034,7 @@ body .art_product_price_cards .art_price_card .art_price_card_header .art_price_
 body .art_product_price_cards .art_price_card .art_price_card_header .art_price_card_product img {
   max-width: 100%;
   max-height: inherit;
+  margin-top: -20px;
 }
 
 body .art_product_price_cards .art_price_card .art_price_card_header .art_price_card_product_offer {

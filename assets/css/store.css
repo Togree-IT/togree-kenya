@@ -980,6 +980,18 @@ body .art_based_card .art_body {
   min-height: 25vh;
 }
 
+@media screen and (min-width: 320px) {
+  body .art_based_card .art_body {
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_based_card .art_body {
+    padding: 0px;
+  }
+}
+
 body .art_based_card .art_body .art_prod_card {
   width: 24%;
   background: whitesmoke;

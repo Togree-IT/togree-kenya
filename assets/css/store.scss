@@ -791,6 +791,12 @@ body {
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             min-height: 25vh;
+            @include mobile {
+                padding: 10px 20px;
+            }
+            @include laptop {
+                padding: 0px;
+            }
             .art_prod_card {
                 width: ((100%/4) - 1%);
                 background: whitesmoke;
