@@ -341,7 +341,7 @@ body {
         justify-content: space-between;
         @include mobile {
             min-height: auto;
-            margin: 5px 0;
+            margin: 5px 0 2pc;
         }
         @include tablet {
             min-height: 28vh;
@@ -393,25 +393,108 @@ body {
             }
             .art_slides_co {
                 position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
                 &::before {
                     content: "";
                     position: absolute;
                     height: 100%;
                     width: 100%;
-                    background-color: rgba(15, 24, 36, 0.376);
+                    // background-color: rgba(15, 24, 36, 0.376);
+                    background-color: hsla(124, 63%, 14%, 0.678);
                     z-index: 1;
                 }
                 .content {
                     position: absolute;
                     z-index: 10;
-                    color: aliceblue;
-                    width: 55%;
-                    padding: 11% 70px;
+                    // color: aliceblue;
+                    // width: 55%;
+                    // padding: 11% 70px;
+                    // color: #f2fff5;
+                    // width: 59%;
+                    // padding: 1% 70px;
+                    // top: 26%;
+                    // left: 15px;
+                    color: #f2fff5;
+                    width: 45%;
+                    /* padding: 1% 70px; */
+                    /* top: 26%; */
+                    left: 60px;
+                    @include mobile {
+                        width: 95%;
+                        left: 20px;
+                    }
+                    @include laptop {
+                        width: 45%;
+                        left: 60px;
+                    }
                     * {
-                        line-height: 1.5;
+                        // line-height: 1.5;
+                        margin: 0;
                     }
                 }
             }
+            &.slick-initialized {
+                position: relative;
+                .slick-track {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                }
+                ul.slick-dots {
+                    position: absolute;
+                    bottom: 0;
+                    display: -webkit-box !important;
+                    display: -ms-flexbox !important;
+                    display: flex !important;
+                    width: 100%;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    li {
+                        width: 15px;
+                        button {
+                            border: 0;
+                            padding: 0;
+                            border-radius: 5em;
+                            background: hsla(133, 70%, 45%, 0);
+                            color: hsla(128, 70%, 45%, 0);
+                            margin: 0 20px;
+                            max-width: 0;
+                            max-height: 0;
+                            // overflow: hidden;
+                            position: relative;
+                            &::before {
+                                content: "";
+                                padding: 5px;
+                                margin: 0 0 0 -12px;
+                                border-radius: 5em;
+                                background: #23c447;
+                                color: #23c447;
+                                width: 9px;
+                                height: 9px;
+                                position: absolute;
+                                cursor: pointer;
+                                // left: -30px;
+                            }
+                        }
+                        &.slick-active {
+                            button {
+                                &::before {
+                                    background: hsla(133, 70%, 45%, 0.418);
+                                    color: #23c447;
+                                    // width: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include loader2;
         }
         .art_top_options_co {
             width: 24%;
@@ -577,6 +660,7 @@ body {
         .art_service_card {
             width: (100% / 4);
             min-height: 6vh;
+            max-height: 6vh;
             height: auto;
             background: white;
             color: #251d33;
@@ -605,6 +689,7 @@ body {
                 flex-wrap: wrap;
                 width: ((100% / 2)- 3);
                 margin: 0 3px 15px;
+                max-height: initial;
                 &:last-of-type {
                     margin: 0 3px 15px;
                 }
@@ -613,6 +698,7 @@ body {
                 -ms-flex-wrap: nowrap;
                 flex-wrap: nowrap;
                 width: (100% / 4);
+                max-height: 6vh;
                 &:last-of-type {
                     margin-right: 0;
                 }
@@ -698,7 +784,7 @@ body {
             .art_prod_card {
                 width: ((100%/4) - 1%);
                 background: whitesmoke;
-                margin: 0 auto 15px;
+                margin: 0 1% 15px;
                 border-radius: 5px;
                 -webkit-transition: .2s cubic-bezier(0.4, 0, 1, 1);
                 -o-transition: .2s cubic-bezier(0.4, 0, 1, 1);
@@ -712,6 +798,18 @@ body {
                 }
                 @include laptop {
                     width: ((100%/4) - 1%);
+                }
+                &:empty {
+                    width: ((100%/2) - 2%);
+                    @include mobile {
+                        width: (100%/1);
+                    }
+                    @include tablet {
+                        width: ((100%/2) - 2%);
+                    }
+                    @include laptop {
+                        width: ((100%/2) - 2%);
+                    }
                 }
                 &:hover {
                     -webkit-box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);

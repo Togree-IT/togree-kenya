@@ -383,7 +383,7 @@ body .art_shop_header {
 @media screen and (min-width: 320px) {
   body .art_shop_header {
     min-height: auto;
-    margin: 5px 0;
+    margin: 5px 0 2pc;
   }
 }
 
@@ -467,6 +467,12 @@ body .art_shop_header .art_promo_co img {
 
 body .art_shop_header .art_promo_co .art_slides_co {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 body .art_shop_header .art_promo_co .art_slides_co::before {
@@ -474,20 +480,110 @@ body .art_shop_header .art_promo_co .art_slides_co::before {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(15, 24, 36, 0.376);
+  background-color: rgba(13, 58, 16, 0.678);
   z-index: 1;
 }
 
 body .art_shop_header .art_promo_co .art_slides_co .content {
   position: absolute;
   z-index: 10;
-  color: aliceblue;
-  width: 55%;
-  padding: 11% 70px;
+  color: #f2fff5;
+  width: 45%;
+  /* padding: 1% 70px; */
+  /* top: 26%; */
+  left: 60px;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_shop_header .art_promo_co .art_slides_co .content {
+    width: 95%;
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_shop_header .art_promo_co .art_slides_co .content {
+    width: 45%;
+    left: 60px;
+  }
 }
 
 body .art_shop_header .art_promo_co .art_slides_co .content * {
-  line-height: 1.5;
+  margin: 0;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized {
+  position: relative;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized ul.slick-dots {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized ul.slick-dots li {
+  width: 15px;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized ul.slick-dots li button {
+  border: 0;
+  padding: 0;
+  border-radius: 5em;
+  background: rgba(34, 195, 69, 0);
+  color: rgba(34, 195, 56, 0);
+  margin: 0 20px;
+  max-width: 0;
+  max-height: 0;
+  position: relative;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized ul.slick-dots li button::before {
+  content: "";
+  padding: 5px;
+  margin: 0 0 0 -12px;
+  border-radius: 5em;
+  background: #23c447;
+  color: #23c447;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  cursor: pointer;
+}
+
+body .art_shop_header .art_promo_co.slick-initialized ul.slick-dots li.slick-active button::before {
+  background: rgba(34, 195, 69, 0.418);
+  color: #23c447;
+}
+
+body .art_shop_header .art_promo_co:empty {
+  position: relative;
+  background: rgba(255, 255, 255, 0.271) !important;
+}
+
+body .art_shop_header .art_promo_co:empty::after {
+  content: "";
+  display: block;
+  width: 10%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-image: -o-linear-gradient(357deg, rgba(255, 255, 255, 0.271) 42%, white);
+  background-image: linear-gradient(93deg, rgba(255, 255, 255, 0.271) 42%, white);
+  animation: loading 1.5s infinite;
+  -webkit-animation: loading 1.5s infinite;
 }
 
 body .art_shop_header .art_top_options_co {
@@ -700,6 +796,7 @@ body .art_services_based {
 body .art_services_based .art_service_card {
   width: 25%;
   min-height: 6vh;
+  max-height: 6vh;
   height: auto;
   background: white;
   color: #251d33;
@@ -729,6 +826,7 @@ body .art_services_based .art_service_card:last-of-type {
     flex-wrap: wrap;
     width: 47%;
     margin: 0 3px 15px;
+    max-height: initial;
   }
   body .art_services_based .art_service_card:last-of-type {
     margin: 0 3px 15px;
@@ -740,6 +838,7 @@ body .art_services_based .art_service_card:last-of-type {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     width: 25%;
+    max-height: 6vh;
   }
   body .art_services_based .art_service_card:last-of-type {
     margin-right: 0;
@@ -871,7 +970,7 @@ body .art_based_card .art_body {
 body .art_based_card .art_body .art_prod_card {
   width: 24%;
   background: whitesmoke;
-  margin: 0 auto 15px;
+  margin: 0 1% 15px;
   border-radius: 5px;
   -webkit-transition: 0.2s cubic-bezier(0.4, 0, 1, 1);
   -o-transition: 0.2s cubic-bezier(0.4, 0, 1, 1);
@@ -894,6 +993,28 @@ body .art_based_card .art_body .art_prod_card {
 @media screen and (min-width: 1024px) {
   body .art_based_card .art_body .art_prod_card {
     width: 24%;
+  }
+}
+
+body .art_based_card .art_body .art_prod_card:empty {
+  width: 48%;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_based_card .art_body .art_prod_card:empty {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body .art_based_card .art_body .art_prod_card:empty {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_based_card .art_body .art_prod_card:empty {
+    width: 48%;
   }
 }
 

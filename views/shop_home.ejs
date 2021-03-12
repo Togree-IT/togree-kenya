@@ -88,13 +88,3 @@
             </div>
             </div>
     </main>
-    <script>
-document.addEventListener("DOMContentLoaded", e=>{
-    axios.get('<%=path%>api/products/get_promos').then(data=>{ data = data.data; if(data.length){ let promo_silders = document.querySelector('#promo_silders'); if(promo_silders){ let temp = (slider) =>`
-                        <div class="art_slides_co">
-                            <div class="content">
-                                <h4>${slider.description}</h4>
-                            </div>
-                            <img src="<%= path %>${slider.imgage}" alt="">
-                        </div>`; data.map(slider=>{ console.log(slider); promo_silders.insertAdjacentHTML('afterbegin', temp(slider)) ; })} } }) })
-                        </script>

@@ -12,15 +12,15 @@ router.get('/list/all', (req, res) => {
 
 router.get('/', (req, res) => {
     const elements = [...initialElements,
-
         "assets/css/store.min.css",
-        "assets/lib/materialize/extras/noUiSlider/nouislider.css", "https://kit.fontawesome.com/5eaa28fea9.js",
-        'assets/lib/materialize/extras/noUiSlider/nouislider.js',
+        '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
+        '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
+
         'assets/js/store.js'
     ]
 
 
-    let title = funs.language('Products', funs.getAppCookies(req)['language']);
+    let title = funs.language('Store', funs.getAppCookies(req)['language']);
     const meta = funs.meta({
         title,
         description: "",
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
         preview_image: '',
         theme_color: "#fff"
     }, req);
-    // console.log(funs.getAppCookies(req)['language']);
+
     funs.globalCurrency(currency => {
         res.render('shop_home', {
             meta,
