@@ -254,7 +254,6 @@ exports.getAppCookies = (req) => {
     if (req.headers.cookie) {
         if (!req.headers.cookie.toString().includes('cartItems')) {
             req.headers.cookie = req.headers.cookie.toString() + '; ' + 'cartItems={}';
-
         }
         if (req.headers.cookie.toString().includes('language')) {
             const rawCookies = req.headers.cookie.split('; ');
@@ -279,11 +278,11 @@ exports.getAppCookies = (req) => {
             req.headers.cookie = req.headers.cookie.toString() + '; ' + 'language=en';
         }
     } else {
-        const parsedCookie = [];
-        parsedCookie.push('language', 'en');
-        parsedCookie.push('cartItems', '{}');
-        parsedCookies[parsedCookie[0]] = parsedCookie[1];
+        parsedCookies['language'] = 'en';
+        parsedCookies['cartItems'] = '{}';
+
     }
+
     return parsedCookies;
 };
 /**

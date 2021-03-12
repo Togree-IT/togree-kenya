@@ -384,6 +384,9 @@
             console.log(cancelTokenSource.token);
             axios.post("<%= path %>api/products/rate").then(res => {
                 console.log(res.data);
+                // setCookie('rated', {
+                //     id: ''
+                // })
             })
         }
     </script>

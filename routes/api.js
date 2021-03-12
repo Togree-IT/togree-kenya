@@ -176,12 +176,10 @@ router.use("/contact", require("../routes/contact"));
 
 
 router.post('/products/rate', (req, res) => {
-    let content = funs.getFullCont.getProducts({});
-
-    content.then(data => {
-        res.status(200).json(data.items);
-    }).catch(err => {
-        console.log(err.details);
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+        // var sql = "INSERT INTO rate"
+        let get
     })
 });
 
