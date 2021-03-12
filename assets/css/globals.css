@@ -709,14 +709,13 @@ body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card.
 
 body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon {
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 30%;
   margin: 0 10px 0 0;
-  padding: 5px;
   border-radius: 5em;
   -webkit-box-shadow: 0 0 10px 0px rgba(6, 67, 96, 0.071);
   box-shadow: 0 0 10px 0px rgba(6, 67, 96, 0.071);
+  line-height: initial;
+  padding: 4px 8px;
 }
 
 body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon.v1 {

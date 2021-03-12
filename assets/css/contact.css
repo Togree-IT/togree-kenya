@@ -123,6 +123,9 @@ body .contacthero__information__address__content {
 }
 
 body .contacthero__information__address .art_get_dir.filled {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   min-width: 50%;
   border: 0;
 }

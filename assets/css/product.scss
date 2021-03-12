@@ -1615,14 +1615,18 @@ body {
                     display: flex;
                     width: 40%;
                     max-height: 65px;
-                    overflow: hidden;
+                    // overflow: hidden;
                     margin: auto;
-                    border-radius: 12px;
+                    // border-radius: 12px;
+                    border-radius: 29px;
+                    background: #eefff2;
+                    margin-right: 3px;
+                    margin-left: 0;
                     @include mobile {
                         width: 30%;
                     }
                     @include laptop {
-                        width: 30%;
+                        width: 28%;
                     }
                     img {
                         max-width: 100%;

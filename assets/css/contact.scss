@@ -170,6 +170,9 @@ body {
                 }
                 .art_get_dir {
                     &.filled {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
                         // margin: 0 auto;
                         min-width: 50%;
                         border: 0;

@@ -146,6 +146,9 @@ router.get('/search', (req, res) => {
 
 
 router.get('/main/:id', (req, res) => {
+    // chrome only
+    // let broswer = req.headers['sec-ch-ua'].split(',')[1].split(';')[0]
+    console.log(req.headers);
 
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {

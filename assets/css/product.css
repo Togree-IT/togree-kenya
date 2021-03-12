@@ -2012,9 +2012,11 @@ body .art_product_price_cards .art_price_card .art_price_card_header .art_price_
   display: flex;
   width: 40%;
   max-height: 65px;
-  overflow: hidden;
   margin: auto;
-  border-radius: 12px;
+  border-radius: 29px;
+  background: #eefff2;
+  margin-right: 3px;
+  margin-left: 0;
 }
 
 @media screen and (min-width: 320px) {
@@ -2025,7 +2027,7 @@ body .art_product_price_cards .art_price_card .art_price_card_header .art_price_
 
 @media screen and (min-width: 1024px) {
   body .art_product_price_cards .art_price_card .art_price_card_header .art_price_card_product {
-    width: 30%;
+    width: 28%;
   }
 }
 
