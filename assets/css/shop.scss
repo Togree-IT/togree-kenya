@@ -801,4 +801,23 @@ body {
             box-shadow: 0 4px 8px 0 hsla(0, 0%, 0%, 0.2);
         }
     }
+    .art_card_co {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        width: 100%;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        /* color: #828282; */
+        .art_card.no_data {
+            padding: 10px 25px;
+            background: whitesmoke;
+            border-radius: 10px;
+            color: #25193a;
+        }
+    }
 }

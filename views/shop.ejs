@@ -3,54 +3,58 @@
         <div class="container art_container">
 
             <div class="shop__sidebar  fixed" id="aside">
-                <div class="shop__sidebar__category">
-                    <div class="shop__sidebar__category__header">
-                        <h5>CATEGORY</h5>
+                <% if(categories){
+                    if(categories.length){ %>
+                    <div class="shop__sidebar__category">
+                        <div class="shop__sidebar__category__header">
+                            <h5>CATEGORY</h5>
+                        </div>
+                        <ul class="art_cart_options">
+                            <% categories.map(category=>{%>
+                                <li class="art_cart_option shop__sidebar__category__subheader">
+                                    <a href="<%= path %>products/search?q=<%= encodeURIComponent(category.name)  %>" class="art_link waves-effect">
+                                        <%= category.name %>
+                                    </a>
+                                </li>
+                                <%
+                }) %>
+
+                                    <% }
+                } %>
+                        </ul>
+
                     </div>
-                    <ul class="art_cart_options">
-                        <li class="art_cart_option shop__sidebar__category__subheader">
-                            <a href="#!" class="art_link waves-effect">Asset GPS Trackers</a>
-                        </li>
-                        <li class="art_cart_option shop__sidebar__category__subheader">
-                            <a href="#!" class="art_link waves-effect">Vechicle GPS Trackers</a></li>
-                        <li class="art_cart_option shop__sidebar__category__subheader">
-                            <a href="#!" class="art_link waves-effect">Personal Trackers</a></li>
-                        <li class="art_cart_option shop__sidebar__category__subheader">
-                            <a href="#!" class="art_link waves-effect">Camera</a></li>
-                    </ul>
 
-                </div>
+                    <div class="art_divider"></div>
 
-                <div class="art_divider"></div>
+                    <div class="shop__sidebar__price">
+                        <div class="shop__sidebar__price__header">
+                            <h5>PRICE</h5>
+                            <div class="art_apply_price">
+                                <a href="#!" class="shop__sidebar__price__titlecontainer__title art_btn waves-effect" id="apply">Apply</a>
+                            </div>
 
-                <div class="shop__sidebar__price">
-                    <div class="shop__sidebar__price__header">
-                        <h5>PRICE</h5>
-                        <div class="art_apply_price">
-                            <a href="#!" class="shop__sidebar__price__titlecontainer__title art_btn waves-effect" id="apply">Apply</a>
                         </div>
 
-                    </div>
-
-                    <div class="shop__sidebar__price__range">
-                        <div id="test-slider"></div>
-                    </div>
-
-                    <div class="shop__sidebar__price__slidernum">
-
-                        <div class="art_input_co">
-                            <input class="art_input" type="number" id="mininput">
-                        </div>
-                        <div class="shop__sidebar__price__slidernum__seperator"></div>
-
-                        <div class="art_input_co">
-                            <input class="art_input" type="number" id="maxinput">
+                        <div class="shop__sidebar__price__range">
+                            <div id="test-slider"></div>
                         </div>
 
+                        <div class="shop__sidebar__price__slidernum">
+
+                            <div class="art_input_co">
+                                <input class="art_input" type="number" id="mininput">
+                            </div>
+                            <div class="shop__sidebar__price__slidernum__seperator"></div>
+
+                            <div class="art_input_co">
+                                <input class="art_input" type="number" id="maxinput">
+                            </div>
+
+                        </div>
+
+
                     </div>
-
-
-                </div>
 
             </div>
 
@@ -86,12 +90,105 @@
                         </button>
                     </div>
 
-                    <div class="shop__products__productwrapper" id="shop_product_wrapper"></div>
+                    <div class="shop__products__productwrapper" id="shop_product_wrapper">
+                        <%  function shopProdtemp (data, others) {
+                             
+                             let apllyProductRates = function() {
+                let stars = '';
+
+                for (let i = 1; i < 6; i++) {
+                    if (i <= (+data.productRate)) {
+                        stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
+                        <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
+                        <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
+                        <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
+                        </g>
+                        </svg>`;
+                    } else {
+                        if ((+data.productRate) > 0)
+                            stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
+                        <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
+                        <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
+                        <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
+                        </g>
+                      </svg>`;
+
+                    }
+                }
+
+                return stars
+            }
+
+function applyCartActions() {
+
+    if (cartItems && cartItems[data.product_id]) {
+        return `<div class="art_cart_actions" id="art_qty_${data.product_id}">
+                    <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '${data.product_id}')"><em class="material-icons">remove</em></button>
+                    <input type="number" min="1" class="art_qty_display" id="art_qty_display_${data.product_id}" contenteditable="true" value="${cartItems[data.product_id].quantity}" onchange="updateProductToCart(event, '${data.product_id}')">
+                    <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '${data.product_id}')"><em class="material-icons">add</em></button>
+                </div> 
+                <button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_${data.product_id}" style="display:none" onclick="addProductToCart(event, '${data.product_id}')">${others.action_title}</button>`
+    } else {
+        return `<button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_${data.product_id}" onclick="addProductToCart(event, '${data.product_id}')">${others.action_title}</button>`
+    }
+}     
+                return `
+                    <div class="shop__products__productcontainer">
+                        <a href="${path+'products/main/'+data.product_id}" title="${data.name} ${data.product_model}" class="waves-effect">
+                            <div class="shop__products__productcontainer__img">
+                                <img src="${path+data.product_img}" alt="${data.name} ${data.product_model}" class="shop__products__productcontainer__pic">
+                            </div>
+                            <div class="product_details">
+                                <span class="title">${data.name} ${data.product_model}</span>
+                                <span class="art_product_price"> ${currency.name} ${data.price} ${others.per_piece} </span>
+                            </div>
+                        </a>
+                        <div class="product_footer">
+                                ${ applyCartActions()}
+                            </div>
+                            <div class="product_more_details">
+                                ${apllyProductRates()}
+                            </div>
+                    </div>`;  
+                    
+            } 
+            
+            if(products){
+                if(products.length){
+                    products.map(product=>{
+                        console.log(product);
+                        %>
+                            <script>
+                                window.products = window.products || {};
+                                window.products["<%= product.product_id %>"] = <%- JSON.stringify( products) %>
+                            </script>
+                            <%- shopProdtemp(product,{action_title: lang_('Add_to_cart'), per_piece:lang_('per_piece')}) %>
+
+                                <% }) %>
+                                    <% }
+                
+               else{ %>
+
+                                        <div class="art_card_co">
+                                            <div class="art_card no_data">
+                                                <h6>No data was found</h6>
+                                            </div>
+                                        </div>
+
+                                        <%
+                }
+                // console.log(products);
+            }
+            %>
+
+
+                    </div>
                 </div>
 
             </section>
         </div>
     </main>
+
     <script>
         // document.addEventListener('DOMContentLoaded', function() {
         //     var elems = document.querySelectorAll('.scrollspy');
@@ -100,7 +197,7 @@
         //         // scrollOffset: 10,
         //         getActiveElement: function(id) {
         //             console.log(id);
-        //         }
-        //     });
-        // });
+        //         %>
+        //     %>);
+        // %>);
     </script>

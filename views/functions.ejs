@@ -377,13 +377,13 @@
                     delete_cookie('cartItems');
                 }
             }
-
         }
 
-        function changeLanguage(lan, ref) {
-            setLangCookie('language', lan);
-            const lang = read_cookie('language');
-            console.log(lang)
-            console.log(lan)
+        function rateProduct(id) {
+            const cancelTokenSource = axios.CancelToken.source();
+            console.log(cancelTokenSource.token);
+            axios.post("<%= path %>api/products/rate").then(res => {
+                console.log(res.data);
+            })
         }
     </script>

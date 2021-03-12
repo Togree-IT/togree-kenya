@@ -1039,13 +1039,47 @@ body {
             .art_reviews_cards {
                 .art_reviews_card {
                     // width: 30% !important;
-                    margin: 0 auto;
+                    margin: 0 87px;
                     padding: 20px;
-                    background: #f7fdfa;
+                    background: #f5f9fb;
                     border-radius: 5px;
                     outline: none;
+                    @include box_shad(0 3px 7px hsla(200, 18%, 46%, 0.188));
                     @include mobile {
-                        // width: 100% !important;
+                        margin: 0;
+                    }
+                    @include tablet {
+                        margin: 35px 50px;
+                    }
+                    @include laptop {
+                        margin: 0 87px;
+                    }
+                    .art_review_body {
+                        width: 66%;
+                        margin: 0 auto;
+                        @include mobile {
+                            width: 90%;
+                        }
+                        @include laptop {
+                            width: 66%;
+                        }
+                        position: relative;
+                        q {
+                            &::before,
+                            &::after {
+                                font-size: 44pt;
+                                line-height: 1;
+                                position: absolute;
+                            }
+                            &::before {
+                                top: -30px;
+                                left: -25px;
+                            }
+                            &::after {
+                                bottom: -30px;
+                                right: -5px;
+                            }
+                        }
                     }
                     .art_review_header {
                         display: -webkit-box;
@@ -1711,6 +1745,57 @@ body {
         }
         @include laptop_L {
             padding: 0;
+        }
+    }
+    .art_rates {
+        margin: auto;
+        position: relative;
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+        .rate:not(:checked)>input {
+            position: absolute;
+            top: 0;
+        }
+        .rate:not(:checked)>label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+        .rate:not(:checked)>label:before {
+            content: '★ ';
+        }
+        .rate>input:checked~label {
+            color: #ffc700;
+        }
+        .rate:not(:checked)>label:hover,
+        .rate:not(:checked)>label:hover~label {
+            color: #deb217;
+        }
+        .rate>input:checked+label:hover,
+        .rate>input:checked+label:hover~label,
+        .rate>input:checked~label:hover,
+        .rate>input:checked~label:hover~label,
+        .rate>label:hover~input:checked~label {
+            color: #c59b08;
+        }
+    }
+    .art_package_co {
+        display: block;
+        @include mobile {
+            display: block;
+        }
+        @include laptop {
+            display: none;
+        }
+        @include laptop_L {
+            display: block;
         }
     }
 }

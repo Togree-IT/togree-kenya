@@ -175,4 +175,14 @@ router.use("/contact", require("../routes/contact"));
 
 
 
+router.post('/products/rate', (req, res) => {
+    let content = funs.getFullCont.getProducts({});
+
+    content.then(data => {
+        res.status(200).json(data.items);
+    }).catch(err => {
+        console.log(err.details);
+    })
+});
+
 module.exports = router;

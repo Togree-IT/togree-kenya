@@ -1185,6 +1185,7 @@ body .art_footer .art_footer_co .art_footer_impo_links_cards .art_footer_connect
   color: aliceblue;
   -webkit-box-shadow: inset 0 1px 1px 0px #333;
   box-shadow: inset 0 1px 1px 0px #333;
+  height: 3.5rem;
 }
 
 body .art_footer .art_footer_co .art_footer_impo_links_cards .art_footer_connect .art_subscribe_co .art_input_co .art_input {

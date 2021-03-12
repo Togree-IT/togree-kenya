@@ -135,8 +135,22 @@
                     </div> -->
                 </div>
                 <div class="art_product_action">
-                    <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %>
-                        </button>
+                    <!-- <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %>
+                        </button>-->
+                    <div class="art_rates">
+                        <div class="rate">
+                            <input type="radio" id="star5" name="rate" value="5" onclick="rateProduct('<%= product.product_id %>')" />
+                            <label for="star5" title="text">5 stars</label>
+                            <input type="radio" id="star4" name="rate" value="4" onclick="rateProduct('<%= product.product_id %>')" />
+                            <label for="star4" title="text">4 stars</label>
+                            <input type="radio" id="star3" name="rate" value="3" onclick="rateProduct('<%= product.product_id %>')" />
+                            <label for="star3" title="text">3 stars</label>
+                            <input type="radio" id="star2" name="rate" value="2" onclick="rateProduct('<%= product.product_id %>')" />
+                            <label for="star2" title="text">2 stars</label>
+                            <input type="radio" id="star1" name="rate" value="1" onclick="rateProduct('<%= product.product_id %>')" />
+                            <label for="star1" title="text">1 star</label>
+                        </div>
+                    </div>
                     <button class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Write_a_review') %></button>
                 </div>
                 <div class="art_desc_product_features_co">
@@ -452,5 +466,5 @@
 
         <script>
             // this is used to add product on cart
-            window.products[<%- JSON.stringify(product.product_id)  %>] = <%- JSON.stringify(product)  %>
+            window.products[<%- JSON.stringify(product.product_id)  %>] = <%- JSON.stringify(product)  %>;
         </script>

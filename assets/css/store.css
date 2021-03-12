@@ -1043,6 +1043,14 @@ body .art_based_card .art_body .art_prod_card:empty::after {
   -webkit-animation: loading 1.5s infinite;
 }
 
+body .art_based_card .art_body .art_prod_card:empty:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
+}
+
 body .art_post_based {
   display: -webkit-box;
   display: -ms-flexbox;

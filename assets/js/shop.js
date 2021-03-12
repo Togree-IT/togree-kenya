@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return `<div class="shop__products__productcontainer">
                             <a  href="${path+'products/main/'+data.product_id}" title="${data.name} ${data.product_model}" class="waves-effect">
                                 <div class="shop__products__productcontainer__img">
-                                    <img src="${data.product_img}" alt="${data.name} ${data.product_model}" class="shop__products__productcontainer__pic">
+                                    <img src="${path+data.product_img}" alt="${data.name} ${data.product_model}" class="shop__products__productcontainer__pic">
                                 </div>
                                 <div class="product_details">
                                     <span class="title" >${data.name} ${data.product_model}</span>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(err => console.log(err));
     };
 
-    fetchShopProducts();
+    // fetchShopProducts();
 
 
 

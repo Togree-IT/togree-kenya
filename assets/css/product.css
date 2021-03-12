@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --titleColorV1: #24C347;
   --linkColor: #24C347;
@@ -1311,11 +1312,65 @@ body .art_reviewers .art_reviews_co .art_reviews_cards .slick-track {
 }
 
 body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card {
-  margin: 0 auto;
+  margin: 0 87px;
   padding: 20px;
-  background: #f7fdfa;
+  background: #f5f9fb;
   border-radius: 5px;
   outline: none;
+  -webkit-box-shadow: 0 3px 7px rgba(96, 124, 138, 0.188);
+  box-shadow: 0 3px 7px rgba(96, 124, 138, 0.188);
+}
+
+@media screen and (min-width: 320px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card {
+    margin: 35px 50px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card {
+    margin: 0 87px;
+  }
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body {
+  width: 66%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body {
+    width: 66%;
+  }
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body q::before, body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body q::after {
+  font-size: 44pt;
+  line-height: 1;
+  position: absolute;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body q::before {
+  top: -30px;
+  left: -25px;
+}
+
+body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_body q::after {
+  bottom: -30px;
+  right: -5px;
 }
 
 body .art_reviewers .art_reviews_co .art_reviews_cards .art_reviews_card .art_review_header {
@@ -2097,5 +2152,74 @@ body main {
 @media screen and (min-width: 1440px) {
   body main {
     padding: 0;
+  }
+}
+
+body .art_rates {
+  margin: auto;
+  position: relative;
+}
+
+body .art_rates .rate {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+}
+
+body .art_rates .rate:not(:checked) > input {
+  position: absolute;
+  top: 0;
+}
+
+body .art_rates .rate:not(:checked) > label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+body .art_rates .rate:not(:checked) > label:before {
+  content: '★ ';
+}
+
+body .art_rates .rate > input:checked ~ label {
+  color: #ffc700;
+}
+
+body .art_rates .rate:not(:checked) > label:hover,
+body .art_rates .rate:not(:checked) > label:hover ~ label {
+  color: #deb217;
+}
+
+body .art_rates .rate > input:checked + label:hover,
+body .art_rates .rate > input:checked + label:hover ~ label,
+body .art_rates .rate > input:checked ~ label:hover,
+body .art_rates .rate > input:checked ~ label:hover ~ label,
+body .art_rates .rate > label:hover ~ input:checked ~ label {
+  color: #c59b08;
+}
+
+body .art_package_co {
+  display: block;
+}
+
+@media screen and (min-width: 320px) {
+  body .art_package_co {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body .art_package_co {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art_package_co {
+    display: block;
   }
 }
