@@ -145,6 +145,44 @@ router.get('/products/get_all', (req, res) => {
     });
 
 });
+router.get('/products/top_category', (req, res) => {
+
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+
+        var sql = 'SELECT * FROM products WHERE products.product_model LIKE "%Vehicle%"';
+
+
+        let products = [];
+        connect.query(sql, (err, results) => {
+            if (err) console.log(err);
+
+
+            if (results && results.length) {
+                for (let i = 0; i < results.length; i++) {
+                    let product = results[i];
+                    product.features = JSON.parse(product.features);
+                    product.specs = JSON.parse(product.specs);
+                    product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
+                    if (product.data) {
+                        product.offers = {
+                            title: product.title,
+                            sellingPrice: product.selling_price,
+                            offersArray: JSON.parse(product.data)
+                        };
+                        delete product.title;
+                        delete product.selling_price;
+                        delete product.data;
+                    }
+                    products.push(products)
+                }
+            }
+            res.status(200).json(results)
+        })
+    })
+
+})
+
 router.get('/products/get_by_id', (req, res) => {
 
     require('../functions').destroy();
@@ -154,7 +192,6 @@ router.get('/products/get_by_id', (req, res) => {
         if (Object.keys(req.query).length) {
             let { id } = req.query;
             if (id) {
-                console.log(id.join(','));
                 sql += 'SELECT * FROM products JOIN offers ON products.name = offers.title WHERE products.product_id IN ("' + id.join(',') + '")';
             }
             let products = [];

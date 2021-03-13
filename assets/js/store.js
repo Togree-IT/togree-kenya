@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", e => {
     // Load recommended
     axios.get(path + 'api/@top-products').then(data => {
         data = data.data;
+
         let recommended_products = document.querySelector('#recommended_products');
         if (data.length) {
             if (recommended_products) {
@@ -48,9 +49,64 @@ document.addEventListener("DOMContentLoaded", e => {
 
                 });
             }
-            console.log(data);
         }
-    })
+    });
+
+
+    axios.get(path + 'api/products/top_category').then(data => {
+        data = data.data;
+
+        let top_category = document.querySelector('#top_category');
+        if (data.length) {
+            if (top_category) {
+
+                data.map(product => {
+                    lang_('add_to_cart').then(action_title => {
+                        lang_('per_piece').then(per_piece => {
+                            lang_('Continue_to_Checkout').then(checkout_title => {
+                                top_category.insertAdjacentHTML('afterbegin', Prodtemp(product, { action_title, per_piece, checkout_title }))
+                            })
+                        })
+                    });
+                });
+
+                top_category.querySelectorAll('.art_prod_card').forEach((card, index) => {
+
+                    if (card.innerHTML.trim() === '') {
+                        card.remove();
+                    }
+
+                });
+            }
+        }
+    });
+    axios.get(path + 'api/products/get_all').then(data => {
+        data = data.data;
+
+        let other_products = document.querySelector('#other_products');
+        if (data.length) {
+            if (other_products) {
+
+                data.map(product => {
+                    lang_('add_to_cart').then(action_title => {
+                        lang_('per_piece').then(per_piece => {
+                            lang_('Continue_to_Checkout').then(checkout_title => {
+                                other_products.insertAdjacentHTML('afterbegin', Prodtemp(product, { action_title, per_piece, checkout_title }))
+                            })
+                        })
+                    });
+                });
+
+                other_products.querySelectorAll('.art_prod_card').forEach((card, index) => {
+
+                    if (card.innerHTML.trim() === '') {
+                        card.remove();
+                    }
+
+                });
+            }
+        }
+    });
 });
 const Prodtemp = (data, others) => {
     let apllyProductRates = function() {
