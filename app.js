@@ -46,6 +46,7 @@ app.use("/services", require("./routes/services"));
 app.use("/api", require("./routes/api"));
 app.use("/url", require("./routes/url"));
 
+app.set("trust proxy", "web.trackgree.com");
 // DB
 require('./config/db')(conn => {
     // require('./functions').con(require('./config/index').db.database, connect => {
