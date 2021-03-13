@@ -30,94 +30,98 @@ function getPackegeByID(_package, ID) {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    let cartItems = [
-
-        {
-            "itemID": "0",
-            "packageID": "",
-            "itemsQTY": "1",
-        },
-        {
-            "itemID": "3",
-            "packageID": '2',
-
-            "itemsQTY": "",
-        },
-        {
-            "itemID": "2",
-            "packageID": "",
-            "itemsQTY": "6",
-        }
-
-    ];
 
 
-    document.cookie = `cartItems= ${JSON.stringify(cartItems)}`;
+    let cartItems = read_cookie('cartItems');
 
-
-
-
-
-    let cartCookieItems = JSON.parse(`${getCookie('cartItems')}`);
     let products = [];
     let productOffers = [];
 
+    if (cartItems) {
+        let prodIds = []
+        Object.keys(cartItems).length && (prodIds = Object.keys(cartItems).map(key => key));
+        console.log(prodIds);
 
-    fetch(window.location.origin + '/products/list/all').then(e => e.json())
-        .then(data => {
-            products = [...data];
-            fetch(window.location.origin + '/offers.json').then(e => e.json())
-                .then(_data => {
-                    productOffers = [..._data]
+        axios.get(path + 'api/products/get_by_id', {
 
-                    cartCookieItems.map(cartItem => {
+            params: { id: prodIds }
 
-                        if (cartItem.packageID === '') {
-                            let _product = getProductByID(products, cartItem.itemID)
+        }).then(data => {
+            data = data.data;
+            data.map(product => {
+                window.products[product.product_id] = product;
+                // let _product = getProductByID(products, cartItem.itemID)
 
-                            if (typeof _product !== "undefined") {
-                                totalPrice.push(+_product.productPrice * (+cartItem.itemsQTY));
-                                _product.qty = cartItem.itemsQTY;
-                                // _product.min = cartItem.itemsQTY;
-                                _product.cartPice = (+_product.productPrice) * (+cartItem.itemsQTY);
+                //             if (typeof _product !== "undefined") {
+                //                 totalPrice.push(+_product.productPrice * (+cartItem.itemsQTY));
+                //                 _product.qty = cartItem.itemsQTY;
+                //                 // _product.min = cartItem.itemsQTY;
+                //                 _product.cartPice = (+_product.productPrice) * (+cartItem.itemsQTY);
 
-                                populateCartlist(_product)
-                            }
+                populateCartlist(product)
+                    // }
+            })
 
-                        } else {
-
-                            let _package = {
-                                package: getPackegeByID(productOffers, cartItem.packageID),
-                                packageItem: getProductByID(products, cartItem.itemID),
-                            };
-
-                            if (typeof _package !== "undefined") {
-                                let priceXQTY = (+_package.packageItem.productPrice * (+_package.package.from));
-                                let percentageOff = getPacentageOff((priceXQTY), (+_package.package.packageOffer));
-                                console.log((+_package.package.packageOffer));
-                                totalPrice.push(priceXQTY - (percentageOff));
-
-                                _package.packageItem.qty = _package.package.from;
-                                _package.packageItem.min = _package.package.from;
-                                _package.packageItem.max = _package.package.to;
-                                _package.packageItem.cartPice = priceXQTY - (percentageOff);
-                                _package.packageItem.cartOffer = (+_package.package.packageOffer);
-
-                                populateCartlist(_package.packageItem)
-
-                            }
-
-                        }
-                    })
-
-                    // TODO: Get total and subtotal based on the product price
-                    // console.log(totalPrice)
-                    cartTotal(totalPrice)
-
-
-                });
-            console.log(summeryData)
         })
+    }
+
+
+    // fetch(window.location.origin + '/products/list/all').then(e => e.json())
+    //     .then(data => {
+    //         products = [...data];
+    //         fetch(window.location.origin + '/offers.json').then(e => e.json())
+    //             .then(_data => {
+    //                 productOffers = [..._data]
+
+
+    //                 cartItems.map(cartItem => {
+
+    //                     if (cartItem.packageID === '') {
+    //                         let _product = getProductByID(products, cartItem.itemID)
+
+    //                         if (typeof _product !== "undefined") {
+    //                             totalPrice.push(+_product.productPrice * (+cartItem.itemsQTY));
+    //                             _product.qty = cartItem.itemsQTY;
+    //                             // _product.min = cartItem.itemsQTY;
+    //                             _product.cartPice = (+_product.productPrice) * (+cartItem.itemsQTY);
+
+    //                             populateCartlist(_product)
+    //                         }
+
+    //                     } else {
+
+    //                         let _package = {
+    //                             package: getPackegeByID(productOffers, cartItem.packageID),
+    //                             packageItem: getProductByID(products, cartItem.itemID),
+    //                         };
+
+    //                         if (typeof _package !== "undefined") {
+    //                             let priceXQTY = (+_package.packageItem.productPrice * (+_package.package.from));
+    //                             let percentageOff = getPacentageOff((priceXQTY), (+_package.package.packageOffer));
+    //                             console.log((+_package.package.packageOffer));
+    //                             totalPrice.push(priceXQTY - (percentageOff));
+
+    //                             _package.packageItem.qty = _package.package.from;
+    //                             _package.packageItem.min = _package.package.from;
+    //                             _package.packageItem.max = _package.package.to;
+    //                             _package.packageItem.cartPice = priceXQTY - (percentageOff);
+    //                             _package.packageItem.cartOffer = (+_package.package.packageOffer);
+
+    //                             populateCartlist(_package.packageItem)
+
+    //                         }
+
+    //                     }
+    //                 })
+
+    //                 // TODO: Get total and subtotal based on the product price
+    //                 // console.log(totalPrice)
+    //                 cartTotal(totalPrice)
+
+
+    //             });
+    //         console.log(summeryData)
+    //     })
 
 });
 
@@ -243,33 +247,33 @@ function productTemp(product) {
     function renderOffer(prod) {
         return typeof prod.cartOffer !== 'undefined' ? '-' + prod.cartOffer + '%' : ''
     }
-    return `<div class="checkout__content__cart__productwrapper cart" id="product_wrapper_${product.productID}">
+    return `<div class="checkout__content__cart__productwrapper cart" id="product_wrapper_${product.product_id}">
     <div class="checkout__content__cart__productimg">
-        <img class="checkout__content__cart__productpic" src="${product.path}" alt=" ">
+        <img class="checkout__content__cart__productpic" src="${path+product.product_img}" alt=" ">
     </div>
 
     <div class="checkout__content__cart__productcontent ">
          <h6 class="checkout__content__cart__productcontent__percentageoff"><span id="percentageoff">${renderOffer(product)}</span></h6>
-        <h4 class="checkout__content__cart__productcontent__producttitle ">${product.productTitle}</h4>
-        <h6 class="checkout__content__cart__productcontent__currentprice ">${product.currency} ${product.productPrice}</h6>
+        <h4 class="checkout__content__cart__productcontent__producttitle ">${product.name+' '+product.product_model}</h4>
+        <h6 class="checkout__content__cart__productcontent__currentprice ">${globalCurrency.name} ${formatMoney(product.price*globalCurrency.rate) }</h6>
         <div class="checkout__content__cart__productcontent__counter ">
             <h6 class="checkout__content__cart__productcontent__counter__quantity ">QTY: 
             
             </h6>
 
-            <button type="button" onclick="productDecreament('${product.productID}')" class="art_btn waves-effect waves-light checkout__content__cart__productcontent__counter__minus">
-                <i class="fas fa-minus "></i>
+            <button type="button" onclick="productDecreament('${product.product_id}')" class="art_btn waves-effect waves-light checkout__content__cart__productcontent__counter__minus">
+                <em class="material-icons">remove</em>
             </button>
 
-            <div class="checkout__content__cart__productcontent__counter__quantity-number"><input type="number" ${renderMin(product)} ${renderMax(product)} value="${product.qty}" size="5" id="prod_qty_${product.productID}" readonly disabled></div>
+            <div class="checkout__content__cart__productcontent__counter__quantity-number"><input type="number" ${renderMin(product)} ${renderMax(product)} value="${product.qty}" size="5" id="prod_qty_${product.product_id}" readonly disabled></div>
 
-            <button type="button" onclick="productIncream('${product.productID}')" class="art_btn  waves-effect waves-light  checkout__content__cart__productcontent__counter__plus">
-                <i class="fas fa-plus "></i>
+            <button type="button" onclick="productIncream('${product.product_id}')" class="art_btn  waves-effect waves-light  checkout__content__cart__productcontent__counter__plus">
+                <em class="material-icons">add</em>
+            </button>
+            <button type="button" onclick="removeCart('${product.product_id}')" class="art_btn  waves-effect waves-light  checkout__content__cart__productcontent__counter__plus checkout__content__cart__productcontent__counter__delete">
+                <em class="material-icons">delete</em>
             </button>
 
-            <div class="checkout__content__cart__productcontent__counter__delete" onclick="removeCart('${product.productID}')" >
-                <i class="fas fa-trash "></i>
-            </div>
 
         </div>
 
@@ -282,7 +286,8 @@ let totalPrice = [];
 function populateCartlist(prod) {
     let cartlist = document.querySelector("#cartlist");
 
-    summeryData[prod.productID] = prod;
+    // summeryData[prod.productID] = prod;
+    summeryData[prod.product_id] = prod;
     cartlist.innerHTML += productTemp(prod);
 }
 
