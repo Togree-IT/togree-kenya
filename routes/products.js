@@ -150,7 +150,7 @@ router.get('/search', (req, res) => {
 router.get('/main/:id', (req, res) => {
     // chrome only
     // let broswer = req.headers['sec-ch-ua'].split(',')[1].split(';')[0]
-    console.log(req.hostname);
+    console.log(req.headers['x-forwarded-for']);
 
 
     require('../functions').destroy();
