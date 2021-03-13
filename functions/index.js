@@ -9,7 +9,7 @@ exports.renderImplimental = (params, no_join) => {
     let explitedWprds = []
     p_explit.split(' ').map(word => {
         let othe_word = word.substr(word.indexOf('`_') + 1, word.indexOf('_`'))
-            // console.log(othe_word);
+
         if (word.match(othe_word)) {
             othe_word = '`' + othe_word + '`';
             let _w;
@@ -311,7 +311,7 @@ exports.useLocals = (req, res, next) => {
     // res.locals.logged_in = typeof req.isAuthenticated !== "undefined" ? req.isAuthenticated() : false;
     req.app.set('logged_in', typeof req.isAuthenticated !== "undefined" ? req.isAuthenticated() : false)
     next();
-    // console.log(req);
+
 }
 exports._language = (req, res, next) => {
     let language = this.getAppCookies(req)['language'];
@@ -326,7 +326,7 @@ exports._language = (req, res, next) => {
 exports.conn = function(cb) {
     const connection = require('mysql').createConnection(require('./dbHelper').dbconnection);
     connection.connect((err, con) => {
-        // if (err) console.log(err);
+
     });
 
     connection.on('connect', () => {
@@ -359,9 +359,7 @@ exports.conn = function(cb) {
 };
 exports.con = function(db, cb) {
     const connection = require('mysql').createConnection(require('./dbHelper').con(db));
-    connection.connect((err, con) => {
-        // if (err) console.log(err);
-    });
+    connection.connect((err, con) => {});
 
     connection.on('connect', () => {
 
@@ -658,7 +656,7 @@ exports.formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",")
         let j = (i.length > 3) ? i.length % 3 : 0;
 
         return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
-    } catch (e) {
-        console.log(e)
+    } catch (err) {
+        console.log(err)
     }
 };

@@ -19,7 +19,7 @@ router.get('/@top-products', (req, res) => {
                 for (let i = 0; i < results.length; i++) {
                     let product = results[i];
                     // product.features = JSON.parse(product.features);
-                    // product.specs = JSON.parse(product.specs);
+                    // product.specs = JSON.parse(product.specs); 
                     // product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
                     products.push(product)
                 }

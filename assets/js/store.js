@@ -132,10 +132,10 @@ const Prodtemp = (data, others) => {
 
 function initializeSliders() {
     // if ($('#promo_silders').hasClass('slick-initialized')) {
-    //     // console.log($('#promo_silders').slick);
+
     //     $('#promo_silders').slick('unslick');
     //     // $('#promo_silders').unslick();
-    //     console.log(typeof $('#promo_silders').unslick);
+
     // }
     $('#promo_silders').slick({
         dots: !false,

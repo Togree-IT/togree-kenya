@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
         art_product_action.style.left = '0';
         art_product_action.style.top = paddingTop + 100 + 'px';
         art_desc_product_d2_co.style.marginBottom = art_product_action.offsetHeight + 100 + 'px';
-        console.log(paddingTop);
+
+
     }
     // rateProductSector();
     // window.addEventListener("resize", e => {
