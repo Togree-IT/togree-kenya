@@ -835,6 +835,10 @@ body .art_container .shop .shop__products .shop__products__productwrapper .shop_
   margin: 0;
 }
 
+body .art_container .shop .shop__products .shop__products__productwrapper .shop__products__productcontainer .product_footer .art_checkout_co {
+  margin-top: 10px;
+}
+
 body .art_container .shop .shop__products .shop__products__header {
   padding: 2% 0;
   text-align: right;

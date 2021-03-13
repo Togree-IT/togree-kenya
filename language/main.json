@@ -305,6 +305,9 @@
         "what_our_customers_are_saying": "What our customers are saying",
         "hello,_i'm_having_an_issue_making_order_on_your_website._kindly_assist_me.": "Hello, I'm having an issue making order on your website. Kindly assist me. ",
         "hello,_i_'m_having_an_issue_making_order_on_your_website._kindly_assist_me.": " Hello, I 'm having an issue making order on your website. Kindly assist me. ",
-        "store": "Store"
+        "store": "Store",
+        "continue_to_checkout": "Continue to Checkout",
+        "checkout": "Checkout",
+        "togree_store_for_all_your_gps_devices,_wireless_devices": "Togree Store for all your GPS devices, Wireless devices"
     }
 }

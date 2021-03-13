@@ -1073,6 +1073,10 @@ body .reviews .art_review_actions .art_cart_actions .art_qty_display::-webkit-ou
   margin: 0;
 }
 
+body .reviews .art_review_actions .art_checkout_co {
+  margin-top: 10px;
+}
+
 body .art_product_action {
   width: 100%;
   display: -webkit-box;

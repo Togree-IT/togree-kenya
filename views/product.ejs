@@ -23,14 +23,14 @@
                     <%= lang_('SHARE') %>
                 </h6>
             </div>
-            <a class="art-social-icon" href="https://www.facebook.com/sharer/sharer.php?u=_url_&title=_title_" target="_blanck">
+            <a class="art-social-icon" href="https://www.facebook.com/sharer/sharer.php?u=<%= url %>&title=<%= description %>" target="_blanck">
                 <img src="<%= path %>assets/img/social/facebook2.png" alt="<%= lang_('Share to') %> Facebook" />
             </a>
-            <a class="art-social-icon" href="http://www.linkedin.com/shareArticle?url=_url_&title=_title_" target="_blanck">
+            <a class="art-social-icon" href="http://www.linkedin.com/shareArticle?url=<%= url %>&title=<%= description %>" target="_blanck">
                 <img src="<%= path %>assets/img/social/linkedin2.png" alt="<%= lang_('Share to') %> Linkedin" />
             </a>
 
-            <a class="art-social-icon" href="https://twitter.com/intent/tweet?url=_url_&text=_title_" target="_blanck">
+            <a class="art-social-icon" href="https://twitter.com/intent/tweet?url=<%= url %>&text=<%= description %>" target="_blanck">
                 <img src="<%= path %>assets/img/social/twitter2.png" alt="<%= lang_('Share to') %> Twitter" />
             </a>
 
@@ -107,10 +107,15 @@
                                                 
                                         if (cartItems[product.product_id]) {
                                             %>
-                                                    <div class="art_cart_actions " id="art_qty_<%= product.product_id %>">
-                                                        <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">remove</em></button>
-                                                        <input type="number" min="1" class="art_qty_display" id="art_qty_display_<%= product.product_id %>" contenteditable="true" value="<%= cartItems[product.product_id].quantity %>" onchange="updateProductToCart(event, '<%= product.product_id %>')">
-                                                        <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">add</em></button>
+                                                    <div class="art_cart_options">
+                                                        <div class="art_cart_actions " id="art_qty_<%= product.product_id %>">
+                                                            <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">remove</em></button>
+                                                            <input type="number" min="1" class="art_qty_display" id="art_qty_display_<%= product.product_id %>" contenteditable="true" value="<%= cartItems[product.product_id].quantity %>" onchange="updateProductToCart(event, '<%= product.product_id %>')">
+                                                            <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '<%= product.product_id %>')"><em class="material-icons">add</em></button>
+                                                        </div>
+                                                        <div class="art_checkout_co">
+                                                            <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="continueToCheckout(event, '<%= product.product_id %>')"><%= lang_('Continue_to_Checkout') %></button>
+                                                        </div>
                                                     </div>
                                                     <button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_<%= product.product_id %>" style="display:none" onclick="addProductToCart(event, '<%= product.product_id %>')"><%= lang_('Add_to_cart') %></button>
                                                     <%} else {%>

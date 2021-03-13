@@ -35,11 +35,16 @@ document.addEventListener('DOMContentLoaded', function() {
             function applyCartActions() {
 
                 if (cartItems && cartItems[data.product_id]) {
-                    return `<div class="art_cart_actions" id="art_qty_${data.product_id}">
+                    return `<div class="art_cart_options">
+                    <div class="art_cart_actions" id="art_qty_${data.product_id}">
                                 <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '${data.product_id}')"><em class="material-icons">remove</em></button>
                                 <input type="number" min="1" class="art_qty_display" id="art_qty_display_${data.product_id}" contenteditable="true" value="${cartItems[data.product_id].quantity}" onchange="updateProductToCart(event, '${data.product_id}')">
                                 <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '${data.product_id}')"><em class="material-icons">add</em></button>
-                            </div> 
+                            </div>
+                            <div class="art_checkout_co">
+                                <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="continueToCheckout(event, '${data.product_id}')">${lang_('Continue_to_Checkout')}</button>
+                                </div> 
+                        </div> 
                             <button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_${data.product_id}" style="display:none" onclick="addProductToCart(event, '${data.product_id}')">${others.action_title}</button>`
                 } else {
                     return `<button class="art_btn art_gree_btn filled waves-effect waves-light" id="add_to_cat_${data.product_id}" onclick="addProductToCart(event, '${data.product_id}')">${others.action_title}</button>`
@@ -54,16 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="product_details">
                                     <span class="title" >${data.name} ${data.product_model}</span>
                                     <span class="art_product_price">
-                                        ${globalCurrency.name} ${data.price} ${others.per_piece}
+                                        ${globalCurrency.name} ${formatMoney(globalCurrency.rate*data.price)} ${others.per_piece}
                                     </span>
+                            <div class="product_more_details">
+                                ${apllyProductRates()}
+                            </div>
                                     
                                 </div>
                             </a>
                             <div class="product_footer">
                                 ${ applyCartActions()}
-                            </div>
-                            <div class="product_more_details">
-                                ${apllyProductRates()}
                             </div>
                         </div>`;
         };

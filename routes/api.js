@@ -8,7 +8,7 @@ router.get('/@top-products', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
 
-        var sql = 'SELECT name,short_description,product_img,price,product_id FROM products Where recommended="true" ORDER BY dt LIMIT 8';
+        var sql = 'SELECT name,product_model,short_description,product_img,price,product_id FROM products Where recommended="true" ORDER BY dt LIMIT 8';
 
         let products = [];
         connect.query(sql, (err, results) => {
@@ -179,7 +179,14 @@ router.post('/products/rate', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
         // var sql = "INSERT INTO rate"
-        let get
+        // let get
+    })
+});
+router.post('/products/recommend_products', (req, res) => {
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+        // var sql = "SELECT "
+        // let get
     })
 });
 

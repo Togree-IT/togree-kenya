@@ -114,7 +114,7 @@ function fetchTopProducts() {
 
         }
         return `<a class="art_product_card_co" href="${path+'products/main/'+data.product_id}">
-        <span class="art_product_card_price_tag" hidden>${globalCurrency.name+ ' ' +data.price}</span>
+        <span class="art_product_card_price_tag" hidden>${globalCurrency.name+ ' ' +formatMoney(globalCurrency.rate*data.price)}</span>
                     <!-- Product card -->
                     <div class="art_product_card">
                         <img src="${path+data.product_img}" alt="${data.name}" class="art_product_img">

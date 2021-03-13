@@ -724,6 +724,9 @@ body {
                                     }
                                 }
                             }
+                            .art_checkout_co {
+                                margin-top: 10px;
+                            }
                         }
                     }
                 }
@@ -806,12 +809,12 @@ body {
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
         width: 100%;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         /* color: #828282; */
         .art_card.no_data {
             padding: 10px 25px;

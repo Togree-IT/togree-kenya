@@ -41,6 +41,7 @@ router.get('/', (req, res) => {
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
             path: funs.pathToTheRoot(req._parsedUrl.path),
+            formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
             currency,
             cartItems: JSON.parse(typeof funs.getAppCookies(req)['cartItems'] === "undefined" ? '{}' : funs.getAppCookies(req)['cartItems']) || '',
         })
@@ -133,6 +134,7 @@ router.get('/search', (req, res) => {
                         renderImplimental: (_) => funs.renderImplimental(_),
                         title,
                         path: funs.pathToTheRoot(req._parsedUrl.path),
+                        formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
                         currency,
                         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
                         products,
@@ -187,7 +189,7 @@ router.get('/main/:id', (req, res) => {
                 let title = funs.language('Products', funs.getAppCookies(req)['language']);
                 const meta = funs.meta({
                     title,
-                    description: "",
+                    description: funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']) || "",
                     keywords: '',
                     preview_image: '',
                     theme_color: "#fff"
@@ -208,6 +210,8 @@ router.get('/main/:id', (req, res) => {
                         product,
                         formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
                         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
+                        url: req.protocol + '://' + req.headers.host + req.originalUrl,
+                        description: funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']),
                     });
                 })
             }
@@ -247,6 +251,7 @@ router.get('/checkout', (req, res) => {
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
         path: funs.pathToTheRoot(req._parsedUrl.path),
+        formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
     })
 })
