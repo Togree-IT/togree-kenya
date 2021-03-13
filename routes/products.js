@@ -194,6 +194,7 @@ router.get('/main/:id', (req, res) => {
                     preview_image: '',
                     theme_color: "#fff"
                 }, req);
+                console.logreq.headers();
                 funs.globalCurrency(currency => {
                     res.render('product', {
                         meta,
@@ -213,7 +214,6 @@ router.get('/main/:id', (req, res) => {
                         url: req.protocol + '://' + req.headers.host + req.originalUrl,
                         description: product.short_description || funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']),
                     });
-                    console.logreq.headers();
                 })
             }
         })
