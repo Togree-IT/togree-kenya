@@ -152,6 +152,7 @@ router.get('/main/:id', (req, res) => {
     // let broswer = req.headers['sec-ch-ua'].split(',')[1].split(';')[0]
     console.log(req.headers);
 
+
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
         // var sql = "SELECT price,name, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id"
@@ -194,7 +195,6 @@ router.get('/main/:id', (req, res) => {
                     preview_image: '',
                     theme_color: "#fff"
                 }, req);
-                console.logreq.headers();
                 funs.globalCurrency(currency => {
                     res.render('product', {
                         meta,
