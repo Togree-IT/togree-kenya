@@ -64,7 +64,9 @@ document.addEventListener("DOMContentLoaded", e => {
                     lang_('add_to_cart').then(action_title => {
                         lang_('per_piece').then(per_piece => {
                             lang_('Continue_to_Checkout').then(checkout_title => {
-                                top_category.insertAdjacentHTML('afterbegin', Prodtemp(product, { action_title, per_piece, checkout_title }))
+                                for (let i = 0; i < 5; i++) {
+                                    top_category.insertAdjacentHTML('afterbegin', Prodtemp(product, { action_title, per_piece, checkout_title }))
+                                }
                             })
                         })
                     });
@@ -91,7 +93,9 @@ document.addEventListener("DOMContentLoaded", e => {
                     lang_('add_to_cart').then(action_title => {
                         lang_('per_piece').then(per_piece => {
                             lang_('Continue_to_Checkout').then(checkout_title => {
-                                other_products.insertAdjacentHTML('afterbegin', Prodtemp(product, { action_title, per_piece, checkout_title }))
+                                for (let i = 0; i < 10; i++) {
+                                    other_products.insertAdjacentHTML('afterbegin', Prodtemp(product, { action_title, per_piece, checkout_title }))
+                                }
                             })
                         })
                     });

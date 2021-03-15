@@ -382,8 +382,8 @@ body .art_shop_header {
 
 @media screen and (min-width: 320px) {
   body .art_shop_header {
-    min-height: auto;
-    margin: 5px 0 2pc;
+    min-height: 20vh;
+    margin: 1pc 0 2pc;
   }
 }
 
@@ -1006,18 +1006,44 @@ body .art_based_card .art_body .art_prod_card {
 @media screen and (min-width: 320px) {
   body .art_based_card .art_body .art_prod_card {
     width: 100%;
+    -webkit-box-shadow: 0 0px 20px rgba(191, 210, 217, 0.141);
+    box-shadow: 0 0px 20px rgba(191, 210, 217, 0.141);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    padding: 20px 0;
+    margin: 14px auto;
+  }
+  body .art_based_card .art_body .art_prod_card:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 }
 
 @media screen and (min-width: 750px) {
   body .art_based_card .art_body .art_prod_card {
     width: 47.5%;
+    margin: 14px 0;
   }
 }
 
 @media screen and (min-width: 1024px) {
   body .art_based_card .art_body .art_prod_card {
-    width: 24%;
+    width: 23%;
+    margin: 0 1% 15px;
+    padding: auto;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  body .art_based_card .art_body .art_prod_card:hover {
+    -webkit-box-shadow: 0 0px 20px rgba(67, 77, 81, 0.141);
+    box-shadow: 0 0px 20px rgba(67, 77, 81, 0.141);
+    -webkit-transform: scale(1.025);
+    -ms-transform: scale(1.025);
+    transform: scale(1.025);
   }
 }
 

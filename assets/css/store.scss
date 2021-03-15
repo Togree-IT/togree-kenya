@@ -340,8 +340,8 @@ body {
         -ms-flex-pack: justify;
         justify-content: space-between;
         @include mobile {
-            min-height: auto;
-            margin: 5px 0 2pc;
+            min-height: 20vh;
+            margin: 1pc 0 2pc;
         }
         @include tablet {
             min-height: 28vh;
@@ -808,12 +808,38 @@ body {
                 min-height: 25vh;
                 @include mobile {
                     width: (100%/1);
+                    -webkit-box-shadow: 0 0px 20px hsla(196, 25%, 80%, 0.141);
+                    box-shadow: 0 0px 20px hsla(196, 25%, 80%, 0.141);
+                    -webkit-transform: scale(1);
+                    -ms-transform: scale(1);
+                    transform: scale(1);
+                    padding: 20px 0;
+                    margin: 14px auto;
+                    &:hover {
+                        -webkit-transform: scale(1);
+                        -ms-transform: scale(1);
+                        transform: scale(1);
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                    }
                 }
                 @include tablet {
                     width: ((100%/2) - 2.5%);
+                    margin: 14px 0;
                 }
                 @include laptop {
-                    width: ((100%/4) - 1%);
+                    width: ((100%/4) - 2%);
+                    margin: 0 1% 15px;
+                    padding: auto;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    &:hover {
+                        -webkit-box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);
+                        box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);
+                        -webkit-transform: scale(1.025);
+                        -ms-transform: scale(1.025);
+                        transform: scale(1.025);
+                    }
                 }
                 &:empty {
                     background: whitesmoke;

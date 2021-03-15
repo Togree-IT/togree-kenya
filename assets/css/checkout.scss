@@ -926,20 +926,23 @@ body {
                     margin: 1.5rem 0;
                 }
                 &__productimg {
-                    max-width: 20%;
-                    margin-right: 1rem;
-                    display: -webkit-box;
-                    display: -ms-flexbox;
-                    display: flex;
-                    -webkit-box-pack: center;
-                    -ms-flex-pack: center;
-                    justify-content: center;
-                    -webkit-box-align: center;
-                    -ms-flex-align: center;
-                    align-items: center;
+                    &v0 {
+                        max-width: 20%;
+                        margin-right: 1rem;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                    }
+                    width: 25%;
                 }
                 &__productpic {
-                    width: 100%;
+                    max-width: 100%;
                 }
                 &__productcontent {
                     display: -webkit-box;
@@ -949,9 +952,10 @@ body {
                     -webkit-box-direction: normal;
                     -ms-flex-direction: column;
                     flex-direction: column;
-                    -webkit-box-flex: 1;
-                    -ms-flex: 1;
-                    flex: 1;
+                    width: 75%;
+                    // -webkit-box-flex: 1;
+                    // -ms-flex: 1;
+                    // flex: 1;
                     // max-width: 77%;
                     // @include mobile {
                     //     max-width: 80%;
@@ -1061,13 +1065,10 @@ body {
                             align-items: center;
                             background-color: #24C347;
                             color: #FFFFFF;
-                            border-radius: 10px;
-                            -webkit-border-radius: 10px;
-                            -moz-border-radius: 10px;
-                            -ms-border-radius: 10px;
-                            -o-border-radius: 10px;
+                            border-radius: 5em;
                             border: 0;
                             outline: none;
+                            padding: 10px;
                             @include mobile {
                                 height: 2.6rem;
                                 width: 2.6rem;
@@ -1078,8 +1079,8 @@ body {
                                 width: 2.6rem;
                             }
                             @include laptop {
-                                height: 1.6rem;
-                                width: 1.6rem;
+                                height: 2.6rem;
+                                width: 2.6rem;
                             }
                             &:hover,
                             &:active,
