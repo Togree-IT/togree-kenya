@@ -363,7 +363,7 @@ body {
             -ms-flex: 1;
             flex: 1;
             margin-right: 30px;
-            background: white;
+            background: rgba(255, 255, 255, 0);
             border-radius: 2px;
             overflow: hidden;
             @include mobile {
@@ -656,6 +656,10 @@ body {
         @include laptop {
             -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
+            min-height: 5vh;
+        }
+        @include laptop_W {
+            min-height: 7vh;
         }
         .art_service_card {
             width: (100% / 4);
@@ -690,6 +694,7 @@ body {
                 width: ((100% / 2)- 3);
                 margin: 0 3px 15px;
                 max-height: initial;
+                min-height: auto;
                 &:last-of-type {
                     margin: 0 3px 15px;
                 }
@@ -698,8 +703,11 @@ body {
                 -ms-flex-wrap: nowrap;
                 flex-wrap: nowrap;
                 width: (100% / 4);
-                max-height: 6vh;
+                min-height: 4vh;
+                max-height: 5vh;
+                margin: 0 3px;
                 &:last-of-type {
+                    margin: 0 3px;
                     margin-right: 0;
                 }
             }
@@ -710,16 +718,16 @@ body {
                 width: 25%;
                 @include mobile {
                     // width: 30%;
-                    width: 50px;
-                    max-height: 50px;
+                    width: 35px;
+                    max-height: 35px;
                 }
                 @include tablet {
                     width: 55px;
                     max-height: 55px;
                 }
                 @include laptop {
-                    width: 50px;
-                    max-height: 50px;
+                    width: 35px;
+                    max-height: 35px;
                 }
                 @include laptop_L {
                     // width: 23%;
@@ -757,6 +765,15 @@ body {
                 }
                 * {
                     margin: 0;
+                    @include mobile {
+                        font-size: 0.7815rem;
+                    }
+                    @include laptop {
+                        font-size: 0.89rem;
+                    }
+                    @include laptop_W {
+                        font-size: 1.15rem;
+                    }
                 }
             }
             @include loader2;
@@ -806,6 +823,13 @@ body {
                 -o-transition: .2s cubic-bezier(0.4, 0, 1, 1);
                 transition: .2s cubic-bezier(0.4, 0, 1, 1);
                 min-height: 25vh;
+                &:hover {
+                    -webkit-box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);
+                    box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);
+                    -webkit-transform: scale(1.025);
+                    -ms-transform: scale(1.025);
+                    transform: scale(1.025);
+                }
                 @include mobile {
                     width: (100%/1);
                     -webkit-box-shadow: 0 0px 20px hsla(196, 25%, 80%, 0.141);
@@ -825,12 +849,12 @@ body {
                 }
                 @include tablet {
                     width: ((100%/2) - 2.5%);
-                    margin: 14px 0;
+                    margin: 1.2%;
                 }
                 @include laptop {
-                    width: ((100%/4) - 2%);
-                    margin: 0 1% 15px;
-                    padding: auto;
+                    width: ((100%/3) - 2%);
+                    margin: 15px 1%;
+                    padding: 0;
                     -webkit-box-shadow: none;
                     box-shadow: none;
                     &:hover {
@@ -841,11 +865,19 @@ body {
                         transform: scale(1.025);
                     }
                 }
+                @include laptop {
+                    width: ((100%/4) - 2%);
+                    margin: 15px 1%;
+                    padding: 0;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                }
                 &:empty {
                     background: whitesmoke;
                     width: ((100%/2) - 2%);
                     @include mobile {
                         width: (100%/1);
+                        margin: 0 0;
                     }
                     @include tablet {
                         width: ((100%/2) - 2%);
@@ -853,13 +885,6 @@ body {
                     @include laptop {
                         width: ((100%/2) - 2%);
                     }
-                }
-                &:hover {
-                    -webkit-box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);
-                    box-shadow: 0 0px 20px hsla(198, 9%, 29%, 0.141);
-                    -webkit-transform: scale(1.025);
-                    -ms-transform: scale(1.025);
-                    transform: scale(1.025);
                 }
                 @include loader;
             }
