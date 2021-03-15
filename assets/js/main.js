@@ -257,8 +257,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
-
     // product page 1 fecth product Logic
     const fetchProducts = new Promise((resolve, reject) => {
 

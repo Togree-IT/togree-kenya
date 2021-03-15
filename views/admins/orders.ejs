@@ -1,0 +1,474 @@
+
+<%- include("./headnav.ejs") %>
+
+<section class="dashboard">
+
+    <%- include('./nav.ejs')%>
+    
+
+    <div class="dashboard__content" id="orderswrapper">
+
+        <div class="dashboard__content__container">
+            <button class="dashmobile_btn" id="dashmenus">Dashboard Menus</button>
+            <div class="dashboard__content__container__header">
+                <h4 class="dashboard__content__container__header__title">Orders</h4>
+                <div class="dashboard__content__container__header__content">
+                    <h5 class="dashboard__content__container__header__contentitle">Create new order </h5>
+                    <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn" id='createorder'>Create Order</a>
+                </div>
+            </div>
+
+            <div class="dashboard__content__container__body">
+
+                <div class="dashboard__content__container__body__header">
+
+                    <h6 class="dashboard__content__container__body__header__title">All Orders</h6>
+
+                    <div class="dashboard__content__container__body__header__sortwrapper">
+                        <a class="dashboard__content__container__body__header__sort" href="#!" id="sort"> Sort: <span></span> <i class="fas fa-sort-amount-down-alt" id="sorticon"></i>  </a>
+
+                        <div class="dashboard__content__container__body__header__dropdown" id="sortdrop">
+                            <a href="#!" class="dashboard__content__container__body__header__dropdownlist droplist selected-dropdown" drop-value="Recent">Recent</a>
+                            <a href="#!" class="dashboard__content__container__body__header__dropdownlist droplist" drop-value="Old to new">Old to new </a>
+                            <a href="#!" class="dashboard__content__container__body__header__dropdownlist droplist" drop-value="Quantity">Quantity</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard__content__container__body__table">
+                    <div class="table" id="orderwrapper">
+                        <div class="table__heading">
+                            <div class="table_cell">
+                                <span>Order ID</span>
+                            </div>
+                            <div class="table_cell">
+                                <span>Qty</span>
+                            </div>
+                            <div class="table_cell" id="status-heading">
+                                <span>Customer ID</span>
+                            </div>
+                            <div class="table_cell">
+                                <span >Status</span>
+                            </div>
+                            <div class="table_cell offonmobile" id="Imei-heading">
+                                <span >IMEI</span>
+                            </div>
+                            <div class="table_cell">
+                                <span>Action</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+</section>
+
+<!-- create order form starts here  -->
+<section class="orders" id="createpage">
+    <div class="orders__wrapper">
+        <form action="" class="orders__form" id="orderform">
+
+            <div class="orders__form__header">
+                <h4 class="orders__form__header__title">Create new Order</h4>
+                <i class="material-icons" id="closebtn">close</i>
+            </div>
+
+            <div class="orders__form__formsection">
+                <div class="orders__form__formwrapper">
+                    <label for="orderid" class="orders__form__label">ORDER ID</label>
+                    <div class="art_input_co">
+                        <input class="art_input" type="text" placeholder="" id="orderid" name="orderid" maxlength="10">
+                    </div>
+                </div>
+                <div class="orders__form__formwrapper">
+                    <label for="" class="orders__form__label">CUSTOMER ID</label>
+                    <div class="art_input_co">
+                        <input class="art_input" type="text" placeholder="" id="customerid" name="customerid" maxlength="6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="orders__form__formsection">
+
+                <div class="orders__form__formwrapper">
+                    <div class="input-field">
+                        <select name="status" id="status">
+                          <option value="" disabled selected>  Order Status</option>
+                          <option value="Confirmed">Confirmed</option>
+                          <option value="shipped" disabled >Shipped</option>
+                          <option value="Delivered" disabled >Delivered</option>
+                          <option value="Cancelled" disabled>Cancelled</option>
+                        </select>
+                        <label>STATUS</label>
+                    </div>
+                </div>
+
+                <div class="orders__form__formwrapper">
+                    <label for="imei" class="orders__form__label">IMEI</label>
+                    <div class="art_input_co art_texterea">
+                        <textarea class="art_input" type="text" id="imei" name="imei" value=""></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="orders__form__formsection">
+                <div class="orders__form__formwrapper">
+                    <!-- <label for="imei" class="orders__form__label">PAYMENT OPTION</label> -->
+                    <div class="input-field">
+                        <select name="payment" id="payment">
+                          <option value="" disabled selected> Payment Option</option>
+                          <option value="Mpesa">Mpesa</option>
+                          <option value="Credit Card">Credit Card</option>
+                          <option value="Paypal">Paypal</option>
+                        </select>
+                        <label>PAYMENT METHOD</label>
+
+                    </div>
+                </div>
+
+                <div class="orders__form__formwrapper">
+                    <label for="qty" class="orders__form__label">QUANTITY</label>
+                    <div class="art_input_co">
+                        <input class="art_input" type="number" placeholder="" id="qty" name="qty" size="5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="orders__form__btnwrapper">
+                <button class="orders__form__btn">Confirm Order</button>
+            </div>
+
+        </form>
+    </div>
+</section>
+<!-- create  order  form ends here  -->
+
+<!-- submit Imei form starts here  -->
+<section class="orders" id="Imeipage">
+
+    <div class="orders__wrapper">
+
+        <form class="orders__form" id="imeiform" method="POST">
+
+            <div class="orders__form__header">
+                <div class="orders__form__headers__titlewrapper">
+                    <h4 class="orders__form__header__title">ENTER PRODUCT IMEI</h4>
+                    <p class="orders__form__header__subtitle"> <span>IMEI is required to proceed this order</span> </p>
+                </div>
+
+                <i class="material-icons" id="imeiclose">close</i>
+            </div>
+
+
+            <div class="orders__form__formsection">
+                <div class="orders__form__formwrapper">
+                    <label for="updateimei" class="orders__form__label">IMEI</label>
+                    <div class="art_input_co art_texterea">
+                        <textarea class="art_input" id="updateimei" name="updateimei" required value></textarea>
+                    </div>
+                </div>
+
+                <div class="orders__form__btnwrapper">
+                    <button class="orders__form__btn">Submit IMEI</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</section>
+<!-- submit Imei form ends here  -->
+
+
+
+
+<!-- customer details pop up starts here  -->
+<section class="customerdetails" id="CustomerDetailsInformation">
+
+
+    <div class="customerdetails__Wrapper" id="customerwrapper">
+
+        <div class="customerdetails__header">
+            <h4 class="customerdetails__title">Customer Details</h4>
+            <i class="material-icons" id="closeCustomerdetails">close</i>
+        </div>
+
+        <div class="customerdetails__subhead" id="1">
+
+            <h5 class="customerdetails__subtitle">Personal Information</h5>
+
+            <div class="customerdetails__contentwrapper">
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Full Name </h6>
+                        <p class="customerdetails__content__subtitle">Andrew Jason </p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Email Address</h6>
+                        <p class="customerdetails__content__subtitle">Andrewjasoon@yahoo.com</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Phone Number </h6>
+                        <p class="customerdetails__content__subtitle">+254700418727</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Customer ID</h6>
+                        <p class="customerdetails__content__subtitle">TK2929272727</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="customerdetails__subhead" id="2">
+
+            <h5 class="customerdetails__subtitle">Addresss Information</h5>
+
+            <div class="customerdetails__contentwrapper">
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Apartment Address </h6>
+                        <p class="customerdetails__content__subtitle">428, Forever Homes Apartment</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Country</h6>
+                        <p class="customerdetails__content__subtitle" id="country">Kenya</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Landmark </h6>
+                        <p class="customerdetails__content__subtitle">Kindaruma Road</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Postal Code</h6>
+                        <p class="customerdetails__content__subtitle">00100</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">City </h6>
+                        <p class="customerdetails__content__subtitle">Nairobi</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- order id popup starts here -->
+
+<section class="customerdetails" id="orderdetails">
+
+
+    <div class="customerdetails__Wrapper">
+
+        <div class="customerdetails__header">
+            <h4 class="customerdetails__title">Order Details</h4>
+            <i class="material-icons" id="closeOrderdetails">close</i>
+        </div>
+
+        <div class="customerdetails__subhead" id="1">
+
+            <h5 class="customerdetails__subtitle">Product Information</h5>
+
+            <div class="customerdetails__contentwrapper">
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Product Name </h6>
+                        <p class="customerdetails__content__subtitle">TK08 - Ultra Gps Tracker </p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Shipping Cost</h6>
+                        <p class="customerdetails__content__subtitle">Ksh 450</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Price</h6>
+                        <p class="customerdetails__content__subtitle">ksh 15000</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Total Cost </h6>
+                        <p class="customerdetails__content__subtitle">Ksh 15450</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Quantity</h6>
+                        <p class="customerdetails__content__subtitle" id="quantity">1</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Order ID</h6>
+                        <p class="customerdetails__content__subtitle">TK181726</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="customerdetails__subhead" id="2">
+
+            <h5 class="customerdetails__subtitle">Payment Information</h5>
+
+            <div class="customerdetails__contentwrapper">
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Payment Method </h6>
+                        <p class="customerdetails__content__subtitle">Mpesa</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Amount Paid </h6>
+                        <p class="customerdetails__content__subtitle">Ksh 15450</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Invoice No </h6>
+                        <p class="customerdetails__content__subtitle">092736363</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+<section class="customerdetails" id="ShippingInformation">
+
+
+    <div class="customerdetails__Wrapper">
+
+        <div class="customerdetails__header">
+            <h4 class="customerdetails__title">Shipping Details</h4>
+            <i class="material-icons" id="closeShippingDetails">close</i>
+        </div>
+
+        <div class="customerdetails__subhead" id="2">
+
+            <h5 class="customerdetails__subtitle">Shipping Information</h5>
+
+            <div class="customerdetails__contentwrapper">
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Apartment Address </h6>
+                        <p class="customerdetails__content__subtitle">428, Forever Homes Apartment</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Country</h6>
+                        <p class="customerdetails__content__subtitle" id="country">Kenya</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Landmark </h6>
+                        <p class="customerdetails__content__subtitle">Kindaruma Road</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Postal Code</h6>
+                        <p class="customerdetails__content__subtitle">00100</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">City </h6>
+                        <p class="customerdetails__content__subtitle">Nairobi</p>
+                    </div>
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Status </h6>
+                        <p class="customerdetails__content__subtitle">Confirmed</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="customerdetails__subhead" id="2">
+
+            <h5 class="customerdetails__subtitle">Billing Information</h5>
+
+            <div class="customerdetails__contentwrapper">
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Apartment Address </h6>
+                        <p class="customerdetails__content__subtitle">428, Forever Homes Apartment</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Country</h6>
+                        <p class="customerdetails__content__subtitle" id="country">Kenya</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Landmark </h6>
+                        <p class="customerdetails__content__subtitle">Kindaruma Road</p>
+                    </div>
+
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">Postal Code</h6>
+                        <p class="customerdetails__content__subtitle">00100</p>
+                    </div>
+                </div>
+
+                <div class="customerdetails__content">
+                    <div class="customerdetails__content__subcontent">
+                        <h6 class="customerdetails__content__title">City </h6>
+                        <p class="customerdetails__content__subtitle">Nairobi</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</section>

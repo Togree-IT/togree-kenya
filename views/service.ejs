@@ -1,0 +1,245 @@
+<%- include("./_nav.ejs") %>
+
+    <header class="services-header">
+        <div class="serviceshero__img">
+            <img src="<%= services.previewImage.url %> " alt="services us hero message" class="art_hero">
+        </div>
+        <div class="serviceshero">
+            <h3 class="serviceshero__title">
+                <%= lang_(services.name).toUpperCase() %>
+            </h3>
+            <p class="serviceshero__text">
+                <%= lang_(services.shortDescription) %>
+            </p>
+            <a href="#request_service" class="serviceshero__btn art_gree_btn filled waves-effect waves-light">
+                <%= lang_("I need this service") %> <em class=" serviceshero__arrow  fas fa-angle-right"></em> </a>
+        </div>
+        <span class="art_stylish_x">
+            <svg width="1433" height="103" viewBox="0 0 1433 103" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M708.5 34.5C426.083 34.5 0 0.5 0 0.5V34.5C0 34.5 426 108.26 708.5 102.5C1101.5 94.4867 1433 34.5 1433 34.5V0.5C1433 0.5 990.917 34.5 708.5 34.5Z" fill="currentColor"/>
+            </svg>
+        </span>
+    </header>
+    <main>
+        <% 
+        
+            if(services.keyFeatures.length){%>
+            <section class="art_services_description">
+
+                <div class="art_cards_co x3">
+                    <% 
+                    services.keyFeatures.map(feature=>{%>
+
+                        <div class="art_card">
+                            <div class="art_card_header">
+                                <span class="header_icon"></span>
+                                <div class="art_title">
+                                    <h5>
+                                        <%= lang_(feature.name) %>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="art_card_body">
+                                <span class="art_description">
+                                <p><%= lang_(feature.description) %></p>
+                            </span>
+                            </div>
+                        </div>
+
+                        <%}) %>
+
+
+
+
+                </div>
+            </section>
+            <% }%>
+
+                <% if(services.howItWorks){%>
+                    <section class="art_how_it_works">
+                        <div class="art_container">
+                            <div class="art_left_right_co">
+                                <div class="art_card">
+                                    <div class="art_card_body video_container">
+                                        <togree_vd url="<%= typeof path !== " undefined "?path:'' %>download.mp4" class="art_togree_vd">
+                                            <div class="art_video_poster">
+                                                <img src="<%= typeof path !== " undefined "?path:'' %><%= services.howItWorks.video_poster_path %>"> </div>
+                                            <button class="artbtn art_play_btn waves-effect" onclick="playVideo(event,'<%= services.howItWorks.video_path %>','video/mp4')">
+                                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
+                                                    <path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
+                                                    s-3.906,14.752-10.45,18.833l-98.417,61.365c-6.943,4.329-15.359,4.542-22.512,0.573c-7.154-3.97-11.425-11.225-11.425-19.406
+                                                    V34.262c0-8.181,4.271-15.436,11.425-19.406c7.153-3.969,15.569-3.756,22.512,0.573l57.292,35.723
+                                                    c2.813,1.752,6.513,0.895,8.267-1.917c1.753-2.812,0.895-6.513-1.917-8.266L64.512,5.247c-10.696-6.669-23.661-7-34.685-0.883
+                                                    C18.806,10.48,12.226,21.657,12.226,34.262v122.73c0,12.605,6.58,23.782,17.602,29.898c5.25,2.913,10.939,4.364,16.616,4.364
+                                                    c6.241,0,12.467-1.754,18.068-5.247l98.417-61.365c10.082-6.287,16.101-17.133,16.101-29.015S173.011,72.899,162.929,66.612z"/>
+                                                    <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                                                </svg>
+                                            </button>
+                                        </togree_vd>
+                                    </div>
+                                </div>
+                                <div class="art_card">
+                                    <div class="art_card_header">
+                                        <h4>
+                                            <%- renderImplimental(lang_(services.howItWorks.name)) %>
+                                        </h4>
+                                    </div>
+                                    <div class="art_card_body">
+                                        <div class="art_desc_text">
+                                            <p>
+                                                <%-  lang_(services.howItWorks.description)%>
+                                            </p>
+                                        </div>
+                                        <div class="art_footer_element">
+
+                                            <form action="<%= path %>products/category/<%= services.slug %>" method="POST">
+                                                <div class="art_input_co">
+                                                    <input type="text" placeholder="<%= lang_('Search')+' '+lang_('through')+' '+lang_('our') +' '+lang_(services.name) %>" class="art_input" name="product_name">
+
+                                                    <button class="art_gree_btn filled waves-effect waves-light" type="submit">
+                                                        <em class="material-icons">search</em>
+                                                    </button>
+                                                </div>
+                                            </form>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <% }%>
+                        <% if(services.applicableTo.length){%>
+                            <section class="art_services_description">
+                                <div class="art_cards_co x3">
+                                    <% 
+                                services.applicableTo.map(applies=>{%>
+                                        <div class="art_card">
+                                            <div class="art_card_header">
+                                                <span class="header_icon"></span>
+                                                <div class="art_title">
+                                                    <h5>
+                                                        <%= lang_(applies.name) %>
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="art_card_body">
+                                                <span class="art_description">
+                                <p>
+                                    <%= lang_(applies.description) %> 
+                                </p>
+                            </span>
+                                            </div>
+                                        </div>
+                                        <% })%>
+
+
+                                </div>
+                            </section>
+                            <% }%>
+                                <% if(typeof services.discount  !== 'undefined'){ 
+                                    services.discount = services.discount.fields;
+                                %>
+
+                                    <section class="joinus">
+                                        <div class="joinus__pic">
+                                            <img class="joinus__pic__img" src="<%= typeof path !== " undefined "?path:'' %>assets/img/services/joinuslady.png" alt="joinus">
+                                        </div>
+                                        <div class="joinus__content">
+                                            <h6 class="joinus__subtitle">
+                                                <%= lang_("We're_Offering")+' '+ services.discount.percentage +'% '+ lang_("off")+' '+ lang_("on_all_our")+' '+lang_(services.name)+' '+ lang_("Products") %>
+                                            </h6>
+                                            <h5 class="joinus__pretitle_" style="font-weight: 900;">
+                                                <%= lang_(services.discount.title).toUpperCase() %>
+                                            </h5>
+                                            <h3 class="joinus__title" style="font-weight: 100;"><span class="art_counter"></span> </h3>
+                                            <p class="joinus__subtitle">
+                                                <%= lang_(services.discount.offer_message) %>
+                                            </p>
+                                            <a href="<%= typeof path !== " undefined "?path:'' %><%= services.discount.path %>" target="_blanck" class="joinus__btn art_gree_btn waves-effect ">
+                                                <%= lang_('Hook_me_up') %>
+                                            </a>
+                                        </div>
+
+                                    </section>
+                                    <script>
+                                        dateCountDown(document.querySelector('.art_counter'), "<%= services.discount.end_date %>")
+                                    </script>
+                                    <%}%>
+                                        <section class="art_request_service" id="request_service">
+                                            <div class="art_service_container">
+                                                <div class="art_service_bg">
+                                                    <svg width="764" height="893" viewBox="0 0 764 893" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                                <path fill="#23c447" d="M-2.96831e-05 0V2.44227e-05C10.2016 6.19453e-05 77.6258 0.000117838 443 0H666.5C843.234 -7.64738e-05 675 95.5 666.5 233.5C658 371.5 490.5 372.5 563.5 504C636.5 635.5 808.45 554.767 752.5 673.5C687 812.5 658 892 658 892L-2.96831e-05 899V2.44227e-05C-3.63754 1.10436e-05 -2.96831e-05 0 -2.96831e-05 0Z" fill="url(#paint0_linear)"/>
+                                                <defs>
+                                                    <linearGradient id="paint0_linear" x1="-7.85975e-05" y1="0.000100919" x2="1283.72" y2="980.752" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#B01EFF" stop-opacity="0"/>
+                                                        <stop offset="1" stop-color="#24C347"/>
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                                </div>
+                                                <div class="art_service_form_co">
+                                                    <div class="art_service_desc">
+                                                        <div class="art_desc_title art_glass art_top">
+                                                            <h5>
+                                                                <%= lang_('Request_for_Service') %>
+                                                            </h5>
+                                                        </div>
+                                                        <div class="art_service_perosn">
+                                                            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/services/person.png" alt="">
+                                                        </div>
+                                                        <div class="art_desc_title art_glass art_bottom art_b30">
+                                                            <h6>
+                                                                <%= lang_('You’re_one_step_away_to_our')+' '+lang_(services.name) %>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="art_service_body">
+                                                        <form action="#!" method="POST" class="art_form" id="request_service_vehicle">
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('First_name') %> *">
+                                                            </div>
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('Last_name') %> *">
+                                                            </div>
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('Email_address') %> *">
+                                                            </div>
+                                                            <div class="art_input_co">
+                                                                <input type="text" class="art_input" placeholder="<%= lang_('Mobile') %> *">
+                                                            </div>
+                                                            <div class="art_input_co art_textera">
+                                                                <textarea name="" id="" class="art_input" placeholder="<%= lang_('Message') %> *"></textarea>
+                                                            </div>
+
+                                                            <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light"><%= lang_('Request_Service') %></button>
+
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+
+
+
+                                        <section class="art_service_call_to_action">
+                                            <div class="art_content">
+                                                <h2 class="art_title">
+                                                    <%- lang_("Want_to_Learn_more?") %>
+                                                </h2>
+                                                <div class="art_specify_act">
+                                                    <button class="art_btn art_gree_btn filled waves-effect waves-light"><%- lang_("Explore_our_Products") %></button>
+                                                </div>
+                                            </div>
+                                        </section>
+
+                                        <%- include ("./socialMedia.ejs") %>
+    </main>
+
+
+    <%- include (`./_footer`) %>

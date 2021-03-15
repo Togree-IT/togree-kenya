@@ -1,0 +1,253 @@
+<%- include("./_nav.ejs") %>
+    <main>
+        <!-- <div class="art_wave">
+            <svg width="411" height="579" viewBox="0 0 411 579" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M44.5687 -112.381C46.5017 -115.729 50.7828 -116.876 54.1308 -114.943L591.42 195.261C594.768 197.194 595.915 201.475 593.982 204.823L420.352 505.559C418.131 509.405 412.236 507.114 413.197 502.777C436.706 396.604 347.414 299.418 239.634 313.871L128.256 328.806C27.552 336.707 -70.7317 295.29 -135.409 217.698L-141.287 210.646C-141.516 210.372 -141.549 209.984 -141.371 209.675L44.5687 -112.381Z" fill="#81D284"/>
+            <path d="M-120 -65C-120 -68.866 -116.866 -72 -113 -72H436C439.866 -72 443 -68.866 443 -65V235.068C443 238.99 437.491 239.858 436.285 236.126C406.994 145.474 297.095 110.709 220.997 168.023L140.082 228.966C66.0062 278.664 -27.2773 290.204 -111.23 260.057L-119.49 257.091C-119.796 256.981 -120 256.691 -120 256.365V-65Z" fill="#4CAF50"/>
+            </svg>
+        </div> -->
+
+        <!-- Contact Hero Sas -->
+        <div class="contacthero container">
+
+            <div class="contacthero__wrapper">
+
+                <div class="contacthero__information">
+
+                    <h3 class="contacthero__information__title">
+                        <%- lang_(`Contact Us`) %>
+                    </h3>
+
+                    <div class="contacthero__information__address">
+                        <em class="material-icons contacthero__information__address__icon">room </em>
+                        <h6 class="contacthero__information__address__content">
+                            <%- address.address+'</br>' +address.box || lang_(`@address`) %>
+                        </h6>
+                        <br/>
+                        <a href="<%- address.directionLink || lang_(`@address_link`) %>" target="_blank" type="button" class="art_btn art_gree_btn filled art_get_dir waves-effect waves-light">
+                            <%- lang_(`Directions`) %>
+                        </a>
+                    </div>
+
+
+                    <div class="contacthero__information__address">
+                        <em class="material-icons contacthero__information__address__icon" ">email</em>
+                        <h6 class="contacthero__information__address__content " >
+                            <a href="mailto:<%- address.supportEmail || lang_(`@support_email`).trim() %>" target="_blanck">
+                        <%- address.supportEmail || lang_(`@support_email`) %>
+                            </a>
+                            <br/>
+                            <a href="mailto:<%- address.email || lang_(`@main_email`).trim() %>" target="_blanck">
+                                <%- address.email || lang_(`@main_email`) %>
+                            </a>
+                            </h6>
+                    </div>
+
+                    <div class="contacthero__information__address ">
+                        <em class="material-icons contacthero__information__address__icon ">phone_iphone</em>
+                        <h6 class="contacthero__information__address__content ">
+                            <a href="tel:<%- address.mobile || lang_(`@phone`).trim() %>">
+                                <%- address.mobile || lang_(`@phone`) %>
+                            </a>
+                            <br/>
+                            <a href="tel:<%- address.whatsapp || lang_(`@phone_whatsapp`) %>">
+                                <%- address.whatsapp || lang_(`@phone_whatsapp`)  %>
+                            </a>
+                        </h6>
+                    </div>
+
+
+
+                    <div class="contacthero__information__socialicon ">
+
+                        <div class="contacthero__information__socialicon__btn ">
+                            <a href="<%- lang_(`@company_facebook`).replace( 'https:', '') %>" target="_blank"><img class="contacthero__information__socialicon__pic " src="<%= path %>assets/img/social/facebook2.png " alt="<%= lang_(`@company_title`) %> Facebook"></a>
+                        </div>
+
+                        <div class="contacthero__information__socialicon__btn ">
+                            <a href="<%- lang_(`@company_twitter`).replace('https:','') %>" target="_blank"><img class="contacthero__information__socialicon__pic " src="<%= path %>assets/img/social/twitter2.png " alt="<%- lang_(`@company_title`) %> Twitter"></a>
+                        </div>
+
+                        <div class="contacthero__information__socialicon__btn ">
+                            <a href="<%- lang_(`@company_instagram`).replace('https:','') %>" target="_blank"><img class="contacthero__information__socialicon__pic " src="<%= path %>assets/img/social/instagram2.png " alt="<%- lang_(`@company_title`) %> Instagram"></a>
+                        </div>
+
+                        <div class="contacthero__information__socialicon__btn ">
+                            <a href="<%- lang_(`@company_linkedin`).replace('https:','') %>" target="_blank"><img class="contacthero__information__socialicon__pic " src="<%= path %>assets/img/social/linkedin2.png " alt="<%- lang_(`@company_title`) %> Linkedin"></a>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="contacthero__content ">
+                    <h2 class="contacthero__content__title ">
+                        <%- lang_(`Contact_us`) %>
+                            <%- lang_(`anytime`) %>
+                    </h2>
+
+                    <p class="contacthero__content__text ">
+                        <%- renderImplimental(lang_(`@company_contact_us_title`))  %>
+
+                    </p>
+
+                    <form class="contacthero__content__form" id="contact_us_form" action="<%= path %>api/contact?ref=dom" method="POST">
+                        <div class="art_input_co ">
+                            <input type="text " placeholder="<%- lang_(`Your_name`) %> * " id="name" name="name" class="art_input ">
+                        </div>
+                        <div class="art_input_co ">
+                            <input type="email " placeholder="<%- lang_(`Your_email`) %> * " id="email" name="email" class="art_input ">
+                        </div>
+                        <div class="art_input_co art_textera ">
+                            <textarea name="message " id="message" class="art_input " placeholder="<%- lang_(`Message`) %> * "></textarea>
+                        </div>
+
+                        <div class="contacthero__content__btnwrapper ">
+                            <button type="sumit" name="art_sumit" class="art_btn art_gree_btn filled waves-effect "><%- lang_(`Submit`) %></button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <section class="subscribe">
+            <h3 class="subscribe__title">
+                <%- lang_(`@subscribe_title`) %>
+            </h3>
+            <!-- <p class="subscribe__text ">
+                <span>Not thoughts all exercise blessing. Indulgence way everything <br>
+                joy alteration boisterous the attachment. Party we years to order</span>
+            </p> -->
+
+            <form class="subscribe__form " action="<%- path %>api/subscribe" method="POST">
+
+                <div class="subscribe__form__inputwrapper ">
+                    <input type="text " placeholder="<%- lang_(`Your_email`) %> * " id="subscribe_email" class="subscribe__form__input ">
+                </div>
+
+                <button type="sumit " class="subscribe__form__btn art_btn art_gree_btn filled waves-effect" name="subscribe"><%- lang_(`Subscribe`) %></button>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <%- include (`./_footer`) %>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', e => {
+
+                const contact_us_form = document.querySelector("#contact_us_form");
+                if (contact_us_form)
+                    contact_us_form.addEventListener("submit", e => {
+                        e.preventDefault();
+                        const contact_us_link = contact_us_form.getAttribute('action') || "<%= path %>api/contact?ref=dom";
+
+                        let {
+                            name,
+                            email,
+                            message,
+                            art_sumit
+                        } = contact_us_form;
+
+                        if (name.value.trim() !== '' && email.value.trim() !== '' && message.value.trim() !== '') {
+                            if (/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email.value)) {
+
+                                art_sumit.disabled = true;
+                                art_sumit.classList.add('disabled');
+                                art_sumit.classList.add('submitting');
+
+                                lang_('Sending').then(name => {
+                                    art_sumit.innerText = name + '...'
+                                });
+
+                                let error_messages = contact_us_form.querySelectorAll('.error_message');
+                                if (error_messages.length) {
+                                    error_messages.forEach(error_message => {
+                                        error_message.remove()
+                                    })
+                                }
+                                axios({
+                                    method: "Post",
+                                    url: contact_us_link,
+                                    headers: {
+                                        'Content-Type': 'application/json;charset=UTF-8',
+                                    },
+                                    data: {
+                                        name: name.value,
+                                        email: email.value,
+                                        message: message.value
+                                    }
+                                }).then(res => {
+                                    let data = res.data;
+                                    if (data.status === "success") {
+                                        lang_('Submit').then(name => {
+                                            art_sumit.disabled = !true;
+                                            art_sumit.classList.remove('disabled');
+                                            art_sumit.classList.remove('submitting');
+                                            art_sumit.innerText = name
+                                        });
+                                    }
+                                    console.log(data);
+                                })
+                            } else {
+                                errTemp(email, "This must a valid email address")
+
+                            }
+                        } else {
+
+                            if (name.value.trim() === '') {
+                                errTemp(name);
+                                name.focus()
+                            } else {
+                                succTemp(name)
+                            }
+
+                            if (email.value.trim() === '') {
+                                errTemp(email)
+                            } else {
+                                succTemp(email)
+                            }
+
+                            if (message.value.trim() === '') {
+                                errTemp(message)
+                            } else {
+                                succTemp(message)
+                            }
+
+                        }
+
+                        function errTemp(name, mess) {
+                            mess = mess || "This field is required";
+                            let co = document.createElement("div");
+                            co.className = "error_message";
+                            lang_(mess).then(message => {
+                                co.innerHTML = `<p>${message} *</p>`;
+                                let parentElement = name.parentElement.parentElement;
+                                if (typeof name.parentElement.nextElementSibling !== "undefined") {
+                                    if (!name.parentElement.nextElementSibling.classList.contains('error_message')) {
+                                        parentElement.insertBefore(co, name.parentElement.nextElementSibling)
+                                    }
+                                }
+                            })
+                            return co;
+                        };
+
+                        function succTemp(name) {
+                            let className = "error_message";
+                            if (name.parentElement.nextElementSibling.classList.contains(className)) {
+                                name.parentElement.nextElementSibling.remove()
+                            }
+                        };
+
+                    });
+            });
+        </script>

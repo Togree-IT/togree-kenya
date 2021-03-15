@@ -1,0 +1,209 @@
+<%- include("./_nav.ejs") %>
+    <main>
+        <div class="art_wave">
+            <svg width="411" height="579" viewBox="0 0 411 579" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M44.5687 -112.381C46.5017 -115.729 50.7828 -116.876 54.1308 -114.943L591.42 195.261C594.768 197.194 595.915 201.475 593.982 204.823L420.352 505.559C418.131 509.405 412.236 507.114 413.197 502.777C436.706 396.604 347.414 299.418 239.634 313.871L128.256 328.806C27.552 336.707 -70.7317 295.29 -135.409 217.698L-141.287 210.646C-141.516 210.372 -141.549 209.984 -141.371 209.675L44.5687 -112.381Z" fill="#81D284"/>
+                <path d="M-120 -65C-120 -68.866 -116.866 -72 -113 -72H436C439.866 -72 443 -68.866 443 -65V235.068C443 238.99 437.491 239.858 436.285 236.126C406.994 145.474 297.095 110.709 220.997 168.023L140.082 228.966C66.0062 278.664 -27.2773 290.204 -111.23 260.057L-119.49 257.091C-119.796 256.981 -120 256.691 -120 256.365V-65Z" fill="#4CAF50"/>
+                </svg>
+        </div>
+        <div class="container">
+            <div class="art_login_form_co">
+
+                <form class="contacthero__content__form" id="inv_gen_form" action="<%= path %>users/invoice/send" method="POST">
+                    <div class="art_title">
+                        <h3>
+                            <%- lang_(`Generate_a_new_invoice`) %>
+                        </h3>
+                    </div>
+                    <div class="art_title">
+                        <h5>
+                            <%- lang_(`Billing_to`) %>
+                                </h3>
+                    </div>
+                    <label for="name"><%- lang_(`Full_name`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Name`) %> " id="name" name="name" class="art_input ">
+                    </div>
+                    <label for="email"><%- lang_(`Email_address`) %></label>
+                    <div class="art_input_co ">
+                        <input type="email" placeholder="<%- lang_(`Email`) %>* " id="email" name="email" class="art_input " required>
+                    </div>
+                    <label for="address"><%- lang_(`Address`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Address`) %> " id="address" name="address" class="art_input ">
+                    </div>
+
+                    <label for="country"><%- lang_(`Country`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Country`) %> " id="country" name="country" class="art_input ">
+                    </div>
+                    <label for="phone"><%- lang_(`Phone`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Phone`) %> " id="phone" name="phone" class="art_input ">
+                    </div>
+
+                    <div class="art_title">
+                        <h5>
+                            <%- lang_(`Shipping_to`) %>
+                                </h3>
+                    </div>
+                    <label for="s_name"><%- lang_(`Full_name`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Name`) %> " id="s_name" name="s_name" class="art_input ">
+                    </div>
+                    <label for="s_address"><%- lang_(`Address`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Address`) %> " id="s_address" name="s_address" class="art_input ">
+                    </div>
+
+                    <label for="s_country"><%- lang_(`Country`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Country`) %> " id="s_country" name="s_country" class="art_input ">
+                    </div>
+                    <label for="s_phone"><%- lang_(`Phone`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Phone`) %> " id="s_phone" name="s_phone" class="art_input ">
+                    </div>
+
+
+                    <div class="art_title">
+                        <h5>
+                            <%- lang_(`Paymeny_method`) %>
+                                </h3>
+                    </div>
+                    <label for="payment"><%- lang_(`Payment_method`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Payment_method`) %> " id="payment" name="payment" class="art_input ">
+                    </div>
+
+                    <div class="art_title">
+                        <h5>
+                            <%- lang_(`Invoice_details`) %>
+                                </h3>
+                                <spna>
+                                    <%- lang_(`These_will_be_generated_if_left_blanck`) %>
+                                </spna>
+                    </div>
+                    <label for="invoice_number"><%- lang_(`Invoice_number`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Invoice_number`) %> " id="invoice_number" name="invoice_number" class="art_input ">
+                    </div>
+                    <label for="invoice_date"><%- lang_(`Invoice_Date`) %></label>
+                    <div class="art_input_co ">
+                        <input type="date" placeholder="<%- lang_(`Invoice_date`) %> " id="invoice_date" name="invoice_date" class="art_input ">
+                    </div>
+                    <label for="customer_number"><%- lang_(`Customer_number`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Customer_number`) %> " id="customer_number" name="customer_number" class="art_input ">
+                    </div>
+
+                    <div class="art_title">
+                        <h5>
+                            <%- lang_(`Order_details`) %>
+                                </h3>
+                    </div>
+                    <label for="order_ID"><%- lang_(`Order_ID`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Order_ID`) %> " id="order_ID" name="order_ID" class="art_input ">
+                    </div>
+                    <label for="product_name"><%- lang_(`Product_name`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Product_name`) %> " id="product_name" name="product_name" class="art_input ">
+                    </div>
+                    <label for="qty"><%- lang_(`QTY`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Quantity`) %> " id="qty" name="qty" class="art_input " onkeyup="calculateTotal('qty', document.querySelector('#total'))">
+                    </div>
+                    <label for="unit_price"><%- lang_(`Unit_Pice`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Unit_Pice`) %> " id="unit_price" name="unit_price" class="art_input " onkeyup="calculateTotal('price', document.querySelector('#total'))">
+                    </div>
+                    <label for="total"><%- lang_(`Total`) %></label>
+                    <div class="art_input_co ">
+                        <input type="text" placeholder="<%- lang_(`Total`) %> " id="total" name="total" class="art_input " disabled readonly>
+                    </div>
+
+                    <div class="art_submit_btn_co ">
+                        <button type="sumit" name="art_sumit" class="art_btn art_gree_btn filled waves-effect "><%- lang_(`Create`) %></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var inv_gen_form = document.querySelector('#inv_gen_form')
+
+        function calculateTotal(e, total) {
+            if (e === 'qty') {
+                var qty = inv_gen_form.qty;
+                var price = inv_gen_form.unit_price;
+                if (price) {
+                    if (price.value !== '') {
+                        total.value = (+price.value) * (+qty.value);
+
+                    }
+                }
+            }
+            if (e === 'price') {
+                var qty = inv_gen_form.qty;
+                var price = inv_gen_form.unit_price;
+                if (qty) {
+                    if (qty.value !== '') {
+                        total.value = (+price.value) * (+qty.value);
+
+                    }
+                }
+            }
+        }
+
+        inv_gen_form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var sbtm = inv_gen_form.art_sumit;
+
+            let Billing_to = {};
+            Billing_to['name'] = inv_gen_form.name.value;
+            Billing_to['email'] = inv_gen_form.email.value;
+            Billing_to['address'] = inv_gen_form.address.value;
+            Billing_to['country'] = inv_gen_form.country.value;
+            Billing_to['phone'] = inv_gen_form.phone.value;
+            let Shipping_to = {};
+            Shipping_to['name'] = inv_gen_form.s_name.value;
+            Shipping_to['address'] = inv_gen_form.s_address.value;
+            Shipping_to['country'] = inv_gen_form.s_country.value;
+            Shipping_to['phpne'] = inv_gen_form.s_phone.value;
+            let Payment_method = {};
+            Payment_method['method'] = inv_gen_form.payment.value;
+            let Invoice_details = {};
+            Invoice_details['invoice_number'] = inv_gen_form.invoice_number.value;
+            Invoice_details['invoice_date'] = inv_gen_form.invoice_date.value;
+            Invoice_details['customer_number'] = inv_gen_form.customer_number.value;
+            let Order_details = {};
+            Order_details['order_ID'] = inv_gen_form.order_ID.value;
+            Order_details['product_name'] = inv_gen_form.product_name.value;
+            Order_details['QTY'] = inv_gen_form.qty.value;
+            Order_details['unit_price'] = inv_gen_form.unit_price.value;
+            Order_details['total'] = inv_gen_form.total.value;
+
+            let formData = {
+                Billing_to,
+                Shipping_to,
+                Payment_method,
+                Invoice_details,
+                Order_details
+            }
+
+            axios.post(inv_gen_form.getAttribute('action'), formData).then(function(res) {
+                var data = res.data;
+                sbtm.disabled = true;
+                sbtm.classList.add('disabled')
+                sbtm.classList.add('submitting');
+
+                if (data.status === 'successful') {
+                    sbtm.disabled = !true;
+                    sbtm.classList.remove('disabled');
+                    sbtm.classList.remove('submitting');
+                }
+            })
+        })
+    </script>

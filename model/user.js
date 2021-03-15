@@ -62,5 +62,12 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "CURRENT_TIMESTAMP"
 
+    },
+    reset: {
+        TYPE: "VARCHAR(250)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: ""
+
     }
 }

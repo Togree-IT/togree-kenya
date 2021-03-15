@@ -1,0 +1,41 @@
+<%- include("./headnav.ejs") %>
+
+<section class="writeblog">
+
+    <form class="writeblog__wrapper" id="blogform">
+
+        <div class="writeblog__topbar">
+
+            <div class="writeblog__right">
+               <a href="/admin/blogs"> <i class="material-icons">keyboard_return</i> </a>   
+                <h2 class="writeblog__info" id="savedinfo">Saved</h2>
+            </div>
+
+            <div class="writeblog__left">
+                <button  class="writeblog__btn" id="submitbtn">Publish Blog </button>
+            </div>
+        </div>
+        <%- include("./custom.ejs") %>
+
+        
+        <div class="writeblog__blog">
+
+            <div id="editor"></div>
+
+        </div>
+
+    </form>
+
+    <pre id="output"></pre>
+
+        
+  
+
+    <script>
+
+    const editorDraft = <%- typeof draftData != undefined && Object.keys(draftData).length ? draftData:{} %>
+
+    </script>
+
+    
+</section>

@@ -260,7 +260,7 @@
                                         <div class="checkout__content__forms__billingcontainer__billingform__shortwrapper">
                                             <label class="checkout__content__forms__billingcontainer__billingform__label" for="postal_code">Zip Code</label>
                                             <div class="art_input_co">
-                                                <input class="art_input" type="email" placeholder="Zip Code" id="postal_code" name="postal_code">
+                                                <input class="art_input" type="text" placeholder="Zip Code" id="postal_code" name="postal_code">
                                             </div>
                                         </div>
                                     </div>
@@ -274,7 +274,9 @@
 
                         <!-- payment form section starts here -->
                         <div class="checkout__content__forms__payment">
+
                             <h3 class="checkout__content__forms__title">PAYMENT METHOD</h3>
+
 
                             <div class="checkout__content__forms__payment__paymentbox">
                                 <div class="checkout__content__forms__payment__paymentbox__paymentoption">
@@ -368,93 +370,9 @@
                                 </div>
 
                                 <!-- billing information here  -->
-                                <div class="real_billing " id="billing_form">
-                                    <h3 class="checkout__content__forms__title ">BILLING INFORMATION</h3>
-                                    <div class="checkout__content__forms__billingcontainer__billingform">
-                                        <div class="checkout__content__forms__billingcontainer__billingform__formsection">
 
-                                            <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
-                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingFirstName">First Name</label>
-                                                <div class="art_input_co">
-                                                    <input class="art_input" type="text" placeholder="John" id="billingFirstName" name="billingFirstName">
-                                                </div>
-                                            </div>
-
-                                            <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
-                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingLastName">Last Name</label>
-                                                <div class="art_input_co">
-
-                                                    <input class="art_input" type="text" placeholder="Smith" id="billingLastName" name="billingLastName">
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="checkout__content__forms__billingcontainer__billingform__formsection">
-
-                                            <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
-                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingPhone">Phone Number</label>
-                                                <div class="art_input_co">
-                                                    <input class="art_input" type="tel" placeholder="( _ _ _ ) _ _ _ _ _ _ _ _ " id="billingPhone" name="billingPhone">
-                                                </div>
-                                            </div>
-
-                                            <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
-                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingEmail">Email Address</label>
-                                                <div class="art_input_co">
-                                                    <input class="art_input" type="email" placeholder="Your Email Address" id="billingEmail" name="billingEmail ">
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="checkout__content__forms__billingcontainer__billingform__formsection">
-
-                                            <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
-                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingAddress">Street/Apartment No</label>
-
-                                                <div class="art_input_co">
-                                                    <input class="art_input" type="text" placeholder=" " id="billingAddress" name="billingAddress">
-                                                </div>
-                                            </div>
-
-                                            <div class="checkout__content__forms__billingcontainer__billingform__shortcontainer">
-
-                                                <div class="checkout__content__forms__billingcontainer__billingform__shortwrapper">
-                                                    <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingCity">City</label>
-                                                    <div class="art_input_co">
-                                                        <input class="art_input" type="text" placeholder="City" id="billingCity" name="billingCity">
-                                                    </div>
-                                                </div>
-
-                                                <div class="checkout__content__forms__billingcontainer__billingform__shortwrapper">
-                                                    <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingZipcode">Zip Code</label>
-                                                    <div class="art_input_co">
-                                                        <input class="art_input" type="email" placeholder="Zip Code" id="billingZipcode" name="billingZipcode">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                </div>
                                 <!-- billing information ends here -->
 
-
-                                <div class="checkout__content__forms__payment__paymentform__footersection">
-                                    <div class="checkout__content__forms__payment__paymentform__checkwrapper">
-                                        <p>
-                                            <label>
-                                      <input type="checkbox" name="billing_check" class="filled-in" checked="checked"  id="checkbox" onclick="checkbilling()"/>
-                                      <span class="filled_span">Shipping address as billing address </span>
-                                    </label>
-                                        </p>
-                                    </div>
-
-
-                                    <button type="submit" class="art_btn art_gree_btn filled waves-effect">ORDER NOW</button>
-                                </div>
                             </div>
 
                             <!-- paypaal tab starts here -->
@@ -468,9 +386,6 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="art_btn art_gree_btn filled waves-effect">CONTINUE</button>
-
-
                             </div>
                             <!-- paypal tab ends here -->
 
@@ -482,10 +397,112 @@
                                         <h4 class="checkout__content__forms__payment__mpesa__wrapper__titlesubtext ">TILL NUMBER - 5022637</h3>
                                 </div>
 
-                                <button type="submit " class="art_btn art_gree_btn filled waves-effect ">CONTINUE</button>
-
                             </div>
                             <!-- Mpesa tab ends here  -->
+
+
+                            <div class="real_billing " id="billing_form">
+                                <h3 class="checkout__content__forms__title ">BILLING INFORMATION</h3>
+                                <div class="checkout__content__forms__billingcontainer__billingform">
+                                    <div class="checkout__content__forms__billingcontainer__billingform__formsection">
+
+                                        <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
+                                            <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingFirstName">First Name</label>
+                                            <div class="art_input_co">
+                                                <input class="art_input" type="text" placeholder="John" id="billingFirstName" name="billingFirstName">
+                                            </div>
+                                        </div>
+
+                                        <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
+                                            <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingLastName">Last Name</label>
+                                            <div class="art_input_co">
+
+                                                <input class="art_input" type="text" placeholder="Smith" id="billingLastName" name="billingLastName">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="checkout__content__forms__billingcontainer__billingform__formsection">
+
+                                        <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
+                                            <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingPhone">Phone Number</label>
+                                            <div class="art_input_co">
+                                                <input class="art_input" type="tel" placeholder="( _ _ _ ) _ _ _ _ _ _ _ _ " id="billingPhone" name="billingPhone">
+                                            </div>
+                                        </div>
+
+                                        <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
+                                            <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingEmail">Email Address</label>
+                                            <div class="art_input_co">
+                                                <input class="art_input" type="email" placeholder="Your Email Address" id="billingEmail" name="billingEmail ">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="checkout__content__forms__billingcontainer__billingform__formsection">
+
+                                        <div class="checkout__content__forms__billingcontainer__billingform__formwrapper">
+                                            <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingAddress">Street/Apartment No</label>
+
+                                            <div class="art_input_co">
+                                                <input class="art_input" type="text" placeholder=" " id="billingAddress" name="billingAddress">
+                                            </div>
+                                        </div>
+
+                                        <div class="checkout__content__forms__billingcontainer__billingform__shortcontainer">
+
+                                            <div class="checkout__content__forms__billingcontainer__billingform__shortwrapper">
+                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingCity">City</label>
+                                                <div class="art_input_co">
+                                                    <input class="art_input" type="text" placeholder="City" id="billingCity" name="billingCity">
+                                                </div>
+                                            </div>
+
+                                            <div class="checkout__content__forms__billingcontainer__billingform__shortwrapper">
+                                                <label class="checkout__content__forms__billingcontainer__billingform__label" for="billingZipcode">Zip Code</label>
+                                                <div class="art_input_co">
+                                                    <input class="art_input" type="email" placeholder="Zip Code" id="billingZipcode" name="billingZipcode">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="checkout__content__forms__payment__paymentform__footersection">
+
+                                <div class="checkout__content__forms__payment__paymentform__checkwrapper">
+
+                                    <p>
+                                        <label>
+                                            <input type="checkbox" name="billing_check" class="filled-in" checked="checked"  id="checkbox" onclick="checkbilling()"/>
+                                            <span class="filled_span">Shipping address as billing address </span>
+                                        </label>
+                                    </p>
+
+                                </div>
+
+                                <button type="submit" class="art_btn art_gree_btn filled waves-effect">ORDER NOW</button>
+                            </div>
+
+
 
                         </div>
 
@@ -495,40 +512,7 @@
                     <div class="checkout__content__cart" id="cart-container">
                         <h3 class="checkout__content__forms__title ">CART SUMMARY</h3>
 
-                        <div id="cartlist">
-                            <!-- product object will be placed here  -->
-                            <!-- <div class="checkout__content__cart__productwrapper cart">
-                        <div class="checkout__content__cart__productimg">
-                            <img class="checkout__content__cart__productpic" src="../assets/img/products/1.png" alt=" ">
-                        </div>
-
-                        <div class="checkout__content__cart__productcontent ">
-                            <h4 class="checkout__content__cart__productcontent__producttitle ">TKG08 GPS Tracker</h4>
-                            <h6 class="checkout__content__cart__productcontent__currentprice ">Ksh 15,000</h6>
-
-                            <div class="checkout__content__cart__productcontent__counter ">
-                                <h6 class="checkout__content__cart__productcontent__counter__quantity ">QTY:</h6>
-
-                                <div class="checkout__content__cart__productcontent__counter__plus">
-                                    <i class="fas fa-plus "></i>
-                                </div>
-
-                                <h6 class="checkout__content__cart__productcontent__counter__quantity-number">1</h6>
-
-                                <div class="checkout__content__cart__productcontent__counter__minus">
-                                    <i class="fas fa-minus "></i>
-                                </div>
-
-                                <div class="checkout__content__cart__productcontent__counter__delete">
-                                    <i class="fas fa-trash "></i>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div> -->
-
-                        </div>
+                        <div id="cartlist"></div>
 
                         <div class="checkout__content__cart__totalpayment ">
                             <div class="checkout__content__cart__totalpayment__totalwrapper" id="cart-subtotal">

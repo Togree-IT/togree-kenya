@@ -1,0 +1,48 @@
+<%- include("./headnav.ejs") %>
+
+<section class="dashboard">
+
+    <%- include('./nav.ejs')%>
+    
+
+    <div class="dashboard__content" id="orderswrapper">
+
+        <div class="dashboard__content__container">
+            <button class="dashmobile_btn" id="dashmenus">Dashboard Menus</button>
+            <div class="dashboard__content__container__header">
+                <h4 class="dashboard__content__container__header__title">Blog Post</h4>
+                <div class="dashboard__content__container__header__content">
+                    <h5 class="dashboard__content__container__header__contentitle">Create new post</h5>
+                    <a href="/admin/createblog"  class="art_btn dashboard__content__container__header__contentbtn" id='createblog'>Create Post</a>
+                </div>
+            </div>
+
+            <div class="dashboard__content__container__body">
+
+                <div class="dashboard__content__container__body__header">
+
+                    <h6 class="dashboard__content__container__body__header__title">Recent Post</h6>
+
+                </div>
+
+                <div class="dashboard__content__container__body__table" id="blogwrapper">
+                    <div class="dashboard__content__container__header__content blogcontainer" >
+                        <h5 class="dashboard__content__container__header__contentitle">Why You need Gps Trackers </h5>
+                        <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
+                    </div>
+                    <div class="dashboard__content__container__header__content blogcontainer" >
+                        <h5 class="dashboard__content__container__header__contentitle">5 best Gps Tracker for your Fleet in 2021</h5>
+                        <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
+                    </div>
+                    <div class="dashboard__content__container__header__content blogcontainer" >
+                        <h5 class="dashboard__content__container__header__contentitle">IOT Market review 2020</h5>
+                        <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+
+        </div>
+</section>

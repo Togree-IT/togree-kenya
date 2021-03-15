@@ -1,0 +1,193 @@
+ [
+     {
+
+         "CustomerInformation": {
+             "title": "Personal Information",
+             "First_Name": "John",
+             "Last_Name": "Magathi",
+             "Phone_Number": "0701419737",
+             "Email": "andrerjoga@gmail.com",
+             "Customer_ID": "TK83737384"
+         },
+         "AddressInformation": {
+             "title": "Addresss Information",
+             "Apartment_Address": "428, Forever Homes Apartment",
+             "Landmark": "Kindaruma Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ProductInformation": {
+             "title": "Product Information",
+             "productName": "TK08",
+             "Price": "Ksh15000",
+             "Quantity": "1",
+             "Shipping_Fee": "Ksh 450",
+             "totalCost": "15450",
+             "Payment_Method": "Mpesa",
+             "Amount_Paid": "15450",
+             "Invoice_No": "tGJEJJWHWW",
+             "IMEI_No": "2736463728292 \r 13635352526"
+         },
+         "billingInformation": {
+             "title": "billing Information",
+             "Apartment_Address": "428, Forever Homes Apartment",
+             "Landmark": "Kindaruma Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ShippingInformation": {
+             "title": "Shipping Information",
+             "Apartment_Address": "428, Forever Homes Apartment",
+             "Landmark": "Kindaruma Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         }
+
+
+     },
+
+
+     {
+         "CustomerInformation": {
+             "title": "Personal Information",
+             "First_Name": "Andrew",
+             "Last_Name": "Malutdi",
+             "Phone_Number ": "0701419352542",
+             "Email": "Malutdi@gmail.com",
+             "CustomerID": "TK83U3Y3T34"
+         },
+         
+         "AddressInformation": {
+             "title": "Addresss Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ProductInformation": {
+             "title": "Product Information",
+             "product_Name": "TK08",
+             "Price": "Ksh 15000",
+             "Quantity": "2",
+             "Shipping_Fee": "Ksh 450",
+             "totalCost": "30450",
+             "Payment_Method": "Mpesa",
+             "Amount_Paid": "30450",
+             "Invoice_No": "tGJEJJWHWW",
+             "IMEI_No": "2736463728292 \r 13635352526"
+         },
+         "billingInformation": {
+             "title": "billing Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ShippingInformation": {
+             "title": "Shipping Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         }
+     },
+     {
+         "CustomerInformation": {
+             "title": "Personal Information",
+             "First_Name": "Andrew",
+             "Last_Name": "Malutdi",
+             "Phone_Number ": "0701419352542",
+             "Email": "Malutdi@gmail.com",
+             "Customer_ID": "TK83737384"
+         },
+         "AddressInformation": {
+             "title": "Addresss Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ProductInformation": {
+             "title": "Product Information",
+             "product_Name": "TK08",
+             "Price": "Ksh 15000",
+             "Quantity": "2",
+             "Shipping_Fee": "Ksh 450",
+             "totalCost": "30450",
+             "Payment_Method": "Mpesa",
+             "Amount_Paid": "30450",
+             "Invoice_No": "tGJEJJWHWW",
+             "IMEI_No": "2736463728292 \r 13635352526"
+         },
+         "billingInformation": {
+             "title": "billing Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postalcode": "00100"
+         },
+         "ShippingInformation": {
+             "title": "Shipping Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         }
+     },
+     {
+         "CustomerInformation": {
+             "title": "Personal Information",
+             "First_Name": "Andrew",
+             "Last_Name": "Malutdi",
+             "Phone_Number ": "0701419352542",
+             "Email": "Malutdi@gmail.com",
+             "CustomerID": "TK83U3Y3T34"
+         },
+         
+         "AddressInformation": {
+             "title": "Addresss Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ProductInformation": {
+             "title": "Product Information",
+             "product_Name": "TK08",
+             "Price": "Ksh 15000",
+             "Quantity": "2",
+             "Shipping_Fee": "Ksh 450",
+             "total_Cost": "30450",
+             "Payment_Method": "Mpesa",
+             "Amount_Paid": "30450",
+             "Invoice_No": "tGJEJJWHWW",
+             "IMEI_No": "2736463728292,13635352526"
+         },
+         "billingInformation": {
+             "title": "billing Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         },
+         "ShippingInformation": {
+             "title": "Shipping Information",
+             "Apartment_Address": "42, Stunning Homes",
+             "Landmark": "Turbo Road",
+             "City": "Nairobi",
+             "Country": "Kenya",
+             "postal_code": "00100"
+         }
+     }
+ ]

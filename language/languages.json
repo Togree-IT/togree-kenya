@@ -1,0 +1,14 @@
+{
+    "en": {
+        "active": true,
+        "name": "English",
+        "slogan": "en",
+        "flag": ""
+    },
+    "fr": {
+        "active": true,
+        "name": "French",
+        "slogan": "fr",
+        "flag": ""
+    }
+}

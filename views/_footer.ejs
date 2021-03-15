@@ -1,0 +1,163 @@
+<footer class="art_footer">
+    <!-- Stylish -->
+    <span class="art_stylish_" style="fill:#2e353b"> 
+        <svg width="1440" height="195" viewBox="0 0 1440 195" fill="currentColor" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M457.815 155.862C277.008 146.247 0 82.6039 0 82.6039V195H1440V82.6039C1440 82.6039 1356.59 51.8217 1305.88 33.9323C956 -89.5001 791.938 173.631 457.815 155.862Z" />
+        </svg>
+    </span>
+    <div class="art_footer_co">
+        <div class="art_footer_impo_links_cards">
+            <div class="art_footer_impo_links_card">
+                <div class="art_header">
+                    <div class="art_title">
+                        <h5>
+                            <%= lang_('Location') %>
+                        </h5>
+                    </div>
+                </div>
+                <div class="art_body" id="address_location">
+
+                </div>
+            </div>
+            <div class="art_footer_impo_links_card">
+                <div class="art_header">
+                    <div class="art_title">
+                        <h5>
+                            <%= lang_('Quick_Links') %>
+                        </h5>
+                    </div>
+                </div>
+                <div class="art_body">
+
+                    <div class="art_body_links_co" id="foot_quick_links">
+
+                        <p>
+                            <a href="<%= typeof path !== 'undefined'?path:'' %>faqs">
+                                <%= lang_('FAQs') %>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="<%= typeof path !== 'undefined'?path:'' %>privacy-policy">
+                                <%= lang_('Privacy_Policy') %>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="<%= typeof path !== 'undefined'?path:'' %>terms-and-conditions">
+                                <%= lang_('Terms_and_Conditions') %>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="<%= typeof path !== 'undefined'?path:'' %>return-policy">
+                                <%= lang_('Return_Policy') %>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="art_footer_impo_links_card">
+                <div class="art_header">
+                    <div class="art_title">
+                        <h5>
+                            <%= lang_('Our_services') %>
+                        </h5>
+                    </div>
+                </div>
+                <div class="art_body">
+                    <div class="art_body_links_co" id="foot_services"> </div>
+                </div>
+            </div>
+
+            <div class="art_footer_impo_links_card art_connect">
+                <div class="art_header">
+                    <div class="art_title">
+                        <h5>
+                            <%- lang_("Let's_Keep_connected") %>
+                        </h5>
+                    </div>
+                </div>
+                <div class="art_footer_connect">
+
+                    <div class="art-foot-social">
+                        <a class="art-social-icon" href="<%= lang_('@company_facebook') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/facebook2.png" alt="<%= lang_('@company_title') %> Facebook" />
+                        </a>
+                        <a class="art-social-icon" href="<%= lang_('@company_linkedin') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/linkedin2.png" alt="<%= lang_('@company_title') %>  Linkedin" />
+                        </a>
+                        <a class="art-social-icon" href="<%= lang_('@company_instagram') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/instagram2.png" alt="<%= lang_('@company_title') %>  Instagram" />
+                        </a>
+                        <a class="art-social-icon" href="<%= lang_('@company_twitter') %>" target="_blank">
+                            <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/social/twitter2.png" alt="<%= lang_('@company_title') %>  Twitter" />
+                        </a>
+
+                    </div>
+                    <div class="art_subscribe_co">
+
+                        <form action="<%= typeof path !== " undefined "?path:'' %>api/subscribe" method="post">
+                            <div class="art_input_co">
+                                <input type="email" class="art_input" name="subscribe_email" placeholder="<%= lang_('Type_your_email_address_here') %>"></div>
+                            <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light" name="subscribe"><%= lang_('Subscribe') %> </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="art_footer_co_2">
+        <div class="art_copyright">
+            <p>
+                <%= lang_('Copyright') %> &copy;
+                    <%= lang_('Togree_Company_Limited_-_All_Rights_Reserved') %>
+            </p>
+        </div>
+        <div class="art_return_msg">
+            <p>
+                <%= lang_('If_you_notice_any_malfunction_on_the_products_you_purchased') %>,
+                    <a href="products/report">
+                        <%= lang_('report_it_to_us') %>
+                    </a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', e => {
+        axios.get('<%= path%>api/@company_address').then(res => {
+
+            let address = res.data;
+            let address_location = document.querySelector('#address_location');
+            if (address_location) {
+                lang_(address.direction).then(direction => {
+                    address.direction = direction;
+                    let temp = `<span class="art_body_desc">
+                        <p>${direction}</p>
+                    </span>
+                    <div class="art_body_address_co">
+                        <div class="art_body_address">
+                            <h6 class="art_address_title">P.O Box</h6>
+                            <p>${address.box}</p>
+                        </div>
+                        
+                        <div class="art_body_address">
+                            <h6 class="art_address_title">Email</h6>
+                            <p><a href="mailto:${address.email}">${address.email}</a></p>
+                        </div>
+                        <div class="art_body_address">
+                            <h6 class="art_address_title">WhatsApp</h6>
+                            <p><a href="tel:${address.whatsapp.split('-').join('').split(' ').join('')}">${address.whatsapp}</a></p>
+                        </div>
+                        <div class="art_body_address">
+                            <h6 class="art_address_title">Phone</h6>
+                            <p><a href="tel:${address.mobile.split('-').join('').split(' ').join('')}">${address.mobile}</a></p>
+                        </div>
+                    </div>`;
+
+                    address_location.insertAdjacentHTML("afterbegin", temp)
+                })
+
+            }
+        })
+    })
+</script>

@@ -1,0 +1,63 @@
+<div class="art_togree_vd_layer off"></div>
+<script>
+    let primaryVideoCo = document.querySelector('.art_togree_vd_layer'),
+        player;
+
+    function playVideo(event, src, type) {
+
+        if (primaryVideoCo) {
+            primaryVideoCo.classList.remove('off');
+            primaryVideoCo.classList.add('on');
+            let videoTemp = () => {
+                return `<button class="art_btn at_vd_closer"><em class="material-icons">close</em></button>
+                <video id="art_gree_main_video" class="video-js vjs-theme-fantasy art_gree_video" controls preload="auto" width="940" height="564" data-setup="{}">
+                <source src="${src}" type="${type}" />
+                <p class="vjs-no-js">
+                    <%- lang_('To_view_this_video_please_enable_JavaScript,_and_consider_upgrading_to_a_web_browser_that_supports_HTML5_video') %> 
+                </p>
+            </video>`;
+            };
+
+            primaryVideoCo.innerHTML = videoTemp();
+
+
+            player = videojs('art_gree_main_video', {}, function onPlayerReady() {
+                this.play();
+            });
+
+            if (player) player.isDisposed_ = !true;
+
+            player.play();
+
+            let at_vd_closer = document.querySelector('.at_vd_closer');
+            if (at_vd_closer) {
+                at_vd_closer.onclick = (e) => {
+
+                    closeVideo(e)
+                }
+            }
+        }
+        primaryVideoCo.addEventListener('click', closeVideo);
+
+        function closeVideo(e) {
+
+            if (e.target.classList.contains('art_togree_vd_layer') || (e.currentTarget.classList.contains('at_vd_closer'))) {
+                primaryVideoCo.classList.add('off');
+                primaryVideoCo.classList.remove('on');
+
+                function destroyVideo() {
+                    // var oldPlayer = document.getElementById('art_gree_main_video');
+                    // videojs(oldPlayer).dispose();
+                    console.log(videojs.players.art_gree_main_video);
+                    player = player || videojs("art_gree_main_video");
+                    if (player) {
+                        player.isDisposed_ = !true;
+                        player.dispose();
+                    }
+                    primaryVideoCo.innerHTML = '';
+                }
+                destroyVideo();
+            }
+        }
+    }
+</script>

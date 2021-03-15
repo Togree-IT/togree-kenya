@@ -1,0 +1,582 @@
+<%- include ("_nav") %>
+    <%- include ("home-header.ejs") %>
+
+        <main class="art-section-top">
+            <section class="art_head_bottom_cards">
+
+                <div class="art_head_bottom_card_co">
+                    <div class="art_head_bottom_card_header">
+                        <h4 class="art_title">
+                            <%- lang_("Solutions_by_needs")  %>
+                        </h4>
+                    </div>
+                    <div class="art_head_bottom_card_body">
+                        <div class="art_our_services_card" style="background-image: url('<%= path%>assets/img/home/asset-tracking.jpg')">
+                            <div class="art_our_services_card_content">
+                                <div class="art_our_services_card_header">
+                                    <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-bar-chart-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
+                                    <h4 class="art_our_services_card_header_title">Asset Tracking</h4>
+                                    <p class="art_our_services_card_title">
+                                        Bring comprehensive visibility and security to your high-value assets
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="art_our_services_card" style="background-image: url('<%= path %>assets/img/home/fleet-safety.jpg');">
+                            <div class="art_our_services_card_content">
+                                <div class="art_our_services_card_header">
+                                    <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-bar-chart-3d-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
+                                    <h4 class="art_our_services_card_header_title">
+                                        <%= lang_("Fleet_Safety")%>
+                                    </h4>
+                                    <p class="art_our_services_card_title">
+                                        <%= lang_(" Help_reduce_risk,_coach_drivers,_and_improve_the_safety_of_your_fleet_at_all_times")%>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="art_our_services_card" style="background-image: url('<%= path %>assets/img/home/fleet-sustainability.jpg');">
+                            <div class="art_our_services_card_content">
+                                <div class="art_our_services_card_header">
+                                    <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/icons8-rental-house-contract-64-1.png" alt="GPS Trackers" srcset="" class="art_our_services_card_header_icon_image">
+                                    <h4 class="art_our_services_card_header_title">
+                                        <%= lang_("Fleet_Sustainability")%>
+                                    </h4>
+                                    <p class="art_our_services_card_title">
+                                        <%= lang_("Reduce_impact_on_the_environment_and_promote_sustainable_development_with_IoT_solutions.")%>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="art_ur_numbers" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                <div class="art_middle">
+                    <h6 class="art_title">
+                        <%= lang_('IF_YOU_STILL_HAVE_ANY_DOUBT').toUpperCase() %>
+                    </h6>
+                    <h4 class="art_title">
+                        <%= lang_('Let_our_numbers_speack_for_us') %>
+                    </h4>
+
+                    <div class="art_our_number_circle_main">
+                        <div class="art_our_number_circle">
+                            <div class="art_our_number_circle_conter">
+                                <div class="art_circle_wrap">
+                                    <div class="art_counter_co">
+                                        <span class="art_count_title">130</span>
+                                    </div>
+                                    <span class="art_count_desc">Countries</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="art_our_number_circle">
+                            <div class="art_our_number_circle_conter">
+                                <div class="art_circle_wrap">
+                                    <div class="art_counter_co">
+                                        <span class="art_count_title">1,600</span><span class="art_count_additional">+</span>
+                                    </div>
+                                    <span class="art_count_desc">Partners</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="art_our_number_circle">
+                            <div class="art_our_number_circle_conter">
+                                <div class="art_circle_wrap">
+                                    <div class="art_counter_co">
+                                        <span class="art_count_title">2,400,000</span><span class="art_count_additional">+</span>
+                                    </div>
+                                    <span class="art_count_desc">Units connected</span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="art_our_number_circle">
+                            <div class="art_our_number_circle_conter">
+                                <div class="art_circle_wrap">
+                                    <div class="art_counter_co">
+                                        <span class="art_count_title">300,000</span><span class="art_count_additional">+</span>
+                                    </div>
+                                    <span class="art_count_desc">Projects implimented</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            <section class="art_build_your_store" style="background:#ffffff" id="running_program" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+
+            </section>
+
+            <!-- How do we operate -->
+            <section class="art_how_we_operate" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                <div class="art_we_operate_desc">
+                    <h4 class="art_we_operate_desc_title">
+                        <%- lang_('How_do_we_Operate?') %>
+                    </h4>
+                    <div class="art_we_operate_desc_text">
+                        <%- renderImplimental(lang_('@how_do_we_Operate_content')) %>
+                            <!-- <br/>
+                            <br/>
+                            <div class="art_action">
+                                <a href="#!" class="art_btn waves-effect "> Watch the Full video for more </a>
+                            </div>
+                            <br/> -->
+                    </div>
+                </div>
+                <div class="art_we_operate_content">
+                    <togree_vd url="<%= typeof path !== " undefined "?path:'' %>download.mp4" class="art_togree_vd">
+                        <div class="art_video_poster">
+                            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/Video-thumnail.png"> </div>
+                        <button class="artbtn art_play_btn waves-effect" onclick="playVideo(event,'http://trackgree.com/none/how-we-work.mp4','video/mp4')">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
+                                <path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
+                                s-3.906,14.752-10.45,18.833l-98.417,61.365c-6.943,4.329-15.359,4.542-22.512,0.573c-7.154-3.97-11.425-11.225-11.425-19.406
+                                V34.262c0-8.181,4.271-15.436,11.425-19.406c7.153-3.969,15.569-3.756,22.512,0.573l57.292,35.723
+                                c2.813,1.752,6.513,0.895,8.267-1.917c1.753-2.812,0.895-6.513-1.917-8.266L64.512,5.247c-10.696-6.669-23.661-7-34.685-0.883
+                                C18.806,10.48,12.226,21.657,12.226,34.262v122.73c0,12.605,6.58,23.782,17.602,29.898c5.25,2.913,10.939,4.364,16.616,4.364
+                                c6.241,0,12.467-1.754,18.068-5.247l98.417-61.365c10.082-6.287,16.101-17.133,16.101-29.015S173.011,72.899,162.929,66.612z"/>
+                                <g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
+                            </svg>
+                        </button>
+                    </togree_vd>
+
+                    </button>
+
+
+            </section>
+
+            <!-- Services -->
+            <section class="art_our_services" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                <div class="art_our_services_desc">
+                    <h4 class="art_our_services_desc_title">
+                        <%- lang_('Our_Main_Services') %>
+                    </h4>
+                    <div class="art_our_services_desc_text">
+                        <p>
+                            <%- lang_('We_provide_a_vasts_of_products_and_services_that_are_primarily_focused_on_automotive_tracking_solutions_and_Personal_monitoring.<br/>Our_products_include;_State-of-the-art,_maintenance_of_faulty,_the_provision_of_training_services_related_to_GPS_tracking_and_lastly_the_installation_of_vehicle_and_human_GPS_tracking_devices.') %></p>
+                    </div>
+                </div>
+                <div class="art_our_services_cards_container">
+                    <div class="art_services_co" id="art_top_services">
+                        <div class="preloader-wrapper big active" style="margin: auto;">
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                </span>
+            </section>
+
+            <!-- Our products -->
+            <section class="art_our_products" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                <div class="container">
+                    <div class="art_our_products_desc">
+                        <h4 class="art_our_products_desc_title">
+                            <%- lang_('Our_Products') %>
+                        </h4>
+                        <div class="art_our_products_desc_text">
+                            <p>
+                                <%- lang_('IoT_essentially_makes_Vehicle_Tracking_solutions_a_lot_more_efficient,_economical_and_automated._<b>Togree</b>_offers_a_wide_range_of_vehicle_tracking_products_dedicated_for_professional_applications._We_constantly_upgrade_our_existing_products_and_launch_new_ones_to_meet_expectations_of_our_customers.')%>
+                            </p>
+
+                        </div>
+                    </div>
+                    <!-- Products container -->
+                    <div class="art_our_products_container">
+
+                        <div class="art_products_container" id="top_products">
+                            <div class="preloader-wrapper big active" style="margin: auto;">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="art_product_view_more_co">
+                            <button class="art_gree_btn filled waves-effect waves-light"><%= lang_('View_All_Products')%></button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                </span>
+            </section>
+
+            <!-- Our Community Globally -->
+            <section class="art_our_community" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                <div class="art_md_half_container">
+                    <span class="art_md_half art_half_img"></span>
+                    <div class="art_md_half art_half_content">
+                        <h4 class="art_title">
+                            <%- lang_('@why_choose_us_title') %>
+                        </h4>
+                        <div class="art_desc">
+                            <div class="art_community_stories_co">
+
+                                <%- renderImplimental(lang_('@why_choose_us')) %>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </section>
+
+            <!-- Our latest news -->
+
+            <section class="art_our_news">
+                <div class="art_news_container" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                    <div class="container">
+                        <div class="art_our_news_desc">
+                            <h5 class="art_our_news_desc_title">
+                                <%- lang_('Latest_News') %>
+                            </h5>
+
+                        </div>
+                        <div class="art_our_news_cards">
+                            <div class="art_news_card_co">
+                                <div class="art_news_card">
+                                    <a class="art_news_card_header" href="#!">
+                                        <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/home/news/2.png" alt="News Thumb" class="art_news_thumb">
+                                    </a>
+                                    <div class="art_news_card_desc">
+                                        <a href="#!">
+                                            <h5 class="art_news_title">COVID-19 Disrups Transportation in Nairobi</h5>
+                                        </a>
+                                        <span>Musical by me through he drawing savings an. No we stand avoid decay heard mr. Common so wicket appear to sudden worthy on. Shade of offer ye whole stood hoped. </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="art_news_card_co">
+                                <div class="art_news_card">
+                                    <a class="art_news_card_header" href="#!">
+                                        <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/home/news/3.png" alt="News Thumb" class="art_news_thumb">
+                                    </a>
+                                    <div class="art_news_card_desc">
+                                        <a href="#!">
+                                            <h5 class="art_news_title">COVID-19 Disrups Transportation in Nairobi</h5>
+                                        </a>
+                                        <span>Musical by me through he drawing savings an. No we stand avoid decay heard mr. Common so wicket appear to sudden worthy on. Shade of offer ye whole stood hoped. </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="art_news_card_co">
+                                <div class="art_news_card">
+                                    <a class="art_news_card_header" href="#!">
+                                        <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/home/news/1.png" alt="News Thumb" class="art_news_thumb">
+                                    </a>
+                                    <div class="art_news_card_desc">
+                                        <a href="#!">
+                                            <h5 class="art_news_title">COVID-19 Disrups Transportation in Nairobi</h5>
+                                        </a>
+                                        <span>Musical by me through he drawing savings an. No we stand avoid decay heard mr. Common so wicket appear to sudden worthy on. Shade of offer ye whole stood hoped. </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Divider -->
+                <div class="art_divider"></div>
+
+                <!-- Updates section -->
+                <div class="art_updates_container">
+                    <div class="container">
+                        <div class="art_updates">
+                            <div class="art_our_news_desc">
+                                <h5 class="art_our_news_desc_title">
+                                    <%- lang_("Join_the_Togree_telematics_community_and_stay_in_touch_with_service_providers,_software_developers,_and_hardware_manufacturers") %>
+                                </h5>
+                            </div>
+                            <div class="art_updates_co">
+                                <div class="art_updates_tabs">
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <ul class="tabs">
+                                                <li class="tab col s3"><a class="active" href="#art_tab_update"><em class="art_tabs_counter">1</em><%- lang_("Live_updates") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_busi_dev"><em class="art_tabs_counter">2</em><%- lang_("Business_development") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_tech_support"><em class="art_tabs_counter">3</em><%- lang_("Technical_support") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_training"><em class="art_tabs_counter">4</em><%- lang_("Training") %></a></li>
+                                                <li class="tab col s3"><a href="#art_tab_marketing_assistance"><em class="art_tabs_counter">5</em><%- lang_("Marketing_assistance") %></a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="art_tab_update" class="col s12 art_tabs_content">
+                                            <div class="art_cover_img">
+                                                <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/updates/live_updates-.png" alt="" class="art_updates_cover">
+                                            </div>
+                                            <div class="art_updates_cards_co art_right">
+                                                <div class="art_update_card">
+                                                    <div class="art_update_card_header">
+                                                        <span class="art_update_title"><h5>COVID-19 impact on transportation</h5></span>
+                                                    </div>
+                                                    <div class="art_update_card_body">
+                                                        <span class="art_update_desc">
+                                                            <p>Certain forbade picture now prevent carried she get see sitting. Up twenty limits as months.</p>
+                                                            <p> Inhabit so perhaps of in to certain. Sex excuse chatty was seemed warmth. </p>
+                                                            <p>Nay add far few immediate sweetness earnestly ejection.</p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_foot">
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">
+                                                            <%- lang_("Get_more_info") %>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="art_tab_busi_dev" class="col s12 art_tabs_content">
+                                            <div class="art_cover_img">
+                                                <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/updates/busi_dev.png" alt="" class="art_updates_cover">
+                                            </div>
+                                            <div class="art_updates_cards_co art_left">
+                                                <div class="art_update_card">
+                                                    <div class="art_update_card_header">
+                                                        <span class="art_update_title">
+                                                            <h5><%- lang_("@company_business_development_title") %></h5>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_body">
+                                                        <span class="art_update_desc">
+                                                            <p><%- lang_("@company_business_development_description") %></p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_foot">
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="<%= path %>programs/reseller/join">
+                                                            <%- lang_("Get_started") %>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="art_tab_tech_support" class="col s12 art_tabs_content">
+                                            <div class="art_cover_img">
+                                                <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/updates/technical_support.png" alt="" class="art_updates_cover">
+                                            </div>
+                                            <div class="art_updates_cards_co art_right">
+                                                <div class="art_update_card">
+                                                    <div class="art_update_card_header">
+                                                        <span class="art_update_title"><h5><%- lang_("@company_technical_support_title") %></h5></span>
+                                                    </div>
+                                                    <div class="art_update_card_body">
+                                                        <span class="art_update_desc">
+                                                            <p><%- lang_("@company_technical_support_description") %></p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_foot">
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="<%= path %>contact-us">
+                                                            <%- lang_("Get_intouch") %>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="art_tab_training" class="col s12 art_tabs_content">
+                                            <div class="art_cover_img">
+                                                <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/updates/training.png" alt="" class="art_updates_cover">
+                                            </div>
+                                            <div class="art_updates_cards_co art_left">
+                                                <div class="art_update_card">
+                                                    <div class="art_update_card_header">
+                                                        <span class="art_update_title">
+                                                            <h5>
+                                                                <%- lang_("@company_training_title") %>
+                                                            </h5>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_body">
+                                                        <span class="art_update_desc">
+                                                            <p><%- lang_("@company_training_description") %></p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_foot">
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">
+                                                            <%- lang_("Get_started") %>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="art_tab_marketing_assistance" class="col s12 art_tabs_content">
+                                            <div class="art_cover_img">
+                                                <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/updates/marketing_assis.png" alt="" class="art_updates_cover">
+                                            </div>
+                                            <div class="art_updates_cards_co art_left">
+                                                <div class="art_update_card">
+                                                    <div class="art_update_card_header">
+                                                        <span class="art_update_title">
+                                                            <h5>
+                                                                <%- lang_("@company_marketing_strategy_title") %>
+                                                            </h5>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_body">
+                                                        <span class="art_update_desc">
+                                                            <p><%- lang_("@company_marketing_strategy_description") %></p>
+                                                        </span>
+                                                    </div>
+                                                    <div class="art_update_card_foot">
+                                                        <a class="art_gree_btn art_updates_btn waves-effect waves-light" href="#!">
+                                                            <%- lang_("Get_more_info") %>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="art_divider"></div>
+                <!-- Details -->
+                <div class="art_left_right_sec">
+                    <div class="art_left_right_co art_right">
+                        <div class="art_left_right_img_card">
+                            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/details/global-logistics-network.png" alt="Image Card" class="left_right_img">
+                        </div>
+                        <div class="art_left_right_content_card">
+                            <div class="art_left_right_content">
+                                <div class="art_left_right_content_title">
+                                    <h5>
+                                        <%- lang_('Shipping_and_Tracking') %>
+                                    </h5>
+                                </div>
+                                <div class="art_left_right_content_desc">
+                                    <p>
+                                        <%- lang_('All_orders_received_are_shipped_not_less_than_24/hrs_after_order_has_been_confirmed,_we_also_provide_our_clients_and_partners_the_ability_to_track_their_orders_with_our_real-time_tracking_platform_and_that_of_our_shipping_partners_spread_across_Asia_and_Africa.') %>
+                                    </p>
+                                </div>
+                                <div class="art_left_right_content_foot">
+                                    <div class="art_left_right_content_foot_cards">
+                                        <div class="art_left_right_content_foot_card">
+                                            <h4>344343</h4>
+                                            <span class="art_left_right_content_foot_card_sub"><%= lang_('Success_stories') %> </span>
+                                        </div>
+                                        <div class="art_left_right_content_foot_card">
+                                            <h4>248</h4>
+                                            <span class="art_left_right_content_foot_card_sub"><%= lang_('Stores_globally') %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="art_left_right_co art_left">
+                        <div class="art_left_right_img_card">
+                            <img src="<%= typeof path !== " undefined "?path:'' %>assets/img/home/news/details/Car-Gps.png" alt="Image Card" class="left_right_img">
+                        </div>
+                        <div class="art_left_right_content_card">
+                            <div class="art_left_right_content">
+                                <div class="art_left_right_content_title">
+                                    <h5>
+                                        <%- lang_("Why_should_you_track_your_Vehicles_and_Fleet?")%>
+                                    </h5>
+                                </div>
+                                <div class="art_left_right_content_desc">
+                                    <p>
+                                        <%- lang_("Many_benefits_surround_the_need_to_track_your_vehicles_with_the_availability_of_IoT_vehicle_trackers_like_TK08__and_tracking_platforms_like_Trackgree.")%>
+                                    </p>
+                                    <p>
+                                        <%- lang_("Car_Trackers_will_help_you_manage_and_monitor_your_fuel_usage,_driver_safety_when_an_emergency_incident_happens,_and_also_increase_productivity_in_picking_out_the_shortest_way_to_a_destination.")%>
+                                    </p>
+                                </div>
+                                <div class="art_left_right_content_foot">
+                                    <div class="art_left_right_content_foot_search_co">
+                                        <div class="art_input_co">
+                                            <input type="text" class="art_input" placeholder="Search through our products">
+                                            <button class="art_btn art_gree_btn filled waves-effect waves-light" name="art_search_through_products"><em class="material-icons">search</em></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+
+                <div class="art_subscribe_sec">
+
+                    <div class="art_subscribe_card_co">
+                        <div class="art_sb_card">
+                            <div class="art_sb_msg">
+                                <h4 class="art_title">
+                                    <%- lang_(`@subscribe_title`) %>
+                                </h4>
+                            </div>
+                            <div class="art_sb_action">
+                                <form action="<%- path %>api/subscribe" method="POST">
+                                    <div class="art_input_co">
+                                        <input type="email" class="art_input" id="subscribe_email" name="subscribe_email" placeholder="<%- lang_(`Your_email`) %>">
+                                        <button type="submit" class="art_btn art_gree_btn filled waves-effect waves-light" name="subscribe"><%- lang_(`Subscribe`)%></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+
+            </section>
+        </main>
+
+        <%- include ('./_footer.ejs') %>
+            <!-- Jquery -->
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+            <!-- Counter -->
+            <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+            <!-- Slick Slider -->
+            <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+            <!-- AOS animations -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

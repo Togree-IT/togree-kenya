@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="<%= typeof language!=='undefined'?language:'' %>">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://vjs.zencdn.net/7.10.2/video-js.css" rel="stylesheet" />
+    <!-- Fantasy -->
+    <link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
+    <% if (typeof meta !== "undefined" && meta.length) {
+        meta.map(el=>{
+            if((typeof el.content !== "undefined" && typeof el.content ===  "string" ) && el.content.trim() !== ''){
+    %>
+        <meta <%-Object.keys(el)[0]+ '='+el[Object.keys(el)[0]]%>
+        <%-Object.keys(el)[1]+'="'+el[Object.keys(el)[1]].split("'").join("\'")+'"'%> />
+            <%  }
+        })
+    } %>
+                <link rel="shortcut icon" href="<%= typeof path !== 'undefined'?path:'' %>favicon" type="image/x-icon">
+
+
+                <% if (typeof elements !== "undefined" && elements.length) {
+                     elements.map(el=>{
+                        if(el.endsWith('.css')){
+                            if(!el.match('//')  ){ %>
+
+                    <link rel="stylesheet" href="<%= path+el %>">
+                    <% } else {%>
+                        <link rel="stylesheet" href="<%= el %>">
+                        <% }}})  } %>
+
+
+                            <title>
+                                <% if (typeof title !== "undefined" ) { %>
+                                    <%= title %>
+                                        <% } %> |
+                                            <%- lang_("@company_title") %>
+                            </title>
+                            <!-- Global site tag (gtag.js) - Google Analytics -->
+                            <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP1TCWLP1Q"></script>
+                            <script>
+                                window.dataLayer = window.dataLayer || [];
+
+                                function gtag() {
+                                    dataLayer.push(arguments);
+                                }
+                                gtag('js', new Date());
+
+                                gtag('config', 'G-LP1TCWLP1Q');
+                            </script>
+                            <!-- Facebook Pixel Code -->
+                            <!-- Google Analytics -->
+                            <script>
+                                (function(i, s, o, g, r, a, m) {
+                                    i['GoogleAnalyticsObject'] = r;
+                                    i[r] = i[r] || function() {
+                                        (i[r].q = i[r].q || []).push(arguments)
+                                    }, i[r].l = 1 * new Date();
+                                    a = s.createElement(o),
+                                        m = s.getElementsByTagName(o)[0];
+                                    a.async = 1;
+                                    a.src = g;
+                                    m.parentNode.insertBefore(a, m)
+                                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+                                ga('create', 'G-LP1TCWLP1Q', 'auto');
+                                ga('send', window.location.pathname + window.location.search);
+                            </script>
+                            <!-- End Google Analytics -->
+
+                            <!-- Facebook Pixel Code -->
+                            <script>
+                                ! function(f, b, e, v, n, t, s) {
+                                    if (f.fbq) return;
+                                    n = f.fbq = function() {
+                                        n.callMethod ?
+                                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                    };
+                                    if (!f._fbq) f._fbq = n;
+                                    n.push = n;
+                                    n.loaded = !0;
+                                    n.version = '2.0';
+                                    n.queue = [];
+                                    t = b.createElement(e);
+                                    t.async = !0;
+                                    t.src = v;
+                                    s = b.getElementsByTagName(e)[0];
+                                    s.parentNode.insertBefore(t, s)
+                                }(window, document, 'script',
+                                    'https://connect.facebook.net/en_US/fbevents.js');
+                                fbq('init', '583245079211133');
+                                fbq('track', window.location.pathname + window.location.search);
+                            </script>
+
+
+                            <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=583245079211133&ev=PageView&noscript=1"/></noscript>
+                            <%- include ("./functions.ejs") %>
+</head>
+
+<body>
+    <%-body%>
+        <%- include('./videoContainer.ejs')%>
+
+
+
+
+
+            <script src="<%= typeof path !== 'undefined' ?path:'' %>assets/lib/materialize/js/materialize.min.js"></script>
+            <% if (typeof elements !== undefined && elements.length) {
+            elements.map(el=>{
+                if(el.endsWith('.js') ){
+                    if(!el.match('//')  ){ 
+        %>
+                <script src="<%= path+el %>"></script>
+                <% }
+        else { %>
+                    <script src="<%= el %>"></script>
+                    <% }  }}) } %>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", () => {
+                                document.addEventListener("mousemove", (e) => {
+                                    if (e.pageY < 4 && e.pageY < 1080 && e.pageX < 500) {
+                                        console.log("corner left");
+                                    }
+                                    if (e.pageY < 4 && e.pageX > 500) {
+                                        console.log("corner right");
+                                    }
+                                })
+                            })
+                        </script>
+
+                        <script src="https://vjs.zencdn.net/7.10.2/video.min.js"></script>
+
+
+</body>
+
+</html>
