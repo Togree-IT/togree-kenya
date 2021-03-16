@@ -1,8 +1,15 @@
 <% 
+console.log(typeof packageOffer);
+// let packageOffer = product.price;
+
 if(product.offers){
 
     if(product.offers.offersArray.length){
         %>
+    <script>
+        window.offersArray = <%- JSON.stringify (product.offers.offersArray)%>
+        window.selectedPackageOffer = <%= packageOffer; %>
+    </script>
 
     <div class="art_product_price_tag">
         <div class="art_product_offer_desc">
@@ -13,13 +20,12 @@ if(product.offers){
         <div class="art_product_price_cards">
 
             <%
-            product.offers.offersArray.map(offer=>{ 
-
+            product.offers.offersArray.map(offer=>{
                 if(typeof offer.qt[0] !== 'string'){ 
-                    
                     %>
 
-                <div class="art_price_card ">
+                <div class="art_price_card <%= cartItems[product.product_id] && (+cartItems[product.product_id].quantity === offer.qt[0] || ((+cartItems[product.product_id].quantity > offer.qt[0]) && +cartItems[product.product_id].quantity+1 <= offer.qt[1])) ? 'active':'' %>"
+                    art-data-min="<%=offer.qt[0] %>" art-data-max="<%=offer.qt[1] %>">
                     <span class="art_late_price_off_tag"> -<%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>%</span>
                     <div class="art_price_card_header">
                         <div class="art_price_card_product">
@@ -37,7 +43,7 @@ if(product.offers){
                     </div>
                     <div class="art_price_card_body">
                         <p>Get
-                            <%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>% off on the products you purchase from
+                            <%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>% off on all the products you purchase from
                                 <%= offer.qt[0] %> -
                                     <%= offer.qt[1] %> pieces
                                         <b hidden> and save <%= currency.name %>
@@ -52,8 +58,9 @@ if(product.offers){
                     </div>
                 </div>
                 <% 
-    } else { %>
-                    <div class="art_price_card">
+    } else {
+        %>
+                    <div class="art_price_card <%= +cartItems[product.product_id].quantity >= +offer.qt[0].split('>').join('') ? 'active':'' %>" art-data-min="<%=offer.qt[0] %>">
                         <span class="art_late_price_off_tag">-<%= ((product.price-offer.price)/offer.price)*100 %>% 🔥</span>
                         <div class="art_price_card_header">
                             <div class="art_price_card_product">
@@ -70,7 +77,7 @@ if(product.offers){
                         </div>
                         <div class="art_price_card_body">
                             <p>Get crazy
-                                <%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>% off on the products you purchase from
+                                <%=  Math.abs(((product.price-offer.price)/offer.price)*100).toFixed(1) %>% off on all the products you purchase from
                                     <%= offer.qt[0].split('>').join('') %> pieces and above <b hidden> and save <%= currency.name %>
                                         <%= formatMoney(product.price-offer.price) %></b></p>
                             <div class="art_package_co">

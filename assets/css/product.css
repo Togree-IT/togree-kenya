@@ -1869,6 +1869,8 @@ body .art_product_price_cards .art_price_card {
     -o-transform: scale(1);
     margin: 0 auto 40px;
     border-width: 0;
+    -webkit-box-shadow: 0px 0 0px 3px #23c447;
+    box-shadow: 0px 0 0px 3px #23c447;
   }
 }
 
@@ -1891,6 +1893,8 @@ body .art_product_price_cards .art_price_card {
     -ms-transform: scale(1);
     -o-transform: scale(1);
     margin: 0;
+    -webkit-box-shadow: 0px 0 0px 3px #23c447;
+    box-shadow: 0px 0 0px 3px #23c447;
   }
 }
 
@@ -1914,8 +1918,10 @@ body .art_product_price_cards .art_price_card {
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
-    margin: 0;
+    margin: 0 1%;
     border-width: 2px;
+    -webkit-box-shadow: 0px 0 0px 3px #23c447;
+    box-shadow: 0px 0 0px 3px #23c447;
   }
 }
 
@@ -1937,7 +1943,8 @@ body .art_product_price_cards .art_price_card {
     -moz-transform: initial;
     -ms-transform: initial;
     -o-transform: initial;
-    margin: 0 1%;
+    -webkit-box-shadow: 0px 0 0px 3px #23c447;
+    box-shadow: 0px 0 0px 3px #23c447;
   }
 }
 
@@ -1954,12 +1961,14 @@ body .art_product_price_cards .art_price_card {
     margin: 0 1%;
   }
   body .art_product_price_cards .art_price_card.active {
-    transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    margin: 0 4%;
+    transform: scale(1.015);
+    -webkit-transform: scale(1.015);
+    -moz-transform: scale(1.015);
+    -ms-transform: scale(1.015);
+    -o-transform: scale(1.015);
+    margin: 0 1%;
+    -webkit-box-shadow: 0px 0 0px 3px #23c447;
+    box-shadow: 0px 0 0px 3px #23c447;
   }
 }
 
@@ -2229,4 +2238,10 @@ body .art_package_co {
   body .art_package_co {
     display: block;
   }
+}
+
+body .art_prevPrice {
+  font-size: 10pt;
+  text-decoration: line-through;
+  color: #ff5722;
 }

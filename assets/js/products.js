@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+
     // Slick settings
     if (document.querySelector('#art_desc_product_img_sildes') && document.querySelector('#art_desc_product_img_sildes').querySelectorAll('.art_desc_product_img').length > 1) {
         $('#art_desc_product_img_sildes').slick({

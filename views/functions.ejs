@@ -298,12 +298,13 @@
 
             }
 
-            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length, product_id)
 
         }
 
         function increaseProductToCart(e, product_id) {
             let cartItems = read_cookie('cartItems');
+
             if (cartItems[product_id]) {
                 cartItems[product_id]['quantity'] = cartItems[product_id].quantity + 1;
 
@@ -319,7 +320,9 @@
                 }
 
             }
-            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length, product_id);
+
+
 
         }
 
@@ -352,7 +355,7 @@
                     setCookie('cartItems', cartItems);
                 }
             }
-            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length, product_id)
 
         }
 
@@ -360,6 +363,7 @@
             let value = e.currentTarget;
             let cartItems = read_cookie('cartItems');
             if (cartItems[product_id]) {
+
                 if ((+value.value) > 1) {
                     cartItems[product_id]['quantity'] = (+value.value);
 
@@ -377,11 +381,11 @@
                     value.value = 1;
                 }
             }
-            updateCartDOM(Object.keys(read_cookie('cartItems')).length)
+            updateCartDOM(Object.keys(read_cookie('cartItems')).length, product_id)
 
         }
 
-        function updateCartDOM(qty) {
+        function updateCartDOM(qty, product_id) {
             let cartDOM = document.querySelector('.art_shop_cart');
 
             if (cartDOM) {
@@ -393,6 +397,113 @@
                         let art_cart_badgeTemp = `<span class="art_cart_badge">${qty.toString()}</span>`;
                         cartDOM.insertAdjacentHTML('afterbegin', art_cart_badgeTemp);
                     }
+
+                    let item = read_cookie('cartItems')[product_id];
+                    let art_price_card = document.querySelectorAll('.art_price_card'),
+                        selectedMin = [];
+
+                    if (item) {
+                        if (offersArray && offersArray.length && art_price_card.length) {
+
+                            let bestPrice = offersArray.map((offer, i) => {
+                                if (typeof offer.qt[0] !== 'string') {
+                                    let nextB = +offersArray[i + 1].qt[0].toString().split('>').join('');
+
+                                    // if (1 /* +item.quantity < offer.qt[0] || (+item.quantity > offer.qt[0] && +item.quantity < (offer.qt[1] + 1)) */ ) {
+                                    //     // console.log(true);
+                                    //     if (offer.qt[0] !== nextB) {
+                                    //         console.log(offer.qt[0]);
+                                    //         console.log(nextB);
+                                    //     }
+
+                                    // }
+
+                                    if (+item.quantity === offer.qt[0] || ((+item.quantity > offer.qt[0]) && +item.quantity + 1 <= (offer.qt[1]))) {
+
+                                        // if (art_price_card[i].classList.contains('active') && +art_price_card[i].getAttribute('art-data-min') !== offer.qt[0]) {
+                                        //     document.querySelectorAll('.art_price_card.active').map(el => el.classList.remove('active'));
+                                        // }
+                                        // if (+art_price_card[i].getAttribute('art-data-min') === offer.qt[0]) {
+                                        //     document.querySelector('.art_price_card[art-data-min="' + offer.qt[0] + '"]').classList.add('active');
+                                        //     console.log(document.querySelector('.art_price_card[art-data-min="' + offer.qt[0] + '"]'));
+                                        // }
+
+
+                                        selectedMin = offer.qt[0];
+
+
+                                        return offer.price;
+                                    }
+
+                                } else {
+                                    if (+item.quantity >= +offer.qt[0].split('>').join('')) {
+                                        selectedMin = +offer.qt[0].split('>').join('');
+                                        return offer.price;
+
+                                    }
+
+
+                                }
+                            }).join('');
+
+                            bestPrice = parseFloat(bestPrice) < +products[product_id].price ? parseFloat(bestPrice) : +products[product_id].price;
+                            let art_price = document.querySelector('.art_price');
+                            let art_prevPrice = document.querySelector('.art_prevPrice');
+
+                            if (art_price) {
+                                if (bestPrice) {
+                                    if (typeof globalCurrency.rate !== 'undefined') {
+                                        art_price.innerText = formatMoney(bestPrice * +globalCurrency.rate);
+                                        if (!art_prevPrice) {
+                                            art_price.parentElement.insertAdjacentHTML("beforeend", `<span class="art_prevPrice">${formatMoney(products[product_id].price)}</span>`)
+                                        }
+                                    } else {
+                                        art_price.innerText = formatMoney(+bestPrice);
+                                        if (!art_prevPrice) {
+                                            art_price.parentElement.insertAdjacentHTML("beforeend", `<span class="art_prevPrice">${formatMoney(products[product_id].price)}</span>`)
+                                        }
+                                    }
+                                } else {
+                                    if (typeof globalCurrency.rate !== 'undefined') {
+                                        art_price.innerText = formatMoney(+products[product_id].price * globalCurrency.rate);
+                                        if (art_prevPrice) {
+                                            art_prevPrice.remove();
+                                        }
+
+                                    } else {
+                                        art_price.innerText = formatMoney(products[product_id].price);
+                                        if (art_prevPrice) {
+                                            art_prevPrice.remove();
+                                        }
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+
+
+                    art_price_card.length && art_price_card.forEach((pCard) => {
+
+
+                        if (+pCard.getAttribute('art-data-min').split('>').join('') === selectedMin) {
+                            if (!pCard.classList.contains('active')) {
+
+                                pCard.classList.add('active')
+                            }
+                        } else {
+                            if (pCard.classList.contains('active')) {
+                                pCard.classList.remove('active')
+                            }
+                        }
+                    })
+
+                    // console.log(prod);
+                    // console.log(offersArray);
+                    // console.log(selectedPackageOffer);
+
+
                 } else {
                     let art_cart_badge = cartDOM.querySelector('.art_cart_badge');
                     if (art_cart_badge) art_cart_badge.remove();

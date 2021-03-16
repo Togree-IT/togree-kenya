@@ -239,6 +239,39 @@ exports.setCookie = (res, data) => {
     });
 
 };
+exports.setCookieData = (res, data) => {
+    let { name, value, exp, days } = data;
+
+    value = JSON.stringify(value) || value;
+    console.log(value);
+    // Our token expiry time
+    if (exp) {
+        days = days || 1;
+        const dayToSeconds = (24 * 60 * 60) * days;
+        let maxAge = dayToSeconds;
+        res.cookie(name, value, {
+            maxAge,
+            // You can't access these tokens in the client's javascript
+            httpOnly: true,
+            // Forces to use https in production
+            secure: process.env.NODE_ENV === 'production' ? true : false
+        });
+        return 0;
+    }
+
+    const myCookieEncode = function(val) {
+        return val;
+    };
+
+    res.cookie(name, value, {
+        // You can't access these tokens in the client's javascript
+        httpOnly: true,
+        // Forces to use https in production
+        secure: process.env.NODE_ENV === 'production' ? true : false,
+        encode: myCookieEncode
+    });
+
+};
 /**
  * 
  * @param req the http request
@@ -656,6 +689,47 @@ exports.formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",")
         let j = (i.length > 3) ? i.length % 3 : 0;
 
         return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+    } catch (err) {
+        console.log(err)
+    }
+};
+exports.packageOffer = (product, cartItems, res) => {
+
+    try {
+        let item, packageOffer = product.price;
+
+        if (Object.keys(cartItems).length && Object.keys(cartItems).includes(product.product_id)) {
+
+            item = cartItems[product.product_id];
+
+        }
+
+        if (item) {
+            if (product.offers.offersArray && product.offers.offersArray.length) {
+                product.offers.offersArray.map(offer => {
+                    if (typeof offer.qt[0] !== 'string') {
+                        if (+item.quantity === offer.qt[0] || ((+item.quantity > offer.qt[0]) && +item.quantity + 1 <= offer.qt[1])) {
+                            packageOffer = offer.price;
+                            item.price = packageOffer;
+                            packageOffer = offer.price;
+                            item.price = packageOffer;
+                            // cartItems[product.product_id] = item;
+                            // this.setCookieData(res, { name: 'cartItems', value: cartItems });
+                        }
+                    } else {
+                        if (+item.quantity >= +offer.qt[0].split('>').join('')) {
+                            packageOffer = offer.price;
+                            item.price = packageOffer;
+                            // cartItems[product.product_id] = item;
+                            // this.setCookieData(res, { name: 'cartItems', value: cartItems });
+                        }
+                    }
+                })
+            }
+        }
+
+        return packageOffer;
+
     } catch (err) {
         console.log(err)
     }

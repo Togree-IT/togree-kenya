@@ -213,6 +213,7 @@ router.get('/main/:id', (req, res) => {
                         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
                         url: req.protocol + '://' + req.headers.host + req.originalUrl,
                         description: product.short_description || funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']),
+                        packageOffer: funs.packageOffer(product, JSON.parse(funs.getAppCookies(req)['cartItems']) || '', res)
                     });
                 })
             }
