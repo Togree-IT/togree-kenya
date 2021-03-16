@@ -416,13 +416,17 @@
                 window.event.target = display;
 
                 updateProductToCart(window.event, product_id);
+                display.scrollTo();
             } else {
-                window.event = document.querySelector('#add_to_cat_' + product_id);
-                window.event.currentTarget = document.querySelector('#add_to_cat_' + product_id);
-                window.event.target = document.querySelector('#add_to_cat_' + product_id);
+                if (document.querySelector('#add_to_cat_' + product_id)) {
+                    window.event = document.querySelector('#add_to_cat_' + product_id);
+                    window.event.currentTarget = document.querySelector('#add_to_cat_' + product_id);
+                    window.event.target = document.querySelector('#add_to_cat_' + product_id);
 
-                addProductToCart(window.event, product_id, +min);
+                    addProductToCart(window.event, product_id, +min);
 
+                    document.querySelector('#add_to_cat_' + product_id).scrollTo();
+                }
             }
         }
 
