@@ -267,12 +267,12 @@
             return "";
         }
 
-        function addProductToCart(e, product_id) {
+        function addProductToCart(e, product_id, qty) {
             let data = {};
             data[product_id] = {
                 id: product_id,
                 price: products[product_id].price,
-                quantity: 1,
+                quantity: qty || 1,
                 productName: products[product_id].name
             };
             setCookie('cartItems', data);
@@ -280,7 +280,7 @@
             let cartActionsTemp = (title) => {
                 return `<div class="art_cart_options"><div class="art_cart_actions" id="art_qty_${product_id}">
     <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="decreaseProductToCart(event, '${product_id}')"><em class="material-icons">remove</em></button>
-    <input type="number" min="1" class="art_qty_display" id="art_qty_display_${product_id}" contenteditable="true" value="1" onchange="updateProductToCart(event, '${product_id}')">
+    <input type="number" min="1" class="art_qty_display" id="art_qty_display_${product_id}" contenteditable="true" value="${qty || 1}" onchange="updateProductToCart(event, '${product_id}')">
     <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="increaseProductToCart(event, '${product_id}')"><em class="material-icons">add</em></button>
 </div>
                 <div class="art_checkout_co">
@@ -359,12 +359,12 @@
 
         }
 
-        function updateProductToCart(e, product_id) {
+        function updateProductToCart(e, product_id, ) {
             let value = e.currentTarget;
             let cartItems = read_cookie('cartItems');
             if (cartItems[product_id]) {
 
-                if ((+value.value) > 1) {
+                if ((+value.value) > 0) {
                     cartItems[product_id]['quantity'] = (+value.value);
 
                     setCookie('cartItems', cartItems);
@@ -383,6 +383,47 @@
             }
             updateCartDOM(Object.keys(read_cookie('cartItems')).length, product_id)
 
+        }
+
+        function choosePackage(e, product_id, package) {
+            let [min, max] = package;
+
+            min.match('>') ? max = (+min.split('>').join('') + 50).toString() : '';
+            min = min.split('>').join('');
+
+            let art_price_card = document.querySelectorAll('.art_price_card');
+            if (art_price_card.length) {
+                art_price_card.forEach(art_price => {
+
+                    if (art_price.getAttribute('art-data-min').split('>').join('') === min) {
+
+                        art_price.classList.add('active');
+                    } else {
+                        if (art_price.classList.contains('active')) {
+                            art_price.classList.remove('active');
+                        }
+
+                    }
+                })
+            }
+
+            let display = document.querySelector('#art_qty_display_' + product_id);
+            if (display) {
+                display.value = min;
+
+                window.event = display;
+                window.event.currentTarget = display;
+                window.event.target = display;
+
+                updateProductToCart(window.event, product_id);
+            } else {
+                window.event = document.querySelector('#add_to_cat_' + product_id);
+                window.event.currentTarget = document.querySelector('#add_to_cat_' + product_id);
+                window.event.target = document.querySelector('#add_to_cat_' + product_id);
+
+                addProductToCart(window.event, product_id, +min);
+
+            }
         }
 
         function updateCartDOM(qty, product_id) {
@@ -409,29 +450,8 @@
                                 if (typeof offer.qt[0] !== 'string') {
                                     let nextB = +offersArray[i + 1].qt[0].toString().split('>').join('');
 
-                                    // if (1 /* +item.quantity < offer.qt[0] || (+item.quantity > offer.qt[0] && +item.quantity < (offer.qt[1] + 1)) */ ) {
-                                    //     // console.log(true);
-                                    //     if (offer.qt[0] !== nextB) {
-                                    //         console.log(offer.qt[0]);
-                                    //         console.log(nextB);
-                                    //     }
-
-                                    // }
-
                                     if (+item.quantity === offer.qt[0] || ((+item.quantity > offer.qt[0]) && +item.quantity + 1 <= (offer.qt[1]))) {
-
-                                        // if (art_price_card[i].classList.contains('active') && +art_price_card[i].getAttribute('art-data-min') !== offer.qt[0]) {
-                                        //     document.querySelectorAll('.art_price_card.active').map(el => el.classList.remove('active'));
-                                        // }
-                                        // if (+art_price_card[i].getAttribute('art-data-min') === offer.qt[0]) {
-                                        //     document.querySelector('.art_price_card[art-data-min="' + offer.qt[0] + '"]').classList.add('active');
-                                        //     console.log(document.querySelector('.art_price_card[art-data-min="' + offer.qt[0] + '"]'));
-                                        // }
-
-
                                         selectedMin = offer.qt[0];
-
-
                                         return offer.price;
                                     }
 
@@ -439,10 +459,7 @@
                                     if (+item.quantity >= +offer.qt[0].split('>').join('')) {
                                         selectedMin = +offer.qt[0].split('>').join('');
                                         return offer.price;
-
                                     }
-
-
                                 }
                             }).join('');
 
@@ -451,7 +468,8 @@
                             let art_prevPrice = document.querySelector('.art_prevPrice');
 
                             if (art_price) {
-                                if (bestPrice) {
+                                if (bestPrice < +products[product_id].price) {
+
                                     if (typeof globalCurrency.rate !== 'undefined') {
                                         art_price.innerText = formatMoney(bestPrice * +globalCurrency.rate);
                                         if (!art_prevPrice) {
@@ -463,6 +481,7 @@
                                             art_price.parentElement.insertAdjacentHTML("beforeend", `<span class="art_prevPrice">${formatMoney(products[product_id].price)}</span>`)
                                         }
                                     }
+
                                 } else {
                                     if (typeof globalCurrency.rate !== 'undefined') {
                                         art_price.innerText = formatMoney(+products[product_id].price * globalCurrency.rate);
@@ -473,6 +492,7 @@
                                     } else {
                                         art_price.innerText = formatMoney(products[product_id].price);
                                         if (art_prevPrice) {
+
                                             art_prevPrice.remove();
                                         }
                                     }
@@ -483,10 +503,7 @@
                         }
                     }
 
-
                     art_price_card.length && art_price_card.forEach((pCard) => {
-
-
                         if (+pCard.getAttribute('art-data-min').split('>').join('') === selectedMin) {
                             if (!pCard.classList.contains('active')) {
 
@@ -498,10 +515,6 @@
                             }
                         }
                     })
-
-                    // console.log(prod);
-                    // console.log(offersArray);
-                    // console.log(selectedPackageOffer);
 
 
                 } else {
@@ -516,14 +529,76 @@
             window.location = path + "products/checkout";
         }
 
-        function rateProduct(id) {
-            const cancelTokenSource = axios.CancelToken.source();
-            console.log(cancelTokenSource.token);
-            axios.post("<%= path %>api/products/rate").then(res => {
-                console.log(res.data);
-                // setCookie('rated', {
-                //     id: ''
-                // })
-            })
+        function rateProduct(product_id) {
+            if (typeof window.event.currentTarget.value !== "undefined") {
+
+                axios.post("<%= path %>api/products/rate", {
+
+                    product_id,
+                    rates: +window.event.currentTarget.value,
+                    customer_name: '',
+                    user_icon: '',
+                    review: ''
+
+                }).then(res => {
+                    if (res.data.status === "successful") {
+                        writeReview(product_id, 'update', res.data.id);
+                    }
+                });
+            }
+        }
+
+        function writeReview(product_id, reviewPath = 'review', res) {
+            artModal((funs) => {
+                funs.open();
+                lang_('Write a review').then(title => {
+                    lang_('Type here...').then(placeHolder => {
+
+                        funs.writeHeader(title);
+                        funs.writeBody('<div class="art_input_co art_textera "><textarea class="art_input" placeholder="' + placeHolder + '" id="art_review"style="color: #304969;"></textarea></div>');
+
+                        let submitBtn = funs.getButton(2);
+
+                        submitBtn.addEventListener('click', function submitReview(e) {
+                            let review = document.querySelector('#art_review');
+
+                            if (review && review.value.trim() !== "") {
+                                review.setAttribute("readonly", "true");
+                                submitBtn.disabled = true;
+                                submitBtn.classList.add('disabled');
+
+                                axios.post("<%= path %>api/products/rate/" + reviewPath, {
+                                    id: typeof id !== "undefined" ? id : '',
+                                    product_id,
+                                    review: review.value,
+                                }).then(res => {
+                                    submitBtn.disabled = !true;
+                                    submitBtn.classList.remove('disabled');
+
+                                    lang_('You did Great').then(title => {
+                                        lang_('Thank you for your feedback').then(message => {
+                                            funs.clear();
+                                            funs.writeHeader(title);
+                                            funs.writeBody('<div class="art_success"><h5>' + message + '</h5></div>');
+                                            submitBtn.removeEventListener('click', submitReview);
+                                            submitBtn.innerText = 'Done';
+                                            submitBtn.addEventListener('click', function closeReview(e) {
+                                                funs.close();
+                                            });
+                                        });
+                                    });
+                                }).catch((err) => {
+                                    submitBtn.disabled = !true;
+                                    submitBtn.classList.remove('disabled');
+
+                                })
+                            } else {
+                                if (review) review.focus();
+                            }
+                        });
+
+                    });
+                });
+            });
         }
     </script>

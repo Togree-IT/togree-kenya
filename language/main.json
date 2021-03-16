@@ -308,6 +308,17 @@
         "store": "Store",
         "continue_to_checkout": "Continue to Checkout",
         "checkout": "Checkout",
-        "togree_store_for_all_your_gps_devices,_wireless_devices": "Togree Store for all your GPS devices, Wireless devices"
+        "togree_store_for_all_your_gps_devices,_wireless_devices": "Togree Store for all your GPS devices, Wireless devices",
+        "best": "Best",
+        "good": "Good",
+        "fair": "Fair",
+        "trying": "Trying",
+        "poor": "Poor",
+        "type_here...": "Type here...",
+        "you_did_great": "You did Great",
+        "thank_you_for_your_feedback": "Thank you for your feedback",
+        "cancel": "Cancel",
+        "send": "Send",
+        "choose": "Choose"
     }
 }

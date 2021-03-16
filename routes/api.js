@@ -264,14 +264,156 @@ router.use("/contact", require("../routes/contact"));
 router.post('/products/rate', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
-        // var sql = "INSERT INTO rate"
-        // let get
+
+        let { product_id, rates, customer_name, user_icon, review } = req.body, user_id = '';
+
+
+        if (req.user) {
+            customer_name = req.user.name;
+            user_icon = req.user.user_icon;
+            user_id = req.user.id;
+        }
+
+        let insertRate = "INSERT INTO rates (product_id,rate";
+
+        insertRate += ",customer_name"
+
+        if (user_icon.trim() !== '') {
+            insertRate += ",icon"
+        }
+        if (review.trim() !== '') {
+            insertRate += ",review"
+        }
+        if (user_id.trim() !== '') {
+            insertRate += ",user_id"
+        }
+        insertRate += ") Values('" + product_id + "', '" + rates + "'";
+
+        if (customer_name.trim() !== '') {
+            insertRate += ", '" + customer_name + "'";
+        } else {
+            insertRate += ", '" + 'Walk in Customer' + "'";
+        }
+        if (user_icon.trim() !== '') {
+            insertRate += ", '" + user_icon + "'";
+        }
+        if (review.trim() !== '') {
+            insertRate += ", '" + review + "'";
+        }
+        if (user_id.trim() !== '') {
+            insertRate += ", '" + user_id + "'";
+        }
+        insertRate += ") ";
+
+
+        connect.query(insertRate, (err, results) => {
+            if (err) console.log(err);
+            if (results) {
+
+                let { insertId } = results;
+                res.status(200).json({ status: "successful", id: insertId })
+
+            }
+        });
+
+        // 
+        //     var sql = "SELECT rates.*,products.productRate as highRates FROM rates JOIN products ON rates.product_id = '"+product_id+"'"
+        //     // let get
+
+        // connect.query(sql, (err, results) => {
+        //     if (err) console.log(err);
+
+
+        //     if (results.length) {
+        //         if (req.user) {
+        //             console.log(req.user.user_icon);
+        //         }
+
+        //     } else {    }
+        //     res.status(200).json({ status: "successful" })
+        // })
+
+        // console.log(connect);
     })
 });
+
+router.post('/products/rate/review', (req, res) => {
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+        // var sql = "SELECT * FROM rates";
+        let { product_id, review } = req.body, user_id = '', customer_name = '', user_icon = '';
+
+        if (req.user) {
+            user_id = req.user.id;
+            customer_name = req.user.name;
+            user_icon = req.user.user_icon;
+        }
+
+        let insertRate = "INSERT INTO rates (product_id";
+
+        insertRate += ",customer_name";
+
+        if (review.trim() !== '') {
+            insertRate += ",review"
+        }
+        if (user_id.trim() !== '') {
+            insertRate += ",user_id"
+        }
+        if (user_id.trim() !== '') {
+            insertRate += ",icon"
+        }
+
+        insertRate += ") Values('" + product_id + "'";
+        if (customer_name.trim() !== '') {
+            insertRate += ", '" + customer_name + "'";
+        } else {
+            insertRate += ", '" + 'Walk in Customer' + "'";
+        }
+
+        if (user_icon.trim() !== '') {
+            insertRate += ", '" + user_icon + "'";
+        }
+
+        if (review.trim() !== '') {
+            insertRate += ", '" + review + "'";
+        }
+        if (user_id.trim() !== '') {
+            insertRate += ", '" + user_id + "'";
+        }
+        insertRate += ") ";
+
+
+        connect.query(insertRate, (err, results) => {
+            if (err) console.log(err);
+            if (results) {
+                let { insertId } = results;
+                res.status(200).json({ status: "successful", id: insertId })
+            }
+        });
+
+    })
+});
+router.post('/products/rate/update', (req, res) => {
+    require('../functions').destroy();
+    require('../functions').con(require('../config/index').db.database, connect => {
+        // var sql = "SELECT * FROM rates";
+        let { id, review } = req.body;
+
+        let sql = "UPDATE rates SET review = '" + review + "' WHERE id='" + id + "'";
+
+        connect.query(sql, (err, results) => {
+            if (err) console.log(err);
+            if (results) {
+                res.status(200).json({ status: "successful" });
+            }
+        });
+    })
+});
+
 router.post('/products/recommend_products', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
-        // var sql = "SELECT "
+        // var sql = "SELECT rates*, rate FROM rates JOIN products.productRate as highRates ON rates.product_id = products.product_id "
         // let get
     })
 });

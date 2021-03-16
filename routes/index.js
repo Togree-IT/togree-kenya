@@ -40,8 +40,8 @@ router.get("/", (req, res) => {
             path: funs.pathToTheRoot(req._parsedUrl.path),
             cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
-        })
-    })
+        });
+    });
 
 
 });

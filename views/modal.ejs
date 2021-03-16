@@ -1,0 +1,123 @@
+<div class="art_modal_layer off">
+</div>
+<div class="art_modal off">
+    <div class="art_modal_content">
+        <div class="art_modal_header">
+            <div class="art_modal_title">
+                <h5></h5>
+            </div>
+            <div class="art_end">
+                <button class="art_modal_close waves-effect waves-pink art_btn" id="art_modal_close_top" onclick="closeModal()"><em class="material-icons">close</em></button>
+            </div>
+        </div>
+        <div class="art_modal_body">
+        </div>
+        <div class="art_modal_footer">
+            <div class="art_section1">
+                <button class="art_btn art_gree_btn waves-effect" id="art_modal_close" onclick="closeModal()"><%= lang_('Cancel') %></button></div>
+            <div class="art_section2">
+                <button class="art_btn art_gree_btn filled waves-effect" id="art_modal_action"><%= lang_('Send') %></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', (e) => {
+
+    });
+
+    function artModal(cb) {
+        let layer = document.querySelector('.art_modal_layer');
+        let modal = document.querySelector('.art_modal');
+        let header = modal.querySelector('.art_modal_header');
+        let headerTitle = header.querySelector('.art_modal_title *');
+        let body = modal.querySelector('.art_modal_body');
+        let footer = modal.querySelector('.art_modal_footer');
+        let funs = {
+            writeHeader: function(content) {
+                headerTitle.innerText = content;
+                return headerTitle;
+            },
+            writeBody: function(content) {
+                body.insertAdjacentHTML('beforeend', content);
+                return body
+            },
+            getButton: function(content) {
+                if (content) {
+                    let btn = footer.querySelector('.art_section' + content + ' button');
+
+                    return btn
+                }
+                return footer.querySelector('.art_section2' + ' button');
+            },
+            open: function() {
+                layer.classList.remove('off');
+                layer.classList.add('on');
+
+                modal.classList.remove('off');
+                modal.classList.add('on');
+                return modal;
+            },
+            close: function() {
+                let btn1 = footer.querySelector('.art_section' + '1' + ' button');
+                let btn2 = footer.querySelector('.art_section' + '2' + ' button');
+
+                layer.classList.add('off');
+                layer.classList.remove('on');
+
+                modal.classList.add('off');
+                modal.classList.remove('on');
+                headerTitle.innerHTML = '';
+                body.innerHTML = '';
+
+                btn1.innerText = "<%= lang_('Cancel') %>";
+                btn2.innerText = "<%= lang_('Send') %>";
+
+                return modal;
+            },
+            clear: function() {
+                let btn1 = footer.querySelector('.art_section' + '1' + ' button');
+                let btn2 = footer.querySelector('.art_section' + '2' + ' button');
+
+                headerTitle.innerHTML = '';
+                body.innerHTML = '';
+
+                btn1.innerText = "<%= lang_('Cancel') %>";
+                btn2.innerText = "<%= lang_('Send') %>";
+
+                return modal;
+            },
+        };
+
+        if (typeof cb === "function") {
+            cb(funs)
+        }
+
+        return funs
+    }
+
+    function closeModal() {
+        let layer = document.querySelector('.art_modal_layer');
+        let modal = document.querySelector('.art_modal');
+        let headerTitle = modal.querySelector('.art_modal_title *');
+        let body = modal.querySelector('.art_modal_body');
+        let footer = modal.querySelector('.art_modal_footer');
+
+        let btn1 = footer.querySelector('.art_section' + '1' + ' button');
+        let btn2 = footer.querySelector('.art_section' + '2' + ' button');
+
+        layer.classList.add('off');
+        layer.classList.remove('on');
+
+        modal.classList.add('off');
+        modal.classList.remove('on');
+        headerTitle.innerHTML = '';
+        body.innerHTML = '';
+
+        btn1.innerText = "<%= lang_('Cancel') %>";
+        btn2.innerText = "<%= lang_('Send') %>";
+
+    }
+</script>

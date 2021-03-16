@@ -1163,13 +1163,14 @@ body {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        padding: 20px 0 15pc;
-        @include mobile {
-            padding: 20px 20px 10pc;
-        }
-        @include laptop {
-            padding: 20px 0 15pc;
-        }
+        padding: 20px 0;
+        // padding: 20px 0 15pc;
+        // @include mobile {
+        //     padding: 20px 20px 10pc;
+        // }
+        // @include laptop {
+        //     padding: 20px 0 15pc;
+        // }
         .art_related_products_co {
             width: 60%;
             @include mobile {
@@ -1753,16 +1754,17 @@ body {
         }
     }
     main {
-        padding: 0 0;
-        @include mobile {
-            padding: 0;
-        }
-        @include laptop {
-            padding: 0;
-        }
-        @include laptop_L {
-            padding: 0;
-        }
+        // padding: 0 0;
+        // @include mobile {
+        //     padding: 0;
+        // }
+        // @include laptop {
+        //     padding: 0;
+        // }
+        // @include laptop_L {
+        //     padding: 0;
+        // }
+        background: #f5f9fb;
     }
     .art_rates {
         margin: auto;

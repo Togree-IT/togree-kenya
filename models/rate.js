@@ -23,4 +23,22 @@ exports.rates = {
         PRIMARY_KEY: !true,
         DEFAULT: 0.0,
     },
+    review: {
+        TYPE: "VARCHAR(255)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: '',
+    },
+    product_id: {
+        TYPE: "VARCHAR(255)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: '',
+    },
+    user_id: {
+        TYPE: "VARCHAR(255)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: '',
+    },
 }

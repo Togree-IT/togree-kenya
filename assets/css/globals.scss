@@ -2299,4 +2299,149 @@
                 }
             }
         }
+        .art_modal_layer {
+            padding: 10px;
+            position: fixed;
+            background: hsla(208, 36%, 20%, 0.329);
+            width: 100%;
+            z-index: 1;
+            height: 100%;
+            &.off {
+                display: none;
+                visibility: hidden;
+            }
+            &.on {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                visibility: visible;
+            }
+        }
+        .art_modal {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            &.off {
+                display: none;
+                visibility: hidden;
+            }
+            &.on {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                visibility: visible;
+            }
+            .art_modal_content {
+                width: 25%;
+                background: #ffffff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin: auto;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                -webkit-box-shadow: 0 3px 138px 0px hsla(200, 29%, 20%, 0.38);
+                box-shadow: 0 3px 138px 0px hsla(200, 29%, 20%, 0.38);
+                @include mobile {
+                    width: 95%;
+                }
+                @include tablet {
+                    width: 65%;
+                }
+                @include laptop {
+                    width: 55%;
+                }
+                @include laptop_L {
+                    width: 35%;
+                }
+                @include laptop_W {
+                    width: 25%;
+                }
+                .art_modal_header {
+                    width: 100%;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+                    padding: 0 0 20px;
+                    .art_modal_title {
+                        color: #304969;
+                    }
+                    .art_modal_close {
+                        border: 0;
+                        padding: 0;
+                        line-height: 0;
+                        font-size: 25pt;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5em;
+                        color: #38444c;
+                        background: #e8eef3;
+                        em,
+                        i {
+                            font-size: inherit;
+                        }
+                    }
+                }
+                .art_modal_body {
+                    width: 100%;
+                    min-height: 8vh;
+                    max-height: 20vh;
+                    overflow: auto;
+                }
+                .art_modal_footer {
+                    width: 100%;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    margin-top: 1pc;
+                    .art_section1 {
+                        width: 30%;
+                        button {
+                            -webkit-box-shadow: none;
+                            box-shadow: none;
+                            width: 100%;
+                        }
+                    }
+                    .art_section2 {
+                        width: 55%;
+                        padding-left: 20px;
+                        button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .art_success {
+                padding: 10px;
+                background: hsla(132, 81%, 92%, 0.322);
+                border-radius: 10px;
+                color: #23c447;
+                text-align: center;
+            }
+        }
     }
