@@ -1,8 +1,12 @@
 <%- include("./headnav.ejs") %>
+<% 
 
+console.log(blogData);
+
+%>
 <section class="writeblog">
 
-    <form class="writeblog__wrapper" id="blogform">
+    <form class="writeblog__wrapper" id="editorform">
 
         <div class="writeblog__topbar">
 
@@ -20,10 +24,10 @@
 
         <%- include("./custom.ejs") %>
 
-        
         <div class="writeblog__blog">
 
             <div id="editor"></div>
+            <!-- <%- include("./editorjs.ejs") %> -->
 
         </div>
 
@@ -33,7 +37,9 @@
   
 
     <script>
-        const editorDraft = <%- typeof draftData != undefined && Object.keys(draftData).length ? draftData:'{}' %>
+        window.blogData = <%- typeof blogData !== 'undefined' && Object.keys(blogData).length ? JSON.stringify( blogData): {} %>
+
+        const key = "<%= key %>"
     </script>
 
     

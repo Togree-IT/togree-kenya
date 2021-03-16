@@ -26,18 +26,20 @@
                 </div>
 
                 <div class="dashboard__content__container__body__table" id="blogwrapper">
+                    <% if(typeof blogData !== 'undefined'){
+                        
+                        if(Object.keys(blogData).length){
+                            for (let key in blogData){%>
+
+
                     <div class="dashboard__content__container__header__content blogcontainer" >
-                        <h5 class="dashboard__content__container__header__contentitle">Why You need Gps Trackers </h5>
-                        <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
+                        <h5 class="dashboard__content__container__header__contentitle"> <%= JSON.parse(blogData[key]).Title %> </h5>
+                        <a href="<%= path %>admin/editor/edit?key=<%= key %>"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
                     </div>
-                    <div class="dashboard__content__container__header__content blogcontainer" >
-                        <h5 class="dashboard__content__container__header__contentitle">5 best Gps Tracker for your Fleet in 2021</h5>
-                        <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
-                    </div>
-                    <div class="dashboard__content__container__header__content blogcontainer" >
-                        <h5 class="dashboard__content__container__header__contentitle">IOT Market review 2020</h5>
-                        <a href="#!"  class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>EditPost</a>
-                    </div>
+                          <%  }
+                        }
+                    } %>
+                    
                     
                 </div>
 
@@ -45,4 +47,6 @@
             </div>
 
         </div>
+    </div>    
+        
 </section>

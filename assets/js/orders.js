@@ -58,6 +58,8 @@ let closebtn = document.querySelector("#closebtn");
 
 document.addEventListener('DOMContentLoaded', function() {
 
+
+
     if (sortBtn) {
         window.addEventListener('click', sortAction);
     }
@@ -144,14 +146,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             selectedStatus = document.querySelectorAll(".status");
             M.FormSelect.init(selectedStatus);
-
-
-
         }
 
 
 
     });
+
 
     if (ordersForm) {
         ordersForm.addEventListener('submit', e => {
@@ -290,6 +290,8 @@ function viewForm(event) {
     }
 
 }
+
+
 
 
 function sortAction(event) {
@@ -459,9 +461,6 @@ function popCustomerDetails(event, index, id) {
     
     
            `;
-
-
-
     };
 
     CustomerDetailsInformation.classList.add('order-active');
@@ -474,6 +473,10 @@ function popCustomerDetails(event, index, id) {
     })
 
 }
+
+
+
+
 
 
 function closeCustomerInformation(event) {

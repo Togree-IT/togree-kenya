@@ -49,6 +49,10 @@ router.post('/draftBlog',(req,res) => {
 })
 
 
+router.get('/BlogContent',(req,res)=> {
+      publishedContent = require('../../BlogData.json');
+        res.status(200).json(publishedContent);
+})
 
 function savedata(blogdata,filename, draft=false,cb){
     storedBlog = require('../../'+filename);
@@ -56,9 +60,8 @@ if(draft === true){
     blogdata = JSON.stringify(blogdata,null,2);
     storedBlog = blogdata;
 } else {
-
+    console.log( blogdata);
     blogdata[blogdata.Title.split(' ').join('_').toLowerCase()] = JSON.stringify(blogdata,null,2);
-
     delete blogdata.Title;
     delete blogdata.article;
 
@@ -74,6 +77,14 @@ if(draft === true){
         
 }
 
+function writeFile(filename, storedBlog) {
+    
+
+    Filesystem.writeFile(filename,JSON.stringify(storedBlog,null,2),(err)=> {
+        if(err) throw err;
+        if(typeof cb === 'function') cb()
+    });
+}
 
 
 module.exports = router;
