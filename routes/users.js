@@ -31,7 +31,7 @@ router.get("/login", (req, res) => {
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
-        path: funs.pathToTheRoot(req._parsedUrl.path),
+        path: funs.pathToTheRoot(req.originalUrl),
         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
     });
@@ -64,7 +64,7 @@ router.get("/forgot", (req, res) => {
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
-        path: funs.pathToTheRoot(req._parsedUrl.path),
+        path: funs.pathToTheRoot(req.originalUrl),
         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
     });
@@ -95,7 +95,7 @@ router.get("/generate/invoice", (req, res) => {
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
-        path: funs.pathToTheRoot(req._parsedUrl.path),
+        path: funs.pathToTheRoot(req.originalUrl),
         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
     });

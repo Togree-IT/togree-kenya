@@ -349,12 +349,13 @@ exports.getAppCookies = (req) => {
  */
 
 exports.pathToTheRoot = (path) => {
-    let rootPath = path,
+    let rootPath = path /* (path.endsWith('/') ? path.slice(0, path.length - 1) : path) */ ,
         rPath = ['./'];
 
-    if (rootPath.match(/\/\w/ig)) {
+    // rootPath.match(/\/\w/ig)
+    if (rootPath.match(/\//ig)) {
 
-        rootPath.match(/\/\w/ig).map(p => rPath.push(".." + p.match(/\//ig)[0]));
+        rootPath.match(/\//ig).map(p => rPath.push(".." + p.match(/\//ig)[0]));
     }
 
     return rPath.join(""); //return the real path [now this is like ../../etc]

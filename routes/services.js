@@ -41,7 +41,7 @@ router.get("/main/:id", (req, res) => {
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
-            path: funs.pathToTheRoot(req._parsedUrl.path),
+            path: funs.pathToTheRoot(req.originalUrl),
             cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
         })

@@ -28,6 +28,7 @@ router.get('/', (req, res) => {
         theme_color: "#fff"
     }, req);
 
+
     funs.globalCurrency(currency => {
         res.render('shop_home', {
             meta,
@@ -39,7 +40,7 @@ router.get('/', (req, res) => {
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
-            path: funs.pathToTheRoot(req._parsedUrl.path),
+            path: funs.pathToTheRoot(req.originalUrl),
             formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
             currency,
             cartItems: JSON.parse(typeof funs.getAppCookies(req)['cartItems'] === "undefined" ? '{}' : funs.getAppCookies(req)['cartItems']) || '',
@@ -134,7 +135,7 @@ router.get('/search', (req, res) => {
                         languages: require("../language/languages.json"),
                         renderImplimental: (_) => funs.renderImplimental(_),
                         title,
-                        path: funs.pathToTheRoot(req._parsedUrl.path),
+                        path: funs.pathToTheRoot(req.originalUrl),
                         formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
                         currency,
                         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
@@ -214,7 +215,7 @@ router.get('/main/:id', (req, res) => {
                             languages: require("../language/languages.json"),
                             renderImplimental: (_) => funs.renderImplimental(_),
                             title,
-                            path: funs.pathToTheRoot(req._parsedUrl.path),
+                            path: funs.pathToTheRoot(req.originalUrl),
                             currency,
                             product,
                             formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
@@ -268,7 +269,7 @@ router.get('/checkout', (req, res) => {
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
-            path: funs.pathToTheRoot(req._parsedUrl.path),
+            path: funs.pathToTheRoot(req.originalUrl),
             formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
             currency,
             cartItems: JSON.parse(typeof funs.getAppCookies(req)['cartItems'] === "undefined" ? '{}' : funs.getAppCookies(req)['cartItems']) || '',

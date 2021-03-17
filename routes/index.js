@@ -37,7 +37,7 @@ router.get("/", (req, res) => {
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
             our_numbers,
-            path: funs.pathToTheRoot(req._parsedUrl.path),
+            path: funs.pathToTheRoot(req.originalUrl),
             cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
         });
@@ -71,7 +71,7 @@ router.get("/about-us", (req, res) => {
         languages: require("../language/languages.json"),
         renderImplimental: (_) => funs.renderImplimental(_),
         title,
-        path: funs.pathToTheRoot(req._parsedUrl.path),
+        path: funs.pathToTheRoot(req.originalUrl),
         cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
     })
 });
@@ -102,7 +102,7 @@ router.get("/contact-us", (req, res) => {
             languages: require("../language/languages.json"),
             renderImplimental: (_) => funs.renderImplimental(_),
             title,
-            path: funs.pathToTheRoot(req._parsedUrl.path),
+            path: funs.pathToTheRoot(req.originalUrl),
             cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
 
         })
