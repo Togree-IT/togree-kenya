@@ -533,26 +533,50 @@
             window.location = path + "products/checkout";
         }
 
-        function rateProduct(product_id) {
+        function rateProduct(product_id, id) {
             if (typeof window.event.currentTarget.value !== "undefined") {
-
-                axios.post("<%= path %>api/products/rate", {
+                let rates = +window.event.currentTarget.value;
+                let data = {
 
                     product_id,
                     rates: +window.event.currentTarget.value,
                     customer_name: '',
                     user_icon: '',
-                    review: ''
+                    review: '',
 
-                }).then(res => {
+                };
+
+                (typeof id !== "undefined" && (data.id = id));
+                // Work around stack on checked
+                let prant = window.event.currentTarget.parentElement;
+                if (prant) {
+                    prant.querySelectorAll('input[checked="true"]').forEach(rate => {
+                        if (rate.id !== window.event.currentTarget.id) {
+                            rate.checked = !true;
+                            rate.removeAttribute('checked');
+                        }
+                    })
+                }
+
+                axios.post("<%= path %>api/products/rate", data).then(res => {
                     if (res.data.status === "successful") {
+
+                        let rated = read_cookie('rated') !== null ? read_cookie('rated') : {};
+                        rated[product_id] = {
+                            id: res.data.id,
+                            rates
+                        };
+                        setCookie('rated', rated);
+
                         writeReview(product_id, 'update', res.data.id);
                     }
                 });
             }
         }
 
-        function writeReview(product_id, reviewPath = 'review', res) {
+        function writeReview(product_id, reviewPath, id) {
+            reviewPath = reviewPath || 'review';
+
             artModal((funs) => {
                 funs.open();
                 lang_('Write a review').then(title => {
@@ -572,7 +596,7 @@
                                 submitBtn.classList.add('disabled');
 
                                 axios.post("<%= path %>api/products/rate/" + reviewPath, {
-                                    id: typeof id !== "undefined" ? id : '',
+                                    id: (typeof id !== "undefined" ? id : ''),
                                     product_id,
                                     review: review.value,
                                 }).then(res => {

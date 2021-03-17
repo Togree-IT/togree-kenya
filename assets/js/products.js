@@ -24,37 +24,37 @@ document.addEventListener("DOMContentLoaded", () => {
         dots: false,
         centerMode: false,
         arrows: true,
-        centerPadding: '0px',
-        initialSlide: 1,
+        // centerPadding: '0px',
+        initialSlide: 0,
         slidesToShow: 1,
 
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 5000,
 
         prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
         nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',
-        infinite: false,
-        responsive: [{
-            breakpoint: 480,
-            settings: {
-                arrows: false,
-                slidesToShow: 1,
-                // autoplay: !true,
-            }
-        }, {
-            breakpoint: 768,
-            settings: {
-                arrows: false,
-                // autoplay: !true,
-            }
-        }, {
-            breakpoint: 1204,
-            settings: {
-                arrows: true,
-                // autoplay: !true,
+        infinite: !false,
+        // responsive: [{
+        //     breakpoint: 480,
+        //     settings: {
+        //         arrows: false,
+        //         // slidesToShow: 1,
+        //         // autoplay: !true,
+        //     }
+        // }, {
+        //     breakpoint: 768,
+        //     settings: {
+        //         arrows: false,
+        //         // autoplay: !true,
+        //     }
+        // }, {
+        //     breakpoint: 1204,
+        //     settings: {
+        //         arrows: true,
+        //         // autoplay: !true,
 
-            }
-        }]
+        //     }
+        // }]
 
     });
 

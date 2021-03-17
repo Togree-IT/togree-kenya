@@ -97,7 +97,7 @@
                 let stars = '';
 
                 for (let i = 1; i < 6; i++) {
-                    if (i <= (+data.productRate)) {
+                    if (i <= (+data.product_rate)) {
                         stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
                         <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
                         <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
@@ -105,7 +105,7 @@
                         </g>
                         </svg>`;
                     } else {
-                        if ((+data.productRate) > 0)
+                        if ((+data.product_rate) > 0)
                             stars += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
                         <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
                         <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>

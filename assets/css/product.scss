@@ -956,7 +956,7 @@ body {
         background: #ffffff;
     }
     .art_reviewers {
-        min-height: 45vh;
+        min-height: 38vh;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -966,6 +966,7 @@ body {
         justify-content: center;
         padding: 20px 0 1pc;
         background: #fff;
+        margin-top: 2pc;
         .art_reviews_co {
             width: 70%;
             margin: 0 auto;
@@ -996,7 +997,8 @@ body {
             .art_reviews_title {
                 width: 100%;
                 text-align: center;
-                color: #948f9c;
+                // color: #948f9c;
+                color: #0c222d;
             }
             .art_reviews_cards {
                 display: -webkit-box;
@@ -1060,6 +1062,12 @@ body {
                     .art_review_body {
                         width: 66%;
                         margin: 0 auto;
+                        margin: 36px auto 36px 10%;
+                        position: relative;
+                        text-align: center;
+                        width: -webkit-fit-content;
+                        width: -moz-fit-content;
+                        width: fit-content;
                         @include mobile {
                             width: 90%;
                         }
@@ -1079,7 +1087,7 @@ body {
                                 left: -25px;
                             }
                             &::after {
-                                bottom: -30px;
+                                bottom: -65px;
                                 right: -5px;
                             }
                         }
@@ -1764,7 +1772,8 @@ body {
         // @include laptop_L {
         //     padding: 0;
         // }
-        background: #f5f9fb;
+        // background: #f5f9fb;
+        background: #ffffff;
     }
     .art_rates {
         margin: auto;
@@ -1774,6 +1783,7 @@ body {
             height: 46px;
             padding: 0 10px;
         }
+        .rate:not(:checked)>input,
         .rate:not(:checked)>input {
             position: absolute;
             top: 0;
@@ -1787,10 +1797,19 @@ body {
             font-size: 30px;
             color: #ccc;
         }
-        .rate:not(:checked)>label:before {
+        input {
+            &:checked {
+                ~label {
+                    color: #ffc700;
+                }
+            }
+        }
+        .rate:not(:checked)>label:before,
+        .rate:not([checked="true"])>label:before {
             content: '★ ';
         }
-        .rate>input:checked~label {
+        .rate>input:checked~label,
+        .rate>input[checked="true"]~label {
             color: #ffc700;
         }
         .rate:not(:checked)>label:hover,

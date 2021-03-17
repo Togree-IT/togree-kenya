@@ -1018,17 +1018,6 @@ body {
         }
         .product_details {
             padding: 10px;
-            .art_rate {
-                width: 13px;
-                &.filled {
-                    fill: #f6b01f;
-                    color: #f6b01f;
-                }
-                &.no-filled {
-                    fill: #b7b7b7;
-                    color: #b7b7b7;
-                }
-            }
             .title {
                 display: block;
                 font-size: 1.2rem;

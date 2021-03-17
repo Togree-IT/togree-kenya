@@ -910,6 +910,39 @@ body .rate input:not(input:checked) ~ label:hover ~ label, body .rate input:not(
   color: #24c447;
 }
 
+body .rated {
+  float: left;
+  height: 46px;
+  padding: 0 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .rated label {
+  float: right;
+  width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #ccc;
+}
+
+body .rated label::before {
+  content: '★ ';
+}
+
+body .rated label.filled {
+  color: #24c447;
+}
+
+body .rated input:not(:checked) {
+  position: absolute;
+  top: 0;
+}
+
 body main {
   padding: 0 0 12pc;
 }
@@ -3094,4 +3127,22 @@ body .art_modal .art_success {
   border-radius: 10px;
   color: #23c447;
   text-align: center;
+}
+
+body .art_desc_product_rates_co {
+  padding: 10px;
+}
+
+body .art_rate {
+  width: 13px;
+}
+
+body .art_rate.filled {
+  fill: #f6b01f;
+  color: #f6b01f;
+}
+
+body .art_rate.no-filled {
+  fill: #b7b7b7;
+  color: #b7b7b7;
 }

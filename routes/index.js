@@ -91,7 +91,6 @@ router.get("/contact-us", (req, res) => {
         theme_color: "#fff"
     }, req);
     funs.getFullCont.getAddress().then(data => {
-        // console.log(data.items);
         res.render("contact-us", {
             meta,
             address: data.items[0].fields,

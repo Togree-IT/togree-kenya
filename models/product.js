@@ -73,18 +73,13 @@ exports.products = {
         DEFAULT: ''
     },
 
-    productRate: {
-        TYPE: "VARCHAR(255)",
+    product_rate: {
+        TYPE: "FLOAT",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "",
+        DEFAULT: '',
     },
-    rate_id: {
-        TYPE: "VARCHAR(11)",
-        AUTO_INCREMENT: !true,
-        PRIMARY_KEY: !true,
-        DEFAULT: ''
-    },
+
     recommended: {
         TYPE: "VARCHAR(6)",
         AUTO_INCREMENT: !true,

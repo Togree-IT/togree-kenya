@@ -1264,20 +1264,6 @@ body .shop__products__productcontainer .product_details {
   padding: 10px;
 }
 
-body .shop__products__productcontainer .product_details .art_rate {
-  width: 13px;
-}
-
-body .shop__products__productcontainer .product_details .art_rate.filled {
-  fill: #f6b01f;
-  color: #f6b01f;
-}
-
-body .shop__products__productcontainer .product_details .art_rate.no-filled {
-  fill: #b7b7b7;
-  color: #b7b7b7;
-}
-
 body .shop__products__productcontainer .product_details .title {
   display: block;
   font-size: 1.2rem;

@@ -59,18 +59,21 @@
 
             <section class="art_desc_product">
                 <div class="art_desc_product_co">
+
                     <div class="art_desc_product_d2_co">
                         <div class="art_desc_product_imgs_co" id="art_desc_product_img_sildes">
                             <% 
                             if(product.product_preview_imgs && product.product_preview_imgs.length){
                                 
-                                for(let i=0; i < 2; i++){
+                                // for(let i=0; i < 2; i++){
                                 for(const previewIMG of product.product_preview_imgs){
                                     %>
                                 <div class="art_desc_product_img">
                                     <img src="<%= path %><%= previewIMG %>" alt="<%= lang_('Preview_Image') %> <%= product.name %>">
                                 </div>
-                                <%  } } } %>
+                                <%  } 
+                            // } 
+                        } %>
 
 
                         </div>
@@ -94,27 +97,24 @@
                         </div>
                         <div class="art_desc_product_rates_co">
                             <% for (let i = 1; i < 6; i++) {
-                    if (i <= (+product.productRate)) { %>
+                    if (i <= (+product.product_rate)) { %>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate filled">
                         <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
                         <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
                         <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
                         </g>
                         </svg>
-                                <%
-                    } else {
-                        if ((+product.productRate) < 0) {%>
-
-
+                                <% } else {
+                                    %>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21" class="art_rate no-filled">
                         <g id="Group_1" data-name="Group 1" transform="translate(-582 -313)">
                         <rect  data-name="Rectangle 7" class="cls-1" width="21" height="21" transform="translate(582 313)" fill="none"/>
                         <path class="cls-2" fill="currentColor" d="M19.4,9.657a1.422,1.422,0,0,0-.789-2.426l-4.8-.7a.627.627,0,0,1-.473-.343L11.191,1.84a1.422,1.422,0,0,0-2.551,0L6.493,6.191a.628.628,0,0,1-.473.343l-4.8.7A1.422,1.422,0,0,0,.43,9.658L3.9,13.044a.629.629,0,0,1,.181.556l-.82,4.782a1.392,1.392,0,0,0,.31,1.153,1.437,1.437,0,0,0,1.753.346l4.294-2.258a.643.643,0,0,1,.585,0l4.3,2.258a1.407,1.407,0,0,0,.662.166,1.426,1.426,0,0,0,1.091-.511,1.392,1.392,0,0,0,.31-1.153l-.82-4.782a.628.628,0,0,1,.181-.556Z" transform="translate(582.598 312.953)"/>
                         </g>
                       </svg>
-                                    <%}
-                    }
-                            }%>
+                                    <%
+                }
+            }%>
 
                                         <div class="reviews">
                                             <div class="art_review_actions">
@@ -154,28 +154,50 @@
 
 
 
-                            <!-- <div class="art_more specs art_md">
+                            <%#!-- <div class="art_more specs art_md">
                         <button class="art_btn art_gree_btn filled waves-effect waves-light" id="art_view_specs">View Specs</button>
-                    </div> -->
+                    </div> --%>
                     </div>
                     <div class="art_product_action">
-                        <!-- <button class="art_btn art_gree_btn  waves-effect"><%= lang_('Rate_this_product') %>
-                        </button>-->
-                        <div class="art_rates">
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" onclick="rateProduct('<%= product.product_id %>')" />
-                                <label for="star5" title="<%= lang_('Best') %>">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" onclick="rateProduct('<%= product.product_id %>')" />
-                                <label for="star4" title="<%= lang_('Good') %>">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" onclick="rateProduct('<%= product.product_id %>')" />
-                                <label for="star3" title="<%= lang_('Fair') %>">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" onclick="rateProduct('<%= product.product_id %>')" />
-                                <label for="star2" title="<%= lang_('Trying') %>">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" onclick="rateProduct('<%= product.product_id %>')" />
-                                <label for="star1" title="<%= lang_('Poor') %>">1 star</label>
+                        <%# <button class="art_btn art_gree_btn  waves-effect"><= lang_('Rate_this_product') %-></button>%>
+                            <div class="art_rates">
+                                <div class="rate">
+                                    <% 
+                        if(typeof rated === "object" && Object.keys(rated).length){
+                            
+                            let rateCore = ['Poor', 'Trying', 'Fair', 'Good','Best', ];
+
+                            for (let i = 5; i >=  1; i--) {
+                                
+                                if((i) <= rated.rates) { %>
+
+                                        <input type="radio" id="star<%= i %>" name="rate" value="<%= i %>" onclick="rateProduct('<%= product.product_id %>', <%= rated.id %>)" checked="true" />
+                                        <label for="star<%= i %>" title="<%= lang_(rateCore[i-1]) %>"><%= i %> stars</label>
+
+                                        <% } else{ 
+                        %>
+                                            <input type="radio" id="star<%= i %>" name="rate" value="<%= i %>" onclick="rateProduct('<%= product.product_id %>', <%= rated.id %>)" />
+                                            <label for="star<%= i %>" title="<%= lang_(rateCore[i-1]) %>"><%= i %> stars</label>
+                                            <% }
+                        }
+                        } else { 
+                        %>
+
+                                                <input type="radio" id="star5>" name="rate" value="5" onclick="rateProduct('<%= product.product_id %>')" />
+                                                <label for="star5" title="<%= lang_('Best') %>">5 stars</label>
+                                                <input type="radio" id="star4" name="rate" value="4" onclick="rateProduct('<%= product.product_id %>')" />
+                                                <label for="star4" title="<%= lang_('Good') %>">4 stars</label>
+                                                <input type="radio" id="star3" name="rate" value="3" onclick="rateProduct('<%= product.product_id %>')" />
+                                                <label for="star3" title="<%= lang_('Fair') %>">3 stars</label>
+                                                <input type="radio" id="star2" name="rate" value="2" onclick="rateProduct('<%= product.product_id %>')" />
+                                                <label for="star2" title="<%= lang_('Trying') %>">2 stars</label>
+                                                <input type="radio" id="star1" name="rate" value="1" onclick="rateProduct('<%= product.product_id %>')" />
+                                                <label for="star1" title="<%= lang_('Poor') %>">1 star</label>
+
+                                                <% } %>
+                                </div>
                             </div>
-                        </div>
-                        <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="writeReview('<%= product.product_id %>')"><%= lang_('Write_a_review') %></button>
+                            <button class="art_btn art_gree_btn filled waves-effect waves-light" onclick="writeReview('<%= product.product_id %>')"><%= lang_('Write_a_review') %></button>
                     </div>
                     <div class="art_desc_product_features_co">
                         <div class="art_desc_product_features_card">
@@ -311,7 +333,10 @@
                     </div>
                 </div>
             </section>
-            <% if (typeof productRevies !== "undefined") { %>
+            <% if (typeof productReviews !== "undefined") {
+                if(productReviews.length)
+                {
+                %>
                 <section class="art_reviewers">
                     <div class="art_reviews_co">
                         <div class="art_reviews_title">
@@ -323,107 +348,60 @@
                             </h6>
                         </div>
                         <div class="art_reviews_cards" id="art_p_reviews">
-                            <div class="art_reviews_card">
-                                <div class="art_review_header">
-                                    <span class="art_review_icon">
-                            <img src="<%= path %>assets/img/product/reviews/Ellipse 29.png" alt="">
-                        </span>
-                                    <div class="art_review_titles">
-                                        <span class="art_review_title">
-                                <h6>Karen Mujiga </h6>
-                            </span>
-                                        <span class="art_review_rates">
-                                <div class="rate" >
-                                    <input type="radio" checked name="rate" class="art_rate" value="5"/>
-                                    <label  title="Rate">5 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="4"/>
-                                    <label  title="Rate">4 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="3"/>
-                                    <label  title="Rate">3 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="2"/>
-                                    <label  title="Rate">2 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="1"/>
-                                    <label  title="Rate">1 star</label>
-                                </div>
-                            </span>
-                                    </div>
-                                    <div class="art_review_action">
-                                        <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
-                                    </div>
-                                </div>
-                                <div class="art_review_body">
-                                    <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
-                                </div>
-                            </div>
-                            <div class="art_reviews_card">
-                                <div class="art_review_header">
-                                    <span class="art_review_icon">
-                            <img src="<%= path %>assets/img/product/reviews/Ellipse 29.png" alt="">
-                        </span>
-                                    <div class="art_review_titles">
-                                        <span class="art_review_title">
-                                <h6>Karen Kajiad </h6>
-                            </span>
-                                        <span class="art_review_rates">
-                                <div class="rate" >
-                                    <input type="radio" checked name="rate" class="art_rate" value="5"/>
-                                    <label  title="Rate">5 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="4"/>
-                                    <label  title="Rate">4 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="3"/>
-                                    <label  title="Rate">3 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="2"/>
-                                    <label  title="Rate">2 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="1"/>
-                                    <label  title="Rate">1 star</label>
-                                </div>
-                            </span>
-                                    </div>
-                                    <div class="art_review_action">
-                                        <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
-                                    </div>
-                                </div>
-                                <div class="art_review_body">
-                                    <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
-                                </div>
-                            </div>
-                            <div class="art_reviews_card">
-                                <div class="art_review_header">
-                                    <span class="art_review_icon">
-                            <img src="<%= path %>assets/img/product/reviews/Ellipse 29.png" alt="">
-                        </span>
-                                    <div class="art_review_titles">
-                                        <span class="art_review_title">
-                                <h6>Karen Mujiga </h6>
-                            </span>
-                                        <span class="art_review_rates">
-                                <div class="rate" >
-                                    <input type="radio" checked name="rate" class="art_rate" value="5"/>
-                                    <label  title="Rate">5 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="4"/>
-                                    <label  title="Rate">4 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="3"/>
-                                    <label  title="Rate">3 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="2"/>
-                                    <label  title="Rate">2 stars</label>
-                                    <input type="radio" checked name="rate" class="art_rate" value="1"/>
-                                    <label  title="Rate">1 star</label>
-                                </div>
-                            </span>
-                                    </div>
-                                    <div class="art_review_action">
-                                        <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
-                                    </div>
-                                </div>
-                                <div class="art_review_body">
-                                    <p><q>so I am going to tell you what I LOVE about this computer and what I use it for. I am a full time college student as well as a single mother who stays busy. I have previously used a HP All In one computer that I bought brand new a year ago and I hate that thing... It is so slow!!! When I first opened this item, I was just hoping that it would be a little faster! What I got instead was an amazing computer that is faster than I could have ever imagined. Now I don't use this thing for much more than amazon reviews, school work, and papers. But this is exactly what I needed.</q></p>
-                                </div>
-                            </div>
+                            <% 
+                            
+                    productReviews.map(review=>{
+                        
+                %>
+                                <div class="art_reviews_card">
+                                    <div class="art_review_header">
+                                        <span class="art_review_icon"> <img src="<%= path %><%= review.icon %>" alt=""> </span>
+                                        <div class="art_review_titles">
+                                            <span class="art_review_title"> <h6><%= review.customer_name %></h6>  </span>
+                                            <span class="art_review_rates">
+                                                <div class="rated" >
+                                                    <% 
+                            
+                            for (let i = 0; i < 5; i++) {
+                                
+                                if(i < review.rate) {%>
 
+                                
+                                                    <input type="radio" checked name="rate" class="art_rate filled" />
+                                                    <label class="filled"><%=i%> stars</label>
+                            <% } else { %>
+                                                    <input type="radio" name="rate" class="art_rate " />
+                                                    <label><%=i%> stars</label>
+                                <% }} %>
+                            <%# <label class="filled">5 stars</label>
+                            <input type="radio" checked name="rate" class="art_rate filled"/>
+                            <label class="filled">4 stars</label>
+                            <input type="radio" checked name="rate" class="art_rate filled" />
+                            <label class="filled">3 stars</label>
+                            <input type="radio" name="rate" class="art_rate" />
+                            <label>2 stars</label>
+                            <input type="radio" name="rate" class="art_rate"/>
+                            <label>1 star</label> 
+                            %>
+                                </div>
+                            </span>
+                                        </div>
+                                        <%# <div class="art_review_action">
+                                            <button class="art_btn art_gree_btn filled waves-effect">Upvote review</button>
+                                        </div>
+                                        %>
+                                    </div>
+                                    <div class="art_review_body">
+                                        <p><q><%= review.review %></q></p>
+                                    </div>
+                                </div>
+                                <% })
+            %>
                         </div>
                     </div>
                 </section>
-                <% } %>
+                <% } 
+            }%>
 
                     <% if (typeof relatedProducts !== "undefined") { %>
                         <section class="art_related">
@@ -491,7 +469,7 @@
                         </section>
                         <% } %>
         </main>
-        <%- include ('./_footer.ejs') %>
+        <%#- include ('./_footer.ejs') %>
 
             <script>
                 // this is used to add product on cart

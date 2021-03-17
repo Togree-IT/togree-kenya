@@ -75,6 +75,11 @@
                 btn1.innerText = "<%= lang_('Cancel') %>";
                 btn2.innerText = "<%= lang_('Send') %>";
 
+                btn1.disabled = !true;
+                btn1.classList.remove('disabled');
+                btn2.disabled = !true;
+                btn2.classList.remove('disabled');
+
                 return modal;
             },
             clear: function() {
@@ -86,6 +91,11 @@
 
                 btn1.innerText = "<%= lang_('Cancel') %>";
                 btn2.innerText = "<%= lang_('Send') %>";
+
+                btn1.disabled = !true;
+                btn1.classList.remove('disabled');
+                btn2.disabled = !true;
+                btn2.classList.remove('disabled');
 
                 return modal;
             },

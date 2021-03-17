@@ -153,6 +153,27 @@ exports.language = (_, lang) => {
 };
 
 
+exports.lagargestRate = (connect, product_id, rate = 0) => {
+    let sql = "SELECT  MAX(rates.rate) AS largestRate FROM rates WHERE rates.product_id='" + product_id + "'";
+    connect.query(sql, (err, results) => {
+        if (err) console.log(err);
+        let { largestRate } = results, insertRate = rate;
+        if (typeof largestRate === "number") {
+            insertRate = largestRate;
+        }
+
+        let sql = "UPDATE products SET product_rate = CASE WHEN product_rate IS NULL OR product_rate < " + insertRate + " THEN '" + insertRate + "' ELSE product_rate END WHERE product_id='" + product_id + "'";
+        // let sql = "SELECT product_rate FROM products WHERE product_id='" + product_id + "'";
+        // let sql = "SELECT product_rate FROM products WHERE product_rate IS NULL";
+        connect.query(sql, (err, results) => {
+            if (err) console.log(err);
+            return results;
+        })
+    }).on("end", e => {
+        this.destroy();
+    })
+}
+
 exports.appendLang = (lang, arryRes) => {
     let prepend = require('../language/' + lang + '.json');
 
@@ -172,9 +193,8 @@ exports.appendLang = (lang, arryRes) => {
             this.appendLangMain(arryRes, lang)
         }
 
-    } else {
-        console.log(typeof arryRes);
     }
+
 
 };
 
@@ -666,17 +686,22 @@ exports.generateOID = function() {
 }
 exports.globalCurrency = function(cb) {
 
+    require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
         // var sql = "SELECT price,name, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id"
         var sql = "SELECT * FROM currencys WHERE global=1";
+
         connect.query(sql, (err, results) => {
             if (err) console.log(err);
 
             cb(results[0])
             return results[0]
+        }).on("end", e => {
+            this.destroy();
         })
 
     })
+
 }
 exports.formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",") => {
     try {
@@ -693,8 +718,8 @@ exports.formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",")
         console.log(err)
     }
 };
-exports.packageOffer = (product, cartItems, res) => {
 
+exports.packageOffer = (product, cartItems, res) => {
     try {
         let item, packageOffer = product.price;
 
@@ -734,3 +759,26 @@ exports.packageOffer = (product, cartItems, res) => {
         console.log(err)
     }
 };
+
+exports.productReviews = (connect, product_id, cb) => {
+    let sql = "SELECT * FROM rates WHERE rates.product_id='" + product_id + "' AND review IS NOT NULL";
+    connect.query(sql, (err, results) => {
+        if (err) console.log(err);
+
+        if (typeof cb === "function") { cb(results) }
+
+    }).on("end", e => {
+        this.destroy();
+    })
+}
+exports.relatedProducts = (connect, product_model, product_id, cb) => {
+    let sql = "SELECT * FROM products WHERE product_model='" + product_model + "' AND product_id !='" + product_id + "'";
+    connect.query(sql, (err, results) => {
+        if (err) console.log(err);
+
+        if (typeof cb === "function") { cb(results) }
+
+    }).on("end", e => {
+        this.destroy();
+    })
+}

@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
         "assets/css/store.min.css",
         '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
         '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js',
-
         'assets/js/store.js'
     ]
 
@@ -48,6 +47,8 @@ router.get('/', (req, res) => {
     })
 
 });
+
+
 router.get('/search', (req, res) => {
     const elements = [...initialElements,
         "assets/css/shop.min.css",
@@ -100,7 +101,7 @@ router.get('/search', (req, res) => {
             q = 'camera';
         }
 
-        var sql = 'SELECT products.price,products.name,products.product_model,products.recommended,products.product_img,products.product_id, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id WHERE categorys.name LIKE "%' + q.split(' ')[0].toUpperCase() + '%" OR products.name LIKE "%' + q.split(' ')[0].toUpperCase() + '%"'
+        var sql = 'SELECT products.price,products.name,products.product_model,products.recommended,products.product_img,products.product_id,products.product_rate, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id WHERE categorys.name LIKE "%' + q.split(' ')[0].toUpperCase() + '%" OR products.name LIKE "%' + q.split(' ')[0].toUpperCase() + '%"'
 
         let products = [];
         connect.query(sql, (err, results) => {
@@ -116,8 +117,8 @@ router.get('/search', (req, res) => {
                     // product.product_preview_imgs = JSON.parse(product.product_preview_imgs);
                     products.push(product)
                 }
-
             }
+
             let sqlCategorys = "SELECT * FROM categorys";
             connect.query(sqlCategorys, (err, categories) => {
 
@@ -142,6 +143,8 @@ router.get('/search', (req, res) => {
                     });
                 });
             });
+        }).on("end", e => {
+            require('../functions').destroy();
         });
     });
 });
@@ -150,8 +153,6 @@ router.get('/search', (req, res) => {
 router.get('/main/:id', (req, res) => {
     // chrome only
     // let broswer = req.headers['sec-ch-ua'].split(',')[1].split(';')[0]
-    console.log(req.subdomains);
-
 
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
@@ -178,6 +179,7 @@ router.get('/main/:id', (req, res) => {
                     delete product.data;
                 }
 
+
                 const elements = [...initialElements,
                     "assets/css/shop.min.css",
                     "assets/css/product.min.css",
@@ -195,29 +197,42 @@ router.get('/main/:id', (req, res) => {
                     preview_image: '',
                     theme_color: "#fff"
                 }, req);
+
+                // Get Global currency
                 funs.globalCurrency(currency => {
-                    res.render('product', {
-                        meta,
-                        elements,
-                        menu: true,
-                        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-                        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-                        language: funs.getAppCookies(req)['language'],
-                        languages: require("../language/languages.json"),
-                        renderImplimental: (_) => funs.renderImplimental(_),
-                        title,
-                        path: funs.pathToTheRoot(req._parsedUrl.path),
-                        currency,
-                        product,
-                        formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
-                        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
-                        url: req.protocol + '://' + req.headers.host + req.originalUrl,
-                        description: product.short_description || funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']),
-                        packageOffer: funs.packageOffer(product, JSON.parse(funs.getAppCookies(req)['cartItems']) || '', res)
-                    });
+                    // Get product reviews
+                    funs.productReviews(connect, req.params.id, productReviews => {
+                        // funs.relatedProducts(connect, req.params.id, product.product_model, relatedProducts => {
+                        //     console.log(relatedProducts);
+                        res.render('product', {
+                            meta,
+                            elements,
+                            menu: true,
+                            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+                            _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
+                            language: funs.getAppCookies(req)['language'],
+                            languages: require("../language/languages.json"),
+                            renderImplimental: (_) => funs.renderImplimental(_),
+                            title,
+                            path: funs.pathToTheRoot(req._parsedUrl.path),
+                            currency,
+                            product,
+                            formatMoney: (amount, decimalCount = 2, decimal = ".", thousands = ",") => funs.formatMoney(amount, decimalCount, decimal, thousands),
+                            cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || {},
+                            url: req.protocol + '://' + req.headers.host + req.originalUrl,
+                            description: product.short_description || funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']),
+                            packageOffer: funs.packageOffer(product, JSON.parse(funs.getAppCookies(req)['cartItems']) || '', res),
+                            productReviews,
+                            rated: JSON.parse(typeof funs.getAppCookies(req)['rated'] !== "undefined" ? funs.getAppCookies(req)['rated'] : '{}')[req.params.id] || {},
+                            // relatedProducts,
+                        });
+                        // })
+                    })
                 })
             }
-        })
+        }).on("end", e => {
+            require('../functions').destroy();
+        });
     });
 
 });

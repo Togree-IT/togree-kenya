@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cartItems) {
         let prodIds = []
         Object.keys(cartItems).length && (prodIds = Object.keys(cartItems).map(key => key));
-        console.log(prodIds);
+
+
 
         axios.get(path + 'api/products/get_by_id', {
 
@@ -122,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //             });
     //         console.log(summeryData)
     //     })
+
 
 });
 
@@ -238,7 +240,6 @@ function productTemp(product) {
     function renderMin(prod) {
         return typeof prod.min !== 'undefined' ? 'min="' + prod.min + '"' : ''
     }
-    // console.log(product);
 
     function renderMax(prod) {
         return typeof prod.max !== 'undefined' ? 'max="' + prod.max + '"' : ''
@@ -308,9 +309,7 @@ function productIncream(prodID) {
         element_prod_qty.value = (+element_prod_qty.value + 1);
     }
 
-    updateSummerCart(prodID, element_prod_qty.value)
-
-    // console.log(summeryData[prodID])
+    updateSummerCart(prodID, element_prod_qty.value);
 }
 
 function productDecreament(prodID) {
@@ -343,8 +342,8 @@ function removeCart(prodID) {
     summeryData = removed;
     removed = {}
     populateTotalPrice()
-    console.log(summeryData);
-    console.log(allCart_price);
+        // console.log(summeryData);
+        // console.log(allCart_price);
 
 
 }

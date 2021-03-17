@@ -8,7 +8,7 @@ router.get('/@top-products', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
 
-        var sql = 'SELECT name,product_model,short_description,product_img,price,product_id FROM products Where recommended="true" ORDER BY dt LIMIT 8';
+        var sql = 'SELECT name,product_model,short_description,product_img,price,product_id,product_rate FROM products Where recommended="true" ORDER BY dt LIMIT 8';
 
         let products = [];
         connect.query(sql, (err, results) => {
@@ -27,6 +27,8 @@ router.get('/@top-products', (req, res) => {
 
             res.status(200).json(products);
 
+        }).on("end", e => {
+            require('../functions').destroy();
         })
 
 
@@ -138,7 +140,9 @@ router.get('/products/get_all', (req, res) => {
 
             }
             res.status(200).json(products);
-            // res.status(200).json(products);
+
+        }).on("end", e => {
+            require('../functions').destroy();
         })
 
 
@@ -174,10 +178,12 @@ router.get('/products/top_category', (req, res) => {
                         delete product.selling_price;
                         delete product.data;
                     }
-                    products.push(products)
+                    products.push(product)
                 }
             }
-            res.status(200).json(results)
+            res.status(200).json(products)
+        }).on("end", e => {
+            require('../functions').destroy();
         })
     })
 
@@ -222,6 +228,8 @@ router.get('/products/get_by_id', (req, res) => {
                 }
                 res.status(200).json(products);
 
+            }).on("end", e => {
+                require('../functions').destroy();
             })
 
 
@@ -265,7 +273,7 @@ router.post('/products/rate', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
 
-        let { product_id, rates, customer_name, user_icon, review } = req.body, user_id = '';
+        let { product_id, rates, customer_name, user_icon, review, id } = req.body, user_id = '';
 
 
         if (req.user) {
@@ -273,6 +281,7 @@ router.post('/products/rate', (req, res) => {
             user_icon = req.user.user_icon;
             user_id = req.user.id;
         }
+        review = review.split("'").join("\\'");
 
         let insertRate = "INSERT INTO rates (product_id,rate";
 
@@ -305,35 +314,28 @@ router.post('/products/rate', (req, res) => {
         }
         insertRate += ") ";
 
+        if (typeof id !== "undefined") {
+            insertRate = "UPDATE rates SET rate = '" + rates + "' WHERE id='" + id + "'";
+        }
+
 
         connect.query(insertRate, (err, results) => {
             if (err) console.log(err);
             if (results) {
 
                 let { insertId } = results;
-                res.status(200).json({ status: "successful", id: insertId })
+
+                if (typeof id !== "undefined") {
+                    insertId = id;
+                }
+
+                funs.lagargestRate(connect, product_id, rates);
+                res.status(200).json({ status: "successful", id: insertId });
 
             }
+        }).on("end", e => {
+            require('../functions').destroy();
         });
-
-        // 
-        //     var sql = "SELECT rates.*,products.productRate as highRates FROM rates JOIN products ON rates.product_id = '"+product_id+"'"
-        //     // let get
-
-        // connect.query(sql, (err, results) => {
-        //     if (err) console.log(err);
-
-
-        //     if (results.length) {
-        //         if (req.user) {
-        //             console.log(req.user.user_icon);
-        //         }
-
-        //     } else {    }
-        //     res.status(200).json({ status: "successful" })
-        // })
-
-        // console.log(connect);
     })
 });
 
@@ -348,6 +350,8 @@ router.post('/products/rate/review', (req, res) => {
             customer_name = req.user.name;
             user_icon = req.user.user_icon;
         }
+
+        review = review.split("'").join("\\'");
 
         let insertRate = "INSERT INTO rates (product_id";
 
@@ -383,12 +387,16 @@ router.post('/products/rate/review', (req, res) => {
         insertRate += ") ";
 
 
+
+
         connect.query(insertRate, (err, results) => {
             if (err) console.log(err);
             if (results) {
                 let { insertId } = results;
                 res.status(200).json({ status: "successful", id: insertId })
             }
+        }).on("end", e => {
+            require('../functions').destroy();
         });
 
     })
@@ -398,14 +406,18 @@ router.post('/products/rate/update', (req, res) => {
     require('../functions').con(require('../config/index').db.database, connect => {
         // var sql = "SELECT * FROM rates";
         let { id, review } = req.body;
+        review = review.split("'").join("\\'");
 
         let sql = "UPDATE rates SET review = '" + review + "' WHERE id='" + id + "'";
 
         connect.query(sql, (err, results) => {
             if (err) console.log(err);
+
             if (results) {
                 res.status(200).json({ status: "successful" });
             }
+        }).on("end", e => {
+            require('../functions').destroy();
         });
     })
 });
@@ -413,7 +425,7 @@ router.post('/products/rate/update', (req, res) => {
 router.post('/products/recommend_products', (req, res) => {
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
-        // var sql = "SELECT rates*, rate FROM rates JOIN products.productRate as highRates ON rates.product_id = products.product_id "
+        // var sql = "SELECT rates*, rate FROM rates JOIN products.product_rate as highRates ON rates.product_id = products.product_id "
         // let get
     })
 });
