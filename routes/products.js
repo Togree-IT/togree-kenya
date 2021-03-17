@@ -180,7 +180,6 @@ router.get('/main/:id', (req, res) => {
                     delete product.data;
                 }
 
-
                 const elements = [...initialElements,
                     "assets/css/shop.min.css",
                     "assets/css/product.min.css",
@@ -190,12 +189,12 @@ router.get('/main/:id', (req, res) => {
                     'assets/js/products.js'
                 ];
 
-                let title = funs.language('Products', funs.getAppCookies(req)['language']);
+                let title = product.name + ' | ' + funs.language(product.product_model, funs.getAppCookies(req)['language']) + ' | ' + funs.language('Products', funs.getAppCookies(req)['language']);
                 const meta = funs.meta({
                     title,
                     description: product.short_description || funs.language('Togree Store for all your GPS devices, Wireless devices', funs.getAppCookies(req)['language']) || "",
-                    keywords: '',
-                    preview_image: '',
+                    keywords: product.features.join(','),
+                    preview_image: product.product_img,
                     theme_color: "#fff"
                 }, req);
 
@@ -203,8 +202,7 @@ router.get('/main/:id', (req, res) => {
                 funs.globalCurrency(currency => {
                     // Get product reviews
                     funs.productReviews(connect, req.params.id, productReviews => {
-                        // funs.relatedProducts(connect, req.params.id, product.product_model, relatedProducts => {
-                        //     console.log(relatedProducts);
+
                         res.render('product', {
                             meta,
                             elements,
