@@ -3146,3 +3146,18 @@ body .art_rate.no-filled {
   fill: #b7b7b7;
   color: #b7b7b7;
 }
+
+body .art-second-footer {
+  min-height: 8vh;
+  color: #a5a4a4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}

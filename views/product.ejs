@@ -483,12 +483,13 @@
         </main>
         <%#- include ('./_footer.ejs') %>
 
-            <script>
-                // this is used to add product on cart
-                window.products[<%- JSON.stringify(product.product_id)  %>] = <%- JSON.stringify(product)  %>;
+            <%- include("./_footer_v2.ejs") %>
+                <script>
+                    // this is used to add product on cart
+                    window.products[<%- JSON.stringify(product.product_id)  %>] = <%- JSON.stringify(product)  %>;
 
 
-                document.addEventListener("DOMContentLoaded", e => {
+                    document.addEventListener("DOMContentLoaded", e => {
 
-                })
-            </script>
+                    })
+                </script>
