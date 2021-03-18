@@ -1,14 +1,15 @@
 <nav class="art-nav ">
     <div class="art_nav-right">
-        <!-- Menu button -->
+        <%#!-- Menu button -->
         <button class="art_menu_btn art_btn waves-effect sidenav-trigger" name="menu_button" id="menu-btn" role="button" aria-label="Menu button" data-target="menu-nav">
             <svg width="44" height="28" viewBox="0 0 44 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1C0 1 26.8169 1 44 1M0 14.5H30M0 27H44" stroke="black"></path>
             </svg>
         </button>
-        <!-- Logo link -->
-        <a class="art-brand" href="<%= typeof path !== 'undefined'?path:'' %>">
-            <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
+        %>
+            <!-- Logo link -->
+            <a class="art-brand" href="<%= typeof path !== 'undefined'?path:'' %>">
+                <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
                 <path d="M133.68,459.68H74.28a55.17,55.17,0,0,0,5.54,18.7A55.27,55.27,0,0,0,116,374.17a59.36,59.36,0,0,1,.48,64.42h17.21Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                 <path d="M74.06,450a55.31,55.31,0,0,0,40.88-49.84A55.27,55.27,0,0,0,74.06,450Z" transform="translate(-39.24 -369.84)" style="fill:#adcf21;fill-rule:evenodd"/>
                 <path d="M63.27,443.43a58.5,58.5,0,0,1,9.26-31.83H55.32V390.5h59.39a54.67,54.67,0,0,0-5.54-18.69A55.27,55.27,0,0,0,73,476a57.68,57.68,0,0,1-9.17-24.28A59.63,59.63,0,0,1,63.27,443.43Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
@@ -22,7 +23,7 @@
                 <path d="M404.56,420.08a9.81,9.81,0,0,1-2.89.47H389.21l3.18,5.72,10.73,19.31,3.28,5.9h18.15l-3.28-5.9-10.74-19.31h.3c8.2,0,16.51-6.52,18.46-14.49a12.62,12.62,0,0,0-.28-7.38c-1.57-4.25-5.65-7.12-11.09-7.12H374.23l-2,7.12-4.6,16.15L366,426.27l-5.49,19.31-1.33,4.66-.7,2.45h15.62l2-7.11,5.5-19.31,1.63-5.72,2-7.13.86-3,1.71-6h20.46c4.44,0,6.59,3.63,4.78,8.07a14,14,0,0,1-6.43,6.76A12.6,12.6,0,0,1,404.56,420.08Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                 <path d="M232.17,423.92a36.57,36.57,0,0,1,2.32-6c3.52-7.28,8.89-13.27,17.31-14.24,5.05-.57,10.28.81,13.44,4.83,5.37,6.84,3.77,15.59.34,22.85-2.69,5.71-6.64,11-11.92,13.46a17.6,17.6,0,0,1-15.79-.88c-7.36-4.32-7.84-12.52-5.7-20Zm35.29-26.64H239.65a36.89,36.89,0,0,0-16.42,10.12c-10,10.92-12.25,32.3,1.09,41.73a25.25,25.25,0,0,0,7.59,3.56h25.23c7.69-1.63,14.79-4.84,19.94-11.28,9-11.19,11.94-29.72-.5-39.43A29.55,29.55,0,0,0,267.46,397.28Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                 </svg>
-        </a>
+            </a>
 
 
     </div>
@@ -134,7 +135,6 @@
 
 
         // let bannerScrolly = new artScrollSpy('.art_banner', 'fixed');
-        let navScrolly = new artScrollSpy('nav', 'fixed');
 
         getLanguages();
 
