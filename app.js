@@ -45,6 +45,7 @@ app.use("/products", require("./routes/products"));
 app.use("/services", require("./routes/services"));
 app.use("/api", require("./routes/api"));
 app.use("/url", require("./routes/url"));
+app.use("/admin", require("./routes/admin"));
 
 app.set("trust proxy", "103.242.142.186");
 // DB

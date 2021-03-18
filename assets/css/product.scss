@@ -814,6 +814,10 @@ body {
                 padding: 1pc 0;
             }
             @include laptop {
+                width: 100%;
+                padding: 0;
+            }
+            @include laptop_L {
                 width: 50%;
                 padding: 0;
             }

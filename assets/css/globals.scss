@@ -1,5 +1,7 @@
 @import "./mixins";
 @import "./media_queries";
+@import "./globals-vars";
+@import "./_loaders";
 html {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     max-width: 100vw;
@@ -33,6 +35,146 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     .art-nav {
+        .art_nav_dropdown {
+            .art_menu_droper {
+                min-width: 35vw;
+                color: #272727;
+                padding: 15px;
+                @include mobile {
+                    max-width: 0;
+                    max-height: 0;
+                    padding: 0;
+                    min-width: 0;
+                    min-height: 0;
+                }
+                @include tablet {
+                    max-width: 0;
+                    max-height: 0;
+                    padding: 0;
+                    min-width: 0;
+                    min-height: 0;
+                }
+                @include laptop {
+                    max-width: 40vw;
+                    max-height: initial;
+                    padding: 30px;
+                    min-width: 5vw;
+                    min-height: 17vh;
+                }
+                @include laptop_L {
+                    max-width: 35vw;
+                }
+                @include laptop_W {
+                    max-width: 35vw;
+                }
+                .art_recent_s {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    height: 100%;
+                    padding: 0px 0 13px;
+                    .art_header {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        position: relative;
+                        padding: 2px 10px 6px;
+                        &:empty {
+                            min-width: 8vw;
+                            min-height: 33px;
+                            padding: 0px 0;
+                            background: #e8e8e8;
+                            margin: 0 0 10px;
+                            border-radius: 10px;
+                            @include loader();
+                        }
+                        .art_title {
+                            font-size: 14px;
+                            line-height: 18px;
+                            margin: 0;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            color: #1a1a1a;
+                            font-weight: 400;
+                            * {
+                                margin: 0;
+                            }
+                        }
+                        .art_clear {
+                            background: hsla(0, 8%, 69%, 0.212);
+                            border: 0;
+                            font-size: 16px;
+                            border-radius: 5em;
+                            margin: auto 5px;
+                            padding: 3px;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            cursor: pointer;
+                            em {
+                                font-size: inherit;
+                            }
+                        }
+                    }
+                    .art_body {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                        position: relative;
+                        padding: 2px 10px;
+                        // min-width: 28vw;
+                        .art_search_tag {
+                            font-size: 14px;
+                            line-height: 23px;
+                            font-weight: 700;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            color: #1a1a1a;
+                            line-height: 1.5;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            text-transform: capitalize;
+                            white-space: nowrap;
+                            margin-right: .65rem;
+                            margin-bottom: .25rem;
+                            background: #e8e8e8;
+                            padding: 8px 20px;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            border-radius: 5em;
+                            &:empty {
+                                min-width: ( (30vw / 3)- 2);
+                                min-height: 46px;
+                                @include loader();
+                            }
+                            &:hover {
+                                background: #d3d4d3;
+                            }
+                            span {
+                                &:last-of-type {
+                                    color: #9E9E9E;
+                                    position: relative;
+                                    right: -7px;
+                                    top: 0.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         width: 100%;
         @include flex();
         -webkit-box-pack: justify;
@@ -58,6 +200,94 @@ body {
             position: relative;
             -webkit-box-shadow: 0px 1px 2px #c1d2da;
             box-shadow: 0px 1px 2px #c1d2da;
+        }
+        .art_nav-center {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: auto;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-flex: 1;
+            -ms-flex: auto;
+            flex: auto;
+            @include mobile {
+                max-width: 0;
+            }
+            @include laptop {
+                max-width: 100%;
+            }
+            #shop_search {
+                @include flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                overflow: hidden;
+                min-width: 50%;
+                @include mobile {
+                    min-width: 0;
+                }
+                @include laptop {
+                    min-width: 88%;
+                }
+                @include laptop_L {
+                    min-width: 50%;
+                }
+                @include laptop_W {
+                    min-width: 50%;
+                }
+                @mixin hider {
+                    margin: 0;
+                    padding: 0;
+                    max-width: 0;
+                    overflow: hidden;
+                }
+                @mixin show {
+                    margin: 0;
+                    padding: 0 20px;
+                    max-width: initial;
+                    overflow: visible;
+                }
+                .hider {
+                    @include hider();
+                    padding: 0 !important;
+                }
+                .show {
+                    @include show();
+                }
+                .art_input_co {
+                    height: 3rem;
+                    // background: rgba(221, 221, 221, 0.21);
+                    background: hsla(151, 68%, 7%, 0.078);
+                    border: 0;
+                    border-radius: 5em;
+                    label {
+                        line-height: 1;
+                        padding: 0 10px;
+                        -webkit-transition: .3s linear;
+                        -o-transition: .3s linear;
+                        transition: .3s linear;
+                    }
+                    .art_input {
+                        cursor: initial;
+                        ~button {
+                            @include hider();
+                            -webkit-transition: .3s linear;
+                            -o-transition: .3s linear;
+                            transition: .3s linear;
+                        }
+                        &:focus {
+                            ~button {
+                                @include show();
+                            }
+                        }
+                    }
+                    #s_submit {
+                        min-width: auto;
+                    }
+                }
+            }
         }
         .art_nav-right {
             @include flex();
@@ -2213,6 +2443,7 @@ body {
         border-radius: 8px;
         z-index: 1;
         background-color: inherit;
+        background: white;
         @include off_shado();
         .art_video_poster {
             position: relative;
@@ -2503,10 +2734,10 @@ body {
         display: flex;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
     }
 }

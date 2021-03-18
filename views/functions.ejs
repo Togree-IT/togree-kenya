@@ -448,7 +448,7 @@
                         selectedMin = [];
 
                     if (item) {
-                        if (offersArray && offersArray.length && art_price_card.length) {
+                        if (typeof offersArray !== "undefined" && offersArray.length && art_price_card.length) {
 
                             let bestPrice = offersArray.map((offer, i) => {
                                 if (typeof offer.qt[0] !== 'string') {
@@ -638,6 +638,7 @@
             this.className = className || 'fixed';
             this.nav = document.querySelector(this.element);
             this.navOff = this.nav.offsetTop;
+            this.oNavOff = document.querySelector('nav');
 
             // let that = this;
             // console.log(this);
@@ -670,7 +671,7 @@
                     if (!that.nav.classList.contains(that.className)) {
 
                         that.nav.classList.add(that.className);
-                        document.body.style.marginTop = that.nav.offsetHeight + 'px';
+                        document.body.style.marginTop = that.oNavOff.offsetHeight + 'px';
                         if (typeof cb === "function") {
                             cb(that.nav, 'up');
                         }

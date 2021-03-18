@@ -110,4 +110,37 @@ router.get("/contact-us", (req, res) => {
 
 });
 
+router.get("/blog", (req, res) => {
+
+    const elements = [...initialElements,
+        "assets/css/blog.min.css",
+
+    ]
+
+    let title = funs.language('Blog', funs.getAppCookies(req)['language'] || 'en');
+    const meta = funs.meta({
+        title,
+        description: "",
+        keywords: '',
+        preview_image: '',
+        theme_color: "#fff"
+    }, req);
+
+    res.render("blog", {
+        meta,
+        elements,
+        menu: true,
+        lang_: _ => funs.language(_, funs.getAppCookies(req)['language'] || 'en'),
+        _language: require("../language/" + funs.getAppCookies(req)['language'] || 'en' + ".json"),
+        language: funs.getAppCookies(req)['language'] || 'en',
+        languages: require("../language/languages.json"),
+        renderImplimental: (_) => funs.renderImplimental(_),
+        title,
+        path: funs.pathToTheRoot(req.originalUrl),
+        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
+
+    })
+
+});
+
 module.exports = router;

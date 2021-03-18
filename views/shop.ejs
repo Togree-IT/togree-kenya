@@ -2,7 +2,7 @@
     <main>
         <div class="container art_container">
 
-            <div class="shop__sidebar  fixed" id="aside">
+            <div class="shop__sidebar fixed" id="aside">
                 <% if(categories){
                     if(categories.length){ %>
                     <div class="shop__sidebar__category">
@@ -85,7 +85,7 @@
                             </svg>
                         </button>
                         <!-- category btn for mobile -->
-                        <button class="art_btn shop__products__header__iconwrapper" id="category">
+                        <button class="art_btn shop__products__header__iconwrapper" id="category" style="display: none;" hidden>
                             <em class="fas fa-sort-amount-down-alt shop__products__header__icons"></em>
                         </button>
                     </div>
@@ -161,7 +161,8 @@ function applyCartActions() {
             if(products){
                 if(products.length){
                     products.map(product=>{
-                        
+                            
+                       
                         %>
                             <script>
                                 window.products = window.products || {};
@@ -169,7 +170,7 @@ function applyCartActions() {
                             </script>
                             <%- shopProdtemp(product,{action_title: lang_('Add_to_cart'), per_piece:lang_('per_piece')}) %>
 
-                                <% }) %>
+                                <%  }) %>
                                     <% }
                 
                else{ %>
@@ -196,14 +197,5 @@ function applyCartActions() {
 
     <%- include("./_footer_v2.ejs") %>
         <script>
-            // document.addEventListener('DOMContentLoaded', function() {
-            //     var elems = document.querySelectorAll('.scrollspy');
-            //     var instances = M.ScrollSpy.init(elems, {
-            //         throttle: 5000,
-            //         // scrollOffset: 10,
-            //         getActiveElement: function(id) {
-
-            //         %>
-            //     %>);
-            // %>);
+            let asideScrolly = new artScrollSpy('#aside', 'f_ixed');
         </script>

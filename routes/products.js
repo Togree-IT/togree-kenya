@@ -4,7 +4,8 @@ const app = require("express"),
     funs = require('../functions');
 
 
-const { initialElements } = funs;
+let { initialElements } = funs;
+initialElements = ['assets/js/lib/idb/index.js', ...initialElements];
 
 router.get('/list/all', (req, res) => {
     res.status(200).json({ name: "comming soon" })

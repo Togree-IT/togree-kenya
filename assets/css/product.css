@@ -1014,6 +1014,13 @@ body .reviews .art_review_actions {
 
 @media screen and (min-width: 1024px) {
   body .reviews .art_review_actions {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .reviews .art_review_actions {
     width: 50%;
     padding: 0;
   }

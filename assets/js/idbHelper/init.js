@@ -1,0 +1,1 @@
+const iDbMethod = new IDBMethods();
