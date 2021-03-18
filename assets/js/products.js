@@ -4,15 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Slick settings
     if (document.querySelector('#art_desc_product_img_sildes') && document.querySelector('#art_desc_product_img_sildes').querySelectorAll('.art_desc_product_img').length > 1) {
         $('#art_desc_product_img_sildes').slick({
-            dots: !false,
+            dots: false,
             centerMode: false,
             arrows: true,
             centerPadding: '0px',
-            initialSlide: 1,
+            initialSlide: 0,
             slidesToShow: 1,
 
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 100,
 
             prevArrow: '<button type="button" class="art_slick_btn prev slick-prev"><em class="material-icons">chevron_left</em></button>',
             nextArrow: '<button type="button" class="art_slick_btn next slick-prev"><em class="material-icons">chevron_right</em></button>',

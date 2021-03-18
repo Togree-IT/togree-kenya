@@ -629,4 +629,64 @@
                 });
             });
         }
+
+        function artScrollSpy(element, className, cb) {
+            let didScroll,
+                lastScrollTop = 0,
+                delta = 0;
+            this.element = element || 'nav';
+            this.className = className || 'fixed';
+            this.nav = document.querySelector(this.element);
+            this.navOff = this.nav.offsetTop;
+
+            // let that = this;
+            // console.log(this);
+
+            document.addEventListener('scroll', (e) => {
+                didScroll = true;
+                if (didScroll) {
+                    hasScrolled(this);
+                    didScroll = false;
+                }
+            });
+
+            // setInterval(() => {
+            //     if (didScroll) {
+            //         hasScrolled();
+            //         didScroll = false;
+            //     }
+            // }, 20);
+
+            function hasScrolled(that) {
+                let st = this.scrollY;
+                // Make sure they scroll more than delta
+                // if (Math.abs(lastScrollTop - st) <= delta) {
+                //     return;
+                // }
+                // If they scrolled down and are past the navbar, add class .nav-up.
+                // This is necessary so you never see what is "behind" the navbar.
+
+                if ((st) >= (that.navOff)) {
+                    if (!that.nav.classList.contains(that.className)) {
+
+                        that.nav.classList.add(that.className);
+                        document.body.style.marginTop = that.nav.offsetHeight + 'px';
+                        if (typeof cb === "function") {
+                            cb(that.nav, 'up');
+                        }
+                    }
+                    return;
+                } else {
+                    if (that.nav.classList.contains(that.className)) {
+                        that.nav.classList.remove(that.className);
+                        document.body.style.marginTop = 0 + 'px';
+                        if (typeof cb === "function") {
+                            cb(that.nav, 'down');
+                        }
+                    }
+
+                }
+                lastScrollTop = st;
+            }
+        }
     </script>

@@ -190,6 +190,10 @@ const Prodtemp = (data, others) => {
                         </div> */
 }
 
+
+// let carHeaderScrolly = new artScrollSpy('.art_others', 'fixed');
+// console.log(carHeaderScrolly);
+
 function initializeSliders() {
     // if ($('#promo_silders').hasClass('slick-initialized')) {
 

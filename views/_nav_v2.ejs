@@ -81,48 +81,25 @@
             <div class="art_nav_recent_search_co" id="top_art_nav_recent_search_co">
 
                 <div class="art_recent_s">
-                    <div class="art_header">
+                    <div class="art_header"></div>
+                    <%#<div class="art_header">
                         <div class="art_title">
                             <span>Recent search</span>
                         </div>
                         <button class="art_clear">
                             <em class="material-icons">clear</em>
                         </button>
-                    </div>
-                    <div class="art_body">
-                        <a class="art_search_tag">
-                            <span>For Cars</span>
-                            <span>
-                                <em class="material-icons">search</em>
-                            </span>
-                        </a>
-                        <a class="art_search_tag">
-                            <span>For Bicycle</span>
-                            <span>
-                                <em class="material-icons">search</em>
-                            </span>
-                        </a>
-                        <a class="art_search_tag">
+                    </div> %>
+                        <div class="art_body">
+
+                            <a class="art_search_tag"></a>
+                            <a class="art_search_tag"></a>
+                            <a class="art_search_tag"></a>
+                            <%#!-- <a class="art_search_tag">
                             <span>Motor</span>
                             <span><em class="material-icons">search</em></span>
-                        </a>
-                        <a class="art_search_tag">
-                            <span>For Cars</span>
-                            <span>
-                                <em class="material-icons">search</em>
-                            </span>
-                        </a>
-                        <a class="art_search_tag">
-                            <span>For Bicycle</span>
-                            <span>
-                                <em class="material-icons">search</em>
-                            </span>
-                        </a>
-                        <a class="art_search_tag">
-                            <span>Motor</span>
-                            <span><em class="material-icons">search</em></span>
-                        </a>
-                    </div>
+                        </a> --%>
+                        </div>
                 </div>
                 <div class="art_recent_s">
                     <div class="art_header">
@@ -131,22 +108,14 @@
                         </div>
                     </div>
                     <div class="art_body">
-                        <a class="art_search_tag">
-                            <span>3S Multi Functional</span>
-                            <span>
-                                <em class="material-icons">search</em>
-                            </span>
-                        </a>
-                        <a class="art_search_tag">
-                            <span>TK08 Vehicle Tracker</span>
-                            <span>
-                                <em class="material-icons">search</em>
-                            </span>
-                        </a>
-                        <a class="art_search_tag">
-                            <span>TK26 Mini Vehicle Tracker</span>
+                        <a class="art_search_tag"></a>
+                        <a class="art_search_tag"></a>
+                        <a class="art_search_tag"></a>
+
+                        <!-- <a class="art_search_tag">
+                            <span>Motor</span>
                             <span><em class="material-icons">search</em></span>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
 
@@ -164,7 +133,11 @@
     document.addEventListener("DOMContentLoaded", e => {
 
 
+        // let bannerScrolly = new artScrollSpy('.art_banner', 'fixed');
+        let navScrolly = new artScrollSpy('nav', 'fixed');
+
         getLanguages();
+
         var dropdowns = document.querySelectorAll('.dropdown-trigger');
         if (dropdowns.length) {
             M.Dropdown.init(dropdowns, {
@@ -172,8 +145,6 @@
                     var target = e;
                     // Find the caret
                     var caret = target.querySelector('.material-icons');
-
-
                     // change caret of the target
                     if (caret) {
                         if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
@@ -240,7 +211,6 @@
     });
 
     function loadListPages() {
-
         axios.get("<%= path %>api/list_pages").then(res => {
             let data = res.data;
             if (data.length) {
@@ -304,8 +274,6 @@
     }
 
     function renderStoreServices(page) {
-
-
         let temp = `<a class="art_service_card waves-effect" href="${path}products/search?q=${page.slug.split('_').join(' ')}">
                     <div class="art_serv_icon">
                         <img src="${page.icon.fields.file.url}" alt="${page.name}">
