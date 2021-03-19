@@ -48,8 +48,9 @@ app.use((req, res, next) => {
     res.locals.success_msg = res.locals.success_msg.length ? [funs.language(res.locals.success_msg[0], funs.getAppCookies(req)['language'])] : res.locals.success_msg;
     res.locals.error_msg = res.locals.error_msg.length ? [funs.language(res.locals.error_msg[0], funs.getAppCookies(req)['language'])] : res.locals.error_msg;
     res.locals.error = res.locals.error.length ? [funs.language(res.locals.error[0], funs.getAppCookies(req)['language'])] : res.locals.error;
-    // console.log(req.isAuthenticated());
+
     res.locals.logged_in = typeof req.isAuthenticated !== "undefined" ? req.isAuthenticated() : false;
+    res.locals.user = typeof req.isAuthenticated !== "undefined" ? req.user : undefined;
     next();
 });
 

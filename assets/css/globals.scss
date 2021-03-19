@@ -709,6 +709,18 @@ body {
                             // max-height: 58px;
                             line-height: initial;
                             padding: 4px 8px;
+                            // @include mobile {
+                            //     width: 0;
+                            // }
+                            @include laptop {
+                                width: 50%;
+                            }
+                            @include laptop_L {
+                                width: 25%;
+                            }
+                            @include laptop_W {
+                                width: 25%;
+                            }
                             img {
                                 max-width: 100%;
                             }

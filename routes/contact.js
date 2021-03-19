@@ -16,11 +16,9 @@ router.post("/", (req, res) => {
             _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
 
         }).then(done => {
-            console.log(done);
             res.status(200).json({ status: "success" })
         }).catch(err => {
-            res.status(500).json({ status: "failed" })
-            console.log(err);
+            res.status(500).json({ status: "failed" });
         })
 
     }

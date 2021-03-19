@@ -1,14 +1,17 @@
-<nav class="art-nav ">
-    <div class="art_nav-right">
-        <!-- Menu button -->
-        <button class="art_menu_btn art_btn waves-effect sidenav-trigger" name="menu_button" id="menu-btn" role="button" aria-label="Menu button" data-target="menu-nav">
+<% 
+console.log(user); %>
+
+    <nav class="art-nav ">
+        <div class="art_nav-right">
+            <!-- Menu button -->
+            <button class="art_menu_btn art_btn waves-effect sidenav-trigger" name="menu_button" id="menu-btn" role="button" aria-label="Menu button" data-target="menu-nav">
             <svg width="44" height="28" viewBox="0 0 44 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1C0 1 26.8169 1 44 1M0 14.5H30M0 27H44" stroke="black"></path>
             </svg>
         </button>
-        <!-- Logo link -->
-        <a class="art-brand" href="<%= typeof path !== 'undefined'?path:'' %>">
-            <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
+            <!-- Logo link -->
+            <a class="art-brand" href="<%= typeof path !== 'undefined'?path:'' %>">
+                <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
                 <path d="M133.68,459.68H74.28a55.17,55.17,0,0,0,5.54,18.7A55.27,55.27,0,0,0,116,374.17a59.36,59.36,0,0,1,.48,64.42h17.21Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                 <path d="M74.06,450a55.31,55.31,0,0,0,40.88-49.84A55.27,55.27,0,0,0,74.06,450Z" transform="translate(-39.24 -369.84)" style="fill:#adcf21;fill-rule:evenodd"/>
                 <path d="M63.27,443.43a58.5,58.5,0,0,1,9.26-31.83H55.32V390.5h59.39a54.67,54.67,0,0,0-5.54-18.69A55.27,55.27,0,0,0,73,476a57.68,57.68,0,0,1-9.17-24.28A59.63,59.63,0,0,1,63.27,443.43Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
@@ -22,18 +25,18 @@
                 <path d="M404.56,420.08a9.81,9.81,0,0,1-2.89.47H389.21l3.18,5.72,10.73,19.31,3.28,5.9h18.15l-3.28-5.9-10.74-19.31h.3c8.2,0,16.51-6.52,18.46-14.49a12.62,12.62,0,0,0-.28-7.38c-1.57-4.25-5.65-7.12-11.09-7.12H374.23l-2,7.12-4.6,16.15L366,426.27l-5.49,19.31-1.33,4.66-.7,2.45h15.62l2-7.11,5.5-19.31,1.63-5.72,2-7.13.86-3,1.71-6h20.46c4.44,0,6.59,3.63,4.78,8.07a14,14,0,0,1-6.43,6.76A12.6,12.6,0,0,1,404.56,420.08Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                 <path d="M232.17,423.92a36.57,36.57,0,0,1,2.32-6c3.52-7.28,8.89-13.27,17.31-14.24,5.05-.57,10.28.81,13.44,4.83,5.37,6.84,3.77,15.59.34,22.85-2.69,5.71-6.64,11-11.92,13.46a17.6,17.6,0,0,1-15.79-.88c-7.36-4.32-7.84-12.52-5.7-20Zm35.29-26.64H239.65a36.89,36.89,0,0,0-16.42,10.12c-10,10.92-12.25,32.3,1.09,41.73a25.25,25.25,0,0,0,7.59,3.56h25.23c7.69-1.63,14.79-4.84,19.94-11.28,9-11.19,11.94-29.72-.5-39.43A29.55,29.55,0,0,0,267.46,397.28Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"/>
                 </svg>
-        </a>
-        <!-- Menu -->
-        <ul class="art-top-links" id="top_pages">
-        </ul>
+            </a>
+            <!-- Menu -->
+            <ul class="art-top-links" id="top_pages">
+            </ul>
 
 
-        <!-- Small nav -->
-        <ul id="menu-nav" class="sidenav collapsible">
-            <li>
-                <div class="user-view">
-                    <a class="art-brand" href="#!">
-                        <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
+            <!-- Small nav -->
+            <ul id="menu-nav" class="sidenav collapsible">
+                <li>
+                    <div class="user-view">
+                        <a class="art-brand" href="#!">
+                            <svg id="Õ_1" data-name="Õº≤„ 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 516.73 110.51" fill="#009b4e">
                             <path d="M133.68,459.68H74.28a55.17,55.17,0,0,0,5.54,18.7A55.27,55.27,0,0,0,116,374.17a59.36,59.36,0,0,1,.48,64.42h17.21Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"></path>
                             <path d="M74.06,450a55.31,55.31,0,0,0,40.88-49.84A55.27,55.27,0,0,0,74.06,450Z" transform="translate(-39.24 -369.84)" style="fill:#adcf21;fill-rule:evenodd"></path>
                             <path d="M63.27,443.43a58.5,58.5,0,0,1,9.26-31.83H55.32V390.5h59.39a54.67,54.67,0,0,0-5.54-18.69A55.27,55.27,0,0,0,73,476a57.68,57.68,0,0,1-9.17-24.28A59.63,59.63,0,0,1,63.27,443.43Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"></path>
@@ -47,41 +50,41 @@
                             <path d="M404.56,420.08a9.81,9.81,0,0,1-2.89.47H389.21l3.18,5.72,10.73,19.31,3.28,5.9h18.15l-3.28-5.9-10.74-19.31h.3c8.2,0,16.51-6.52,18.46-14.49a12.62,12.62,0,0,0-.28-7.38c-1.57-4.25-5.65-7.12-11.09-7.12H374.23l-2,7.12-4.6,16.15L366,426.27l-5.49,19.31-1.33,4.66-.7,2.45h15.62l2-7.11,5.5-19.31,1.63-5.72,2-7.13.86-3,1.71-6h20.46c4.44,0,6.59,3.63,4.78,8.07a14,14,0,0,1-6.43,6.76A12.6,12.6,0,0,1,404.56,420.08Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"></path>
                             <path d="M232.17,423.92a36.57,36.57,0,0,1,2.32-6c3.52-7.28,8.89-13.27,17.31-14.24,5.05-.57,10.28.81,13.44,4.83,5.37,6.84,3.77,15.59.34,22.85-2.69,5.71-6.64,11-11.92,13.46a17.6,17.6,0,0,1-15.79-.88c-7.36-4.32-7.84-12.52-5.7-20Zm35.29-26.64H239.65a36.89,36.89,0,0,0-16.42,10.12c-10,10.92-12.25,32.3,1.09,41.73a25.25,25.25,0,0,0,7.59,3.56h25.23c7.69-1.63,14.79-4.84,19.94-11.28,9-11.19,11.94-29.72-.5-39.43A29.55,29.55,0,0,0,267.46,397.28Z" transform="translate(-39.24 -369.84)" style="fill:currentColor;fill-rule:evenodd"></path>
                             </svg>
-                    </a>
+                        </a>
 
-                </div>
-            </li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <% if(typeof user === "undefined"){%>
-                <li>
-                    <a href="<%= path %>users/login">
-                        <%- lang_('Login') %>
-                    </a>
-                </li>
-                <% } %>
-        </ul>
-    </div>
-
-    <!-- Right options  -->
-    <div class="art_nav-left">
-        <% if(typeof user === "undefined"){%>
-            <a href="<%= path %>users/login" class="art_btn art_gree_btn filled login_btn">
-                <%- lang_('Login') %>
-            </a>
-            <% } %>
-                <form action="#" class="art_head_search_form" id="head_search_form" method="GET">
-                    <div class="art_input_co">
-                        <label for="q" class="art_under_search"><em class="material-icons">search</em></label>
-                        <input type="text" name="q" id="q" class="art_input" placeholder="Search here...">
-                        <button disabled aria-disabled="true" type="submit" class="art_submit_search"><em class="material-icons">search</em></button>
                     </div>
-                </form>
-                <button class="art_btn waves-effect"><em class="material-icons">search</em></button>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <% if(typeof user === "undefined"){%>
+                    <li>
+                        <a href="<%= path %>users/login">
+                            <%- lang_('Login') %>
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
 
-                <% if(typeof cartItems !== "undefined") {%>
-                    <button class="art_btn art_shop_cart">
+        <!-- Right options  -->
+        <div class="art_nav-left">
+            <% if(typeof user === "undefined"){%>
+                <a href="<%= path %>users/login" class="art_btn art_gree_btn filled login_btn">
+                    <%- lang_('Login') %>
+                </a>
+                <% } %>
+                    <form action="#" class="art_head_search_form" id="head_search_form" method="GET">
+                        <div class="art_input_co">
+                            <label for="q" class="art_under_search"><em class="material-icons">search</em></label>
+                            <input type="text" name="q" id="q" class="art_input" placeholder="Search here...">
+                            <button disabled aria-disabled="true" type="submit" class="art_submit_search"><em class="material-icons">search</em></button>
+                        </div>
+                    </form>
+                    <button class="art_btn waves-effect"><em class="material-icons">search</em></button>
+
+                    <% if(typeof cartItems !== "undefined") {%>
+                        <button class="art_btn art_shop_cart">
                         <% if(cartItems !== '') {%> 
                             <span class="art_cart_badge">
                                 <%= Object.keys(cartItems).length  %> 
@@ -90,108 +93,108 @@
     
                         <em class="material-icons">shopping_basket</em>
                     </button>
-                    <%}%>
+                        <%}%>
 
 
-                        <% if(typeof user === "undefined"){%>
-                            <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
+                            <% if(typeof user === "undefined"){%>
+                                <button class="art_btn waves-effect dropdown-trigger art_lang_changer" data-target='top_nav_languages'>
                         <img src="<%= typeof path !== "undefined"?path:'' %>assets/img/language/<%= typeof language !== "undefined"? language:'' %>.svg" alt="<%= typeof language !== "undefined"? language:'' %> flag" >
                         <em class="material-icons">expand_more</em>
                     </button>
-                            <% } %>
-    </div>
+                                <% } %>
+        </div>
 
 
-    <!-- Service Dropdown Structure -->
-    <div id='top_nav_services' class='dropdown-content art_nav_dropdown'>
-        <div class='dropdown-content_ art_menu_droper'>
-            <div class="art_nav_services_co" id="top_art_nav_services_co">
-                <div class="preloader-wrapper big active" style="margin: auto;">
-                    <div class="spinner-layer spinner-green-only">
-                        <div class="circle-clipper left">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="gap-patch">
-                            <div class="circle"></div>
-                        </div>
-                        <div class="circle-clipper right">
-                            <div class="circle"></div>
+        <!-- Service Dropdown Structure -->
+        <div id='top_nav_services' class='dropdown-content art_nav_dropdown'>
+            <div class='dropdown-content_ art_menu_droper'>
+                <div class="art_nav_services_co" id="top_art_nav_services_co">
+                    <div class="preloader-wrapper big active" style="margin: auto;">
+                        <div class="spinner-layer spinner-green-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-
         </div>
-    </div>
-    <!-- Dropdown Structure -->
-    <ul id='top_nav_languages' class='dropdown-content'>
-    </ul>
+        <!-- Dropdown Structure -->
+        <ul id='top_nav_languages' class='dropdown-content'>
+        </ul>
 
-</nav>
+    </nav>
 
-<script>
-    document.addEventListener("DOMContentLoaded", e => {
-        var dropdowns = document.querySelectorAll('.dropdown-trigger');
-        if (dropdowns.length) {
-            M.Dropdown.init(dropdowns, {
-                onOpenStart: e => {
-                    var target = e;
-                    // Find the caret
-                    var caret = target.querySelector('.material-icons');
+    <script>
+        document.addEventListener("DOMContentLoaded", e => {
+            var dropdowns = document.querySelectorAll('.dropdown-trigger');
+            if (dropdowns.length) {
+                M.Dropdown.init(dropdowns, {
+                    onOpenStart: e => {
+                        var target = e;
+                        // Find the caret
+                        var caret = target.querySelector('.material-icons');
 
 
-                    // change caret of the target
-                    if (caret) {
-                        if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
+                        // change caret of the target
+                        if (caret) {
+                            if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
+                        }
+                    },
+                    onCloseStart: e => {
+                        var target = e;
+                        // Find the caret
+                        var caret = target.querySelector('.material-icons');
+                        // change caret of the target
+                        if (caret) {
+                            if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
+                        }
+
                     }
-                },
-                onCloseStart: e => {
-                    var target = e;
-                    // Find the caret
-                    var caret = target.querySelector('.material-icons');
-                    // change caret of the target
-                    if (caret) {
-                        if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
-                    }
-
-                }
-            });
-        }
+                });
+            }
 
 
-        getLanguages();
+            getLanguages();
 
 
 
-        function getLanguages() {
-            axios.get("<%= path%>language/all")
-                .then(languages => {
-                    languages = languages.data;
-                    if (typeof '<%=language%>' !== "undefined" && typeof languages !== "undefined") {
-                        const top_nav_languages = document.querySelector('#top_nav_languages');
-                        top_nav_languages.innerHTML = '';
-                        for (const key in languages) {
+            function getLanguages() {
+                axios.get("<%= path%>language/all")
+                    .then(languages => {
+                        languages = languages.data;
+                        if (typeof '<%=language%>' !== "undefined" && typeof languages !== "undefined") {
+                            const top_nav_languages = document.querySelector('#top_nav_languages');
+                            top_nav_languages.innerHTML = '';
+                            for (const key in languages) {
 
-                            if (languages[key].active && languages[key].slogan !== '<%=language%>') {
-                                lang_('@' + languages[key].slogan).then(data => {
-                                    top_nav_languages.innerHTML += `
+                                if (languages[key].active && languages[key].slogan !== '<%=language%>') {
+                                    lang_('@' + languages[key].slogan).then(data => {
+                                        top_nav_languages.innerHTML += `
                             <li>
                                 <a href="<%= path %>language/choose/${languages[key].slogan}?ref=${window.location.pathname}&protocol=${window.location.protocol.split(':').join('').split('/').join('') }">
                                     ${data}
                                 </a>
                             </li>`
-                                })
+                                    })
 
 
+                                }
                             }
                         }
-                    }
-                })
-        }
+                    })
+            }
 
-        function fetch_nav_services() {
-            let serviceTemp = (data, index) => {
-                return `<a href="<%= typeof path !== "undefined"?path:'' %>services/main/${index}">
+            function fetch_nav_services() {
+                let serviceTemp = (data, index) => {
+                    return `<a href="<%= typeof path !== "undefined"?path:'' %>services/main/${index}">
                     <div class="art_navice_service_card">
                         <span class="art_service_icon">
                             <img src="<%= typeof path !== "undefined"?path:'' %>${data.icon}" alt="${data.name}">
@@ -199,104 +202,104 @@
                         <span class="art_service_title">${data.name}</span>
                     </div>
                 </a>`;
-            };
-            let top_art_nav_services_co = document.querySelector("#top_art_nav_services_co");
+                };
+                let top_art_nav_services_co = document.querySelector("#top_art_nav_services_co");
 
-            if (top_art_nav_services_co) {
-                if (top_art_nav_services_co.querySelector(".preloader-wrapper")) {
+                if (top_art_nav_services_co) {
+                    if (top_art_nav_services_co.querySelector(".preloader-wrapper")) {
 
-                    axios.get("<%= typeof path !== 'undefined'?path:'' %>services/@get-services").then(res => {
-                        let data = res.data;
-                        top_art_nav_services_co.innerHTML = '';
-                        let index = 0;
-                        data.map(service => {
-                            lang_(service.name).then(title => {
-                                service.name = title;
-                                top_art_nav_services_co.innerHTML += serviceTemp(service, index++);
+                        axios.get("<%= typeof path !== 'undefined'?path:'' %>services/@get-services").then(res => {
+                            let data = res.data;
+                            top_art_nav_services_co.innerHTML = '';
+                            let index = 0;
+                            data.map(service => {
+                                lang_(service.name).then(title => {
+                                    service.name = title;
+                                    top_art_nav_services_co.innerHTML += serviceTemp(service, index++);
 
+                                })
                             })
-                        })
 
-                    })
+                        })
+                    }
                 }
             }
-        }
-        initializeNavMenu();
-        ScollNavDetector();
-        loadListPages();
-    });
+            initializeNavMenu();
+            ScollNavDetector();
+            loadListPages();
+        });
 
 
-    function loadListPages() {
-        let topPagesTemp1 = (page) => {
-            return ` <li> <a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a> </li>`
-        };
-        let topPagesTemp2 = (page) => {
-            return `<li> <a href="javascript:void(0)" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_services'> ${page.title} <em class="material-icons">expand_more</em> </a></li>`;
-        };
-        let hasChildrenID = '';
+        function loadListPages() {
+            let topPagesTemp1 = (page) => {
+                return ` <li> <a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a> </li>`
+            };
+            let topPagesTemp2 = (page) => {
+                return `<li> <a href="javascript:void(0)" class="dropdown-trigger top_nav_menu_trigger" data-target='top_nav_services'> ${page.title} <em class="material-icons">expand_more</em> </a></li>`;
+            };
+            let hasChildrenID = '';
 
-        function renderPages_mobile(page, hasChildren) {
+            function renderPages_mobile(page, hasChildren) {
 
-            let temp1 = (id) => ` <li>
+                let temp1 = (id) => ` <li>
                 <div class="collapsible-header">${page.title}</div>
                 <div class="collapsible-body" id="${id}"> </div>
             </li>`;
-            let temp2 = `<li>
+                let temp2 = `<li>
                 <a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}">${page.title}</a>
             </li>`;
-            let menu_nav = document.querySelector('#menu-nav');
-            if (menu_nav) {
-                if (hasChildren) {
-                    hasChildrenID = 'serve_children_' + page.title;
-                    menu_nav.innerHTML += temp1(hasChildrenID)
-                } else {
-                    menu_nav.innerHTML += temp2
+                let menu_nav = document.querySelector('#menu-nav');
+                if (menu_nav) {
+                    if (hasChildren) {
+                        hasChildrenID = 'serve_children_' + page.title;
+                        menu_nav.innerHTML += temp1(hasChildrenID)
+                    } else {
+                        menu_nav.innerHTML += temp2
+                    }
                 }
             }
-        }
 
-        function render_sevices_mobile(page) {
-            let temp = `<a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}">${page.name}</a>`;
+            function render_sevices_mobile(page) {
+                let temp = `<a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}">${page.name}</a>`;
 
-            let container = document.querySelector('#' + hasChildrenID);
-            if (container) {
-                container.innerHTML += temp;
-            }
-        }
-
-        axios.get("<%= path %>api/list_pages").then(res => {
-            let data = res.data;
-            if (data.length) {
-                let children = [];
-                let top_pages = document.querySelector("#top_pages");
-                if (top_pages) {
-                    top_pages.innerHTML = '';
-                    data.map(page => {
-                        if (page.fields.hasChildren) {
-                            page = page.fields;
-                            children.push(page.children);
-                            lang_(page.title).then(title => {
-                                page.title = title;
-
-                                top_pages.innerHTML += topPagesTemp2(page);
-                                renderPages_mobile(page, true);
-                            })
-
-                        } else {
-                            page = page.fields;
-                            lang_(page.title).then(title => {
-                                page.title = title;
-                                top_pages.innerHTML += topPagesTemp1(page);
-                                renderPages_mobile(page, !true);
-                                renderFootQuickLinks(page);
-                            })
-                        }
-                    })
+                let container = document.querySelector('#' + hasChildrenID);
+                if (container) {
+                    container.innerHTML += temp;
                 }
-                if (children.length) {
-                    let serviceTemp = (data, index) => {
-                        return `<a href="<%= typeof path !== "undefined"?path:'' %>services/main/${data.slug}" title="${data.name.split(' ').join('&nbsp;')}">
+            }
+
+            axios.get("<%= path %>api/list_pages").then(res => {
+                let data = res.data;
+                if (data.length) {
+                    let children = [];
+                    let top_pages = document.querySelector("#top_pages");
+                    if (top_pages) {
+                        top_pages.innerHTML = '';
+                        data.map(page => {
+                            if (page.fields.hasChildren) {
+                                page = page.fields;
+                                children.push(page.children);
+                                lang_(page.title).then(title => {
+                                    page.title = title;
+
+                                    top_pages.innerHTML += topPagesTemp2(page);
+                                    renderPages_mobile(page, true);
+                                })
+
+                            } else {
+                                page = page.fields;
+                                lang_(page.title).then(title => {
+                                    page.title = title;
+                                    top_pages.innerHTML += topPagesTemp1(page);
+                                    renderPages_mobile(page, !true);
+                                    renderFootQuickLinks(page);
+                                })
+                            }
+                        })
+                    }
+                    if (children.length) {
+                        let serviceTemp = (data, index) => {
+                            return `<a href="<%= typeof path !== "undefined"?path:'' %>services/main/${data.slug}" title="${data.name.split(' ').join('&nbsp;')}">
                                     <div class="art_navice_service_card">
                                         <span class="art_service_icon">
                                             <img src="${data.icon.fields.file.url}" alt="${data.icon.fields.title}">
@@ -304,92 +307,92 @@
                                         <span class="art_service_title">${data.name.split(' ').join('&nbsp;')}</span>
                                     </div>
                                 </a>`;
-                    };
+                        };
 
-                    children.map(child => {
-                        if (child.length) {
-                            let top_art_nav_services_co = document.querySelector("#top_art_nav_services_co");
+                        children.map(child => {
+                            if (child.length) {
+                                let top_art_nav_services_co = document.querySelector("#top_art_nav_services_co");
 
-                            if (top_art_nav_services_co) {
-                                if (top_art_nav_services_co.querySelector(".preloader-wrapper")) {
-                                    let index = 0;
-                                    top_art_nav_services_co.innerHTML = '';
-                                    child.map(under_page => {
-                                        under_page = under_page.fields;
+                                if (top_art_nav_services_co) {
+                                    if (top_art_nav_services_co.querySelector(".preloader-wrapper")) {
+                                        let index = 0;
+                                        top_art_nav_services_co.innerHTML = '';
+                                        child.map(under_page => {
+                                            under_page = under_page.fields;
 
-                                        lang_(under_page.name).then(name => {
-                                            under_page.name = name;
-                                            top_art_nav_services_co.innerHTML += serviceTemp(under_page, index++);
+                                            lang_(under_page.name).then(name => {
+                                                under_page.name = name;
+                                                top_art_nav_services_co.innerHTML += serviceTemp(under_page, index++);
 
 
-                                            if (top_art_nav_services_co.querySelectorAll('a').length >= child.length) {
+                                                if (top_art_nav_services_co.querySelectorAll('a').length >= child.length) {
+                                                    setTimeout(() => {
+                                                        under_pageDropdowns();
+                                                    }, 665, under_page);
+                                                }
+
+                                                fetchServices(under_page);
+
                                                 setTimeout(() => {
-                                                    under_pageDropdowns();
-                                                }, 665, under_page);
-                                            }
+                                                    render_sevices_mobile(under_page);
+                                                }, 455, under_page);
 
-                                            fetchServices(under_page);
+                                                renderFootServices(under_page);
 
-                                            setTimeout(() => {
-                                                render_sevices_mobile(under_page);
-                                            }, 455, under_page);
-
-                                            renderFootServices(under_page);
+                                            })
 
                                         })
-
-                                    })
+                                    }
                                 }
                             }
-                        }
-                    })
-                }
-            }
-
-        }).catch(err => {
-            console.error(err);
-        })
-    }
-
-    function under_pageDropdowns() {
-        var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
-
-        if (top_nav_menu_trigger.length) {
-            M.Dropdown.init(top_nav_menu_trigger, {
-                // hover: true,
-                closeOnClick: !true,
-                // outDuration: 4000,
-                container: document.querySelector('.art-nav'),
-                coverTrigger: false,
-                onOpenStart: e => {
-                    var target = e;
-                    // Find the caret
-                    var caret = target.querySelector('.material-icons');
-                    // change caret of the target
-                    if (caret) {
-                        if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
+                        })
                     }
-
-                    // fetch_nav_services();
-                },
-                onCloseStart: e => {
-                    var target = e;
-                    // Find the caret
-                    var caret = target.querySelector('.material-icons');
-                    // change caret of the target
-                    if (caret) {
-                        if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
-                    }
-
                 }
-            });
+
+            }).catch(err => {
+                console.error(err);
+            })
         }
-    }
 
-    function fetchServices(page) {
-        let servTemp = () => {
+        function under_pageDropdowns() {
+            var top_nav_menu_trigger = document.querySelectorAll('.top_nav_menu_trigger');
 
-            return ` <a href="<%= typeof path !== "undefined"?path:'' %>services/main/${page.slug}" class="art_our_services_card waves-effect" style="background-image: url('${page.previewImage.fields.file.url}');">
+            if (top_nav_menu_trigger.length) {
+                M.Dropdown.init(top_nav_menu_trigger, {
+                    // hover: true,
+                    closeOnClick: !true,
+                    // outDuration: 4000,
+                    container: document.querySelector('.art-nav'),
+                    coverTrigger: false,
+                    onOpenStart: e => {
+                        var target = e;
+                        // Find the caret
+                        var caret = target.querySelector('.material-icons');
+                        // change caret of the target
+                        if (caret) {
+                            if (caret.innerText === 'expand_more') caret.innerText = 'expand_less';
+                        }
+
+                        // fetch_nav_services();
+                    },
+                    onCloseStart: e => {
+                        var target = e;
+                        // Find the caret
+                        var caret = target.querySelector('.material-icons');
+                        // change caret of the target
+                        if (caret) {
+                            if (caret.innerText === 'expand_less') caret.innerText = 'expand_more';
+                        }
+
+                    }
+                });
+            }
+        }
+
+        function fetchServices(page) {
+            let servTemp = () => {
+
+                return ` <a href="<%= typeof path !== "undefined"?path:'' %>services/main/${page.slug}" class="art_our_services_card waves-effect" style="background-image: url('${page.previewImage.fields.file.url}');">
             <div class="art_our_services_card_content">
                 <div class="art_our_services_card_header">
                     <img src="${page.icon.fields.file.url}" alt="${page.icon.fields.title}" class="art_our_services_card_header_icon_image">
@@ -402,34 +405,34 @@
                 </div>
             </div>
         </a>`
-        };
+            };
 
-        let art_top_services = document.querySelector("#art_top_services");
-        if (art_top_services) {
-            art_top_services.innerHTML = '';
-            lang_(page.name).then(title => {
-                page.name = title;
-                art_top_services.innerHTML += servTemp();
+            let art_top_services = document.querySelector("#art_top_services");
+            if (art_top_services) {
+                art_top_services.innerHTML = '';
+                lang_(page.name).then(title => {
+                    page.name = title;
+                    art_top_services.innerHTML += servTemp();
 
-            })
+                })
+
+            }
 
         }
 
-    }
-
-    function renderFootQuickLinks(page) {
-        let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a></p>`;
-        let foot_quick_links = document.querySelector('#foot_quick_links');
-        if (foot_quick_links) {
-            foot_quick_links.insertAdjacentHTML('AfterBegin', temp);
+        function renderFootQuickLinks(page) {
+            let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>${page.slug}"> ${page.title} </a></p>`;
+            let foot_quick_links = document.querySelector('#foot_quick_links');
+            if (foot_quick_links) {
+                foot_quick_links.insertAdjacentHTML('AfterBegin', temp);
+            }
         }
-    }
 
-    function renderFootServices(page) {
-        let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}"> ${page.name}</a></p>`;
-        let foot_services = document.querySelector('#foot_services');
-        if (foot_services) {
-            foot_services.insertAdjacentHTML('AfterBegin', temp);
+        function renderFootServices(page) {
+            let temp = `<p><a href="<%= typeof path !== 'undefined'?path:'' %>services/main/${page.slug}"> ${page.name}</a></p>`;
+            let foot_services = document.querySelector('#foot_services');
+            if (foot_services) {
+                foot_services.insertAdjacentHTML('AfterBegin', temp);
+            }
         }
-    }
-</script>
+    </script>

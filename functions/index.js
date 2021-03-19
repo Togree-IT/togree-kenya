@@ -685,12 +685,20 @@ exports.generateCID = function() {
 exports.generateOID = function() {
     return 'TG' + new Date().getFullYear().toString().substring(2, 4) + '-' + require('shortid').generate()
 }
-exports.globalCurrency = function(cb) {
+exports.globalCurrency = function(req, cb) {
+
 
     require('../functions').destroy();
     require('../functions').con(require('../config/index').db.database, connect => {
         // var sql = "SELECT price,name, categorys.name AS category FROM products JOIN categorys ON products.category_id = categorys.id"
-        var sql = "SELECT * FROM currencys WHERE global=1";
+        var sql = "SELECT * FROM currencys WHERE ";
+        if (typeof req.user !== "undefined") {
+
+            sql += "Name='" + req.user.currency + "'"
+        } else {
+            sql += 'global=1';
+        }
+
 
         connect.query(sql, (err, results) => {
             if (err) console.log(err);

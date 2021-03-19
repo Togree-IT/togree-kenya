@@ -861,6 +861,24 @@ body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card 
   padding: 0 10px;
 }
 
+@media screen and (min-width: 1024px) {
+  body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon {
+    width: 25%;
+  }
+}
+
 body .art-nav .art_nav_dropdown .art_nav_services_co a .art_navice_service_card .art_service_icon img {
   max-width: 100%;
 }

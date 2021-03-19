@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     }, req);
 
 
-    funs.globalCurrency(currency => {
+    funs.globalCurrency(req, currency => {
         res.render('shop_home', {
             meta,
             elements,
@@ -125,7 +125,7 @@ router.get('/search', (req, res) => {
             connect.query(sqlCategorys, (err, categories) => {
 
                 // render
-                funs.globalCurrency(currency => {
+                funs.globalCurrency(req, currency => {
                     res.render('shop', {
                         meta,
                         elements,
@@ -200,7 +200,7 @@ router.get('/main/:id', (req, res) => {
                 }, req);
 
                 // Get Global currency
-                funs.globalCurrency(currency => {
+                funs.globalCurrency(req, currency => {
                     // Get product reviews
                     funs.productReviews(connect, req.params.id, productReviews => {
 
@@ -257,7 +257,7 @@ router.get('/checkout', (req, res) => {
         theme_color: "#fff"
     }, req);
 
-    funs.globalCurrency(currency => {
+    funs.globalCurrency(req, currency => {
         res.render('checkout', {
             meta,
             elements,
