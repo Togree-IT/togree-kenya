@@ -354,7 +354,7 @@ body {
                     em {
                         line-height: 1.5em;
                     }
-                    &:last-of-type {
+                    &:last-of-type:not(.art_shop_cart) {
                         i,
                         em {
                             position: absolute;
@@ -380,7 +380,7 @@ body {
                     em {
                         line-height: 1.5em;
                     }
-                    &:last-of-type {
+                    &:last-of-type:not(.art_shop_cart) {
                         i,
                         em {
                             position: absolute;
@@ -407,7 +407,7 @@ body {
                         line-height: 47px;
                         font-size: 30pt;
                     }
-                    &:last-of-type {
+                    &:last-of-type:not(.art_shop_cart) {
                         i,
                         em {
                             position: relative;
@@ -2800,6 +2800,16 @@ body {
             -webkit-box-shadow: none;
             box-shadow: none;
             border-radius: 5em;
+        }
+    }
+    .art_profile {
+        width: 48px;
+        max-height: 48px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        img {
+            max-width: 100%;
         }
     }
 }

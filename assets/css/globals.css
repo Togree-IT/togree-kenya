@@ -455,8 +455,8 @@ body .art-nav .art_nav-left .art_lang_changer img {
   body .art-nav .art_nav-left .art_btn em {
     line-height: 1.5em;
   }
-  body .art-nav .art_nav-left .art_btn:last-of-type i,
-  body .art-nav .art_nav-left .art_btn:last-of-type em {
+  body .art-nav .art_nav-left .art_btn:last-of-type:not(.art_shop_cart) i,
+  body .art-nav .art_nav-left .art_btn:last-of-type:not(.art_shop_cart) em {
     position: absolute;
     right: 0;
     background: aliceblue;
@@ -482,8 +482,8 @@ body .art-nav .art_nav-left .art_lang_changer img {
   body .art-nav .art_nav-left .art_btn em {
     line-height: 1.5em;
   }
-  body .art-nav .art_nav-left .art_btn:last-of-type i,
-  body .art-nav .art_nav-left .art_btn:last-of-type em {
+  body .art-nav .art_nav-left .art_btn:last-of-type:not(.art_shop_cart) i,
+  body .art-nav .art_nav-left .art_btn:last-of-type:not(.art_shop_cart) em {
     position: absolute;
     background: aliceblue;
     right: 0;
@@ -510,8 +510,8 @@ body .art-nav .art_nav-left .art_lang_changer img {
     line-height: 47px;
     font-size: 30pt;
   }
-  body .art-nav .art_nav-left .art_btn:last-of-type i,
-  body .art-nav .art_nav-left .art_btn:last-of-type em {
+  body .art-nav .art_nav-left .art_btn:last-of-type:not(.art_shop_cart) i,
+  body .art-nav .art_nav-left .art_btn:last-of-type:not(.art_shop_cart) em {
     position: relative;
     right: 0;
     width: auto;
@@ -3568,4 +3568,16 @@ body .art_message_co .art_gree_btn {
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 5em;
+}
+
+body .art_profile {
+  width: 48px;
+  max-height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .art_profile img {
+  max-width: 100%;
 }
