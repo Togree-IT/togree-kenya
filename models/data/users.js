@@ -8,6 +8,6 @@ module.exports = [{
     zipcode: "00200",
     privillege: "super_admin",
 
-    user_icon: "assets/imgs/user.svg",
+    user_icon: "assets/imgs/user/user.png",
 
 }]

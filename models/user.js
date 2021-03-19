@@ -75,11 +75,23 @@ exports.users = {
         PRIMARY_KEY: !true,
         DEFAULT: "",
     },
+    reset_token: {
+        TYPE: "VARCHAR(55)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "",
+    },
+    language: {
+        TYPE: "VARCHAR(55)",
+        AUTO_INCREMENT: !true,
+        PRIMARY_KEY: !true,
+        DEFAULT: "en",
+    },
     user_icon: {
         TYPE: "VARCHAR(252)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "assets/img/user/user.svg",
+        DEFAULT: "assets/img/user/user.png",
     },
     dt: {
         TYPE: "TIMESTAMP",
