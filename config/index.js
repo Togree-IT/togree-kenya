@@ -3,7 +3,7 @@ exports.db = {
     user: process.env.MYSQL_USER || 'root',
     pass: process.env.MYSQL_PASSWORD || 'iIZzUxjNMQVs2Cc' || 'made22',
     database: process.env.MYSQL_DATABASE || 'togree_kenya',
-    sessionDB: 'togree_kenya_seesion',
+    sessionDB: 'togree_kenya_session',
 }
 
 exports.privillege = [
