@@ -20,7 +20,7 @@ app.use("/favicon", express.static(__dirname + "/favicon.ico"));
 var MySQLStore = require('express-mysql-session')(session);
 let sessionDB = require('./config/db').sessionConn();
 // var connection = mysql.createConnection(); // or mysql.createPool(options);require('./functions/dbHelper').con()
-var sessionStore = new MySQLStore({} /* session store options */ , require('./functions').con(sessionDB));
+var sessionStore = new MySQLStore({} /* session store options */ , require('./functions').con(require('./config').db.sessionDB));
 
 app.use(session({
     secret: 'fdferedsdweferewedwrersdfs484_54',

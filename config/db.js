@@ -20,7 +20,7 @@ exports.sessionConn = cb => db(con => {
 
         return seesionDbName;
     }
-}).config.database = seesionDbName;
+});
 
 let conn = cb => db(con => {
     if (con && con.state === "connected") {
