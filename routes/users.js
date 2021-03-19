@@ -1,12 +1,13 @@
 const express = require("express"),
-    // passport = require("passport"),
+    passport = require("passport"),
+    { ensureAuthenticated, ensureUnAuthenticated } = require('../config/auth'),
     router = express.Router(),
     funs = require('../functions');
 
 
 const { initialElements } = funs;
-router.get("/login", (req, res) => {
 
+router.get("/login", ensureUnAuthenticated, (req, res) => {
     const elements = [...initialElements,
         "assets/css/login.min.css",
 
@@ -37,11 +38,22 @@ router.get("/login", (req, res) => {
     });
 });
 
-router.get("/forgot", (req, res) => {
+router.post("/login", (req, res, next) => {
+    passport.authenticate('local', { successRedirect: `/dashboard`, failureRedirect: './login', failureFlash: true })(req, res, next)
+});
+
+// logout handle
+router.get("/logout", (req, res) => {
+    req.logout();
+    req.flash("success_msg", "You're logged out successfully")
+    res.redirect("../users/login")
+
+})
+
+router.get("/forgot", ensureUnAuthenticated, (req, res) => {
 
     const elements = [...initialElements,
         "assets/css/login.min.css",
-
     ]
 
 
@@ -69,56 +81,7 @@ router.get("/forgot", (req, res) => {
 
     });
 });
-router.get("/generate/invoice", (req, res) => {
 
-    const elements = [...initialElements,
-        "assets/css/invoice.min.css",
-
-    ]
-
-    let title = funs.language('Invoice Generator', funs.getAppCookies(req)['language']);
-    const meta = funs.meta({
-        title,
-        description: "",
-        keywords: '',
-        preview_image: '',
-        theme_color: "#fff"
-    }, req);
-
-    res.render("invoice_gen", {
-        meta,
-        elements,
-        menu: true,
-        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-        language: funs.getAppCookies(req)['language'],
-        languages: require("../language/languages.json"),
-        renderImplimental: (_) => funs.renderImplimental(_),
-        title,
-        path: funs.pathToTheRoot(req.originalUrl),
-        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
-
-    });
-
-});
-
-router.post("/invoice/send", (req, res) => {
-
-    let email = req.body.Billing_to.email;
-    funs.sendEmail('', 'Your Invoice from Togree', email, null, null, "invoice", [], {
-        lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-        _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-        ...req.body
-    }).then(done => {
-
-        console.log(done);
-        res.status(200).json({ status: 'successful' });
-    }).catch(err => {
-        res.status(500).json({ status: "failed" })
-        console.log(err);
-    })
-
-
-})
+router.use('/invoice', require('./invoice/'))
 
 module.exports = router;

@@ -2,8 +2,27 @@
 const db = require('../functions').conn,
     fs = require('fs'),
     path = require('path');
-let conn = cb => db(con => {
+const seesionDbName = require('./index').db.sessionDB;
 
+exports.sessionConn = cb => db(con => {
+
+    if (con && con.state === "connected") {
+
+        // create session store
+        con.query(require('../functions/dbHelper').createDB(seesionDbName), (err, _res) => {
+            if (err) throw err;
+            // destroy connection
+            con.config.database = seesionDbName;
+            // con.destroy();
+        });
+
+        if (cb) cb(con, seesionDbName);
+
+        return seesionDbName;
+    }
+}).config.database = seesionDbName;
+
+let conn = cb => db(con => {
     if (con && con.state === "connected") {
         const dbName = require('./index').db.database;
 
@@ -12,6 +31,7 @@ let conn = cb => db(con => {
             if (err) throw err;
             // assign database name
             con.config.database = dbName;
+
             // destroy connection
             con.destroy();
 
@@ -69,4 +89,5 @@ let conn = cb => db(con => {
 
 });
 
-module.exports = conn;
+exports.con = conn;
+// module.exports = ;

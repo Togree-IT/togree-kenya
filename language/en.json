@@ -319,5 +319,11 @@
     "cancel": "Cancel",
     "send": "Send",
     "choose": "Choose",
-    "ratecore[0]": "rateCore[0]"
+    "ratecore[0]": "rateCore[0]",
+    "dashboard": "Dashboard",
+    "please_login_to_view_this_resource": "Please login to view this resource",
+    "you're_logedout": "You're logedout",
+    "you're_logged_out_successfully": "You're logged out successfully",
+    "that_email_is_not_registered": "That email is not registered",
+    "password_incorrect,_check_your_password_and_try_again!": "Password incorrect, check your password and try again!"
 }

@@ -690,4 +690,9 @@
                 lastScrollTop = st;
             }
         }
+
+        function closeMessage(e, className) {
+            parent = document.querySelector(className) || e.currentTarget.parentElement.parentElement;
+            parent.remove()
+        }
     </script>

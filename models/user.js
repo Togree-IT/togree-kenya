@@ -79,7 +79,7 @@ exports.users = {
         TYPE: "VARCHAR(252)",
         AUTO_INCREMENT: !true,
         PRIMARY_KEY: !true,
-        DEFAULT: "assets/imgs/profile/user.svg",
+        DEFAULT: "assets/img/user/user.svg",
     },
     dt: {
         TYPE: "TIMESTAMP",

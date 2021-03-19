@@ -1,39 +1,56 @@
-<%- include("./_nav.ejs") %>
-    <main>
-        <div class="art_wave">
-            <svg width="411" height="579" viewBox="0 0 411 579" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+<%- include("./_nav.ejs");
+%>
+    <%
+    // console.log(logged_in);
+    let message = '',className = '';
+    if(success_msg.length){
+        className = 'success';
+        message = success_msg[0];
+    }
+    if(error_msg.length){
+        className = 'error';
+        message = error_msg[0];
+    }
+    
+%>
+        <main>
+            <div class="art_wave">
+                <svg width="411" height="579" viewBox="0 0 411 579" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <path d="M44.5687 -112.381C46.5017 -115.729 50.7828 -116.876 54.1308 -114.943L591.42 195.261C594.768 197.194 595.915 201.475 593.982 204.823L420.352 505.559C418.131 509.405 412.236 507.114 413.197 502.777C436.706 396.604 347.414 299.418 239.634 313.871L128.256 328.806C27.552 336.707 -70.7317 295.29 -135.409 217.698L-141.287 210.646C-141.516 210.372 -141.549 209.984 -141.371 209.675L44.5687 -112.381Z" fill="#81D284"/>
                 <path d="M-120 -65C-120 -68.866 -116.866 -72 -113 -72H436C439.866 -72 443 -68.866 443 -65V235.068C443 238.99 437.491 239.858 436.285 236.126C406.994 145.474 297.095 110.709 220.997 168.023L140.082 228.966C66.0062 278.664 -27.2773 290.204 -111.23 260.057L-119.49 257.091C-119.796 256.981 -120 256.691 -120 256.365V-65Z" fill="#4CAF50"/>
                 </svg>
-        </div>
-        <div class="container">
-            <div class="art_login_form_co">
-
-                <form class="contacthero__content__form" id="contact_us_form" action="<%= path %>users/login" method="POST">
-                    <div class="art_title">
-                        <h3>
-                            <%- lang_(`Login`) %>
-                        </h3>
-                    </div>
-                    <label for="user_name"><%- lang_(`Your_username`) %></label>
-                    <div class="art_input_co ">
-                        <input type="text" placeholder="<%- lang_(`Email`) %> " id="user_name" name="user_name" class="art_input ">
-                    </div>
-                    <label for="password"><%- lang_(`Password`) %></label>
-                    <div class="art_input_co ">
-                        <input type="password" placeholder="<%- lang_(`Password`) %> " id="password" name="password" class="art_input ">
-                    </div>
-                    <div class="art_forgot">
-                        <a href="forgot" class="art_link">
-                            <%- lang_(`Forgot_password?`) %>
-                        </a>
-                    </div>
-
-
-                    <div class="art_submit_btn_co ">
-                        <button type="sumit" name="art_sumit" class="art_btn art_gree_btn filled waves-effect "><%- lang_(`Login`) %></button>
-                    </div>
-                </form>
             </div>
-        </div>
-    </main>
+            <div class="container">
+                <% if(message.trim() !== '' && className !==''){ %>
+                    <%- include('__message.ejs',{message,className}) %>
+                        <% } %>
+                            <div class="art_login_form_co">
+
+                                <form class="contacthero__content__form" id="contact_us_form" action="<%= path %>users/login" method="POST">
+                                    <div class="art_title">
+                                        <h3>
+                                            <%- lang_(`Login`) %>
+                                        </h3>
+                                    </div>
+                                    <label for="user_name"><%- lang_(`Your_username`) %></label>
+                                    <div class="art_input_co ">
+                                        <input type="text" placeholder="<%- lang_(`Email`) %> " id="user_name" name="user_name" class="art_input " required>
+                                    </div>
+                                    <label for="password"><%- lang_(`Password`) %></label>
+                                    <div class="art_input_co ">
+                                        <input type="password" placeholder="<%- lang_(`Password`) %> " id="password" name="password" class="art_input " required>
+                                    </div>
+                                    <div class="art_forgot">
+                                        <a href="forgot" class="art_link">
+                                            <%- lang_(`Forgot_password?`) %>
+                                        </a>
+                                    </div>
+
+
+                                    <div class="art_submit_btn_co ">
+                                        <button type="sumit" name="art_sumit" class="art_btn art_gree_btn filled waves-effect "><%- lang_(`Login`) %></button>
+                                    </div>
+                                </form>
+                            </div>
+            </div>
+        </main>

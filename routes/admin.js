@@ -1,6 +1,7 @@
 const express = require("express"),
-    router = express.Router()
-funs = require('../functions');
+    router = express.Router(),
+    { ensureAuthenticated, ensureUnAuthenticated } = require('../config/auth'),
+    funs = require('../functions');
 
 
 const { initialElements } = funs;
@@ -14,7 +15,7 @@ router.get("/main/:id", (req, res) => {
 
 
 
-router.get("/", (req, res) => {
+router.get("/", ensureAuthenticated, (req, res) => {
     const elements = [...initialElements,
         'assets/css/editor.css',
         'assets/lib/idb/lib/idb.js',
@@ -44,7 +45,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:orders", (req, res) => {
+router.get("/:orders", ensureAuthenticated, (req, res) => {
 
     const elements = [...initialElements,
         'assets/css/editor.css',
@@ -100,7 +101,7 @@ router.get("/:orders", (req, res) => {
     })
 });
 
-router.get('/editor/edit', (req, res) => {
+router.get('/editor/edit', ensureAuthenticated, (req, res) => {
     const elements = [...initialElements,
         'assets/css/editor.css',
         'assets/lib/idb/lib/idb.js',
@@ -142,7 +143,7 @@ router.get('/editor/edit', (req, res) => {
     })
 });
 
-router.post('/editor/update', (req, res) => {
+router.post('/editor/update', ensureAuthenticated, (req, res) => {
     let { key, article } = req.body;
     let publishedContent = require('../data/BlogData.json');
     publishedContent[key] = JSON.stringify(article);

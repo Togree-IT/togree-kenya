@@ -143,4 +143,6 @@ router.get("/blog", (req, res) => {
 
 });
 
+router.use('/dashboard', require('./dashboard/index.js'))
+
 module.exports = router;

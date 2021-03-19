@@ -1,7 +1,7 @@
 module.exports = [{
     name: "Togree Co, LTD",
     username: "togree",
-    password: "888888",
+    password: require('md5')("888888"),
     email: "info@togree.com",
     phone: "+25403003030303",
     street: "Mombasa road",
