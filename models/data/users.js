@@ -7,7 +7,6 @@ module.exports = [{
     street: "Mombasa road",
     zipcode: "00200",
     privillege: "super_admin",
-
-    user_icon: "assets/imgs/user/user.png",
+    user_icon: "assets/img/user/user.png",
 
 }]
