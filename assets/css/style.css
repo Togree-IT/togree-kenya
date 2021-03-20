@@ -9849,9 +9849,9 @@ body .art_subscribe_card_co .art_sb_card .art_input_co input {
     padding-bottom: 25px;
   }
   body .art_subscribe_card_co .art_sb_card .art_sb_msg {
-    -webkit-box-flex: 0;
-    -ms-flex: none;
-    flex: none;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
   }
   body .art_subscribe_card_co .art_sb_card .art_sb_action {
     width: 100%;
