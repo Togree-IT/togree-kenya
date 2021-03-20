@@ -489,7 +489,7 @@ body {
             }
             .art_profile {
                 width: 48px;
-                max-height: 48px;
+                height: 48px;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
@@ -2459,6 +2459,7 @@ body {
                 padding: 0 32px;
                 * {
                     color: inherit;
+                    padding-right: 0;
                 }
             }
         }

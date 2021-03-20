@@ -607,7 +607,7 @@ body .art-nav .art_nav-left #head_search_form .art_input_co .art_submit_search {
 
 body .art-nav .art_nav-left .art_profile {
   width: 48px;
-  max-height: 48px;
+  height: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3135,6 +3135,7 @@ body .sidenav.collapsible .collapsible-body {
 body .sidenav.collapsible li > .collapsible-header *,
 body .sidenav.collapsible .collapsible-body * {
   color: inherit;
+  padding-right: 0;
 }
 
 body .art_togree_vd {

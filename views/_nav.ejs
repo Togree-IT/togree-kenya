@@ -168,7 +168,10 @@
                 }
             });
         }
-
+        var collapsibles = document.querySelectorAll('.collapsible');
+        if (collapsibles.length) {
+            M.Collapsible.init(collapsibles);
+        }
 
         getLanguages();
 
