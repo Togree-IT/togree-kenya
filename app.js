@@ -67,7 +67,7 @@ app.use(require('./functions').setLangCookie);
 app.use(require('./functions')._language);
 
 // Routes
-app.use(require("./routes/404"));
+// app.use(require("./routes/404"));
 app.use("/", require("./routes/index"));
 app.use("/language", require("./routes/language"));
 app.use("/users", require("./routes/users"));
@@ -81,5 +81,36 @@ app.set("trust proxy", "103.242.142.186");
 // DB
 require('./config/db').con();
 
+// Handle 404
+app.use(function(req, res, next) {
+    let { initialElements } = funs;
+    const elements = [...initialElements,
+        "assets/css/blog.min.css",
+    ]
+    let title = funs.language('404 Page Not found', funs.getAppCookies(req)['language'] || 'en');
+    const meta = funs.meta({
+        title,
+        description: "",
+        keywords: '',
+        preview_image: '',
+        theme_color: "#fff"
+    }, req);
+
+    res.render("404", {
+        meta,
+        elements,
+        menu: true,
+        lang_: _ => funs.language(_, funs.getAppCookies(req)['language'] || 'en'),
+        _language: require("./language/" + funs.getAppCookies(req)['language'] || 'en' + ".json"),
+        language: funs.getAppCookies(req)['language'] || 'en',
+        languages: require("./language/languages.json"),
+        renderImplimental: (_) => funs.renderImplimental(_),
+        title,
+        path: funs.pathToTheRoot(req.originalUrl),
+        cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
+
+    })
+    next();
+});
 // Listen
 app.listen(PORT, console.log(`Server listening at ${PORT}`));

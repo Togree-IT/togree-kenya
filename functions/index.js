@@ -304,12 +304,15 @@ exports.getAppCookies = (req) => {
 
     // We extract the raw cookies from the request headers
 
+
     if (req.headers.cookie) {
         if (!req.headers.cookie.toString().includes('cartItems')) {
             req.headers.cookie = req.headers.cookie.toString() + '; ' + 'cartItems={}';
         }
+
         if (req.headers.cookie.toString().includes('language')) {
             const rawCookies = req.headers.cookie.split('; ');
+
             rawCookies.forEach(rawCookie => {
                 const parsedCookie = rawCookie.split('=');
 
@@ -323,18 +326,29 @@ exports.getAppCookies = (req) => {
                     }
                 } else {
                     parsedCookie.push('language', 'en');
-
                 }
+
                 parsedCookies[parsedCookie[0]] = parsedCookie[1];
+
             });
+
         } else {
             req.headers.cookie = req.headers.cookie.toString() + '; ' + 'language=en';
+
         }
+
+
     } else {
         parsedCookies['language'] = 'en';
         parsedCookies['cartItems'] = '{}';
 
     }
+
+    if (req.user) {
+        parsedCookies['language'] = req.user.language || 'en';
+
+    }
+
 
     return parsedCookies;
 };

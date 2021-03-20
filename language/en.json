@@ -326,5 +326,6 @@
     "you're_logged_out_successfully": "You're logged out successfully",
     "that_email_is_not_registered": "That email is not registered",
     "password_incorrect,_check_your_password_and_try_again!": "Password incorrect, check your password and try again!",
-    "profile": "Profile"
+    "profile": "Profile",
+    "404_page_not_found": "404 Page Not found"
 }

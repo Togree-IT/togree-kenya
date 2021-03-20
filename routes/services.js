@@ -17,34 +17,39 @@ router.get("/main/:id", (req, res) => {
     q['fields.slug'] = serviceName;
 
     funs.getFullCont.getService(q).then(data => {
-        let services = data.items[0].fields;
-        services['shortDescription'] = services.shortDescription.content[0].content[0].value;
-        services['previewImage'] = services.previewImage.fields.file;
 
-        let title = funs.language(services.name, funs.getAppCookies(req)['language']);
+        if (data.items.length) {
+            let services = data.items[0].fields;
+            services['shortDescription'] = services.shortDescription.content[0].content[0].value;
+            services['previewImage'] = services.previewImage.fields.file;
 
-        const meta = funs.meta({
-            title,
-            description: funs.language(services.shortDescription, funs.getAppCookies(req)['language']),
-            keywords: services.name,
-            preview_image: services.previewImage.url,
-            theme_color: "#fff"
-        }, req);
-        res.render("service", {
-            meta,
-            elements,
-            menu: true,
-            services,
-            lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
-            _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
-            language: funs.getAppCookies(req)['language'],
-            languages: require("../language/languages.json"),
-            renderImplimental: (_) => funs.renderImplimental(_),
-            title,
-            path: funs.pathToTheRoot(req.originalUrl),
-            cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
+            let title = funs.language(services.name, funs.getAppCookies(req)['language']);
 
-        })
+            const meta = funs.meta({
+                title,
+                description: funs.language(services.shortDescription, funs.getAppCookies(req)['language']),
+                keywords: services.name,
+                preview_image: services.previewImage.url,
+                theme_color: "#fff"
+            }, req);
+            res.render("service", {
+                meta,
+                elements,
+                menu: true,
+                services,
+                lang_: _ => funs.language(_, funs.getAppCookies(req)['language']),
+                _language: require("../language/" + funs.getAppCookies(req)['language'] + ".json"),
+                language: funs.getAppCookies(req)['language'],
+                languages: require("../language/languages.json"),
+                renderImplimental: (_) => funs.renderImplimental(_),
+                title,
+                path: funs.pathToTheRoot(req.originalUrl),
+                cartItems: JSON.parse(funs.getAppCookies(req)['cartItems']) || '',
+
+            })
+        } else {
+            res.redirect('../../pages/404');
+        }
     })
 
 
