@@ -783,6 +783,13 @@ exports.packageOffer = (product, cartItems, res) => {
     }
 };
 
+/**
+ * Fetches a product review
+ * @param {Object} connect Mysql connection
+ * @param {String} product_id The product id to get a review from
+ * @param {Function} cb The callback function that get invoked after fetch is done; it will carry the fetch results
+ * 
+ */
 exports.productReviews = (connect, product_id, cb) => {
     let sql = "SELECT * FROM rates WHERE rates.product_id='" + product_id + "' AND review IS NOT NULL";
     connect.query(sql, (err, results) => {
@@ -794,6 +801,15 @@ exports.productReviews = (connect, product_id, cb) => {
         this.destroy();
     })
 }
+
+/**
+ * Fetches the related products of the specified product model
+ * @param {Object} connect Mysql connection
+ * @param {String} product_model The product model
+ * @param {String} product_id The product id to explit
+ * @param {Function} cb The callback function that get invoked after fetch is done; it will carry the fetch results
+ * 
+ */
 exports.relatedProducts = (connect, product_model, product_id, cb) => {
     let sql = "SELECT * FROM products WHERE product_model='" + product_model + "' AND product_id !='" + product_id + "'";
     connect.query(sql, (err, results) => {
@@ -804,4 +820,19 @@ exports.relatedProducts = (connect, product_model, product_id, cb) => {
     }).on("end", e => {
         this.destroy();
     })
+}
+
+/**
+ * Creates a file to the specified path
+ * @param {String} path The full path of the file with the name it will be created with
+ * @param {Object} data to be stored into the file
+ * @param {Function} cb The callback function that get invoked after creation is done
+ * 
+ */
+exports.writeObjectToFile = (path, data, cb) => {
+    let Filesystem = require("fs");
+    Filesystem.writeFile(path, JSON.stringify(data, null, 2), (err, res) => {
+        if (err) throw err;
+        if (typeof cb === 'function') cb(res)
+    });
 }

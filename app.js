@@ -6,26 +6,26 @@ const express = require('express'),
     funs = require('./functions');
 const ejs = require('express-ejs-layouts');
 const passport = require('passport');
-const { connect } = require('./config/db');
+
 const app = express();
 const PORT = process.env.PORT || 5505;
 
 app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
-    // Serve stastics
+app.use(express.json());
+// Serve stastics
 app.use("/assets", express.static(__dirname + "/assets"));
 app.use("/favicon", express.static(__dirname + "/favicon.ico"));
 
-// Session
+// Session Store
 var MySQLStore = require('express-mysql-session')(session);
-let sessionDB = require('./config/db').sessionConn();
-// var connection = mysql.createConnection(); // or mysql.createPool(options);require('./functions/dbHelper').con()
-var sessionStore = new MySQLStore({} /* session store options */ , require('./functions').con(require('./config').db.sessionDB));
+require('./config/db').sessionConn();
+var sessionStore = new MySQLStore({}, require('./functions').con(require('./config').db.sessionDB));
 
+// Session
 app.use(session({
     secret: 'fdferedsdweferewedwrersdfs484_54',
     cookie: {
-        // secure: true,
+        secure: true,
         maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week 
     },
     store: sessionStore,
@@ -76,6 +76,7 @@ app.use("/services", require("./routes/services"));
 app.use("/api", require("./routes/api"));
 app.use("/url", require("./routes/url"));
 app.use("/admin", require("./routes/admin"));
+app.use("/admin/languages", require("./routes/admin/languages"));
 
 app.set("trust proxy", "103.242.142.186");
 // DB

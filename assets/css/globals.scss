@@ -137,7 +137,8 @@ body {
                             -o-transition: .3s linear;
                             transition: .3s linear;
                         }
-                        &:focus {
+                        &:focus,
+                        &:valid {
                             ~button {
                                 @include show();
                             }
@@ -484,6 +485,16 @@ body {
                         opacity: 0;
                         visibility: hidden;
                     }
+                }
+            }
+            .art_profile {
+                width: 48px;
+                max-height: 48px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                img {
+                    max-width: 100%;
                 }
             }
         }
@@ -2801,16 +2812,6 @@ body {
             -webkit-box-shadow: none;
             box-shadow: none;
             border-radius: 5em;
-        }
-    }
-    .art_profile {
-        width: 48px;
-        max-height: 48px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        img {
-            max-width: 100%;
         }
     }
 }

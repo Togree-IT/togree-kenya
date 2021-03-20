@@ -328,5 +328,6 @@
     "password_incorrect,_check_your_password_and_try_again!": "Password incorrect, check your password and try again!",
     "profile": "Profile",
     "404_page_not_found": "404 Page Not found",
-    "we're_located_in_mombasa_road_vision_plaza_2nd_floor_room_41": "We're located in Mombasa Road Vision Plaza 2nd Floor Room 41"
+    "we're_located_in_mombasa_road_vision_plaza_2nd_floor_room_41": "We're located in Mombasa Road Vision Plaza 2nd Floor Room 41",
+    "the_page_you're_looking_for_can_not_be_found_or_has_been_moved": "The page you're looking for can not be found or has been moved"
 }

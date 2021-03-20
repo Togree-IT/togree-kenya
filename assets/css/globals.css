@@ -199,7 +199,7 @@ body .art-nav .art_nav-center #shop_search .art_input_co .art_input ~ button {
   transition: .3s linear;
 }
 
-body .art-nav .art_nav-center #shop_search .art_input_co .art_input:focus ~ button {
+body .art-nav .art_nav-center #shop_search .art_input_co .art_input:focus ~ button, body .art-nav .art_nav-center #shop_search .art_input_co .art_input:valid ~ button {
   margin: 0;
   padding: 0 20px;
   max-width: initial;
@@ -603,6 +603,18 @@ body .art-nav .art_nav-left #head_search_form .art_input_co .art_submit_search {
   border: 0;
   opacity: 0;
   visibility: hidden;
+}
+
+body .art-nav .art_nav-left .art_profile {
+  width: 48px;
+  max-height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .art-nav .art_nav-left .art_profile img {
+  max-width: 100%;
 }
 
 body .art-nav .art_btn {
@@ -3569,16 +3581,4 @@ body .art_message_co .art_gree_btn {
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 5em;
-}
-
-body .art_profile {
-  width: 48px;
-  max-height: 48px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-body .art_profile img {
-  max-width: 100%;
 }

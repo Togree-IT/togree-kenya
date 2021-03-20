@@ -13,7 +13,7 @@
                         <h4 class="dashboard__content__container__header__title">Languages</h4>
                         <div class="dashboard__content__container__header__content">
                             <h5 class="dashboard__content__container__header__contentitle">Create a new Language</h5>
-                            <a href="/admin/languages/createlanguage" class="art_btn dashboard__content__container__header__contentbtn" id='createlanguage'>Create language</a>
+                            <a href="<%= path %>admin/languages/createlanguage" class="art_btn dashboard__content__container__header__contentbtn" id='createlanguage'>Create language</a>
                         </div>
                     </div>
 
@@ -37,9 +37,9 @@
                                         <%= languageData[key].name %>
                                     </h5>
                                     <div class="art_options_co">
-                                        <a href="<%= path %>admin/languages/edit?key=<%= key %>" class="art_btn dashboard__content__container__header__contentbtn languagecontainer__editbtn" id='viewlanguage'>Delete Language</a>
-                                        <a href="<%= path %>admin/languages/edit?key=<%= key %>" class="art_btn dashboard__content__container__header__contentbtn languagecontainer__editbtn" id='viewlanguage'>Activate Language</a>
-                                        <a href="<%= path %>admin/languages/edit?key=<%= key %>" class="art_btn dashboard__content__container__header__contentbtn languagecontainer__editbtn" id='viewlanguage'>Edit Language</a>
+                                        <a href="<%= path %>languages/edit?key=<%= key %>" class="art_btn dashboard__content__container__header__contentbtn languagecontainer__editbtn" id='viewlanguage'>Delete Language</a>
+                                        <a href="<%= path %>languages/edit?key=<%= key %>" class="art_btn dashboard__content__container__header__contentbtn languagecontainer__editbtn" id='viewlanguage'>Activate Language</a>
+                                        <a href="<%= path %>languages/edit?key=<%= key %>" class="art_btn dashboard__content__container__header__contentbtn languagecontainer__editbtn" id='viewlanguage'>Edit Language</a>
                                     </div>
 
                                 </div>

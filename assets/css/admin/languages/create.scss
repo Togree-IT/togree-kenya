@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sen&display=swap');
+@import "../../globals-vars.scss";
+// @import "./globals";
+@import "../../_media_queries";
+@import "../../animations";
+@import "../../mixins";
+body {
+    background-color: seashell;
+}
