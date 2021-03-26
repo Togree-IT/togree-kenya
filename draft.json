@@ -1,1 +1,1 @@
-"{\n  \"Title\": \"\",\n  \"article\": []\n}"
+"{\n  \"article\": [\n    {\n      \"type\": \"paragraph\",\n      \"data\": {\n        \"text\": \"we can do this better&nbsp;\"\n      }\n    },\n    {\n      \"type\": \"image\",\n      \"data\": {\n        \"file\": {},\n        \"caption\": \"\",\n        \"withBorder\": false,\n        \"stretched\": false,\n        \"withBackground\": false\n      }\n    }\n  ],\n  \"Title\": \"creating stuff \"\n}"

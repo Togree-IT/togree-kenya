@@ -215,7 +215,7 @@ function populateTitle(){
             titleinput.value = drafttitle;
     }
 
-    console.log('working');   
+    console.log(editorDraft);   
 }
 
 populateTitle();

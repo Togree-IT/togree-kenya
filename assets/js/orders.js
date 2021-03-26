@@ -64,10 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('click', sortAction);
     }
 
-    window.addEventListener('click',toggleDash)
+    window.addEventListener('click', toggleDash)
 
 
     const ordersForm = document.querySelector("#orderform");
+
     // initalizing materialize select input 
     M.FormSelect.init(statusEL);
     M.FormSelect.init(paymentEL);
@@ -83,7 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
         closebtn.addEventListener("click", viewForm);
     }
 
-    orderDetails.getdata().then(orderInformation => {
+    orderDetails.getdata()
+
+    .then(orderInformation => {
 
         if (orderInformation.length) {
             function addNullImei(orderid) {
@@ -94,7 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 return orderid.imei.trim() === '' ? '' : 'text_left'
             }
             let index = 0;
+
             orderInformation.map(orderid => {
+
+
                 if (tablewrapper) {
                     tablewrapper.innerHTML += ` 
                 <div class="table__row">
@@ -189,6 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         orderDetails.getdata(key).then(orderid => {
             console.log(orderid);
             if (tablewrapper) {
+
                 let options = [
                     "Confirmed", "Shipped", "Delivered", "Cancelled"
                 ];
@@ -246,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 selectedStatus = document.querySelectorAll(".status");
                 M.FormSelect.init(selectedStatus);
             } else {
-                console.log('elememnt not founf');
+                console.log('elememnt not found');
             }
 
 
@@ -255,9 +262,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
-    
-                
-             
+
+
+
 
 });
 
@@ -383,20 +390,22 @@ function popupInformation(e) {
 
 
     if (typeof e !== "undefined" && typeof e.currentTarget !== "undefined") {
-        if(Infobtn){
-        MoreInformation.classList.add('order-active');
+        if (Infobtn) {
+            MoreInformation.classList.add('order-active');
 
-    
+
         }
     }
 
 }
 
+
+
+
 function popCustomerDetails(event, index, id) {
 
     let CustomerTarget = event.target;
     orderid = CustomerTarget.getAttribute('data-orderId');
-
 
     let listing = {
         customer: {
@@ -429,7 +438,6 @@ function popCustomerDetails(event, index, id) {
                         `
                 }
             })
-
 
             return reqTemp
         };
@@ -472,6 +480,7 @@ function popCustomerDetails(event, index, id) {
         customerwrapper.innerHTML = CustomerInfo(listing[id].title, data);
     })
 
+
 }
 
 
@@ -484,32 +493,31 @@ function closeCustomerInformation(event) {
 }
 
 
-function toggleDash(event){
+function toggleDash(event) {
     let LinksWrapper = document.getElementById("dashboard__links");
     let overlay = document.querySelector("#overlay");
     let dashToggleBtn = document.querySelector('#dashmenus');
 
     if (typeof event !== "undefined" && typeof event.target !== "undefined") {
-        if (dashToggleBtn){
-        if (dashToggleBtn.contains(event.target)) {
-            LinksWrapper.classList.add('showdashmenu');
-            overlay.style.display = 'block';
-        }   else {
-            overlay.style.display = 'none';
-            LinksWrapper.classList.remove('showdashmenu');
+        if (dashToggleBtn) {
+            if (dashToggleBtn.contains(event.target)) {
+                LinksWrapper.classList.add('showdashmenu');
+                overlay.style.display = 'block';
+            } else {
+                overlay.style.display = 'none';
+                LinksWrapper.classList.remove('showdashmenu');
+            }
         }
-}
     }
 
-    
+
 }
 
-function closeInfo(event){
+function closeInfo(event) {
 
-   let closeinfobtn = event.target
-       if(closeinfobtn){
-    MoreInformation.classList.remove('order-active');
-   }
-       
+    let closeinfobtn = event.target
+    if (closeinfobtn) {
+        MoreInformation.classList.remove('order-active');
+    }
+
 }
-

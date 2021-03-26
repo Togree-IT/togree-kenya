@@ -1,0 +1,224 @@
+<%- include("./headnav.ejs") %>
+
+    <section class="dashboard">
+
+        <%- include('./nav.ejs')%>
+
+
+            <div class="dashboard__content" id="orderswrapper">
+
+                <div class="dashboard__content__container">
+                    <button class="dashmobile_btn" id="dashmenus">Dashboard Menus</button>
+                    <div class="dashboard__content__container__header">
+                        <h4 class="dashboard__content__container__header__title">Settings</h4>
+
+                        <div class="dashboard__content__container__header__content blogcontainer">
+                            <h5 class="dashboard__content__container__header__contentitle">Password Settings </h5>
+                            <a href="#" class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='resetpwd'>Change Password</a>
+                        </div>
+
+                        <div class="dashboard__content__container__header__content blogcontainer">
+                            <h5 class="dashboard__content__container__header__contentitle">Offers Settings </h5>
+                            <a href="#" class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='editoffer'>Edit Offers</a>
+                        </div>
+
+                        <div class="dashboard__content__container__header__content blogcontainer">
+                            <h5 class="dashboard__content__container__header__contentitle">Users Settings </h5>
+                            <a href="/admin/users" class="art_btn dashboard__content__container__header__contentbtn blogcontainer__editbtn" id='viewblog'>Edit Users</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+
+    <section class="orders" id="resetpopup">
+
+        <div class="orders__wrapper" id="orderwrap">
+
+            <form action="" class="orders__form" id="resetpwdform">
+
+                <div class="orders__form__header">
+                    <h4 class="orders__form__header__title">Reset Password</h4>
+                    <i class="material-icons" id="closepwdbtn">close</i>
+                </div>
+
+
+                <div class="orders__form__formwrapper">
+                    <label for="currentpwd" class="orders__form__label">Current Password</label>
+                    <div class="art_input_co">
+                        <input class="art_input reqinput" type="password" id="currentpwd" name="currentpwd" value=""></input>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span id="firsterror" class="error"></span>
+                </div>
+
+                <div class="orders__form__formwrapper">
+                    <label for="newpwd" class="orders__form__label">New Password</label>
+                    <div class="art_input_co">
+                        <input class="art_input reqinput" type="password" id="newpwd" name="newpwd" value=""></input>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span class="error"></span>
+                </div>
+
+                <div class="orders__form__formwrapper">
+                    <label for="confirmnewpwd" class="orders__form__label">Confirm New Password</label>
+                    <div class="art_input_co">
+                        <input class="art_input reqinput" type="password" id="confirmnewpwd" name="confirmnewpwd" value=""></input>
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <span class="error" id="thirderror"></span>
+                </div>
+
+
+
+                <div class="orders__form__btnwrapper">
+                    <button class="orders__form__btn" id="pwdsubmitbtn">SUBMIT</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="orders" id="offerpopup">
+
+        <div class="orders__wrapper">
+
+            <form action="" class="orders__form" id="offerform">
+
+                <div class="orders__form__header">
+                    <h4 class="orders__form__header__title">Offer Settings</h4>
+                    <i class="material-icons" id="closeoffer">close</i>
+                </div>
+
+                <div class="orders__form__container">
+
+
+                    <div class="orders__form__formsection">
+
+                        <h6 class="orders__form__subtitle">Producttitle</h6>
+
+                        <div class="orders__form__formwrapper">
+                            <div class="input-field">
+                                <select name="productname" id="productname">
+                                    <option value="" disabled selected>Choose Product</option>
+                                    <option value="TK08">TK08(Ultra Tracking)</option>
+                                    <option value="Tk26">Tk26</option>
+                                    <option value="SG 20">SG 20</option>
+                                    <option value="OBD">OBD</option>
+                                    <option value="Track Lite">Track Lite</option>
+                                    <option value="3S">3S</option>
+                                    <option value="AT4" >AT4</option> 
+                                    </select>
+                                <label>Choose Product</label>
+                            </div>
+                        </div>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="costprice" class="orders__form__label">Cost Price</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="costprice" name="costprice" value=""></input>
+                                <span class="currency">KSH</span>
+                            </div>
+                        </div>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="sellingprice" class="orders__form__label">Selling Price</label>
+                            <div class="art_input_co">
+                                <input class="art_input" type="text" id="sellingprice" name="sellingprice" value=""></input>
+                                <span class="currency">KSH</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="orders__form__formsection" id="firstrange">
+
+                        <h6 class="orders__form__subtitle">Quantity Range (1st range)</h6>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="minqty" class="orders__form__label">Min QTY</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="minqty" name="minqty" value=""></input>
+                                <span class="currency">PCS</span>
+                            </div>
+                        </div>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="newpwd" class="orders__form__label">Max QTY</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="maxqty" name="maxqty" value=""></input>
+                                <span class="currency">PCS</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="orders__form__formsection" id="secondrange">
+
+                        <h6 class="orders__form__subtitle">Quantity Range (2nd range)</h6>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="minqty" class="orders__form__label">Min QTY</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="secminqty" name="secminqty" value=""></input>
+                                <span class="currency">PCS</span>
+                            </div>
+                        </div>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="newpwd" class="orders__form__label">Max QTY</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="secmaxqty" name="secmaxqty" value=""></input>
+                                <span class="currency">PCS</span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="orders__form__formsection" id="thirdrange">
+
+                        <h6 class="orders__form__subtitle">Quantity Range (3rd range)</h6>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="minqty" class="orders__form__label">Min QTY</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="trdminqty" name="trdminqty" value=""></input>
+                                <span class="currency">PCS</span>
+                            </div>
+                        </div>
+
+                        <div class="orders__form__formwrapper">
+                            <label for="newpwd" class="orders__form__label">Max QTY</label>
+                            <div class="art_input_co">
+                                <input class="art_input reqinput" type="text" id="trdmaxqty" name="trdmaxqty" value=""></input>
+                                <span class="currency">PCS</span>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="orders__form__btnwrapper">
+                    <button class="orders__form__btn" id="pwdsubmitbtn"><span>CONFIRM</span> <i class="fas fa-plus"></i> </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>

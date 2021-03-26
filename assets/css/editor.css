@@ -400,6 +400,7 @@
   font-weight: 550;
   text-align: center;
   position: relative;
+  background-color: #FDFDFD;
 }
 
 .dashboard__content__container__body__table .table__heading .table_cell {
@@ -551,6 +552,18 @@
   .orders__wrapper {
     padding: 2%;
     width: 40%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .orders__wrapper {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .orders__wrapper {
+    width: 23%;
   }
 }
 
@@ -898,13 +911,19 @@
 }
 
 @media screen and (min-width: 320px) {
-  #Imei-heading, #status-heading, #Imei-table, #customerdisplay {
+  #Imei-heading,
+  #status-heading,
+  #Imei-table,
+  #customerdisplay {
     display: none;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  #Imei-heading, #status-heading, #Imei-table, #customerdisplay {
+  #Imei-heading,
+  #status-heading,
+  #Imei-table,
+  #customerdisplay {
     display: table-cell;
   }
 }
@@ -1178,13 +1197,21 @@
   -o-transform: translate(0%, 0);
 }
 
-.blogcontainer {
-  margin: 1rem 0;
-  padding: 1% 2%;
+@media screen and (min-width: 320px) {
+  .blogcontainer {
+    margin: 1rem 0;
+    padding: 6% 4%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .blogcontainer {
+    padding: 1% 3%;
+  }
 }
 
 .blogcontainer__editbtn {
-  padding: .4rem 1.2rem;
+  padding: .8rem 2rem;
 }
 
 .writeblog {
@@ -1200,6 +1227,18 @@
 
 .writeblog__wrapper {
   width: 60%;
+}
+
+@media screen and (min-width: 320px) {
+  .writeblog__wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .writeblog__wrapper {
+    width: 60%;
+  }
 }
 
 .writeblog__topbar, .writeblog__right {
@@ -1257,12 +1296,31 @@
   margin-top: 2rem;
 }
 
+@media screen and (min-width: 320px) {
+  .customeditor {
+    padding: 0rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .customeditor {
+    padding: 0 5.8rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .customeditor {
+    padding-left: 27rem;
+  }
+}
+
 .customeditor .titlecontainer {
   width: 100%;
 }
 
 .customeditor .titlecontainer .titleinput {
   width: 100%;
+  font-weight: 500;
   border: none;
   height: 6rem;
   font-size: 3rem;
@@ -1282,6 +1340,20 @@
 
 .customeditor .titlecontainer .titleinput::placeholder {
   color: #70768485;
+}
+
+@media screen and (min-width: 320px) {
+  .customeditor .titlecontainer .titleinput {
+    height: 3rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .customeditor .titlecontainer .titleinput {
+    height: 6rem;
+    font-size: 3rem;
+  }
 }
 
 .customeditor input[type=text]:not(.browser-default):focus:not([readonly]) {
@@ -1314,5 +1386,264 @@
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   border-bottom: none !important;
+}
+
+#resetpopup .fas, #offerpopup .fas {
+  margin-right: 1rem;
+  color: #24C347;
+}
+
+#resetpopup #orderwrap, #offerpopup #orderwrap, #resetpopup #offerpopup .orders__wrapper, #offerpopup #resetpopup .orders__wrapper, #offerpopup .orders__wrapper {
+  width: 15%;
+  padding: 2% 1%;
+}
+
+@media screen and (min-width: 320px) {
+  #resetpopup #orderwrap, #offerpopup #orderwrap, #resetpopup #offerpopup .orders__wrapper, #offerpopup #resetpopup .orders__wrapper, #offerpopup .orders__wrapper {
+    width: 90%;
+    padding: 4%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #resetpopup #orderwrap, #offerpopup #orderwrap, #resetpopup #offerpopup .orders__wrapper, #offerpopup #resetpopup .orders__wrapper, #offerpopup .orders__wrapper {
+    width: 50%;
+    padding: 4%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #resetpopup #orderwrap, #offerpopup #orderwrap, #resetpopup #offerpopup .orders__wrapper, #offerpopup #resetpopup .orders__wrapper, #offerpopup .orders__wrapper {
+    width: 33%;
+    padding: 2%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  #resetpopup #orderwrap, #offerpopup #orderwrap, #resetpopup #offerpopup .orders__wrapper, #offerpopup #resetpopup .orders__wrapper, #offerpopup .orders__wrapper {
+    width: 20%;
+    padding: 2% 1%;
+  }
+}
+
+#resetpopup .material-icons, #offerpopup .material-icons {
+  top: -1pc;
+}
+
+#resetpopup .orders__form__formwrapper, #offerpopup .orders__form__formwrapper {
+  max-width: 100%;
+  margin: 1rem 0;
+}
+
+#resetpopup .orders__form .art_input_co, #offerpopup .orders__form .art_input_co {
+  margin-top: .5rem;
+  height: 3rem;
+}
+
+#resetpopup .orders__form__btn, #offerpopup .orders__form__btn {
+  padding: 1rem 3rem;
+  border-radius: 8px;
+}
+
+#resetpopup .error, #offerpopup .error {
+  margin: .5rem 0;
+  color: red;
+}
+
+#offerpopup .orders__form__formsection {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+}
+
+#offerpopup .orders__form__subtitle {
+  font-weight: 500;
+}
+
+#offerpopup .orders__form__formwrapper {
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#offerpopup .orders__form__formwrapper .select-dropdown dropdown-trigger {
+  padding: 0;
+  margin: 0;
+  padding-left: .4rem;
+}
+
+#offerpopup .orders__form__formwrapper .select-wrapper {
+  padding-right: .4rem;
+}
+
+#offerpopup .orders__form__formwrapper .currency {
+  margin-right: 1rem;
+}
+
+#offerpopup .orders__form__formwrapper .select-wrapper input.select-dropdown {
+  height: 3rem;
+}
+
+#offerpopup .orders__form__btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.3rem;
+}
+
+#offerpopup .orders__form__btn .fas {
+  color: white;
+  margin-left: .8rem;
+}
+
+#offerpopup .orders__form__container {
+  max-height: 40vh;
+  overflow: auto;
+}
+
+.sidepop {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 0;
+  -webkit-transition: width .1s ease-in;
+  transition: width .1s ease-in;
+  display: block;
+  padding: 0;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 320px) {
+  .sidepop {
+    top: 0pc;
+    right: 0pc;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .sidepop {
+    top: 1pc;
+    right: 1pc;
+  }
+}
+
+.sidepop_active {
+  padding: 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.29) 0px 2px 2px;
+          box-shadow: rgba(0, 0, 0, 0.29) 0px 2px 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (min-width: 320px) {
+  .sidepop_active {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 179px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sidepop_active {
+    width: 541px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.sidepop_active .information_links {
+  width: 179px;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) {
+  #userboard .customerdetails__Wrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  #userboard .customerdetails__Wrapper {
+    width: 65%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #userboard .customerdetails__Wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #userboard .customerdetails__Wrapper {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  #userboard .customerdetails__Wrapper {
+    width: 31%;
+  }
+}
+
+#userboard .customerdetails__content {
+  width: 60%;
+  margin: 0;
+}
+
+#userboard .customerdetails__content__subcontent {
+  width: 100%;
+}
+
+.useremail {
+  display: hidden;
+}
+
+.pagination {
+  margin: 20px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination button {
+  border: none;
+  padding: 1rem 1.4rem;
+  background-color: #24C347;
+  color: #FFF;
+  margin-right: 1rem;
+}
+
+.fa-file-download {
+  margin-left: .5rem;
+}
+
+.fa-long-arrow-alt-left {
+  font-size: 3rem;
+  margin: 2rem 0;
 }
 /*# sourceMappingURL=editor.css.map */

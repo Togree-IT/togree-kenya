@@ -1,0 +1,378 @@
+[
+
+    {
+        "customer_ID": "TG2021-1",
+        "role": "client",
+        "registered_date": "2021-10-15",
+        "first_name": "Adebola",
+        "last_name": "Oduge",
+        "phone_number": "+254837370293",
+        "email": "okiahy@yahoo.com",
+        "Apartment_Address": "428  Forever Homes Apartment",
+        "Landmark": "Kindaruma Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-2",
+        "role": "sub-admin",
+        "registered_date": "2021-10-15",
+        "first_name": "Kenetthen",
+        "last_name": "ngonh",
+        "phone_number": "+254837370293",
+        "email": "Kenettheny@gmail.com",
+        "Apartment_Address": "1  coptic hospital",
+        "Landmark": "Kindaruma Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+    },
+    {
+        "customer_ID": "TG2021-3",
+        "role": "sub-admin",
+        "registered_date": "2021-10-15",
+        "first_name": "Kenetthen",
+        "last_name": "ngonh",
+        "phone_number": "+254837370293",
+        "email": "Kenettheny@gmail.com",
+        "Apartment_Address": "1  coptic hospital",
+        "Landmark": "Kindaruma Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-4",
+        "role": "sub-admin",
+        "registered_date": "2021-10-15",
+        "first_name": "Kenetthen",
+        "last_name": "ngonh",
+        "phone_number": "+254837370293",
+        "email": "Kenettheny@gmail.com",
+        "Apartment_Address": "1  coptic hospital",
+        "Landmark": "Kindaruma Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-5",
+        "role": "sub-admin",
+        "registered_date": "2021-10-15",
+        "first_name": "Kenetthen",
+        "last_name": "ngonh",
+        "phone_number": "+254837370293",
+        "email": "Kenettheny@gmail.com",
+        "Apartment_Address": "1  coptic hospital",
+        "Landmark": "Kindaruma Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-6",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-7",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-8",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-9",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-10",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-11",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-12",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-13",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-14",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-15",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-16",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-17",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-18",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-19",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-20",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-21",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-22",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-23",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-24",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    },
+    {
+        "customer_ID": "TG2021-25",
+        "role": "reseller",
+        "registered_date": "2021-10-15",
+        "first_name": "Jonathan",
+        "last_name": "asantan",
+        "phone_number": "+254837370293",
+        "email": "sanrany@hotmail.com",
+        "Apartment_Address": "2 plaibview sore road south B",
+        "Landmark": "Mombasa Road",
+        "City": "Nairobi",
+        "Country": "Kenya",
+        "postal_code": "00100"
+
+    }
+
+]
