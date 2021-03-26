@@ -214,13 +214,6 @@ function downloadFiles(downloadable) {
 }
 
 
-
-
-
-
-
-
-
 function userinformation(e, email, id) {
 
     let userdetails = e.target;
